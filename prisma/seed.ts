@@ -102,7 +102,7 @@ const sources: SourceSeed[] = [
   {
     companyName: "東京海上日動火災",
     insuranceType: "nonlife",
-    url: "https://www.tokiomarinehd.com/newsroom/group/feed/release.xml",
+    url: "https://www.tokiomarinehd.com/feed/release.xml",
     fetchType: "rss",
     active: true,
     note: "自社ページ403の代替として東京海上HDのプレスリリースRSSを登録",

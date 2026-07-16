@@ -20,9 +20,61 @@ model Source {
   // 'html' | 'pdf' | 'json' | 'rss' (将来 'puppeteer' も追加予定) — enumにせずStringで保持
   fetchType     String   @map("fetch_type")
   active        Boolean  @default(true)
+  // 巡回間隔(分)。node-cronスケジューラがこの値に従って巡回間隔を決定する
+  fetchIntervalMin Int   @default(1440) @map("fetch_interval_min")
   note          String?
   createdAt     DateTime @default(now()) @map("created_at")
   updatedAt     DateTime @updatedAt @map("updated_at")
 
+  snapshots Snapshot[]
+  changes   Change[]
+
   @@map("sources")
+}
+
+model Snapshot {
+  id          Int      @id @default(autoincrement())
+  sourceId    Int      @map("source_id")
+  source      Source   @relation(fields: [sourceId], references: [id])
+  fetchedAt   DateTime @map("fetched_at")
+  httpStatus  Int?     @map("http_status")
+  contentHash String?  @map("content_hash")
+  rawPath     String?  @map("raw_path")
+
+  changesAsPrev Change[] @relation("PrevSnapshot")
+  changesAsNew  Change[] @relation("NewSnapshot")
+
+  @@index([sourceId])
+  @@map("snapshots")
+}
+
+model Change {
+  id              Int      @id @default(autoincrement())
+  sourceId        Int      @map("source_id")
+  source          Source   @relation(fields: [sourceId], references: [id])
+  detectedAt      DateTime @map("detected_at")
+  prevSnapshotId  Int?     @map("prev_snapshot_id")
+  prevSnapshot    Snapshot? @relation("PrevSnapshot", fields: [prevSnapshotId], references: [id])
+  newSnapshotId   Int      @map("new_snapshot_id")
+  newSnapshot     Snapshot @relation("NewSnapshot", fields: [newSnapshotId], references: [id])
+  // 'pending' | 'parsed' | 'failed' — enumにせずStringで保持
+  parseStatus     String   @default("pending") @map("parse_status")
+
+  incidents Incident[]
+
+  @@index([sourceId])
+  @@map("changes")
+}
+
+model Incident {
+  id             Int       @id @default(autoincrement())
+  service        String
+  startedAt      DateTime? @map("started_at")
+  resolvedAt     DateTime? @map("resolved_at")
+  severity       String?
+  title          String?
+  sourceChangeId Int?      @map("source_change_id")
+  sourceChange   Change?   @relation(fields: [sourceChangeId], references: [id])
+
+  @@map("incidents")
 }

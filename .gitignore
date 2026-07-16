@@ -6,3 +6,7 @@ node_modules
 
 # SQLite database file (regenerated via migrate/seed)
 /dev.db
+
+# 収集した生データ(gzip)。DB(snapshots.raw_path)からのみ参照される再生成不能データだが、
+# 大容量になるためリポジトリには含めない
+/data/raw
