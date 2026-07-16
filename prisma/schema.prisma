@@ -1,0 +1,28 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Source {
+  id            Int      @id @default(autoincrement())
+  companyName   String   @map("company_name")
+  insuranceType String   @map("insurance_type") // 'life' | 'nonlife'
+  url           String
+  // 'html' | 'pdf' | 'json' | 'rss' (将来 'puppeteer' も追加予定) — enumにせずStringで保持
+  fetchType     String   @map("fetch_type")
+  active        Boolean  @default(true)
+  note          String?
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  @@map("sources")
+}
