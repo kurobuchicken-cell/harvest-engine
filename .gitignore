@@ -10,3 +10,6 @@ node_modules
 # 収集した生データ(gzip)。DB(snapshots.raw_path)からのみ参照される再生成不能データだが、
 # 大容量になるためリポジトリには含めない
 /data/raw
+
+# PM2のログ出力
+/logs
