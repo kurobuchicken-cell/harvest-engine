@@ -13,3 +13,6 @@ node_modules
 
 # PM2のログ出力
 /logs
+
+# Oracle VM用SSH鍵(dev-config経由でPC間同期)
+/tokens
