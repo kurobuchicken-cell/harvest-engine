@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "crawl:once": "tsx src/crawler.ts",
     "scheduler:start": "tsx src/scheduler.ts",
+    "web:start": "tsx src/web/server.ts",
     "diagnose": "tsx src/diagnostics.ts",
     "statuspage:sync": "tsx src/adapters/statuspage.ts",
     "incidents:backfill": "tsx src/adapters/incidents/backfill.ts"
