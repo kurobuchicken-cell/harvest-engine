@@ -5,7 +5,7 @@ import { getServiceStatuses, getServiceHistory, THEME_C_SERVICES } from "./queri
 import { renderTopPage, renderServicePage, renderNotFound } from "./render";
 
 const PORT = Number(process.env.WEB_PORT ?? 3000);
-const BASE_URL = "https://saas-status.jp";
+const BASE_URL = "https://saas-status.com";
 
 function renderSitemap(): string {
   const urls = ["/", ...THEME_C_SERVICES.map((name) => `/services/${encodeURIComponent(name)}`)];
