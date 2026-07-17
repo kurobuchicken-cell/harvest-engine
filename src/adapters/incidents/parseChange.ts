@@ -33,9 +33,11 @@ export async function parseChangeIncidents(changeId: number): Promise<ParseChang
 
     const filePath = path.resolve(process.cwd(), change.newSnapshot.rawPath);
     const compressed = await readFile(filePath);
-    const raw = JSON.parse(gunzipSync(compressed).toString("utf-8"));
+    const decompressed = gunzipSync(compressed).toString("utf-8");
+    // rss/htmlはraw本文がそのままテキスト(XML/HTML)であり、jsonのみパース対象が構造化データになる
+    const raw = change.source.fetchType === "json" ? JSON.parse(decompressed) : decompressed;
 
-    const parsedIncidents = adapter(raw);
+    const parsedIncidents = await adapter(raw);
 
     let created = 0;
     for (const incident of parsedIncidents) {
