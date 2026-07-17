@@ -8,7 +8,8 @@
     "crawl:once": "tsx src/crawler.ts",
     "scheduler:start": "tsx src/scheduler.ts",
     "diagnose": "tsx src/diagnostics.ts",
-    "statuspage:sync": "tsx src/adapters/statuspage.ts"
+    "statuspage:sync": "tsx src/adapters/statuspage.ts",
+    "incidents:backfill": "tsx src/adapters/incidents/backfill.ts"
   },
   "keywords": [],
   "author": "",
