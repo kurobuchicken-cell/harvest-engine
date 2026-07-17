@@ -1,68 +1,83 @@
 # HANDOFF
 
-最終更新: 2026-07-17
+最終更新: 2026-07-18
 
 ## 今回変更したこと(何を・なぜ)
 
-### C公開ページ(src/web/)をsaas-status.comとして外部公開
-- 既存のOracle VM(161.33.148.155、schedulerが常駐中)に`harvest-engine-web`(PM2)を追加デプロイ。
-  ローカルPCでの公開は行わず、既にPM2+systemd常駐実績のあるVMに一本化する方針とした
-- 外部公開はCloudflare Tunnel(cloudflared)経由。ポート開放・OCI Security List変更は不要。
-  VM上にcloudflaredをsystemdサービスとしてインストール(`cloudflared service install <token>`)、
-  Tunnel名`harvest-engine-web`のPublished application routeで`saas-status.com → http://localhost:3000`を設定
-- `src/web/server.ts`に`/robots.txt`・`/sitemap.xml`を追加(このサイト自身はクロールされたい側のため
-  `Allow: /`。harvest-engine本体が収集先に対して守るrobots.txtとは逆の立場である点に注意)。
-  ベースURL`https://saas-status.com`はコード直書き
-- ハマった点: Tunnel作成ウィザードの「Route Traffic」画面を未入力のまま離脱すると、DNSのCNAME
-  レコードだけ残ってTunnel側のingress設定(公開ホスト名→localhost:3000の転送)が空のままになり、
-  `cloudflared`が全リクエストに503を返す状態になった。DNSレコードを一度削除し、Tunnelの
-  「Published application routes」から改めてホスト名+転送先を同時に作成して解消
+### テーマF(海外SaaS changelog/pricing)・G(パブコメ・審議会/報道発表)を調査・登録
+AI評議会の裁定により追加した新テーマ2件。今回は生データ収集開始まで(パーサー実装は着手せず)。
 
-### VM側DBの欠落データを復元
-- 原因: Oracle VMへのDB移行(scp)を行ったタイミングが、テーマC10ソース(サイボウズ4製品/cybozu.com/
-  freee/SmartHR/マネーフォワードME・biz/Chatwork)追加コミット(`335e168`)より前だった。
-  そのためVM側`sources`テーブルにこの10件が丸ごと存在せず、副次的にVM側schedulerは
-  これら5社(active分)を一度も巡回できていなかった
-- 対応1: VMの`sources`に該当10件を`createMany`のみで追記(既存36件は無傷、IDもローカルと
-  一致する37-46で採番された)
-- 対応2: ローカルの81件のincidents(2024-03-25〜)を、`sourceChangeId`をNULLにしてVMへ直接
-  `createMany`で移植(元のraw snapshot/changeがVMに存在しないためFK維持は不可能と判断)。
-  DBファイル丸ごと置き換えは不採用(VM移行後にVM自身が独自収集した保険・Statuspage系のsnapshot/
-  changeを消失させるため)
-- 対応3: 出典リンクに必要な`source_url`列が、以前のセッションで実装済みだったが未コミットのまま
-  残っていた(`prisma/schema.prisma`+`prisma/migrations/20260717044709_add_incident_source_url/`)。
-  今回コミットし、VM側に`prisma migrate deploy`+`prisma generate`+PM2再起動で反映
+- F: 海外SaaS 15社(Slack/Notion/Figma/Linear/Airtable/Miro/Zoom/Atlassian/Asana/HubSpot/
+  Salesforce/Zendesk/Canva/GitHub/Stripe)のchangelog/pricingページ計30URLを調査
+- G: e-Govパブコメ、8省庁(金融庁/経産省/総務省/厚労省/国交省/環境省/デジタル庁/個人情報保護
+  委員会)の審議会・検討会ページ+報道発表資料一覧ページ計17URLを調査
+- 判定はrobots.txt許可状況(自ボット`HarvestEngineBot`は`User-agent: *`扱い)・実地fetch可否
+  (JS SPA/bot対策403/SSR本文あり)・RSS/API有無・更新頻度目安で実施
+- e-Gov/meti.go.jpは調査エージェントのWebFetchツールで403が出たため、本番の`politeFetch`
+  (実際のUA・robots尊重ロジック)で再検証を実施。meti.go.jpはrobots.txt自体・対象ページとも
+  本番UAで403継続を確認したためinactive確定。e-Govはrobots.txt自体が存在せず(404)、
+  `pcm/list`ページから直接リンクされているRSS(`/rss/pcm_list.xml`=意見募集中、
+  `/rss/pcm_result.xml`=結果公示)を発見・確認できたためHTML一覧ではなくRSSを採用
+- 環境省は当初調査対象だった`/council/`がナビゲーション型(日付なし)で差分検知に不向きと
+  判明したため、実データのある子ページ`/council/o_info.html`に差し替えて再判定
+- F: active15件・inactive8件(計23件)、G: active14件・inactive2件(計16件)の計39件をsourcesへ
+  `createMany`のみで追記登録(既存46件は非削除)。ローカルDB(dev.db)は46→85件
+- 登録時、`fetchIntervalMin`を意図的にばらつかせた(F changelogは日次前後、pricingは3日前後、
+  Gは日次前後でそれぞれ+11〜+150分程度のジッターを付与)。VM空きメモリ(367Mi前後)がタイトな
+  ため、全件が同一tickで同時fetchされ続ける状態を避ける狙い
+- pending(判断保留)だった13件のうち11件はバックログ化(sourcesには登録せず、下記「新たに
+  判明した課題」に記録するのみ)。ユーザー承認済み
+- robots.txtが既知AIボット(GPTBot/ClaudeBot/CCBot/anthropic-ai等)を名指しでDisallowしている
+  サイト(Canva)は、自ボットが`User-agent: *`の対象外でも原則active化しない方針を
+  `CLAUDE.md`「巡回対象選定の追加ルール」に明文化
 
 ## 現在の稼働状況
 
-- sources合計: 46件(active 24 / inactive 22)。ローカル・VMのIDは完全一致
+- sources合計: **85件**(active 53 / inactive 32)。**ローカルDBのみ反映、VM側は未反映**
+  (次アクション参照)
 - 内訳:
   - 保険20社(生保10・損保10): 一部403のため一部inactive
-  - Statuspage.io系15件: active 3件(Slack/Notion/Zendesk)、inactive 12件
-    (11件はrobots.txtの`/api`Disallow、Salesforceはサーバー側403)
-  - テーマC(SaaS障害)追加10件: active 5件(kintone/Office/Garoon/メールワイズ/freee)、
-    inactive 5件(cybozu.com/SmartHR/マネーフォワードME・biz/Chatwork、いずれもPuppeteer未対応が理由)
+  - Statuspage.io系15件+テーマC追加10件: 既存のまま(active見込み計8件、詳細は前回HANDOFF参照)
+  - **テーマF新規23件: active15 / inactive8**(inactive理由の内訳: JS SPA本文空4件、
+    robots.txt明示Disallow1件、価格JS注入1件、bot対策403 1件、UA判定ブロック1件)
+  - **テーマG新規16件: active14 / inactive2**(inactive2件はいずれもmeti.go.jpのWAF拒否)
 - incidentsパーサー実装済み: Slack/Notion/Zendesk、kintone/Office/Garoon/メールワイズ/freee
-- Oracle VM(161.33.148.155)上でPM2+systemd常駐運用中。`harvest-engine-scheduler`と
-  `harvest-engine-web`の2プロセス構成(同一PM2デーモン、`pm2 save`済みでVM再起動時に両方自動復元)
-- 外部公開: `https://saas-status.com/`(Cloudflare Tunnel経由、Proxied)。robots.txt/sitemap.xml稼働確認済み
-- VM incidentsは81件(ローカルと同数、2024-03-25〜2026-07-09)。出典リンク表示も確認済み
+  (F/Gは未実装、収集のみ)
+- Oracle VM(161.33.148.155)上でPM2+systemd常駐運用中(`harvest-engine-scheduler`/
+  `harvest-engine-web`)。外部公開: `https://saas-status.com/`
 
 ## 新たに判明した課題・次アクション
 
-- `statuspage:sync`のスキーマ不一致(Slack/Notion/Zendeskが実レスポンスとincidents配列前提の
-  アダプタが一致せず常に新規0件)は未対応のまま(既知の制約)
+### 最優先: VM側DBへのF/G反映が未実施
+過去の教訓通り、ローカルでのsources追加はgit pushだけではVM側DBに反映されない。次回作業時に
+VM側でも同じ39件を`createMany`で追記する必要がある(手順は`git log`の`335e168`と今回の
+ローカル手順を参照。ワンオフスクリプトはコミットしていないため、必要なら本HANDOFFの内容から
+再構築するか、次回セッションで作成し直すこと)。VM登録後はメモリ・負荷(空き367Mi前後)を
+最初の数tickで実測確認すること
+
+### F(海外SaaS)バックログ(sources未登録、URLは判明済み)
+- Zoom changelog(support.zoom.com、ヘルプセンター配下でToSリスクありpending)
+- Atlassian(Jira) pricing(価格表HTML混入が不確定、要再検証)
+- Asana/Salesforce/Zendesk changelog(いずれもヘルプセンター配下+JS SPAで本文取得不可)
+- HubSpot changelog(安定URL未特定、hubspot.com/product-updatesは無関係ページへ301転送)
+- Stripe changelog(stripe.com/shippedはJS依存強、docs.stripe.com/changelogが代替候補、要調査)
+- 上記7件はいずれもPuppeteer未対応が理由。既存の「Puppeteer未対応でinactiveのまま残っている
+  保険5社+cybozu.com等4件」の課題と統合して扱う
+
+### G(パブコメ・審議会)バックログ(sources未登録、URLは判明済み)
+- 国土交通省 審議会・検討会ページ(`/policy/shingikai/index.html`、日付なしナビゲーション型で
+  差分検知の粒度が低い。個別分科会ページへの分解が必要)
+- 個人情報保護委員会 検討会ページ(`/personalinfo/kentohkai/`、テーマ別ポータルで更新頻度不明)
+
+### パーサー実装時の注意点(未着手・メモのみ)
+- 総務省(審議会・報道資料とも)は非UTF-8(Shift_JIS系と推定)エンコーディング。文字コード
+  変換処理が必要
+- Figmaはページ内にRSS購読ボタンがあるが具体的feed URLは未確定(将来HTML→RSS切替を検討)
+- デジタル庁はサイト全体共通RSS(`/rss/news.xml`)があるが審議会/news個別のフィードではない
+  ため今回はHTMLのまま登録
+- Zendesk pricingはアクセス元IPによって`zendesk.co.jp/pricing`へ302転送される場合がある
+
+### 既存の積み残し課題(変更なし)
+- `statuspage:sync`のスキーマ不一致(Slack/Notion/Zendesk)は未対応のまま
 - Puppeteer未対応のためinactiveのまま残っている10件(保険5社+cybozu.com/SmartHR/
   マネーフォワードME・biz/Chatwork)は引き続き未着手
-- 住友生命(id=4)は既にIPブロックではなく恒常的な403と判断しactive=falseに変更済み(解消済み)
-- kintone/Office/Garoon/メールワイズは同一ドメイン(cs.cybozu.co.jp)の同一RSSフォーマットのため、
-  4件とも`parseCybozuRssIncidents`を共有(product別の分岐ロジックは不要と判断)
-- freeeは`issue-notice--wrapper`(ページ上部の現在進行中の告知のみ)を抽出対象としており、
-  過去の解決済み履歴(`section.history`)はパース対象外(Slack/Notion同様、現在アクティブな
-  インシデントのみを扱う設計に合わせた)
-- **運用上の教訓**: ローカルでの変更(sources追加・スキーマ変更等)は、コードをgit pushしただけでは
-  VM側DBに反映されない(sources行やマイグレーションはDBの状態そのものであり、コードのpullとは別工程)。
-  今後ローカルでsourcesやDBスキーマを変更した場合は、VM側にも同じ変更(seed追記・migrate deploy等)を
-  適用したかを都度確認すること
-- 今後Puppeteer対応や新規source追加を行う際は、ローカル・VM双方のDB状態を都度突き合わせる
-  (今回のような欠落は`sourceCount`/`incidentCount`等の簡単な件数比較で検知できる)

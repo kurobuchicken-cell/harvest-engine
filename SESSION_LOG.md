@@ -83,3 +83,26 @@
   - 運用上の教訓として、ローカルでのDB変更(sources追加・スキーマ変更)はgit pushだけではVM側DBに反映されない。今後は変更のたびにVM側への反映(seed追記・migrate deploy)を都度確認する
   - Cloudflare Zero Trustはアカウントの支払い方法登録が必須(Free枠のまま、$0/月)だった点は事前に共有済み
 - 触ったファイル：`src/web/server.ts`(robots/sitemap追加、BASE_URL修正)、`ecosystem.config.js`(harvest-engine-web追加)、`package.json`、`prisma/schema.prisma`、`prisma/migrations/20260717044709_add_incident_source_url/`、`src/adapters/incidents/{cybozuRss,hund,notion,parseChange,slack,types,zendesk}.ts`、`src/adapters/incidents/backfillSourceUrl.ts`(新規)、`HANDOFF.md`、Oracle VM側のsources/incidentsテーブル・PM2設定・cloudflared設定一式(ローカルGit管理外)
+
+## harvest-engine-themeFG-onboard-01（2026-07-18）
+- 作業環境：ノートPC
+- やったこと：
+  - AI評議会裁定によるテーマF(海外SaaS changelog/pricing)・G(パブコメ・審議会/報道発表)の
+    新設。並列サブエージェント4本でF15社30URL・G17URLを調査(robots.txt・実地fetch可否・
+    RSS/API有無・更新頻度)し、e-Gov/meti.go.jpは本番の`politeFetch`で追加の実機再検証を実施
+  - 承認を得てsourcesへ計39件(F23件・G16件)を`createMany`で追記登録(ローカルDBのみ、
+    既存46件は非削除)。pending 13件中2件(e-Gov RSS採用・環境省URL差し替え)は登録に反映、
+    meti.go.jp 2件はinactive確定、残り11件はsources未登録のままバックログ化
+  - `CLAUDE.md`に「robots.txtが既知AIボットを名指しでDisallowしているサイトは自ボットが
+    対象外でもactive化しない」ルールを追記
+  - `HANDOFF.md`更新
+- 完了した状態：
+  - ローカルDBのsources合計85件(active53/inactive32)。詳細な内訳・バックログURL一覧・
+    パーサー実装時の注意点(総務省Shift_JIS等)は`HANDOFF.md`参照
+  - パーサー(price_changes/feature_changes等)は今回未着手。収集開始のみ
+- 残課題・次にやること：
+  - **VM側DBへの39件反映が未実施**(次回セッションで最優先。ローカルのみの変更はpushだけでは
+    VMに伝わらない教訓を踏襲)
+  - F/Gバックログ11件(URL判明済み、Puppeteer未対応等が理由)は`HANDOFF.md`に一覧化済み
+- 触ったファイル：`prisma/seed.ts`(F/G追記)、`CLAUDE.md`(巡回対象選定ルール追加)、
+  `HANDOFF.md`、ローカルDB(`dev.db`、Git管理外)のsourcesテーブル

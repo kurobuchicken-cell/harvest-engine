@@ -40,8 +40,16 @@
 
 - 第3層: C(SaaS障害、saas-status.com)
 - 第2層: なし(Aはパーサー未実装のため第1層扱い)
-- 第1層: A(SaaS料金)、E(保険)、F(海外SaaS履歴・調査中)、
-  G(規制・パブコメ・調査中)
+- 第1層: A(SaaS料金)、E(保険)、F(海外SaaS changelog/pricing履歴、
+  2026-07-18収集開始)、G(規制・パブコメ・審議会/報道発表、
+  2026-07-18収集開始)
 
 新テーマ追加時は、調査フェーズ→第1層登録を基本とし、
 いきなり第2層以上で開始しないこと。
+
+## 巡回対象選定の追加ルール
+
+- robots.txtが自ボット(HarvestEngineBot)以外の既知AIボット
+  (GPTBot/ClaudeBot/CCBot/anthropic-ai等)を名指しでDisallow
+  しているサイトは、自ボットが`User-agent: *`の対象外であっても、
+  原則としてactive化しない(2026-07-18、Canva調査時に追加)
