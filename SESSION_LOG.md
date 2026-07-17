@@ -63,3 +63,23 @@
   - Oracle VM(161.33.148.155)をOCI Console上で目視確認していない(CLI経由でのみ作成)。次回ノートPC作業時にConsoleで一覧確認しておくと安心
   - Oracle Always Free枠のAMD Microインスタンスは2台とも使用済み(141.147.175.174: auto_x-app、161.33.148.155: harvest-engine)。3台目が必要な場合はA1 Flex枠(在庫待ちが必要、fumotoppara-monitorが既にリトライ中)を検討することになる
 - 触ったファイル：`.gitignore`、`tokens/harvest_engine_vm_key`・`tokens/harvest_engine_vm_key.pub`(新規・gitignore対象で非公開)、Oracle VM(161.33.148.155)側のリポジトリ・DB・PM2設定一式(ローカルGit管理外)
+
+## harvest-engine-web-publish-01（2026-07-17）
+- 作業環境：ノートPC
+- やったこと：
+  - C公開ページ(src/web/)を`https://saas-status.com`として外部公開。方式はCloudflare Tunnel(既存Oracle VM 161.33.148.155上)、ドメインは`saas-status.com`(取得は人間側で実施済み)
+  - VM上に`harvest-engine-web`をPM2で追加デプロイ(既存schedulerと同一PM2デーモン、`--only`起動で無関係に影響させず)。cloudflaredをVMにインストールしsystemdサービス化、Tunnel作成・DNSのCNAME(Proxied)設定
+  - Tunnel作成ウィザードの「Route Traffic」画面を未入力のまま離脱するとingress設定が空のまま残り503になる不具合を踏み、DNSレコード削除→Published application routesから作り直しで解消(ブラウザ操作はユーザーがスクリーンショット共有→Claudeが次の操作を指示する形で進行)
+  - `src/web/server.ts`に`/robots.txt`・`/sitemap.xml`を追加(このサイト自身はAllow: /、harvest-engine本体が守るrobots.txtとは逆の立場)
+  - 外部疎通確認の過程で、VM側DBにtheme C 10ソース(サイボウズ4製品/cybozu.com/freee/SmartHR/マネーフォワードME・biz/Chatwork)自体が存在しないこと(DB移行scpのタイミングがsource追加より前だったため)、およびローカルで作成済みの81件のincidentsがVMに反映されていないことを発見
+  - VM sourcesに10件を`createMany`で追記(既存36件は無傷、IDもローカルと一致する37-46)。ローカルの81件incidentsを`sourceChangeId=NULL`でVMへ直接INSERT移植(rawスナップショットがVMに無くFK維持不可のため。DBファイル丸ごと置き換えはVM独自収集データの消失リスクがあるため不採用)
+  - 移植の過程で、以前のセッションで実装済みだったが未コミットのまま残っていた`source_url`列追加(schema変更+migration+各パーサー)を今回コミットし、VMに`prisma migrate deploy`+`prisma generate`+PM2再起動で反映
+  - HANDOFF.md更新
+- 完了した状態：
+  - `https://saas-status.com/`が正常稼働。トップ8社一覧・詳細ページ・robots.txt・sitemap.xml・出典リンク・免責文言すべて確認済み
+  - VM側`harvest-engine-web`はPM2管理下で`pm2 save`済み(既存schedulerと同じsystemd resurrect対象)、cloudflaredも`systemctl enable`済みで再起動後も自動起動
+  - VM側sources/incidentsがローカルと同期(46件/81件)。scheduler・web・cloudflared同時稼働でメモリ安定(空き300Mi台を維持、restart回数0、OOM無し)
+- 残課題・次にやること：
+  - 運用上の教訓として、ローカルでのDB変更(sources追加・スキーマ変更)はgit pushだけではVM側DBに反映されない。今後は変更のたびにVM側への反映(seed追記・migrate deploy)を都度確認する
+  - Cloudflare Zero Trustはアカウントの支払い方法登録が必須(Free枠のまま、$0/月)だった点は事前に共有済み
+- 触ったファイル：`src/web/server.ts`(robots/sitemap追加、BASE_URL修正)、`ecosystem.config.js`(harvest-engine-web追加)、`package.json`、`prisma/schema.prisma`、`prisma/migrations/20260717044709_add_incident_source_url/`、`src/adapters/incidents/{cybozuRss,hund,notion,parseChange,slack,types,zendesk}.ts`、`src/adapters/incidents/backfillSourceUrl.ts`(新規)、`HANDOFF.md`、Oracle VM側のsources/incidentsテーブル・PM2設定・cloudflared設定一式(ローカルGit管理外)
