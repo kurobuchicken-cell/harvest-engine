@@ -3,11 +3,28 @@ import { gunzipSync } from "node:zlib";
 import path from "node:path";
 import { prisma } from "../../lib/prisma";
 import { incidentAdapters } from "./registry";
+import type { ChangeModel } from "../../../generated/prisma/models/Change";
+import type { SourceModel } from "../../../generated/prisma/models/Source";
+import type { SnapshotModel } from "../../../generated/prisma/models/Snapshot";
 
 export interface ParseChangeResult {
   status: "parsed" | "failed" | "skipped";
   created: number;
   reason?: string;
+}
+
+// rss/htmlはraw本文がそのままテキスト(XML/HTML)であり、jsonのみパース対象が構造化データになる。
+// backfillSourceUrl.tsからも同じ読み込みロジックを再利用する
+export async function loadChangeRaw(
+  change: ChangeModel & { source: SourceModel; newSnapshot: SnapshotModel },
+): Promise<unknown> {
+  if (!change.newSnapshot.rawPath) {
+    throw new Error("newSnapshot.rawPath is empty");
+  }
+  const filePath = path.resolve(process.cwd(), change.newSnapshot.rawPath);
+  const compressed = await readFile(filePath);
+  const decompressed = gunzipSync(compressed).toString("utf-8");
+  return change.source.fetchType === "json" ? JSON.parse(decompressed) : decompressed;
 }
 
 // 1件のChangeをraw snapshotから読み込み、companyNameに対応するアダプタでincidentsへ正規化する。
@@ -27,16 +44,7 @@ export async function parseChangeIncidents(changeId: number): Promise<ParseChang
   }
 
   try {
-    if (!change.newSnapshot.rawPath) {
-      throw new Error("newSnapshot.rawPath is empty");
-    }
-
-    const filePath = path.resolve(process.cwd(), change.newSnapshot.rawPath);
-    const compressed = await readFile(filePath);
-    const decompressed = gunzipSync(compressed).toString("utf-8");
-    // rss/htmlはraw本文がそのままテキスト(XML/HTML)であり、jsonのみパース対象が構造化データになる
-    const raw = change.source.fetchType === "json" ? JSON.parse(decompressed) : decompressed;
-
+    const raw = await loadChangeRaw(change);
     const parsedIncidents = await adapter(raw);
 
     let created = 0;
@@ -53,6 +61,7 @@ export async function parseChangeIncidents(changeId: number): Promise<ParseChang
           severity: incident.severity,
           startedAt: incident.startedAt,
           resolvedAt: incident.resolvedAt,
+          sourceUrl: incident.sourceUrl,
           sourceChangeId: change.id,
         },
       });

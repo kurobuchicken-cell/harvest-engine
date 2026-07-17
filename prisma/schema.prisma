@@ -73,6 +73,7 @@ model Incident {
   resolvedAt     DateTime? @map("resolved_at")
   severity       String?
   title          String?
+  sourceUrl      String?   @map("source_url")
   sourceChangeId Int?      @map("source_change_id")
   sourceChange   Change?   @relation(fields: [sourceChangeId], references: [id])
 

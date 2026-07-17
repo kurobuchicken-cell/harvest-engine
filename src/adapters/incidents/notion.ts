@@ -8,6 +8,7 @@ interface NotionIncidentRaw {
   created_at?: string;
   started_at?: string;
   resolved_at?: string;
+  shortlink?: string;
 }
 
 interface NotionStatusResponse {
@@ -45,6 +46,7 @@ export const parseNotionIncidents: IncidentAdapter = (raw) => {
       severity: incident.impact ?? incident.status ?? null,
       startedAt: new Date(startedRaw),
       resolvedAt: incident.resolved_at ? new Date(incident.resolved_at) : null,
+      sourceUrl: incident.shortlink ?? null,
     };
   });
 };

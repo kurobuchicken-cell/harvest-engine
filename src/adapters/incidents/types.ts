@@ -3,6 +3,7 @@ export interface ParsedIncident {
   severity: string | null;
   startedAt: Date;
   resolvedAt: Date | null;
+  sourceUrl: string | null;
 }
 
 // レスポンス形状が想定と異なる場合はErrorをthrowする(呼び出し側でparseStatus='failed'にする)

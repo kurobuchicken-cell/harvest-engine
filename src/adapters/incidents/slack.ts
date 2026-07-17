@@ -9,6 +9,7 @@ interface SlackIncidentRaw {
   created_at?: string;
   date_updated?: string;
   updated_at?: string;
+  shortlink?: string;
 }
 
 interface SlackStatusResponse {
@@ -42,6 +43,7 @@ export const parseSlackIncidents: IncidentAdapter = (raw) => {
       severity: status,
       startedAt: new Date(startedRaw),
       resolvedAt: status === "resolved" && updatedRaw ? new Date(updatedRaw) : null,
+      sourceUrl: incident.shortlink ?? null,
     };
   });
 };

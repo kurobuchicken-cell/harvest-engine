@@ -43,6 +43,7 @@ export const parseCybozuRssIncidents: IncidentAdapter = async (raw) => {
       severity,
       startedAt: pubDate,
       resolvedAt: resolved ? pubDate : null,
+      sourceUrl: item.link ?? null,
     };
   });
 };

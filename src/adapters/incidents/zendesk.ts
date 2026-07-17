@@ -10,6 +10,7 @@ interface ZendeskAttributes {
   updated_at?: string;
   resolvedAt?: string;
   resolved_at?: string;
+  shortlink?: string;
 }
 
 interface ZendeskDataItem {
@@ -50,6 +51,7 @@ export const parseZendeskIncidents: IncidentAdapter = (raw) => {
       severity: status,
       startedAt: new Date(startedRaw),
       resolvedAt: resolvedRaw ? new Date(resolvedRaw) : null,
+      sourceUrl: attrs.shortlink ?? null,
     };
   });
 };
