@@ -1,6 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import type { MessageParam } from "@anthropic-ai/sdk/resources/messages";
-import { buildSystemPrompt, extractText, runUntilComplete } from "./councilCore";
+import { buildSystemPrompt, extractJsonBlock, extractText, runUntilComplete } from "./councilCore";
 import { computeUsageCostUsd } from "./pricing";
 import { appendExpense } from "../lib/ledger";
 import type { Candidate, CouncilResult, CouncilScoreItem, CouncilVerdictLabel } from "./types";
@@ -37,20 +37,19 @@ const ROUND2_INSTRUCTION = `Round2です。Round1の各役の発言を踏まえ�
 }
 \`\`\``;
 
-function parseVerdictJson(text: string): {
+interface VerdictJson {
   verdict: CouncilVerdictLabel;
   scoreTable: CouncilScoreItem[];
   auditorComment: string;
-} | null {
-  const match = text.match(/```json\s*([\s\S]*?)\s*```/);
-  if (!match) return null;
-  try {
-    const parsed = JSON.parse(match[1]);
-    if (!parsed.verdict || !Array.isArray(parsed.scoreTable) || !parsed.auditorComment) return null;
-    return parsed;
-  } catch {
-    return null;
-  }
+}
+
+function isVerdictJson(parsed: unknown): parsed is VerdictJson {
+  const p = parsed as Partial<VerdictJson> | null;
+  return !!p && !!p.verdict && Array.isArray(p.scoreTable) && !!p.auditorComment;
+}
+
+function parseVerdictJson(text: string): VerdictJson | null {
+  return extractJsonBlock(text, isVerdictJson);
 }
 
 export async function runCouncilForTopic(candidate: Candidate): Promise<CouncilResult> {

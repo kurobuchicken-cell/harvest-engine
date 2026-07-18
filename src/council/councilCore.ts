@@ -39,6 +39,28 @@ ${governance}
 推測ではなくweb_searchで検索した事実に基づいて発言してください。`;
 }
 
+// LLMが```json ... ```ブロックの末尾に余分な閉じ括弧等を出力する既知の失敗パターンに対応する。
+// 素のJSON.parseが失敗した場合、末尾から1文字ずつ削って再パースを試みる(最大20文字)。
+// 「有効なJSONの後に余分な非空白文字がある」系のエラーはこれで大半が復旧できる。
+// 復旧してもなお失敗する場合はnullを返し、呼び出し側の安全側フォールバックに委ねる
+export function extractJsonBlock<T>(text: string, validate: (parsed: unknown) => parsed is T): T | null {
+  const match = text.match(/```json\s*([\s\S]*?)\s*```/);
+  if (!match) return null;
+
+  const raw = match[1];
+  const MAX_TRIM = 20;
+  for (let trim = 0; trim <= MAX_TRIM && trim < raw.length; trim++) {
+    const candidate = trim === 0 ? raw : raw.slice(0, -trim);
+    try {
+      const parsed = JSON.parse(candidate);
+      if (validate(parsed)) return parsed;
+    } catch {
+      continue;
+    }
+  }
+  return null;
+}
+
 export function extractText(content: ContentBlockParam[] | Anthropic.ContentBlock[]): string {
   return content
     .filter((block): block is Anthropic.TextBlock => block.type === "text")

@@ -1,6 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import type { MessageParam } from "@anthropic-ai/sdk/resources/messages";
-import { buildSystemPrompt, extractText, runUntilComplete } from "./councilCore";
+import { buildSystemPrompt, extractJsonBlock, extractText, runUntilComplete } from "./councilCore";
 import { computeUsageCostUsd } from "./pricing";
 import { appendExpense } from "../lib/ledger";
 import type { Candidate, CandidateItem, SelectionResult } from "./types";
@@ -56,19 +56,21 @@ const SELECTION_ROUND2_INSTRUCTION = `Round2です。Round1で各役が挙げた
 }
 \`\`\``;
 
-function parseSelectionJson(text: string): { candidates: Candidate[]; auditorComment: string } | null {
-  const match = text.match(/```json\s*([\s\S]*?)\s*```/);
-  if (!match) return null;
-  try {
-    const parsed = JSON.parse(match[1]);
-    if (!Array.isArray(parsed.candidates) || !parsed.auditorComment) return null;
-    for (const c of parsed.candidates) {
-      if (!c.topic || !c.rationale || !Array.isArray(c.sourceUrls) || !c.excerpt) return null;
-    }
-    return parsed;
-  } catch {
-    return null;
-  }
+interface SelectionJson {
+  candidates: Candidate[];
+  auditorComment: string;
+}
+
+function isSelectionJson(parsed: unknown): parsed is SelectionJson {
+  const p = parsed as Partial<SelectionJson> | null;
+  if (!p || !Array.isArray(p.candidates) || !p.auditorComment) return false;
+  return p.candidates.every(
+    (c) => !!c.topic && !!c.rationale && Array.isArray(c.sourceUrls) && !!c.excerpt,
+  );
+}
+
+function parseSelectionJson(text: string): SelectionJson | null {
+  return extractJsonBlock(text, isSelectionJson);
 }
 
 // 頻度カウントによる機械的な絞り込みの代わりに、評議会自身に生データを見せて
