@@ -106,3 +106,53 @@
   - F/Gバックログ11件(URL判明済み、Puppeteer未対応等が理由)は`HANDOFF.md`に一覧化済み
 - 触ったファイル：`prisma/seed.ts`(F/G追記)、`CLAUDE.md`(巡回対象選定ルール追加)、
   `HANDOFF.md`、ローカルDB(`dev.db`、Git管理外)のsourcesテーブル
+
+## harvest-engine-vm-sync-and-governance-01（2026-07-18）
+- 作業環境：ノートPC
+- やったこと：
+  - 前セッションで積み残しだったF/G 39件のVM側DB反映をSSH経由で実施(ローカルと同じ
+    `createMany`ワンオフスクリプトをVMに転送・実行)。作業中にローカルdev.dbとVMで
+    住友生命(id=4)のactiveフラグが食い違っていることを発見(今回作業とは無関係の既存の
+    不整合、対応は保留)
+  - 経営体制の文書化として`GOVERNANCE.md`(経営憲法: 事業目的・組織体制・オーナー/GM
+    権限分界・3層+出口Lite運営規律・監査役のアンカリング監査・法務ゲート・2万円投下上限・
+    撤退ライン)と`BUDGET.md`(年間予算20万円・費目別配分・支出台帳雛形・PL計画3シナリオ)を
+    新設。`CLAUDE.md`には参照行のみ追記
+  - `CLAUDE.md`の「テーマ運営の原則」を詳細版に更新し、GOVERNANCE.mdの概要セクションとの
+    概要/詳細の関係を明記。第2.5層(出口Lite)・2→2.5→3の昇格パス・2万円上限ルールを追加
+- 完了した状態：
+  - VM側sources合計85件(active52/inactive33)。ローカル(active53)との差分1件は住友生命の
+    既知の不整合のみ
+  - GOVERNANCE.md・BUDGET.mdはリポジトリ直下に新設済み、コミット・push済み
+- 残課題・次にやること：
+  - 住友生命(id=4)のローカル/VM不整合は未解消のまま(次回ノートPC作業時に確認)
+  - BUDGET.mdの支出台帳は初期状態(支出ゼロ)のまま。実際の支出発生時に追記する運用
+- 触ったファイル：`GOVERNANCE.md`(新規)、`BUDGET.md`(新規)、`CLAUDE.md`(参照行・
+  テーマ運営の原則更新)、`HANDOFF.md`、VM側(`/home/ubuntu/apps/harvest-engine`)のsources
+  テーブル
+
+## harvest-engine-themeH-onboard-01（2026-07-18）
+- 作業環境：ノートPC
+- やったこと：
+  - 新テーマH(ビジネスヒントのメタ・ハーヴェスト、出口なし・60日判定なしの純粋な第1層
+    収集テーマ)を新設。並列サブエージェント2本でProduct Hunt/Hacker News/Indie Hackers/
+    はてなブックマーク/Redditを調査し、Indie HackersとRedditは本番`politeFetch`で追加の
+    実機再検証を実施(Indie HackersはFirebase設定JSONのみでSSR本文なしと判明、Redditは
+    `Disallow: /`のサイト全体禁止を実機確認)
+  - e-GovパブコメはテーマGで登録済みのRSSをそのまま流用し、H用の重複登録を回避
+  - 承認を得てactive5件(Hacker News Show HN/Ask HN、Product Huntフィード、はてなブックマーク
+    テクノロジー/世の中)をsourcesへ`createMany`で追記登録(ローカル・VM双方、fetchIntervalMinは
+    F/Gと同じジッター方式)。Indie Hackers・Reddit3件はsources未登録のままHANDOFF.mdへ
+    バックログ記録
+  - VM側で実際にスケジューラがF/G/H active合計34件を巡回し、snapshotのhttpStatusが全件200で
+    あることを確認。登録直後のメモリ実測(空き213Mi/available367Mi)もHANDOFF.mdに記録
+- 完了した状態：
+  - sources合計90件(ローカルactive58/inactive32、VM active57/inactive33)。F/G/H合計active
+    34件はいずれも実機巡回でhttpStatus 200を確認済み
+  - VMメモリは200Miの警戒ラインを下回っておらず、2台目VM・増強は現時点で不要と判断
+- 残課題・次にやること：
+  - Hバックログ4件(Indie Hackers、Reddit3件)は`HANDOFF.md`に記録済み。状況が変わった場合の
+    み再調査
+  - 住友生命(id=4)のローカル/VM不整合は引き続き未解消
+- 触ったファイル：`prisma/seed.ts`(H追記)、`HANDOFF.md`、ローカルDB(`dev.db`、Git管理外)・
+  VM側(`/home/ubuntu/apps/harvest-engine`)のsourcesテーブル

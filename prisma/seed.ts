@@ -702,6 +702,51 @@ const sources: SourceSeed[] = [
     active: false,
     note: "robots.txt自体が403、本番UA(politeFetch)での実地fetchも403継続。WAF拒否と判断しinactive",
   },
+
+  // ── テーマH: ビジネスヒントのメタ・ハーヴェスト 調査分(2026-07-18調査・登録) ──
+  {
+    companyName: "Hacker News Show HN",
+    insuranceType: "theme_h",
+    url: "https://hacker-news.firebaseio.com/v0/showstories.json",
+    fetchType: "json",
+    active: true,
+    fetchIntervalMin: 1440,
+    note: "公式Firebase API。robots.txt許可、規約上の商用制限記載なし、明示レート制限なし",
+  },
+  {
+    companyName: "Hacker News Ask HN",
+    insuranceType: "theme_h",
+    url: "https://hacker-news.firebaseio.com/v0/askstories.json",
+    fetchType: "json",
+    active: true,
+    fetchIntervalMin: 1451,
+    note: "公式Firebase API。robots.txt許可、規約上の商用制限記載なし、明示レート制限なし",
+  },
+  {
+    companyName: "Product Hunt フィード",
+    insuranceType: "theme_h",
+    url: "https://www.producthunt.com/feed",
+    fetchType: "rss",
+    active: true,
+    fetchIntervalMin: 1462,
+    note: "公式Atomフィード。GraphQL API(v2)は規約上商用利用不可(要問合せ)のため見送り、フィードで代替",
+  },
+  {
+    companyName: "はてなブックマーク テクノロジー",
+    insuranceType: "theme_h",
+    url: "https://b.hatena.ne.jp/hotentry/it.rss",
+    fetchType: "rss",
+    active: true,
+    fetchIntervalMin: 1473,
+  },
+  {
+    companyName: "はてなブックマーク 世の中",
+    insuranceType: "theme_h",
+    url: "https://b.hatena.ne.jp/hotentry/social.rss",
+    fetchType: "rss",
+    active: true,
+    fetchIntervalMin: 1484,
+  },
 ];
 
 async function main() {
