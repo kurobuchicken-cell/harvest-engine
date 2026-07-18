@@ -259,3 +259,22 @@
   `src/councilScheduler.ts`(新規)、`ecosystem.config.js`、`package.json`、`RULES.md`・
   `DECISIONS.md`(新規)、`CLAUDE.md`、`GOVERNANCE.md`・`BUDGET.md`、`HANDOFF.md`、
   `data/ledger.json`(新規)、`council-output/`、VM側`.env`・sources・PM2設定
+
+## harvest-engine-ops-and-docs-01（2026-07-18）
+- 作業環境：ノートPC
+- やったこと：
+  - 評議会採択2テーマ(AEO/GEO最適化・AIエージェント運用ガバナンス)を実地調査し、テーマI(AI Incident Database)を第1層登録。ローカル・VMのsources113件を完全一致させた
+  - VM側`.env`の`DATABASE_URL`破損(141文字・クォート始まり)を発見・修復。バックアップ取得後にDATABASE_URL行のみ安全に置換、council-schedulerをpm2 restartして復旧確認
+  - 経理部の「監査役週次バッチ」を実装しPM2に常駐化(`harvest-engine-audit-scheduler`、毎週月曜10:00 JST)。Slack通知も追加し、実際の配信をオーナーに確認していただいた。実装中にバグ3件(週次実行ログの取り違え、mainの無条件実行、dotenv未import)を発見・修正
+  - 法務部の「ゲート化」を実装(`npm run legal:record`/`legal:check`)。既存テーマCの一次審査(robots.txt/ToS/商標)をGMが実施し出口Lite要件PASSを確認、弁護士相談のみオーナー対応待ちとして残した
+  - `会社説明資料.html`を新規作成(中学生でも分かる言葉での会社説明)。CLAUDE.mdに更新ルールを登録
+- 完了した状態：
+  - ローカル・VMのsources合計113件(active74/inactive39)で完全一致
+  - PM2はVM上で4プロセス(scheduler/web/council-scheduler/audit-scheduler)体制、pm2 save済み
+  - `data/legalChecklist.json`にテーマCの4項目(robotsTxt/tos/disclaimer/trademark)を記録、`npm run legal:check -- C 2.5`はPASS
+  - HANDOFF.mdは本セッションの変更をすべて反映済み
+- 残課題・次にやること：
+  - テーマCのフル出口(第3層)昇格には弁護士スポット相談のみ残っている(オーナー対応)
+  - 次フェーズ: ローカル/VMのledger合算、STARTUP DB運用具体化、Substackキュレーション
+  - HANDOFF.md「新たに判明した課題・次アクション」参照
+- 触ったファイル：`prisma/seed.ts`、`CLAUDE.md`、`HANDOFF.md`、`src/auditReport.ts`・`src/auditNotify.ts`・`src/auditScheduler.ts`・`src/lib/slackWebhook.ts`（新規）、`src/council/notify.ts`、`src/lib/legalChecklist.ts`・`src/legalRecord.ts`・`src/legalCheck.ts`（新規）、`data/legalChecklist.json`（新規）、`会社説明資料.html`（新規）、`ecosystem.config.js`、`package.json`、VM側`.env`・PM2設定・sourcesテーブル
