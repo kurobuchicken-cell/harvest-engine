@@ -1,0 +1,32 @@
+{
+  "C": {
+    "themeId": "C",
+    "themeName": "SaaS障害",
+    "robotsTxt": {
+      "done": false,
+      "confirmedAt": null,
+      "note": null
+    },
+    "tos": {
+      "done": false,
+      "confirmedAt": null,
+      "note": null
+    },
+    "disclaimer": {
+      "done": true,
+      "confirmedAt": "2026-07-18T14:56:53.999Z",
+      "note": "2026-07-17のharvest-engine-web-publish-01セッションでsaas-status.com公開時に確認済み(SESSION_LOG.md記載: 出典リンク・免責文言すべて確認済み)。ToS確認・商標調査・robots.txt(対象サイト側)・弁護士相談は本セッション時点で記録なし"
+    },
+    "trademark": {
+      "done": false,
+      "confirmedAt": null,
+      "note": null
+    },
+    "lawyer": {
+      "done": false,
+      "confirmedAt": null,
+      "note": null
+    },
+    "updatedAt": "2026-07-18T14:56:53.999Z"
+  }
+}

@@ -17,7 +17,9 @@
     "x:poll": "tsx src/adapters/xKeywords.ts",
     "ledger:report": "tsx src/ledgerReport.ts",
     "audit:weekly": "tsx src/auditReport.ts",
-    "audit:schedule": "tsx src/auditScheduler.ts"
+    "audit:schedule": "tsx src/auditScheduler.ts",
+    "legal:record": "tsx src/legalRecord.ts",
+    "legal:check": "tsx src/legalCheck.ts"
   },
   "keywords": [],
   "author": "",
