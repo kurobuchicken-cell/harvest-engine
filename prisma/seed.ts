@@ -43,7 +43,8 @@ const sources: SourceSeed[] = [
     insuranceType: "life",
     url: "https://www.sumitomolife.co.jp/news/newsrelease/",
     fetchType: "html",
-    active: true,
+    active: false,
+    note: "Oracle VM(161.33.148.155、別IP)からも403を確認。IPブロックではなく恒常的な拒否と判断しinactiveへ変更(2026-07-18、harvest-engine-vm-migrate-01セッションでの発見をローカルにも反映)",
   },
   {
     companyName: "かんぽ生命",
@@ -896,6 +897,17 @@ const sources: SourceSeed[] = [
     active: true,
     fetchIntervalMin: 1638,
     note: "依頼時の候補(itunes.apple.com/us/rss/*)はrobots.txtが`/*/rss/*`を明示的にDisallowしており本番politeFetchでも遮断されたため、Apple公式の後継API(rss.marketingtools.apple.com、robots.txtは実質無制限)に切替。本番politeFetchで200・JSON・50件(Netflix Game Controller/ChatGPT/TikTok Pro等)を確認。後継APIのチャート種別はtop-free/top-paidのみで「新着(newapplications相当)」は提供されておらず代替不可(Apple仕様変更が原因、オーナー確認済みで見送り)",
+  },
+
+  // ── テーマI: AIエージェント運用ガバナンス・事故制御(自動評議会採択、2026-07-18調査・登録) ──
+  {
+    companyName: "AI Incident Database",
+    insuranceType: "theme_i",
+    url: "https://incidentdatabase.ai/rss.xml",
+    fetchType: "rss",
+    active: true,
+    fetchIntervalMin: 1447,
+    note: "評議会採択テーマ「AIエージェント運用ガバナンス・事故制御」の調査(2026-07-18)で発見。robots.txt自体が存在せず(404、e-Govと同型で制限なし扱い)、/rss.xmlがRSS 2.0で正常応答(直近ビルド2026-07-17、日次規模で更新)。実際のAIインシデントを構造化収集する第三者DB。テーマ内の他候補(Rackp/HeimWall/Termaxa)は初期段階の単一プロダクトページで継続監視に値しないため見送り。テーマ「AIエージェント可読性・AEO/GEO最適化」(評議会同時採択)は新規sources登録なし(既存テーマH(Show HN/Product Hunt)の監視で新規ツールは捕捉可能と判断、詳細はHANDOFF.md参照)",
   },
 ];
 
