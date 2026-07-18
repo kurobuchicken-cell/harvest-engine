@@ -15,7 +15,8 @@
     "council:run": "tsx src/council/run.ts",
     "council:schedule": "tsx src/councilScheduler.ts",
     "x:poll": "tsx src/adapters/xKeywords.ts",
-    "ledger:report": "tsx src/ledgerReport.ts"
+    "ledger:report": "tsx src/ledgerReport.ts",
+    "audit:weekly": "tsx src/auditReport.ts"
   },
   "keywords": [],
   "author": "",
