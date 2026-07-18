@@ -45,7 +45,11 @@ function buildBlocks(result: CouncilResult, mentionUserId: string | undefined): 
       elements: [
         {
           type: "mrkdwn",
-          text: `見積コスト: 約${result.estimatedCostJpy.toFixed(1)}円 / 生成日時: ${result.generatedAt}`,
+          text: `見積コスト: 約${
+            result.estimatedCostJpy !== null
+              ? `${result.estimatedCostJpy.toFixed(1)}円`
+              : `$${result.estimatedCostUsd.toFixed(3)}(円換算未確定)`
+          } / 生成日時: ${result.generatedAt}`,
         },
       ],
     },

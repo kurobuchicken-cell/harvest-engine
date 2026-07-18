@@ -4,47 +4,14 @@ import path from "node:path";
 import Parser from "rss-parser";
 import { prisma } from "../lib/prisma";
 import { politeFetch } from "../lib/politeness";
-import type { Candidate, CandidateItem } from "./types";
+import type { CandidateItem } from "./types";
 
 const WINDOW_DAYS = 7;
-const MAX_CANDIDATES = 10;
+// トークン予算を守るための技術的な上限(内容の良し悪しでの絞り込みではない)。
+// どのアイテムが有望かの判断は一切ここでは行わず、すべて選定評議会(selectCandidates.ts)に委ねる
+const MAX_ITEMS = 500;
+
 const rssParser = new Parser();
-
-const CJK_REGEX = /[぀-ヿ㐀-鿿]/;
-
-const EN_STOPWORDS = new Set([
-  "the", "a", "an", "of", "to", "in", "on", "for", "and", "or", "is", "are",
-  "was", "were", "with", "this", "that", "it", "as", "at", "by", "from",
-  "be", "how", "what", "why", "your", "you", "we", "i", "not", "but", "new",
-  "show", "ask", "hn", "will", "can", "our", "their", "has", "have", "into",
-]);
-
-// 形態素解析器を使わない軽量n-gram法のため、意味の薄い頻出2文字組を最小限だけ除外する
-const JA_STOP_BIGRAMS = new Set([
-  "した", "して", "です", "ます", "こと", "もの", "ため", "など", "これ",
-  "それ", "この", "その", "ある", "いる", "なる", "れる", "られ", "いう",
-  "する", "から", "にて", "また", "とは",
-]);
-
-function isCjk(text: string): boolean {
-  return CJK_REGEX.test(text);
-}
-
-function extractTerms(title: string): string[] {
-  if (isCjk(title)) {
-    const cleaned = title.replace(/[\s\p{P}\p{S}]/gu, "");
-    const bigrams: string[] = [];
-    for (let i = 0; i < cleaned.length - 1; i++) {
-      const bg = cleaned.slice(i, i + 2);
-      if (!JA_STOP_BIGRAMS.has(bg) && !/^[0-9]+$/.test(bg)) bigrams.push(bg);
-    }
-    return bigrams;
-  }
-  return title
-    .toLowerCase()
-    .split(/[^a-z0-9]+/)
-    .filter((w) => w.length >= 3 && !EN_STOPWORDS.has(w));
-}
 
 async function readRawGz(rawPath: string): Promise<Buffer> {
   const absPath = path.resolve(process.cwd(), rawPath);
@@ -57,7 +24,12 @@ async function itemsFromRss(raw: Buffer, sourceCompanyName: string): Promise<Can
   const feed = await rssParser.parseString(xml);
   return (feed.items ?? [])
     .filter((item) => item.title && item.link)
-    .map((item) => ({ title: item.title!, url: item.link!, sourceCompanyName }));
+    .map((item) => ({
+      title: item.title!,
+      url: item.link!,
+      sourceCompanyName,
+      publishedAt: item.isoDate ?? item.pubDate,
+    }));
 }
 
 async function itemsFromHnIdList(raw: Buffer, sourceCompanyName: string): Promise<CandidateItem[]> {
@@ -70,7 +42,8 @@ async function itemsFromHnIdList(raw: Buffer, sourceCompanyName: string): Promis
       const parsed = JSON.parse(result.body.toString("utf-8"));
       if (!parsed?.title) continue;
       const url = parsed.url ?? `https://news.ycombinator.com/item?id=${id}`;
-      items.push({ title: parsed.title, url, sourceCompanyName });
+      const publishedAt = parsed.time ? new Date(parsed.time * 1000).toISOString() : undefined;
+      items.push({ title: parsed.title, url, sourceCompanyName, publishedAt });
     } catch {
       // 取得できなかった個別アイテムはスキップ(軽量処理のため厳密なエラー処理はしない)
     }
@@ -78,7 +51,9 @@ async function itemsFromHnIdList(raw: Buffer, sourceCompanyName: string): Promis
   return items;
 }
 
-async function collectRecentItems(): Promise<CandidateItem[]> {
+// テーマHソースの直近7日分の変化から、重複を除いた生アイテム一覧を集める。
+// キーワードの絞り込み・優先順位づけは一切行わない(それは選定評議会の仕事)
+export async function collectRecentItems(): Promise<CandidateItem[]> {
   const since = new Date(Date.now() - WINDOW_DAYS * 24 * 60 * 60 * 1000);
 
   const changes = await prisma.change.findMany({
@@ -118,30 +93,6 @@ async function collectRecentItems(): Promise<CandidateItem[]> {
     }
   }
 
-  return [...itemsByUrl.values()];
-}
-
-export async function extractCandidates(): Promise<Candidate[]> {
-  const items = await collectRecentItems();
-
-  const termIndex = new Map<string, Map<string, CandidateItem>>();
-  for (const item of items) {
-    const terms = new Set(extractTerms(item.title));
-    for (const term of terms) {
-      if (!termIndex.has(term)) termIndex.set(term, new Map());
-      termIndex.get(term)!.set(item.url, item);
-    }
-  }
-
-  const ranked = [...termIndex.entries()]
-    .map(([term, matchedItems]) => ({ term, items: [...matchedItems.values()] }))
-    .sort((a, b) => b.items.length - a.items.length)
-    .slice(0, MAX_CANDIDATES);
-
-  return ranked.map(({ term, items: matchedItems }) => ({
-    topic: term,
-    score: matchedItems.length,
-    sourceUrls: matchedItems.slice(0, 3).map((i) => i.url),
-    excerpt: matchedItems.slice(0, 3).map((i) => i.title).join(" / "),
-  }));
+  const deduped = [...itemsByUrl.values()];
+  return deduped.length > MAX_ITEMS ? deduped.slice(0, MAX_ITEMS) : deduped;
 }
