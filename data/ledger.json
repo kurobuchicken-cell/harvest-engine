@@ -1,0 +1,44 @@
+[
+  {
+    "category": "api",
+    "service": "perplexity",
+    "amountUsd": 220,
+    "amountJpy": 33000,
+    "description": "Perplexity Pro年間契約(年額220ドル、1ドル150円換算の概算で当時33,000円として計上済み。本エントリのfxRateは記帳日時点の参考値であり、この換算自体には使用していない)",
+    "occurredAt": "2026-07-17T00:00:00.000Z",
+    "id": "02b35887-68ad-4834-b639-27ec3ac4c6f7",
+    "fxRate": 162.400016,
+    "fxRateFetchedAt": "2026-07-18T07:55:09.510Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-07-18T07:55:09.686Z"
+  },
+  {
+    "category": "api",
+    "service": "x-api",
+    "amountUsd": 10,
+    "amountJpy": 1620,
+    "description": "X API Pay-per-useクレジット購入(テーマHキーワード監視用)。2026-07-17時点の実勢レート約162円/ドルで確定済み(当初169円/ドルとしていた誤記帳をBUDGET.mdで訂正済み)",
+    "occurredAt": "2026-07-17T00:00:00.000Z",
+    "id": "6adc10af-6eac-4f0e-aadf-0265b070b27a",
+    "fxRate": 162.400016,
+    "fxRateFetchedAt": "2026-07-18T07:55:09.690Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-07-18T07:55:09.709Z"
+  },
+  {
+    "category": "api",
+    "service": "x-api",
+    "amountUsd": 0.6,
+    "amountJpy": 97,
+    "description": "X API疎通確認テスト(2026-07-18、6キーワード×20件=120件読み取り、$0.005/件で概算計上)。本来はxApi.tsの自動記帳対象だが、記帳機能導入前に実行済みだったため事後登録",
+    "occurredAt": "2026-07-18T07:22:04.516Z",
+    "id": "0cbe4b74-1bd6-47c2-84a4-9b665ccb3084",
+    "fxRate": 162.400016,
+    "fxRateFetchedAt": "2026-07-18T07:55:09.712Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-07-18T07:55:09.729Z"
+  }
+]

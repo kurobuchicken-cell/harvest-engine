@@ -13,7 +13,8 @@
     "incidents:backfill": "tsx src/adapters/incidents/backfill.ts",
     "incidents:backfill-source-url": "tsx src/adapters/incidents/backfillSourceUrl.ts",
     "council:run": "tsx src/council/run.ts",
-    "x:poll": "tsx src/adapters/xKeywords.ts"
+    "x:poll": "tsx src/adapters/xKeywords.ts",
+    "ledger:report": "tsx src/ledgerReport.ts"
   },
   "keywords": [],
   "author": "",
