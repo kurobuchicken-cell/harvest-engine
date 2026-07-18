@@ -1,5 +1,4 @@
-import https from "node:https";
-import { URL } from "node:url";
+import { postSlackJson } from "../lib/slackWebhook";
 import type { CouncilResult, CouncilVerdictLabel } from "./types";
 
 const VERDICT_EMOJI: Record<CouncilVerdictLabel, string> = {
@@ -56,39 +55,6 @@ function buildBlocks(result: CouncilResult, mentionUserId: string | undefined): 
   ];
 }
 
-async function postJson(webhookUrl: string, payload: unknown, attempt = 1): Promise<void> {
-  const parsed = new URL(webhookUrl);
-  const body = Buffer.from(JSON.stringify(payload));
-
-  try {
-    await new Promise<void>((resolve, reject) => {
-      const req = https.request(
-        {
-          hostname: parsed.hostname,
-          path: parsed.pathname + parsed.search,
-          method: "POST",
-          headers: { "Content-Type": "application/json", "Content-Length": body.length },
-        },
-        (res) => {
-          let data = "";
-          res.on("data", (chunk) => (data += chunk));
-          res.on("end", () => {
-            if (res.statusCode === 200) resolve();
-            else reject(new Error(`Slack HTTP ${res.statusCode}: ${data}`));
-          });
-        },
-      );
-      req.on("error", reject);
-      req.write(body);
-      req.end();
-    });
-  } catch (err) {
-    if (attempt >= 3) throw err;
-    await new Promise((r) => setTimeout(r, 1000 * attempt));
-    return postJson(webhookUrl, payload, attempt + 1);
-  }
-}
-
 export async function notifyCouncilVerdict(result: CouncilResult): Promise<void> {
   const webhookUrl = process.env.SLACK_WEBHOOK_URL;
   if (!webhookUrl) {
@@ -101,7 +67,7 @@ export async function notifyCouncilVerdict(result: CouncilResult): Promise<void>
   }
   const mention = mentionUserId ? `<@${mentionUserId}> ` : "";
 
-  await postJson(webhookUrl, {
+  await postSlackJson(webhookUrl, {
     // textはプッシュ通知プレビュー用のフォールバック。blocks内にもメンションを含める
     text: `${mention}評議会裁定: ${result.topic}(${result.verdict})`,
     blocks: buildBlocks(result, mentionUserId),

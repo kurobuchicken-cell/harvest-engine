@@ -53,5 +53,23 @@ module.exports = {
       error_file: "logs/council-scheduler-error.log",
       time: true,
     },
+    {
+      name: "harvest-engine-audit-scheduler",
+      // 毎週月曜10:00 JST(=01:00 UTC、council-schedulerの1時間後)に監査役の週次バッチを実行する。
+      // 記帳失敗ログ・為替未解決エントリ・評議会週次実行とledgerの突合を行いSlackへ通知する
+      script: "node_modules/tsx/dist/cli.mjs",
+      args: "src/auditScheduler.ts",
+      cwd: __dirname,
+      autorestart: true,
+      max_restarts: 10,
+      min_uptime: "30s",
+      restart_delay: 5000,
+      env: {
+        NODE_ENV: "production",
+      },
+      out_file: "logs/audit-scheduler-out.log",
+      error_file: "logs/audit-scheduler-error.log",
+      time: true,
+    },
   ],
 };
