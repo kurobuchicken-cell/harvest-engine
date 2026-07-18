@@ -156,3 +156,39 @@
   - 住友生命(id=4)のローカル/VM不整合は引き続き未解消
 - 触ったファイル：`prisma/seed.ts`(H追記)、`HANDOFF.md`、ローカルDB(`dev.db`、Git管理外)・
   VM側(`/home/ubuntu/apps/harvest-engine`)のsourcesテーブル
+
+## harvest-engine-council-pipeline-01（2026-07-18）
+- 作業環境：ノートPC
+- やったこと：
+  - テーマ量産構想②段階「自動評議会パイプライン」を`src/council/`に新規実装(候補抽出→
+    評議会裁定(Claude Opus 4.8+web_search)→Slackカード通知→採択テーマの調査プロンプト
+    自動生成)。手動実行(`npm run council:run`)とcron実行が同じ`runCouncilPipeline()`を
+    呼ぶ構造にし、将来の完全自動化に備えた
+  - GOVERNANCE.mdをシステムプロンプトに埋め込み、アンカリング防止指示を明文で固定。
+    Slack承認のインタラクティブ検知は追加インフラが必要なためスコープ外とし、評議会が
+    「採択」と裁定したテーマは自動的にプロンプト生成まで行う方式で確定(ユーザー承認済み)
+  - `extractCandidates.ts`はローカルで実際にテーマH5ソースを巡回し、実データ(rawスナップ
+    ショットのgzファイル)から日本語2-3gram/英語単語分割の軽量頻度分析で候補抽出できることを
+    確認("agent"score20等、意味のある候補を抽出)
+  - `@anthropic-ai/sdk`を新規追加(唯一の新規依存)。`.env`に`ANTHROPIC_API_KEY`・
+    `SLACK_WEBHOOK_URL`のプレースホルダを追加
+  - オーナーが`.env`にAPIキー・Webhook URLを入力後、`npm run council:run`を実データで実行。
+    候補10件中上位5件を評議、裁定は保留3/却下2/採択0、合計見積コスト約389.3円(事前見積り
+    レンジ内)。`agent`の裁定を確認したところ監査役が3件の具体的なアンカリングを検出しており、
+    GOVERNANCE.mdの監査役ルールが意図通り機能していることを確認した
+  - `council-output/`配下に機密情報(APIキー・Webhook URL等)が混入していないことをgrepで確認し、
+    以後は意思決定の監査証跡として通常のgit管理下でコミットしていく方針に確定
+- 完了した状態：
+  - `src/council/{types,extractCandidates,runCouncil,notify,generatePrompt,run}.ts`実装済み、
+    `tsc --noEmit`型エラーなし
+  - `extractCandidates.ts`・`runCouncil.ts`・`notify.ts`ともに実データで動作確認済み
+  - `council-output/candidates/`・`council-output/verdicts/`に初回実行の実データが生成済み、
+    コミット対象として確定
+- 残課題・次にやること：
+  - `.env`はdev-configのsync-list未登録。家PC・ノートPC間の同期方法はユーザー判断待ち
+  - VM側への反映・cron登録は今回のスコープ外(手動実行の半自動運用のまま)
+  - 「保留」となった3候補("agent"/"agents"/"source")には監査役から再審議の条件が付与されて
+    いる(詳細は`council-output/verdicts/*.json`・`HANDOFF.md`参照)
+- 触ったファイル：`src/council/`(新規6ファイル)、`package.json`・`package-lock.json`
+  (`@anthropic-ai/sdk`追加、`council:run`スクリプト追加)、`.env`(プレースホルダ追加、
+  Git管理外)、`HANDOFF.md`、`council-output/`(新規、候補・裁定JSON)

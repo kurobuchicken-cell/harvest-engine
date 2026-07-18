@@ -1,0 +1,102 @@
+[
+  {
+    "topic": "agent",
+    "score": 20,
+    "sourceUrls": [
+      "https://blog.simbastack.com/announcing-sentinel/",
+      "https://github.com/Danau5tin/ai-trains-ai",
+      "https://github.com/juggler-ai/juggler"
+    ],
+    "excerpt": "Show HN: Sentinel – open-source QA agent that reads your code before it clicks / Show HN: I RL-trained an agent that trains models with RL (for ~$1.3k) / Show HN: Juggler – an open-source GUI coding agent, by the creator of JUCE"
+  },
+  {
+    "topic": "open",
+    "score": 16,
+    "sourceUrls": [
+      "https://tools-berry.com/",
+      "https://bamboo.kickstage.com",
+      "https://github.com/0pen-Sourcer/Hearth"
+    ],
+    "excerpt": "Show HN: Tools Berry – client-side calculators with open-source tax engines / Show HN: BambooGrid – Open-source web UI for power grid modeling and power flow / Show HN: Hearth, an open-source local AI that runs your PC (files, apps, voice)"
+  },
+  {
+    "topic": "agents",
+    "score": 15,
+    "sourceUrls": [
+      "https://libretto.sh/debug-agents",
+      "https://selbonds.now",
+      "https://wolbarg.com/blog/why-sqlite-is-enough-for-local-ai-agent-memory"
+    ],
+    "excerpt": "Show HN: Libretto PR agents – Automatically fix failing playwright scripts / Show HN: On-chain bond market where the issuers are AI agents / Show HN: Wolbarg – Local-first shared memory for AI agents using SQLite"
+  },
+  {
+    "topic": "source",
+    "score": 14,
+    "sourceUrls": [
+      "https://tools-berry.com/",
+      "https://bamboo.kickstage.com",
+      "https://github.com/0pen-Sourcer/Hearth"
+    ],
+    "excerpt": "Show HN: Tools Berry – client-side calculators with open-source tax engines / Show HN: BambooGrid – Open-source web UI for power grid modeling and power flow / Show HN: Hearth, an open-source local AI that runs your PC (files, apps, voice)"
+  },
+  {
+    "topic": "built",
+    "score": 14,
+    "sourceUrls": [
+      "https://hilogame.cc/",
+      "https://accentchanger.com/",
+      "https://ferritin.rs"
+    ],
+    "excerpt": "Show HN: I've built a words game based on binary search / Show HN: I Built an Accent Changer App / Show HN: Ferritin, a new front end for Rust docs, built on rustdoc JSON"
+  },
+  {
+    "topic": "新聞",
+    "score": 11,
+    "sourceUrls": [
+      "https://www.nikkei.com/article/DGXZQOUC170T20X10C26A7000000/",
+      "https://www.tokyo-np.co.jp/article/502132",
+      "https://mainichi.jp/articles/20260717/k00/00m/010/490000c"
+    ],
+    "excerpt": "JR東日本、みどりの窓口を生成AIで代替　NECなどと実証実験 - 日本経済新聞 / 急死前日に「急性虫垂炎・急性腹症の疑い」の診断　高尾署はクルド人男性の遺族に事実を説明せず：東京新聞デジタル / 自民・小林政調会長らの渡航認められず　野党反発「職場の放棄」 | 毎日新聞"
+  },
+  {
+    "topic": "AI",
+    "score": 10,
+    "sourceUrls": [
+      "https://gigazine.net/news/20260717-openai-gpt-5-6-sol-delete-file/",
+      "https://www.fnn.jp/articles/-/1076813",
+      "https://levtech.jp/media/detail_895/"
+    ],
+    "excerpt": "GPT-5.6がファイルを勝手に削除したという報告多数、OpenAIはサンドボックスなしのフルアクセスモードで発生することが最も多いと指摘 / 戦場投入のロシア兵、生存時間はわずか20～30分か　アメリカCIAが分析　ウクライナAIドローン進化で｜FNNプライムオンライン / 「青黒 vs. 白金」ドレス論争、数学で解明か？　人もAIも欺くあの写真、共通の“カラクリ”とは【研究紹介】 - レバテックLAB"
+  },
+  {
+    "topic": "local",
+    "score": 9,
+    "sourceUrls": [
+      "https://wolbarg.com/blog/why-sqlite-is-enough-for-local-ai-agent-memory",
+      "https://github.com/0pen-Sourcer/Hearth",
+      "https://github.com/GFrancV/notvex"
+    ],
+    "excerpt": "Show HN: Wolbarg – Local-first shared memory for AI agents using SQLite / Show HN: Hearth, an open-source local AI that runs your PC (files, apps, voice) / Show HN: Notvex – encrypted local-first notes with SQLCipher and XChaCha20"
+  },
+  {
+    "topic": "claude",
+    "score": 8,
+    "sourceUrls": [
+      "https://nutshotsimulator.com/nutshot/",
+      "https://heimwall.ai/individual",
+      "https://github.com/jhickner/tmux-agent-tabs"
+    ],
+    "excerpt": "Show HN: Nutshot Simulator – 31 days, 59K prompts, 142M tokens, ~$23K of Claude / Show HN: HeimWall – Catch secrets before you paste them into Claude or Cursor / Show HN: Tmux tab markers for Claude Code, Grok, and pi sessions"
+  },
+  {
+    "topic": "イン",
+    "score": 8,
+    "sourceUrls": [
+      "https://gihyo.jp/article/2026/07/vscode-drawio-extension-inline-editing",
+      "https://www.fnn.jp/articles/-/1076813",
+      "https://www.lifehacker.jp/article/2607-obsidian-plugins-visualize-notes/"
+    ],
+    "excerpt": "VS Code拡張機能「Draw.io Integration」、Markdownのプレビュー上で図をインライン編集する機能、プレリリース版で提供 | gihyo.jp / 戦場投入のロシア兵、生存時間はわずか20～30分か　アメリカCIAが分析　ウクライナAIドローン進化で｜FNNプライムオンライン / Obsidianをよりわかりやすく。視覚化プラグイン活用術 | ライフハッカー・ジャパン"
+  }
+]
