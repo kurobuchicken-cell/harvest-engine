@@ -24,6 +24,9 @@
 - **スコープ外(今回は含めない)**: ローカル/VMのledger合算(別の既知課題として残置)、週次cronでの
   自動実行(現時点では手動`npm run audit:weekly`のみ。自動化するかは次アクション参照)、
   Slack通知(まずはコンソール出力のみで開始し、必要になれば`notify.ts`のWebhookパターンを流用)
+- VMにも同日中に反映(`git pull`)し、実データで実行。**現状クリーンを確認**(記帳失敗ログなし、
+  為替未解決エントリなし、council-scheduler週次実行とledgerの突合もOK・直近8日でcouncil-opusエ
+  ントリ5件を確認)
 
 ### 【重要・発見】VM側`.env`の`DATABASE_URL`破損を発見・修復
 背景: テーマIをVM側DBに反映する一時スクリプトを実行したところ、`Cannot open database because
