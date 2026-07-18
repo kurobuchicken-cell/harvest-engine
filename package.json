@@ -12,7 +12,8 @@
     "statuspage:sync": "tsx src/adapters/statuspage.ts",
     "incidents:backfill": "tsx src/adapters/incidents/backfill.ts",
     "incidents:backfill-source-url": "tsx src/adapters/incidents/backfillSourceUrl.ts",
-    "council:run": "tsx src/council/run.ts"
+    "council:run": "tsx src/council/run.ts",
+    "x:poll": "tsx src/adapters/xKeywords.ts"
   },
   "keywords": [],
   "author": "",

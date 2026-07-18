@@ -1,0 +1,39 @@
+{
+  "_comment": "テーマH X(旧Twitter)キーワード監視の仮運用リスト。評議会裁定(2026-07-18)による6語。2週間の仮運用後に見直す想定",
+  "trialPeriod": {
+    "start": "2026-07-18",
+    "reviewAfterDays": 14
+  },
+  "keywords": [
+    {
+      "keyword": "SaaS 値上げ",
+      "theme": "A",
+      "note": "SaaS料金改定の一次シグナル収集用"
+    },
+    {
+      "keyword": "保険料 値上げ",
+      "theme": "E",
+      "note": "保険料改定の一次シグナル収集用"
+    },
+    {
+      "keyword": "micro saas",
+      "theme": "H",
+      "note": "個人開発SaaSの供給観測(生需要軸の補完)"
+    },
+    {
+      "keyword": "indie hacker",
+      "theme": "H",
+      "note": "個人開発者コミュニティの生需要軸"
+    },
+    {
+      "keyword": "build in public",
+      "theme": "F/H",
+      "note": "海外SaaS開発の一次情報+ビジネスヒントの両対応"
+    },
+    {
+      "keyword": "SaaS 障害",
+      "theme": "C",
+      "note": "既存Statuspage系RSSの補完的位置づけ(SNS上の一次反応の検知)"
+    }
+  ]
+}
