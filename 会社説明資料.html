@@ -355,9 +355,25 @@
   .dept .what { color: var(--ink-soft); font-size: 0.92rem; margin: 0; }
 
   /* ---------- プロジェクト表 ---------- */
-  .proj-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.9rem; }
-  .proj-table th, .proj-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
-  .proj-table th { color: var(--ink-faint); font-weight: 500; font-size: 0.78rem; letter-spacing: 0.04em; }
+  .proj-list { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; }
+  .proj {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 20px 22px;
+  }
+  .proj-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+  .proj-head .letter {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--accent-deep);
+    min-width: 1.6em;
+  }
+  .proj-head .ttl { font-weight: 600; font-size: 1.02rem; flex: 1; }
+  .proj .row { display: flex; gap: 10px; margin: 8px 0 0; font-size: 0.9rem; }
+  .proj .row .k { flex: 0 0 88px; color: var(--ink-faint); font-size: 0.78rem; letter-spacing: 0.02em; padding-top: 2px; }
+  .proj .row .v { color: var(--ink-soft); margin: 0; }
   .pill {
     display: inline-block;
     padding: 2px 10px;
@@ -606,47 +622,83 @@
       <h2><span class="no">07</span>今動いているプロジェクト</h2>
       <p class="lead">現在7つのテーマを扱っています。</p>
 
-      <div style="overflow-x:auto;">
-      <table class="proj-table">
-        <thead><tr><th>テーマ</th><th>内容</th><th>状態</th></tr></thead>
-        <tbody>
-          <tr>
-            <td><strong>C</strong></td>
-            <td>国内SaaS各社の障害・メンテナンス情報まとめ(saas-status.com)</td>
-            <td><span class="pill live">本番公開中</span></td>
-          </tr>
-          <tr>
-            <td><strong>A</strong></td>
-            <td>国内SaaSの料金・プラン改定履歴</td>
-            <td><span class="pill collect">情報収集中</span></td>
-          </tr>
-          <tr>
-            <td><strong>E</strong></td>
-            <td>生命保険・損害保険の商品改定履歴</td>
-            <td><span class="pill collect">情報収集中</span></td>
-          </tr>
-          <tr>
-            <td><strong>F</strong></td>
-            <td>海外SaaSの値上げ・機能変更の履歴</td>
-            <td><span class="pill collect">情報収集中</span></td>
-          </tr>
-          <tr>
-            <td><strong>G</strong></td>
-            <td>国の規制・パブリックコメントの動向</td>
-            <td><span class="pill collect">情報収集中</span></td>
-          </tr>
-          <tr>
-            <td><strong>H</strong></td>
-            <td>新しいビジネスのヒントを集める「種まき」テーマ</td>
-            <td><span class="pill collect">情報収集中</span></td>
-          </tr>
-          <tr>
-            <td><strong>I</strong></td>
-            <td>AIエージェントの安全な運用・事故に関する情報</td>
-            <td><span class="pill collect">情報収集中</span></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="proj-list">
+        <div class="proj">
+          <div class="proj-head">
+            <span class="letter">C</span>
+            <span class="ttl">国内SaaS障害モニタ</span>
+            <span class="pill live">本番公開中</span>
+          </div>
+          <div class="row"><span class="k">集めている情報</span><p class="v">サイボウズ(kintone/Office/Garoon/メールワイズ)、freee、SmartHR、Slack、Notion、Zoom、GitHub、Cloudflare、Stripe、Datadogなど、仕事で使われている有名なソフト(SaaS)25社以上の「公式ステータスページ」を自動で見に行き、「今、故障や工事(メンテナンス)が起きていないか」を記録している</p></div>
+          <div class="row"><span class="k">できること</span><p class="v">各社の公式ページをいちいち1つずつ見に行かなくても、このサイト(<a href="https://saas-status.com" target="_blank" rel="noopener noreferrer">saas-status.com</a>)を見れば「今どのサービスが止まっているか」「過去にいつ障害があったか」が一覧でわかる。今のところ無料で、広告も無い</p></div>
+          <div class="row"><span class="k">誰が嬉しいか</span><p class="v">仕事でこれらのソフトを使っている人・IT担当者。「あれ、Slackおかしいな」と思ったときに真っ先に見るサイトを目指している</p></div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-head">
+            <span class="letter">A</span>
+            <span class="ttl">国内SaaS 料金・プラン改定履歴</span>
+            <span class="pill collect">情報収集中</span>
+          </div>
+          <div class="row"><span class="k">集めている情報</span><p class="v">国内の主なSaaS(業務用ソフト)が、値段やプラン内容をいつ・どう変えたかのお知らせを集めている</p></div>
+          <div class="row"><span class="k">目指す形</span><p class="v">将来的には「このソフト、去年の今頃はいくらだった」という値上げ・値下げの履歴を一覧で見られるようにする計画。今はまだ整理する仕組み(パーサー)ができておらず、生のデータを集めている段階</p></div>
+          <div class="row"><span class="k">誰が嬉しいか</span><p class="v">SaaSの乗り換えを検討している会社や、業界の値段の動きを調べたい人</p></div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-head">
+            <span class="letter">E</span>
+            <span class="ttl">生保・損保 商品改定履歴</span>
+            <span class="pill collect">情報収集中</span>
+          </div>
+          <div class="row"><span class="k">集めている情報</span><p class="v">生命保険会社10社・損害保険会社10社、合計20社の「商品(保険のプラン)をいつ変更したか」というニュースを集めている</p></div>
+          <div class="row"><span class="k">目指す形</span><p class="v">各社の保険商品がいつどう変わったかを、時系列で並べて見られるようにする計画</p></div>
+          <div class="row"><span class="k">誰が嬉しいか</span><p class="v">保険の見直しをしたい人、保険業界の動きを調べたい人</p></div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-head">
+            <span class="letter">F</span>
+            <span class="ttl">海外SaaS 値上げ・機能変更履歴</span>
+            <span class="pill collect">情報収集中</span>
+          </div>
+          <div class="row"><span class="k">集めている情報</span><p class="v">Slack・Notion・Figma・Canva・Stripe・Salesforceなど、海外の有名SaaS15社の「お知らせ(changelog)」や料金ページを集めている</p></div>
+          <div class="row"><span class="k">目指す形</span><p class="v">海外のソフトの値段や機能がどう変わってきたかを一覧で見られるようにする計画</p></div>
+          <div class="row"><span class="k">誰が嬉しいか</span><p class="v">海外SaaSの導入を検討している会社のIT担当者、コンサルタント</p></div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-head">
+            <span class="letter">G</span>
+            <span class="ttl">国の規制・パブリックコメント動向</span>
+            <span class="pill collect">情報収集中</span>
+          </div>
+          <div class="row"><span class="k">集めている情報</span><p class="v">金融庁・経済産業省・総務省など8つの省庁が「意見を募集しています」と発表しているページ(パブリックコメント)や、審議会の資料を集めている</p></div>
+          <div class="row"><span class="k">目指す形</span><p class="v">法律やルールがどう変わろうとしているかを、早めにまとめて見られるようにする計画</p></div>
+          <div class="row"><span class="k">誰が嬉しいか</span><p class="v">法律の改正に敏感でいたい会社の担当者や専門家</p></div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-head">
+            <span class="letter">H</span>
+            <span class="ttl">ビジネスヒントのメタ・ハーヴェスト(種まきテーマ)</span>
+            <span class="pill collect">情報収集中</span>
+          </div>
+          <div class="row"><span class="k">集めている情報</span><p class="v">Hacker News・Product Hunt・Indie Hackers・App Storeの急上昇ランキング・Google Trendsなど、「今どんな新しいサービスが話題になっているか」を毎日大量に集めている</p></div>
+          <div class="row"><span class="k">他と違う点</span><p class="v">これは外のお客さん向けのテーマではなく、社内向けの「アイデアのタネ集め」専用テーマ。出口(ホームページ公開やお金儲け)は最初から用意しない</p></div>
+          <div class="row"><span class="k">誰が嬉しいか</span><p class="v">ここで集めた情報をAIの会議(評議会)が読んで、次に取り組むべき新しいテーマを選ぶために使う。実際にテーマIは、このHから見つかった</p></div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-head">
+            <span class="letter">I</span>
+            <span class="ttl">AIエージェント運用ガバナンス・事故制御</span>
+            <span class="pill collect">情報収集中</span>
+          </div>
+          <div class="row"><span class="k">集めている情報</span><p class="v">AIエージェント(自動で色々な作業をしてくれるAIツール)が実際に事故やトラブルを起こした事例を集めている、世界的なデータベース(AI Incident Database)を追いかけている</p></div>
+          <div class="row"><span class="k">これまでの経緯</span><p class="v">テーマHが集めた「今話題になっているもの」の中からAIの会議(評議会)が選んだ、一番新しいテーマ</p></div>
+          <div class="row"><span class="k">誰が嬉しいか</span><p class="v">AIツールを安全に使いたい会社や開発者。今はまだ情報収集の段階で、育てられそうか見極めている</p></div>
+        </div>
       </div>
       <p style="margin-top:18px; font-size:0.88rem; color:var(--ink-soft);">「情報収集中」のテーマは、まだホームページを公開したりお金を取ったりしていません。まずはデータを集めて、育てられそうか見極めている段階です。</p>
     </section>
