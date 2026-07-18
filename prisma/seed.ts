@@ -866,6 +866,17 @@ const sources: SourceSeed[] = [
     fetchIntervalMin: 251,
     note: "robots.txtは/explore?と/trends/explore?のみDisallowで/trending/rssは対象外(許可)。RSS 2.0で正常応答(item10件)であることを確認。検証層(急上昇キーワードの裏取り用)のため他ソースより短い巡回間隔を設定",
   },
+
+  // ── テーマH追加: Indie Hackers 2026-07-18調査・登録 ──
+  {
+    companyName: "Indie Hackers",
+    insuranceType: "theme_h",
+    url: "https://www.indiehackers.com/",
+    fetchType: "html",
+    active: true,
+    fetchIntervalMin: 1616,
+    note: "robots.txt自体はWebFetchツールから403(取得不可)だが、本番politeFetch(取得失敗時はbody空扱いで許可とみなす実装)ではisAllowedByRobots=trueと確認済み。前回調査(2026-07-18初回)では/starting-upページを対象にFirebase JSON blobのみでSSR本文ゼロ件と判定していたが、今回ホーム(/)を本番politeFetchで実地fetchしたところ200・本文313KB・h1-h3見出し56件(実際の投稿タイトル)がSSRされていることを確認。対象URLをホームへ変更しactive登録。/starting-upは引き続きJS SPAシェル(本文22KB・見出し0件)で取得不可なことも本番fetchで再確認済み(登録せず)",
+  },
 ];
 
 async function main() {
