@@ -3,14 +3,14 @@
     "themeId": "C",
     "themeName": "SaaS障害",
     "robotsTxt": {
-      "done": false,
-      "confirmedAt": null,
-      "note": null
+      "done": true,
+      "confirmedAt": "2026-07-18T15:01:11.894Z",
+      "note": "全アクティブソースを個別にrobots.txt判定済み(prisma/seed.tsの各エントリnote参照)。Statuspage.io標準robots.txtで/apiをDisallowしている企業(Slack/Notion/Zoom/Datadog/HubSpot/Twilio/Asana/Dropbox/Figma/Salesforce等)は個別にinactive化済み。activeなソースのみ公開ページに反映される設計"
     },
     "tos": {
-      "done": false,
-      "confirmedAt": null,
-      "note": null
+      "done": true,
+      "confirmedAt": "2026-07-18T15:01:25.441Z",
+      "note": "一次審査(GM実施、専門家によるToS精読ではない): データ源はいずれも公開機械可読フォーマット。Statuspage.io系はAPI v2(/api/v2/summary.json)がAtlassian公式に文書化された公開ステータス閲覧用API(認証不要・レート制限明記、developer.statuspage.io参照)であり意図された公開利用。サイボウズ4製品はRSS(公開配信を前提とした形式)。SmartHR/MoneyForward/ChatworkはZendesk Help Center記事ページ。個社ごとの全文ToS精読は未実施(範囲外)、フル出口移行時は改めて弁護士確認が必要"
     },
     "disclaimer": {
       "done": true,
@@ -18,15 +18,15 @@
       "note": "2026-07-17のharvest-engine-web-publish-01セッションでsaas-status.com公開時に確認済み(SESSION_LOG.md記載: 出典リンク・免責文言すべて確認済み)。ToS確認・商標調査・robots.txt(対象サイト側)・弁護士相談は本セッション時点で記録なし"
     },
     "trademark": {
-      "done": false,
-      "confirmedAt": null,
-      "note": null
+      "done": true,
+      "confirmedAt": "2026-07-18T15:01:37.718Z",
+      "note": "src/web/render.tsを確認: 企業名はプレーンテキストのみで表示、ロゴ・マーク画像は一切使用していない(nominative fair use、指示対象を示すための言及に限定)。各社公式ステータスページへの出典リンクを全件に付与し、フッターに非公式・情報の正確性非保証の免責文言を明記(公式提携を示唆しない)。GM一次審査としては商標権侵害リスクは低いと判断。専門的な最終判断はフル出口移行時の弁護士相談で確認する"
     },
     "lawyer": {
       "done": false,
       "confirmedAt": null,
       "note": null
     },
-    "updatedAt": "2026-07-18T14:56:53.999Z"
+    "updatedAt": "2026-07-18T15:01:37.719Z"
   }
 }
