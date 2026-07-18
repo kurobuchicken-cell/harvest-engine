@@ -192,3 +192,70 @@
 - 触ったファイル：`src/council/`(新規6ファイル)、`package.json`・`package-lock.json`
   (`@anthropic-ai/sdk`追加、`council:run`スクリプト追加)、`.env`(プレースホルダ追加、
   Git管理外)、`HANDOFF.md`、`council-output/`(新規、候補・裁定JSON)
+
+## harvest-engine-theme-and-governance-01（2026-07-18）
+複数工程(Hテーマ拡張・X連携・経理部実体化・執行役体制移行・評議会再設計)を1セッションで
+通した回。本来はセッション分割の目安に反するが、実際の作業順序をそのまま記録する。
+- 作業環境：ノートPC
+- やったこと：
+  - **テーマH情報源拡張**: 供給観測軸(BetaList/Fazier/SaaSHub)・国内メディア(Coral Capital/
+    KEPPLE、kepple.coはドメイン失効でkepple.co.jpに差替え)・検証層(Google Trends JP/US)・
+    Reddit4件(inactive、robots.txt全面Disallow)・Uneed/THE BRIDGE(inactive)を実地調査し
+    13件登録。追加でIndie Hackers(前回JS SPA判定を再検証しSSR確認、active化)、App Store
+    公式RSS(旧itunes.apple.com/rssはrobots.txt Disallow、後継API rss.marketingtools.apple.comの
+    top-free JP/USに切替)を登録。ローカルsources 90→112件
+  - **X(公式API)キーワード監視の実装**: 評議会裁定の仮運用6語を`config/xKeywords.json`で管理、
+    `src/lib/xApi.ts`(X API v2 Recent search)・`src/adapters/xKeywords.ts`(since_id増分取得・
+    呼び出し数/月間上限の安全装置)を実装。汎用`crawler.ts`のfetchByTypeには意図的に`x_search`を
+    追加せず独立スクリプトとした。オーナーがBearer Token設定後、実API疎通確認(6キーワード×20件
+    =120件取得成功)
+  - **経理部の実体化**: 同日中に記帳漏れ2件・モデル切替提言の失念1件が発生したことを受け、
+    `src/lib/ledger.ts`(支出台帳、記帳時に外部API(open.er-api.com)から為替レート取得、
+    ハードコード禁止)・`npm run ledger:report`を新設。`src/lib/xApi.ts`はAPI呼び出し成功直後に
+    自動記帳する設計に変更。既存の手書きBUDGET.md記帳(Perplexity・Xクレジット)をledgerへ移行
+  - **執行役体制のドキュメント化**: `RULES.md`(執行役の運用ルール: ネガティブリスト・評議会
+    トリガー・モデル切替基準・経理/法務・報告テンプレート)、`DECISIONS.md`(ハーヴェスト1着想〜
+    正式始動〜本日までの意思決定ログ)を新設。CLAUDE.mdは参照行のみに整理し重複記載を解消。
+    チャット(Claude.ai)からこのCCセッションへ執行役の役割を正式に引き継いだ
+  - **評議会パイプラインの再設計**: オーナー方針(「情報の選定は新プロジェクト成否のカギ」)を
+    受け、候補選定を頻度カウントから選定専用のAI評議会(`selectCandidates.ts`新設)に置き換え。
+    判断評議会(`runCouncilForTopic`)は無改修。`runCouncil.ts`の為替ハードコード(1ドル150円)を
+    撤去しledger連携に統一。実行確認: 生データ326件→選定4件(約321円)→判断で採択2件・保留2件
+    (合計約870円)。頻度カウント時代(採択0件)より明確に質が向上
+  - **評議会の週次cron化・VMデプロイ**: `src/councilScheduler.ts`+PM2の3プロセス目
+    (`harvest-engine-council-scheduler`、毎週月曜09:00 JST)を追加。VM未pushコミット7件を
+    オーナー確認の上push、VM側`git pull`・H拡張22件の`createMany`反映・巡回実施を確認。
+    VM側`.env`にAPIキー3種が未設定だったため、SSH経由で値を一切表示せずローカルから転送
+    (1件転送漏れが発生、件数確認で検知し再送・復旧)
+  - **評議会JSONパースバグの発見・修正**: オーナーがSlack通知の1件が「パース失敗」表示に
+    なっているのを発見。原因はOpus出力の```json```末尾に余分な閉じ括弧。フォールバックが
+    常に「保留」を返す設計だったため、本来「採択/却下」だった場合に黙って握り潰すリスクが
+    あった(今回は実害なしと確認)。`councilCore.ts`に`extractJsonBlock()`(末尾を最大20文字
+    まで削って再パースする復旧ロジック)を追加し修正、VMにも反映・PM2再起動済み
+  - **手続き上のミス2件を自己申告**: 未push複数コミットをまとめてpushする際に事前確認を
+    取らずに実行した件、VM側`npm install --omit=dev`でtsx(devDependency)を誤って削除しかけ
+    他プロセスを巻き込むリスクを生んだ件(いずれも復旧・報告済み)
+- 完了した状態：
+  - ローカルsources 112件(active74/inactive38)、VM反映済み(active73、住友生命id=4の既知の
+    差分のみ)
+  - `data/ledger.json`累計支出35,587円(消化率17.8%、API費目のみ74.1%)。ローカル・VMそれぞれ
+    別ファイルのため合算未整備
+  - VM PM2は3プロセス(`scheduler`/`web`/`council-scheduler`)とも安定稼働、`git log`は
+    `81456c1`まで反映済み
+  - 評議会採択2件の調査プロンプトが`council-output/`に生成済み、CCへの投入可否はオーナー
+    判断待ち(次セッションへの引き継ぎ事項)
+- 残課題・次にやること：
+  - 採択2テーマ(AIエージェント可読性・AEO/GEO最適化、AIエージェント運用ガバナンス・事故制御)の
+    調査プロンプト投入可否
+  - `.env`のdev-config sync-list登録可否(ANTHROPIC_API_KEY/SLACK_WEBHOOK_URL/
+    SLACK_MENTION_USER_ID/X_BEARER_TOKEN)
+  - ローカルDBとVM DBのactive不整合(住友生命id=4)の解消方法
+  - 次フェーズ: 監査役週次バッチ、法務部ゲート化、ローカル/VM ledger合算、STARTUP DB具体化、
+    Substack/noteキュレーション
+  - 詳細な技術的backlogはHANDOFF.md「新たに判明した課題・次アクション」参照
+- 触ったファイル：`prisma/seed.ts`、`config/xKeywords.json`(新規)、`src/lib/xApi.ts`・
+  `src/lib/ledger.ts`(新規)・`src/ledgerReport.ts`(新規)、`src/adapters/xKeywords.ts`(新規)、
+  `src/council/`(selectCandidates.ts・councilCore.ts・pricing.ts新規、他改修)、
+  `src/councilScheduler.ts`(新規)、`ecosystem.config.js`、`package.json`、`RULES.md`・
+  `DECISIONS.md`(新規)、`CLAUDE.md`、`GOVERNANCE.md`・`BUDGET.md`、`HANDOFF.md`、
+  `data/ledger.json`(新規)、`council-output/`、VM側`.env`・sources・PM2設定
