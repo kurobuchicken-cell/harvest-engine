@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ハーヴェスト社 会社説明資料</title>
+<style>
+  :root {
+    --bg: #f5f6f1;
+    --surface: #ffffff;
+    --surface-soft: #eeeee6;
+    --ink: #22261c;
+    --ink-soft: #5b5f52;
+    --ink-faint: #8a8d7d;
+    --accent: #a9791f;
+    --accent-deep: #7a5a1e;
+    --accent-tint: #f1e4c8;
+    --green: #3b6e4f;
+    --green-tint: #dfeade;
+    --blue: #3e5c76;
+    --blue-tint: #dfe6ec;
+    --line: #dcd9cc;
+    --shadow: 0 1px 2px rgba(34,38,28,0.06), 0 8px 24px rgba(34,38,28,0.05);
+    color-scheme: light dark;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1b1e16;
+      --surface: #24281e;
+      --surface-soft: #2c3024;
+      --ink: #ece9db;
+      --ink-soft: #b3b39e;
+      --ink-faint: #7d8070;
+      --accent: #dcac4c;
+      --accent-deep: #f0c876;
+      --accent-tint: #3a3221;
+      --green: #74b28c;
+      --green-tint: #253326;
+      --blue: #8fadc7;
+      --blue-tint: #222d36;
+      --line: #3a3e30;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1b1e16;
+    --surface: #24281e;
+    --surface-soft: #2c3024;
+    --ink: #ece9db;
+    --ink-soft: #b3b39e;
+    --ink-faint: #7d8070;
+    --accent: #dcac4c;
+    --accent-deep: #f0c876;
+    --accent-tint: #3a3221;
+    --green: #74b28c;
+    --green-tint: #253326;
+    --blue: #8fadc7;
+    --blue-tint: #222d36;
+    --line: #3a3e30;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+  }
+  :root[data-theme="light"] {
+    --bg: #f5f6f1;
+    --surface: #ffffff;
+    --surface-soft: #eeeee6;
+    --ink: #22261c;
+    --ink-soft: #5b5f52;
+    --ink-faint: #8a8d7d;
+    --accent: #a9791f;
+    --accent-deep: #7a5a1e;
+    --accent-tint: #f1e4c8;
+    --green: #3b6e4f;
+    --green-tint: #dfeade;
+    --blue: #3e5c76;
+    --blue-tint: #dfe6ec;
+    --line: #dcd9cc;
+    --shadow: 0 1px 2px rgba(34,38,28,0.06), 0 8px 24px rgba(34,38,28,0.05);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", "Meiryo", sans-serif;
+    font-size: 16px;
+    line-height: 1.9;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    text-wrap: balance;
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .mono {
+    font-family: "SF Mono", "Consolas", "Menlo", monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  a { color: var(--accent-deep); }
+
+  /* ---------- レイアウト全体 ---------- */
+  .page {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 780px);
+    gap: 0 56px;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  @media (max-width: 880px) {
+    .page { grid-template-columns: 1fr; }
+    nav.toc { display: none; }
+  }
+
+  /* ---------- 左サイドの目次 ---------- */
+  nav.toc {
+    position: sticky;
+    top: 32px;
+    align-self: start;
+    padding-top: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  nav.toc a {
+    display: block;
+    padding: 7px 10px;
+    border-radius: 3px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 0.86rem;
+    letter-spacing: 0.02em;
+    border-left: 2px solid transparent;
+  }
+  nav.toc a:hover { color: var(--ink); background: var(--surface-soft); }
+  nav.toc .toc-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    padding: 0 10px;
+    margin-bottom: 6px;
+  }
+
+  /* ---------- terrace(段々畑)モチーフ ---------- */
+  .terrace {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 100%;
+  }
+  .terrace .band {
+    height: 10px;
+    border-radius: 2px;
+    background: var(--surface-soft);
+  }
+  .terrace .band.filled { background: linear-gradient(90deg, var(--accent), var(--accent-deep)); }
+
+  /* ---------- ヘッダー ---------- */
+  header.hero {
+    padding: 72px 0 40px;
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    color: var(--accent-deep);
+    text-transform: uppercase;
+    margin: 0 0 14px;
+  }
+  header.hero h1 {
+    font-size: 2.6rem;
+    margin: 0 0 6px;
+    letter-spacing: 0.02em;
+  }
+  header.hero .sub {
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    margin: 0 0 28px;
+  }
+  .hero-terrace { max-width: 360px; }
+
+  /* ---------- セクション共通 ---------- */
+  section {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--line);
+    max-width: 66ch;
+  }
+  section:last-of-type { border-bottom: none; }
+  section h2 {
+    font-size: 1.5rem;
+    margin: 0 0 6px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  section h2 .no {
+    font-family: "SF Mono", "Consolas", monospace;
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+    font-weight: 400;
+  }
+  section .lead {
+    color: var(--ink-soft);
+    margin: 0 0 28px;
+    font-size: 0.95rem;
+  }
+  section p { margin: 0 0 18px; }
+  section h3 {
+    font-size: 1.05rem;
+    margin: 28px 0 10px;
+  }
+
+  .callout {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 20px 24px;
+    box-shadow: var(--shadow);
+    margin: 20px 0;
+  }
+  .callout.goal {
+    text-align: center;
+    padding: 32px 24px;
+  }
+  .callout.goal .big {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 1.9rem;
+    color: var(--accent-deep);
+    margin: 0;
+  }
+
+  /* ---------- マイルストーン(タイムライン) ---------- */
+  .timeline { list-style: none; margin: 24px 0 0; padding: 0; position: relative; }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 5px; top: 6px; bottom: 6px;
+    width: 1px;
+    background: var(--line);
+  }
+  .timeline li {
+    position: relative;
+    padding: 0 0 32px 28px;
+  }
+  .timeline li:last-child { padding-bottom: 0; }
+  .timeline li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 5px;
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-tint);
+  }
+  .timeline .date {
+    font-family: "SF Mono", "Consolas", monospace;
+    font-size: 0.82rem;
+    color: var(--accent-deep);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .timeline .ttl { font-weight: 600; margin: 0 0 4px; }
+  .timeline .desc { color: var(--ink-soft); font-size: 0.92rem; margin: 0; }
+
+  /* ---------- 進捗: stat tiles ---------- */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin: 24px 0;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 18px 20px;
+  }
+  .stat .label { font-size: 0.8rem; color: var(--ink-soft); margin: 0 0 8px; }
+  .stat .value {
+    font-family: "SF Mono", "Consolas", monospace;
+    font-variant-numeric: tabular-nums;
+    font-size: 1.6rem;
+    color: var(--ink);
+    margin: 0 0 10px;
+  }
+  .stat .value small { font-size: 0.9rem; color: var(--ink-faint); font-weight: 400; }
+
+  .budget-bars { display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
+  .budget-row { display: grid; grid-template-columns: 100px 1fr 90px; align-items: center; gap: 12px; font-size: 0.85rem; }
+  .budget-row .name { color: var(--ink-soft); }
+  .budget-row .amount { text-align: right; font-family: "SF Mono", "Consolas", monospace; color: var(--ink-faint); }
+  .budget-track { height: 8px; border-radius: 4px; background: var(--surface-soft); overflow: hidden; }
+  .budget-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-deep)); }
+
+  /* ---------- 部門構成: 組織図 ---------- */
+  .org {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin: 28px 0 8px;
+  }
+  .org-node {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .org-node.owner { border-color: var(--accent); color: var(--accent-deep); font-weight: 600; }
+  .org-node.gm { border-color: var(--blue); }
+  .org-connector { width: 1px; height: 20px; background: var(--line); }
+  .org-children {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+  }
+  @media (max-width: 560px) { .org-children { grid-template-columns: repeat(2, 1fr); } }
+  .org-children .org-node { font-size: 0.82rem; padding: 10px 8px; }
+
+  /* ---------- 各部門カード ---------- */
+  .dept-list { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; }
+  .dept {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 20px 22px;
+  }
+  .dept-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .dept-head .name { font-weight: 600; font-size: 1.02rem; }
+  .dept-head .who { font-size: 0.78rem; color: var(--ink-faint); }
+  .dept .when {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    color: var(--green);
+    background: var(--green-tint);
+    border-radius: 4px;
+    padding: 3px 9px;
+    margin: 10px 0 8px;
+  }
+  .dept .what { color: var(--ink-soft); font-size: 0.92rem; margin: 0; }
+
+  /* ---------- プロジェクト表 ---------- */
+  .proj-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.9rem; }
+  .proj-table th, .proj-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .proj-table th { color: var(--ink-faint); font-weight: 500; font-size: 0.78rem; letter-spacing: 0.04em; }
+  .pill {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 0.76rem;
+    white-space: nowrap;
+  }
+  .pill.live { background: var(--green-tint); color: var(--green); }
+  .pill.collect { background: var(--blue-tint); color: var(--blue); }
+
+  /* ---------- 段階(4層)図 ---------- */
+  .stages { display: flex; flex-direction: column; gap: 10px; margin: 24px 0; }
+  .stage {
+    display: grid;
+    grid-template-columns: 32px 1fr auto;
+    align-items: center;
+    gap: 14px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--accent);
+    border-radius: 6px;
+    padding: 14px 18px;
+  }
+  .stage:nth-child(1) { border-left-color: var(--blue); }
+  .stage:nth-child(2) { border-left-color: var(--green); }
+  .stage:nth-child(3) { border-left-color: var(--accent); }
+  .stage:nth-child(4) { border-left-color: var(--accent-deep); }
+  .stage .n { font-family: "SF Mono", monospace; color: var(--ink-faint); font-size: 0.85rem; }
+  .stage .t { font-weight: 600; font-size: 0.94rem; }
+  .stage .d { color: var(--ink-soft); font-size: 0.85rem; margin-top: 2px; }
+  .stage .cap { font-size: 0.78rem; color: var(--ink-faint); text-align: right; }
+
+  footer {
+    padding: 40px 0 80px;
+    color: var(--ink-faint);
+    font-size: 0.8rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="toc" aria-label="目次">
+    <div class="toc-label">Contents</div>
+    <a href="#thought">思想の出発点</a>
+    <a href="#goal">目指すゴール</a>
+    <a href="#milestone">マイルストーン</a>
+    <a href="#progress">進捗</a>
+    <a href="#org">部門構成</a>
+    <a href="#depts">各部門の仕事</a>
+    <a href="#projects">今動いているプロジェクト</a>
+    <a href="#future">今後の増やし方</a>
+  </nav>
+
+  <div>
+    <header class="hero">
+      <p class="eyebrow">Harvest Inc. &mdash; 会社説明資料</p>
+      <h1>ハーヴェスト社</h1>
+      <p class="sub">小さな利益を、AIの反復する力で積み上げていく会社です。</p>
+      <div class="terrace hero-terrace">
+        <div class="band filled"></div>
+        <div class="band filled" style="width: 82%"></div>
+        <div class="band filled" style="width: 58%"></div>
+        <div class="band" style="width: 30%"></div>
+      </div>
+    </header>
+
+    <section id="thought">
+      <h2><span class="no">01</span>思想の出発点</h2>
+      <p class="lead">「なぜハーヴェストという名前なのか」から説明します。</p>
+
+      <p>「ハーヴェスト」という名前は、あるマンガに登場する能力の名前から借りています。その能力は、1つ1つはとても小さな力しか持たない無数の手が、みんなでちょっとずつ何かを運んでいく、というものでした。</p>
+
+      <p>この会社のビジネスの考え方も、まったく同じです。<strong>1件あたり数円から数十円という、とても小さな利益を、人間には真似できない回数・スピード・疲れ知らずでAIが積み重ねていく。</strong>それがこの会社の一番の土台です。「一発の大きなアイデアで大きく稼ぐ」というやり方とは、正反対の考え方だと言えます。</p>
+
+      <h3>2つだけの絶対ルール</h3>
+      <p>会社を始める前、「前にやっていたアプリに似ているから」という理由だけで、なんとなく計画を立ててしまった反省がありました。そこで、新しいアイデアを選ぶときに絶対に破ってはいけないルールを、あえて2つだけに絞りました。</p>
+      <div class="callout">
+        <p style="margin:0 0 10px;">① 会社の人が持っている営業の経験や人脈を、アイデア選びの理由にしない</p>
+        <p style="margin:0;">② 「今すでにやっていることに近いから」という理由で、新しいアイデアを選ばない</p>
+      </div>
+      <p>それ以外(どんな分野を選ぶか、どんな仕組みにするか)は、毎回まっさらな気持ちで考え直す。これがハーヴェスト社の一番はじめの約束です。</p>
+    </section>
+
+    <section id="goal">
+      <h2><span class="no">02</span>目指すゴール</h2>
+      <p class="lead">会社の規則の第1条は、たった一言です。</p>
+
+      <div class="callout goal">
+        <p class="big">利益を出すこと。</p>
+      </div>
+
+      <p>データを集めること、作業を自動でできるようにすること、扱うテーマの数を増やすこと——これらは全部「利益を出す」ための手段であって、それ自体が目的になってはいけない、と決まっています。何か判断に迷ったときは、「これは利益に近づく行動か?」だけを基準にする、というルールです。</p>
+
+      <h3>具体的な数字の目標</h3>
+      <div class="stats">
+        <div class="stat">
+          <p class="label">年間予算</p>
+          <p class="value">20<small>万円</small></p>
+          <p style="margin:0; font-size:0.82rem; color:var(--ink-faint);">2026年8月〜2027年7月</p>
+        </div>
+        <div class="stat">
+          <p class="label">目標プロジェクト数</p>
+          <p class="value">50<small>件</small></p>
+          <p style="margin:0; font-size:0.82rem; color:var(--ink-faint);">情報収集レベルまで含めて</p>
+        </div>
+      </div>
+      <p>もし2027年の夏になっても、月の売上が1万円に届いていなかったら、「新しいテーマを増やす」のではなく「ハーヴェストのやり方自体」をもう一度みんなで考え直す——これが、あらかじめ決めてある撤退ラインです。</p>
+    </section>
+
+    <section id="milestone">
+      <h2><span class="no">03</span>マイルストーン</h2>
+      <p class="lead">これまでの主な出来事です。</p>
+
+      <ul class="timeline">
+        <li>
+          <span class="date">2026年6月</span>
+          <p class="ttl">モデルの着想、最初の3テーマ確定</p>
+          <p class="desc">「小さな利益をAIで積み上げる」という考え方が生まれ、最初に取り組む3つのテーマ(国内SaaSの料金・SaaSの障害情報・保険の商品改定)を決めた。</p>
+        </li>
+        <li>
+          <span class="date">2026年7月17日</span>
+          <p class="ttl">会社として正式始動</p>
+          <p class="desc">組織図・意思決定のルール・年間予算をきちんと整備し、「会社」として正式にスタートした。</p>
+        </li>
+        <li>
+          <span class="date">2026年7月18日</span>
+          <p class="ttl">仕組みが一気に進化した日</p>
+          <p class="desc">新しいテーマを選ぶAI会議(評議会)の仕組み化、お金の記録の自動化、法律チェックの仕組みづくりなど、会社の背骨にあたる部分が数多く整備された。</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="progress">
+      <h2><span class="no">04</span>進捗</h2>
+      <p class="lead">今の状態を数字で見てみます。</p>
+
+      <div class="stats">
+        <div class="stat">
+          <p class="label">予算の消化率</p>
+          <p class="value">17.8<small>%</small></p>
+          <p style="margin:0; font-size:0.82rem; color:var(--ink-faint);">35,587円 / 200,000円</p>
+        </div>
+        <div class="stat">
+          <p class="label">集めている情報源</p>
+          <p class="value">113<small>件</small></p>
+          <p style="margin:0; font-size:0.82rem; color:var(--ink-faint);">うち実際に動いているもの 74件</p>
+        </div>
+        <div class="stat">
+          <p class="label">扱っているテーマ数</p>
+          <p class="value">7<small>個</small></p>
+          <p style="margin:0; font-size:0.82rem; color:var(--ink-faint);">本番稼働1・情報収集中6</p>
+        </div>
+        <div class="stat">
+          <p class="label">本番公開しているサイト</p>
+          <p class="value">1<small>件</small></p>
+          <p style="margin:0; font-size:0.82rem; color:var(--ink-faint);">saas-status.com(まだ無料公開)</p>
+        </div>
+      </div>
+
+      <h3>費目別の使い方(予算20万円の内訳)</h3>
+      <div class="budget-bars">
+        <div class="budget-row"><span class="name">API</span><div class="budget-track"><div class="budget-fill" style="width:74%"></div></div><span class="amount">35,587円</span></div>
+        <div class="budget-row"><span class="name">需要テスト</span><div class="budget-track"><div class="budget-fill" style="width:0%"></div></div><span class="amount">0円</span></div>
+        <div class="budget-row"><span class="name">法務</span><div class="budget-track"><div class="budget-fill" style="width:0%"></div></div><span class="amount">0円</span></div>
+        <div class="budget-row"><span class="name">ドメイン・雑費</span><div class="budget-track"><div class="budget-fill" style="width:0%"></div></div><span class="amount">0円</span></div>
+        <div class="budget-row"><span class="name">予備</span><div class="budget-track"><div class="budget-fill" style="width:0%"></div></div><span class="amount">0円</span></div>
+      </div>
+    </section>
+
+    <section id="org">
+      <h2><span class="no">05</span>部門構成</h2>
+      <p class="lead">人間はオーナー1人だけ。あとは全部AIが役割を分担しています。</p>
+
+      <div class="org">
+        <div class="org-node owner">オーナー(人間)</div>
+        <div class="org-connector"></div>
+        <div class="org-node gm">執行役 GM(AI)</div>
+        <div class="org-connector"></div>
+        <div class="org-children">
+          <div class="org-node">評議会</div>
+          <div class="org-node">監査役</div>
+          <div class="org-node">調査部</div>
+          <div class="org-node">開発部(CC)</div>
+          <div class="org-node">経理部</div>
+          <div class="org-node">法務部</div>
+        </div>
+      </div>
+      <p style="margin-top:24px; font-size:0.9rem; color:var(--ink-soft);">評議会・監査役・調査部・開発部・経理部・法務部は、すべて執行役(GM)が場面ごとに役割を切り替えて担当しています。専用の担当者が別々にいるわけではなく、「今はこの帽子をかぶる」というイメージです。</p>
+    </section>
+
+    <section id="depts">
+      <h2><span class="no">06</span>各部門の仕事</h2>
+      <p class="lead">それぞれ「いつ」動いて、「何を」するのかをまとめました。</p>
+
+      <div class="dept-list">
+        <div class="dept">
+          <div class="dept-head"><span class="name">オーナー</span><span class="who">人間</span></div>
+          <span class="when">動くとき: お金を使う・会社のルールを変える瞬間</span>
+          <p class="what">最終的なOK/NGを出す社長役。お金を実際に使うこと、値段を決めて売り始めること、会社のルールを変えることは、必ずオーナーの承認が必要です。</p>
+        </div>
+        <div class="dept">
+          <div class="dept-head"><span class="name">執行役(GM)</span><span class="who">AI</span></div>
+          <span class="when">動くとき: 毎日</span>
+          <p class="what">会社の日々の運営を担当。新しいテーマを採用するかどうかの判断、調査や実装の指示、予算配分の細かい調整をする。大きな判断はオーナーに報告する。</p>
+        </div>
+        <div class="dept">
+          <div class="dept-head"><span class="name">評議会</span><span class="who">AI(複数役)</span></div>
+          <span class="when">動くとき: 新しいビジネスのタネが見つかったとき</span>
+          <p class="what">複数のAIが「市場を見る役」「リスクを見る役」など別々の役になりきって議論し、そのアイデアを「採用」「却下」「保留」のどれにするかを決める会議体。</p>
+        </div>
+        <div class="dept">
+          <div class="dept-head"><span class="name">監査役</span><span class="who">AI</span></div>
+          <span class="when">動くとき: 評議会の話し合いの直後</span>
+          <p class="what">評議会の判断が、えこひいき(すでに持っているものを優先しすぎる、など)になっていないかをチェックする、いわば審判役。</p>
+        </div>
+        <div class="dept">
+          <div class="dept-head"><span class="name">調査部</span><span class="who">執行役が兼務</span></div>
+          <span class="when">動くとき: 新しいテーマや情報源の候補が出たとき</span>
+          <p class="what">実際にウェブサイトを調べて、情報がちゃんと取れるか、相手のサイトのルール(robots.txt)に違反していないかを確認する。</p>
+        </div>
+        <div class="dept">
+          <div class="dept-head"><span class="name">開発部(CC)</span><span class="who">Claude Code</span></div>
+          <span class="when">動くとき: いつでも(プログラムが必要なとき)</span>
+          <p class="what">実際にプログラムを書いて、情報収集・分析・ホームページ公開の仕組みを作ったり直したりする、いわばエンジニア役。</p>
+        </div>
+        <div class="dept">
+          <div class="dept-head"><span class="name">経理部</span><span class="who">仕組み化(コード)</span></div>
+          <span class="when">動くとき: お金が動くたび</span>
+          <p class="what">AIがAPIを呼び出すたびに、いくら使ったかを自動で記録する。人間の「言い忘れ」に頼らないよう、記録はすべてプログラムが自動で行う。週に1回、記録漏れがないかをチェックする担当も置いている。</p>
+        </div>
+        <div class="dept">
+          <div class="dept-head"><span class="name">法務部</span><span class="who">チェックリスト+GM</span></div>
+          <span class="when">動くとき: テーマを次の段階に進める前</span>
+          <p class="what">お試し公開の前には、相手のサイトのルール・利用規約・商標に問題がないかを確認する。本格的にお金を取り始める前には、必ず本物の弁護士に相談する決まりになっている。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2><span class="no">07</span>今動いているプロジェクト</h2>
+      <p class="lead">現在7つのテーマを扱っています。</p>
+
+      <div style="overflow-x:auto;">
+      <table class="proj-table">
+        <thead><tr><th>テーマ</th><th>内容</th><th>状態</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>C</strong></td>
+            <td>国内SaaS各社の障害・メンテナンス情報まとめ(saas-status.com)</td>
+            <td><span class="pill live">本番公開中</span></td>
+          </tr>
+          <tr>
+            <td><strong>A</strong></td>
+            <td>国内SaaSの料金・プラン改定履歴</td>
+            <td><span class="pill collect">情報収集中</span></td>
+          </tr>
+          <tr>
+            <td><strong>E</strong></td>
+            <td>生命保険・損害保険の商品改定履歴</td>
+            <td><span class="pill collect">情報収集中</span></td>
+          </tr>
+          <tr>
+            <td><strong>F</strong></td>
+            <td>海外SaaSの値上げ・機能変更の履歴</td>
+            <td><span class="pill collect">情報収集中</span></td>
+          </tr>
+          <tr>
+            <td><strong>G</strong></td>
+            <td>国の規制・パブリックコメントの動向</td>
+            <td><span class="pill collect">情報収集中</span></td>
+          </tr>
+          <tr>
+            <td><strong>H</strong></td>
+            <td>新しいビジネスのヒントを集める「種まき」テーマ</td>
+            <td><span class="pill collect">情報収集中</span></td>
+          </tr>
+          <tr>
+            <td><strong>I</strong></td>
+            <td>AIエージェントの安全な運用・事故に関する情報</td>
+            <td><span class="pill collect">情報収集中</span></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <p style="margin-top:18px; font-size:0.88rem; color:var(--ink-soft);">「情報収集中」のテーマは、まだホームページを公開したりお金を取ったりしていません。まずはデータを集めて、育てられそうか見極めている段階です。</p>
+    </section>
+
+    <section id="future">
+      <h2><span class="no">08</span>今後のプロジェクト増加について</h2>
+      <p class="lead">テーマは4つの段階で少しずつ育てていきます。</p>
+
+      <div class="stages">
+        <div class="stage">
+          <span class="n">1</span>
+          <div><div class="t">収集</div><div class="d">とりあえずデータを集めるだけ。出口(公開・お金)はまだ無い</div></div>
+          <span class="cap">件数の制限なし</span>
+        </div>
+        <div class="stage">
+          <span class="n">2</span>
+          <div><div class="t">構造化</div><div class="d">集めたデータをちゃんと使える形に整理する</div></div>
+          <span class="cap">同時に5個まで</span>
+        </div>
+        <div class="stage">
+          <span class="n">2.5</span>
+          <div><div class="t">お試し公開</div><div class="d">お金は取らずに、ホームページを試しに公開して反応を見る</div></div>
+          <span class="cap">予算の範囲内</span>
+        </div>
+        <div class="stage">
+          <span class="n">3</span>
+          <div><div class="t">本番公開</div><div class="d">実際にお金を取り始める</div></div>
+          <span class="cap">同時に2個まで</span>
+        </div>
+      </div>
+
+      <p>新しいテーマは、AIの会議(評議会)にかけて公平に選びます。人間が持っている営業経験や、すでにある資産を判断材料にしない、という約束は毎回必ず守ります。どの段階に進めるかは、必ずオーナー(人間)の承認が必要です。</p>
+
+      <p>今のところ本番公開しているのは1つ(テーマC)だけですが、「情報収集中」のテーマが7つあり、この中から今後、育てられそうなものを少しずつお試し公開・本番公開へと進めていく計画です。</p>
+    </section>
+
+    <footer>
+      この資料は、ハーヴェスト社の内部ルール(GOVERNANCE.md・BUDGET.md・RULES.md・DECISIONS.md・HANDOFF.md)をもとに作成しています。会社の仕組みに変更があった場合は、この資料もあわせて更新されます。
+    </footer>
+  </div>
+</div>
+</body>
+</html>
