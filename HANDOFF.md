@@ -28,8 +28,14 @@ Slack通知も追加した。
   スケジューラ
 - `ecosystem.config.js`に4つ目のPM2プロセス(`harvest-engine-audit-scheduler`)を追加
 - 動作確認: `tsc --noEmit`型エラーなし。webhook未設定状態で実行し「スキップ」ログが出ること、
-  importするだけではCLI出力が発生しないこと(上記バグ修正の検証)を隔離環境で確認済み。
-  実際のSlack送信(webhook設定済み環境)はVM側で本番運用開始時に初回発火を確認する
+  importするだけではCLI出力が発生しないこと(上記バグ修正の検証)を隔離環境で確認済み
+- **VM実機テストでもう1件バグを発見・修正**: VM上で手動トリガーして実際のSlack送信を検証した
+  ところ、`.env`にSLACK_WEBHOOK_URLが設定済みにもかかわらず「未設定のためスキップ」と表示された。
+  原因は`src/auditScheduler.ts`に`import "dotenv/config"`が無く、PM2の新規プロセスでは`.env`が
+  一切読み込まれない状態だったため(`council-scheduler`は`src/council/run.ts`がdotenvを
+  importしているため間接的に恩恵を受けていたが、audit系は独自に読み込む必要があった)。
+  `auditScheduler.ts`の先頭に追加して修正。VM反映・PM2再起動後、再度手動トリガーし
+  **実際にSlackへ✅通知が届くことを確認済み**
 
 ### 監査役の週次バッチを新規実装(次フェーズ項目の着手)
 背景: 経理部の自動記帳(`ledger.ts`)は「API呼び出し成功直後に記帳」という設計だが、記帳自体が
