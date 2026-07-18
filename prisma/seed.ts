@@ -877,6 +877,26 @@ const sources: SourceSeed[] = [
     fetchIntervalMin: 1616,
     note: "robots.txt自体はWebFetchツールから403(取得不可)だが、本番politeFetch(取得失敗時はbody空扱いで許可とみなす実装)ではisAllowedByRobots=trueと確認済み。前回調査(2026-07-18初回)では/starting-upページを対象にFirebase JSON blobのみでSSR本文ゼロ件と判定していたが、今回ホーム(/)を本番politeFetchで実地fetchしたところ200・本文313KB・h1-h3見出し56件(実際の投稿タイトル)がSSRされていることを確認。対象URLをホームへ変更しactive登録。/starting-upは引き続きJS SPAシェル(本文22KB・見出し0件)で取得不可なことも本番fetchで再確認済み(登録せず)",
   },
+
+  // ── テーマH追加: App Store公式RSS(トレンド軸) 2026-07-18調査・登録 ──
+  {
+    companyName: "App Store 無料トップチャート(JP)",
+    insuranceType: "theme_h",
+    url: "https://rss.marketingtools.apple.com/api/v2/jp/apps/top-free/50/apps.json",
+    fetchType: "json",
+    active: true,
+    fetchIntervalMin: 1627,
+    note: "依頼時の候補(itunes.apple.com/jp/rss/*)はrobots.txtが`/*/rss/*`を明示的にDisallowしており本番politeFetchでも遮断されたため、Apple公式の後継API(rss.marketingtools.apple.com、robots.txtは実質無制限)に切替。本番politeFetchで200・JSON・50件(setlog/ChatGPT/Google Gemini等)を確認。後継APIのチャート種別はtop-free/top-paidのみで「新着(newapplications相当)」は提供されておらず代替不可(Apple仕様変更が原因、オーナー確認済みで見送り)",
+  },
+  {
+    companyName: "App Store 無料トップチャート(US)",
+    insuranceType: "theme_h",
+    url: "https://rss.marketingtools.apple.com/api/v2/us/apps/top-free/50/apps.json",
+    fetchType: "json",
+    active: true,
+    fetchIntervalMin: 1638,
+    note: "依頼時の候補(itunes.apple.com/us/rss/*)はrobots.txtが`/*/rss/*`を明示的にDisallowしており本番politeFetchでも遮断されたため、Apple公式の後継API(rss.marketingtools.apple.com、robots.txtは実質無制限)に切替。本番politeFetchで200・JSON・50件(Netflix Game Controller/ChatGPT/TikTok Pro等)を確認。後継APIのチャート種別はtop-free/top-paidのみで「新着(newapplications相当)」は提供されておらず代替不可(Apple仕様変更が原因、オーナー確認済みで見送り)",
+  },
 ];
 
 async function main() {
