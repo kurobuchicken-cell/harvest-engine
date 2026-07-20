@@ -110,5 +110,47 @@
     "fxRateSource": "https://open.er-api.com/v6/latest/USD",
     "fxRateStatus": "resolved",
     "recordedAt": "2026-07-18T11:43:50.980Z"
+  },
+  {
+    "category": "api",
+    "service": "council-opus",
+    "amountUsd": 3.6313,
+    "amountJpy": 590,
+    "description": "評議会(選定) 生データ500件から候補4件を選定",
+    "occurredAt": "2026-07-20T06:01:55.327Z",
+    "id": "5e5057ff-940b-41c9-8479-f95d21b8df9c",
+    "fxRate": 162.488226,
+    "fxRateFetchedAt": "2026-07-20T06:01:55.327Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-07-20T06:01:55.356Z"
+  },
+  {
+    "category": "api",
+    "service": "council-opus",
+    "amountUsd": 1.42892,
+    "amountJpy": 232,
+    "description": "評議会(判断) \"中古・リファービッシュ端末の価格/品質/在庫データ(日本市場)\" → 裁定=保留",
+    "occurredAt": "2026-07-20T06:05:45.727Z",
+    "id": "759daaf6-7394-42c0-aabb-b8cb0fb6cacb",
+    "fxRate": 162.488226,
+    "fxRateFetchedAt": "2026-07-20T06:05:45.727Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-07-20T06:05:45.753Z"
+  },
+  {
+    "category": "api",
+    "service": "council-opus",
+    "amountUsd": 1.1204399999999999,
+    "amountJpy": 182,
+    "description": "評議会(判断) \"GEO(生成エンジン最適化)/AI被引用の可視化(海外市場)\" → 裁定=却下",
+    "occurredAt": "2026-07-20T06:10:54.223Z",
+    "id": "1009180e-ab4c-4309-b0bb-8e5c9aeec8fc",
+    "fxRate": 162.488226,
+    "fxRateFetchedAt": "2026-07-20T06:10:54.223Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-07-20T06:10:54.254Z"
   }
 ]
