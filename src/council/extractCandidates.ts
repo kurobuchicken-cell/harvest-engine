@@ -51,6 +51,21 @@ async function itemsFromHnIdList(raw: Buffer, sourceCompanyName: string): Promis
   return items;
 }
 
+// Apple公式App Store top-free/paid API(rss.marketingtools.apple.com)のレスポンス形式。
+// Hacker Newsと同じfetchType="json"だが構造が全く異なるため専用パーサーが必要
+function itemsFromAppStoreJson(raw: Buffer, sourceCompanyName: string): CandidateItem[] {
+  const data = JSON.parse(raw.toString("utf-8"));
+  const results = data?.feed?.results;
+  if (!Array.isArray(results)) return [];
+  return results
+    .filter((r: { name?: string; url?: string }) => r?.name && r?.url)
+    .map((r: { name: string; url: string }) => ({
+      title: r.name,
+      url: r.url,
+      sourceCompanyName,
+    }));
+}
+
 // テーマHソースの直近7日分の変化から、重複を除いた生アイテム一覧を集める。
 // キーワードの絞り込み・優先順位づけは一切行わない(それは選定評議会の仕事)
 export async function collectRecentItems(): Promise<CandidateItem[]> {
@@ -85,7 +100,19 @@ export async function collectRecentItems(): Promise<CandidateItem[]> {
         continue;
       }
     } else if (change.source.fetchType === "json") {
-      items = await itemsFromHnIdList(raw, change.source.companyName);
+      const host = new URL(change.source.url).hostname;
+      try {
+        if (host === "hacker-news.firebaseio.com") {
+          items = await itemsFromHnIdList(raw, change.source.companyName);
+        } else if (host === "rss.marketingtools.apple.com") {
+          items = itemsFromAppStoreJson(raw, change.source.companyName);
+        } else {
+          // 未対応のjson形式(候補抽出パーサー未実装)。1件のせいで全体を落とさずスキップする
+          continue;
+        }
+      } catch {
+        continue;
+      }
     }
 
     for (const item of items) {
