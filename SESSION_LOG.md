@@ -305,3 +305,72 @@
     軽く目を通すとよい
 - 触ったファイル：`package.json`・`package-lock.json`(npm install反映)、`prisma/migrations/`
   適用(`dev.db`)、`SESSION_LOG.md`
+
+## harvest-engine-council-audit-bugfix-01（2026-07-20）
+- 作業環境：家PC
+- やったこと：
+  - オーナー依頼で各部門(巡回/評議会/監査役/経理/Web/法務)の本日の稼働状況をVM上のPM2ログ・
+    ledger・council-outputで調査。巡回は正常だったが評議会と監査役の2件に問題を発見
+  - **評議会のバグ修正**: 今日00:00 UTCの週次自動実行が、7/18に追加したApp Store
+    top-freeソース(fetchType="json"だがHacker Newsとは全く別のJSON形式
+    `{feed:{results:[...]}}`)を`itemsFromHnIdList`が誤ってHN専用パーサーでパースしようと
+    し`TypeError: ids is not iterable`でクラッシュ、生データ収集の時点で今週分が丸ごと
+    失敗していたと判明。`src/council/extractCandidates.ts`にURLホスト別の分岐
+    (`itemsFromAppStoreJson`新設)と、未知のjson形式は例外を投げず1件だけスキップする
+    防御を追加して修正(`d86f912`、VM・ローカル双方に反映、council-scheduler再起動済み)
+  - **監査役の異常**: 週次cron(月曜01:00 UTC)が発火した形跡がログに一切なく原因不明
+    (node-cron自体の設定・VMのタイムゾーンがUTCであることは確認済み、次回月曜7/27に
+    正常発火するか要経過観察)。audit-schedulerもPM2再起動済み
+  - 評議会の今週分をキャッチアップ実行(VM上でnpm run council:run)。生データ500件収集
+    (直近7日分、`WINDOW_DAYS=7`+`MAX_ITEMS=500`キャップの一括処理であり「1日500件」
+    ではない旨オーナーに説明)→候補4件選定(590円)→判断2件(中古・リファービッシュ端末=
+    保留232円、GEO/AI被引用可視化=却下182円)まで進んだところで`Anthropic API`の
+    `credit balance too low`エラーで停止(合計1,004円は正常に記帳済み、失敗分の課金なし)
+  - 監査役の今週分もキャッチアップ実行(1回目はdotenv読み込み忘れでSlack通知がスキップ
+    されたが気づいて再実行、正常送信を確認)。記帳失敗・為替未解決なし、評議会週次実行
+    との突合もOK
+  - オーナーがAnthropic Consoleで$20のクレジット追加を試みるも決済失敗(Stripe
+    「Payment failed」、メールでも$22の請求失敗を確認)。Web検索で調査した結果、
+    Anthropic/Stripe側で多数報告されている既知の不具合(Link経由の保存済みカードが
+    一度拒否されると別カードに切り替えても同じ拒否済みトークンを使い回す等)の可能性が
+    高いと判明。三井住友VISAへの問い合わせ方法(不正検知ブロックの確認・解除依頼)を案内
+    したが、本セッション終了時点で決済は未解決。**残り2件(候補3「AIエージェント運用の
+    ガードレール」・候補4「広告体験の劣化とダークパターン規制」)は中断中**
+  - **ラップトップへの引き継ぎ準備**:
+    - dev-configの`harvest_engine_vm_key`がWindows(`core.autocrlf=true`)でチェックアウト
+      時にCRLF化されOpenSSH形式としてパース不能になっていた不具合を発見・修正。
+      git上のオブジェクト自体はLFのまま壊れていなかったため、`.gitattributes`で
+      鍵・トークン類を`-text`指定して恒久対応(dev-config `8163e0a`)。ついでに
+      `auto_x-app`の`oracle_vm_key`も同じ問題を抱えていたため同時に修正
+    - VM側に溜まっていた未コミットの実データ(ledger・council-output)を、VM自体に
+      GitHub push用の認証情報が無い(credential helper未設定)ことが判明したため、
+      家PC経由でファイルを取り込んでコミット・push(`e8f2395`)、その後VM側を
+      `git reset --hard origin/main`で同期
+    - VM上の家PC/ラップトップ双方に無関係な一時デバッグファイル(`checkNewSnap_tmp.ts`、
+      7/18の別セッションの残骸)を削除
+- 完了した状態：
+  - `d86f912`(評議会バグ修正)・`e8f2395`(今週分データ)ともにGitHub・家PC・VM全て反映済み
+  - VM側council-scheduler/audit-schedulerはPM2再起動済みで最新コードで稼働中、PM2
+    4プロセスとも`online`
+  - dev-config `.gitattributes`追加によりSSH鍵のCRLF破損は恒久的に解消(再発しない)
+  - ラップトップは`git pull`(harvest-engine)+`sync-pull.ps1`(dev-config)のみで
+    今日の状態に追いつける
+- 残課題・次にやること：
+  - **最優先(オーナー対応)**: Anthropicのクレジット決済が通り次第、候補3・4の判断評議会を
+    VM上で再開する。選定結果は`council-output/selections/2026-07-20T06-01-55-358Z.json`に
+    保存済みなので、生データ収集・選定をやり直す必要はなく、候補3・4だけをジャッジすればよい
+    (今回使った再開用ワンオフスクリプトの構成は本セッションのやり取り参照、正式なnpm
+    scriptとしては未整備)
+  - 監査役の週次cronが今週発火しなかった原因は未特定。次回月曜(7/27)01:00 UTCに正常発火
+    するか要確認。再発する場合はnode-cron v4の内部挙動を疑い、ポーリング方式への切替も検討
+  - 決済失敗の根本原因(銀行の海外決済ブロックか、Anthropic/Stripe側の既知不具合か)は未確定。
+    三井住友VISAへの問い合わせ結果待ち
+  - VM側にGitHub push用の認証情報が無い状態が今回判明した。今後もVM上で直接コミットが
+    発生する運用(監査証跡としてcouncil-output等をコミットする方針)を続けるなら、VM側にも
+    push用の認証情報(PATやSSHデプロイキー等)を設定しておくと今回のような家PC経由の
+    回避作業が不要になる(今回は急ぎではないため未対応、次回検討)
+- 触ったファイル：`src/council/extractCandidates.ts`、`data/ledger.json`、
+  `council-output/selections/2026-07-20T06-01-55-358Z.json`、
+  `council-output/verdicts/`(候補1・2の裁定2件)、dev-config `.gitattributes`(新規)、
+  dev-config内`envs/harvest-engine/data/tokens/*`・`envs/auto_x-app/data/tokens/*`
+  (CRLF→LF修正)、VM側の一時ファイル`checkNewSnap_tmp.ts`(削除)
