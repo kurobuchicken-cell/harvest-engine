@@ -281,3 +281,27 @@
   - 次フェーズ: ローカル/VMのledger合算、STARTUP DB運用具体化、Substackキュレーション
   - HANDOFF.md「新たに判明した課題・次アクション」参照
 - 触ったファイル：`prisma/seed.ts`、`CLAUDE.md`、`HANDOFF.md`、`GOVERNANCE.md`、`DECISIONS.md`、`src/auditReport.ts`・`src/auditNotify.ts`・`src/auditScheduler.ts`・`src/lib/slackWebhook.ts`（新規）、`src/council/notify.ts`、`src/lib/legalChecklist.ts`・`src/legalRecord.ts`・`src/legalCheck.ts`（新規）、`data/legalChecklist.json`（新規）、`会社説明資料.html`（新規・複数回更新）、`ecosystem.config.js`、`package.json`、VM側`.env`・PM2設定・sourcesテーブル
+
+## harvest-engine-homepc-env-sync-01（2026-07-20）
+- 作業環境：家PC
+- やったこと：
+  - このフォルダを家PCで作った記憶がないというオーナーの疑問を調査。git reflog・
+    PowerShell履歴・全プロジェクトのClaude Codeセッションログを横断確認した結果、
+    2026-07-17に別プロジェクト(`auto_x-app`)のセッション内で「ノートPCのプロジェクトを
+    家PCに引き継ぎたい」という依頼を受けてClaudeが`git clone`していたことが判明(家PC単独の
+    セッションでの作業ではなかった)
+  - ノートPC側で2026-07-16〜18に進んでいた作業(origin/mainで50コミット先行、council評議会
+    パイプライン・監査役週次バッチ・経理台帳・法務ゲート・Web公開ページ等)を家PCに同期。
+    `git pull`(fast-forward)・`npm install`(7パッケージ追加)・
+    `npx prisma migrate deploy`(`20260717044709_add_incident_source_url`)を実施
+- 完了した状態：
+  - 家PCのgit・npm依存関係・ローカルDB(`dev.db`)スキーマがノートPC最新状態(`562d7a8`)に
+    追いついた。`.env`・`node_modules`とも既存(2026-07-17のclone時に作成済み)で問題なし
+- 残課題・次にやること：
+  - 家PC側のローカルDB(`dev.db`)はスキーマこそ最新だが、実データ(sources/snapshots等)は
+    未検証。実際に巡回や評議会コマンドを家PCで動かす場合は、VM側(Oracle VM運用が本流)との
+    使い分けを事前に確認する
+  - HANDOFF.md「新たに判明した課題・次アクション」は今回未確認。次回家PCで作業する際は
+    軽く目を通すとよい
+- 触ったファイル：`package.json`・`package-lock.json`(npm install反映)、`prisma/migrations/`
+  適用(`dev.db`)、`SESSION_LOG.md`
