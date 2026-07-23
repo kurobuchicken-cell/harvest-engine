@@ -374,3 +374,46 @@
   `council-output/verdicts/`(候補1・2の裁定2件)、dev-config `.gitattributes`(新規)、
   dev-config内`envs/harvest-engine/data/tokens/*`・`envs/auto_x-app/data/tokens/*`
   (CRLF→LF修正)、VM側の一時ファイル`checkNewSnap_tmp.ts`(削除)
+
+## harvest-engine-council-resume-themeJ-01（2026-07-23）
+- 作業環境：ノートPC
+- やったこと：
+  - 前回セッション(家PC)の環境確認後、Anthropicクレジット決済が解決済みとの報告を受け、
+    決済失敗で中断していた候補3「AIエージェント運用のガードレール」・候補4「広告体験の劣化と
+    ダークパターン規制」の判断評議会を一時スクリプト(`runCouncilForTopic()`を直接呼ぶ、実行後
+    削除)で再開。候補3は**採択**(約159円)、候補4は**保留**(約119円)、合計約278円を
+    `data/ledger.json`に自動記帳
+  - 候補3の調査プロンプトをオーナー承認の上CCへ投入し実地調査を実施。並列サブエージェント2本
+    (海外・新興プレイヤー担当/日本語圏・個人開発者層担当)で14候補を発掘し、主要候補は本番
+    `politeFetch`/`isAllowedByRobots`で実機再検証した
+  - **重要な発見**: サブエージェントは見落としていたが、有力候補Medusa(GitHub、★947)の公式
+    サイト(pantheonsecurity.io)のrobots.txtに`User-agent: ClaudeBot / Disallow: /`という
+    Cloudflare管理ブロックが明示的に存在した(後段に矛盾するAllowもあるが名指しDisallow自体が
+    存在するためCLAUDE.md「巡回対象選定の追加ルール」に抵触)。公式サイトを除外しGitHub
+    リポジトリ側のみ監視対象とした
+  - オーナー確認の上、テーマ適合・更新頻度に疑義のある2件(汎用エントロピー検出ツール
+    「entropy」、Agensiの静的販売ページ)と日本語エンタープライズ向けTEE方式「Acompany」を
+    backlogに回し、残り12件(RSS完備3件=Trestle/GMO Flatt Security Blog/yatta47個人ブログ、
+    GitHub個人OSS 8件、公式サイト1件=agent-env)をテーマJとして第1層登録。`prisma/seed.ts`
+    追記+一時スクリプト(`prisma/tmp-add-theme-j.ts`、実行後にローカル・VM双方から削除)による
+    `createMany`のみでローカルdev.db・VM双方に反映
+  - `CLAUDE.md`「現在の層の割り当て」にテーマJを追記。`会社説明資料.html`にテーマJのカードを
+    平易な言葉で追加し、件数表記(情報源→125件・稼働→86件・テーマ数→8個)を更新
+  - `HANDOFF.md`を更新(評議会再開・テーマJ調査結果・現在の稼働状況・オーナー判断待ち項目の
+    解消)
+- 完了した状態：
+  - 2026-07-20選定分の4候補は全て判断済み(候補1保留・候補2却下・候補3採択・候補4保留)
+  - sources合計**ローカル125件・VM125件で完全一致**(active86/inactive39、双方同一)
+  - 累計支出36,869円(消化率18.4%、API費目残額11,131円)
+  - 変更一式をコミット・push済み(`7e8c716`)
+- 残課題・次にやること：
+  - 監査役の週次cronが2026-07-20(月曜)に発火しなかった原因は未特定のまま。次回
+    2026-07-27(月曜)01:00 UTCに正常発火するか要確認(次回セッションで必ず見ること)
+  - backlogに回した「entropy」「Secret Leak Guard(Agensi)」「Acompany」は状況が変わった場合
+    に再調査すればよい
+  - テーマJはパーサー未実装(収集のみ、第1層)。今回追加した小規模GitHub OSS(★0のenv-guard・
+    secrets-scanner等)は開発停止・放棄リスクが高く「消える前提」で監視している旨、留意すること
+- 触ったファイル：`CLAUDE.md`、`HANDOFF.md`、`会社説明資料.html`、`prisma/seed.ts`、
+  `data/ledger.json`、`council-output/verdicts/`(候補3・4の裁定2件)、
+  `council-output/AIエージェント運用のガードレール(シークレット漏洩防止・権限-MCP検証).md`
+  (調査プロンプト、新規)、ローカルDB・VM側(`161.33.148.155`)のsourcesテーブル
