@@ -152,5 +152,33 @@
     "fxRateSource": "https://open.er-api.com/v6/latest/USD",
     "fxRateStatus": "resolved",
     "recordedAt": "2026-07-20T06:10:54.254Z"
+  },
+  {
+    "category": "api",
+    "service": "council-opus",
+    "amountUsd": 0.97466,
+    "amountJpy": 159,
+    "description": "評議会(判断) \"AIエージェント運用のガードレール(シークレット漏洩防止・権限/MCP検証)\" → 裁定=採択",
+    "occurredAt": "2026-07-23T10:11:23.405Z",
+    "id": "d05bf46d-840b-4cdc-8fd0-aaeac8209a2a",
+    "fxRate": 163.08664,
+    "fxRateFetchedAt": "2026-07-23T10:11:23.410Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-07-23T10:11:23.580Z"
+  },
+  {
+    "category": "api",
+    "service": "council-opus",
+    "amountUsd": 0.7285900000000001,
+    "amountJpy": 119,
+    "description": "評議会(判断) \"広告体験の劣化とダークパターン規制の動向(日本市場・要検証)\" → 裁定=保留",
+    "occurredAt": "2026-07-23T10:15:37.133Z",
+    "id": "372b99ee-dec2-4ab7-b3fa-230f25add170",
+    "fxRate": 163.08664,
+    "fxRateFetchedAt": "2026-07-23T10:15:37.133Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-07-23T10:15:37.225Z"
   }
 ]
