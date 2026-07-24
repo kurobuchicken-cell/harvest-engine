@@ -1,4 +1,9 @@
-import { readAllEntries, type ExpenseCategory, type LedgerEntry } from "./lib/ledger";
+import { stat } from "node:fs/promises";
+import path from "node:path";
+import { readAllEntries, readEntriesFrom, mergeEntries, type ExpenseCategory, type LedgerEntry } from "./lib/ledger";
+
+const VM_CACHE_PATH = path.resolve(process.cwd(), "data", "ledger.vm.json");
+const STALE_WARNING_DAYS = 8; // 監査役週次バッチ(月曜)の周期より少し余裕を持たせた閾値
 
 // BUDGET.mdの費目別配分(年間予算200,000円)。ledgerのcategoryと1:1で対応させている
 const CATEGORY_BUDGETS: Record<ExpenseCategory, { label: string; budgetJpy: number }> = {
@@ -29,9 +34,7 @@ export interface LedgerReport {
   unresolvedEntries: LedgerEntry[];
 }
 
-export async function buildLedgerReport(): Promise<LedgerReport> {
-  const entries = await readAllEntries();
-
+export async function buildLedgerReport(entries: LedgerEntry[]): Promise<LedgerReport> {
   const categories: CategorySummary[] = (Object.keys(CATEGORY_BUDGETS) as ExpenseCategory[]).map((category) => {
     const { label, budgetJpy } = CATEGORY_BUDGETS[category];
     const spentJpy = entries
@@ -68,9 +71,21 @@ function formatPercent(ratio: number): string {
 }
 
 async function main(): Promise<void> {
-  const report = await buildLedgerReport();
+  const localEntries = await readAllEntries();
+  const vmEntries = await readEntriesFrom(VM_CACHE_PATH);
+  const entries = mergeEntries(localEntries, vmEntries);
+  const report = await buildLedgerReport(entries);
 
-  console.log("=== 支出台帳サマリ (data/ledger.json) ===");
+  console.log("=== 支出台帳サマリ (ローカル + VM合算) ===");
+  if (vmEntries.length > 0) {
+    const cacheStat = await stat(VM_CACHE_PATH).catch(() => null);
+    const ageDays = cacheStat ? (Date.now() - cacheStat.mtimeMs) / (1000 * 60 * 60 * 24) : null;
+    const staleNote = ageDays !== null && ageDays > STALE_WARNING_DAYS ? ` ⚠️取得from${ageDays.toFixed(1)}日前、npm run ledger:syncで再取得推奨` : "";
+    console.log(`ローカル${localEntries.length}件 + VM${vmEntries.length}件 → 重複除去後${entries.length}件${staleNote}`);
+  } else {
+    console.log(`ローカル${localEntries.length}件のみ(VM側キャッシュ未取得。npm run ledger:syncで取得可能)`);
+  }
+  console.log("");
   console.log(`年間予算合計: ${report.totalBudgetJpy.toLocaleString()}円`);
   console.log(
     `累計支出(円建て確定分のみ): ${report.totalSpentJpy.toLocaleString()}円 (消化率 ${formatPercent(report.totalConsumptionRate)})`,

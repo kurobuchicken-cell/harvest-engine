@@ -117,3 +117,26 @@ export async function appendExpense(input: ExpenseInput): Promise<LedgerEntry> {
 export async function readAllEntries(): Promise<LedgerEntry[]> {
   return readLedger();
 }
+
+// ローカル/VM双方のledger.jsonは同一の初期データから分岐しているため、以降に追記された
+// エントリはそれぞれ別のrandomUUIDを持つ。idで重複排除するだけで安全に合算できる。
+export function mergeEntries(...sources: LedgerEntry[][]): LedgerEntry[] {
+  const byId = new Map<string, LedgerEntry>();
+  for (const entries of sources) {
+    for (const entry of entries) {
+      if (!byId.has(entry.id)) {
+        byId.set(entry.id, entry);
+      }
+    }
+  }
+  return [...byId.values()].sort((a, b) => a.recordedAt.localeCompare(b.recordedAt));
+}
+
+export async function readEntriesFrom(filePath: string): Promise<LedgerEntry[]> {
+  try {
+    const text = await readFile(filePath, "utf-8");
+    return JSON.parse(text) as LedgerEntry[];
+  } catch {
+    return [];
+  }
+}

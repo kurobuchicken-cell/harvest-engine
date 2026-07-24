@@ -16,3 +16,6 @@ node_modules
 
 # Oracle VM用SSH鍵(dev-config経由でPC間同期)
 /tokens
+
+# VM側ledger.jsonのローカルキャッシュ(npm run ledger:syncで取得、正本はVM側)
+/data/ledger.vm.json

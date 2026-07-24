@@ -16,6 +16,7 @@
     "council:schedule": "tsx src/councilScheduler.ts",
     "x:poll": "tsx src/adapters/xKeywords.ts",
     "ledger:report": "tsx src/ledgerReport.ts",
+    "ledger:sync": "tsx src/ledgerSync.ts",
     "audit:weekly": "tsx src/auditReport.ts",
     "audit:schedule": "tsx src/auditScheduler.ts",
     "legal:record": "tsx src/legalRecord.ts",

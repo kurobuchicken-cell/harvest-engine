@@ -417,3 +417,34 @@
   `data/ledger.json`、`council-output/verdicts/`(候補3・4の裁定2件)、
   `council-output/AIエージェント運用のガードレール(シークレット漏洩防止・権限-MCP検証).md`
   (調査プロンプト、新規)、ローカルDB・VM側(`161.33.148.155`)のsourcesテーブル
+
+## harvest-engine-ledger-aggregate-01（2026-07-24）
+- 作業環境：家PC
+- やったこと：
+  - セッション開始時、家PCのローカルSESSION_LOG.mdが7/20時点のまま古く、GitHub上には
+    ノートPCが7/23に押した2コミット(決済解決を受けた候補3・4の判断評議会再開、
+    テーマJ第1層登録)が未pull状態だったと判明。git fetchで検出しpull、以後「環境比較の
+    前に必ずgit fetch/pullする」旨をメモリに記録
+  - 残務確認の結果、「ローカル・VMそれぞれ別ファイルのledger.jsonを合算して見る仕組み」
+    (週次評議会コストがVM側にも記帳されるようになり、ローカル単独のledger:reportでは
+    消化率が実態より過小に見えるリスク)を最優先と判断しオーナー承認を得て着手
+  - `npm run ledger:sync`(新規、`src/ledgerSync.ts`)を実装。SSH
+    (`tokens/harvest_engine_vm_key`、`ubuntu@161.33.148.155`)でVM側`data/ledger.json`を
+    取得し`data/ledger.vm.json`にキャッシュ(git管理外)。`src/lib/ledger.ts`に
+    `mergeEntries`(id基準で重複排除)・`readEntriesFrom`を追加し、`npm run ledger:report`を
+    ローカル+VM合算集計に変更(VMキャッシュ未取得時はその旨明示、8日超過で再取得警告)
+  - 動作確認: `ledger:sync`実行→VM11件取得→ローカル13件と合算し重複除去後13件・36,869円
+    (消化率18.4%)で従来のローカル単独集計と一致することを確認(現時点でVM側記帳は全て
+    ローカルに手動反映済みだったため差分なし)。VMキャッシュ削除時に「ローカルのみ」表示へ
+    正しくフォールバックすることも確認。`tsc --noEmit`型エラーなし
+  - `HANDOFF.md`を更新(ledger合算の実装内容、「次フェーズ」項目の解消)
+- 完了した状態：
+  - ローカル・VMのledger合算機能が完成、`npm run ledger:sync`→`npm run ledger:report`の
+    2ステップで消化率を確認できる。ただし`ledger:sync`は手動実行が前提(自動化はしていない)
+  - 現時点の合算後累計支出は36,869円(消化率18.4%)で変化なし(隠れていた支出はなかった)
+- 残課題・次にやること：
+  - `ledger:sync`の定期実行(自動cron化などは今回スコープ外、手動実行忘れに注意)
+  - 監査役の週次cronが2026-07-27(月曜)01:00 UTCに正常発火するか要確認(引き続き未確認)
+  - テーマCのフル出口法務ゲート「弁護士スポット相談」の実施タイミングはオーナー判断待ちのまま
+- 触ったファイル：`src/ledgerSync.ts`(新規)、`src/lib/ledger.ts`、`src/ledgerReport.ts`、
+  `package.json`、`.gitignore`、`HANDOFF.md`
