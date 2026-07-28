@@ -412,6 +412,49 @@
     font-size: 0.8rem;
   }
 
+  /* ---------- 早わかりボックス ---------- */
+  .tldr {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--accent);
+    border-radius: 6px;
+    padding: 24px 26px;
+    margin: 32px 0 0;
+    box-shadow: var(--shadow);
+  }
+  .tldr .tldr-label {
+    font-size: 0.76rem;
+    letter-spacing: 0.1em;
+    color: var(--accent-deep);
+    text-transform: uppercase;
+    margin: 0 0 14px;
+  }
+  .tldr dl { margin: 0; display: flex; flex-direction: column; gap: 14px; }
+  .tldr dt { font-weight: 600; font-size: 0.92rem; margin: 0 0 3px; }
+  .tldr dd { margin: 0; color: var(--ink-soft); font-size: 0.92rem; }
+
+  /* ---------- 儲けの見通し: シナリオ比較 ---------- */
+  .scenario-list { display: flex; flex-direction: column; gap: 14px; margin: 24px 0; }
+  .scenario {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 18px 22px;
+  }
+  .scenario-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+  .scenario-head .name { font-weight: 600; font-size: 1rem; }
+  .scenario-head .result {
+    font-family: "SF Mono", "Consolas", monospace;
+    font-size: 1.05rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .scenario-head .result.neg { color: var(--ink-soft); }
+  .scenario-head .result.pos { color: var(--green); }
+  .scenario .d { color: var(--ink-soft); font-size: 0.9rem; margin: 0; }
+  .scenario.conservative { border-left: 4px solid var(--ink-faint); }
+  .scenario.normal { border-left: 4px solid var(--blue); }
+  .scenario.optimistic { border-left: 4px solid var(--green); }
+
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
   }
@@ -424,7 +467,9 @@
     <div class="toc-label">Contents</div>
     <a href="#thought">思想の出発点</a>
     <a href="#goal">目指すゴール</a>
+    <a href="#profit">儲けの見通し</a>
     <a href="#milestone">マイルストーン</a>
+    <a href="#weekly">毎週の動き</a>
     <a href="#progress">進捗</a>
     <a href="#org">部門構成</a>
     <a href="#depts">各部門の仕事</a>
@@ -444,6 +489,28 @@
         <div class="band" style="width: 30%"></div>
       </div>
     </header>
+
+    <div class="tldr">
+      <p class="tldr-label">30秒で分かる要約</p>
+      <dl>
+        <div>
+          <dt>何をする会社?</dt>
+          <dd>色々な業界の「小さいけど毎日動きがある情報」(値上げ・障害・規制の変化など)をAIが自動で集め続け、そのうち儲かりそうなものだけを少しずつホームページ公開・課金にまで育てていく会社。今は8つの種(テーマ)を育てていて、うち1つ(SaaS障害モニタ<a href="https://saas-status.com" target="_blank" rel="noopener noreferrer">saas-status.com</a>)は公開済み(まだ無料)。</dd>
+        </div>
+        <div>
+          <dt>毎週何をしてる?</dt>
+          <dd>裏側のプログラムが毎日自動でデータを集め続け、毎週月曜の朝にAIの会議(評議会)が「今週集まった情報の中に、新しく育てる価値があるタネはあるか」を審査する。同じ月曜にもう一つのAIが「今週ちゃんと会議も記帳もサボらず動いたか」を自己点検する。人間(オーナー)が毎週何かを作業する必要はない。</dd>
+        </div>
+        <div>
+          <dt>何を目指してる?</dt>
+          <dd>一発の大きな当たりを狙うのではなく、「1件あたり数円〜数十円の小さな利益を、数を増やして積み上げる」やり方で、年間予算20万円の範囲内で利益体質を作ること。</dd>
+        </div>
+        <div>
+          <dt>いつから儲かる? 20万円は回収できる?</dt>
+          <dd><strong>正直に言うと、まだ儲けはゼロで、今年度中に確実に黒字になる約束はできていません。</strong>会社としての公式な3パターン予想でも、一番手堅い想定では年間▲10万円の赤字が前提です。詳しくは下の「儲けの見通し」を参照。</dd>
+        </div>
+      </dl>
+    </div>
 
     <section id="thought">
       <h2><span class="no">01</span>思想の出発点</h2>
@@ -489,8 +556,34 @@
       <p>もし2027年の夏になっても、月の売上が1万円に届いていなかったら、「新しいテーマを増やす」のではなく「ハーヴェストのやり方自体」をもう一度みんなで考え直す——これが、あらかじめ決めてある撤退ラインです。</p>
     </section>
 
+    <section id="profit">
+      <h2><span class="no">03</span>儲けの見通し</h2>
+      <p class="lead">「いつから儲かるのか」「20万円は回収できるのか」に、正直に答えます。</p>
+
+      <p><strong>結論から言うと、今年度(2026年8月〜2027年7月)は赤字になる可能性の方が高いと、会社の公式な計画自体が織り込んでいます。</strong>ごまかさずに、あらかじめ用意している3パターンの予想をそのまま載せます。3パターンとも、分岐点は<strong>2026年12月〜2027年1月頃</strong>(唯一本番公開しているテーマCで、本物の弁護士に相談し課金を始めるかどうかを判断するタイミング)です。</p>
+
+      <div class="scenario-list">
+        <div class="scenario conservative">
+          <div class="scenario-head"><span class="name">手堅いケース</span><span class="result neg">年間収支 ▲100,000円</span></div>
+          <p class="d">今年度中はお試し公開・需要テストまでにとどまり、実際にお金を取り始めるところまで進まなかった場合。20万円の予算は「回収できず使い切る」想定。</p>
+        </div>
+        <div class="scenario normal">
+          <div class="scenario-head"><span class="name">普通に進んだケース</span><span class="result neg">年間収支 ▲69,000円</span></div>
+          <p class="d">2026年12月頃に弁護士相談を済ませ、テーマCなどで小さく課金を開始。年度末時点で月商2万円前後まで育つ想定。それでも年間トータルでは赤字。</p>
+        </div>
+        <div class="scenario optimistic">
+          <div class="scenario-head"><span class="name">うまくいったケース</span><span class="result pos">年間収支 +330,000円</span></div>
+          <p class="d">2026年11月頃から企業向けの課金が立ち上がり、2027年2月に単月黒字化。年度末時点で月商10万円前後まで育つ想定。この場合だけ、20万円の投資を回収してお釣りが出る。</p>
+        </div>
+      </div>
+
+      <p>正直に言うと、3つのうち2つ(手堅い・普通)は<strong>年間ではマイナス</strong>という予想です。これは「今年1年で必ず黒字にする」という約束をしている事業ではなく、<strong>「20万円を使って、本当に育つタネがあるかどうかを見極める」という実験・研究開発に近い性格の投資</strong>だと捉えるのが正確です。だからこそ、2027年夏の時点で月商1万円にも届いていなければ、粘らずにやり方自体を見直すという撤退ラインを会社のルールとしてあらかじめ決めています(前節「目指すゴール」参照)。</p>
+
+      <p>現時点(2026年7月28日)では、公開しているテーマC(saas-status.com)はまだ無料公開のままで、<strong>実際の売上はまだ0円</strong>です。使ったお金(累計37,123円、予算の18.6%)はすべてAI(評議会・調査)の運営コストであり、この中から売上を生む仕組みはまだ立ち上がっていません。</p>
+    </section>
+
     <section id="milestone">
-      <h2><span class="no">03</span>マイルストーン</h2>
+      <h2><span class="no">04</span>マイルストーン</h2>
       <p class="lead">これまでの主な出来事です。</p>
 
       <ul class="timeline">
@@ -512,15 +605,32 @@
       </ul>
     </section>
 
+    <section id="weekly">
+      <h2><span class="no">05</span>毎週の動き</h2>
+      <p class="lead">人間が毎週何かをしなくても、裏側では次のことが自動で回っています。</p>
+
+      <h3>毎日: 情報収集</h3>
+      <p>125件の情報源(サイト・RSS・公式API)を、それぞれ決められた間隔(1日に何度も、〜数時間に1回など)で自動巡回し、新しい変化(値上げ・障害・規制の動きなど)があれば記録する。ここは常時稼働のプログラムが担当していて、人間もAIも毎回判断する必要はない。</p>
+
+      <h3>毎週月曜 朝9時: 新しいタネ探しの会議(評議会)</h3>
+      <p>その週に集まった「話題になっているもの」のデータ(テーマH)を、複数のAIが役割を演じて議論する会議にかける。「これは深掘りする価値があるか」を最大5件まで選び、選んだものについて「採用・却下・保留」を決める。<strong>候補が1件もふさわしくないと判断すれば、無理に何かを選ばず「今週は0件」で終わることもある</strong>(実際、直近の2026年7月27日はこのパターンだった)。この会議自体にも1回あたり数百円のAI利用料がかかり、成果が0件の週でも費用は発生する。</p>
+
+      <h3>毎週月曜 朝10時: 会社自身のサボり点検(監査役)</h3>
+      <p>上の会議がちゃんと動いたか、お金の記帳漏れがないか、為替レートの計算に失敗していないかを、別のAIが自動でチェックする。何か異常があってもなくても、毎週必ずオーナーへSlackで結果を報告する(報告が来ること自体が「ちゃんと動いている」証拠にもなる)。</p>
+
+      <h3>不定期: 実地調査・法律チェック・公開作業</h3>
+      <p>新しいタネが「採用」と判断されたときや、既存のテーマを次の段階(お試し公開・本番公開)に進めるときだけ、人間(オーナー)の承認を得た上で実地調査・法律チェック・プログラム実装が行われる。これは毎週決まって発生するものではなく、タネが育つ節目ごとに発生する。</p>
+    </section>
+
     <section id="progress">
-      <h2><span class="no">04</span>進捗</h2>
+      <h2><span class="no">06</span>進捗</h2>
       <p class="lead">今の状態を数字で見てみます。</p>
 
       <div class="stats">
         <div class="stat">
           <p class="label">予算の消化率</p>
-          <p class="value">17.8<small>%</small></p>
-          <p style="margin:0; font-size:0.82rem; color:var(--ink-faint);">35,587円 / 200,000円</p>
+          <p class="value">18.6<small>%</small></p>
+          <p style="margin:0; font-size:0.82rem; color:var(--ink-faint);">37,123円 / 200,000円</p>
         </div>
         <div class="stat">
           <p class="label">集めている情報源</p>
@@ -541,7 +651,7 @@
 
       <h3>費目別の使い方(予算20万円の内訳)</h3>
       <div class="budget-bars">
-        <div class="budget-row"><span class="name">API</span><div class="budget-track"><div class="budget-fill" style="width:74%"></div></div><span class="amount">35,587円</span></div>
+        <div class="budget-row"><span class="name">API</span><div class="budget-track"><div class="budget-fill" style="width:77%"></div></div><span class="amount">37,123円</span></div>
         <div class="budget-row"><span class="name">需要テスト</span><div class="budget-track"><div class="budget-fill" style="width:0%"></div></div><span class="amount">0円</span></div>
         <div class="budget-row"><span class="name">法務</span><div class="budget-track"><div class="budget-fill" style="width:0%"></div></div><span class="amount">0円</span></div>
         <div class="budget-row"><span class="name">ドメイン・雑費</span><div class="budget-track"><div class="budget-fill" style="width:0%"></div></div><span class="amount">0円</span></div>
@@ -550,7 +660,7 @@
     </section>
 
     <section id="org">
-      <h2><span class="no">05</span>部門構成</h2>
+      <h2><span class="no">07</span>部門構成</h2>
       <p class="lead">人間はオーナー1人だけ。あとは全部AIが役割を分担しています。</p>
 
       <div class="org">
@@ -571,7 +681,7 @@
     </section>
 
     <section id="depts">
-      <h2><span class="no">06</span>各部門の仕事</h2>
+      <h2><span class="no">08</span>各部門の仕事</h2>
       <p class="lead">それぞれ「いつ」動いて、「何を」するのかをまとめました。</p>
 
       <div class="dept-list">
@@ -619,7 +729,7 @@
     </section>
 
     <section id="projects">
-      <h2><span class="no">07</span>今動いているプロジェクト</h2>
+      <h2><span class="no">09</span>今動いているプロジェクト</h2>
       <p class="lead">現在8つのテーマを扱っています。</p>
 
       <div class="proj-list">
@@ -715,7 +825,7 @@
     </section>
 
     <section id="future">
-      <h2><span class="no">08</span>今後のプロジェクト増加について</h2>
+      <h2><span class="no">10</span>今後のプロジェクト増加について</h2>
       <p class="lead">テーマは4つの段階で育てていきますが、どの段階も「同時にいくつまで」という数の上限は決めていません。</p>
 
       <div class="stages">
