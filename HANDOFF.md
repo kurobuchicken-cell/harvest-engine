@@ -4,6 +4,26 @@
 
 ## 今回変更したこと(何を・なぜ)
 
+### ローカル/VMのledger.json合算の仕組みを実装
+背景: 週次評議会コストがVM側の`data/ledger.json`にも直接記帳される運用になったため、
+ローカルでの`npm run ledger:report`がVM側の支出を反映せず、BUDGET.mdの消化率が実態より
+過小に見えるリスクが「次フェーズ」項目として残っていた。
+
+- `npm run ledger:sync`(新規、`src/ledgerSync.ts`): SSH(`tokens/harvest_engine_vm_key`、
+  `ubuntu@161.33.148.155`)でVM側`data/ledger.json`を取得し`data/ledger.vm.json`に
+  キャッシュする(このキャッシュ自体はVM実データの参照用コピーであり、git管理はしない
+  `.gitignore`に追加)。台帳の正本はローカル/VMそれぞれの`data/ledger.json`のまま変更なし
+- `src/lib/ledger.ts`に`mergeEntries`(id基準で重複排除)・`readEntriesFrom`を追加。
+  ローカル/VMのledgerは同一の初期データから分岐しており、以降の追記エントリは
+  それぞれ別の`randomUUID`を持つため、idで重複排除するだけで安全に合算できる
+- `npm run ledger:report`を合算集計に変更。VMキャッシュ未取得時は「ローカルのみ」と
+  明示、キャッシュが8日超過の場合は再取得を促す警告を表示する
+- 動作確認: `ledger:sync`でVM側11件取得→ローカル13件と合算した結果、重複除去後13件・
+  36,869円(消化率18.4%)で従来のローカル単独集計と一致することを確認(現時点でVM側の
+  記帳は全てローカル側に既に手動反映済みだったため差分なし。今後VM単独の記帳が増えた際に
+  この仕組みが効いてくる)。VMキャッシュ削除時に「ローカルのみ」表示に正しくフォールバック
+  することも確認済み
+
 ### テーマJ(AIエージェント運用のガードレール=シークレット漏洩防止)を実地調査・第1層登録
 背景: 前段落の評議会再開で「採択」と裁定された候補3の調査プロンプトをオーナー確認の上CCに投入し、
 F/G/H/Iと同じ手順(robots.txt判定・実地fetch可否・RSS/API優先)で実地調査を実施した。監査役の
@@ -684,6 +704,10 @@ AI評議会の裁定により追加した新テーマ2件。今回は生デー�
   nopeek/agentmask/mintmcp-agent-security/env-guard/Medusa/agent-env/leakproof/
   claude-code-redaction-hooks/secrets-scanner)。sources合計**ローカル125件・VM125件で
   完全一致**(active86/inactive39、双方同一)。詳細は上記「今回変更したこと」参照
+- **ledger合算**: `npm run ledger:sync`でVM側`data/ledger.json`を取得し
+  `npm run ledger:report`がローカル+VM合算で消化率を表示するようになった(詳細は上記
+  「今回変更したこと」参照)。定期的に`ledger:sync`を実行しないとキャッシュが古くなる点に注意
+  (8日超過で警告表示)
 
 ## 新たに判明した課題・次アクション
 
@@ -706,8 +730,9 @@ APIキー設定など)は上記「今回変更したこと」に統合し、こ�
   都度のログが無いため、ログだけでは発火有無を判定できない(今回はSlack通知の受信有無で代替確認した)
 
 ### 次フェーズ(スコープ外として明示済み、未着手)
-- ローカル・VMそれぞれ別ファイルの`data/ledger.json`を合算して見る仕組み
-  (週次評議会コストは今後VM側に記帳されるため、これがないと全体の消化率が見えない)
+- ~~ローカル・VMそれぞれ別ファイルの`data/ledger.json`を合算して見る仕組み~~ → 完了。
+  `npm run ledger:sync`+`ledger:report`で対応済み(詳細は上記「今回変更したこと」参照)。
+  ただし`ledger:sync`は手動実行が前提のため、定期実行忘れには注意
 - STARTUP DB(資金調達・特許DB)の低頻度手動チェック運用の具体化
 - Substack/noteのキュレーション(誰を追うかの選定)
 
