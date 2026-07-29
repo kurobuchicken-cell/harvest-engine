@@ -3,6 +3,8 @@ export interface CandidateItem {
   url: string;
   sourceCompanyName: string;
   publishedAt?: string;
+  // "explore"=自律探索フェーズがweb_searchで発見した項目。未指定は固定フィード由来として扱う
+  origin?: "fixed" | "explore";
 }
 
 export interface Candidate {
@@ -11,6 +13,8 @@ export interface Candidate {
   rationale: string;
   sourceUrls: string[];
   excerpt: string;
+  // 採用元データのsourceUrlsがCandidateItem.originのどれに属するかを事後突合して付与(選定評議会は関与しない)
+  origin?: "fixed" | "explore" | "mixed";
 }
 
 export interface RoundUsage {
@@ -18,6 +22,8 @@ export interface RoundUsage {
   outputTokens: number;
   cacheCreationInputTokens: number;
   cacheReadInputTokens: number;
+  // web_searchサーバーツールの呼び出し回数(トークンとは別課金、pricing.tsで加算する)
+  webSearchRequests: number;
 }
 
 export interface CouncilScoreItem {

@@ -9,7 +9,7 @@ export const MAX_TOKENS = 16000;
 
 let governanceCache: string | null = null;
 
-async function loadGovernance(): Promise<string> {
+export async function loadGovernance(): Promise<string> {
   if (governanceCache) return governanceCache;
   governanceCache = await readFile(path.resolve(process.cwd(), "GOVERNANCE.md"), "utf-8");
   return governanceCache;
@@ -74,6 +74,7 @@ export function toRoundUsage(usage: Anthropic.Usage): RoundUsage {
     outputTokens: usage.output_tokens,
     cacheCreationInputTokens: usage.cache_creation_input_tokens ?? 0,
     cacheReadInputTokens: usage.cache_read_input_tokens ?? 0,
+    webSearchRequests: usage.server_tool_use?.web_search_requests ?? 0,
   };
 }
 
@@ -89,6 +90,7 @@ export async function runUntilComplete(
     outputTokens: 0,
     cacheCreationInputTokens: 0,
     cacheReadInputTokens: 0,
+    webSearchRequests: 0,
   };
   let working = [...messages];
   let message: Anthropic.Message;
@@ -110,6 +112,7 @@ export async function runUntilComplete(
     aggregated.outputTokens += roundUsage.outputTokens;
     aggregated.cacheCreationInputTokens += roundUsage.cacheCreationInputTokens;
     aggregated.cacheReadInputTokens += roundUsage.cacheReadInputTokens;
+    aggregated.webSearchRequests += roundUsage.webSearchRequests;
 
     if (message.stop_reason !== "pause_turn") break;
     working = [...working, { role: "assistant", content: message.content }];

@@ -1,7 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 import type { MessageParam } from "@anthropic-ai/sdk/resources/messages";
 import { buildSystemPrompt, extractJsonBlock, extractText, runUntilComplete } from "./councilCore";
-import { computeUsageCostUsd } from "./pricing";
+import { addUsage, computeUsageCostUsd } from "./pricing";
 import { appendExpense } from "../lib/ledger";
 import type { Candidate, CouncilResult, CouncilScoreItem, CouncilVerdictLabel } from "./types";
 
@@ -69,12 +69,7 @@ export async function runCouncilForTopic(candidate: Candidate): Promise<CouncilR
   const round2Text = extractText(round2.message.content);
 
   const parsed = parseVerdictJson(round2Text);
-  const totalUsage = {
-    inputTokens: round1.usage.inputTokens + round2.usage.inputTokens,
-    outputTokens: round1.usage.outputTokens + round2.usage.outputTokens,
-    cacheCreationInputTokens: round1.usage.cacheCreationInputTokens + round2.usage.cacheCreationInputTokens,
-    cacheReadInputTokens: round1.usage.cacheReadInputTokens + round2.usage.cacheReadInputTokens,
-  };
+  const totalUsage = addUsage(round1.usage, round2.usage);
   const verdict = parsed?.verdict ?? "保留";
   const estimatedCostUsd = computeUsageCostUsd(totalUsage);
 

@@ -6,6 +6,8 @@ import { selectCandidates } from "./selectCandidates";
 import { runCouncilForTopic } from "./runCouncil";
 import { notifyCouncilVerdict } from "./notify";
 import { generateInvestigationPrompt } from "./generatePrompt";
+import { runExplorePhase } from "./exploreQueries";
+import type { CandidateItem } from "./types";
 
 // 選定評議会が返す候補数の安全上限(選定側にも同じ上限を指示済みだが、二重の安全網として維持)
 const MAX_CANDIDATES_TO_EVALUATE = 5;
@@ -24,8 +26,20 @@ function slugifyForFile(topic: string): string {
 // → 判断評議会(選ばれた候補ごとに採択/却下/保留を審議、既存ロジック無改修)
 export async function runCouncilPipeline(): Promise<void> {
   console.log("[council] 生データ収集を開始します(直近7日分のテーマHソース、重複削除のみ)");
-  const items = await collectRecentItems();
-  console.log(`[council] 生データ${items.length}件を収集しました`);
+  const fixedItems = (await collectRecentItems()).map((item) => ({ ...item, origin: item.origin ?? ("fixed" as const) }));
+
+  console.log("[council] 自律探索フェーズを実行します(選定評議会の直前、失敗時は空扱いで継続)");
+  const exploreItems = await runExplorePhase();
+
+  const itemsByUrl = new Map<string, CandidateItem>();
+  for (const item of fixedItems) itemsByUrl.set(item.url, item);
+  for (const item of exploreItems) if (!itemsByUrl.has(item.url)) itemsByUrl.set(item.url, item);
+  const items = [...itemsByUrl.values()];
+
+  console.log(
+    `[council] 生データ収集完了: 固定フィード${fixedItems.length}件 + 自律探索${exploreItems.length}件 → ` +
+      `重複除去後合計${items.length}件`,
+  );
 
   if (items.length === 0) {
     console.log("[council] 生データがゼロのためパイプラインを終了します");

@@ -5,13 +5,14 @@ import { readAllEntries, readEntriesFrom, mergeEntries, type ExpenseCategory, ty
 const VM_CACHE_PATH = path.resolve(process.cwd(), "data", "ledger.vm.json");
 const STALE_WARNING_DAYS = 8; // 監査役週次バッチ(月曜)の周期より少し余裕を持たせた閾値
 
-// BUDGET.mdの費目別配分(年間予算200,000円)。ledgerのcategoryと1:1で対応させている
+// BUDGET.mdの費目別配分(年間予算200,000円)。ledgerのcategoryと1:1で対応させている。
+// 2026-07-29、自律探索フェーズ導入に伴い予備費20,000円を全額API費目へ振替(オーナー決裁済み)
 const CATEGORY_BUDGETS: Record<ExpenseCategory, { label: string; budgetJpy: number }> = {
   ads: { label: "需要テスト", budgetJpy: 80_000 },
-  api: { label: "API", budgetJpy: 48_000 },
+  api: { label: "API", budgetJpy: 68_000 },
   legal: { label: "法務", budgetJpy: 40_000 },
   domain: { label: "ドメイン・雑費", budgetJpy: 12_000 },
-  misc: { label: "予備", budgetJpy: 20_000 },
+  misc: { label: "予備", budgetJpy: 0 },
 };
 const TOTAL_BUDGET_JPY = 200_000;
 const WARNING_RATIO = 0.2; // 費目残額が予算の20%を切ったら警報(BUDGET.md経理ルール)

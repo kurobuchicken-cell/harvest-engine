@@ -1,7 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 import type { MessageParam } from "@anthropic-ai/sdk/resources/messages";
 import { buildSystemPrompt, extractJsonBlock, extractText, runUntilComplete } from "./councilCore";
-import { computeUsageCostUsd } from "./pricing";
+import { addUsage, computeUsageCostUsd } from "./pricing";
 import { appendExpense } from "../lib/ledger";
 import type { Candidate, CandidateItem, SelectionResult } from "./types";
 
@@ -16,14 +16,37 @@ function formatItemsList(items: CandidateItem[]): string {
     .join("\n");
 }
 
+// 固定フィード由来と自律探索フェーズ由来を別セクションで提示する。混ぜて出すと
+// 件数で圧倒的に少ない探索由来のデータが埋もれてしまう(2026-07-29、非テック系4ソース追加時に
+// 実際に起きた問題=言及0回のまま既存Hacker Newsだけが選定を駆動した反省を踏まえた設計)
+function buildItemsSection(items: CandidateItem[]): string {
+  const fixedItems = items.filter((i) => i.origin !== "explore");
+  const exploreItems = items.filter((i) => i.origin === "explore");
+  const sections: string[] = [];
+  if (fixedItems.length > 0) {
+    sections.push(`--- 固定フィード由来(${fixedItems.length}件) ---\n${formatItemsList(fixedItems)}`);
+  }
+  if (exploreItems.length > 0) {
+    sections.push(
+      `--- 自律探索フェーズ由来(${exploreItems.length}件、AIが今回自ら検索クエリを考えて発見したデータ) ---\n${formatItemsList(exploreItems)}`,
+    );
+  }
+  return sections.join("\n\n");
+}
+
 function buildSelectionRound1Prompt(items: CandidateItem[]): string {
+  const exploreCount = items.filter((i) => i.origin === "explore").length;
   return `候補選定の依頼です。テーマH(ビジネスヒントのメタ・ハーヴェスト)の各ソースから、
 直近7日間で収集された生データ(重複除去済み、${items.length}件)を以下に示します。
 このデータの中から、単純な出現頻度ではなく、皆さんそれぞれの専門視点で
 「新テーマとして深掘りする価値があるパターン・兆候」を見つけてください。
 
---- 生データ ---
-${formatItemsList(items)}
+生データは2セクションに分かれています。「固定フィード由来」は毎週同じsourcesから
+機械的に収集したデータ、「自律探索フェーズ由来」はAI自身が今回その場で検索クエリを
+考えて発見したデータです(${exploreCount}件)。件数が少ないからといって軽視せず、
+両セクションを対等に検討してください。
+
+${buildItemsSection(items)}
 --- 生データここまで ---
 
 Round1として、各役(市場戦略家/リスク管理官/ハーヴェスト理論の番人/地域リサーチャー/
@@ -36,7 +59,9 @@ Round1として、各役(市場戦略家/リスク管理官/ハーヴェスト�
 const SELECTION_ROUND2_INSTRUCTION = `Round2です。Round1で各役が挙げた候補を踏まえ、以下を行ってください。
 1. 各役の推薦を交差検証し、重複や関連するものは統合する
 2. 監査役が「既存資産・直前の結論へのアンカリングがないか、特定分野への偏りがないか」の
-   監査コメントを述べる(必須)
+   監査コメントを述べる(必須)。加えて、自律探索フェーズ由来のデータが含まれていた場合は、
+   それらを実際に検討したか、検討した上で選ばなかったのであればなぜかを監査役コメントに
+   明記すること(存在しない場合はこの言及は不要)
 3. 最終的に、深掘り調査に値する候補を**最大${MAX_CANDIDATES_TO_SELECT}件**に絞り込み、
    以下の形式のfenced codeブロック(\`\`\`json)で出力する。このJSONのみが機械的に
    パースされるので、必ず有効なJSONにすること。候補が${MAX_CANDIDATES_TO_SELECT}件に
@@ -73,6 +98,21 @@ function parseSelectionJson(text: string): SelectionJson | null {
   return extractJsonBlock(text, isSelectionJson);
 }
 
+// 選定JSON自体には由来を出力させない(モデルへの負担を増やすだけで、選定ロジックには不要)。
+// 事後にsourceUrlsをitemsのorigin(URL単位)と突合して機械的に付与する
+function annotateOrigin(candidates: Candidate[], items: CandidateItem[]): Candidate[] {
+  const originByUrl = new Map<string, "fixed" | "explore">();
+  for (const item of items) {
+    originByUrl.set(item.url, item.origin === "explore" ? "explore" : "fixed");
+  }
+  return candidates.map((c) => {
+    const origins = new Set(c.sourceUrls.map((u) => originByUrl.get(u)).filter((o): o is "fixed" | "explore" => !!o));
+    if (origins.size === 0) return c;
+    const origin = origins.size > 1 ? "mixed" : [...origins][0];
+    return { ...c, origin };
+  });
+}
+
 // 頻度カウントによる機械的な絞り込みの代わりに、評議会自身に生データを見せて
 // 「どのテーマを深掘りすべきか」を目利きさせる選定専用の評議会。
 // 採否そのものはこの後の既存judgeフロー(runCouncilForTopic、無改修)が担う
@@ -93,12 +133,7 @@ export async function selectCandidates(items: CandidateItem[]): Promise<Selectio
   const round2Text = extractText(round2.message.content);
 
   const parsed = parseSelectionJson(round2Text);
-  const totalUsage = {
-    inputTokens: round1.usage.inputTokens + round2.usage.inputTokens,
-    outputTokens: round1.usage.outputTokens + round2.usage.outputTokens,
-    cacheCreationInputTokens: round1.usage.cacheCreationInputTokens + round2.usage.cacheCreationInputTokens,
-    cacheReadInputTokens: round1.usage.cacheReadInputTokens + round2.usage.cacheReadInputTokens,
-  };
+  const totalUsage = addUsage(round1.usage, round2.usage);
   const estimatedCostUsd = computeUsageCostUsd(totalUsage);
 
   let estimatedCostJpy: number | null = null;
@@ -121,7 +156,7 @@ export async function selectCandidates(items: CandidateItem[]): Promise<Selectio
   }
 
   return {
-    candidates: parsed?.candidates ?? [],
+    candidates: parsed ? annotateOrigin(parsed.candidates, items) : [],
     round1Text,
     round2Text,
     auditorComment: parsed?.auditorComment ?? "(JSON選定結果のパースに失敗したため、round2Textを直接確認してください)",
