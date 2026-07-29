@@ -483,3 +483,44 @@
   - ルートディレクトリに未追跡の`AGENTS.md`が存在(今回のセッションでは内容未確認・
     未着手のまま。次回セッションで扱いを確認すること)
 - 触ったファイル：`HANDOFF.md`、`会社説明資料.html`
+
+## harvest-engine-explore-phase-01（2026-07-29）
+- 作業環境：ノートPC
+- やったこと：
+  - オーナーから承認済みの「自律探索フェーズ」設計たたき台を、Opusモデルで評議会相当の
+    厳密さ(監査役視点=既存資産アンカリング・分野偏り検査を含む)で審査。web_search実費の
+    記帳漏れ・予備費充当の会計処理不成立・サーキットブレーカーが事後判定でしか機能しない・
+    効果測定の仕組み欠如の4点を修正指摘し、オーナー決裁(予備費20,000円→API費目へ全額振替、
+    月間1,000円/年間10,000円上限)を得た上で確定
+  - Sonnetに切り替えて実装。`src/council/exploreQueries.ts`(新規、探索フェーズ本体)、
+    `pricing.ts`/`councilCore.ts`(web_search課金$10/1,000検索の記帳漏れ修正、既存2評議会にも
+    自動適用)、`selectCandidates.ts`(固定フィード/探索由来を2セクション表示・監査役条件追加)、
+    `run.ts`(パイプライン統合)、`ledgerReport.ts`(費目配分改定)を実装
+  - `tsc --noEmit`型エラーなし。隔離環境(本番data/ledger.json非接触)で予算上限チェック5
+    パターン・探索失敗時の継続1パターンを検証し、検証中に既存の`readAllEntries()`が
+    ledger破損時に「支出ゼロ」と誤読する潜在バグを発見・回避(探索フェーズ専用の
+    `readLedgerStrict()`で対応)
+  - コミット・push後、VM側`data/ledger.json`が未コミットのまま分岐(2026-07-27/29の手動
+    評議会実行分、実記帳6件)していたと判明。オーナー確認の上`mergeEntries()`で
+    ローカル13件+VM6件→19件に統合し欠落なく解消。VM側で`git pull`(fast-forward)・
+    `harvest-engine-council-scheduler`をpm2 restartして新コードを反映、エラーログなしを確認
+  - `BUDGET.md`/`HANDOFF.md`/`DECISIONS.md`/`会社説明資料.html`を更新。本件は
+    RULES.md上は評議会必須の意思決定だが、オーナー指示によりOpus単独審査で代替した
+    経緯をDECISIONS.mdに記録
+- 完了した状態：
+  - 自律探索フェーズの実装・VMデプロイが完了。次回月曜(9:00 JST)の週次自動実行から
+    有効になる(実際のOpus API呼び出しはまだ未実施、次回が初回)
+  - ローカル・VMの`data/ledger.json`は19件で完全一致。API費目残額29,725円(予算68,000円)
+  - sources件数・active/inactive内訳に変化なし(新規ソース追加なし)
+- 残課題・次にやること：
+  - **API費目は探索フェーズ抜きでも2027年1月頃に枯渇する見込み**(週次評議会実測874円/週+
+    Perplexity年額33,000円)。週次評議会自体のコスト最適化(隔週化・effort見直し等)を
+    オーナーと相談する必要あり(次回セッションの優先課題)
+  - 探索フェーズの実効果測定はこれから。次回以降の週次実行で探索由来(`origin: "explore"`)の
+    候補が実際に選定・採択されるかを2〜3ヶ月分蓄積してから評価する
+  - ルートディレクトリの未追跡`AGENTS.md`は今回も内容未確認のまま(前回セッションから持ち越し)
+  - テーマCのフル出口法務ゲート「弁護士スポット相談」の実施タイミングはオーナー判断待ちのまま
+- 触ったファイル：`src/council/exploreQueries.ts`(新規)、`src/council/pricing.ts`、
+  `src/council/councilCore.ts`、`src/council/selectCandidates.ts`、`src/council/runCouncil.ts`、
+  `src/council/run.ts`、`src/council/types.ts`、`src/ledgerReport.ts`、`data/ledger.json`、
+  `BUDGET.md`、`HANDOFF.md`、`DECISIONS.md`、`会社説明資料.html`
