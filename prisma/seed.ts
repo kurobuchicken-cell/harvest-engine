@@ -1019,6 +1019,47 @@ const sources: SourceSeed[] = [
     fetchIntervalMin: 1632,
     note: "local-firstを明記しクラウド送信なしの個人OSS(★0)。github.com robots.txt許可を本番politeFetchで確認済み(200)。README本文の差分監視",
   },
+
+  // ── テーマH追加: 非テック系ドメイン拡張(2026-07-28調査・登録) ──
+  // 背景: テーマHの入力がHacker News/Product Hunt/Indie Hackers等テック・スタートアップ界隈に
+  // 偏っており、選定評議会が拾える候補の分野もその偏りを反映してしまう(オーナー指摘)。
+  // クラウドファンディング・研究シーズ・消費者の生の困りごとという異なる軸を追加した。
+  {
+    companyName: "Makuake",
+    insuranceType: "theme_h",
+    url: "https://www.makuake.com/atom/",
+    fetchType: "rss",
+    active: true,
+    fetchIntervalMin: 1609,
+    note: "クラウドファンディング(テック限定ではない生消費財・雑貨・食品・アート等)の生需要軸。公式Atomフィードが正常応答(新着プロジェクトのタイトル・リンク・日時を確認)。robots.txtは実質無制限(ログイン等の特定パスのみDisallow)",
+  },
+  {
+    companyName: "CAMPFIRE",
+    insuranceType: "theme_h",
+    url: "https://camp-fire.jp/projects",
+    fetchType: "html",
+    active: true,
+    fetchIntervalMin: 1621,
+    note: "クラウドファンディング(Makuakeと同軸)。robots.txtは実質無制限(マイページ等の特定パスのみDisallow)。RSSは無いが/projectsが本番politeFetchでSSR確認済み(見出し26件、新着一覧が本文に直接含まれる)",
+  },
+  {
+    companyName: "JST(科学技術振興機構) プレスリリース",
+    insuranceType: "theme_h",
+    url: "https://www.jst.go.jp/rss/press.xml",
+    fetchType: "rss",
+    active: true,
+    fetchIntervalMin: 1633,
+    note: "研究成果・産学連携の技術シーズ軸(テーマHでは初の学術・研究系入力)。robots.txtに制限なし(sitemapのみ)。公式Atomフィードが正常応答、直近は調査当日7/28付で3件更新を確認(日次規模)",
+  },
+  {
+    companyName: "国民生活センター",
+    insuranceType: "theme_h",
+    url: "https://www.kokusen.go.jp/",
+    fetchType: "html",
+    active: true,
+    fetchIntervalMin: 1645,
+    note: "消費者の生の困りごと軸(クラウドファンディング・研究シーズとも異なる、生活者視点の入力)。robots.txt自体が無し(404、e-Gov等と同型で制限なし扱い)。ホームに新着相談情報がSSRされていることを本番politeFetchで確認済み。**注意**: ページ文字コードがEUC-JP(総務省と同型の既知パターン)。現状はH系共通で生バイト差分検知のみのため動作に支障なし、将来テキスト抽出パーサーを書く際はEUC-JPデコードが必要",
+  },
 ];
 
 async function main() {
