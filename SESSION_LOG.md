@@ -524,3 +524,30 @@
   `src/council/councilCore.ts`、`src/council/selectCandidates.ts`、`src/council/runCouncil.ts`、
   `src/council/run.ts`、`src/council/types.ts`、`src/ledgerReport.ts`、`data/ledger.json`、
   `BUDGET.md`、`HANDOFF.md`、`DECISIONS.md`、`会社説明資料.html`
+
+## harvest-engine-ledger-credit-check-01（2026-08-03）
+- 作業環境：ノートPC
+- やったこと：
+  - オーナーから「Anthropic APIの残高がマイナスになっていた、$110追加チャージした、
+    経理に報告する」との報告を受け対応
+  - `npm run ledger:sync`でVM側ledgerを同期し、直近の週次パイプライン(今日8/3 09:00〜09:25
+    JST)が正常終了していることを確認。7/29実装の自律探索フェーズが初めて実際にAPI呼び出しを
+    行い(発見4件・86円)、選定評議会(候補3件・307円)→判断評議会3件(採択1件・保留2件・454円)
+    まで全件正常記帳されており、エラー・記帳漏れの形跡なし。残高マイナスは処理失敗ではなく
+    通常消化ペースがクレジットを使い切ったタイミングと判断
+  - Anthropicクレジット追加購入$110を一時スクリプト(`src/tmpRecordAnthropicCredit.ts`、
+    実行後削除)経由で`appendExpense()`により記帳(17,382円、実勢レート158.02円/ドル)
+  - 記帳後の集計でAPI費目残額が11,496円(消化率83.1%、残20%割れ)となり、BUDGET.md
+    「残20%未満で執行役がHANDOFF.mdに警報を記載する」ルールに該当したためHANDOFF.mdに
+    警報エントリを追記
+  - コミット・push済み(`92dae96`)
+- 完了した状態：
+  - 累計支出56,504円(消化率28.3%)。API費目残額11,496円(消化率83.1%、警戒ライン⚠️)
+  - sources件数・active/inactive内訳に変化なし(125件、active86/inactive39)
+  - HANDOFF.mdに次回優先課題として「週次評議会のコスト最適化(隔週化・effort見直し)を
+    オーナーと相談」を明記済み
+- 残課題・次にやること：
+  - **最優先**: 週次評議会のコスト最適化(隔週化・Opus effort設定見直し等)をオーナーと相談
+  - ルートディレクトリの未追跡`AGENTS.md`は今回も内容未確認のまま(前々回セッションから持ち越し)
+  - テーマCのフル出口法務ゲート「弁護士スポット相談」の実施タイミングはオーナー判断待ちのまま
+- 触ったファイル：`data/ledger.json`、`HANDOFF.md`
