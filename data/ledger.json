@@ -264,5 +264,19 @@
     "fxRateSource": "https://open.er-api.com/v6/latest/USD",
     "fxRateStatus": "resolved",
     "recordedAt": "2026-07-29T03:07:32.038Z"
+  },
+  {
+    "category": "api",
+    "service": "anthropic-credit",
+    "amountUsd": 110,
+    "amountJpy": 17382,
+    "description": "Anthropic APIクレジット追加購入(残高マイナス化に伴うオーナーによるチャージ、2026-08-03)",
+    "occurredAt": "2026-08-03T02:08:19.418Z",
+    "id": "ae8d2e63-e037-441f-aebd-f8998e4bb115",
+    "fxRate": 158.015481,
+    "fxRateFetchedAt": "2026-08-03T02:08:19.419Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-08-03T02:08:19.537Z"
   }
 ]
