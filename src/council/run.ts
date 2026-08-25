@@ -7,6 +7,7 @@ import { runCouncilForTopic } from "./runCouncil";
 import { notifyCouncilVerdict } from "./notify";
 import { generateInvestigationPrompt } from "./generatePrompt";
 import { runExplorePhase } from "./exploreQueries";
+import { autoCommitAndPushCouncilResults } from "../lib/gitSync";
 import type { CandidateItem } from "./types";
 
 // 選定評議会が返す候補数の安全上限(選定側にも同じ上限を指示済みだが、二重の安全網として維持)
@@ -43,6 +44,7 @@ export async function runCouncilPipeline(): Promise<void> {
 
   if (items.length === 0) {
     console.log("[council] 生データがゼロのためパイプラインを終了します");
+    await autoCommitAndPushCouncilResults("生データ0件で終了");
     return;
   }
 
@@ -60,6 +62,7 @@ export async function runCouncilPipeline(): Promise<void> {
 
   if (selection.candidates.length === 0) {
     console.log("[council] 選定評議会が候補ゼロと判断したためパイプラインを終了します");
+    await autoCommitAndPushCouncilResults("選定候補0件で終了");
     return;
   }
 
@@ -110,6 +113,8 @@ export async function runCouncilPipeline(): Promise<void> {
     `[council] パイプライン完了。選定+判断評議会実行${targets.length + 1}回、採択${adoptedTopics.length}件、` +
       `合計見積コスト約${totalCostJpy.toFixed(1)}円${costUnresolved ? "(一部円換算未確定分を除く)" : ""}`,
   );
+
+  await autoCommitAndPushCouncilResults(`判断${targets.length}件・採択${adoptedTopics.length}件`);
 }
 
 if (require.main === module) {
