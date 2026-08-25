@@ -551,3 +551,37 @@
   - ルートディレクトリの未追跡`AGENTS.md`は今回も内容未確認のまま(前々回セッションから持ち越し)
   - テーマCのフル出口法務ゲート「弁護士スポット相談」の実施タイミングはオーナー判断待ちのまま
 - 触ったファイル：`data/ledger.json`、`HANDOFF.md`
+
+## harvest-engine-vm-catchup-and-onboard-01（2026-08-25）
+- 作業環境：ノートPC
+- やったこと：
+  - オーナーの「最近プロジェクト増えてる?」という質問をきっかけに調査した結果、
+    2026-08-03〜08-24の週次評議会実行(4回分)がVM上で正常稼働し続けていたにも
+    かかわらず、GMが3週間一度も点検しておらずGitHubに未反映だったことが判明
+  - VM側の未push分をSSH経由でローカルにfetch・マージしてGitHubへpush、VMも同期
+  - 評議会のシステムプロンプトにAnthropicプロンプトキャッシュが未実装だったコード
+    不備を発見・修正(`src/council/councilCore.ts`)
+  - API費目残額が警戒ラインを割ったため、需要テストから5万円をAPI費目へ振替
+    (オーナー決裁、需要テスト80,000→30,000円、API 68,000→118,000円)
+  - 滞留していた採択済み候補6件を並列サブエージェント3本で実地調査し、5件を
+    テーマK〜O(建設業DX・パーセル運賃・標準的運賃・FDAリコール・省庁横断リコール)
+    として第1層登録。India fintech(RBI)はrobots.txt判定不能のため見送り
+  - 再発防止の根本対策として、VM側にGitHub Fine-grained PAT(Contents:read-writeのみ)
+    を設定し、週次パイプライン完了時に自動commit・pushする仕組み(`src/lib/gitSync.ts`)
+    を実装。push認証・権限をdry-runで実地確認済み
+- 完了した状態：
+  - sources合計144件(active103件)、ローカル・VM完全一致
+  - 累計支出59,280円(消化率29.6%)、API費目残額58,720円(消化率50.2%、警戒ライン脱出)
+  - CLAUDE.md・BUDGET.md・DECISIONS.md・HANDOFF.md・会社説明資料.htmlすべて最新化済み
+  - 自動push機構がVM上で稼働中(次回8/31週の実行で実データでの動作を初検証)
+- 残課題・次にやること：
+  - **最優先**: 次回セッション開始時に必ず`npm run ledger:sync`でVM状態を確認する運用を
+    定着させる(今回の3週間見落としの再発防止)。あわせて自動push機構が実際に機能したか確認
+  - GitHub PAT(`harvest-engine-vm-push`)の有効期限は2026-11-23。期限切れ前に再発行が必要
+  - India fintech(RBI)のrobots.txt判定不能問題(WAFが`/robots.txt`のみ418ブロック)は未解決
+  - 週次評議会のコスト最適化(隔週化・effort見直し)の相談は依然として持ち越し
+  - ルートディレクトリの未追跡`AGENTS.md`は今回も内容未確認のまま
+- 触ったファイル：`data/ledger.json`、`council-output/`(3週間分のVM実行結果)、
+  `src/council/councilCore.ts`、`src/council/run.ts`、`src/lib/gitSync.ts`（新規）、
+  `src/ledgerReport.ts`、`prisma/seed.ts`、`CLAUDE.md`、`BUDGET.md`、`DECISIONS.md`、
+  `HANDOFF.md`、`会社説明資料.html`、VM側`.env`（GITHUB_PAT追加）・sourcesテーブル
