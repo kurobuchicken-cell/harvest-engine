@@ -69,13 +69,27 @@ API 68,000→118,000円)。詳細はBUDGET.md・DECISIONS.md参照
 - `CLAUDE.md`「現在の層の割り当て」にテーマK〜Oを追記。`会社説明資料.html`にも5テーマのカードを
   平易な言葉で追加し、件数表記(情報源→144件・稼働→103件・テーマ数→13個)・予算表記を更新
 
+### 週次評議会パイプラインに自動commit・push機能を追加(根本対策)
+上記事故の再発防止として、GMのセッション頻度に依存しない構造的対応を実施した。オーナーが
+GitHub Fine-grained PAT(対象リポジトリ`harvest-engine`のみ、`Contents: Read and write`のみ)を
+発行し、VM側`.env`に`GITHUB_PAT`として設定(値は非表示、`grep -c`で非空のみ確認)。
+`src/lib/gitSync.ts`(新規)を実装し、`src/council/run.ts`の`runCouncilPipeline()`の全終了経路
+(生データ0件/選定候補0件/正常完了の3パターンすべて)で`data/ledger.json`・`council-output/`の
+差分を自動commit・push するようにした。トークンはログ・コマンド文字列・git configに一切残さず、
+`git -c http.extraHeader`の一時ヘッダーとしてのみ使用する設計(`GITHUB_PAT`未設定時は黙って
+スキップし手動運用にフォールバック)。VM上で`git push --dry-run`による認証・push権限の実地確認
+を実施し、正常に認証・pushできることを確認済み(`Everything up-to-date`)。GitHub push・VM反映・
+`harvest-engine-council-scheduler`のpm2 restart済み
+
 **今回発見した新たな課題・次アクション**:
-- **最優先(次回セッション開始時に必ず実施)**: `npm run ledger:sync`でVM状態を確認する運用を
-  セッション開始時の定型動作に組み込む(3週間気づかなかった今回の反省を繰り返さない)
+- **次回8/31週の実行で自動push自体が実際に機能するか要確認**(今回はdry-runでの認証確認のみ、
+  実データでの自動commit・pushはまだ未検証)
 - India fintech(RBI)のrobots.txt判定不能問題は未解決のまま。WAFが`/robots.txt`パスのみを
   狙い撃ちでブロックする不可解な挙動のため、次回以降人力でのブラウザ確認を検討してもよい
 - テーマK〜Oはいずれもパーサー未実装(収集のみ、第1層)。プロンプトキャッシュの実際の削減効果は
   次回8/31週の実行結果で計測する
+- GitHub PATの有効期限は2026-11-23。期限切れ前に再発行・VM `.env`更新が必要(次回以降のGMが
+  気づけるようこの期限をHANDOFF.mdに明記しておく)
 
 ### 週次パイプライン(自律探索フェーズ初回実行)の完了確認、Anthropicクレジット$110追加を記帳、API費目が警戒ラインを割った
 背景: オーナー(ノートPC)から「直近の処理は無事終了しているか、Anthropic APIの残高がマイナスになっていたため
