@@ -96,10 +96,14 @@ export async function runUntilComplete(
   let message: Anthropic.Message;
 
   for (;;) {
+    // systemPrompt(GOVERNANCE.md全文込み)は同一週内の選定+複数の判断評議会で毎回同一のため、
+    // ephemeralキャッシュ(既定TTL5分)でヒットさせコストを下げる。週次実行内の呼び出し間隔は
+    // 実測4〜5分でTTL内に収まる(データ収集等の合間で6分以上空くと再度キャッシュ書き込みになるだけで、
+    // 挙動自体は変わらない)
     const stream = client.messages.stream({
       model: MODEL,
       max_tokens: MAX_TOKENS,
-      system: systemPrompt,
+      system: [{ type: "text", text: systemPrompt, cache_control: { type: "ephemeral" } }],
       thinking: { type: "adaptive" },
       output_config: { effort: "high" },
       tools: [{ type: "web_search_20260209", name: "web_search" }],
