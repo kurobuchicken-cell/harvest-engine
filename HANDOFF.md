@@ -21,7 +21,9 @@ collect/analyze/generate/run)。仕様は`仕様書_harvest-engine.html`の3章�
   処理が止まりうることを発見。本番巡回にも共通する問題のため、`politeness.ts`の取得に60秒(`FETCH_TIMEOUT_MS`、
   本文の読み込みまで含む)、`robots.ts`のrobots.txt取得に15秒のタイムアウトを追加。タイムアウトはネットワーク
   エラーとして既存の指数バックオフでリトライされる(最長約4分で失敗を返す)。ローカルサーバーでの無応答・本文途中停止の
-  打ち切りと、通常取得に影響が無いことを確認済み。パイロット側の短い上限(`fetchUtil.ts`)はそのまま残す
+  打ち切りと、通常取得に影響が無いことを確認済み。パイロット側の短い上限(`fetchUtil.ts`)はそのまま残す。
+  **VM反映済み(8fbb3f4までpull、`harvest-engine-scheduler`・`harvest-engine-council-scheduler`をpm2 restart、
+  いずれもonlineを確認)**。パイロット3本のコードもVMに入ったが、VMでの実行は補助金の手動1回のみで定期実行は未設定
 - sourcesは`prisma/seed.ts`でテーマRとして21件をinactive登録(正本は`sources.ts`を読み込んで展開)。VMには未反映
 - **既知の課題・backlog**: 一覧の形式が合わず要再調査の7社(ハウス食品G・キリン・ブルボン・ニッスイ・AGF・花王・
   山崎製パン)、一覧がJS描画の3社(ロッテ・キッコーマン・エスビー食品)、ブランド別ページ(ロングテール)は未実装、

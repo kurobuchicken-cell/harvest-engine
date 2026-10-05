@@ -614,6 +614,6 @@
 - 作業環境：家PC
 - やったこと：出口工場の国内パイロット2本目「値上げ情報」(テーマR)を実装。31社を調査し21社を採用、ニュースリリース一覧のリンク文言で価格改定告知を拾う共通方式→本文/添付PDFをHaiku 4.5で構造化→実施日順・月別・メーカー別・品目別ページをローカル生成
 - 完了した状態：`npm run pilot:price`で101件の告知を抽出(エラー0)、76ページ・掲載96件を`site/price/`に生成。リンク切れ0・出典欠落0、Edgeで表示確認。添付PDFのみの社・JSでPDF転送する社・本文に発表日が無い社に対応。AI費用105円(ledger記帳済み)
-- 追加：オーナーがGM判断に委ねたため、politeFetch本体に取得60秒・robots.txt 15秒のタイムアウトを追加(既存リトライに乗る)。本番巡回にも効く修正のためVMへ反映
+- 追加：オーナーがGM判断に委ねたため、politeFetch本体に取得60秒・robots.txt 15秒のタイムアウトを追加(既存リトライに乗る)。本番巡回にも効く修正のためVMへ反映(8fbb3f4までpull、scheduler・council-schedulerを再起動しonline確認)。VM側に未コミットで残っていた補助金のAI費8円は手元のledgerへ取り込みpushし、全環境のledgerを一致させた
 - 残課題・次にやること：backlog10社の再調査、ブランド別ページ、3パイロットの公開先・方法の決定、VM反映と定期実行。旧基準の滞留採択9件の再評価、10/12週次評議会の検証
 - 触ったファイル：src/pilots/price/*（新規）、package.json、prisma/seed.ts、仕様書_harvest-engine.html、CLAUDE.md、DECISIONS.md、HANDOFF.md、会社説明資料.html、data/ledger.json
