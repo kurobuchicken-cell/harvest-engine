@@ -585,3 +585,10 @@
   `src/council/councilCore.ts`、`src/council/run.ts`、`src/lib/gitSync.ts`（新規）、
   `src/ledgerReport.ts`、`prisma/seed.ts`、`CLAUDE.md`、`BUDGET.md`、`DECISIONS.md`、
   `HANDOFF.md`、`会社説明資料.html`、VM側`.env`（GITHUB_PAT追加）・sourcesテーブル
+
+## harvest-engine-strategy-pivot-01（2026-10-05）
+- 作業環境：家PC
+- やったこと：オーナーの「いつマネタイズするのか・情報収集しているだけ」の指摘を受け、支出実態(63,647円、売上0円)とVMデータ実態(変更4,503件の大半がノイズ)を確認。事業モデルを「出口工場」(一次情報収集→AI構造化→日英ページ自動生成→アフィリエイト/広告の薄利多売)に転換し、週次評議会の探索・選定・判断対象を「出口工場のジャンル」に変更
+- 完了した状態：評議会プロンプト5ファイル変更(tsc通過)、DECISIONS.md・CLAUDE.md・HANDOFF.md・会社説明資料.html更新。VM反映はオーナー確認待ち
+- 残課題・次にやること：VM反映(git pull+pm2 restart)→10/12の週次実行で新プロンプトを検証。パイロット(ガチャ1ジャンルの収集→日英ページ生成)を別セッションで実装。PAT期限2026-11-23
+- 触ったファイル：src/council/{councilCore,exploreQueries,selectCandidates,runCouncil,generatePrompt}.ts、DECISIONS.md、CLAUDE.md、HANDOFF.md、会社説明資料.html、SESSION_LOG.md

@@ -14,7 +14,8 @@ function buildCandidatePrompt(candidate: Candidate): string {
 - 元記事タイトル抜粋: ${candidate.excerpt}
 - 出典URL: ${candidate.sourceUrls.join(", ")}
 
-このキーワードが「新テーマとして調査に値するビジネスヒント」かどうかを審議してください。
+このキーワードが「出口工場の新ジャンルとして調査に値するか」を審議してください。
+採択とは「GMが一次情報源を調査し、第1層(収集)に登録する」ことを意味します。
 Round1として、各役(市場戦略家/リスク管理官/ハーヴェスト理論の番人/地域リサーチャー/運用・財務担当)の初期見解を述べてください。地域リサーチャーはweb_searchで実際に裏取りしてください。監査役の発言はRound2で行います。`;
 }
 
@@ -27,11 +28,11 @@ const ROUND2_INSTRUCTION = `Round2です。Round1の各役の発言を踏まえ�
 {
   "verdict": "採択" | "却下" | "保留",
   "scoreTable": [
-    { "criterion": "市場規模・買い手仮説", "assessment": "..." },
-    { "criterion": "法務・robots.txt/ToSリスク", "assessment": "..." },
-    { "criterion": "ポートフォリオ制とのフィット", "assessment": "..." },
-    { "criterion": "地域適合(日本/海外)", "assessment": "..." },
-    { "criterion": "収集コスト・運用負荷", "assessment": "..." }
+    { "criterion": "需要(国内/海外の兆候)", "assessment": "..." },
+    { "criterion": "規約・著作権リスク(翻訳再配信・画像含む)", "assessment": "..." },
+    { "criterion": "一次情報源の有無と更新頻度", "assessment": "..." },
+    { "criterion": "競合の手薄さ(ロングテールの隙間)", "assessment": "..." },
+    { "criterion": "収益化手段と出口工場への載せやすさ", "assessment": "..." }
   ],
   "auditorComment": "監査役コメントの本文"
 }
