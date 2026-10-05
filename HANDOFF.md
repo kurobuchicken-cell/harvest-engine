@@ -77,8 +77,8 @@ collect/analyze/generate/run)。仕様は`仕様書_harvest-engine.html`の3章�
   差分巡回の対象外)。**VMのDBには未登録**
 - **VM反映(同日)**: VMで`git pull`(c60dbbf)→`npm run pilot:subsidy`を手動で1回実行し成功(jGrants 338件・
   J-Net21 64件、826ページ、AI分類約8円)。ログは VM `logs/pilot-subsidy-first.log`。**定期実行は未設定**
-  (オーナー判断で今回は手動1回のみ)。VM側`data/ledger.json`に今回分1行が未コミットで残っており、
-  10/12の週次評議会のgitSyncでpushされる想定(累計支出はこれを含め63,671円)。VMは空きメモリ約380MBで、
+  (オーナー判断で今回は手動1回のみ)。VM側`data/ledger.json`に残っていた今回分1行は、
+  同日中に手元のledgerへID基準で取り込みpush済み(VMは変更を破棄してpull)。VMは空きメモリ約380MBで、
   ローカル(約6分)より遅く完走に10分超かかった
 
 ### 【2026-10-05】事業モデルを「出口工場」型に転換、週次評議会をジャンル発掘に作り替え
@@ -117,7 +117,7 @@ collect/analyze/generate/run)。仕様は`仕様書_harvest-engine.html`の3章�
 ### 現在の稼働状況(2026-10-05、VM実測+補助金パイロット分)
 - sources 144件(active 103件)、snapshots 9,079件、changes 4,503件、incidents 81件(VM実測)。
   seed.ts上はテーマP・Q各2件・R21件(いずれもinactive)を追加し169件(active 103件)
-- 累計支出63,916円(消化率32.0%、パイロットAI費: 補助金24円[うち8円はVM側ledgerに未push]・ガチャ140円・値上げ105円)、売上0円
+- 累計支出63,916円(消化率32.0%、パイロットAI費: 補助金24円[VM側ledgerの8円は2026-10-05に手元へ取り込み済み]・ガチャ140円・値上げ105円)、売上0円
 
 ### 次アクション(優先順)
 1. **パイロット(並行3本、2026-10-05オーナー決定)**。1セッション1本ずつ実装する
