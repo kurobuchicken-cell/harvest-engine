@@ -1203,6 +1203,26 @@ const sources: SourceSeed[] = [
     active: false,
     note: "評議会裁定の優等生ソース(CC BY 4.0)だが、本番politeFetchで応答bodyが2,268バイトとSPAシェルのみ(JS描画必須でSSR無し)と判明。Indie Hackers等と同型のパターンのためinactiveのまま記録。将来data.europa.euのデータセットAPI等の代替経路を検討",
   },
+
+  // ── テーマP: 補助金(出口工場・国内パイロット1本目、2026-10-05オーナー指示で第2層扱い) ──
+  // 収集はsrc/pilots/subsidy(npm run pilot:subsidy)の専用コレクタが行う。差分巡回(crawler)で
+  // 二重に取得しないようinactiveで台帳としてのみ登録する
+  {
+    companyName: "jGrants公開API(デジタル庁) 補助金一覧",
+    insuranceType: "theme_p",
+    url: "https://api.jgrants-portal.go.jp/exp/v1/public/subsidies",
+    fetchType: "json",
+    active: false,
+    note: "robots.txt自体が404(制限なし扱い)、本番politeFetchで200応答を確認済み。一覧はキーワード2文字以上必須のため複数キーワードで網羅し、詳細APIを1秒間隔で取得。出典明記義務あり(「出典：Jグランツ（デジタル庁）」)。詳細APIは添付PDFのbase64を含み1件数MBになりうる",
+  },
+  {
+    companyName: "J-Net21 支援情報ヘッドラインRSS(中小機構)",
+    insuranceType: "theme_p",
+    url: "https://j-net21.smrj.go.jp/snavi/support/support.xml",
+    fetchType: "rss",
+    active: false,
+    note: "robots.txt自体が404(制限なし扱い)、本番politeFetchで200応答を確認済み。利用規約(j-net21.smrj.go.jp/rule/)で事前承諾なき転載・再利用は禁止、リンクは自由(出典「出典：中小機構 J-Net21」必須)。本文はAI分類の入力のみに使い、ページには制度名・地域・締切・リンクのみ掲載する",
+  },
 ];
 
 async function main() {

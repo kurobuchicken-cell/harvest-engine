@@ -383,6 +383,7 @@
   }
   .pill.live { background: var(--green-tint); color: var(--green); }
   .pill.collect { background: var(--blue-tint); color: var(--blue); }
+    .pill.build { background: var(--green-tint); color: var(--green); }
 
   /* ---------- 段階(4層)図 ---------- */
   .stages { display: flex; flex-direction: column; gap: 10px; margin: 24px 0; }
@@ -495,7 +496,7 @@
       <dl>
         <div>
           <dt>何をする会社?</dt>
-          <dd>色々な業界の「小さいけど毎日動きがある情報」(値上げ・障害・規制の変化など)をAIが自動で集め続け、そのうち儲かりそうなものだけを少しずつホームページ公開・課金にまで育てていく会社。今は13の種(テーマ)を育てていて、うち1つ(SaaS障害モニタ<a href="https://saas-status.com" target="_blank" rel="noopener noreferrer">saas-status.com</a>)は公開済み(まだ無料)。</dd>
+          <dd>色々な業界の「小さいけど毎日動きがある情報」(値上げ・障害・規制の変化など)をAIが自動で集め続け、そのうち儲かりそうなものだけを少しずつホームページ公開・課金にまで育てていく会社。今は14の種(テーマ)を育てていて、うち1つ(SaaS障害モニタ<a href="https://saas-status.com" target="_blank" rel="noopener noreferrer">saas-status.com</a>)は公開済み(まだ無料)。</dd>
         </div>
         <div>
           <dt>毎週何をしてる?</dt>
@@ -616,7 +617,7 @@
         <li>
           <span class="date">2026年10月5日</span>
           <p class="ttl">稼ぎ方を「出口工場」に切り替えた</p>
-          <p class="desc">オーナーから「情報を集めているだけで、いつ稼ぐのか分からない」と指摘を受けた。それまでは「データを集めて会社に売る」計画だったが、時間がかかるうえに売上は0円のままだった。そこで、「小さな利益をたくさん積み上げる」という考え方は変えずに、稼ぎ方を切り替えた。新しいやり方では、メーカーの新商品情報などをAIが自動で集め、日本語と英語の紹介ページを自動で作り、紹介料(アフィリエイト)や広告で少しずつ稼ぐ。日本語でしか出ていない日本の情報を海外に届けることを特に重視しつつ、国内向けも同時に行う。扱うジャンルは、できるだけ多く増やしていく。</p>
+          <p class="desc">オーナーから「情報を集めているだけで、いつ稼ぐのか分からない」と指摘を受けた。それまでは「データを集めて会社に売る」計画だったが、時間がかかるうえに売上は0円のままだった。そこで、「小さな利益をたくさん積み上げる」という考え方は変えずに、稼ぎ方を切り替えた。新しいやり方では、メーカーの新商品情報などをAIが自動で集め、日本語と英語の紹介ページを自動で作り、紹介料(アフィリエイト)や広告で少しずつ稼ぐ。日本語でしか出ていない日本の情報を海外に届けることを特に重視しつつ、国内向けも同時に行う。扱うジャンルは、できるだけ多く増やしていく。同じ日に、国内向けお試し1本目として「補助金さがし」(テーマP)の試作版を作り、実際のデータから約800ページを自動で作れることを確かめた。</p>
         </li>
       </ul>
     </section>
@@ -656,8 +657,8 @@
         </div>
         <div class="stat">
           <p class="label">扱っているテーマ数</p>
-          <p class="value">13<small>個</small></p>
-          <p style="margin:0; font-size:0.82rem; color:var(--ink-faint);">本番稼働1・情報収集中12</p>
+          <p class="value">14<small>個</small></p>
+          <p style="margin:0; font-size:0.82rem; color:var(--ink-faint);">本番稼働1・試作中1・情報収集中12</p>
         </div>
         <div class="stat">
           <p class="label">本番公開しているサイト</p>
@@ -752,7 +753,7 @@
 
     <section id="projects">
       <h2><span class="no">09</span>今動いているプロジェクト</h2>
-      <p class="lead">現在13のテーマを扱っています。</p>
+      <p class="lead">現在14のテーマを扱っています。</p>
 
       <div class="proj-list">
         <div class="proj">
@@ -895,6 +896,18 @@
           <div class="row"><span class="k">集めている情報</span><p class="v">PMDA(医療機器)・消費者庁(生活製品全般)など、日本の複数の省庁がバラバラに発表しているリコール・回収情報をまとめて追いかけている</p></div>
           <div class="row"><span class="k">これまでの経緯</span><p class="v">テーマHから見つかったテーマ。EU側の同種の仕組み(Safety Gate)も調べたが、専用ソフトが必要なページ構成だったため今回は日本側のみで開始した</p></div>
           <div class="row"><span class="k">誰が嬉しいか</span><p class="v">複数省庁のリコール情報を横断でチェックしたいメーカーの品質保証担当者</p></div>
+        </div>
+
+        <div class="proj">
+          <div class="proj-head">
+            <span class="letter">P</span>
+            <span class="ttl">補助金さがし(出口工場の国内お試し1本目)</span>
+            <span class="pill build">試作中</span>
+          </div>
+          <div class="row"><span class="k">集めている情報</span><p class="v">国(デジタル庁のJグランツ)と中小機構のJ-Net21が出している、受付中の補助金・助成金・融資の情報。毎回400件ほど</p></div>
+          <div class="row"><span class="k">今できていること</span><p class="v">集めた情報をAIが「どの地域・どの業種・何に使えるか」に仕分けし、「東京都の製造業が設備を入れるときに使える補助金」のような細かい条件ごとの一覧ページを自動で約800ページ作れるところまで完成(まだ自分のパソコンの中だけで、公開はしていない)</p></div>
+          <div class="row"><span class="k">これまでの経緯</span><p class="v">稼ぎ方を「出口工場」に切り替えた後の、国内向けお試し3本のうちの1本目。同じ情報を使ったサイトは他にもあるため、細かい条件ごとのページを大量に作ることで差をつける作戦</p></div>
+          <div class="row"><span class="k">誰が嬉しいか</span><p class="v">自分の地域・業種で使える補助金を探している中小企業や個人事業主</p></div>
         </div>
       </div>
       <p style="margin-top:18px; font-size:0.88rem; color:var(--ink-soft);">「情報収集中」のテーマは、まだホームページを公開したりお金を取ったりしていません。まずはデータを集めて、育てられそうか見極めている段階です。</p>

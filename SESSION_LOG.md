@@ -593,3 +593,10 @@
 - 残課題・次にやること：PAT harvest-engine-vm-push は再発行・VM .env差し替え・push認証確認まで完了(新期限2027-01-03)。10/12の週次実行で新プロンプトと修正後gitSyncを検証。旧基準で採択された滞留9件を出口工場基準で再評価。パイロット3本を1セッション1本ずつ実装(国内・補助金[jGrants API+J-Net21 RSS]を先行、海外・ガチャ[日英仏]、国内・値上げ情報)。PAT期限2027-01-03
 - 追加の決定：海外は最初から多言語前提(仏など欧州も候補)、国内向けジャンルも評議会で並行探索。Perplexity連携は一次情報源調査の自動化時に品質比較してから判断
 - 触ったファイル：src/council/{councilCore,exploreQueries,selectCandidates,runCouncil,generatePrompt}.ts、src/lib/gitSync.ts、DECISIONS.md、CLAUDE.md、HANDOFF.md、会社説明資料.html、SESSION_LOG.md
+
+## harvest-engine-pilot-subsidy-01（2026-10-05）
+- 作業環境：家PC
+- やったこと：出口工場の国内パイロット1本目「補助金」(テーマP)を実装。jGrants公開API+J-Net21 RSSを収集→J-Net21のみHaiku 4.5で分類→業種×地域×目的の静的HTMLをローカル生成
+- 完了した状態：`npm run pilot:subsidy`で受付中338件(jGrants)+64件(J-Net21)から820ページを`site/subsidy/`に生成(掲載397件)。リンク切れ0・出典欠落0・J-Net21本文の転載0を確認、Edgeヘッドレスで表示確認済み。AI分類費は2回で計16円(ledger記帳済み)。J-Net21は利用規約で転載禁止のため本文を出さない設計。和暦の誤換算・融資の誤判定・jGrantsの毎回再取得の3件を実装中に発見・修正
+- 残課題・次にやること：公開先・方法の決定(オーナー承認)、公開前にjGrants API利用規約の原文確認、VMでの定期実行とVMのsourcesへの登録、目的を大量列挙した案件の扱い、次のパイロット(海外・ガチャ[日英仏]または国内・値上げ)。10/12の週次評議会で新プロンプトとgitSync修正を検証
+- 触ったファイル：src/pilots/subsidy/*（新規）、仕様書_harvest-engine.html（新規）、package.json、.gitignore、prisma/seed.ts、CLAUDE.md、DECISIONS.md、HANDOFF.md、会社説明資料.html、data/ledger.json

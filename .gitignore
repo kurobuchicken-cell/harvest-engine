@@ -19,3 +19,7 @@ node_modules
 
 # VM側ledger.jsonのローカルキャッシュ(npm run ledger:syncで取得、正本はVM側)
 /data/ledger.vm.json
+
+# パイロット(出口工場)の収集・分類データと生成ページ。再生成可能(分類費用は再発生する)
+/data/pilots
+/site

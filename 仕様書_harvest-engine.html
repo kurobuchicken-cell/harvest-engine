@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>仕様書 harvest-engine</title>
+<style>
+:root{--fg:#1f2328;--muted:#59636e;--line:#d1d9e0;--accent:#0b5cad;--bg:#fff;--code:#f3f5f7}
+@media (prefers-color-scheme: dark){:root{--fg:#e6edf3;--muted:#9198a1;--line:#3d444d;--accent:#5ea8ff;--bg:#0d1117;--code:#161b22}}
+body{margin:0;font-family:system-ui,"Hiragino Sans","Yu Gothic UI",sans-serif;color:var(--fg);background:var(--bg);line-height:1.75}
+main{max-width:960px;margin:0 auto;padding:16px}
+h1{font-size:1.6em}h2{margin-top:2.2em;border-bottom:2px solid var(--accent);padding-bottom:4px}h3{margin-top:1.6em}
+table{border-collapse:collapse;width:100%;font-size:.92em;margin:8px 0}th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font-size:.9em}code{padding:1px 4px}pre{padding:10px;overflow-x:auto}
+.note{color:var(--muted);font-size:.9em}
+</style>
+</head>
+<body>
+<main>
+<h1>仕様書 harvest-engine</h1>
+<p class="note">最終更新: 2026-10-05。本書は出口工場パイロットの仕様を記載する(既存の収集基盤・評議会の経緯は HANDOFF.md / DECISIONS.md / GOVERNANCE.md を参照)。</p>
+
+<h2>1. 補助金パイロット(テーマP)</h2>
+<p>出口工場(一次情報の自動収集→AI構造化→ページ自動生成→アフィリエイト・広告)の国内向けパイロット1本目。現段階のゴールは「実データからローカルで静的ページを生成できること」。公開・アフィリエイトは対象外。</p>
+
+<h3>1.1 実行方法</h3>
+<table>
+<tr><th>コマンド</th><th>動作</th></tr>
+<tr><td><code>npm run pilot:subsidy</code></td><td>収集 → AI分類(未分類のみ) → ページ生成</td></tr>
+<tr><td><code>npm run pilot:subsidy -- --no-ai</code></td><td>AI分類を省略(未分類のJ-Net21案件はページに出ない)</td></tr>
+<tr><td><code>npm run pilot:subsidy -- --generate-only</code></td><td>収集もせず保存済みデータからページだけ生成</td></tr>
+</table>
+<p>どちらかの情報源の取得に失敗しても、もう一方の収集とページ生成は続行する。AI分類には <code>ANTHROPIC_API_KEY</code>(.env)が必要。</p>
+
+<h3>1.2 構成</h3>
+<table>
+<tr><th>ファイル(src/pilots/subsidy/)</th><th>役割</th></tr>
+<tr><td>run.ts</td><td>エントリポイント。収集→分類→再正規化→保存→生成</td></tr>
+<tr><td>collectJgrants.ts</td><td>jGrants公開APIから受付中の案件を取得</td></tr>
+<tr><td>collectJnet21.ts</td><td>J-Net21支援情報ヘッドラインRSSを取得・蓄積</td></tr>
+<tr><td>classify.ts</td><td>J-Net21案件をHaiku 4.5で分類、和暦の日付換算、費用のledger記帳</td></tr>
+<tr><td>taxonomy.ts</td><td>分類表(都道府県・業種・目的)と正規化</td></tr>
+<tr><td>generate.ts</td><td>静的HTMLの生成</td></tr>
+<tr><td>store.ts / types.ts</td><td>JSONストアの読み書き / 案件の型</td></tr>
+</table>
+
+<h3>1.3 収集元</h3>
+<table>
+<tr><th>収集元</th><th>取得方法</th><th>規約・注意</th></tr>
+<tr><td>jGrants公開API(デジタル庁)<br><code>api.jgrants-portal.go.jp/exp/v1/public</code></td>
+<td>一覧APIはキーワード2文字以上が必須で全件一括取得できないため、10語(補助・助成・支援・事業・交付・奨励・給付・促進・対策・推進)を受付中(<code>acceptance=1</code>)で検索し、IDで重複を除く。各案件は詳細APIを1秒間隔で取得。一覧の締切値が前回と同じ案件は詳細APIを呼ばない。</td>
+<td>robots.txtは404(制限なし)。出典明記義務あり。詳細APIは添付PDFのbase64を含み重い。一覧と詳細で締切が食い違う案件があるため、表示には詳細側を使い、再取得の判定には一覧側を使う。<strong>公開前に利用規約の原文を確認すること(未確認)</strong></td></tr>
+<tr><td>J-Net21 支援情報ヘッドラインRSS(中小機構)<br><code>j-net21.smrj.go.jp/snavi/support/support.xml</code></td>
+<td>RSSは最新数十件しか載らないため、取得のたびにストアへ蓄積する。都道府県は <code>dc:coverage</code> から、補助金/融資の別は <code>dc:subject</code> の「 - 」以降から判定する。</td>
+<td>robots.txtは404。利用規約で事前承諾なき転載・再利用は禁止、リンクは自由(「出典：中小機構 J-Net21」必須)。<strong>本文はAI分類の入力にのみ使い、ページに出すのは制度名・地域・締切・リンク・出典だけにする。</strong></td></tr>
+</table>
+<p>通信はすべて既存の <code>politeFetch</code>(robots.txt確認、ホストごとの直列実行、5xx/429の指数バックオフ)を経由する。</p>
+
+<h3>1.4 分類</h3>
+<table>
+<tr><th>軸</th><th>語彙</th><th>jGrants</th><th>J-Net21</th></tr>
+<tr><td>地域</td><td>47都道府県+全国</td><td>APIの対象地域。地方ブロック名は構成都道府県に展開し、47都道府県すべてを含む場合は全国とする</td><td>RSSの <code>dc:coverage</code></td></tr>
+<tr><td>業種</td><td>日本標準産業分類の大分類19種(空=業種を問わない)</td><td>APIの業種。16種以上を列挙した案件は「業種を問わない」とみなす。「分類不能の産業」は無視する</td><td>AI</td></tr>
+<tr><td>目的</td><td>jGrantsの利用目的15種</td><td>APIの利用目的</td><td>AI(1〜3個)</td></tr>
+<tr><td>締切</td><td>日時</td><td>API</td><td>AIは本文の表記のまま抜き出し、コードで西暦に換算する(年の書かれていない日付は掲載日以降で最も近い日付とする)</td></tr>
+</table>
+<ul>
+<li>AIモデルは <code>claude-haiku-4-5</code>。構造化出力(JSONスキーマ、業種・目的はenumで制約)を使い、1リクエストで20件ずつ処理する。</li>
+<li>分類済みの案件は再分類しない。かかった費用は1回の実行につき1行として <code>data/ledger.json</code> に記帳する(費目api、service <code>pilot-subsidy-haiku</code>)。実績は64件で約$0.048(約8円)。</li>
+<li>jGrantsは元の値(<code>sourceFields</code>)を保存しておき、毎回の実行で正規化し直す。分類表を直しても再取得は不要。</li>
+<li>語彙に無い値は捨てずに、実行終了時に一覧を表示する(分類表への追加漏れの検知用)。</li>
+</ul>
+
+<h3>1.5 データ保存</h3>
+<p><code>data/pilots/subsidy/items.json</code>(git管理外)。パイロットの間はDBスキーマを変更しない。主な項目は id(<code>source:元ID</code>)、title、url、kind(grant/loan)、regions、industries、purposes、acceptanceEnd、classifiedBy(source/ai/pending)、firstSeenAt/lastSeenAt、sourceFields(jGrants)、rawText(J-Net21、ページには出さない)。</p>
+
+<h3>1.6 生成ページ</h3>
+<p>出力先は <code>site/subsidy/</code>(git管理外)。前回分が残らないよう、毎回いったん削除してから作り直す。リンクはすべて相対パスで、file:// で開いても辿れる。</p>
+<table>
+<tr><th>パス</th><th>内容</th><th>生成条件</th></tr>
+<tr><td>index.html</td><td>地域・業種・目的の索引(件数付き)、新着30件</td><td>常に生成</td></tr>
+<tr><td>region/{pref}/index.html</td><td>その地域限定の案件(全国対象は全国ページへ誘導)、目的別・業種×目的別の絞り込みリンク</td><td>1件以上(全国は常に生成)</td></tr>
+<tr><td>region/{pref}/p-{purpose}.html</td><td>地域×目的</td><td>1件以上</td></tr>
+<tr><td>region/{pref}/{industry}/{purpose}.html</td><td>地域×業種×目的。業種を問わない同条件の案件と、全国対象の同条件の案件を別の欄で併記</td><td>業種を特定した案件が1件以上</td></tr>
+<tr><td>industry/{industry}/index.html、industry/any/index.html</td><td>業種別/業種を問わない</td><td>1件以上</td></tr>
+<tr><td>purpose/{purpose}/index.html</td><td>目的別</td><td>1件以上</td></tr>
+</table>
+<ul>
+<li>掲載対象は、締切が未来の案件と、締切不明のJ-Net21案件のうち掲載から60日以内のもの。未分類の案件は掲載しない。</li>
+<li>各案件には出典を表示する(「出典：Jグランツ（デジタル庁）」/「出典：中小機構 J-Net21」)。フッターにも両方を表示する。</li>
+<li>リンク先は各出典の公式ページ(<code>rel="nofollow noopener"</code>)。</li>
+<li>2026-10-05時点の実績: 820ページ(組み合わせ741)、掲載397件。</li>
+</ul>
+
+<h3>1.7 sources台帳</h3>
+<p><code>prisma/seed.ts</code> にテーマP(<code>theme_p</code>)として2件を inactive で登録する。収集は専用コレクタが行うため、差分巡回の対象外とする。</p>
+
+<h3>1.8 未対応・今後</h3>
+<ul>
+<li>公開先・公開方法(オーナー承認事項)、アフィリエイト・広告</li>
+<li>公開前に確認: jGrants APIの利用規約原文(出典表記の文言・商用利用の条件)</li>
+<li>VMでの定期実行</li>
+<li>目的を8種以上列挙した案件が組み合わせページに薄く混入する問題</li>
+<li>市区町村単位への拡張(約1,700自治体の個別巡回は保守負荷が大きいため後回し)</li>
+</ul>
+</main>
+</body>
+</html>

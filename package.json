@@ -20,7 +20,8 @@
     "audit:weekly": "tsx src/auditReport.ts",
     "audit:schedule": "tsx src/auditScheduler.ts",
     "legal:record": "tsx src/legalRecord.ts",
-    "legal:check": "tsx src/legalCheck.ts"
+    "legal:check": "tsx src/legalCheck.ts",
+    "pilot:subsidy": "tsx src/pilots/subsidy/run.ts"
   },
   "keywords": [],
   "author": "",
