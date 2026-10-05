@@ -1,4 +1,5 @@
 import { politeFetch } from "../../lib/politeness";
+import type { CatalogMaker } from "../../factory/kinds/catalog";
 import type { GachaItem } from "./types";
 import { decodeEntities, sleep, toReleaseMonth, weekStart } from "./months";
 
@@ -35,15 +36,11 @@ export function parsePrice(detailHtml: string): number | null {
   return m ? Number(m[1].replace(/,/g, "")) : null;
 }
 
-export async function collectTakaraTomyArts(store: Map<string, GachaItem>, months: string[]): Promise<number> {
-  const now = new Date().toISOString();
-  let seen = 0;
-  for (const ym of months) {
+export const takaraTomyArtsMaker: CatalogMaker<GachaItem> = {
+  id: "takaratomy-arts",
+  async collectMonth(ym, store, now) {
     const res = await politeFetch(`${CALENDAR_URL}?ym=${ym}`);
-    if (res.status !== 200 || !res.body) {
-      console.error(`[tta] ym=${ym} fetch failed status=${res.status} ${res.error ?? ""}`);
-      continue;
-    }
+    if (res.status !== 200 || !res.body) throw new Error(`fetch failed status=${res.status} ${res.error ?? ""}`);
     const parsed = parseCalendar(res.body.toString("utf-8"), ym);
     let detailFetched = 0;
     for (const p of parsed) {
@@ -74,8 +71,7 @@ export async function collectTakaraTomyArts(store: Map<string, GachaItem>, month
         lastSeenAt: now,
       });
     }
-    seen += parsed.length;
     console.log(`[tta] ym=${ym} items=${parsed.length} detailFetched=${detailFetched}`);
-  }
-  return seen;
-}
+    return parsed.length;
+  },
+};

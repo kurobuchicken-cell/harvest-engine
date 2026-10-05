@@ -1,12 +1,9 @@
-import Anthropic from "@anthropic-ai/sdk";
-import { appendExpense } from "../../lib/ledger";
+import { AiSession, responseText, type AiBudget } from "../../factory/ai";
 import type { GachaItem } from "./types";
 import { CATEGORIES, TRANSLATED_LANGUAGES } from "./languages";
 
 // Haiku 4.5では実在しない作品名を当てる誤り(ブルーハムハム→Hamtaro等)が出たため、作品名の正確さを優先してSonnetを使う
 const MODEL = "claude-sonnet-5-5";
-const INPUT_PER_M_USD = 2;
-const OUTPUT_PER_M_USD = 10;
 const BATCH_SIZE = 25;
 
 function needsEnrichment(item: GachaItem): boolean {
@@ -61,13 +58,11 @@ interface Enrichment {
 }
 
 // 未処理の商品と、言語追加で翻訳が欠けた商品だけをAIに渡す(処理済みは再処理しない)
-export async function enrichPending(store: Map<string, GachaItem>): Promise<{ enriched: number; costUsd: number }> {
+export async function enrichPending(store: Map<string, GachaItem>, budget: AiBudget): Promise<void> {
   const pending = [...store.values()].filter(needsEnrichment);
-  if (pending.length === 0) return { enriched: 0, costUsd: 0 };
+  if (pending.length === 0) return;
 
-  const client = new Anthropic();
-  let inputTokens = 0;
-  let outputTokens = 0;
+  const ai = new AiSession(budget, "pilot-gacha-sonnet", MODEL);
   let enriched = 0;
 
   for (let start = 0; start < pending.length; start += BATCH_SIZE) {
@@ -76,22 +71,20 @@ export async function enrichPending(store: Map<string, GachaItem>): Promise<{ en
     const knownFranchises = [...new Set([...store.values()].map((i) => i.franchise).filter((f): f is string => !!f))].sort();
     const userContent = batch.map((item, i) => `index=${i} maker=${item.maker} name=${item.nameJa}`).join("\n");
     try {
-      const response = await client.messages.create({
-        model: MODEL,
+      const response = await ai.create({
         max_tokens: 16000,
         system: buildSystemPrompt(knownFranchises),
         messages: [{ role: "user", content: userContent }],
         output_config: { effort: "low", format: { type: "json_schema", schema: outputSchema() } },
       });
-      inputTokens += response.usage.input_tokens;
-      outputTokens += response.usage.output_tokens;
+      // 予算切れ: 残りは未処理のまま次回に回す
+      if (!response) break;
       if (response.stop_reason !== "end_turn") {
         // refusal・max_tokensのバッチは未処理のまま残し、次回実行で再処理する
         console.error(`[enrich] batch@${start} stop_reason=${response.stop_reason}、スキップ`);
         continue;
       }
-      const text = response.content.find((b) => b.type === "text");
-      const parsed = JSON.parse(text && text.type === "text" ? text.text : "{}") as { results?: Enrichment[] };
+      const parsed = JSON.parse(responseText(response)) as { results?: Enrichment[] };
       const now = new Date().toISOString();
       for (const result of parsed.results ?? []) {
         const item = batch[result.index];
@@ -110,17 +103,6 @@ export async function enrichPending(store: Map<string, GachaItem>): Promise<{ en
     }
   }
 
-  const costUsd = (inputTokens * INPUT_PER_M_USD + outputTokens * OUTPUT_PER_M_USD) / 1_000_000;
-  if (costUsd > 0) {
-    await appendExpense({
-      category: "api",
-      service: "pilot-gacha-sonnet",
-      amountUsd: costUsd,
-      amountJpy: null,
-      description: `ガチャパイロット: ${enriched}件を翻訳・タグ付け(${TRANSLATED_LANGUAGES.map((l) => l.code).join("/")}、in=${inputTokens} out=${outputTokens})`,
-      occurredAt: new Date().toISOString(),
-    });
-  }
-  console.log(`[enrich] pending=${pending.length} enriched=${enriched} costUsd=${costUsd.toFixed(4)}`);
-  return { enriched, costUsd };
+  await ai.record(`ガチャパイロット: ${enriched}件を翻訳・タグ付け(${TRANSLATED_LANGUAGES.map((l) => l.code).join("/")})`);
+  console.log(`[enrich] pending=${pending.length} enriched=${enriched} costUsd=${ai.costUsd.toFixed(4)}`);
 }

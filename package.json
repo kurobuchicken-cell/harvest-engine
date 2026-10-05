@@ -21,9 +21,11 @@
     "audit:schedule": "tsx src/auditScheduler.ts",
     "legal:record": "tsx src/legalRecord.ts",
     "legal:check": "tsx src/legalCheck.ts",
-    "pilot:subsidy": "tsx src/pilots/subsidy/run.ts",
-    "pilot:gacha": "tsx src/pilots/gacha/run.ts",
-    "pilot:price": "tsx src/pilots/price/run.ts"
+    "pilot:subsidy": "tsx src/factory/run.ts subsidy",
+    "pilot:gacha": "tsx src/factory/run.ts gacha",
+    "pilot:price": "tsx src/factory/run.ts price",
+    "factory:run": "tsx src/factory/run.ts",
+    "factory:schedule": "tsx src/factoryScheduler.ts"
   },
   "keywords": [],
   "author": "",

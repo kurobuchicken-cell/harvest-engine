@@ -1,12 +1,10 @@
-import { politeFetch } from "../../lib/politeness";
+import { getJson, type ApiSource } from "../../factory/kinds/api";
 import type { SubsidyItem } from "./types";
 import { normalizeIndustries, normalizePurposes, normalizeRegions } from "./taxonomy";
 
 const API_BASE = "https://api.jgrants-portal.go.jp/exp/v1/public";
 // 一覧APIはキーワード(2文字以上)必須で全件一括取得ができないため、補助金名に頻出する語で網羅する
 const KEYWORDS = ["補助", "助成", "支援", "事業", "交付", "奨励", "給付", "促進", "対策", "推進"];
-// politeFetchはホスト直列化のみで間隔を空けないため、詳細APIの連続呼び出しに待機を入れる
-const DETAIL_INTERVAL_MS = 1000;
 
 interface ListEntry {
   id: string;
@@ -32,16 +30,6 @@ interface Detail {
 function sameInstant(a: string | null, b: string | null): boolean {
   if (!a || !b) return a === b;
   return Date.parse(a) === Date.parse(b);
-}
-
-const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
-async function getJson<T>(url: string): Promise<T> {
-  const res = await politeFetch(url);
-  if (res.status !== 200 || !res.body) {
-    throw new Error(`jgrants fetch failed: status=${res.status} error=${res.error ?? ""} url=${url}`);
-  }
-  return JSON.parse(res.body.toString("utf-8")) as T;
 }
 
 async function listOpen(): Promise<Map<string, ListEntry>> {
@@ -88,31 +76,18 @@ function toItem(detail: Detail, now: string, prev: SubsidyItem | undefined): Sub
   };
 }
 
-// 受付中の案件のみ取得する。既知の案件は締切が変わっていなければ詳細APIを呼ばない
-export async function collectJgrants(store: Map<string, SubsidyItem>, rawDetails?: Detail[]): Promise<number> {
-  const now = new Date().toISOString();
-  const open = await listOpen();
-  let fetched = 0;
-  for (const entry of open.values()) {
-    const id = `jgrants:${entry.id}`;
-    const prev = store.get(id);
-    if (prev?.sourceFields && sameInstant(prev.listAcceptanceEnd ?? null, entry.acceptance_end_datetime)) {
-      prev.lastSeenAt = now;
-      continue;
-    }
-    await sleep(DETAIL_INTERVAL_MS);
-    try {
-      const json = await getJson<{ result: Detail[] }>(`${API_BASE}/subsidies/id/${entry.id}`);
-      const detail = json.result[0];
-      rawDetails?.push(detail);
-      store.set(id, { ...toItem(detail, now, prev), listAcceptanceEnd: entry.acceptance_end_datetime });
-      fetched++;
-    } catch (err) {
-      console.error(`[jgrants] detail failed id=${entry.id}: ${err instanceof Error ? err.message : err}`);
-    }
-  }
-  console.log(`[jgrants] open=${open.size} detailFetched=${fetched}`);
-  return open.size;
-}
-
-export type { Detail as JgrantsDetail };
+// 受付中の案件のみ取得する。既知の案件は一覧の締切値が変わっていなければ詳細APIを呼ばない
+export const jgrantsSource: ApiSource<ListEntry, SubsidyItem> = {
+  id: "jgrants",
+  list: async () => [...(await listOpen()).values()],
+  storeId: (entry) => `jgrants:${entry.id}`,
+  isUnchanged: (prev, entry) => !!prev.sourceFields && sameInstant(prev.listAcceptanceEnd ?? null, entry.acceptance_end_datetime),
+  touch: (prev, now) => {
+    prev.lastSeenAt = now;
+  },
+  async fetchDetail(entry, prev, now) {
+    const json = await getJson<{ result: Detail[] }>(`${API_BASE}/subsidies/id/${entry.id}`);
+    return { ...toItem(json.result[0], now, prev), listAcceptanceEnd: entry.acceptance_end_datetime };
+  },
+  detailIntervalMs: 1000,
+};

@@ -71,5 +71,23 @@ module.exports = {
       error_file: "logs/audit-scheduler-error.log",
       time: true,
     },
+    {
+      name: "harvest-engine-factory-scheduler",
+      // 毎日04:00 JST(=19:00 UTC)に出口工場の全ジャンル(値上げ→ガチャ→補助金)を収集→AI→ページ生成→自動点検する。
+      // ジャンルごとに別プロセスで順に動かし(VMの空きメモリ対策)、異常があった回だけSlackへ通知する
+      script: "node_modules/tsx/dist/cli.mjs",
+      args: "src/factoryScheduler.ts",
+      cwd: __dirname,
+      autorestart: true,
+      max_restarts: 10,
+      min_uptime: "30s",
+      restart_delay: 5000,
+      env: {
+        NODE_ENV: "production",
+      },
+      out_file: "logs/factory-scheduler-out.log",
+      error_file: "logs/factory-scheduler-error.log",
+      time: true,
+    },
   ],
 };

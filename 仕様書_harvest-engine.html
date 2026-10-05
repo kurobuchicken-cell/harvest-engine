@@ -18,7 +18,7 @@ th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font
 <body>
 <main>
 <h1>仕様書 harvest-engine</h1>
-<p class="note">最終更新: 2026-10-05。本書は出口工場パイロット(1章: 補助金、2章: ガチャ、3章: 値上げ情報)の仕様を記載する(既存の収集基盤・評議会の経緯は HANDOFF.md / DECISIONS.md / GOVERNANCE.md を参照)。</p>
+<p class="note">最終更新: 2026-10-05。本書は出口工場パイロット(1章: 補助金、2章: ガチャ、3章: 値上げ情報)と、3本に共通の土台・定期実行・自動点検(4章)の仕様を記載する(既存の収集基盤・評議会の経緯は HANDOFF.md / DECISIONS.md / GOVERNANCE.md を参照)。</p>
 
 <h2>1. 補助金パイロット(テーマP)</h2>
 <p>出口工場(一次情報の自動収集→AI構造化→ページ自動生成→アフィリエイト・広告)の国内向けパイロット1本目。現段階のゴールは「実データからローカルで静的ページを生成できること」。公開・アフィリエイトは対象外。</p>
@@ -35,13 +35,13 @@ th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font
 <h3>1.2 構成</h3>
 <table>
 <tr><th>ファイル(src/pilots/subsidy/)</th><th>役割</th></tr>
-<tr><td>run.ts</td><td>エントリポイント。収集→分類→再正規化→保存→生成</td></tr>
-<tr><td>collectJgrants.ts</td><td>jGrants公開APIから受付中の案件を取得</td></tr>
+<tr><td>genre.ts</td><td>ジャンル定義(型=api)。収集→分類→再正規化→生成の各処理を4章の共通実行部に渡す</td></tr>
+<tr><td>collectJgrants.ts</td><td>jGrants公開APIの一覧・詳細の取り方(4章のapi型の設定)</td></tr>
 <tr><td>collectJnet21.ts</td><td>J-Net21支援情報ヘッドラインRSSを取得・蓄積</td></tr>
 <tr><td>classify.ts</td><td>J-Net21案件をHaiku 4.5で分類、和暦の日付換算、費用のledger記帳</td></tr>
 <tr><td>taxonomy.ts</td><td>分類表(都道府県・業種・目的)と正規化</td></tr>
 <tr><td>generate.ts</td><td>静的HTMLの生成</td></tr>
-<tr><td>store.ts / types.ts</td><td>JSONストアの読み書き / 案件の型</td></tr>
+<tr><td>types.ts</td><td>案件の型(JSONストアの読み書きは4章の共通部)</td></tr>
 </table>
 
 <h3>1.3 収集元</h3>
@@ -99,7 +99,6 @@ th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font
 <ul>
 <li>公開先・公開方法(オーナー承認事項)、アフィリエイト・広告</li>
 <li>公開前に決定: 加工表示の作成者名(OPERATOR_NAME)</li>
-<li>VMでの定期実行</li>
 <li>目的を8種以上列挙した案件が組み合わせページに薄く混入する問題</li>
 <li>市区町村単位への拡張(約1,700自治体の個別巡回は保守負荷が大きいため後回し)</li>
 </ul>
@@ -118,13 +117,13 @@ th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font
 <h3>2.2 構成</h3>
 <table>
 <tr><th>ファイル(src/pilots/gacha/)</th><th>役割</th></tr>
-<tr><td>run.ts</td><td>エントリポイント</td></tr>
-<tr><td>collectBandai.ts</td><td>ガシャポン公式の発売スケジュールを解析</td></tr>
+<tr><td>genre.ts</td><td>ジャンル定義(型=catalog)</td></tr>
+<tr><td>collectBandai.ts</td><td>ガシャポン公式の発売スケジュール1か月分を解析(4章のcatalog型のメーカー1社分)</td></tr>
 <tr><td>collectTakaraTomyArts.ts</td><td>タカラトミーアーツのガチャ発売カレンダーを解析、価格は詳細ページから取得</td></tr>
 <tr><td>enrich.ts</td><td>Sonnet 5.5で翻訳・作品名・商品種別を付与、費用をledgerに記帳</td></tr>
 <tr><td>languages.ts</td><td>言語設定(画面文言・メーカー名・種別名・発売時期の書式)。<strong>言語の追加はここに1要素足すだけ</strong></td></tr>
 <tr><td>generate.ts</td><td>言語別の静的HTML生成</td></tr>
-<tr><td>months.ts / store.ts / types.ts</td><td>対象月の計算・HTML実体参照の復元 / JSONストア / 型</td></tr>
+<tr><td>months.ts / types.ts</td><td>発売月の表記変換・HTML実体参照の復元 / 型(対象月の計算は4章のcatalog型)</td></tr>
 </table>
 
 <h3>2.3 収集元</h3>
@@ -167,7 +166,7 @@ th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font
 <h3>2.6 未対応・今後</h3>
 <ul>
 <li><strong>将来実装(オーナー指示で保持)</strong>: 商品画像(メーカー許諾、またはアフィリエイト提携先の提供画像)、中小メーカー(コトブキヤ系・ケンエレファント・SO-TA・クオリア等)の追加</li>
-<li>公開先・方法、アフィリエイト(代理購入サービス等)、VMでの定期実行</li>
+<li>公開先・方法、アフィリエイト(代理購入サービス等)</li>
 <li>ローマ字表記の揺れ、商品シリーズ名の訳し方の統一、日本語ページの作品名の日本語化</li>
 </ul>
 
@@ -187,10 +186,10 @@ th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font
 <table>
 <tr><th>ファイル(src/pilots/price/)</th><th>役割</th></tr>
 <tr><td>sources.ts</td><td>監視対象の会社とニュースリリース一覧URL(<strong>会社の追加はここに1行足すだけ</strong>)。prisma/seed.tsもこれを読み込む</td></tr>
-<tr><td>collect.ts</td><td>一覧ページから、リンク文言がキーワードに当たる告知を抽出する(社ごとの専用パーサーなし)</td></tr>
-<tr><td>analyze.ts</td><td>告知の本文(HTML/PDF)をHaiku 4.5で構造化し、費用をledgerに記帳する</td></tr>
-<tr><td>fetchUtil.ts</td><td>タイムアウト付き取得、文字コード判定(Shift_JIS/EUC-JP対応)、HTML→テキスト、PDF判定</td></tr>
-<tr><td>generate.ts / run.ts / store.ts / types.ts</td><td>ページ生成 / エントリポイント / JSONストア / 型</td></tr>
+<tr><td>genre.ts</td><td>ジャンル定義(型=announcement)。下の設定を4章のannouncement型に渡すだけで、収集・AI抽出の処理本体は共通部にある</td></tr>
+<tr><td>collect.ts</td><td>告知を拾うリンク文言のキーワード</td></tr>
+<tr><td>analyze.ts</td><td>AIへの指示文・出力スキーマ・品目分類、抽出結果を告知に反映する処理</td></tr>
+<tr><td>generate.ts / types.ts</td><td>ページ生成 / 型</td></tr>
 </table>
 
 <h3>3.3 収集</h3>
@@ -198,7 +197,7 @@ th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font
 <li>監視対象は21社(明治・キユーピー・雪印メグミルク・カゴメ・ネスレ日本・東洋水産・ミツカン・アサヒ飲料・日本ハム・日清オイリオ・丸美屋・日清製粉ウェルナ・不二家・ポッカサッポロ・伊藤ハム・ヤクルト・森永製菓・日清食品HD・伊藤園・UCC・ユニ・チャーム)。2026-10-05に、robots.txtで制限がないこと・既知AIボットの名指しDisallowがないこと・一覧がSSRであることを確認した。</li>
 <li>リンク文言のキーワードは、価格改定・価格改訂・値上げ・出荷価格・価格の改定・価格変更・価格の見直し・内容量変更・規格変更。</li>
 <li>告知IDはURLのSHA-1。既知の告知は再登録しない。一覧の1ページ目に載っている告知だけを対象とする。</li>
-<li>一覧の取得は45秒、本文の取得は60秒で打ち切る。<code>politeFetch</code>本体にも1回60秒のタイムアウトがあるが、リトライ込みで最長約4分になるため、パイロット側でさらに短い上限を設けている。</li>
+<li>一覧の取得は45秒、本文の取得は60秒で打ち切る(<code>src/factory/fetch.ts</code>)。<code>politeFetch</code>本体にも1回60秒のタイムアウトがあるが、リトライ込みで最長約4分になるため、さらに短い上限を設けている。</li>
 <li>対象外とした会社: 403でアクセス拒否(カルビー・味の素・サントリー)、GPTBotを名指しでDisallow(マルハニチロ)、一覧がJS描画(ロッテ・キッコーマン・エスビー食品)、要再調査(ハウス食品G・キリン・ブルボン・ニッスイ・AGF・花王・山崎製パン)。</li>
 </ul>
 
@@ -228,8 +227,68 @@ th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font
 <h3>3.6 未対応・今後</h3>
 <ul>
 <li>要再調査の7社とJS描画の3社、他業界(日用品・外食等)への拡充</li>
-<li>ブランド別ページ(ロングテール)、公開先・方法、アフィリエイト、VMでの定期実行</li>
+<li>ブランド別ページ(ロングテール)、公開先・方法、アフィリエイト</li>
 </ul>
+
+<h2>4. 共通の土台・定期実行・自動点検(出口工場)</h2>
+<p>3本のパイロットで重複していた処理(保存・AI呼び出しと費用記帳・取得・ページ書き出し)を <code>src/factory/</code> にまとめ、新ジャンルを「ジャンル定義+型ごとの小さなコード」で足せるようにした。あわせて、VMでの毎日の定期実行と、異常の自動点検・Slack通知を加えた(2026-10-05、DECISIONS.md参照)。</p>
+
+<h3>4.1 実行方法</h3>
+<table>
+<tr><th>コマンド</th><th>動作</th></tr>
+<tr><td><code>npm run factory:run</code></td><td>全ジャンル(値上げ→ガチャ→補助金)を順に、収集 → AI処理 → ページ生成 → 自動点検</td></tr>
+<tr><td><code>npm run factory:run -- price gacha</code></td><td>指定したジャンルだけ実行</td></tr>
+<tr><td><code>--no-ai</code> / <code>--generate-only</code></td><td>AI処理を省略 / 収集もせず保存済みデータからページだけ生成(点検は行う)</td></tr>
+<tr><td><code>--notify</code></td><td>異常があればSlackへ通知する(定期実行が付ける。手元の実行では付けない)</td></tr>
+<tr><td><code>npm run pilot:subsidy</code> 等</td><td>従来どおり使える(中身は <code>factory:run subsidy</code>)</td></tr>
+<tr><td><code>npm run factory:schedule</code></td><td>定期実行の常駐プロセス(pm2 <code>harvest-engine-factory-scheduler</code>)</td></tr>
+</table>
+
+<h3>4.2 構成</h3>
+<table>
+<tr><th>ファイル(src/factory/)</th><th>役割</th></tr>
+<tr><td>genre.ts</td><td>ジャンル定義の型(id・型・collect・enrich・prepare・generate)と、情報源ごとの収集結果(一覧で見えた件数・成否)</td></tr>
+<tr><td>registry.ts</td><td>ジャンルの登録一覧と実行順。<strong>新ジャンルはここに1行足す</strong></td></tr>
+<tr><td>run.ts</td><td>1ジャンルの実行(読み込み→収集→保存→AI→保存→後処理→生成→点検→実行記録→通知)</td></tr>
+<tr><td>store.ts</td><td>JSONストア(<code>data/pilots/{ジャンル}/items.json</code>)</td></tr>
+<tr><td>ai.ts</td><td>Claude呼び出し、モデル別単価での費用計算、ledger記帳、費用上限による打ち切り</td></tr>
+<tr><td>fetch.ts</td><td>タイムアウト付き取得、文字コード判定、HTML→テキスト、PDF判定</td></tr>
+<tr><td>html.ts</td><td>HTMLエスケープ、索引リスト、出力先の作り直しと書き出し(<code>site/{ジャンル}/</code>)</td></tr>
+<tr><td>kinds/catalog.ts</td><td>ガチャ型: メーカーの新作一覧を前月・当月・翌月分読む。メーカー追加は「1か月分を読む関数」1つ</td></tr>
+<tr><td>kinds/announcement.ts</td><td>値上げ型: 各社のお知らせ一覧からキーワードに当たる告知を拾い、本文/添付PDFをAIで構造化。ジャンル追加は「一覧URL・キーワード・AIの指示文とスキーマ・反映処理」の設定</td></tr>
+<tr><td>kinds/api.ts</td><td>補助金型: 公開APIの一覧を取り、新規・変化した項目だけ詳細を1秒間隔で取得</td></tr>
+<tr><td>check.ts / history.ts / notify.ts</td><td>自動点検 / 実行記録(<code>data/factory/runs.json</code>、ジャンルごとに直近90回) / Slack通知</td></tr>
+<tr><td>src/factoryScheduler.ts</td><td>定期実行(毎日04:00 JST)</td></tr>
+</table>
+<p>ページの見た目(レイアウト・索引の切り方)はジャンルごとに違うため共通化せず、各ジャンルの generate.ts に置く。保存先はJSONのまま(2026-10-05オーナー決定。Prismaスキーマへは移さない)。</p>
+
+<h3>4.3 新ジャンルの足し方</h3>
+<ol>
+<li><code>src/pilots/{ジャンル}/</code> に型・ページ生成・ジャンル定義(genre.ts)を作る。収集とAI処理は、該当する型(catalog / announcement / api)の関数に設定や解析関数を渡す。</li>
+<li><code>src/factory/registry.ts</code> の一覧に足す。これで手元の実行・定期実行・自動点検の対象になる。</li>
+<li>AI費用のledgerのserviceは <code>pilot-</code> で始める(月の上限の集計対象にするため)。</li>
+</ol>
+
+<h3>4.4 定期実行</h3>
+<ul>
+<li>毎日04:00 JST(19:00 UTC)。評議会(月曜09:00 JST)・監査(月曜10:00 JST)とは重ならない。</li>
+<li>VMの空きメモリが約380MBのため、ジャンルごとに別プロセスで順に実行し、終わるたびにメモリを返す。1ジャンル60分を超えたら打ち切る。前回が終わっていなければその回は飛ばす。</li>
+<li>異常終了・打ち切りもSlackへ通知する。</li>
+</ul>
+
+<h3>4.5 自動点検(毎回、ページ生成の後)</h3>
+<table>
+<tr><th>項目</th><th>判定</th></tr>
+<tr><td>収集件数の急減</td><td>情報源ごとの「一覧で見えた件数」が、直近7回(件数が0より大きい成功回)の中央値の50%未満。取得失敗も異常。値上げ型は、キーワードで絞る前の一覧上のリンク総数を使う(告知が無い週でも0にならないため)</td></tr>
+<tr><td>リンク切れ</td><td>生成ページ内の相対リンク(href・src)が実在するファイルを指しているか。外部の一次情報URLは、毎回数百件を取りに行くことになるため対象外</td></tr>
+<tr><td>一次情報リンク・出典の欠落</td><td>掲載カード(<code>li.item</code>)に外部リンクと出典表記(<code>.credit</code>)があるか</td></tr>
+<tr><td>中身の薄いページ</td><td>掲載カードが0件のページ(サイトのトップを除く)</td></tr>
+<tr><td>AI費用の上限超え</td><td>1ジャンル1回100円、出口工場全体で月1,500円(serviceが<code>pilot-</code>で始まるledgerの当月合計)。上限に達したらAI処理だけを止め(未処理分は次回へ)、収集とページ生成は続ける。判定は呼び出しの前に行うため、最後の1回分(数円)だけ超えうる。円換算はledgerの直近の為替レート(無ければ取得、取得できなければAI処理を止める)</td></tr>
+</table>
+<p>異常があった回だけ、既存のSlack Webhook(<code>SLACK_WEBHOOK_URL</code>、メンションは<code>SLACK_MENTION_USER_ID</code>)へ通知する。正常な回はログと実行記録のみ。</p>
+
+<h3>4.6 回帰確認(2026-10-05)</h3>
+<p>統合の前後で、同じ保存データに対する <code>--generate-only</code> の出力を比較し、3本の全ページ(補助金819・ガチャ619・値上げ76)がバイト単位で一致することを確認した。保存データも一致。リンク切れ・出典欠落・掲載0件ページはいずれも0。</p>
 </main>
 </body>
 </html>

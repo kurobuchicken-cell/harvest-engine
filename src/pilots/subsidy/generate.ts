@@ -1,9 +1,9 @@
-import { mkdir, rm, writeFile } from "node:fs/promises";
-import path from "node:path";
+import type { GenerateResult } from "../../factory/genre";
+import { escapeHtml, linkList, siteDir, writeSite, type Page } from "../../factory/html";
 import type { SubsidyItem } from "./types";
 import { INDUSTRIES, NATIONWIDE, PREFECTURES, PURPOSES } from "./taxonomy";
 
-const OUT_DIR = path.resolve(process.cwd(), "site", "subsidy");
+const OUT_DIR = siteDir("subsidy");
 // 締切が取れないJ-Net21案件は掲載日から一定期間だけ表示する(古い告知を載せ続けないため)
 const UNDATED_VISIBLE_DAYS = 60;
 
@@ -24,10 +24,6 @@ const SOURCE_CREDIT: Record<SubsidyItem["source"], string> = {
 // jGrants利用規約第5条1項二: 編集・加工したコンテンツは出典とは別に加工した旨の記載が必要。
 // 作成者名は公開時に確定する(オーナー決定事項)まで仮置き
 const OPERATOR_NAME = "本サイト運営者";
-
-function escapeHtml(s: string): string {
-  return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
-}
 
 function formatDate(iso: string | null): string {
   if (!iso) return "要確認";
@@ -121,24 +117,6 @@ h1{font-size:1.4em;line-height:1.4}h2{font-size:1.15em;margin-top:2em;border-lef
 .tag{display:inline-block;font-size:.78em;background:var(--tag);border-radius:999px;padding:1px 10px;margin:2px 4px 2px 0;text-decoration:none}
 .links{columns:3 12em;padding-left:1.2em}.count{color:var(--muted);font-size:.85em}.empty{color:var(--muted)}
 footer{border-top:1px solid var(--line);font-size:.8em;color:var(--muted);margin-top:40px}`;
-
-function linkList(entries: { href: string; label: string; count: number }[]): string {
-  return `<ul class="links">${entries
-    .filter((e) => e.count > 0)
-    .map((e) => `<li><a href="${e.href}">${escapeHtml(e.label)}</a> <span class="count">(${e.count})</span></li>`)
-    .join("")}</ul>`;
-}
-
-interface Page {
-  relPath: string;
-  html: string;
-}
-
-export interface GenerateResult {
-  pages: number;
-  visibleItems: number;
-  comboPages: number;
-}
 
 export async function generateSite(store: Map<string, SubsidyItem>, now = new Date()): Promise<GenerateResult> {
   const visible = [...store.values()].filter((i) => isVisible(i, now));
@@ -311,14 +289,7 @@ ${nationalMatches.length > 0 ? `<h2>全国対象で同じ条件の案件（${nat
     }
   }
 
-  // 前回生成分に今回存在しないページが残らないよう、出力先(site/subsidy配下の生成物のみ)を作り直す
-  await rm(OUT_DIR, { recursive: true, force: true });
-  for (const page of pages) {
-    const file = path.join(OUT_DIR, page.relPath);
-    await mkdir(path.dirname(file), { recursive: true });
-    await writeFile(file, page.html, "utf-8");
-  }
-  await writeFile(path.join(OUT_DIR, "style.css"), STYLE, "utf-8");
+  await writeSite(OUT_DIR, pages, { "style.css": STYLE });
   console.log(`[generate] pages=${pages.length} combo=${comboPages} visibleItems=${visible.length} out=${OUT_DIR}`);
-  return { pages: pages.length, visibleItems: visible.length, comboPages };
+  return { outDir: OUT_DIR, pages: pages.length, listed: visible.length };
 }

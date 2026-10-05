@@ -1,4 +1,4 @@
-import { politeFetch, type FetchResult } from "../../lib/politeness";
+import { politeFetch, type FetchResult } from "../lib/politeness";
 
 // politeFetch本体のタイムアウトはリトライ込みで最長約4分になるため、パイロットではさらに短い上限で打ち切る
 export async function fetchWithTimeout(url: string, ms = 45_000): Promise<FetchResult> {

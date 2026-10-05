@@ -36,7 +36,7 @@ interface FxRateResult {
   source: string;
 }
 
-async function fetchUsdJpyRate(): Promise<FxRateResult> {
+export async function fetchUsdJpyRate(): Promise<FxRateResult> {
   const fetchedAt = new Date().toISOString();
   try {
     const res = await fetch(FX_RATE_URL);

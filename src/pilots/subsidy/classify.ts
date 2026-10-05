@@ -1,11 +1,8 @@
-import Anthropic from "@anthropic-ai/sdk";
-import { appendExpense } from "../../lib/ledger";
+import { AiSession, responseText, type AiBudget } from "../../factory/ai";
 import type { SubsidyItem } from "./types";
 import { INDUSTRIES, PURPOSES } from "./taxonomy";
 
 const MODEL = "claude-haiku-4-5";
-const INPUT_PER_M_USD = 1;
-const OUTPUT_PER_M_USD = 5;
 const BATCH_SIZE = 20;
 
 const SYSTEM_PROMPT = `あなたは日本の補助金・助成金・融資の告知文を分類する担当者です。
@@ -78,34 +75,30 @@ export function parseJapaneseDate(text: string | null, publishedAt: string | nul
 }
 
 // 未分類(pending)のJ-Net21案件だけをAIに渡す。分類済みは再分類しない(費用を毎回発生させないため)
-export async function classifyPending(store: Map<string, SubsidyItem>): Promise<{ classified: number; costUsd: number }> {
+export async function classifyPending(store: Map<string, SubsidyItem>, budget: AiBudget): Promise<void> {
   const pending = [...store.values()].filter((item) => item.classifiedBy === "pending" && item.rawText);
-  if (pending.length === 0) return { classified: 0, costUsd: 0 };
+  if (pending.length === 0) return;
 
-  const client = new Anthropic();
-  let inputTokens = 0;
-  let outputTokens = 0;
+  const ai = new AiSession(budget, "pilot-subsidy-haiku", MODEL);
   let classified = 0;
 
   for (let start = 0; start < pending.length; start += BATCH_SIZE) {
     const batch = pending.slice(start, start + BATCH_SIZE);
     const userContent = batch.map((item, i) => `### index=${i}\n${item.rawText}`).join("\n\n");
     try {
-      const response = await client.messages.create({
-        model: MODEL,
+      const response = await ai.create({
         max_tokens: 8000,
         system: SYSTEM_PROMPT,
         messages: [{ role: "user", content: userContent }],
         output_config: { format: { type: "json_schema", schema: OUTPUT_SCHEMA } },
       });
-      inputTokens += response.usage.input_tokens;
-      outputTokens += response.usage.output_tokens;
+      // 予算切れ: 残りは未分類のまま次回に回す
+      if (!response) break;
       if (response.stop_reason !== "end_turn") {
         console.error(`[classify] batch@${start} stop_reason=${response.stop_reason}、スキップ`);
         continue;
       }
-      const text = response.content.find((b) => b.type === "text");
-      const parsed = JSON.parse(text && text.type === "text" ? text.text : "{}") as { results?: Classification[] };
+      const parsed = JSON.parse(responseText(response)) as { results?: Classification[] };
       for (const result of parsed.results ?? []) {
         const item = batch[result.index];
         if (!item) continue;
@@ -121,17 +114,6 @@ export async function classifyPending(store: Map<string, SubsidyItem>): Promise<
     }
   }
 
-  const costUsd = (inputTokens * INPUT_PER_M_USD + outputTokens * OUTPUT_PER_M_USD) / 1_000_000;
-  if (costUsd > 0) {
-    await appendExpense({
-      category: "api",
-      service: "pilot-subsidy-haiku",
-      amountUsd: costUsd,
-      amountJpy: null,
-      description: `補助金パイロット: J-Net21案件${classified}件をAI分類(in=${inputTokens} out=${outputTokens})`,
-      occurredAt: new Date().toISOString(),
-    });
-  }
-  console.log(`[classify] pending=${pending.length} classified=${classified} costUsd=${costUsd.toFixed(4)}`);
-  return { classified, costUsd };
+  await ai.record(`補助金パイロット: J-Net21案件${classified}件をAI分類`);
+  console.log(`[classify] pending=${pending.length} classified=${classified} costUsd=${ai.costUsd.toFixed(4)}`);
 }

@@ -1,4 +1,5 @@
 import { politeFetch } from "../../lib/politeness";
+import type { CatalogMaker } from "../../factory/kinds/catalog";
 import type { GachaItem } from "./types";
 import { decodeEntities, toReleaseMonth } from "./months";
 
@@ -40,15 +41,12 @@ export function parseSchedule(html: string): Parsed[] {
   return out;
 }
 
-export async function collectBandai(store: Map<string, GachaItem>, months: string[]): Promise<number> {
-  const now = new Date().toISOString();
-  let seen = 0;
-  for (const ym of months) {
+// 1か月分の発売スケジュールを読む。取得に失敗した月は例外にして、catalog側でその月だけ飛ばす
+export const bandaiMaker: CatalogMaker<GachaItem> = {
+  id: "bandai",
+  async collectMonth(ym, store, now) {
     const res = await politeFetch(`${SCHEDULE_URL}?ym=${ym}`);
-    if (res.status !== 200 || !res.body) {
-      console.error(`[bandai] ym=${ym} fetch failed status=${res.status} ${res.error ?? ""}`);
-      continue;
-    }
+    if (res.status !== 200 || !res.body) throw new Error(`fetch failed status=${res.status} ${res.error ?? ""}`);
     const parsed = parseSchedule(res.body.toString("utf-8"));
     for (const p of parsed) {
       const id = `bandai:${p.code}`;
@@ -71,8 +69,7 @@ export async function collectBandai(store: Map<string, GachaItem>, months: strin
         lastSeenAt: now,
       });
     }
-    seen += parsed.length;
     console.log(`[bandai] ym=${ym} items=${parsed.length}`);
-  }
-  return seen;
-}
+    return parsed.length;
+  },
+};

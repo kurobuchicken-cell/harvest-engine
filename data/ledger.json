@@ -1244,5 +1244,19 @@
     "fxRateSource": "https://open.er-api.com/v6/latest/USD",
     "fxRateStatus": "resolved",
     "recordedAt": "2026-10-05T09:32:05.439Z"
+  },
+  {
+    "category": "api",
+    "service": "pilot-subsidy-haiku",
+    "amountUsd": 0.00928,
+    "amountJpy": 1,
+    "description": "補助金パイロット: J-Net21案件11件をAI分類(in=5585 out=739)",
+    "occurredAt": "2026-10-05T10:31:34.002Z",
+    "id": "dff7d559-25fb-44fa-a9a5-42ed818e05a7",
+    "fxRate": 157.730309,
+    "fxRateFetchedAt": "2026-10-05T10:31:34.002Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-05T10:31:34.042Z"
   }
 ]

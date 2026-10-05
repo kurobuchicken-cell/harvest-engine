@@ -1,17 +1,13 @@
-import { mkdir, rm, writeFile } from "node:fs/promises";
-import path from "node:path";
+import type { GenerateResult } from "../../factory/genre";
+import { escapeHtml, linkList, siteDir, writeSite, type Page } from "../../factory/html";
 import type { PriceNotice } from "./types";
 import { SOURCES } from "./sources";
 import { CATEGORIES } from "./analyze";
 
-const OUT_DIR = path.resolve(process.cwd(), "site", "price");
+const OUT_DIR = siteDir("price");
 // 値下げの告知は載せない。内容量だけの変更は「実質値上げ」、方向が本文から判断できない価格改定は値上げと断定せず載せる
 const LISTED_DIRECTIONS = new Set(["increase", "mixed", "size_only", "other"]);
 const categorySlug = new Map(CATEGORIES.map((c) => [c.name, c.slug]));
-
-function escapeHtml(s: string): string {
-  return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
-}
 
 function jstDate(iso: string | null): string {
   if (!iso) return "不明";
@@ -87,20 +83,13 @@ h1{font-size:1.4em;line-height:1.4}h2{font-size:1.15em;margin-top:2em;border-lef
 .links{columns:3 12em;padding-left:1.2em}.count{color:var(--muted);font-size:.85em}.empty{color:var(--muted)}
 footer{border-top:1px solid var(--line);font-size:.8em;color:var(--muted);margin-top:40px}`;
 
-function linkList(entries: { href: string; label: string; count: number }[]): string {
-  return `<ul class="links">${entries
-    .filter((e) => e.count > 0)
-    .map((e) => `<li><a href="${e.href}">${escapeHtml(e.label)}</a> <span class="count">(${e.count})</span></li>`)
-    .join("")}</ul>`;
-}
-
-export async function generateSite(store: Map<string, PriceNotice>, now = new Date()): Promise<{ pages: number; listed: number }> {
+export async function generateSite(store: Map<string, PriceNotice>, now = new Date()): Promise<GenerateResult> {
   const listed = [...store.values()].filter((n) => n.status === "analyzed" && n.isPriceRevision && LISTED_DIRECTIONS.has(n.direction ?? ""));
   const today = now.toISOString();
   const upcoming = listed.filter((n) => n.effectiveAt && n.effectiveAt >= today);
   const recent = [...listed].sort((a, b) => (b.announcedAt ?? "").localeCompare(a.announcedAt ?? "")).slice(0, 20);
   const months = [...new Set(listed.filter((n) => n.effectiveAt).map((n) => jstMonth(n.effectiveAt!)))].sort().reverse();
-  const pages: { relPath: string; html: string }[] = [];
+  const pages: Page[] = [];
 
   const monthLinks = (rel: string) =>
     linkList(months.map((m) => ({ href: `${rel}month/${m}.html`, label: `${monthLabel(m)}実施`, count: listed.filter((n) => n.effectiveAt && jstMonth(n.effectiveAt) === m).length })));
@@ -148,14 +137,7 @@ export async function generateSite(store: Map<string, PriceNotice>, now = new Da
     });
   }
 
-  // 前回生成分に今回存在しないページが残らないよう、出力先(site/price配下の生成物のみ)を作り直す
-  await rm(OUT_DIR, { recursive: true, force: true });
-  for (const page of pages) {
-    const file = path.join(OUT_DIR, page.relPath);
-    await mkdir(path.dirname(file), { recursive: true });
-    await writeFile(file, page.html, "utf-8");
-  }
-  await writeFile(path.join(OUT_DIR, "style.css"), STYLE, "utf-8");
+  await writeSite(OUT_DIR, pages, { "style.css": STYLE });
   console.log(`[generate] pages=${pages.length} listed=${listed.length} upcoming=${upcoming.length} out=${OUT_DIR}`);
-  return { pages: pages.length, listed: listed.length };
+  return { outDir: OUT_DIR, pages: pages.length, listed: listed.length };
 }
