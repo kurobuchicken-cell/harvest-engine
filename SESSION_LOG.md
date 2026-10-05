@@ -590,5 +590,6 @@
 - 作業環境：家PC
 - やったこと：オーナーの「いつマネタイズするのか・情報収集しているだけ」の指摘を受け、支出実態(63,647円、売上0円)とVMデータ実態(変更4,503件の大半がノイズ)を確認。事業モデルを「出口工場」(一次情報収集→AI構造化→日英ページ自動生成→アフィリエイト/広告の薄利多売)に転換し、週次評議会の探索・選定・判断対象を「出口工場のジャンル」に変更
 - 完了した状態：評議会プロンプト5ファイル変更(tsc通過)、DECISIONS.md・CLAUDE.md・HANDOFF.md・会社説明資料.html更新。VMへ反映済み。その過程でVM自動push(gitSync)が8/31以降毎週non-fast-forwardで失敗し6回分(採択9件)が滞留、かつ失敗時エラーにGitHub PATがbase64で含まれpm2ログに平文で残っていたことを発見。滞留分をローカル中継でマージ・push、gitSync.tsを修正(認証は環境変数経由・エラーマスク・push前rebase)、VMのpm2ログをflush
-- 残課題・次にやること：PAT harvest-engine-vm-push は再発行・VM .env差し替え・push認証確認まで完了(新期限2027-01-03)。10/12の週次実行で新プロンプトと修正後gitSyncを検証。旧基準で採択された滞留9件を出口工場基準で再評価。パイロット(ガチャ1ジャンルの収集→日英ページ生成)を別セッションで実装。PAT期限2027-01-03
+- 残課題・次にやること：PAT harvest-engine-vm-push は再発行・VM .env差し替え・push認証確認まで完了(新期限2027-01-03)。10/12の週次実行で新プロンプトと修正後gitSyncを検証。旧基準で採択された滞留9件を出口工場基準で再評価。パイロット3本を1セッション1本ずつ実装(国内・補助金[jGrants API+J-Net21 RSS]を先行、海外・ガチャ[日英仏]、国内・値上げ情報)。PAT期限2027-01-03
+- 追加の決定：海外は最初から多言語前提(仏など欧州も候補)、国内向けジャンルも評議会で並行探索。Perplexity連携は一次情報源調査の自動化時に品質比較してから判断
 - 触ったファイル：src/council/{councilCore,exploreQueries,selectCandidates,runCouncil,generatePrompt}.ts、src/lib/gitSync.ts、DECISIONS.md、CLAUDE.md、HANDOFF.md、会社説明資料.html、SESSION_LOG.md
