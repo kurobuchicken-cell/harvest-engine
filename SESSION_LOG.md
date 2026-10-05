@@ -598,5 +598,6 @@
 - 作業環境：家PC
 - やったこと：出口工場の国内パイロット1本目「補助金」(テーマP)を実装。jGrants公開API+J-Net21 RSSを収集→J-Net21のみHaiku 4.5で分類→業種×地域×目的の静的HTMLをローカル生成
 - 完了した状態：`npm run pilot:subsidy`で受付中338件(jGrants)+64件(J-Net21)から820ページを`site/subsidy/`に生成(掲載397件)。リンク切れ0・出典欠落0・J-Net21本文の転載0を確認、Edgeヘッドレスで表示確認済み。AI分類費は2回で計16円(ledger記帳済み)。J-Net21は利用規約で転載禁止のため本文を出さない設計。和暦の誤換算・融資の誤判定・jGrantsの毎回再取得の3件を実装中に発見・修正
+- 追加：VMにpull・手動で1回実行し成功(826ページ、AI分類約8円、VM側ledgerは未コミットで10/12のgitSyncでpush想定)
 - 残課題・次にやること：公開先・方法の決定(オーナー承認)、公開前にjGrants API利用規約の原文確認、VMでの定期実行とVMのsourcesへの登録、目的を大量列挙した案件の扱い、次のパイロット(海外・ガチャ[日英仏]または国内・値上げ)。10/12の週次評議会で新プロンプトとgitSync修正を検証
 - 触ったファイル：src/pilots/subsidy/*（新規）、仕様書_harvest-engine.html（新規）、package.json、.gitignore、prisma/seed.ts、CLAUDE.md、DECISIONS.md、HANDOFF.md、会社説明資料.html、data/ledger.json
