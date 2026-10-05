@@ -1,6 +1,7 @@
 import "dotenv/config";
 import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
 import { PrismaClient } from "../generated/prisma/client";
+import { SOURCES as PRICE_SOURCES } from "../src/pilots/price/sources";
 
 const adapter = new PrismaBetterSqlite3({ url: process.env.DATABASE_URL! });
 const prisma = new PrismaClient({ adapter });
@@ -1242,6 +1243,18 @@ const sources: SourceSeed[] = [
     active: false,
     note: "robots.txtは制限なし(User-Agent: *のみ)、既知AIボット名指しなし、本番politeFetchで200(SSR、?ym=YYYYMM)を確認済み。価格は詳細ページ(items/item.html?n=)から1秒間隔で初回のみ取得。サイトポリシーで文章・画像の無断転載禁止のため、商品名・価格・発売時期・リンクのみ扱う",
   },
+
+  // ── テーマR: 値上げ情報(出口工場・国内パイロット2本目、2026-10-05オーナー指示で第2層扱い) ──
+  // 収集はsrc/pilots/price(npm run pilot:price)の専用コレクタが行うためinactiveで台帳登録のみ。
+  // 監視対象の正本はsrc/pilots/price/sources.ts(二重管理を避けるためここでは読み込んで展開する)
+  ...PRICE_SOURCES.map((s) => ({
+    companyName: `${s.company} ニュースリリース一覧`,
+    insuranceType: "theme_r",
+    url: s.listUrl,
+    fetchType: "html",
+    active: false,
+    note: "2026-10-05確認: robots.txt制限なし・既知AIボット名指しなし・一覧がSSR。リンク文言のキーワード(価格改定・値上げ等)で告知を抽出し、本文(HTML/添付PDF)をAIで構造化。本文は転載せず事実の要約・実施日・改定率・リンクのみ掲載",
+  })),
 ];
 
 async function main() {

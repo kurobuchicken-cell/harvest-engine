@@ -609,3 +609,10 @@
 - 完了した状態：`npm run pilot:gacha`で402件から619ページを`site/gacha/{ja,en,fr}/`に生成。リンク切れ0・画像0・出典欠落0・hreflang欠落0を確認、Edgeで表示確認。Haikuは作品名の誤り(実在しない作品名)が出たためSonnet 5.5に切り替え(DECISIONS.md)。AI費用計140円(ledger記帳済み)。画像・説明文は規約上掲載しない
 - 残課題・次にやること：オーナー指示で保持する将来実装＝商品画像・中小メーカー追加。ほか公開先・方法、VM反映と定期実行、ローマ字表記の品質、日本語ページの作品名の日本語化。次は国内・値上げ情報パイロット
 - 触ったファイル：src/pilots/gacha/*（新規）、package.json、prisma/seed.ts、仕様書_harvest-engine.html、CLAUDE.md、DECISIONS.md、HANDOFF.md、会社説明資料.html、data/ledger.json
+
+## harvest-engine-pilot-price-01（2026-10-05）
+- 作業環境：家PC
+- やったこと：出口工場の国内パイロット2本目「値上げ情報」(テーマR)を実装。31社を調査し21社を採用、ニュースリリース一覧のリンク文言で価格改定告知を拾う共通方式→本文/添付PDFをHaiku 4.5で構造化→実施日順・月別・メーカー別・品目別ページをローカル生成
+- 完了した状態：`npm run pilot:price`で101件の告知を抽出(エラー0)、76ページ・掲載96件を`site/price/`に生成。リンク切れ0・出典欠落0、Edgeで表示確認。添付PDFのみの社・JSでPDF転送する社・本文に発表日が無い社に対応。AI費用105円(ledger記帳済み)
+- 残課題・次にやること：politeFetchのタイムアウト追加の要否(オーナー判断)、backlog10社の再調査、ブランド別ページ、3パイロットの公開先・方法の決定、VM反映と定期実行。旧基準の滞留採択9件の再評価、10/12週次評議会の検証
+- 触ったファイル：src/pilots/price/*（新規）、package.json、prisma/seed.ts、仕様書_harvest-engine.html、CLAUDE.md、DECISIONS.md、HANDOFF.md、会社説明資料.html、data/ledger.json

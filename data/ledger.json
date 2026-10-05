@@ -1174,5 +1174,61 @@
     "fxRateSource": "https://open.er-api.com/v6/latest/USD",
     "fxRateStatus": "resolved",
     "recordedAt": "2026-10-05T07:45:28.822Z"
+  },
+  {
+    "category": "api",
+    "service": "pilot-price-haiku",
+    "amountUsd": 0.148291,
+    "amountJpy": 23,
+    "description": "値上げ情報パイロット: リリース37件を抽出(in=106691 out=8320)",
+    "occurredAt": "2026-10-05T09:20:44.278Z",
+    "id": "a87744c7-3fd8-4b33-a399-2e355c93fb09",
+    "fxRate": 157.730309,
+    "fxRateFetchedAt": "2026-10-05T09:20:44.278Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-05T09:20:44.326Z"
+  },
+  {
+    "category": "api",
+    "service": "pilot-price-haiku",
+    "amountUsd": 0.241662,
+    "amountJpy": 38,
+    "description": "値上げ情報パイロット: リリース32件を抽出(in=198632 out=8606)",
+    "occurredAt": "2026-10-05T09:25:14.103Z",
+    "id": "dc48bb8c-db70-496d-a744-0fdc66a1f13c",
+    "fxRate": 157.730309,
+    "fxRateFetchedAt": "2026-10-05T09:25:14.104Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-05T09:25:14.138Z"
+  },
+  {
+    "category": "api",
+    "service": "pilot-price-haiku",
+    "amountUsd": 0.263098,
+    "amountJpy": 41,
+    "description": "値上げ情報パイロット: リリース40件を抽出(in=207878 out=11044)",
+    "occurredAt": "2026-10-05T09:30:57.294Z",
+    "id": "2cab261f-a8dd-49f6-8191-5904746e995c",
+    "fxRate": 157.730309,
+    "fxRateFetchedAt": "2026-10-05T09:30:57.294Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-05T09:30:57.354Z"
+  },
+  {
+    "category": "api",
+    "service": "pilot-price-haiku",
+    "amountUsd": 0.022119,
+    "amountJpy": 3,
+    "description": "値上げ情報パイロット: リリース5件を抽出(in=16329 out=1158)",
+    "occurredAt": "2026-10-05T09:32:05.384Z",
+    "id": "7c135d65-afdb-4dfd-837d-0574cc5adea6",
+    "fxRate": 157.730309,
+    "fxRateFetchedAt": "2026-10-05T09:32:05.385Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-05T09:32:05.439Z"
   }
 ]
