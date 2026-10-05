@@ -16,10 +16,14 @@ const regionSlug = new Map<string, string>([
 const industrySlug = new Map(INDUSTRIES.map((i) => [i.name, i.slug]));
 const purposeSlug = new Map(PURPOSES.map((p) => [p.name, p.slug]));
 
+// 出典の文言はjGrants Web-API利用規約第5条1項・J-Net21サイト利用条件の記載例どおりにする
 const SOURCE_CREDIT: Record<SubsidyItem["source"], string> = {
-  jgrants: "出典：Jグランツ（デジタル庁）",
+  jgrants: "出典：Jグランツ",
   jnet21: "出典：中小機構 J-Net21",
 };
+// jGrants利用規約第5条1項二: 編集・加工したコンテンツは出典とは別に加工した旨の記載が必要。
+// 作成者名は公開時に確定する(オーナー決定事項)まで仮置き
+const OPERATOR_NAME = "本サイト運営者";
 
 function escapeHtml(s: string): string {
   return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
@@ -98,7 +102,8 @@ ${opts.body}
 </main>
 <footer>
 <p>掲載情報は各出典の公開情報を自動で整理したものです。申請条件・締切は必ずリンク先の公式情報でご確認ください。</p>
-<p>出典：Jグランツ（デジタル庁）／ 中小機構 J-Net21</p>
+<p>${SOURCE_CREDIT.jgrants}／ ${SOURCE_CREDIT.jnet21}</p>
+<p>このコンテンツは、政府公式の補助金申請システム jGrants の Web-API 機能を利用して取得した情報をもとに${OPERATOR_NAME}にて作成されたものです。コンテンツの内容は日本国政府及び自治体によって保証されたものではありません。</p>
 </footer>
 </body>
 </html>

@@ -1213,7 +1213,7 @@ const sources: SourceSeed[] = [
     url: "https://api.jgrants-portal.go.jp/exp/v1/public/subsidies",
     fetchType: "json",
     active: false,
-    note: "robots.txt自体が404(制限なし扱い)、本番politeFetchで200応答を確認済み。一覧はキーワード2文字以上必須のため複数キーワードで網羅し、詳細APIを1秒間隔で取得。出典明記義務あり(「出典：Jグランツ（デジタル庁）」)。詳細APIは添付PDFのbase64を含み1件数MBになりうる",
+    note: "robots.txt自体が404(制限なし扱い)、本番politeFetchで200応答を確認済み。一覧はキーワード2文字以上必須のため複数キーワードで網羅し、詳細APIを1秒間隔で取得。Web-API利用規約(API利用規約.pdf)確認済み: 商用利用の禁止なし、「出典：Jグランツ」と編集・加工した旨の記載が必須、短時間の大量アクセス禁止。詳細APIは添付PDFのbase64を含み1件数MBになりうる",
   },
   {
     companyName: "J-Net21 支援情報ヘッドラインRSS(中小機構)",

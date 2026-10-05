@@ -49,7 +49,7 @@ th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font
 <tr><th>収集元</th><th>取得方法</th><th>規約・注意</th></tr>
 <tr><td>jGrants公開API(デジタル庁)<br><code>api.jgrants-portal.go.jp/exp/v1/public</code></td>
 <td>一覧APIはキーワード2文字以上が必須で全件一括取得できないため、10語(補助・助成・支援・事業・交付・奨励・給付・促進・対策・推進)を受付中(<code>acceptance=1</code>)で検索し、IDで重複を除く。各案件は詳細APIを1秒間隔で取得。一覧の締切値が前回と同じ案件は詳細APIを呼ばない。</td>
-<td>robots.txtは404(制限なし)。出典明記義務あり。詳細APIは添付PDFのbase64を含み重い。一覧と詳細で締切が食い違う案件があるため、表示には詳細側を使い、再取得の判定には一覧側を使う。<strong>公開前に利用規約の原文を確認すること(未確認)</strong></td></tr>
+<td>robots.txtは404(制限なし)。Web-API利用規約(<code>fs2.jgrants-portal.go.jp/API利用規約.pdf</code>、2026-10-05確認): 商用利用の禁止なし、出典「出典：Jグランツ」必須、編集・加工した場合は加工した旨と「政府・自治体の保証ではない」旨の記載が必須、短時間の大量アクセス・事実に反する内容は禁止、ベータ版のため予告なく停止しうる。詳細APIは添付PDFのbase64を含み重い。一覧と詳細で締切が食い違う案件があるため、表示には詳細側を使い、再取得の判定には一覧側を使う。</td></tr>
 <tr><td>J-Net21 支援情報ヘッドラインRSS(中小機構)<br><code>j-net21.smrj.go.jp/snavi/support/support.xml</code></td>
 <td>RSSは最新数十件しか載らないため、取得のたびにストアへ蓄積する。都道府県は <code>dc:coverage</code> から、補助金/融資の別は <code>dc:subject</code> の「 - 」以降から判定する。</td>
 <td>robots.txtは404。利用規約で事前承諾なき転載・再利用は禁止、リンクは自由(「出典：中小機構 J-Net21」必須)。<strong>本文はAI分類の入力にのみ使い、ページに出すのは制度名・地域・締切・リンク・出典だけにする。</strong></td></tr>
@@ -87,7 +87,7 @@ th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font
 </table>
 <ul>
 <li>掲載対象は、締切が未来の案件と、締切不明のJ-Net21案件のうち掲載から60日以内のもの。未分類の案件は掲載しない。</li>
-<li>各案件には出典を表示する(「出典：Jグランツ（デジタル庁）」/「出典：中小機構 J-Net21」)。フッターにも両方を表示する。</li>
+<li>各案件には出典を表示する(「出典：Jグランツ」/「出典：中小機構 J-Net21」)。フッターには両方の出典と、jGrants利用規約第5条1項二の記載例に沿った加工表示(「このコンテンツは、政府公式の補助金申請システム jGrants の Web-API 機能を利用して取得した情報をもとに<em>作成者名</em>にて作成されたものです。コンテンツの内容は日本国政府及び自治体によって保証されたものではありません。」)を表示する。作成者名は公開時にオーナーが決めるまで「本サイト運営者」と仮置き(<code>generate.ts</code>の<code>OPERATOR_NAME</code>)。</li>
 <li>リンク先は各出典の公式ページ(<code>rel="nofollow noopener"</code>)。</li>
 <li>2026-10-05時点の実績: 820ページ(組み合わせ741)、掲載397件。</li>
 </ul>
@@ -98,7 +98,7 @@ th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font
 <h3>1.8 未対応・今後</h3>
 <ul>
 <li>公開先・公開方法(オーナー承認事項)、アフィリエイト・広告</li>
-<li>公開前に確認: jGrants APIの利用規約原文(出典表記の文言・商用利用の条件)</li>
+<li>公開前に決定: 加工表示の作成者名(OPERATOR_NAME)</li>
 <li>VMでの定期実行</li>
 <li>目的を8種以上列挙した案件が組み合わせページに薄く混入する問題</li>
 <li>市区町村単位への拡張(約1,700自治体の個別巡回は保守負荷が大きいため後回し)</li>
