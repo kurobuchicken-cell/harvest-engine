@@ -28,7 +28,7 @@ const ROUND2_INSTRUCTION = `Round2です。Round1の各役の発言を踏まえ�
 {
   "verdict": "採択" | "却下" | "保留",
   "scoreTable": [
-    { "criterion": "需要(国内/海外の兆候)", "assessment": "..." },
+    { "criterion": "需要(国内/海外の兆候、海外は有望な国・言語を明記)", "assessment": "..." },
     { "criterion": "規約・著作権リスク(翻訳再配信・画像含む)", "assessment": "..." },
     { "criterion": "一次情報源の有無と更新頻度", "assessment": "..." },
     { "criterion": "競合の手薄さ(ロングテールの隙間)", "assessment": "..." },
