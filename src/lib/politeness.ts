@@ -1,5 +1,5 @@
 import { isAllowedByRobots } from "./robots";
-import { RETRY_BACKOFF_MS, USER_AGENT } from "./constants";
+import { FETCH_TIMEOUT_MS, RETRY_BACKOFF_MS, USER_AGENT } from "./constants";
 
 export interface FetchResult {
   status: number | null;
@@ -24,13 +24,13 @@ function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-// 5xx・429・ネットワークエラーのみ指数バックオフでリトライ(最大3回)。4xxはリトライしない
+// 5xx・429・ネットワークエラー(タイムアウト含む)のみ指数バックオフでリトライ(最大3回)。4xxはリトライしない
 async function fetchWithRetry(url: string): Promise<FetchResult> {
   let lastError: string | undefined;
 
   for (let attempt = 0; attempt <= RETRY_BACKOFF_MS.length; attempt++) {
     try {
-      const res = await fetch(url, { headers: { "User-Agent": USER_AGENT } });
+      const res = await fetch(url, { headers: { "User-Agent": USER_AGENT }, signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) });
       const body = Buffer.from(await res.arrayBuffer());
 
       const isRetryableStatus = res.status === 429 || res.status >= 500;

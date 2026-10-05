@@ -1,7 +1,6 @@
 import { politeFetch, type FetchResult } from "../../lib/politeness";
 
-// politeFetchにはタイムアウトが無く、応答しないサイトがあると処理全体が止まりうるため、パイロット側で上限を設ける
-// (politeFetch本体への追加は本番巡回にも影響するため別途判断、HANDOFF参照)
+// politeFetch本体のタイムアウトはリトライ込みで最長約4分になるため、パイロットではさらに短い上限で打ち切る
 export async function fetchWithTimeout(url: string, ms = 45_000): Promise<FetchResult> {
   let timer: NodeJS.Timeout | undefined;
   const timeout = new Promise<FetchResult>((resolve) => {

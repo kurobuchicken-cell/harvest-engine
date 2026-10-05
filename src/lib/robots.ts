@@ -1,5 +1,5 @@
 import robotsParser from "robots-parser";
-import { USER_AGENT } from "./constants";
+import { ROBOTS_TIMEOUT_MS, USER_AGENT } from "./constants";
 
 type Robots = ReturnType<typeof robotsParser>;
 
@@ -15,7 +15,7 @@ async function getRobotsForOrigin(origin: string): Promise<Robots> {
   const robotsUrl = `${origin}/robots.txt`;
   let body = "";
   try {
-    const res = await fetch(robotsUrl, { headers: { "User-Agent": USER_AGENT } });
+    const res = await fetch(robotsUrl, { headers: { "User-Agent": USER_AGENT }, signal: AbortSignal.timeout(ROBOTS_TIMEOUT_MS) });
     if (res.ok) {
       body = await res.text();
     }
