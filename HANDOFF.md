@@ -30,9 +30,11 @@
   マスク、push前に`git pull --rebase`(競合時はabortして元に戻しログに残す)。一時リポジトリで
   正常系(non-ff状態からのpush成功)・失敗系(トークン非出力)・競合系(abort後クリーン)を確認済み
 - VMのpm2ログは`pm2 flush`で削除済み
-- **オーナー対応待ち**: PAT `harvest-engine-vm-push` を失効→同権限で再発行→VMの`.env`の`GITHUB_PAT`を
-  差し替え→`pm2 restart harvest-engine-council-scheduler --update-env`。失効から差し替えまでの間の
-  週次実行ではpushが失敗する(記録はVMに残るのでローカル中継で回収可能)
+- **PAT対応完了(2026-10-05)**: 旧PATを削除し、同権限(harvest-engineのContents read/writeのみ)で再発行、
+  VMの`.env`を差し替え。新PATで`git push --dry-run`の認証成功を確認済み。新PATの有効期限は2027-01-03。
+  再発行時に1回、オーナーのスクリーンショットにトークンが写り込んだため、そのPATも即削除して再発行した。
+  VM側SSHはWindows標準のssh.exeだと鍵の権限エラーになるため、Git付属の
+  `"C:\Program Files\Git\usr\bin\ssh.exe"`を使うこと
 - 旧基準(ビジネスヒント探し)で採択された滞留9件は、出口工場の基準で再評価が必要
 
 ### 現在の稼働状況(2026-10-05、VM実測)
@@ -131,7 +133,7 @@ GitHub Fine-grained PAT(対象リポジトリ`harvest-engine`のみ、`Contents:
   狙い撃ちでブロックする不可解な挙動のため、次回以降人力でのブラウザ確認を検討してもよい
 - テーマK〜Oはいずれもパーサー未実装(収集のみ、第1層)。プロンプトキャッシュの実際の削減効果は
   次回8/31週の実行結果で計測する
-- GitHub PATの有効期限は2026-11-23。期限切れ前に再発行・VM `.env`更新が必要(次回以降のGMが
+- GitHub PATの有効期限は2027-01-03(2026-10-05に漏洩対応で再発行、旧PATは削除済み)。期限切れ前に再発行・VM `.env`更新が必要(次回以降のGMが
   気づけるようこの期限をHANDOFF.mdに明記しておく)
 
 ### 週次パイプライン(自律探索フェーズ初回実行)の完了確認、Anthropicクレジット$110追加を記帳、API費目が警戒ラインを割った
