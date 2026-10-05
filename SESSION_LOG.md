@@ -602,3 +602,10 @@
 - 追加2：jGrants Web-API利用規約の原文(PDF)を確認。商用利用可・出典「出典：Jグランツ」・加工した旨の記載が必須と判明し、全ページのフッターに加工表示を追加
 - 残課題・次にやること：公開先・方法と加工表示の作成者名の決定(オーナー承認)、VMでの定期実行とVMのsourcesへの登録、目的を大量列挙した案件の扱い、次のパイロット(海外・ガチャ[日英仏]または国内・値上げ)。10/12の週次評議会で新プロンプトとgitSync修正を検証
 - 触ったファイル：src/pilots/subsidy/*（新規）、仕様書_harvest-engine.html（新規）、package.json、.gitignore、prisma/seed.ts、CLAUDE.md、DECISIONS.md、HANDOFF.md、会社説明資料.html、data/ledger.json
+
+## harvest-engine-pilot-gacha-01（2026-10-05）
+- 作業環境：家PC
+- やったこと：出口工場の海外向けパイロット1本目「ガチャ新作」(テーマQ、日英仏)を実装。バンダイ・タカラトミーアーツ公式の発売予定を収集→Sonnet 5.5で翻訳・作品名付与→言語別の月/メーカー/作品別ページをローカル生成
+- 完了した状態：`npm run pilot:gacha`で402件から619ページを`site/gacha/{ja,en,fr}/`に生成。リンク切れ0・画像0・出典欠落0・hreflang欠落0を確認、Edgeで表示確認。Haikuは作品名の誤り(実在しない作品名)が出たためSonnet 5.5に切り替え(DECISIONS.md)。AI費用計140円(ledger記帳済み)。画像・説明文は規約上掲載しない
+- 残課題・次にやること：オーナー指示で保持する将来実装＝商品画像・中小メーカー追加。ほか公開先・方法、VM反映と定期実行、ローマ字表記の品質、日本語ページの作品名の日本語化。次は国内・値上げ情報パイロット
+- 触ったファイル：src/pilots/gacha/*（新規）、package.json、prisma/seed.ts、仕様書_harvest-engine.html、CLAUDE.md、DECISIONS.md、HANDOFF.md、会社説明資料.html、data/ledger.json

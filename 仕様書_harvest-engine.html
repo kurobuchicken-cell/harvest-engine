@@ -18,7 +18,7 @@ th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font
 <body>
 <main>
 <h1>仕様書 harvest-engine</h1>
-<p class="note">最終更新: 2026-10-05。本書は出口工場パイロットの仕様を記載する(既存の収集基盤・評議会の経緯は HANDOFF.md / DECISIONS.md / GOVERNANCE.md を参照)。</p>
+<p class="note">最終更新: 2026-10-05。本書は出口工場パイロット(1章: 補助金、2章: ガチャ)の仕様を記載する(既存の収集基盤・評議会の経緯は HANDOFF.md / DECISIONS.md / GOVERNANCE.md を参照)。</p>
 
 <h2>1. 補助金パイロット(テーマP)</h2>
 <p>出口工場(一次情報の自動収集→AI構造化→ページ自動生成→アフィリエイト・広告)の国内向けパイロット1本目。現段階のゴールは「実データからローカルで静的ページを生成できること」。公開・アフィリエイトは対象外。</p>
@@ -102,6 +102,73 @@ th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font
 <li>VMでの定期実行</li>
 <li>目的を8種以上列挙した案件が組み合わせページに薄く混入する問題</li>
 <li>市区町村単位への拡張(約1,700自治体の個別巡回は保守負荷が大きいため後回し)</li>
+</ul>
+
+<h2>2. ガチャパイロット(テーマQ)</h2>
+<p>出口工場の海外向けパイロット1本目。日本のガチャ(カプセルトイ)新作の発売予定をメーカー公式から収集し、日本語・英語・フランス語のページを自動生成する。現段階のゴールはローカルでの生成まで。公開・アフィリエイトは対象外。</p>
+
+<h3>2.1 実行方法</h3>
+<table>
+<tr><th>コマンド</th><th>動作</th></tr>
+<tr><td><code>npm run pilot:gacha</code></td><td>収集 → AI翻訳・作品名付与(未処理のみ) → ページ生成</td></tr>
+<tr><td><code>npm run pilot:gacha -- --no-ai</code></td><td>AI処理を省略(未翻訳の商品は日本語名のまま出る)</td></tr>
+<tr><td><code>npm run pilot:gacha -- --generate-only</code></td><td>保存済みデータからページだけ生成</td></tr>
+</table>
+
+<h3>2.2 構成</h3>
+<table>
+<tr><th>ファイル(src/pilots/gacha/)</th><th>役割</th></tr>
+<tr><td>run.ts</td><td>エントリポイント</td></tr>
+<tr><td>collectBandai.ts</td><td>ガシャポン公式の発売スケジュールを解析</td></tr>
+<tr><td>collectTakaraTomyArts.ts</td><td>タカラトミーアーツのガチャ発売カレンダーを解析、価格は詳細ページから取得</td></tr>
+<tr><td>enrich.ts</td><td>Sonnet 5.5で翻訳・作品名・商品種別を付与、費用をledgerに記帳</td></tr>
+<tr><td>languages.ts</td><td>言語設定(画面文言・メーカー名・種別名・発売時期の書式)。<strong>言語の追加はここに1要素足すだけ</strong></td></tr>
+<tr><td>generate.ts</td><td>言語別の静的HTML生成</td></tr>
+<tr><td>months.ts / store.ts / types.ts</td><td>対象月の計算・HTML実体参照の復元 / JSONストア / 型</td></tr>
+</table>
+
+<h3>2.3 収集元</h3>
+<table>
+<tr><th>収集元</th><th>取得方法</th><th>規約・注意</th></tr>
+<tr><td>ガシャポンオフィシャルサイト(バンダイ)<br><code>gashapon.jp/schedule/?ym=YYYYMM</code></td>
+<td>週見出し(「10月第1週より順次」等)ごとに商品カードを読む。商品名・価格・JANコード・再販フラグを取得。スケジュール欄以外のランキング等は読まない。</td>
+<td>robots.txtは404(制限なし)、既知AIボット名指しなし。画像・商品説明文は掲載しない。</td></tr>
+<tr><td>タカラトミーアーツ ガチャ発売カレンダー<br><code>takaratomy-arts.co.jp/items/gacha/calendar/?ym=YYYYMM</code></td>
+<td>週見出し(「10月5日週発売」)ごとに商品を読む。表示中の年月が指定月と一致しない場合は採用しない。価格は詳細ページ(<code>items/item.html?n=</code>)から初回のみ1秒間隔で取得。</td>
+<td>robots.txtは制限なし。サイトポリシーで文章・画像の無断転載禁止のため、商品名・価格・発売時期・リンクのみ扱う。</td></tr>
+</table>
+<p>対象月はJST基準の前月・当月・翌月。通信は既存の <code>politeFetch</code> を経由する。商品IDは <code>メーカー:商品コード</code> で、商品名が変わらない限りAI処理結果を引き継ぐ。</p>
+
+<h3>2.4 AI処理</h3>
+<ul>
+<li>モデルは <code>claude-sonnet-5-5</code>(effort low)。構造化出力で、各言語の商品名・商品名中の固有名詞・作品名(英語の正式表記、無ければnull)・商品種別(figure / mascot_keychain / plush / miniature / accessory / stationery_goods / other)を返させる。25件ずつ処理する。</li>
+<li>作品名は、商品名から導けるものに限る(親会社・上位ブランドを推測しない)。表記揺れを防ぐため、既出の作品名一覧をバッチごとにプロンプトへ渡す。</li>
+<li>Haiku 4.5では実在しない作品名を当てる誤りがあったため、Sonnet 5.5を採用した(DECISIONS.md 2026-10-05)。</li>
+<li>処理済みの商品は再処理しない。言語を追加した場合は、翻訳が欠けた商品だけを再処理する。refusal・max_tokensで止まったバッチは未処理のまま残し、次回の実行で再処理する。</li>
+<li>費用は1回の実行につき1行としてledgerに記帳する(service <code>pilot-gacha-sonnet</code>)。402件の全件処理で約$0.53。</li>
+</ul>
+
+<h3>2.5 生成ページ</h3>
+<p>出力先は <code>site/gacha/</code>(git管理外、毎回作り直し)。各言語で同じ相対パスのページを作り、hreflangで相互にリンクする。</p>
+<table>
+<tr><th>パス</th><th>内容</th></tr>
+<tr><td>index.html</td><td>言語選択</td></tr>
+<tr><td>{lang}/index.html</td><td>当月以降の発売予定、作品別・メーカー別・月別の索引</td></tr>
+<tr><td>{lang}/month/YYYY-MM.html</td><td>月別</td></tr>
+<tr><td>{lang}/maker/{maker}.html</td><td>メーカー別</td></tr>
+<tr><td>{lang}/franchise/{slug}.html</td><td>作品別(ロングテールの主力)。slugは英語の作品名から生成し、重複は警告する</td></tr>
+</table>
+<ul>
+<li>商品ごとに表示するのは、商品名(日本語以外のページでは日本語の原題も併記)、発売時期(言語ごとの書式)、価格、メーカー、種別、再販、作品名、公式ページへのリンク、出典。<strong>画像と商品説明文は表示しない。</strong></li>
+<li>フッターには、非公式サイトであり各メーカーと関係がないこと、機械翻訳であること、各出典を表示する。</li>
+<li>2026-10-05時点の実績: 619ページ(各言語206)、402商品、200作品。</li>
+</ul>
+
+<h3>2.6 未対応・今後</h3>
+<ul>
+<li><strong>将来実装(オーナー指示で保持)</strong>: 商品画像(メーカー許諾、またはアフィリエイト提携先の提供画像)、中小メーカー(コトブキヤ系・ケンエレファント・SO-TA・クオリア等)の追加</li>
+<li>公開先・方法、アフィリエイト(代理購入サービス等)、VMでの定期実行</li>
+<li>ローマ字表記の揺れ、商品シリーズ名の訳し方の統一、日本語ページの作品名の日本語化</li>
 </ul>
 </main>
 </body>

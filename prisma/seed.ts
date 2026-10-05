@@ -1223,6 +1223,25 @@ const sources: SourceSeed[] = [
     active: false,
     note: "robots.txt自体が404(制限なし扱い)、本番politeFetchで200応答を確認済み。利用規約(j-net21.smrj.go.jp/rule/)で事前承諾なき転載・再利用は禁止、リンクは自由(出典「出典：中小機構 J-Net21」必須)。本文はAI分類の入力のみに使い、ページには制度名・地域・締切・リンクのみ掲載する",
   },
+
+  // ── テーマQ: ガチャ新作(出口工場・海外向けパイロット1本目、日英仏、2026-10-05オーナー指示で第2層扱い) ──
+  // 収集はsrc/pilots/gacha(npm run pilot:gacha)の専用コレクタが行うため、テーマPと同じくinactiveで台帳登録のみ
+  {
+    companyName: "バンダイ ガシャポンオフィシャルサイト 発売スケジュール",
+    insuranceType: "theme_q",
+    url: "https://gashapon.jp/schedule/",
+    fetchType: "html",
+    active: false,
+    note: "robots.txt自体が404(制限なし扱い)、既知AIボット名指しなし、本番politeFetchで200(SSR、?ym=YYYYMMで月切替)を確認済み。商品名・価格・発売週・JAN・再販フラグを取得。画像・商品説明文は著作物のため掲載しない",
+  },
+  {
+    companyName: "タカラトミーアーツ ガチャ発売カレンダー",
+    insuranceType: "theme_q",
+    url: "https://www.takaratomy-arts.co.jp/items/gacha/calendar/",
+    fetchType: "html",
+    active: false,
+    note: "robots.txtは制限なし(User-Agent: *のみ)、既知AIボット名指しなし、本番politeFetchで200(SSR、?ym=YYYYMM)を確認済み。価格は詳細ページ(items/item.html?n=)から1秒間隔で初回のみ取得。サイトポリシーで文章・画像の無断転載禁止のため、商品名・価格・発売時期・リンクのみ扱う",
+  },
 ];
 
 async function main() {
