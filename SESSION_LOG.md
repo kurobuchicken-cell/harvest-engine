@@ -617,3 +617,10 @@
 - 追加：オーナーがGM判断に委ねたため、politeFetch本体に取得60秒・robots.txt 15秒のタイムアウトを追加(既存リトライに乗る)。本番巡回にも効く修正のためVMへ反映(8fbb3f4までpull、scheduler・council-schedulerを再起動しonline確認)。VM側に未コミットで残っていた補助金のAI費8円は手元のledgerへ取り込みpushし、全環境のledgerを一致させた
 - 残課題・次にやること：backlog10社の再調査、ブランド別ページ、3パイロットの公開先・方法の決定、VM反映と定期実行。旧基準の滞留採択9件の再評価、10/12週次評議会の検証
 - 触ったファイル：src/pilots/price/*（新規）、package.json、prisma/seed.ts、仕様書_harvest-engine.html、CLAUDE.md、DECISIONS.md、HANDOFF.md、会社説明資料.html、data/ledger.json
+
+## harvest-engine-factory-01（2026-10-05）
+- 作業環境：家PC
+- やったこと：パイロット3本(補助金・ガチャ・値上げ)の共通部を`src/factory/`に統合(型3種: catalog/announcement/api)し、毎日04:00 JSTの定期実行と自動点検(収集急減・リンク切れ・出典欠落・0件ページ・AI費用上限)+異常時Slack通知を追加。オーナー決定: JSONのまま/既存Slack異常時のみ/毎日04:00/1回100円・月1,500円
+- 完了した状態：統合前後で全1,514ページがバイト一致。VM反映済み(8fd9c27、pm2に`harvest-engine-factory-scheduler`を追加しpm2 save、手元の保存データをscpでコピー)、VMで1回手動実行し3ジャンルとも異常0・約2分。Slackテスト通知送信済み。初回定期実行は10/6 04:00 JST
+- 残課題・次にやること：10/6朝の定期実行結果をVMの`logs/factory-scheduler-out.log`と`data/factory/runs.json`で確認。J-Net21のRSS件数の変動による急減誤検知の監視。VM空きメモリ(実行中最小約81MB)の観察。公開先の決定(オーナー)、一次情報源調査の自動化(HANDOFF次アクション5)、10/12週次評議会の検証
+- 触ったファイル：src/factory/*（新規）、src/factoryScheduler.ts（新規）、src/pilots/*/genre.ts（新規）、src/pilots/*（共通部へ移行、run.ts・store.ts・price/fetchUtil.tsは削除/移動）、src/lib/ledger.ts、package.json、ecosystem.config.js、.gitignore、仕様書_harvest-engine.html（4章）、DECISIONS.md、HANDOFF.md、会社説明資料.html、data/ledger.json
