@@ -4,7 +4,8 @@ import type { GachaItem, MakerId } from "./types";
 import { LANGUAGES, type Category, type LanguageConfig } from "./languages";
 
 const OUT_DIR = siteDir("gacha");
-const MAKERS: MakerId[] = ["bandai", "takaratomy-arts"];
+// バンダイは掲載停止中(genre.ts参照)
+const MAKERS: MakerId[] = ["takaratomy-arts"];
 
 export function slugify(name: string): string {
   const slug = name.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
@@ -115,7 +116,7 @@ h1{font-size:1.4em;line-height:1.4}h2{font-size:1.15em;margin-top:2em;border-lef
 footer{border-top:1px solid var(--line);font-size:.8em;color:var(--muted);margin-top:40px}`;
 
 export async function generateSite(store: Map<string, GachaItem>, now = new Date()): Promise<GenerateResult> {
-  const items = [...store.values()];
+  const items = [...store.values()].filter((i) => MAKERS.includes(i.maker));
   const months = [...new Set(items.map((i) => i.releaseMonth))].sort();
   const currentMonth = now.toLocaleDateString("en-CA", { timeZone: "Asia/Tokyo" }).slice(0, 7);
   const upcomingMonths = months.filter((m) => m >= currentMonth);

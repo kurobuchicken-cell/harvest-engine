@@ -52,7 +52,7 @@ th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font
 <td>robots.txtは404(制限なし)。Web-API利用規約(<code>fs2.jgrants-portal.go.jp/API利用規約.pdf</code>、2026-10-05確認): 商用利用の禁止なし、出典「出典：Jグランツ」必須、編集・加工した場合は加工した旨と「政府・自治体の保証ではない」旨の記載が必須、短時間の大量アクセス・事実に反する内容は禁止、ベータ版のため予告なく停止しうる。詳細APIは添付PDFのbase64を含み重い。一覧と詳細で締切が食い違う案件があるため、表示には詳細側を使い、再取得の判定には一覧側を使う。</td></tr>
 <tr><td>J-Net21 支援情報ヘッドラインRSS(中小機構)<br><code>j-net21.smrj.go.jp/snavi/support/support.xml</code></td>
 <td>RSSは最新数十件しか載らないため、取得のたびにストアへ蓄積する。都道府県は <code>dc:coverage</code> から、補助金/融資の別は <code>dc:subject</code> の「 - 」以降から判定する。</td>
-<td>robots.txtは404。利用規約で事前承諾なき転載・再利用は禁止、リンクは自由(「出典：中小機構 J-Net21」必須)。<strong>本文はAI分類の入力にのみ使い、ページに出すのは制度名・地域・締切・リンク・出典だけにする。</strong></td></tr>
+<td>robots.txtは404。<strong>2026-10-06に収集・AI分類・掲載を停止</strong>: 中小機構の利用規約が「サービスの利用・アクセスを、全部あるいは一部であるかを問わず商業目的で利用すること」を禁止し、リンクも「非営利目的であれば自由」としているため(従来の「リンク自由」という整理は誤り)。コード(<code>collectJnet21.ts</code>・<code>classify.ts</code>)と収集済みデータは残すが、<code>genre.ts</code>で収集対象から外し、<code>generate.ts</code>でjGrants以外を掲載しない。</td></tr>
 </table>
 <p>通信はすべて既存の <code>politeFetch</code>(robots.txt確認、ホストごとの直列実行、5xx/429の指数バックオフ)を経由する。</p>
 
@@ -131,7 +131,7 @@ th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font
 <tr><th>収集元</th><th>取得方法</th><th>規約・注意</th></tr>
 <tr><td>ガシャポンオフィシャルサイト(バンダイ)<br><code>gashapon.jp/schedule/?ym=YYYYMM</code></td>
 <td>週見出し(「10月第1週より順次」等)ごとに商品カードを読む。商品名・価格・JANコード・再販フラグを取得。スケジュール欄以外のランキング等は読まない。</td>
-<td>robots.txtは404(制限なし)、既知AIボット名指しなし。画像・商品説明文は掲載しない。</td></tr>
+<td>robots.txtは404(制限なし)、既知AIボット名指しなし。<strong>2026-10-06に収集・AI処理・掲載を停止</strong>: サイトご利用条件が「自動化された手段を用いて掲載情報を取得/使用すること」と「AI等を用いた二次利用」を事前許諾制にしているため。コード(<code>collectBandai.ts</code>)と収集済みデータは残すが、<code>genre.ts</code>で収集対象から外し、<code>generate.ts</code>の<code>MAKERS</code>で掲載しない。再開は許諾または弁護士の判断が出てから。</td></tr>
 <tr><td>タカラトミーアーツ ガチャ発売カレンダー<br><code>takaratomy-arts.co.jp/items/gacha/calendar/?ym=YYYYMM</code></td>
 <td>週見出し(「10月5日週発売」)ごとに商品を読む。表示中の年月が指定月と一致しない場合は採用しない。価格は詳細ページ(<code>items/item.html?n=</code>)から初回のみ1秒間隔で取得。</td>
 <td>robots.txtは制限なし。サイトポリシーで文章・画像の無断転載禁止のため、商品名・価格・発売時期・リンクのみ扱う。</td></tr>
@@ -194,7 +194,7 @@ th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font
 
 <h3>3.3 収集</h3>
 <ul>
-<li>監視対象は21社(明治・キユーピー・雪印メグミルク・カゴメ・ネスレ日本・東洋水産・ミツカン・アサヒ飲料・日本ハム・日清オイリオ・丸美屋・日清製粉ウェルナ・不二家・ポッカサッポロ・伊藤ハム・ヤクルト・森永製菓・日清食品HD・伊藤園・UCC・ユニ・チャーム)。2026-10-05に、robots.txtで制限がないこと・既知AIボットの名指しDisallowがないこと・一覧がSSRであることを確認した。</li>
+<li>監視対象は21社(明治・キユーピー・雪印メグミルク・カゴメ・ネスレ日本・東洋水産・ミツカン・アサヒ飲料・日本ハム・日清オイリオ・丸美屋・日清製粉ウェルナ・不二家・ポッカサッポロ・伊藤ハム・ヤクルト・森永製菓・日清食品HD・伊藤園・UCC・ユニ・チャーム)。2026-10-05に、robots.txtで制限がないこと・既知AIボットの名指しDisallowがないこと・一覧がSSRであることを確認した。<strong>2026-10-06から日清製粉ウェルナ・不二家・森永製菓・日清食品HD・ユニ・チャームの5社を停止</strong>(サイトの利用規約に営利・商業目的の利用を制限する文言があるため、原文精読まで)。<code>sources.ts</code>の<code>suspended</code>に理由を書いた社は、収集・AI抽出・掲載の対象外になる(<code>ACTIVE_SOURCES</code>)。稼働は16社。</li>
 <li>リンク文言のキーワードは、価格改定・価格改訂・値上げ・出荷価格・価格の改定・価格変更・価格の見直し・内容量変更・規格変更。</li>
 <li>告知IDはURLのSHA-1。既知の告知は再登録しない。一覧の1ページ目に載っている告知だけを対象とする。</li>
 <li>一覧の取得は45秒、本文の取得は60秒で打ち切る(<code>src/factory/fetch.ts</code>)。<code>politeFetch</code>本体にも1回60秒のタイムアウトがあるが、リトライ込みで最長約4分になるため、さらに短い上限を設けている。</li>

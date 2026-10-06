@@ -98,7 +98,7 @@ ${opts.body}
 </main>
 <footer>
 <p>掲載情報は各出典の公開情報を自動で整理したものです。申請条件・締切は必ずリンク先の公式情報でご確認ください。</p>
-<p>${SOURCE_CREDIT.jgrants}／ ${SOURCE_CREDIT.jnet21}</p>
+<p>${SOURCE_CREDIT.jgrants}</p>
 <p>このコンテンツは、政府公式の補助金申請システム jGrants の Web-API 機能を利用して取得した情報をもとに${OPERATOR_NAME}にて作成されたものです。コンテンツの内容は日本国政府及び自治体によって保証されたものではありません。</p>
 </footer>
 </body>
@@ -119,7 +119,8 @@ h1{font-size:1.4em;line-height:1.4}h2{font-size:1.15em;margin-top:2em;border-lef
 footer{border-top:1px solid var(--line);font-size:.8em;color:var(--muted);margin-top:40px}`;
 
 export async function generateSite(store: Map<string, SubsidyItem>, now = new Date()): Promise<GenerateResult> {
-  const visible = [...store.values()].filter((i) => isVisible(i, now));
+  // J-Net21は掲載停止中(genre.ts参照)
+  const visible = [...store.values()].filter((i) => i.source === "jgrants" && isVisible(i, now));
   const nationwide = visible.filter((i) => i.regions.includes(NATIONWIDE));
   const inRegion = (name: string) => visible.filter((i) => i.regions.includes(name));
   const inIndustry = (name: string) => visible.filter((i) => i.industries.includes(name));

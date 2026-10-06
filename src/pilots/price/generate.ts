@@ -1,7 +1,7 @@
 import type { GenerateResult } from "../../factory/genre";
 import { escapeHtml, linkList, siteDir, writeSite, type Page } from "../../factory/html";
 import type { PriceNotice } from "./types";
-import { SOURCES } from "./sources";
+import { ACTIVE_SOURCES as SOURCES } from "./sources";
 import { CATEGORIES } from "./analyze";
 
 const OUT_DIR = siteDir("price");
@@ -84,7 +84,10 @@ h1{font-size:1.4em;line-height:1.4}h2{font-size:1.15em;margin-top:2em;border-lef
 footer{border-top:1px solid var(--line);font-size:.8em;color:var(--muted);margin-top:40px}`;
 
 export async function generateSite(store: Map<string, PriceNotice>, now = new Date()): Promise<GenerateResult> {
-  const listed = [...store.values()].filter((n) => n.status === "analyzed" && n.isPriceRevision && LISTED_DIRECTIONS.has(n.direction ?? ""));
+  const activeIds = new Set(SOURCES.map((s) => s.id));
+  const listed = [...store.values()].filter(
+    (n) => activeIds.has(n.sourceId) && n.status === "analyzed" && n.isPriceRevision && LISTED_DIRECTIONS.has(n.direction ?? ""),
+  );
   const today = now.toISOString();
   const upcoming = listed.filter((n) => n.effectiveAt && n.effectiveAt >= today);
   const recent = [...listed].sort((a, b) => (b.announcedAt ?? "").localeCompare(a.announcedAt ?? "")).slice(0, 20);

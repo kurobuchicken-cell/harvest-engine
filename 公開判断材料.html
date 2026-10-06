@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>出口工場 公開判断材料</title>
+<style>
+  :root {
+    --bg: #f5f6f1; --surface: #ffffff; --surface-soft: #eeeee6;
+    --ink: #22261c; --ink-soft: #5b5f52; --ink-faint: #8a8d7d;
+    --accent: #a9791f; --accent-tint: #f1e4c8;
+    --green: #3b6e4f; --green-tint: #dfeade;
+    --red: #9b3b2e; --red-tint: #f3dfd9;
+    --blue: #3e5c76; --blue-tint: #dfe6ec;
+    --line: #dcd9cc;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1b1e16; --surface: #24281e; --surface-soft: #2c3024;
+      --ink: #ece9db; --ink-soft: #b3b39e; --ink-faint: #7d8070;
+      --accent: #dcac4c; --accent-tint: #3a3221;
+      --green: #74b28c; --green-tint: #253326;
+      --red: #e08a7a; --red-tint: #3a2420;
+      --blue: #8fadc7; --blue-tint: #222d36;
+      --line: #3a3e30;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1b1e16; --surface: #24281e; --surface-soft: #2c3024;
+    --ink: #ece9db; --ink-soft: #b3b39e; --ink-faint: #7d8070;
+    --accent: #dcac4c; --accent-tint: #3a3221;
+    --green: #74b28c; --green-tint: #253326;
+    --red: #e08a7a; --red-tint: #3a2420;
+    --blue: #8fadc7; --blue-tint: #222d36;
+    --line: #3a3e30;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Hiragino Sans", "Yu Gothic UI", "Meiryo", sans-serif; line-height: 1.75; font-size: 15px; }
+  main { max-width: 980px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 1.6rem; margin: 0 0 4px; }
+  h2 { font-size: 1.25rem; margin: 48px 0 12px; padding-bottom: 6px; border-bottom: 2px solid var(--accent); }
+  h3 { font-size: 1.05rem; margin: 28px 0 8px; }
+  .meta { color: var(--ink-soft); font-size: .9rem; margin: 0 0 24px; }
+  .box { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 20px; margin: 16px 0; }
+  .alert { background: var(--red-tint); border-color: var(--red); }
+  .alert strong.h { color: var(--red); }
+  .rec { background: var(--green-tint); border-color: var(--green); }
+  .note { color: var(--ink-soft); font-size: .88rem; }
+  .table-wrap { overflow-x: auto; margin: 12px 0; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; background: var(--surface); font-size: .9rem; }
+  th, td { border: 1px solid var(--line); padding: 8px 10px; vertical-align: top; text-align: left; }
+  th { background: var(--surface-soft); white-space: nowrap; }
+  .ok { color: var(--green); font-weight: bold; }
+  .ng { color: var(--red); font-weight: bold; }
+  .warn { color: var(--accent); font-weight: bold; }
+  ol li, ul li { margin: 4px 0; }
+  code { background: var(--surface-soft); padding: 1px 5px; border-radius: 4px; font-size: .85em; }
+  a { color: var(--blue); }
+</style>
+</head>
+<body>
+<main>
+<h1>出口工場 公開判断材料</h1>
+<p class="meta">作成: 2026-10-06 GM(セッション harvest-engine-publish-plan-01)/対象: パイロット3本(補助金P・ガチャQ[日英仏]・値上げR、計約1,530ページ)/
+本資料は調査と整理のみ。実装・公開・支出は一切行っていない。外部サービスの料金・規約は2026-10-06にWebで確認したもののみ記載し、確認できなかったものは「未確認」と明記した。</p>
+
+<div class="box rec"><strong>2026-10-06 追記(オーナー決定)</strong>: 「今の時点でリスクは取れない」との判断で、<strong>バンダイとJ-Net21の収集・AI処理・掲載を同日停止した</strong>(収集済みデータは削除せず保持し、掲載はしない)。停止後の規模は、ガチャ68件・124ページ(タカラトミーアーツのみ)、補助金332件・781ページ(jGrantsのみ)。同日、値上げRの5社(3.の該当社)も原文精読まで停止した(稼働16社・94件)。規約ページを見つけられなかった7社の確認は未了。</div>
+
+<div class="box alert">
+<strong class="h">最初に判断が必要な事項(調査中に判明した重大事項)</strong>
+<ol>
+<li><strong>バンダイ(ガシャポン公式)の利用条件が、自動取得とAIによる二次利用を明示的に禁止している。</strong>
+gashapon.jp「サイトご利用条件」原文:「自動化された手段(自動ツール・プログラム・ロボットなどこれらに準ずる手段)を用いて掲載情報を取得/使用することはバンダイの事前許諾がない限り、禁止いたします。またAI等を用いた二次利用についても、同様に禁止いたします。」
+違反による損害(弁護士費用・調査費用を含む)の賠償条項もある。テーマQの402件中334件がバンダイ由来で、<strong>VMは現在も毎日04:00にこのサイトを自動取得し、Sonnet 5.5で翻訳している</strong>。
+パイロット実装時はrobots.txt(制限なし)とタカラトミーアーツのポリシーだけを確認し、「バンダイも同様の扱い」と推定していた。これは確認漏れだった。
+→ <strong>GM推奨: 公開の可否とは別に、バンダイの収集を今すぐ止める</strong>(次セッションでジャンル定義から外すだけで済む。止めてもタカラトミーアーツ分は残る)。再開するのは、バンダイの許諾を得た場合か、弁護士が問題なしと判断した場合に限る。</li>
+<li><strong>J-Net21(中小機構)の利用規約が、商業目的での利用を禁止している。</strong>
+原文:「当サイトで提供するサービスやサービスの利用、サービスへのアクセスについて、その全部あるいは一部であるかを問わず商業目的で利用することを禁止いたします。」「当サイトへのリンクは、非営利目的であれば自由に設定いただけます。」
+HANDOFF・DECISIONSの「リンク自由・出典必須」という整理は不正確だった。広告・アフィリエイト付きのサイトでは、J-Net21由来の案件(掲載もリンクも)は使えないと考えるべき。jGrants(デジタル庁)は商用利用の禁止がないため、補助金Pは<strong>jGrantsだけで公開する</strong>のが安全。</li>
+<li><strong>値上げRの21社のうち少なくとも5社の規約に、営利・商業目的の利用を制限する文言がある</strong>(キーワードによる機械的なスキャンの結果。法的な判断はしていない。詳細は3章)。</li>
+</ol>
+</div>
+
+<h2>1. 公開先の選択肢と比較</h2>
+
+<h3>前提</h3>
+<ul>
+<li>生成ページは全て静的HTMLで、サイト内リンクは相対パス。どの静的ホスティングにもそのまま置ける作りになっている。</li>
+<li>VMの空きメモリは平常時で約300〜380MB。毎日04:00の出口工場の実行中は最小約81MBまで下がる(スワップ2GBあり)。</li>
+<li>saas-status.com(テーマC)は、VM上の<code>harvest-engine-web</code>(Node)を<strong>Cloudflare Tunnel</strong>経由で公開している。DNSもCloudflareにあり、Cloudflareアカウント(無料枠・支払い方法登録済み)は既にある。</li>
+<li>ジャンルは今後100件規模まで増やす前提。ホスティングを後から移しても、<strong>ドメインが同じなら検索評価は失われない</strong>。だから長く使う判断として重いのはドメインのほうで、ホスティングは後から変えられる。</li>
+</ul>
+
+<div class="table-wrap">
+<table>
+<tr><th>選択肢</th><th>費用</th><th>確認できた制限</th><th>長所</th><th>短所・リスク</th></tr>
+<tr><td><strong>A. 既存VM+Cloudflare Tunnel</strong><br>(saas-status.comと同じ経路。既存の<code>harvest-engine-web</code>に静的配信を足す)</td>
+<td>0円</td><td>VM 1台の性能次第</td>
+<td>新しいプロセスが要らず、メモリはほぼ増えない。04:00の生成直後にそのまま反映される。設定も少ない。</td>
+<td>VMが止まるとサイトも止まる(検索エンジンの巡回に悪影響)。04:00の実行と巡回アクセスが重なると、メモリがさらに厳しくなる(CloudflareのキャッシュをONにすれば緩和できる)。テーマCと同じ障害点を共有することになる。</td></tr>
+<tr><td><strong>B. Cloudflare Pages</strong></td>
+<td>0円(Free)</td>
+<td>1サイト最大<strong>20,000ファイル</strong>、1ファイル25MiB、ビルドは月500回、カスタムドメインは1プロジェクト100個</td>
+<td>VMが止まってもサイトは止まらない。VMのメモリを使わない。既存アカウントとDNSをそのまま使える。</td>
+<td>VMからアップロードする手段が必要。(1) VMで公式CLI(wrangler)を動かす → VM上のメモリ使用量は<strong>未検証</strong>。(2) 生成物を別のGitHubリポジトリにpushし、Pagesと連携する → 非公開リポジトリに対応しているかは公式ドキュメントで<strong>確認できなかった</strong>。ジャンルが増えると20,000ファイルを超えるため、ジャンルごとにプロジェクトを分ける必要がある。</td></tr>
+<tr><td><strong>B'. Cloudflare Workers(静的アセット)</strong></td>
+<td>0円(Free)</td>
+<td>静的アセットへのリクエストは<strong>無料・無制限</strong>(公式明記)。1バージョン20,000ファイル(有料プランは100,000)、1ファイル25MiB</td>
+<td>Bとほぼ同じ</td>
+<td>Bと同じく、VMからのアップロード手段が課題</td></tr>
+<tr><td><strong>C. GitHub Pages</strong></td>
+<td>0円(公開リポジトリのみ)</td>
+<td>サイト1GB、帯域は月100GBのソフト上限、ビルドは1時間10回</td>
+<td>手軽</td>
+<td><span class="ng">非推奨</span>。規約に「オンラインビジネスや、主に商取引を促進することを目的とするサイトの無料ホスティングとしての利用は意図も許可もされていない」とあり、アフィリエイトサイトはグレー。無料プランで使えるのは公開リポジトリだけ。</td></tr>
+</table>
+</div>
+
+<h3>独自ドメインの要否と費用</h3>
+<ul>
+<li><strong>必要</strong>と判断する。<code>*.pages.dev</code>などの無料サブドメインでも公開はできるが、後から独自ドメインに移すと検索評価の引き継ぎに手間がかかる。アフィリエイトの審査でもサイトの実在性が見られる(Amazonは審査時に「サイトが確認できない」場合を断る例として挙げている)。</li>
+<li><strong>saas-status.comは使い回さない</strong>。名前が補助金・ガチャ・値上げと合わないうえ、第3層扱いのテーマCと法務上の状態を混ぜたくない。</li>
+<li>費用: Cloudflare Registrarは「登録局とICANNの料金のまま、上乗せなし」(公式)。.comは<strong>年$10.46</strong>(第三者の価格集計サイトdomainoffer.netの2026年5月時点の値。Cloudflare公式ページには具体的な価格の記載がなく、最終確認は購入画面で行う)。BUDGETの「ドメイン・雑費」は残り12,000円(支出0円)。</li>
+<li>構成案: <strong>(a) 新しいドメインを1つ取り、ジャンルごとにサブドメインで分ける</strong>(費用は1ドメイン分。サブドメインに分けておけば、どれか1ジャンルが検索で評価を落としても、他への波及をある程度抑えられる)/(b) 国内向けと海外向けで2ドメイン/(c) ジャンルごとに1ドメイン(100ジャンルになると年額が予算を大きく超える)。</li>
+</ul>
+
+<div class="box rec"><strong>GM推奨(公開先)</strong>: 新しい.comドメインを1つ取得し(a案)、ホスティングは<strong>B(Cloudflare Pages)を第一候補</strong>とする。
+ただし、VMからのアップロード方法(wranglerのメモリ使用量、または非公開リポジトリとの連携)を次のセッションで実地確認し、VMに負担がかかるようなら<strong>A(既存Tunnel)で始める</strong>。ドメインが同じなら、後からBに移しても検索評価は失われない。</div>
+
+<h2>2. 公開の順番</h2>
+<div class="box rec"><strong>GM推奨: 3本同時ではなく、法務リスクの低い順に1本ずつ</strong> — 補助金P(jGrantsのみ)→ 値上げR(規約に問題のない会社のみ)→ ガチャQ(許諾か弁護士の判断が出てから)</div>
+<div class="table-wrap">
+<table>
+<tr><th>順</th><th>パイロット</th><th>法務リスク</th><th>理由</th></tr>
+<tr><td>1</td><td>補助金P</td><td class="ok">低</td><td>jGrantsのWeb-API利用規約は原文確認済みで、商用利用の禁止がない(出典表示・加工した旨の表示・政府の保証ではない旨の表示が必須で、いずれも実装済み)。J-Net21由来の案件を外せば、規約上の障害はほぼ無い。残っているのは加工表示の作成者名だけ。</td></tr>
+<tr><td>2</td><td>値上げR</td><td class="warn">中</td><td>載せているのは事実(実施日・改定率・ブランド名)とAIが書いた要約だけで、本文は転載していない。ただし数社の規約に営利目的の利用を制限する文言があり、7社は規約ページを自動では見つけられなかった。GMが原文を精読して問題のない会社だけで公開するか、弁護士相談の結論を待つ。</td></tr>
+<tr><td>3</td><td>ガチャQ</td><td class="ng">高</td><td>バンダイが自動取得とAIによる二次利用を明示的に禁止している。タカラトミーアーツだけ(68件)では中身が薄い。多言語向けのため、規約問題の影響範囲も広い。</td></tr>
+</table>
+</div>
+<p>1本ずつにする理由: (1) 法務確認の終わったものから検索流入の計測を始められる(<strong>検索エンジンに評価されるまでには時間がかかるため、早く出すこと自体に価値がある</strong>)。(2) 1本目で公開の手順(ドメイン、デプロイ、サイトマップ、Search Console、アクセス解析)を固めれば、2本目以降はそれを使い回せる。(3) 問題が起きた時に原因を切り分けやすい。</p>
+
+<h2>3. 法務ゲートで公開前に必要な確認事項</h2>
+
+<h3>3-1. 層の解釈(先に決める必要がある)</h3>
+<p>GOVERNANCEは「第2.5層=課金なしのLP・需要テスト(法務の一次審査: robots.txt/ToS/免責/商標)」「第3層=公開ページ・課金あり(弁護士スポット相談が必須)」と定めている。しかし出口工場の収益源は<strong>利用者への課金ではなく広告・アフィリエイト</strong>なので、どちらに当たるかが明文化されていない。60日判定の基準(「支払転換」)も、広告型には合わない。
+テーマCも「課金なし・第3層扱い・弁護士相談は未実施」のまま放置されており、前例として整合していない。</p>
+<div class="box rec"><strong>GM推奨の解釈</strong>: <strong>広告なしで公開=第2.5層</strong>(一次審査で公開でき、検索流入を計測する)。<strong>広告・アフィリエイトを付けた時点で第3層</strong>(弁護士相談が必須で、60日判定の時計もここから始める)。60日判定の基準は、広告型では「検索流入」と「収益の発生」に読み替える。<br>
+アフィリエイトはどのみち流入が無いと始められない(Amazonは登録から180日以内に3件の適格販売が必要)ので、「広告なしで公開→流入を確認→弁護士相談→広告を付ける」という順番は実務にも合う。</div>
+
+<h3>3-2. 各パイロットの現状(公開前のチェックリスト)</h3>
+<div class="table-wrap">
+<table>
+<tr><th>項目</th><th>補助金P</th><th>値上げR</th><th>ガチャQ</th></tr>
+<tr><td>robots.txt</td><td class="ok">jGrants・J-Net21とも404(制限なし)</td><td class="ok">採用した21社は確認済み(GPTBotを名指しで拒否しているマルハニチロは除外済み)</td><td class="ok">2社とも制限なし・AIボットの名指しなし</td></tr>
+<tr><td>利用規約(ToS)</td><td><span class="ok">jGrants: 原文確認済み・商用可</span><br><span class="ng">J-Net21: 商業目的での利用禁止。リンクも非営利目的に限り自由</span> → 公開版から外す</td>
+<td><span class="warn">未精読</span>。機械的スキャンで制限文言が見つかったのは、日清食品(サービスの商業目的利用を禁止)・日清製粉ウェルナ(営利目的の行為を禁止)・ユニ・チャーム(営利・事業目的の利用を禁止)・森永製菓(コンテンツの無断複製禁止。リンク条件に「営利目的でない個人のウェブサイト」)・不二家(営利目的での利用不可)。規約ページを自動で見つけられなかったのは、キユーピー・ネスレ日本・ミツカン・アサヒ飲料・日本ハム・伊藤園・UCC。東洋水産は「営利・非営利を問わずリンク自由」</td>
+<td><span class="ng">バンダイ: 自動取得・AIによる二次利用を禁止(事前許諾制)</span><br><span class="warn">タカラトミーアーツ: 画像・文章・データの無断転用・転載は「ご遠慮ください」。自動取得やAIへの言及はない</span></td></tr>
+<tr><td>出典表記</td><td class="ok">「出典：Jグランツ」を各案件に表示済み</td><td class="ok">一次情報へのリンクと出典を表示済み</td><td class="ok">公式リンクと出典を表示済み</td></tr>
+<tr><td>加工表示・作成者名</td><td class="warn">jGrants規約に従った加工表示は実装済み。<strong>作成者名は「本サイト運営者」の仮置きのまま(オーナーが決める)</strong></td><td>規約上の義務は無いが、運営者表示は必要</td><td>同左</td></tr>
+<tr><td>画像</td><td>使っていない</td><td>使っていない</td><td>使っていない(メーカーの許諾、またはアフィリエイト提携先が提供する画像を使う場合は別途確認)</td></tr>
+<tr><td>免責表示</td><td class="ok">政府の保証ではない旨を表示済み</td><td class="ok">方向が分からない改定は「一次情報を参照」と表示</td><td class="ok">非公式サイトであること・機械翻訳であることを表示済み</td></tr>
+<tr><td>商標</td><td>制度名・機関名を文字で表示するだけ</td><td>社名・ブランド名を文字で表示するだけ</td><td>社名・作品名・商品名を文字で表示するだけ。<strong>作品名の誤り(AIの付与ミス)は事実に反する表示になるので要注意</strong></td></tr>
+</table>
+</div>
+
+<h3>3-3. 全パイロット共通で、公開前に足すもの(実装は次のセッション以降)</h3>
+<ul>
+<li>運営者情報ページ・問い合わせ先・プライバシーポリシー(アクセス解析や広告のCookieを使うなら必須)</li>
+<li>広告を付ける段階では「広告を含む」旨の明瞭な表示(景品表示法のステマ告示が2023-10-01から施行。消費者庁は、冒頭に表記していても文字の大きさや色を踏まえて一般消費者に明瞭であることが必要としている)</li>
+<li>検索向けの技術対応: 絶対URLのcanonical、<strong>hreflangの絶対URL化(現状は相対パス)</strong>、sitemap.xml、robots.txt。ヘッダーの「試作版」表記も外す</li>
+<li><strong>中身の薄いページへの対応</strong>: Googleのスパムポリシーは「ランキング操作を主な目的とした大量のページ生成」を不正使用としている。掲載が1〜2件しかない組み合わせページはnoindexにするか、作らないことを推奨する</li>
+<li>アクセス解析: Cloudflare Web Analyticsは全プランで利用可(公式)。Cookieを使うかどうかは未確認</li>
+</ul>
+
+<h3>3-4. 弁護士スポット相談で聞くこと(1回にまとめる案)</h3>
+<ol>
+<li>サイトの利用規約で自動取得やAI利用を禁じているサイト(バンダイ)から、商品名・価格・発売日といった<strong>事実だけ</strong>を自動で集め、翻訳して載せることのリスク</li>
+<li>「データの無断転用・転載はご遠慮ください」(タカラトミーアーツ)、「営利目的の利用禁止」(食品メーカー各社)という規約は、事実だけを引用してリンクする使い方にも及ぶか</li>
+<li>官公庁・独法の規約(J-Net21の商業目的利用禁止)と、広告付きサイトからのリンク</li>
+<li>テーマC(saas-status.com)の第3層ゲート(未実施分)</li>
+</ol>
+<p class="note">相談料の相場: 30分5,000円〜1万円前後(第三者の解説記事による。旧日弁連報酬基準の一般法律相談は30分5,000円以上)。事務所ごとの料金は未調査。BUDGETの法務費目は40,000円(支出0円)。</p>
+
+<h2>4. 広告・アフィリエイトの候補</h2>
+<div class="table-wrap">
+<table>
+<tr><th>ジャンル</th><th>候補</th><th>確認できた条件</th><th>現実性</th></tr>
+<tr><td rowspan="2">補助金P(国内)</td><td>A8.net</td><td>登録無料。入会時のA8側の審査はない。サイトまたはSNSが必要で、口座は本人名義。広告主ごとの提携審査は別にある</td><td>中。補助金を探す事業者に合う案件(会計ソフト・資金調達・申請支援など)がA8にあるかは<strong>登録後でないと確認できない(未確認)</strong></td></tr>
+<tr><td>Google AdSense</td><td>18歳以上。独自性のある高品質なコンテンツ。HTMLソースへのアクセス(サイトの所有確認)。プログラムポリシーの順守</td><td>中。自動生成ページが「独自性のあるコンテンツ」と認められるかが審査の焦点</td></tr>
+<tr><td rowspan="3">値上げR(国内)</td><td>楽天アフィリエイト</td><td>楽天会員ならすぐに使える。商品ジャンル別の料率は2〜4%(食品は4%。2021年の料率改定ページによる)</td><td><strong>高</strong>。「値上げ前にまとめ買い」という自然な導線があり、日用品・食品と相性が良い</td></tr>
+<tr><td>もしもアフィリエイト</td><td>登録・利用とも無料。登録情報の審査あり。「かんたんリンク」で楽天・Amazonの商品リンクを作れる</td><td>高(楽天とAmazonを1つの仕組みで扱える)</td></tr>
+<tr><td>Amazonアソシエイト</td><td>サインアップから180日以内に3件以上の適格販売が必要(自分の注文は対象外)。コンテンツが極めて少ないサイト・転載中心でオリジナリティのないサイトは断る例として明記</td><td>中。流入が無い段階で登録すると180日を無駄にするので、流入を確認してから登録する</td></tr>
+<tr><td rowspan="3">ガチャQ(海外)</td><td>ZenMarket(日本の代理購入サービス)</td><td>検索結果の要約では「新規登録1件あたり最大150円・購入1点あたり最大50円」。<strong>公式ページは403で本文を確認できなかった(未確認)</strong></td><td>中〜高。海外の購入者が日本限定品を買う導線として最も自然</td></tr>
+<tr><td>eBay Partner Network</td><td>料率は販売額の1〜6%で、カテゴリと地域によって異なる。コレクティブル・トイの料率は画像とPDFにしか載っておらず<strong>未確認</strong></td><td>中</td></tr>
+<tr><td>Buyee</td><td>CPS型のプログラムがあるという情報のみ。<strong>料率・条件は未確認</strong></td><td>未評価</td></tr>
+</table>
+</div>
+<p class="note">いずれも登録は無料だが、登録はオーナー本人の名義・口座で行う必要がある(オーナーの専決事項)。広告は「流入が出てから付ける」のが効率的(Amazonの180日条件、AdSenseのコンテンツ審査)。</p>
+
+<h2>5. オーナーが決める必要がある事項とGM推奨</h2>
+<div class="table-wrap">
+<table>
+<tr><th>#</th><th>決める事項</th><th>区分</th><th>GM推奨</th></tr>
+<tr><td>1</td><td>バンダイ分の収集の即時停止</td><td>テーマの範囲変更(GMの専決範囲だが、今回は実装しない指示のため確認)</td><td><strong>止める</strong>。次のセッションの冒頭で、ジャンル定義からバンダイを外す。収集済みデータは公開しない</td></tr>
+<tr><td>2</td><td>層の解釈(広告なし公開=2.5、広告付き=3)と、広告型の60日判定基準</td><td>GOVERNANCEの解釈・変更=オーナー専決(c)</td><td>3-1の案のとおり</td></tr>
+<tr><td>3</td><td>補助金Pの第2.5層への昇格(jGrantsのみ・広告なし公開)</td><td>昇格の承認(CLAUDE.md)</td><td><strong>承認を推奨</strong>。一次審査(robots/ToS/免責/商標)は、J-Net21を外せばすべて満たせる</td></tr>
+<tr><td>4</td><td>ドメインの取得(.com 1つ、年$10.46前後)</td><td>支出=オーナー専決(a)</td><td>取得を推奨。名前はオーナーが決める(国内向け・海外向けの両方に使える中立な名前)</td></tr>
+<tr><td>5</td><td>公開先(A:既存VM/B:Cloudflare Pages)</td><td>GMに任せることも可</td><td>B優先。VMでの検証結果次第でA</td></tr>
+<tr><td>6</td><td>加工表示の作成者名・運営者表示(個人名/屋号/サイト名)</td><td>オーナー判断</td><td>サイト名か屋号を推奨(アフィリエイト登録には本人の実名が必要だが、サイト上の表示は屋号で足りるかを登録時に確認)</td></tr>
+<tr><td>7</td><td>弁護士スポット相談の実施時期(論点は3-4の4つをまとめて1回)</td><td>支出=オーナー専決(a)。第3層の必須要件</td><td>Pの公開後、流入が見え始めた段階(Rの公開前)で実施</td></tr>
+<tr><td>8</td><td>バンダイへの許諾の問い合わせをするか</td><td>外部への連絡</td><td>弁護士相談の後に判断。許諾が出なければ、Qはタカラトミーアーツと中小メーカー(ケンエレファント等。規約は未確認)で組み直す</td></tr>
+<tr><td>9</td><td>アフィリエイト・AdSenseの登録(時期と順番)</td><td>課金・収益化の開始=オーナー専決(b)相当</td><td>第3層の判断(弁護士相談)の後。値上げRは楽天・もしもから始める</td></tr>
+</table>
+</div>
+
+<div class="box rec"><strong>GMの推奨ロードマップ(承認された場合)</strong>
+<ol>
+<li>次のセッション: バンダイの収集を停止する。補助金PからJ-Net21を外した公開版を作り、運営者ページ・sitemap・canonical・hreflangの絶対URL化・薄いページのnoindexを実装する。VMからのデプロイ方法を検証する</li>
+<li>ドメイン取得(オーナー)→ 補助金Pを広告なしで公開(第2.5層)→ Search Console登録とアクセス解析の設置</li>
+<li>値上げR: 21社の規約をGMが原文で精読し、問題のない会社だけで広告なしの公開を準備する</li>
+<li>流入が見え始めたら弁護士スポット相談(C・P・Q・Rまとめて1回)→ 第3層に昇格し広告・アフィリエイトを付ける(オーナー承認)→ ここから60日判定</li>
+<li>ガチャQは弁護士の判断と許諾の状況を見て再設計する</li>
+</ol></div>
+
+<h2>出典(すべて2026-10-06確認)</h2>
+<ul class="note">
+<li><a href="https://gashapon.jp/news/info_260603/">ガシャポンオフィシャルサイト サイトご利用条件</a>(原文を取得して確認)</li>
+<li><a href="https://www.takaratomy-arts.co.jp/sitepolicy.html">タカラトミーアーツ サイトポリシー</a>(原文を取得して確認)</li>
+<li><a href="https://www.smrj.go.jp/rule/index.html">中小機構 サイトポリシー・利用規約</a>(原文を取得して確認)</li>
+<li>値上げR 21社: <code>src/pilots/price/sources.ts</code>の一覧ページから規約へのリンクをたどり、キーワード(自動/AI/商業目的/営利 等)で機械的にスキャン。精読はしていない</li>
+<li><a href="https://developers.cloudflare.com/pages/platform/limits/">Cloudflare Pages Limits</a>/<a href="https://developers.cloudflare.com/workers/platform/limits/">Workers Limits</a>/<a href="https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/">Workers Static Assets Billing</a>/<a href="https://developers.cloudflare.com/web-analytics/">Cloudflare Web Analytics</a></li>
+<li><a href="https://www.cloudflare.com/products/registrar/">Cloudflare Registrar</a>(上乗せなしの価格方針)/<a href="https://domainoffer.net/tld/com/cloudflare">domainoffer.net</a>(.comの価格、第三者による集計)</li>
+<li><a href="https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits">GitHub Pages limits</a>/<a href="https://docs.github.com/en/get-started/learning-about-github/githubs-plans">GitHub's plans</a></li>
+<li><a href="https://support.google.com/adsense/answer/9724?hl=ja">AdSense 利用資格要件</a>/<a href="https://developers.google.com/search/docs/essentials/spam-policies?hl=ja">Google検索 スパムに関するポリシー</a></li>
+<li><a href="https://affiliate.amazon.co.jp/help/node/topic/G8TW5AE9XL2VX9VM">Amazonアソシエイト 申請の審査プロセス</a>/<a href="https://affiliate.amazon.co.jp/help/node/topic/GRBF7RY23VJNPV84">参加申請をお断りするサイト例</a></li>
+<li><a href="https://www.a8.net/faq/14.html">A8.net FAQ(入会時の審査)</a>/<a href="https://af.moshimo.com/af/www/help">もしもアフィリエイト よくある質問</a>/<a href="https://affiliate.rakuten.co.jp/revision/20210128.html">楽天アフィリエイト 料率改定</a></li>
+<li><a href="https://zenmarket.jp/en/blog/post/11835/zenmarket-affiliate-program-japan">ZenMarket Affiliate Program</a>(403のため本文未確認)/<a href="https://partnernetwork.ebay.com/our-program/rate-card">eBay Partner Network Rate card</a></li>
+<li><a href="https://www.caa.go.jp/policies/policy/representation/fair_labeling/stealth_marketing/">消費者庁 ステルスマーケティング告示</a>/<a href="https://www.caa.go.jp/policies/policy/representation/fair_labeling/faq/stealth_marketing/">同Q&amp;A</a></li>
+</ul>
+</main>
+</body>
+</html>

@@ -631,3 +631,11 @@
 - 完了した状態：`npm run research:sources -- <裁定JSON|"ジャンル名">`と`--recheck`が動作。リコール追跡でテストし登録候補5件・要確認5件(council-output/source-research/)。規約判定はHaikuで誤りが出たためSonnet 5.5に。開発・テスト費182円記帳済み(累計64,099円)。滞留9件の再評価はコミット・push済み(ec5d356)、dev-configもpush済み(b37690f)
 - 残課題・次にやること：research:sources一式はコミット済み(09571c4、package-lock.jsonは除外し未コミットのまま)。次セッションは公開先・公開方法の判断材料の整理(harvest-engine-publish-plan-01)。手動調査3回または2026-11-02で自動連結の可否をオーナーに聞く(HANDOFF次アクション5)。テーマOのsources追加は規約原文確認後。10/12週次評議会の新基準検証。Perplexity比較はAPIクレジット確認待ち
 - 触ったファイル：C:\dev\dev-config\sync-pull.ps1、src/research/*（新規）、package.json、仕様書_harvest-engine.html(5章)、DECISIONS.md、HANDOFF.md、会社説明資料.html、data/ledger.json、council-output/source-research/（新規）
+
+## harvest-engine-publish-plan-01（2026-10-06）
+- 作業環境：ノートPC
+- やったこと：出口工場パイロット3本の公開判断材料を調査・作成(公開先比較・公開順・法務ゲート・広告/アフィリエイト候補・オーナー決定事項)。実装・公開・支出なし
+- 完了した状態：`公開判断材料.html`を作成。調査中に規約確認漏れ3件を発見しHANDOFFに記録: バンダイが自動取得・AI二次利用を禁止(VMは毎日取得中)、J-Net21が商業目的利用を禁止、値上げR数社に営利利用制限。GM推奨は公開順P(jGrantsのみ)→R→Q、Cloudflare Pages+新規.com 1つ、広告なし公開=第2.5層・広告付き=第3層
+- 残課題・次にやること：収集済みデータ(バンダイ・J-Net21)の削除可否、値上げ7社の規約原文確認、既存第1層テーマの規約見直し、5章の残りの決定事項。その後、補助金P公開版の準備(J-Net21除外・運営者ページ・sitemap・canonical・hreflang絶対URL化・薄いページnoindex)・VMからのデプロイ方法検証
+- 追記：オーナー決定でバンダイ・J-Net21・値上げR 5社の収集・AI処理・掲載を停止しVM反映。収集済みデータは保持(削除可否は未決)
+- 触ったファイル：公開判断材料.html(新規)、HANDOFF.md、SESSION_LOG.md、DECISIONS.md、CLAUDE.md、仕様書_harvest-engine.html、src/pilots/gacha/{genre,generate,languages}.ts、src/pilots/subsidy/{genre,generate}.ts、src/pilots/price/{sources,genre,generate}.ts

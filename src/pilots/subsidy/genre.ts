@@ -1,7 +1,7 @@
 import { sourceFailure, type Genre } from "../../factory/genre";
 import { collectApi } from "../../factory/kinds/api";
 import { jgrantsSource, normalizeSourceFields } from "./collectJgrants";
-import { collectJnet21, kindFromSubject } from "./collectJnet21";
+import { kindFromSubject } from "./collectJnet21";
 import { classifyPending } from "./classify";
 import { generateSite } from "./generate";
 import { unknownValues } from "./taxonomy";
@@ -10,13 +10,10 @@ import type { SubsidyItem } from "./types";
 export const subsidyGenre: Genre<SubsidyItem> = {
   id: "subsidy",
   kind: "api",
-  // 片方の情報源が落ちていても、もう片方の収集・ページ生成は続ける
-  collect: async (store) => [
-    await collectApi(jgrantsSource, store).catch((err) => sourceFailure("jgrants", err)),
-    // J-Net21はRSSが最新数十件しか載らないため、取得のたびに蓄積する
-    await collectJnet21(store).then((seen) => ({ sourceId: "jnet21", seen, ok: true }), (err) => sourceFailure("jnet21", err)),
-  ],
-  enrich: classifyPending,
+  // J-Net21は中小機構の利用規約が商業目的での利用(アクセス含む)を禁止しているため2026-10-06に停止。
+  // 収集済みデータは保存に残るが、AI分類・掲載はしない
+  collect: async (store) => [await collectApi(jgrantsSource, store).catch((err) => sourceFailure("jgrants", err))],
+  enrich: (store, budget) => classifyPending(new Map([...store].filter(([, i]) => i.source !== "jnet21")), budget),
   prepare: (store) => {
     for (const item of store.values()) {
       if (item.sourceFields) Object.assign(item, normalizeSourceFields(item.sourceFields));
