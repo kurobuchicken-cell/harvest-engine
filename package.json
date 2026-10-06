@@ -25,7 +25,8 @@
     "pilot:gacha": "tsx src/factory/run.ts gacha",
     "pilot:price": "tsx src/factory/run.ts price",
     "factory:run": "tsx src/factory/run.ts",
-    "factory:schedule": "tsx src/factoryScheduler.ts"
+    "factory:schedule": "tsx src/factoryScheduler.ts",
+    "research:sources": "tsx src/research/run.ts"
   },
   "keywords": [],
   "author": "",

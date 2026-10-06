@@ -1,0 +1,426 @@
+{
+  "topic": "リコール追跡ハーヴェスト(食品・消費生活用製品)",
+  "generatedAt": "2026-10-06T07:14:20.631Z",
+  "notes": "日本の一次情報源は、食品=消費者庁/厚労省(食品衛生申請等システム)、消費生活用製品=消費者庁/経産省/NITE、自動車=国交省の4系統に分かれている。消費者庁リコール情報サイトが横断集約している。食品衛生申請等システムの公開回収事案検索は検索UI中心で、実URL・一括取得可否・robots.txt・ToSは今回の検索結果では確認できなかった。第1層active化の前に、実機で一次確認が必須。RSSは消費者庁の報道発表等のRSS(https://www.caa.go.jp/news.rss)しか確認できなかった。リコール専用のRSS・公開APIは日本側では見つからず、HTMLパーサー前提になる。経産省・国交省・NITEの個別の利用規約も未確認で、その点は空白地帯。海外はFDAのopenFDAが唯一確認できた公開APIで、RASFFの実URLは今回の検索では確認していない。都道府県・保健所設置市の回収公表(例:千葉県の輸入食品回収の公表ページ)も一次情報だが、分散しているため今回は候補に入れていない。",
+  "checked": [
+    {
+      "candidate": {
+        "name": "消費者庁 リコール情報サイト(回収・無償修理等)",
+        "organization": "消費者庁",
+        "sourceType": "government",
+        "listUrl": "https://www.recall.caa.go.jp/",
+        "format": "html",
+        "feedUrl": null,
+        "updateFrequency": "随時(日次〜週次)",
+        "kind": "catalog",
+        "termsUrl": "https://www.recall.caa.go.jp/about/index.php",
+        "coverage": "各省庁・事業者が公表した製品リコールと食品のアレルゲン表示欠落などの回収情報を一元的に集約した一覧。",
+        "evidence": "消費者庁が運営する公式サイトで、運営主体が自ら『このサイトについて』で回収・無償修理等の情報提供を明示している。"
+      },
+      "robots": {
+        "status": "no_robots",
+        "httpStatus": 404,
+        "blockedAiBots": []
+      },
+      "page": {
+        "httpStatus": 200,
+        "error": null,
+        "textLength": 1417,
+        "linkCount": 68,
+        "isPdf": false,
+        "spaSuspected": false,
+        "discoveredFeeds": [],
+        "discoveredTermsUrl": "https://www.recall.caa.go.jp/about/index.php",
+        "feedOk": null
+      },
+      "tos": {
+        "scraping": "不明",
+        "reuse": "不明",
+        "commercial": "不明",
+        "quote": null,
+        "summary": "本文はページタイトルと見出しのみで、利用規約・サイトポリシーの条文が含まれておらず、自動取得・再利用・商用利用の扱いを読み取れない。",
+        "fetched": true,
+        "truncated": false
+      },
+      "recommendation": "要確認",
+      "reasons": [
+        "規約の要約に失敗"
+      ]
+    },
+    {
+      "candidate": {
+        "name": "食品表示リコール情報及び違反情報(食品リコール公開回収事案検索への導線)",
+        "organization": "消費者庁・厚生労働省",
+        "sourceType": "government",
+        "listUrl": "https://www.caa.go.jp/policies/policy/food_labeling/food_labeling_recall",
+        "format": "html",
+        "feedUrl": null,
+        "updateFrequency": "随時(届出ベース)",
+        "kind": "catalog",
+        "termsUrl": "https://www.caa.go.jp/terms_of_use/",
+        "coverage": "2021年6月義務化の食品リコール届出の公表(食品衛生申請等システムの公開回収事案検索)と、食品表示法に基づく指示・命令の状況。",
+        "evidence": "消費者庁の公式ページで、公開回収事案検索(食品衛生申請等システム)の運用開始を案内している。自治体ページも全国の届出は厚生労働省のシステムで公表されると記している。"
+      },
+      "robots": {
+        "status": "allowed",
+        "httpStatus": 200,
+        "blockedAiBots": []
+      },
+      "page": {
+        "httpStatus": 200,
+        "error": null,
+        "textLength": 1314,
+        "linkCount": 210,
+        "isPdf": false,
+        "spaSuspected": false,
+        "discoveredFeeds": [],
+        "discoveredTermsUrl": "https://www.caa.go.jp/terms_of_use/",
+        "feedOk": null
+      },
+      "tos": {
+        "scraping": "記載なし",
+        "reuse": "条件付き",
+        "commercial": "条件付き",
+        "quote": null,
+        "summary": "コンテンツは公共データ利用規約(PDL1.0)に準拠して出典記載等の条件付きで再利用でき、自動取得に関する記述はなく、商用利用の許可や申請が必要なのはシンボルマーク、消費者教育・啓発用コンテンツ、コンテスト写真など一部のコンテンツに限られる。",
+        "fetched": true,
+        "truncated": false
+      },
+      "recommendation": "登録候補",
+      "reasons": []
+    },
+    {
+      "candidate": {
+        "name": "NITE 製品事故情報・リコール情報(NITE SAFE-Lite含む)",
+        "organization": "独立行政法人製品評価技術基盤機構(NITE)",
+        "sourceType": "government",
+        "listUrl": "https://www.nite.go.jp/jiko/jikojohou/index.html",
+        "format": "html",
+        "feedUrl": null,
+        "updateFrequency": "随時(SAFE-Liteのデータ追加は定期)",
+        "kind": "catalog",
+        "termsUrl": "https://www.nite.go.jp/homepage/policy.html",
+        "coverage": "製品事故情報とリコール情報の掲載ページ。検索ツールNITE SAFE-Liteへの導線もある。",
+        "evidence": "経産省所管の独立行政法人であるNITEの公式サイトで、製品安全分野の事故・リコール情報を自ら掲載している。"
+      },
+      "robots": {
+        "status": "no_robots",
+        "httpStatus": 404,
+        "blockedAiBots": []
+      },
+      "page": {
+        "httpStatus": 200,
+        "error": null,
+        "textLength": 1339,
+        "linkCount": 76,
+        "isPdf": false,
+        "spaSuspected": false,
+        "discoveredFeeds": [],
+        "discoveredTermsUrl": "https://www.nite.go.jp/homepage/policy.html",
+        "feedOk": null
+      },
+      "tos": {
+        "scraping": "記載なし",
+        "reuse": "条件付き",
+        "commercial": "記載なし",
+        "quote": null,
+        "summary": "クローラやスクレイピング等の自動取得を禁じる条文はない。掲載情報は著作物であり、私的使用や引用など著作権法上認められた範囲を除く転載・複製・販売等には機構の使用許諾が必要で、引用には出所表示などの条件がある。商用利用についての個別の記載はない。",
+        "fetched": true,
+        "truncated": false
+      },
+      "recommendation": "登録候補",
+      "reasons": []
+    },
+    {
+      "candidate": {
+        "name": "経済産業省 製品安全ガイド 新着情報(リコール・重大製品事故)",
+        "organization": "経済産業省 製品事故対策室",
+        "sourceType": "government",
+        "listUrl": "https://www.meti.go.jp/product_safety/news/index.html",
+        "format": "html",
+        "feedUrl": null,
+        "updateFrequency": "随時(リコール掲載・重大事故公表は週次程度)",
+        "kind": "announcement",
+        "termsUrl": null,
+        "coverage": "事業者別のリコール情報掲載のお知らせと、消費生活用製品の重大製品事故の公表文書(PDF)。",
+        "evidence": "経産省の公式サイトで、公表文書・リコール情報を自ら掲載している(公表文書一覧は https://www.meti.go.jp/product_safety/download/index.html)。"
+      },
+      "robots": {
+        "status": "indeterminate",
+        "httpStatus": 403,
+        "blockedAiBots": []
+      },
+      "page": {
+        "httpStatus": 403,
+        "error": null,
+        "textLength": 641,
+        "linkCount": 8,
+        "isPdf": false,
+        "spaSuspected": false,
+        "discoveredFeeds": [],
+        "discoveredTermsUrl": null,
+        "feedOk": null
+      },
+      "tos": null,
+      "recommendation": "要確認",
+      "reasons": [
+        "robots.txtが判定不能(HTTP 403)",
+        "一覧ページを取得できない(403)",
+        "規約ページ未特定"
+      ]
+    },
+    {
+      "candidate": {
+        "name": "消費者庁 消費者安全 公表資料(重大製品事故・重大事故等)",
+        "organization": "消費者庁",
+        "sourceType": "government",
+        "listUrl": "https://www.caa.go.jp/policies/policy/consumer_safety/release",
+        "format": "html",
+        "feedUrl": "https://www.caa.go.jp/news.rss",
+        "updateFrequency": "週次〜随時",
+        "kind": "announcement",
+        "termsUrl": "https://www.caa.go.jp/terms_of_use/",
+        "coverage": "消費生活用製品の重大製品事故(リコール製品での事故を含む)や事故情報データバンク登録の公表一覧。RSSは消費者庁サイト全体の新着(報道発表等)。",
+        "evidence": "消費者庁自身の年度別公表資料ページ。RSSも同庁のRSSフィードのページに明記されている(RSS1.0)。"
+      },
+      "robots": {
+        "status": "allowed",
+        "httpStatus": 200,
+        "blockedAiBots": []
+      },
+      "page": {
+        "httpStatus": 200,
+        "error": null,
+        "textLength": 6989,
+        "linkCount": 339,
+        "isPdf": false,
+        "spaSuspected": false,
+        "discoveredFeeds": [],
+        "discoveredTermsUrl": "https://www.caa.go.jp/terms_of_use/",
+        "feedOk": true
+      },
+      "tos": {
+        "scraping": "記載なし",
+        "reuse": "条件付き",
+        "commercial": "条件付き",
+        "quote": null,
+        "summary": "コンテンツはPDL1.0に準拠し、出典記載などの条件を守れば再利用できる。自動取得に関する記述はなく、商用利用は一部のコンテンツ(消費者教育・啓発用コンテンツ、政府広報関連、コンテスト作品など)に限り届出・許諾が必要という例外があるため、全体としては条件付きとした。",
+        "fetched": true,
+        "truncated": false
+      },
+      "recommendation": "登録候補",
+      "reasons": []
+    },
+    {
+      "candidate": {
+        "name": "消費者庁 リコール情報メールサービス",
+        "organization": "消費者庁",
+        "sourceType": "government",
+        "listUrl": "https://mmw.caa.go.jp/db/pub/recall_info/pc/create/ev/email",
+        "format": "html",
+        "feedUrl": null,
+        "updateFrequency": "新規登録時に随時配信",
+        "kind": "none",
+        "termsUrl": "https://www.caa.go.jp/terms_of_use/",
+        "coverage": "リコール情報サイトに新規登録されたリコール情報や、重大事故が起きた場合の通知を受け取る配信登録ページ。",
+        "evidence": "消費者庁の公式メール配信サービスで、自治体ページがリコール情報の新規登録時の通知として案内している。巡回対象ではなく、受信による補助的な検知用。"
+      },
+      "robots": {
+        "status": "allowed",
+        "httpStatus": 200,
+        "blockedAiBots": []
+      },
+      "page": {
+        "httpStatus": 200,
+        "error": null,
+        "textLength": 1232,
+        "linkCount": 3,
+        "isPdf": false,
+        "spaSuspected": false,
+        "discoveredFeeds": [],
+        "discoveredTermsUrl": null,
+        "feedOk": null
+      },
+      "tos": {
+        "scraping": "記載なし",
+        "reuse": "条件付き",
+        "commercial": "条件付き",
+        "quote": null,
+        "summary": "コンテンツは公共データ利用規約(PDL1.0)に準拠して、出典記載や編集・加工の明示を条件に利用できる。自動取得を禁じる条文はなく、商用利用の許可・申請が必要なのは本ルールの適用外となる一部コンテンツ(消費者教育・啓発用コンテンツ、シンボルマーク等、コンテスト作品、政府広報関連など)に限られる。",
+        "fetched": true,
+        "truncated": false
+      },
+      "recommendation": "登録候補",
+      "reasons": []
+    },
+    {
+      "candidate": {
+        "name": "食品表示法に基づく指示・命令等の公表(食品表示について)",
+        "organization": "消費者庁",
+        "sourceType": "government",
+        "listUrl": "https://www.caa.go.jp/policies/policy/food_labeling/information/",
+        "format": "html",
+        "feedUrl": "https://www.caa.go.jp/news.rss",
+        "updateFrequency": "半期ごと・随時",
+        "kind": "announcement",
+        "termsUrl": "https://www.caa.go.jp/terms_of_use/",
+        "coverage": "食品表示基準に係る指示・命令・指導の件数等(PDF)と食品表示に関するお知らせ。",
+        "evidence": "消費者庁の公式ページ。リコールの周辺文脈となる行政措置の統計を直接掲載している。"
+      },
+      "robots": {
+        "status": "allowed",
+        "httpStatus": 200,
+        "blockedAiBots": []
+      },
+      "page": {
+        "httpStatus": 200,
+        "error": null,
+        "textLength": 2721,
+        "linkCount": 257,
+        "isPdf": false,
+        "spaSuspected": false,
+        "discoveredFeeds": [],
+        "discoveredTermsUrl": "https://www.caa.go.jp/terms_of_use/",
+        "feedOk": true
+      },
+      "tos": {
+        "scraping": "記載なし",
+        "reuse": "条件付き",
+        "commercial": "条件付き",
+        "quote": null,
+        "summary": "コンテンツは公共データ利用規約(PDL1.0)に準拠して出典記載などの条件の下で再利用できる。自動取得に関する記載はなく、商用利用の許可申請が必要なのは、消費者教育・啓発用コンテンツなど一部の適用外コンテンツに限られる。",
+        "fetched": true,
+        "truncated": false
+      },
+      "recommendation": "登録候補",
+      "reasons": []
+    },
+    {
+      "candidate": {
+        "name": "国土交通省 自動車のリコール・不具合情報(リコール届出情報一覧)",
+        "organization": "国土交通省 自動車局",
+        "sourceType": "government",
+        "listUrl": "https://www.mlit.go.jp/jidosha/carinf/rcl/recall_searchinfo.html",
+        "format": "html",
+        "feedUrl": null,
+        "updateFrequency": "随時(届出ごとに報道発表)",
+        "kind": "announcement",
+        "termsUrl": "https://www.mlit.go.jp/jidosha/carinf/rcl/announce.html",
+        "coverage": "自動車のリコール届出情報の一覧への導線。報道発表の個別ページは事業者別・車種別に公開されている。",
+        "evidence": "国土交通省自動車局審査・リコール課が自ら運営する公式ページ。"
+      },
+      "robots": {
+        "status": "no_robots",
+        "httpStatus": 404,
+        "blockedAiBots": []
+      },
+      "page": {
+        "httpStatus": 200,
+        "error": null,
+        "textLength": 298,
+        "linkCount": 21,
+        "isPdf": false,
+        "spaSuspected": true,
+        "discoveredFeeds": [],
+        "discoveredTermsUrl": "https://www.mlit.go.jp/jidosha/carinf/rcl/announce.html",
+        "feedOk": null
+      },
+      "tos": {
+        "scraping": "記載なし",
+        "reuse": "条件付き",
+        "commercial": "記載なし",
+        "quote": null,
+        "summary": "自動取得を禁じる条文はなく、掲載情報は「国土交通省ウェブサイトのリンク・著作権・免責事項」に定められた利用条件の下で利用できるとされているため、再利用は条件付きとした。商用利用に関する記述は本文にない。",
+        "fetched": true,
+        "truncated": false
+      },
+      "recommendation": "要確認",
+      "reasons": [
+        "一覧がJSで描画されている疑い(取得HTMLに中身が少ない)"
+      ]
+    },
+    {
+      "candidate": {
+        "name": "自動車のリコール・不具合情報 リコール情報検索(連絡ダ)",
+        "organization": "国土交通省",
+        "sourceType": "government",
+        "listUrl": "https://renrakuda.mlit.go.jp/renrakuda/recall-search.html",
+        "format": "html",
+        "feedUrl": null,
+        "updateFrequency": "随時",
+        "kind": "catalog",
+        "termsUrl": null,
+        "coverage": "国産車・輸入車のリコール届出番号つき検索。年度別の届出件数・対象台数の集計もある。",
+        "evidence": "国土交通省の自動車不具合情報ホットラインのポータルサイト。"
+      },
+      "robots": {
+        "status": "allowed",
+        "httpStatus": 200,
+        "blockedAiBots": []
+      },
+      "page": {
+        "httpStatus": 200,
+        "error": null,
+        "textLength": 1960,
+        "linkCount": 40,
+        "isPdf": false,
+        "spaSuspected": false,
+        "discoveredFeeds": [],
+        "discoveredTermsUrl": null,
+        "feedOk": null
+      },
+      "tos": null,
+      "recommendation": "要確認",
+      "reasons": [
+        "規約ページ未特定"
+      ]
+    },
+    {
+      "candidate": {
+        "name": "openFDA Food API(食品リコール執行レポート)",
+        "organization": "米国FDA",
+        "sourceType": "government",
+        "listUrl": "https://open.fda.gov/apis/food/",
+        "format": "api",
+        "feedUrl": "https://open.fda.gov/apis/food/",
+        "updateFrequency": "データ更新は四半期(3〜6か月の遅れがある場合あり)",
+        "kind": "api",
+        "termsUrl": null,
+        "coverage": "米国の食品リコール(執行レポート)をAPIで取得できる。",
+        "evidence": "米FDAの公式openFDAサイト。ただし本ジャンルは日本市場向けのため、優先度は低い将来候補。"
+      },
+      "robots": {
+        "status": "indeterminate",
+        "httpStatus": 403,
+        "blockedAiBots": []
+      },
+      "page": {
+        "httpStatus": 200,
+        "error": null,
+        "textLength": 194,
+        "linkCount": 2,
+        "isPdf": false,
+        "spaSuspected": true,
+        "discoveredFeeds": [],
+        "discoveredTermsUrl": null,
+        "feedOk": false
+      },
+      "tos": null,
+      "recommendation": "要確認",
+      "reasons": [
+        "robots.txtが判定不能(HTTP 403)",
+        "一覧がJSで描画されている疑い(取得HTMLに中身が少ない)",
+        "RSS/APIのURLが応答しない",
+        "規約ページ未特定"
+      ]
+    }
+  ],
+  "usage": {
+    "searchInputTokens": 0,
+    "searchOutputTokens": 0,
+    "webSearches": 0,
+    "tosInputTokens": 19969,
+    "tosOutputTokens": 2065
+  },
+  "costUsd": 0.060588
+}

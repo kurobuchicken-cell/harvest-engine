@@ -18,7 +18,7 @@ th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font
 <body>
 <main>
 <h1>仕様書 harvest-engine</h1>
-<p class="note">最終更新: 2026-10-05。本書は出口工場パイロット(1章: 補助金、2章: ガチャ、3章: 値上げ情報)と、3本に共通の土台・定期実行・自動点検(4章)の仕様を記載する(既存の収集基盤・評議会の経緯は HANDOFF.md / DECISIONS.md / GOVERNANCE.md を参照)。</p>
+<p class="note">最終更新: 2026-10-06。本書は出口工場パイロット(1章: 補助金、2章: ガチャ、3章: 値上げ情報)と、3本に共通の土台・定期実行・自動点検(4章)、一次情報源調査の自動化(5章)の仕様を記載する(既存の収集基盤・評議会の経緯は HANDOFF.md / DECISIONS.md / GOVERNANCE.md を参照)。</p>
 
 <h2>1. 補助金パイロット(テーマP)</h2>
 <p>出口工場(一次情報の自動収集→AI構造化→ページ自動生成→アフィリエイト・広告)の国内向けパイロット1本目。現段階のゴールは「実データからローカルで静的ページを生成できること」。公開・アフィリエイトは対象外。</p>
@@ -289,6 +289,42 @@ th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font
 
 <h3>4.6 回帰確認(2026-10-05)</h3>
 <p>統合の前後で、同じ保存データに対する <code>--generate-only</code> の出力を比較し、3本の全ページ(補助金819・ガチャ619・値上げ76)がバイト単位で一致することを確認した。保存データも一致。リンク切れ・出典欠落・掲載0件ページはいずれも0。</p>
+
+<h2>5. 一次情報源調査(research:sources)</h2>
+<p>評議会が採択したジャンルについて、GMが手作業で行っていた「一次情報源の特定・robots.txt/規約の確認」の下調べを自動化する。ジャンルを数十〜数百に増やすときのボトルネックを外すため(2026-10-06、DECISIONS.md参照)。出力は一次判定で、第1層登録の可否はGMが原文を確認して決める。<strong>当面は手動起動</strong>。週次評議会への自動連結は、手動実行3回または2026-11-02の早い方でオーナーに諮る(HANDOFF.md次アクション5)。</p>
+
+<h3>5.1 実行方法</h3>
+<table>
+<tr><th>コマンド</th><th>動作</th></tr>
+<tr><td><code>npm run research:sources -- &lt;裁定JSONのパス&gt;</code></td><td>評議会の裁定(<code>council-output/verdicts/*.json</code>)のジャンル名と審議内容を文脈にして調査する</td></tr>
+<tr><td><code>npm run research:sources -- "ジャンル名"</code></td><td>評議会を経ないジャンル名の自由入力で調査する</td></tr>
+<tr><td><code>npm run research:sources -- --recheck &lt;調査結果JSONのパス&gt;</code></td><td>候補の列挙(検索)はやり直さず、保存済みの候補のrobots.txt・取得・規約だけをチェックし直す(判定ロジックの修正後や、時間をおいた再確認用)</td></tr>
+</table>
+<p>出力は <code>council-output/source-research/{日付}_{ジャンル名}.md</code>(GMが読む表と詳細)と同名の <code>.json</code>。費用はledgerにservice <code>source-research</code> で記帳する。</p>
+
+<h3>5.2 処理の流れ</h3>
+<ol>
+<li><strong>候補の列挙(AI)</strong>: Claude Sonnet 5.5(effort medium)がweb_search(1回あたり最大30回)で、一次情報源(メーカー・官公庁・業界団体の公式サイト)の「新しい情報が追加される一覧ページ」を最大12件挙げる。項目は一覧URL・形式(html/rss/api/pdf)・RSS/APIのURL・更新頻度・出口工場の型(catalog/announcement/api/none)・規約URL・根拠。ニュースサイト等の二次情報は除外。</li>
+<li><strong>機械チェック(コード、AI不使用)</strong>:
+<ul>
+<li>robots.txt: 自ボット(HarvestEngineBot)が一覧URLを取得できるか。既知のAIボット(GPTBot・ClaudeBot・CCBot・anthropic-ai等12種)を名指しでDisallowしているか(CLAUDE.md「巡回対象選定の追加ルール」)。403・418・5xxはWAFによるブロックの可能性があり「判定不能」とする</li>
+<li>一覧ページの取得: HTTP状態、PDFか、本文の長さとリンク数。本文が300字未満、またはリンクが少なくSPAの枠(<code>id="root"</code>等)だけのページは「JS描画疑い」(現行の巡回方式では拾えない)</li>
+<li>RSS/API: 指定されたURL、またはページ内の<code>&lt;link rel=alternate&gt;</code>で見つけたフィードが応答するか</li>
+<li>規約ページ: 一覧ページ内の「利用規約」「サイトポリシー」「ご利用にあたって」「著作権」等のリンクを拾う。一覧ページと同じホストの規約リンクを、AIが挙げた規約URLより優先する(府省のサブサイトが親組織と別の規約を持つことがあるため)</li>
+</ul></li>
+<li><strong>規約の一次要約(AI)</strong>: 規約ページの本文(先頭3万字まで、超えた場合は出力に明記)をClaude Sonnet 5.5(effort low)が読み、自動取得・転載/再利用・商用利用を「禁止/条件付き/記載なし/不明」で分類し、根拠の条文を抜粋する。「禁止」は条文の抜粋がある場合のみ有効(無ければ「不明」に倒す)。Haiku 4.5では例外条項の範囲を読み分けられず判定が揺れたためSonnetを使う。</li>
+</ol>
+
+<h3>5.3 判定</h3>
+<table>
+<tr><th>判定</th><th>条件</th></tr>
+<tr><td>不可</td><td>robots.txtで自ボットの取得が禁止 / AIボットを名指しで拒否 / 規約で自動取得が禁止(条文あり)</td></tr>
+<tr><td>要確認</td><td>robots.txtが判定不能 / 一覧ページを取得できない / JS描画疑い / RSS・APIが応答しない / 規約ページ未特定・取得不可・読み取り不能 / 規約で転載が禁止 / 規約で商用利用が禁止または要許可(一部コンテンツに限る例外条項は「条件付き」扱い) / 規約が長く一部のみ確認</td></tr>
+<tr><td>登録候補</td><td>上記のいずれにも当たらない</td></tr>
+</table>
+
+<h3>5.4 費用(2026-10-06実測)</h3>
+<p>リコール追跡(食品・消費生活用製品)で、通しの実行が1回75〜86円(候補8〜10件、検索20〜23回)、<code>--recheck</code>が1回4〜10円。費用の大半はweb_searchと候補列挙のトークン。開発中のテストを含めた合計は182円。</p>
 </main>
 </body>
 </html>

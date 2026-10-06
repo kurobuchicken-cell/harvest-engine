@@ -624,3 +624,10 @@
 - 完了した状態：統合前後で全1,514ページがバイト一致。VM反映済み(8fd9c27、pm2に`harvest-engine-factory-scheduler`を追加しpm2 save、手元の保存データをscpでコピー)、VMで1回手動実行し3ジャンルとも異常0・約2分。Slackテスト通知送信済み。初回定期実行は10/6 04:00 JST
 - 残課題・次にやること：10/6朝の定期実行結果をVMの`logs/factory-scheduler-out.log`と`data/factory/runs.json`で確認。J-Net21のRSS件数の変動による急減誤検知の監視。VM空きメモリ(実行中最小約81MB)の観察。公開先の決定(オーナー)、一次情報源調査の自動化(HANDOFF次アクション5)、10/12週次評議会の検証
 - 触ったファイル：src/factory/*（新規）、src/factoryScheduler.ts（新規）、src/pilots/*/genre.ts（新規）、src/pilots/*（共通部へ移行、run.ts・store.ts・price/fetchUtil.tsは削除/移動）、src/lib/ledger.ts、package.json、ecosystem.config.js、.gitignore、仕様書_harvest-engine.html（4章）、DECISIONS.md、HANDOFF.md、会社説明資料.html、data/ledger.json
+
+## harvest-engine-continue-01（2026-10-06）
+- 作業環境：ノートPC
+- やったこと：sync-pull.ps1をPS5.1で動くよう修正(dev-config)、10/6 04:00の出口工場初回定期実行の確認(3ジャンルとも異常0)、旧基準の滞留採択9件を再評価(新規採択0件・テーマOへ統合1件・保留1件)、一次情報源調査の自動化`research:sources`をClaude版で実装(手動起動)
+- 完了した状態：`npm run research:sources -- <裁定JSON|"ジャンル名">`と`--recheck`が動作。リコール追跡でテストし登録候補5件・要確認5件(council-output/source-research/)。規約判定はHaikuで誤りが出たためSonnet 5.5に。開発・テスト費182円記帳済み(累計64,099円)。滞留9件の再評価はコミット・push済み(ec5d356)、dev-configもpush済み(b37690f)
+- 残課題・次にやること：research:sources一式のコミット(未実施、package-lock.jsonは除外予定)。次セッションは公開先・公開方法の判断材料の整理(harvest-engine-publish-plan-01)。手動調査3回または2026-11-02で自動連結の可否をオーナーに聞く(HANDOFF次アクション5)。テーマOのsources追加は規約原文確認後。10/12週次評議会の新基準検証。Perplexity比較はAPIクレジット確認待ち
+- 触ったファイル：C:\dev\dev-config\sync-pull.ps1、src/research/*（新規）、package.json、仕様書_harvest-engine.html(5章)、DECISIONS.md、HANDOFF.md、会社説明資料.html、data/ledger.json、council-output/source-research/（新規）
