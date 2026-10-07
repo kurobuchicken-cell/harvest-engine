@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>出口工場の勝算見直し</title>
+<style>
+  :root {
+    --bg: #f5f6f1; --surface: #ffffff; --surface-soft: #eeeee6;
+    --ink: #22261c; --ink-soft: #5b5f52;
+    --accent: #a9791f; --green: #3b6e4f; --green-tint: #dfeade;
+    --red: #9b3b2e; --red-tint: #f3dfd9; --blue: #3e5c76; --line: #dcd9cc;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1b1e16; --surface: #24281e; --surface-soft: #2c3024;
+      --ink: #ece9db; --ink-soft: #b3b39e;
+      --accent: #dcac4c; --green: #74b28c; --green-tint: #253326;
+      --red: #e08a7a; --red-tint: #3a2420; --blue: #8fadc7; --line: #3a3e30;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1b1e16; --surface: #24281e; --surface-soft: #2c3024;
+    --ink: #ece9db; --ink-soft: #b3b39e;
+    --accent: #dcac4c; --green: #74b28c; --green-tint: #253326;
+    --red: #e08a7a; --red-tint: #3a2420; --blue: #8fadc7; --line: #3a3e30;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Hiragino Sans", "Yu Gothic UI", "Meiryo", sans-serif; line-height: 1.75; font-size: 15px; }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 1.6rem; margin: 0 0 4px; }
+  h2 { font-size: 1.25rem; margin: 44px 0 12px; padding-bottom: 6px; border-bottom: 2px solid var(--accent); }
+  h3 { font-size: 1.05rem; margin: 24px 0 8px; }
+  .meta { color: var(--ink-soft); font-size: .9rem; }
+  .box { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 20px; margin: 16px 0; }
+  .ng { background: var(--red-tint); border-color: var(--red); }
+  .rec { background: var(--green-tint); border-color: var(--green); }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; background: var(--surface); font-size: .9rem; margin: 12px 0; }
+  th, td { border: 1px solid var(--line); padding: 8px 10px; vertical-align: top; text-align: left; }
+  th { background: var(--surface-soft); }
+  .note { color: var(--ink-soft); font-size: .88rem; }
+  a { color: var(--blue); }
+</style>
+</head>
+<body>
+<main>
+<h1>出口工場の勝算見直し(たたき台)</h1>
+<p class="meta">作成: 2026-10-07 GM/目的: 出口工場という仕組みに勝算があるかを、3つの問いで見直す。NGの場合の対案は、ハーヴェストの理念の範囲で示す。
+本資料は判断材料で、実装・支出はしていない。外部の数値はWebで確認したもののみ記載した(出典は末尾)。</p>
+
+<h2>0. 外さない前提(ハーヴェストの理念)</h2>
+<ul>
+<li>1件あたり数円〜数十円の<strong>極小利益</strong>を、AIの反復処理・言語の壁がないこと・24時間稼働で<strong>無数に積み上げる</strong>(一発の大きなアイデアで稼ぐ方法の対極)</li>
+<li>利益が前提(GOVERNANCE第1条)。営業アセットは使わない。既存の資産に引きずられない</li>
+<li>追加する判断基準(オーナー指示): <strong>仮説がない実験に金を払わない</strong>。何かを作る前に、次の3つに根拠をもって答える
+  <ol><li>なぜウチに来るのか</li><li>なぜ先行者がやらないのか</li><li>来た人がなぜお金になるのか</li></ol></li>
+</ul>
+
+<h2>1. 出口工場(検索流入+広告・アフィリエイト)の判定</h2>
+<div class="box ng"><strong>判定: 仕組みとしてはNG。</strong>「検索から人を集める」ことを前提にした稼ぎ方は、2026年の環境では、新しく参入する者に勝算がない。
+例外は、他にない独自のデータを持てるジャンルに限られる。</div>
+<div class="table-wrap"><table>
+<tr><th>問い</th><th>出口工場の答え</th><th>根拠</th></tr>
+<tr><td>1. なぜウチに来るのか</td><td><strong>答えられない</strong>。ドメインが新しく検索での信用はゼロで、件数・網羅度は先行者に負ける</td>
+<td>補助金: 補助金ポータル3万件以上・スマート補助金6万件以上・助成金なう10万件以上(こちらは約330件)。値上げ: 帝国データバンクの月次調査が195社・3,033品目。ガチャ(英語): toy-people.comがバンダイ・タカラトミーアーツを網羅</td></tr>
+<tr><td>(環境)検索流入そのものが縮んでいる</td><td>1位を取れても、人が来にくくなっている</td>
+<td>AIによる概要(AI Overviews)が出る検索では、1位のクリック率が最大58%低下(Ahrefs、2025年12月、30万キーワード)。2026年の無作為化実験では、外部へのクリックが39.8%減ったという因果の証拠。パブリッシャー64サイトのGoogle経由クリックは、2025年末に以前の水準から42%減</td></tr>
+<tr><td>(環境)自動生成ページへの取り締まり</td><td>ページを大量に自動生成するやり方そのものが狙われている</td>
+<td>2026年3月のコアアップデートで「大量生成コンテンツの不正使用」が主な取り締まり対象になり、価値の低いテンプレートページのサイトは2週間で検索流入の50〜80%を失ったという報告。ただし「本物のデータを持つ自動生成ページは問題ない」とされる</td></tr>
+<tr><td>2. なぜ先行者がやらないのか</td><td>先行者はすでにやっている</td><td>上記のとおり</td></tr>
+<tr><td>3. なぜお金になるのか</td><td>人が来ないので、広告・アフィリエイトは0円</td><td>Amazonアソシエイトは登録から180日以内に3件の販売が必要</td></tr>
+</table></div>
+<p class="note">GMの反省: 10/5の選定では「先行者が多いか」をざっと見ただけで、上位サイトとの比較も、検索環境の変化の確認もしていなかった。</p>
+
+<h2>2. 対案(理念の範囲で、検索流入に頼らない)</h2>
+<p>考え方: <strong>「人を集める」ところで勝負しない。最初から需要が集まっている場に、極小単価の商品を大量に置く。</strong>
+集客をその場に任せれば、「なぜウチに来るのか」は「その場で、まだ誰も作っていない商品だから」に置き換えられる。</p>
+
+<h3>対案A: データ部品のマーケットで売る(例: Apify Store)</h3>
+<div class="table-wrap"><table>
+<tr><th>項目</th><th>内容</th></tr>
+<tr><td>何を売るか</td><td>日本の公開データ(官公庁・独法のオープンデータ等)を英語で構造化して返すツール(「Actor」)。1件の取得ごとに課金する(pay-per-event)。AIエージェントがその場で支払う「agentic payments」にも対応しており、極小単価×大量という理念と合う</td></tr>
+<tr><td>取り分(確認済み)</td><td>売上の80%が開発者(Apifyの手数料は20%)。ここから、ツールの実行にかかるプラットフォーム費用を差し引く</td></tr>
+<tr><td>1. なぜウチに来るのか</td><td>マーケット内で検索されたときに、<strong>そのデータを扱うツールがまだ無い</strong>から。日本語・和暦・PDFといった「言語の壁」を越える処理は、パイロットで作ったもの(和暦換算・PDF抽出・構造化)をそのまま使える</td></tr>
+<tr><td>2. なぜ先行者がやらないのか</td><td>市場が小さすぎて企業が来ない。<strong>ただし先行する個人はいる</strong>: 日本の官公庁データを扱うActorを7本出している開発者、リコール・開示・登記を扱う開発者、e-Statだけで少なくとも4本、jGrantsでも少なくとも3本ある。目立つ大きなデータはすでに取られている</td></tr>
+<tr><td>3. なぜお金になるのか</td><td>マーケットの利用者は最初からデータにお金を払う人。各Actorの利用者数はストアで公開されているので、<strong>作る前に、似たActorの利用者数で需要を測れる</strong></td></tr>
+<tr><td>規約</td><td>データを再販する形になるので、<strong>商用利用・再配布が明示的に許されているデータ(政府標準利用規約・CC BY等)に限る</strong>。今回の教訓がそのまま効く</td></tr>
+<tr><td>評価</td><td>条件付きで有望。ただし「日本のデータを英語で」という発想自体は、すでに複数の個人が実行している。勝てるのは、先行者が手を付けていないロングテールの情報源に限られる</td></tr>
+</table></div>
+
+<h3>対案B: 出口工場を「独自データ」条件付きで続ける</h3>
+<ul>
+<li>3つの問いに通るジャンルだけを作る。具体的には、他にないデータを持てるもの(自分たちで記録し続けた「変化の履歴」など)。ただし、手元の履歴は約80日分しかなく、今すぐ独自データと言えるものは無い</li>
+<li>評価: 時間をかけて履歴をためる案。すぐには稼げない</li>
+</ul>
+
+<h3>対案C: 検索以外の流入(SNS・コミュニティ)</h3>
+<ul>
+<li>評価: フォロワーを集める必要があり、「なぜウチに来るのか」の問題が残る。各SNSには自動投稿の規約もある。<strong>非推奨</strong></li>
+</ul>
+
+<h2>3. GM推奨: お金をかけずに仮説を確かめる順番</h2>
+<div class="box rec">
+<p><strong>仮説</strong>: 「日本の公開データのうち、商用利用・再配布が許されていて、まだApifyに無いものを英語で構造化して置けば、似たActorと同程度の利用者がつき、1件数円の課金が積み上がる」</p>
+<ol>
+<li><strong>需要の確認(0円・GMの作業のみ)</strong>: 日本のデータを扱う既存のActorについて、ストアで公開されている利用者数・評価・価格を一覧にする。<strong>利用者がほとんどついていないなら、この市場には需要がないと判断して対案Aは不採用にする</strong></li>
+<li><strong>空きの確認(0円)</strong>: 需要があった場合は、商用利用・再配布が許された日本の公開データのうち、まだツールになっていないものを洗い出す</li>
+<li><strong>判定基準を先に決める</strong>: たとえば「1本目を公開して60日で月額◯円」をオーナーと合意してから作る</li>
+<li>1〜3を満たした場合に限り、1本だけ作って試す(Apifyの無料枠で足りるかは要確認。支出が出る場合はオーナー承認)</li>
+</ol>
+<p>1の結果、需要が無ければ、対案Aも捨てる。その場合は、ハーヴェストのモデルそのものを評議会にかける(撤退ラインの考え方を前倒しする)。</p>
+</div>
+
+<h2>3.5 結果(2026-10-07追記)</h2>
+<div class="box ng"><strong>オーナー承認</strong>: 1(出口工場NG)・2(対案Aの需要確認)・3(必須条件の組み込み)をすべて承認。<br>
+<strong>対案Aの需要確認の結果はNG。</strong>Apify Storeで「japan」のツールは892本。そのうち官公庁・公開データ系(59本)は、ほぼすべて累計利用者1〜2人・直近30日0〜1人で、
+開発者本人の試用と見られる。最多の法人データ(gBizINFO)でも累計12人・直近30日0人。利用者が比較的多いのはメルカリ・ヤフオク等の商用サイトのスクレイパー(最多でも累計234人・直近30日27人)で、規約上こちらは扱わない。
+事前に決めた基準により対案Aは不採用とし、ハーヴェストのモデルそのものを評議会にかけ直す。</div>
+
+<h2>4. オーナーに決めてほしいこと(決定済み)</h2>
+<ol>
+<li>出口工場(検索流入型)をNGと判定してよいか(パイロット3本は公開せず、試作品として保持)</li>
+<li>対案Aの需要確認(0円)にGMが着手してよいか</li>
+<li>新しいジャンル・商品を作る前の必須条件として、「3つの問いへの根拠ある回答」と「事前に決めた判定基準」をCLAUDE.md・評議会の採点に組み込んでよいか</li>
+</ol>
+
+<h2>出典(2026-10-07確認)</h2>
+<ul class="note">
+<li>AI Overviewsの影響: <a href="https://www.searchenginejournal.com/google-ai-overviews-impact-on-publishers-how-to-adapt-into-2026/556843/">Search Engine Journal</a>/<a href="https://getairefs.com/blog/google-ai-overviews-statistics-june-2026/">AI Overviews statistics (June 2026)</a>/<a href="https://www.digitaleer.com/ai-impact-google-search-traffic-2026/">Digitaleer</a></li>
+<li>大量生成コンテンツへの取り締まり: <a href="https://alexcloudstar.com/blog/programmatic-seo-2026-indie-hackers/">Programmatic SEO in 2026</a>/<a href="https://ppc.land/scaled-content-abuse/">PPC Land</a>/<a href="https://developers.google.com/search/docs/essentials/spam-policies?hl=ja">Google検索 スパムポリシー</a></li>
+<li>補助金サイトの掲載件数: <a href="https://sogyotecho.jp/hojyokin-kensaku-site/">創業手帳 補助金検索サイト比較</a></li>
+<li>値上げ: <a href="https://macaro-ni.jp/178020">macaroni</a>(帝国データバンク調査の引用)</li>
+<li>ガチャ(英語): <a href="https://www.toy-people.com/en/release-date/202511-3">toy-people.com</a></li>
+<li>Apify: <a href="https://docs.apify.com/actors/publishing/monetize/pay-per-event.md">Pay per event</a>/<a href="https://docs.apify.com/platform/actors/publishing/monetize">Monetize</a>/<a href="https://apify.com/jp-data-engine">jp-data-engine</a>/<a href="https://apify.com/rationalistic_counsel">rationalistic_counsel</a>/<a href="https://apify.com/minako-ph/japan-subsidies-grants/api">japan-subsidies-grants</a></li>
+</ul>
+</main>
+</body>
+</html>
