@@ -1,0 +1,356 @@
+{
+  "pausedAt": "2026-10-07T09:29:19.423Z",
+  "reason": "規約(自動取得・AI利用・商業利用条項)の見直しまで一時停止(オーナー決定、C・Hは対象外)",
+  "sources": [
+    {
+      "id": 1,
+      "insuranceType": "life",
+      "companyName": "日本生命"
+    },
+    {
+      "id": 2,
+      "insuranceType": "life",
+      "companyName": "第一生命"
+    },
+    {
+      "id": 3,
+      "insuranceType": "life",
+      "companyName": "明治安田生命"
+    },
+    {
+      "id": 5,
+      "insuranceType": "life",
+      "companyName": "かんぽ生命"
+    },
+    {
+      "id": 9,
+      "insuranceType": "life",
+      "companyName": "ソニー生命"
+    },
+    {
+      "id": 10,
+      "insuranceType": "life",
+      "companyName": "ライフネット生命"
+    },
+    {
+      "id": 12,
+      "insuranceType": "nonlife",
+      "companyName": "東京海上日動火災"
+    },
+    {
+      "id": 13,
+      "insuranceType": "nonlife",
+      "companyName": "損害保険ジャパン"
+    },
+    {
+      "id": 14,
+      "insuranceType": "nonlife",
+      "companyName": "三井住友海上火災"
+    },
+    {
+      "id": 15,
+      "insuranceType": "nonlife",
+      "companyName": "あいおいニッセイ同和損保"
+    },
+    {
+      "id": 16,
+      "insuranceType": "nonlife",
+      "companyName": "AIG損保"
+    },
+    {
+      "id": 17,
+      "insuranceType": "nonlife",
+      "companyName": "SBI損保"
+    },
+    {
+      "id": 19,
+      "insuranceType": "nonlife",
+      "companyName": "東京海上ダイレクト"
+    },
+    {
+      "id": 20,
+      "insuranceType": "nonlife",
+      "companyName": "SOMPOダイレクト損害保険"
+    },
+    {
+      "id": 21,
+      "insuranceType": "nonlife",
+      "companyName": "楽天損保"
+    },
+    {
+      "id": 47,
+      "insuranceType": "theme_f",
+      "companyName": "Slack changelog"
+    },
+    {
+      "id": 48,
+      "insuranceType": "theme_f",
+      "companyName": "Slack pricing"
+    },
+    {
+      "id": 49,
+      "insuranceType": "theme_f",
+      "companyName": "Notion changelog"
+    },
+    {
+      "id": 50,
+      "insuranceType": "theme_f",
+      "companyName": "Notion pricing"
+    },
+    {
+      "id": 51,
+      "insuranceType": "theme_f",
+      "companyName": "Figma changelog"
+    },
+    {
+      "id": 52,
+      "insuranceType": "theme_f",
+      "companyName": "Figma pricing"
+    },
+    {
+      "id": 53,
+      "insuranceType": "theme_f",
+      "companyName": "Linear changelog"
+    },
+    {
+      "id": 54,
+      "insuranceType": "theme_f",
+      "companyName": "Linear pricing"
+    },
+    {
+      "id": 58,
+      "insuranceType": "theme_f",
+      "companyName": "Miro pricing"
+    },
+    {
+      "id": 61,
+      "insuranceType": "theme_f",
+      "companyName": "Asana pricing"
+    },
+    {
+      "id": 62,
+      "insuranceType": "theme_f",
+      "companyName": "HubSpot pricing"
+    },
+    {
+      "id": 64,
+      "insuranceType": "theme_f",
+      "companyName": "Zendesk pricing"
+    },
+    {
+      "id": 67,
+      "insuranceType": "theme_f",
+      "companyName": "GitHub changelog"
+    },
+    {
+      "id": 68,
+      "insuranceType": "theme_f",
+      "companyName": "GitHub pricing"
+    },
+    {
+      "id": 69,
+      "insuranceType": "theme_f",
+      "companyName": "Stripe pricing"
+    },
+    {
+      "id": 70,
+      "insuranceType": "theme_g",
+      "companyName": "e-Govパブコメ 意見募集中"
+    },
+    {
+      "id": 71,
+      "insuranceType": "theme_g",
+      "companyName": "e-Govパブコメ 結果公示"
+    },
+    {
+      "id": 72,
+      "insuranceType": "theme_g",
+      "companyName": "金融庁 審議会・検討会"
+    },
+    {
+      "id": 73,
+      "insuranceType": "theme_g",
+      "companyName": "金融庁 報道発表資料"
+    },
+    {
+      "id": 74,
+      "insuranceType": "theme_g",
+      "companyName": "総務省 審議会・委員会・会議等"
+    },
+    {
+      "id": 75,
+      "insuranceType": "theme_g",
+      "companyName": "総務省 報道資料一覧"
+    },
+    {
+      "id": 76,
+      "insuranceType": "theme_g",
+      "companyName": "厚生労働省 審議会・研究会等"
+    },
+    {
+      "id": 77,
+      "insuranceType": "theme_g",
+      "companyName": "厚生労働省 報道発表資料"
+    },
+    {
+      "id": 78,
+      "insuranceType": "theme_g",
+      "companyName": "国土交通省 報道発表資料"
+    },
+    {
+      "id": 79,
+      "insuranceType": "theme_g",
+      "companyName": "環境省 審議会・検討会"
+    },
+    {
+      "id": 80,
+      "insuranceType": "theme_g",
+      "companyName": "環境省 報道発表資料"
+    },
+    {
+      "id": 81,
+      "insuranceType": "theme_g",
+      "companyName": "デジタル庁 審議会等"
+    },
+    {
+      "id": 82,
+      "insuranceType": "theme_g",
+      "companyName": "デジタル庁 news"
+    },
+    {
+      "id": 83,
+      "insuranceType": "theme_g",
+      "companyName": "個人情報保護委員会 報道発表"
+    },
+    {
+      "id": 113,
+      "insuranceType": "theme_i",
+      "companyName": "AI Incident Database"
+    },
+    {
+      "id": 114,
+      "insuranceType": "theme_j",
+      "companyName": "Trestle (trestlescan.com)"
+    },
+    {
+      "id": 115,
+      "insuranceType": "theme_j",
+      "companyName": "GMO Flatt Security Blog"
+    },
+    {
+      "id": 116,
+      "insuranceType": "theme_j",
+      "companyName": "yatta47.hateblo.jp(個人ブログ)"
+    },
+    {
+      "id": 117,
+      "insuranceType": "theme_j",
+      "companyName": "nopeek (GitHub, spences10)"
+    },
+    {
+      "id": 118,
+      "insuranceType": "theme_j",
+      "companyName": "agentmask (GitHub, adithyan-ak)"
+    },
+    {
+      "id": 119,
+      "insuranceType": "theme_j",
+      "companyName": "mintmcp/agent-security (GitHub)"
+    },
+    {
+      "id": 120,
+      "insuranceType": "theme_j",
+      "companyName": "env-guard (GitHub, siyadhkc)"
+    },
+    {
+      "id": 121,
+      "insuranceType": "theme_j",
+      "companyName": "Medusa (GitHub, Pantheon-Security)"
+    },
+    {
+      "id": 122,
+      "insuranceType": "theme_j",
+      "companyName": "agent-env (agent-env.com)"
+    },
+    {
+      "id": 123,
+      "insuranceType": "theme_j",
+      "companyName": "leakproof (GitHub, acunningham-ship-it)"
+    },
+    {
+      "id": 124,
+      "insuranceType": "theme_j",
+      "companyName": "claude-code-redaction-hooks (GitHub, l-mb)"
+    },
+    {
+      "id": 125,
+      "insuranceType": "theme_j",
+      "companyName": "secrets-scanner (GitHub, AMOSFinds)"
+    },
+    {
+      "id": 130,
+      "insuranceType": "theme_k",
+      "companyName": "Construction Dive"
+    },
+    {
+      "id": 131,
+      "insuranceType": "theme_k",
+      "companyName": "Procore公式ブログ"
+    },
+    {
+      "id": 132,
+      "insuranceType": "theme_k",
+      "companyName": "日刊建設工業新聞"
+    },
+    {
+      "id": 133,
+      "insuranceType": "theme_l",
+      "companyName": "日本郵便 ニュースリリース"
+    },
+    {
+      "id": 134,
+      "insuranceType": "theme_l",
+      "companyName": "ヤマト運輸 お知らせ(2025年)"
+    },
+    {
+      "id": 135,
+      "insuranceType": "theme_m",
+      "companyName": "国土交通省 プレスリリース"
+    },
+    {
+      "id": 136,
+      "insuranceType": "theme_m",
+      "companyName": "国交省 標準的運賃特設ページ"
+    },
+    {
+      "id": 137,
+      "insuranceType": "theme_m",
+      "companyName": "全日本トラック協会 公式RSS"
+    },
+    {
+      "id": 138,
+      "insuranceType": "theme_m",
+      "companyName": "全日本トラック協会 調査・研究ページ"
+    },
+    {
+      "id": 140,
+      "insuranceType": "theme_n",
+      "companyName": "openFDA 医療機器リコール(device/recall)"
+    },
+    {
+      "id": 141,
+      "insuranceType": "theme_o",
+      "companyName": "PMDA 医療機器回収情報(個票一覧)"
+    },
+    {
+      "id": 142,
+      "insuranceType": "theme_o",
+      "companyName": "消費者庁 リコール情報サイト"
+    },
+    {
+      "id": 143,
+      "insuranceType": "theme_o",
+      "companyName": "消費者庁 新着情報RSS"
+    }
+  ]
+}

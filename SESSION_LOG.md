@@ -644,5 +644,6 @@
 - 作業環境：ノートPC
 - やったこと：停止後初の04:00定期実行を確認(3ジャンルとも停止対象へのアクセスなし・異常0)。オーナー承認でバンダイ・J-Net21の収集済みデータを削除、VMの消し忘れスクリプトcheckThemes.mjs(2026-08-25作成・参照なし)を削除、CLAUDE.mdの値上げR社数を16社に修正
 - 完了した状態：VM・手元の items.json からバンダイ334件・J-Net21 75件、VMバックアップからJ-Net21 64件を削除し残存0を確認。削除後のVM生成はガチャ127ページ/70件・補助金773ページ/329件(締切切れの減少)で異常0
-- 残課題・次にやること：値上げ7社の規約原文確認、既存第1層テーマの規約見直し、公開判断材料5章の残りの決定事項(層の解釈・ドメイン・作成者名・弁護士相談・アフィリエイト)
-- 触ったファイル：CLAUDE.md、HANDOFF.md、DECISIONS.md、SESSION_LOG.md、VM側 data/pilots/*/items*.json・checkThemes.mjs(git管理外)
+- 追記：オーナー決定(B)で第1層のうちC・H以外のactive 70件を規約見直しまで一時停止(VMのDBでactive=false、一覧はdata/paused-sources-2026-10-07.json)
+- 残課題・次にやること：値上げ7社の規約原文確認、停止中70件の規約見直しと個別再開、公開判断材料5章の残りの決定事項(層の解釈・ドメイン・作成者名・弁護士相談・アフィリエイト)
+- 触ったファイル：CLAUDE.md、HANDOFF.md、DECISIONS.md、SESSION_LOG.md、data/paused-sources-2026-10-07.json(新規)、VM側 data/pilots/*/items*.json・checkThemes.mjs・sourcesテーブル(git管理外)
