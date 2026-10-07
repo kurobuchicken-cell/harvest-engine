@@ -639,3 +639,10 @@
 - 残課題・次にやること：収集済みデータ(バンダイ・J-Net21)の削除可否、値上げ7社の規約原文確認、既存第1層テーマの規約見直し、5章の残りの決定事項。その後、補助金P公開版の準備(J-Net21除外・運営者ページ・sitemap・canonical・hreflang絶対URL化・薄いページnoindex)・VMからのデプロイ方法検証
 - 追記：オーナー決定でバンダイ・J-Net21・値上げR 5社の収集・AI処理・掲載を停止しVM反映。収集済みデータは保持(削除可否は未決)
 - 触ったファイル：公開判断材料.html(新規)、HANDOFF.md、SESSION_LOG.md、DECISIONS.md、CLAUDE.md、仕様書_harvest-engine.html、src/pilots/gacha/{genre,generate,languages}.ts、src/pilots/subsidy/{genre,generate}.ts、src/pilots/price/{sources,genre,generate}.ts
+
+## harvest-engine-publish-plan-02（2026-10-07）
+- 作業環境：ノートPC
+- やったこと：停止後初の04:00定期実行を確認(3ジャンルとも停止対象へのアクセスなし・異常0)。オーナー承認でバンダイ・J-Net21の収集済みデータを削除、VMの消し忘れスクリプトcheckThemes.mjs(2026-08-25作成・参照なし)を削除、CLAUDE.mdの値上げR社数を16社に修正
+- 完了した状態：VM・手元の items.json からバンダイ334件・J-Net21 75件、VMバックアップからJ-Net21 64件を削除し残存0を確認。削除後のVM生成はガチャ127ページ/70件・補助金773ページ/329件(締切切れの減少)で異常0
+- 残課題・次にやること：値上げ7社の規約原文確認、既存第1層テーマの規約見直し、公開判断材料5章の残りの決定事項(層の解釈・ドメイン・作成者名・弁護士相談・アフィリエイト)
+- 触ったファイル：CLAUDE.md、HANDOFF.md、DECISIONS.md、SESSION_LOG.md、VM側 data/pilots/*/items*.json・checkThemes.mjs(git管理外)
