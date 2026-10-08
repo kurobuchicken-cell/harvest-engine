@@ -677,3 +677,4 @@
 - 残課題・次にやること：オーナーがPerplexityで当事者の声を集める→機能確定→Expoで実装。WindowsからEASで提出できるかの確認、medaka-logのgit/GitHub作成(オーナー確認後)。値上げ7社の規約原文・停止70件の扱いは未着手
 - 触ったファイル：DECISIONS.md、CLAUDE.md、HANDOFF.md、勝算の見直し.html、会社説明資料.html、SESSION_LOG.md、C:\dev\medaka-log\仕様書_medaka-log.html
 - 追記(同日・続き)：オーナーのPerplexity調査(6問)でメダカ記録アプリが2026年に6本既出と判明→S をNG、6つ目の壁「当事者が自分で作る」を追加。型Cを「当事者が作りにくい(毎日の更新が要る)」で掘り、峠の開通通知+走った峠の記録(テーマT)を採択(Perplexity峠1〜4・長野/新潟/群馬の規約原文・JARTIC FAQ・Expo push無料を確認)。オーナー方針「ワンストップで解決」「エンジンと皮を分けて台数を増やす」を記憶に保存。C:\dev\toge-log\仕様書_toge-log.html を新規作成。次は情報源(都道府県・国道事務所)の洗い出しと1県ずつの規約原文確認
+- 追記(同日・終了時)：テーマTの情報源の洗い出し第1回(北海道・東北・関東甲信越・北陸の一部・鳥取・奈良。建設事務所単位・PDF中心で100ページ超の見込み)と規約の一次確認を仕様書4-1・4-2に記録。オーナー指示でセッション分割、次は harvest-engine-toge-sources-01(SESSION_HANDOFF.mdを作り直し)
