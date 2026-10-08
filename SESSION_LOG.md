@@ -696,3 +696,4 @@
 - 残課題・次にやること：エンジンの実装(robots.txt確認→11〜12月の発表で試運転)、Cloudflareアカウント作成(オーナー)、峠マスタの緯度経度の出典、アプリ実装
 - 触ったファイル：C:\dev\toge-log\仕様書_toge-log.html、DECISIONS.md、HANDOFF.md、SESSION_LOG.md
 - 追記(同日・続き)：エンジンの見張り・構造化を実装(src/pilots/toge/、npm run pilot:toge)。robots.txtを約35サイトで確認。手元の試運転3回(AI費 計約154円、オーナー承認)で39ページから冬期閉鎖330区間を取り出した。状態はコードで判定、冬期以外の除外、子ページ辿り、年の補正、カウンタ除外を入れた。単体確認30項目・型チェックOK。次は峠マスタ作成・季節の頻度・VM反映・Cloudflare配置
+- 追記(同日・続き)：峠マスタ328区間を作成(src/pilots/toge/passes.json、追加はmaster.ts add)。アプリ用データsite/toge/passes.jsonに328件、要確認0。状態の基準を保存。次は緯度経度・季節の頻度とVM反映・Cloudflare配置

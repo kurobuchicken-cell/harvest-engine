@@ -1,8 +1,9 @@
+import passesJson from "./passes.json";
 import type { PassMaster, PassState, RowStatus, TogePage, TogeRow } from "./types";
 
-// 峠マスタ。最初の収集で取り出した行(data/pilots/toge/review.json)をGMが確認して追加する。
-// ここに無い行は公開も通知もしない(誤った峠に通知を送らないため)
-export const PASSES: PassMaster[] = [];
+// 峠マスタ。要確認の行(data/pilots/toge/review.json)をmaster.tsで追加し、GMが差分を確認してコミットする。
+// ここに無い行は公開も通知もしない(誤った峠に通知を送らないため)。idはアプリの通知登録が参照するため、一度付けたら変えない
+export const PASSES: PassMaster[] = passesJson as PassMaster[];
 
 export function normalizeKey(publisherId: string, route: string, section: string): string {
   const norm = (s: string) =>
@@ -82,7 +83,10 @@ export function matchRows(pages: TogePage[], now: Date, masters: PassMaster[] = 
       continue;
     }
     // 日付の食い違いは発表日の新しい方を採る
-    const latest = entries.sort((a, b) => pageTime(b.page).localeCompare(pageTime(a.page)))[0];
+    // 同じ発表に「夜間のみ→終日」のように同じ区間が2段階で載る(福島の観光道路)ため、同じ発表なら閉鎖開始の遅い本閉鎖を採る
+    const latest = entries.sort(
+      (a, b) => pageTime(b.page).localeCompare(pageTime(a.page)) || (b.row.closeAt ?? "").localeCompare(a.row.closeAt ?? ""),
+    )[0];
     states.set(passId, {
       passId,
       status: latest.row.status,
