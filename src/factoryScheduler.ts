@@ -50,12 +50,42 @@ export async function runAllGenres(): Promise<void> {
   }
 }
 
+// 峠の開通・閉鎖の発表が動く季節(春3/1〜6/30・秋10/15〜12/15、JST)は、当日朝に知らせるため日中3時間ごとにも見張る(仕様書_toge-log 2-2)
+export function inTogeSeason(now: Date): boolean {
+  const md = now.toLocaleDateString("en-CA", { timeZone: "Asia/Tokyo" }).slice(5);
+  return (md >= "03-01" && md <= "06-30") || (md >= "10-15" && md <= "12-15");
+}
+
+export async function runTogeInSeason(now = new Date()): Promise<void> {
+  if (!inTogeSeason(now)) return;
+  if (running) {
+    console.warn("[factoryScheduler] 実行中のためtogeの季節実行をスキップします");
+    return;
+  }
+  running = true;
+  try {
+    const { code, timedOut } = await runChild("toge");
+    console.log(`[factoryScheduler] toge(season) exit code=${code} timedOut=${timedOut}`);
+    if (code !== 0 || timedOut) {
+      await notifyAnomalies("出口工場 季節実行: toge", [`実行が異常終了しました(exit code=${code} timedOut=${timedOut})。pm2ログ(factory-scheduler)を確認してください`], now.toISOString()).catch(
+        (err) => console.error("[factoryScheduler] notify failed:", err),
+      );
+    }
+  } finally {
+    running = false;
+  }
+}
+
 // 毎日19:00 UTC(= 04:00 JST)。評議会(月曜09:00 JST)・監査(月曜10:00 JST)とは重ならない
+// 峠の季節実行は06・09・12・15・18・21時JST(= 21・0・3・6・9・12時UTC)
 export function startFactoryScheduler(): void {
   cron.schedule("0 19 * * *", () => {
     runAllGenres().catch((err) => console.error("[factoryScheduler] failed:", err));
   });
-  console.log("[factoryScheduler] started (daily: 19:00 UTC = 04:00 JST)");
+  cron.schedule("0 21,0,3,6,9,12 * * *", () => {
+    runTogeInSeason().catch((err) => console.error("[factoryScheduler] toge season failed:", err));
+  });
+  console.log("[factoryScheduler] started (daily: 19:00 UTC = 04:00 JST, toge season: every 3h 06-21 JST)");
 }
 
 if (require.main === module) {
