@@ -24,6 +24,7 @@
     "pilot:subsidy": "tsx src/factory/run.ts subsidy",
     "pilot:gacha": "tsx src/factory/run.ts gacha",
     "pilot:price": "tsx src/factory/run.ts price",
+    "pilot:toge": "tsx src/factory/run.ts toge",
     "factory:run": "tsx src/factory/run.ts",
     "factory:schedule": "tsx src/factoryScheduler.ts",
     "research:sources": "tsx src/research/run.ts"

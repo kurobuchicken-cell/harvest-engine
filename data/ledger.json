@@ -1342,5 +1342,47 @@
     "fxRateSource": "https://open.er-api.com/v6/latest/USD",
     "fxRateStatus": "resolved",
     "recordedAt": "2026-10-06T07:14:58.483Z"
+  },
+  {
+    "category": "api",
+    "service": "pilot-toge-haiku",
+    "amountUsd": 0.418634,
+    "amountJpy": 66,
+    "description": "峠の開通通知パイロット: 発表ページ39件を構造化(in=220694 out=39588)",
+    "occurredAt": "2026-10-08T09:57:08.594Z",
+    "id": "7e08305a-3f2e-455a-b18b-79a8f401c466",
+    "fxRate": 158.100522,
+    "fxRateFetchedAt": "2026-10-08T09:57:08.596Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-08T09:57:09.094Z"
+  },
+  {
+    "category": "api",
+    "service": "pilot-toge-haiku",
+    "amountUsd": 0.53438,
+    "amountJpy": 84,
+    "description": "峠の開通通知パイロット: 発表ページ38件を構造化(in=331870 out=40502)",
+    "occurredAt": "2026-10-08T10:09:24.759Z",
+    "id": "c01bb7ab-cc10-42e4-ac18-fca3c536a299",
+    "fxRate": 158.100522,
+    "fxRateFetchedAt": "2026-10-08T10:09:24.760Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-08T10:09:24.902Z"
+  },
+  {
+    "category": "api",
+    "service": "pilot-toge-haiku",
+    "amountUsd": 0.022434,
+    "amountJpy": 4,
+    "description": "峠の開通通知パイロット: 発表ページ3件を構造化(in=16849 out=1117)",
+    "occurredAt": "2026-10-08T10:10:23.865Z",
+    "id": "1ee559ff-ab24-4fbe-b8c6-9bc94ef18bf5",
+    "fxRate": 158.100522,
+    "fxRateFetchedAt": "2026-10-08T10:10:23.865Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-08T10:10:23.901Z"
   }
 ]
