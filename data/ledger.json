@@ -1398,5 +1398,19 @@
     "fxRateSource": "https://open.er-api.com/v6/latest/USD",
     "fxRateStatus": "resolved",
     "recordedAt": "2026-10-08T10:50:27.751Z"
+  },
+  {
+    "category": "api",
+    "service": "pilot-toge-geo-sonnet",
+    "amountUsd": 0.092,
+    "amountJpy": 15,
+    "description": "【仮・上限額】峠の位置推定の試験(claude-sonnet-5-5、30件)。返答の解析で処理が止まり自動記帳されなかったため上限額(入力約6千+出力8千トークン相当)で仮記帳。実額はConsoleのコスト画面の2026-10-15(UTC)で確認後に修正",
+    "occurredAt": "2026-10-15T01:15:00.000Z",
+    "id": "9cde63e3-4f71-41cf-8b24-be88f445b03f",
+    "fxRate": 158.305497,
+    "fxRateFetchedAt": "2026-10-15T01:25:21.057Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-15T01:25:21.483Z"
   }
 ]

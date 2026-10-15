@@ -5,7 +5,8 @@ import { AiBudget, AiSession, responseText } from "../../factory/ai";
 import { USER_AGENT } from "../../lib/constants";
 import type { PassMaster } from "./types";
 
-// 使い方: tsx src/pilots/toge/geocode.ts
+// 使い方: tsx src/pilots/toge/geocode.ts [--model haiku|sonnet] [--limit N] [--max-jpy N] [--ring-pass N] [--ring-end N]
+// --limit: 未処理の峠から均等にN件だけ試す(一致率を少数で確かめてから全件に進むため)
 // 緯度経度の無い峠に、国土地理院の地名情報タイル(提供実験、国土地理院コンテンツ利用規約=PDL1.0、基本測量成果ではない)の座標を入れる。
 // タイルは場所を指定して取る方式のため、まずAIでおおよその位置を推定し、その周りのタイルだけを取る。推定位置そのものは保存しない
 // https://github.com/gsi-cyberjapan/experimental_pni
@@ -18,9 +19,21 @@ const ESTIMATE_PATH = path.resolve(process.cwd(), "data", "pilots", "toge", "geo
 const FETCH_RETRIES = 3;
 const TILE_BASE = "https://cyberjapandata.gsi.go.jp/xyz";
 const ZOOM = 15;
-const MAX_RING = 2; // z15で1枚約1km四方。中心から外へ2周(約±2.5km)まで探す
+const arg = (name: string, fallback: string) => {
+  const i = process.argv.indexOf(`--${name}`);
+  return i >= 0 ? process.argv[i + 1] : fallback;
+};
+// z15で1枚約1km四方。峠名は全国に少ないため取り違えにくく、起点・終点の地名より広く探す
+const RING_PASS = Number(arg("ring-pass", "4"));
+const RING_END = Number(arg("ring-end", "3"));
+const MODELS: Record<string, { model: string; service: string }> = {
+  haiku: { model: "claude-haiku-4-5", service: "pilot-toge-geo-haiku" },
+  sonnet: { model: "claude-sonnet-5-5", service: "pilot-toge-geo-sonnet" },
+};
+const MODEL = MODELS[arg("model", "sonnet")];
+const LIMIT = Number(arg("limit", "0"));
 const REQUEST_INTERVAL_MS = 1000;
-const MAX_JPY = 30; // オーナー承認の上限
+const MAX_JPY = Number(arg("max-jpy", "10")); // 実行ごとにオーナー承認の上限を渡す
 const BATCH = 30;
 
 type Kind = "experimental_nnfpt" | "experimental_nrpt"; // 自然地名 / 居住地名
@@ -98,9 +111,9 @@ async function tile(kind: Kind, x: number, y: number): Promise<Feature[]> {
   return features;
 }
 
-async function locate(guess: Guess, kinds: Kind[]): Promise<{ lat: number; lng: number } | null> {
+async function locate(guess: Guess, kinds: Kind[], maxRing: number): Promise<{ lat: number; lng: number } | null> {
   const center = tileOf(guess.lat, guess.lng);
-  for (let ring = 0; ring <= MAX_RING; ring++) {
+  for (let ring = 0; ring <= maxRing; ring++) {
     const features: Feature[] = [];
     for (let dx = -ring; dx <= ring; dx++) {
       for (let dy = -ring; dy <= ring; dy++) {
@@ -137,25 +150,35 @@ const SCHEMA = {
 async function estimate(passes: PassMaster[]): Promise<Estimate[]> {
   if (passes.length === 0) return [];
   const budget = await AiBudget.load();
-  const ai = new AiSession(budget, "pilot-toge-geo-haiku", "claude-haiku-4-5");
+  const ai = new AiSession(budget, MODEL.service, MODEL.model);
   const out: Estimate[] = [];
-  for (let i = 0; i < passes.length; i += BATCH) {
-    if (budget.spentJpy >= MAX_JPY) {
-      console.warn(`[geocode] 上限${MAX_JPY}円に達したため推定を打ち切り(${out.length}件済み)`);
-      break;
+  // 返答の解析で落ちても、それまでの費用は必ず記帳する(2026-10-15、Sonnetの返答が壊れたJSONで止まり未記帳になった)
+  try {
+    for (let i = 0; i < passes.length; i += BATCH) {
+      if (budget.spentJpy >= MAX_JPY) {
+        console.warn(`[geocode] 上限${MAX_JPY}円に達したため推定を打ち切り(${out.length}件済み)`);
+        break;
+      }
+      const chunk = passes.slice(i, i + BATCH).map((p) => ({ id: p.id, prefecture: p.prefecture, route: p.route, section: p.section, names: [p.name, ...p.aliases] }));
+      const res = await ai.create({
+        max_tokens: 16000,
+        system: SYSTEM,
+        messages: [{ role: "user", content: JSON.stringify(chunk) }],
+        output_config: { format: { type: "json_schema", schema: SCHEMA } },
+      });
+      if (!res) break;
+      const text = responseText(res);
+      try {
+        out.push(...(JSON.parse(text) as { items: Estimate[] }).items);
+      } catch (err) {
+        console.error(`[geocode] 返答を解析できず飛ばす stop_reason=${res.stop_reason} 先頭=${JSON.stringify(text.slice(0, 300))}`, err);
+        continue;
+      }
+      console.log(`[geocode] estimated ${out.length}/${passes.length} (${Math.round(budget.spentJpy * 10) / 10}円)`);
     }
-    const chunk = passes.slice(i, i + BATCH).map((p) => ({ id: p.id, prefecture: p.prefecture, route: p.route, section: p.section, names: [p.name, ...p.aliases] }));
-    const res = await ai.create({
-      max_tokens: 8000,
-      system: SYSTEM,
-      messages: [{ role: "user", content: JSON.stringify(chunk) }],
-      output_config: { format: { type: "json_schema", schema: SCHEMA } },
-    });
-    if (!res) break;
-    out.push(...(JSON.parse(responseText(res)) as { items: Estimate[] }).items);
-    console.log(`[geocode] estimated ${out.length}/${passes.length} (${Math.round(budget.spentJpy * 10) / 10}円)`);
+  } finally {
+    await ai.record(`峠の開通通知パイロット: 峠${out.length}件の位置の手がかりを推定(${MODEL.model})`);
   }
-  await ai.record(`峠の開通通知パイロット: 峠${out.length}件の位置の手がかりを推定`);
   return out;
 }
 
@@ -163,7 +186,8 @@ const inJapan = (g: Guess | null): g is Guess => !!g && g.lat > 20 && g.lat < 46
 
 async function main(): Promise<void> {
   const master = JSON.parse(await readFile(MASTER_PATH, "utf-8")) as PassMaster[];
-  const todo = master.filter((m) => m.lat === undefined);
+  const pending = master.filter((m) => m.lat === undefined);
+  const todo = LIMIT > 0 ? pending.filter((_, i) => i % Math.max(1, Math.floor(pending.length / LIMIT)) === 0).slice(0, LIMIT) : pending;
   console.log(`[geocode] 対象 ${todo.length}/${master.length}`);
   const saved = JSON.parse(await readFile(ESTIMATE_PATH, "utf-8").catch(() => "[]")) as Estimate[];
   const savedIds = new Set(saved.map((e) => e.id));
@@ -177,13 +201,13 @@ async function main(): Promise<void> {
     let point: { lat: number; lng: number } | null = null;
     let how = "unmatched";
     if (inJapan(e.pass)) {
-      point = await locate(e.pass, ["experimental_nnfpt"]);
+      point = await locate(e.pass, ["experimental_nnfpt"], RING_PASS);
       if (point) how = "pass";
     }
     if (!point) {
       const ends: { lat: number; lng: number }[] = [];
       for (const g of [e.start, e.end].filter(inJapan)) {
-        const p = (await locate(g, ["experimental_nrpt"])) ?? (await locate(g, ["experimental_nnfpt"]));
+        const p = (await locate(g, ["experimental_nrpt"], RING_END)) ?? (await locate(g, ["experimental_nnfpt"], RING_END));
         if (p) ends.push(p);
       }
       // 起点と終点が離れすぎている場合は取り違えの恐れがあるため片方の端点を使う
