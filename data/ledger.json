@@ -1412,5 +1412,19 @@
     "fxRateSource": "https://open.er-api.com/v6/latest/USD",
     "fxRateStatus": "resolved",
     "recordedAt": "2026-10-15T01:25:21.483Z"
+  },
+  {
+    "category": "api",
+    "service": "pilot-toge-geo-sonnet",
+    "amountUsd": 0.078232,
+    "amountJpy": 12,
+    "description": "峠の開通通知パイロット: 峠30件の位置の手がかりを推定(claude-sonnet-5-5)(in=4796 out=6864)",
+    "occurredAt": "2026-10-15T01:26:47.158Z",
+    "id": "b923e306-6fe3-4524-891e-5731c300fa3e",
+    "fxRate": 158.305497,
+    "fxRateFetchedAt": "2026-10-15T01:26:47.158Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-15T01:26:47.199Z"
   }
 ]

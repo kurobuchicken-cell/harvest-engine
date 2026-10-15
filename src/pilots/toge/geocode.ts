@@ -3,9 +3,10 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { AiBudget, AiSession, responseText } from "../../factory/ai";
 import { USER_AGENT } from "../../lib/constants";
+import { PLACES_PATH, type Place } from "./estatPlaces";
 import type { PassMaster } from "./types";
 
-// 使い方: tsx src/pilots/toge/geocode.ts [--model haiku|sonnet] [--limit N] [--max-jpy N] [--ring-pass N] [--ring-end N]
+// 使い方: tsx src/pilots/toge/geocode.ts [--source estat|ai] [--model haiku|sonnet] [--limit N] [--max-jpy N] [--ring-pass N] [--ring-end N]
 // --limit: 未処理の峠から均等にN件だけ試す(一致率を少数で確かめてから全件に進むため)
 // 緯度経度の無い峠に、国土地理院の地名情報タイル(提供実験、国土地理院コンテンツ利用規約=PDL1.0、基本測量成果ではない)の座標を入れる。
 // タイルは場所を指定して取る方式のため、まずAIでおおよその位置を推定し、その周りのタイルだけを取る。推定位置そのものは保存しない
@@ -32,6 +33,7 @@ const MODELS: Record<string, { model: string; service: string }> = {
 };
 const MODEL = MODELS[arg("model", "sonnet")];
 const LIMIT = Number(arg("limit", "0"));
+const SOURCE = arg("source", "estat");
 const REQUEST_INTERVAL_MS = 1000;
 const MAX_JPY = Number(arg("max-jpy", "10")); // 実行ごとにオーナー承認の上限を渡す
 const BATCH = 30;
@@ -184,7 +186,87 @@ async function estimate(passes: PassMaster[]): Promise<Estimate[]> {
 
 const inJapan = (g: Guess | null): g is Guess => !!g && g.lat > 20 && g.lat < 46 && g.lng > 122 && g.lng < 154;
 
+// 区間の文字列を起点・終点に分ける。「AからBまで」「A～B」の両方がある
+export function splitSection(section: string): string[] {
+  return section
+    .normalize("NFKC")
+    .replace(/まで/g, "")
+    .split(/から|[~〜～\-－‐―]|→/)
+    .map((s) => s.replace(/[()（）「」\s]/g, ""))
+    .filter((s) => s.length >= 2);
+}
+
+// e-Statの名前は「大字戸倉」「字母子里」、区間は「戸倉」「燧ヶ岳」/「燧ケ岳」のように書き分けるため、比較の前にそろえる
+const stripAza = (s: string) => s.replace(/大字|字/g, "").replace(/[ヶケヵ]/g, "ケ");
+
+// 端点の文字列に含まれる大字名のうち最も長いものを採る。市町村名が書かれていればその市町村の中だけで探す(同名の大字の取り違えを防ぐ)
+export function findPlace(text: string, places: Place[], cityHint: string | null): { place: Place; city: string } | null {
+  const cities = [...new Set(places.map((p) => p.city))].filter((c) => text.includes(c)).sort((a, b) => b.length - a.length);
+  const city = cities[0] ?? cityHint;
+  if (!city) return null;
+  const rest = stripAza(text.slice(text.indexOf(city) >= 0 ? text.indexOf(city) + city.length : 0));
+  const hits = places
+    .filter((p) => p.city === city)
+    .filter((p) => {
+      const n = stripAza(p.name);
+      return n.length >= 2 && rest.includes(n);
+    })
+    .sort((a, b) => stripAza(b.name).length - stripAza(a.name).length);
+  return hits[0] ? { place: hits[0], city } : null;
+}
+
+export function locateByPlaces(m: PassMaster, places: Place[]): { lat: number; lng: number; how: "midpoint" | "endpoint" } | null {
+  const inPref = places.filter((p) => p.pref === m.prefecture);
+  const ends: Place[] = [];
+  let cityHint: string | null = null;
+  for (const part of splitSection(m.section)) {
+    const hit = findPlace(part, inPref, cityHint);
+    if (hit) {
+      ends.push(hit.place);
+      cityHint = hit.city;
+    }
+  }
+  if (ends.length >= 2 && distanceKm(ends[0], ends[ends.length - 1]) <= 40) {
+    const [a, b] = [ends[0], ends[ends.length - 1]];
+    return { lat: (a.lat + b.lat) / 2, lng: (a.lng + b.lng) / 2, how: "midpoint" };
+  }
+  return ends[0] ? { lat: ends[0].lat, lng: ends[0].lng, how: "endpoint" } : null;
+}
+
+// AIの推定を使わず、e-Statの大字の代表点から区間の位置を出し、峠名があればその近くの国土地理院の地名タイルで峠の代表点に置き換える
+async function mainEstat(): Promise<void> {
+  const places = JSON.parse(await readFile(PLACES_PATH, "utf-8")) as Place[];
+  const master = JSON.parse(await readFile(MASTER_PATH, "utf-8")) as PassMaster[];
+  const pending = master.filter((m) => m.lat === undefined);
+  const todo = LIMIT > 0 ? pending.slice(0, LIMIT) : pending;
+  console.log(`[geocode] 対象 ${todo.length}/${master.length}(e-Stat)`);
+  const counts: Record<string, number> = {};
+  for (const m of todo) {
+    const base = locateByPlaces(m, places);
+    let how: string = base?.how ?? "unmatched";
+    let point = base ? { lat: base.lat, lng: base.lng } : null;
+    const passName = [m.name, ...m.aliases].find((n) => /峠|岳|山|高原|ライン|スカイ/.test(n) && !/[号線]$/.test(n));
+    if (point && passName) {
+      const refined = await locate({ name: passName, ...point }, ["experimental_nnfpt"], RING_PASS);
+      if (refined) {
+        point = refined;
+        how = "pass";
+      }
+    }
+    if (point) {
+      m.lat = Math.round(point.lat * 1e6) / 1e6;
+      m.lng = Math.round(point.lng * 1e6) / 1e6;
+      m.geo = how as PassMaster["geo"];
+    }
+    counts[how] = (counts[how] ?? 0) + 1;
+    console.log(`[geocode] ${m.id} ${m.name} -> ${how}`);
+  }
+  await writeFile(MASTER_PATH, `${JSON.stringify(master, null, 2)}\n`, "utf-8");
+  console.log(`[geocode] ${JSON.stringify(counts)}`);
+}
+
 async function main(): Promise<void> {
+  if (SOURCE === "estat") return mainEstat();
   const master = JSON.parse(await readFile(MASTER_PATH, "utf-8")) as PassMaster[];
   const pending = master.filter((m) => m.lat === undefined);
   const todo = LIMIT > 0 ? pending.filter((_, i) => i % Math.max(1, Math.floor(pending.length / LIMIT)) === 0).slice(0, LIMIT) : pending;
