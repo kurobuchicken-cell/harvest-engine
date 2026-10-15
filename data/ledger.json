@@ -1384,5 +1384,19 @@
     "fxRateSource": "https://open.er-api.com/v6/latest/USD",
     "fxRateStatus": "resolved",
     "recordedAt": "2026-10-08T10:10:23.901Z"
+  },
+  {
+    "category": "api",
+    "service": "pilot-toge-geo-haiku",
+    "amountUsd": 0.161774,
+    "amountJpy": 26,
+    "description": "峠の開通通知パイロット: 峠328件の位置の手がかりを推定(in=46224 out=23110)",
+    "occurredAt": "2026-10-08T10:50:27.274Z",
+    "id": "5f2b8611-41e2-410c-8ce5-7815c232c477",
+    "fxRate": 158.100522,
+    "fxRateFetchedAt": "2026-10-08T10:50:27.274Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-08T10:50:27.751Z"
   }
 ]

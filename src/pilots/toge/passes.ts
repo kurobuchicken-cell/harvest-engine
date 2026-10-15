@@ -14,6 +14,65 @@ export function normalizeKey(publisherId: string, route: string, section: string
   return `${publisherId}|${norm(route)}|${norm(section)}`;
 }
 
+// 名寄せの比較用。AIは同じ区間でも書き写すたびに郡名・「地内」・「から〜まで」の有無が変わる(群馬の2026年度の発表で全行が外れた)ため、
+// それらを落としてから比べる。保存済みのキーにも同じ処理をかけるので、idの元になるnormalizeKeyは変えない
+export function canonicalKey(key: string): string {
+  return key
+    .split("|")
+    .map((part, i) =>
+      i === 0
+        ? part
+        : part
+            .replace(/から/g, "~")
+            .replace(/[一-龥ァ-ヶ]{1,4}郡(?=[一-龥ぁ-んァ-ヶ])/g, "")
+            .replace(/地内|地先|付近|まで|一般|主要地方道|地方道|県道|道道/g, "")
+            .replace(/~+/g, "~")
+            .replace(/^~|~$/g, ""),
+    )
+    .join("|");
+}
+
+const bigrams = (s: string) => new Set([...Array(Math.max(s.length - 1, 0))].map((_, i) => s.slice(i, i + 2)));
+export function similarity(a: string, b: string): number {
+  const x = bigrams(a);
+  const y = bigrams(b);
+  if (x.size === 0 || y.size === 0) return a === b ? 1 : 0;
+  let inter = 0;
+  for (const g of x) if (y.has(g)) inter++;
+  return inter / (x.size + y.size - inter);
+}
+
+// 路線名はAIが「607号」「607号石崎松前線」「水上片品線63号」のように書き分けるため、包含か路線番号の一致で同じ路線とみなす
+export function sameRoute(a: string, b: string): boolean {
+  if (a === b || (a.length >= 2 && b.includes(a)) || (b.length >= 2 && a.includes(b))) return true;
+  const num = (s: string) => /(\d+)号/.exec(s)?.[1] ?? null;
+  return num(a) !== null && num(a) === num(b);
+}
+
+const FUZZY_MIN = 0.5;
+const FUZZY_MARGIN = 0.15;
+
+// 完全一致しない行は、同じ発行元・同じ路線の峠の中で区間の文字の重なりが最も大きいものに結びつける。
+// 誤った峠に通知しないよう、十分に重なり、かつ2番目との差がはっきりある時だけ採る
+export function fuzzyMatch(key: string, masters: PassMaster[]): PassMaster | null {
+  const [pub, route, section] = canonicalKey(key).split("|");
+  const scored = masters
+    .map((m) => {
+      const best = Math.max(
+        ...m.keys.map((k) => {
+          const [mp, mr, ms] = canonicalKey(k).split("|");
+          return mp === pub && sameRoute(mr, route) ? similarity(ms, section) : 0;
+        }),
+      );
+      return { m, score: best };
+    })
+    .filter((x) => x.score > 0)
+    .sort((a, b) => b.score - a.score);
+  if (scored.length === 0 || scored[0].score < FUZZY_MIN) return null;
+  if (scored.length > 1 && scored[0].score - scored[1].score < FUZZY_MARGIN) return null;
+  return scored[0].m;
+}
+
 export interface ReviewRow extends TogeRow {
   key: string;
   sourceId: string;
@@ -55,7 +114,7 @@ const pageTime = (p: TogePage) => p.announcedAt ?? p.changedAt ?? "";
 export function matchRows(pages: TogePage[], now: Date, masters: PassMaster[] = PASSES): MatchResult {
   const nowJst = jstNow(now);
   const byKey = new Map<string, PassMaster>();
-  for (const m of masters) for (const k of m.keys) byKey.set(k, m);
+  for (const m of masters) for (const k of m.keys) byKey.set(canonicalKey(k), m);
 
   const matched = new Map<string, { row: ReviewRow; page: TogePage }[]>();
   const unmatched: ReviewRow[] = [];
@@ -64,7 +123,7 @@ export function matchRows(pages: TogePage[], now: Date, masters: PassMaster[] = 
       const row = fixSeason(raw);
       const key = normalizeKey(page.publisherId, row.route, row.section);
       const review: ReviewRow = { ...row, key, sourceId: page.id, status: rowStatus(row, nowJst) };
-      const master = byKey.get(key);
+      const master = byKey.get(canonicalKey(key)) ?? fuzzyMatch(key, masters);
       if (!master) {
         unmatched.push(review);
         continue;

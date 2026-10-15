@@ -54,6 +54,8 @@ export interface PassMaster {
   keys: string[];
   lat?: number;
   lng?: number;
+  // 座標の決め方(geocode.ts)。pass=峠名の代表点、midpoint=起点と終点の中点、endpoint=片方の端点のみ。出典は国土地理院の地名情報
+  geo?: "pass" | "midpoint" | "endpoint";
 }
 
 export interface PassState {
