@@ -8,15 +8,15 @@
 支出なし。詳細はDECISIONS.md同日。
 - **P・Q・Rの毎日の実行を止めた**: `src/factoryScheduler.ts`の毎日04:00の定期実行を峠(toge)だけにした(3fb6bcb、push済み)。
   P・Q・Rのコード・データ・手動実行(`src/factory/run.ts <genre>`)は残す。季節の3時間ごとの峠の見張りは元からtogeだけ
-- **VMへの反映は未実施**: VMは acafe8d のままで、P・Q・Rは毎日04:00に動き続けている。自動承認モードがVMへの書き込みを止めたため、
-  オーナーの許可を得てから行う。手順: VMの`~/apps/harvest-engine`で`data/ledger.json`(VM側の未コミットの記録)を
-  `~/ledger.vm.bak-20261016.json`に控えて退避→`git checkout -- data/ledger.json`→`git pull --ff-only`→控えを元に戻して前後で同一を確認→
-  `pm2 restart harvest-engine-factory-scheduler`のみ。ssh鍵は`tokens/harvest_engine_vm_key`、Git付属のssh.exeを使う
+- **VM反映済み(同日、オーナーが手元のPowerShellから実行)**: VMの`data/ledger.json`(未コミットのVM側記録)を`~/ledger.vm.bak-20261016.json`に
+  控えて退避→2fb7aedまでpull→元に戻して`cmp`で同一を確認→`harvest-engine-factory-scheduler`のみpm2 restart。再起動後のログと
+  `SCHEDULED_GENRE_IDS = ["toge"]`を確認。自動承認モードはVMへの書き込みを止めるため、VM反映は今後もオーナー実行になりうる
+  (PowerShellに長いssh 1行を貼ると引用符で入力待ちになる。手順をLF改行のファイルにして`Get-Content -Raw ファイル | ssh.exe ... bash -s`で渡すと通る)
 - **停止中の第1層70件を正式にやめた**: 規約の見直しはしない。VMのDBはactive=falseのまま、データと`data/paused-sources-2026-10-07.json`は残す
 - 稼働状況: sources 144件(active 33件 = C 8件・H 25件)、残り111件はinactive(うち70件は今回正式に終了)。
-  Tの見張りはVMで継続(39ページ)。P・Q・RはVM反映後に停止。週次評議会は停止のまま
+  Tの見張りはVMで継続(39ページ)。P・Q・Rの定期実行は停止済み。週次評議会は停止のまま
 - 更新: DECISIONS.md・CLAUDE.md(層の割り当て)・会社説明資料.html(テーマの表示を「終了」「凍結」「開発お休み中」に、10-16のマイルストーン追加)
-- **次アクション**: VMへの反映(上の手順)/テーマUはsugoi-shortsの次アクション(オーナーがABFをnote・TikTokに公開→投稿の分数を測る、
+- **次アクション**: テーマUはsugoi-shortsの次アクション(オーナーがABFをnote・TikTokに公開→投稿の分数を測る、
   sugoi-shorts-i18n-01)/10-23朝に自動運転1週間の結果と「要素を増やす仕組み」の判断/11-02までに情報源調査の自動化をオーナーに聞く
   (ただし出口工場NGで調査自体が止まっているため、聞いて終わりにしてよい)
 
