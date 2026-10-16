@@ -9,7 +9,8 @@
 - **仕組み**: 毎日20:00に`src/autorun-start.ps1`(スリープ解除して実行)→VOICEVOX起動・スリープさせない処理・対話モードのclaude(SUGOI_AUTORUN=1、auto mode、指示は`src/autorun-prompt.md`)。05:00に`src/autorun-stop.ps1`で片付けてスリープに戻す。見張り(5時以降・5時間枠90%超えで停止)は既存のPreToolUseフック
 - **オーナー承認**: スリープさせない処理のファイル作成と、タスクスケジューラ登録(どちらも自動の安全判定で止まり、オーナーが許可)。PCはシャットダウンせずスリープにしておく運用
 - **確認**: 14:45に時間外で試し、使用率の記録→見張りの停止→stopの片付けまで動作。Claude in Chromeの確認画面で止まる問題は`--no-chrome`で回避
-- **次アクション**: 翌日、夜の結果(`work/autorun-report.md`・台帳の増減・使用率)を確認し指示文を直す/起床・起きたままが効いたかの確認/GNT企業集PDFの保存し直し(オーナー)/1本目の題材をオーナーが選ぶ
+- **Slack通知(オーナー指示)**: 朝5時に夜の結果をこのharvest-engineの通知チャンネルへメンション付きで送る(`src/autorun-notify.ts`、.envはharvest-engineのものを読む。テスト送信済み)
+- **次アクション**: 翌朝のSlack通知で夜の結果を確認(`work/autorun-report-日付.md`・台帳の増減・使用率)を確認し指示文を直す/起床・起きたままが効いたかの確認/GNT企業集PDFの保存し直し(オーナー)/1本目の題材をオーナーが選ぶ
 
 ### 【2026-10-16・sugoi-shorts-autorun-01】家PCでテーマUの自動運転の下準備
 支出なし・AI費なし。詳細は`C:\dev\sugoi-shorts\仕様書_sugoi-shorts.html` 3-7章。
