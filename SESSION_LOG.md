@@ -703,3 +703,10 @@
 - 追記(2026-10-15・続き)：峠の位置はAI推定方式(30件で30%)をやめ、e-Statの小地域境界データ(大字名と代表点)で引く方式に切り替え(AI費なし、試算68%)。全件の本番を独立プロセスで実行中(ログ data/pilots/toge/geocode.log)。完了後にpasses.jsonを確認してコミット・VM反映
 - 追記(2026-10-15・続き)：位置の取得が完了。229/328区間に座標(検証で誤配置なし)。コミット・VM反映
 - 追記(2026-10-15・続き)：オーナー提案の「企業・技術のすごい裏話のショート動画」を調査。YouTubeショート広告収入はNG(90日1,000万回の条件)、TikTokで1台試す形をテーマUとして採択(判定基準・上限1,200円をオーナー承認)。DECISIONS・CLAUDE.md・会社説明資料・HANDOFFを更新、次セッション用のSESSION_HANDOFF.mdを作成
+
+## harvest-engine-toge-pause-01(2026-10-17)
+- 作業環境：家PC
+- やったこと：テーマTの開発を一時停止(VMの見張りは継続)、続けてsugoi-shorts-autorun-01(家PCでclone・VOICEVOX導入・使用率記録の確認)
+- 完了した状態：CLAUDE.md・HANDOFF.mdにT停止を記録。sugoi-shortsは家PCで動く状態、対話モードでwork/usage.jsonが書かれることを確認。支出なし
+- 残課題・次にやること：sugoi-shorts-autorun-02(タスクスケジューラ登録・スリープしない設定・夜の試運転)。T再開時はHANDOFFの【2026-10-08・toge-engine-01】の次アクションから
+- 触ったファイル：CLAUDE.md、HANDOFF.md、SESSION_LOG.md、C:\dev\sugoi-shorts\仕様書_sugoi-shorts.html・SESSION_LOG.md
