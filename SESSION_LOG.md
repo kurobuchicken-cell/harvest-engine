@@ -719,3 +719,10 @@
 - 完了した状態：factoryScheduler.tsの定期実行を峠だけに変更しpush済み(3fb6bcb)。DECISIONS・CLAUDE.md・会社説明資料・HANDOFFを更新。VMにも反映済み(オーナーが手元から実行、2fb7aed・ログで確認)
 - 残課題・次にやること：**sugoi-shorts-skill-01で `/episode`(1本作る流れのスキル)と `/wrap`(終了処理のスキル)を作る(オーナー承認)**。投稿パック・/stats・HANDOFF分割はその後。続けてsugoi-shorts側(ABF公開・i18n-01)。10-23の自動運転判断
 - 触ったファイル：src/factoryScheduler.ts、DECISIONS.md、CLAUDE.md、会社説明資料.html、HANDOFF.md、SESSION_LOG.md
+
+## sugoi-shorts-skill-01(2026-10-16)
+- 作業環境：家PC
+- やったこと：テーマUの /episode・/wrap スキル、チェック係6人(視聴者・中学生・事実確認・note読者・読み・聞き取り)、制作の夜の自動運転化、多言語(1言語1アカウント、英西葡仏伊中)の仕組み。ABFのnoteを原文で裏取りして直し反映。自動運転が起動しなかった不具合(Store版pwsh)を修正
+- 完了した状態：sugoi-shorts側は bb335b8 まで push。今夜の自動運転はwrightを判断待ち(画面の改修が要る)にしてネタ集め中。DECISIONS・HANDOFF・会社説明資料を更新
+- 残課題・次にやること：画面(player.js)の改修でwrightの判断待ちを解く/オーナーが言語別TikTokアカウントを作る→夜に作る外国語に足す/Kokoroにない言語の有料読み上げの提案/10-17朝のSlackとstopタスクの確認
+- 触ったファイル：DECISIONS.md、HANDOFF.md、会社説明資料.html、SESSION_LOG.md(本体は C:\dev\sugoi-shorts、同リポジトリのSESSION_LOG参照)
