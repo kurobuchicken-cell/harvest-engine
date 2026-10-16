@@ -710,3 +710,4 @@
 - 完了した状態：CLAUDE.md・HANDOFF.mdにT停止を記録。sugoi-shortsは家PCで動く状態、対話モードでwork/usage.jsonが書かれることを確認。支出なし
 - 残課題・次にやること：sugoi-shorts-autorun-02(タスクスケジューラ登録・スリープしない設定・夜の試運転)。T再開時はHANDOFFの【2026-10-08・toge-engine-01】の次アクションから
 - 触ったファイル：CLAUDE.md、HANDOFF.md、SESSION_LOG.md、C:\dev\sugoi-shorts\仕様書_sugoi-shorts.html・SESSION_LOG.md
+- 追記(同日)：sugoi-shorts-autorun-02(自動運転の登録・Slack通知・1週間の試し)に続き、テーマUにnoteの詳細版を追加(オーナー承認、やめる線なし)・YouTube横型NG。DECISIONS・CLAUDE.md・会社説明資料・HANDOFFを更新
