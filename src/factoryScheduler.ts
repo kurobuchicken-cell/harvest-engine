@@ -9,6 +9,10 @@ import { GENRES } from "./factory/registry";
 const GENRE_TIMEOUT_MS = 60 * 60 * 1000;
 const TSX_CLI = path.resolve(process.cwd(), "node_modules", "tsx", "dist", "cli.mjs");
 
+// 出口工場NG(2026-10-07)の後も公開予定のないP・Q・R(subsidy/gacha/price)が毎日動いていたため、2026-10-16オーナー判断で峠だけにした。
+// 手動実行(src/factory/run.ts)は全ジャンルのまま残す
+const SCHEDULED_GENRE_IDS = ["toge"];
+
 let running = false;
 
 // VMの空きメモリが約380MBしかないため、ジャンルごとに別プロセスで順番に動かし、終わるたびにメモリを返す
@@ -34,7 +38,7 @@ export async function runAllGenres(): Promise<void> {
   }
   running = true;
   try {
-    for (const genre of GENRES) {
+    for (const genre of GENRES.filter((g) => SCHEDULED_GENRE_IDS.includes(g.id))) {
       console.log(`[factoryScheduler] ${genre.id} start`);
       const { code, timedOut } = await runChild(genre.id);
       console.log(`[factoryScheduler] ${genre.id} exit code=${code} timedOut=${timedOut}`);
