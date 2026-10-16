@@ -1496,5 +1496,19 @@
     "fxRateSource": "https://open.er-api.com/v6/latest/USD",
     "fxRateStatus": "resolved",
     "recordedAt": "2026-10-16T02:01:36.836Z"
+  },
+  {
+    "id": "0b4517f5-4504-4b2f-9d91-c0d08bb17fe1",
+    "category": "api",
+    "service": "sugoi-shorts",
+    "amountUsd": 0.032568,
+    "amountJpy": 5,
+    "description": "テーマU 台本 abf(claude-sonnet-5-5 in=3794 out=2498)",
+    "occurredAt": "2026-10-16T06:24:01.788Z",
+    "fxRate": 158.086954,
+    "fxRateFetchedAt": "2026-10-16T06:24:01.737Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-16T06:24:01.788Z"
   }
 ]
