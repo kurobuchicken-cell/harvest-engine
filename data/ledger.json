@@ -1426,5 +1426,33 @@
     "fxRateSource": "https://open.er-api.com/v6/latest/USD",
     "fxRateStatus": "resolved",
     "recordedAt": "2026-10-15T01:26:47.199Z"
+  },
+  {
+    "id": "4a0b196f-7ace-41db-b077-a641430969b4",
+    "category": "api",
+    "service": "sugoi-shorts",
+    "amountUsd": 0.068188,
+    "amountJpy": 11,
+    "description": "テーマU 台本 abf(claude-sonnet-5-5 in=4094 out=6000)",
+    "occurredAt": "2026-10-15T10:18:46.109Z",
+    "fxRate": 158.305497,
+    "fxRateFetchedAt": "2026-10-15T10:18:45.930Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-15T10:18:46.109Z"
+  },
+  {
+    "id": "c16a441a-cde2-448e-9dc4-e04a872d257c",
+    "category": "api",
+    "service": "sugoi-shorts",
+    "amountUsd": 0.034896,
+    "amountJpy": 6,
+    "description": "テーマU 台本 abf(claude-sonnet-5-5 in=4093 out=2671)",
+    "occurredAt": "2026-10-15T10:19:38.101Z",
+    "fxRate": 158.305497,
+    "fxRateFetchedAt": "2026-10-15T10:19:38.047Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-15T10:19:38.101Z"
   }
 ]
