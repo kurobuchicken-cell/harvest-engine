@@ -717,5 +717,5 @@
 - 作業環境：家PC
 - やったこと：会社全体の整理。テーマUに集中し、P・Q・Rの毎日の実行停止と、停止中の第1層70件の正式終了を決定(オーナー承認)
 - 完了した状態：factoryScheduler.tsの定期実行を峠だけに変更しpush済み(3fb6bcb)。DECISIONS・CLAUDE.md・会社説明資料・HANDOFFを更新。VMにも反映済み(オーナーが手元から実行、2fb7aed・ログで確認)
-- 残課題・次にやること：sugoi-shorts側(ABF公開・i18n-01)。10-23の自動運転判断
+- 残課題・次にやること：**sugoi-shorts-skill-01で `/episode`(1本作る流れのスキル)と `/wrap`(終了処理のスキル)を作る(オーナー承認)**。投稿パック・/stats・HANDOFF分割はその後。続けてsugoi-shorts側(ABF公開・i18n-01)。10-23の自動運転判断
 - 触ったファイル：src/factoryScheduler.ts、DECISIONS.md、CLAUDE.md、会社説明資料.html、HANDOFF.md、SESSION_LOG.md
