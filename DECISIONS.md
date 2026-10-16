@@ -601,3 +601,9 @@
 - モデル: 基本Opus(GM・③事実確認・①視聴者・②中学生・④note読者)、作業だけの役はSonnet(⑤読み・新設の作業係worker)
 - 段階はフォルダを動かさずepisode.jsonの`stage`で管理(GM判断。素材が3か所に分かれ場所指定が壊れるため)。noteの言葉は高校生レベル(動画は中学生のまま)
 - 詳細は`C:\dev\sugoi-shorts\仕様書_sugoi-shorts.html` 3-7・3-9・3-13・3-14
+
+## 2026-10-16 (同日) テーマUの英語版を始める: 声はKokoro(af_heart)、夜に日英1本ずつ(オーナー承認)
+
+- 決定: 英語から多言語展開を始める。声はKokoro-82M(Apache-2.0、商用可、無料)のaf_heart(オーナーが5声から選択)、`kokoro-js`を追加(オーナー承認)。
+  英語版は日本語版の合格台本をGMが英訳(API費なし)し、同じ夜に作る。英語のTikTokは別アカウント(オーナーが作成)。英語のnote(Substack)は払い出し確認まで作らない
+- 詳細は`C:\dev\sugoi-shorts\仕様書_sugoi-shorts.html` 3-10
