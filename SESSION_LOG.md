@@ -712,3 +712,10 @@
 - 触ったファイル：CLAUDE.md、HANDOFF.md、SESSION_LOG.md、C:\dev\sugoi-shorts\仕様書_sugoi-shorts.html・SESSION_LOG.md
 - 追記(同日)：sugoi-shorts-autorun-02(自動運転の登録・Slack通知・1週間の試し)に続き、テーマUにnoteの詳細版を追加(オーナー承認、やめる線なし)・YouTube横型NG。DECISIONS・CLAUDE.md・会社説明資料・HANDOFFを更新
 - 追記(同日)：sugoi-shorts-abf-note-01としてABFの作り直し・note詳細版・多言語展開の検証まで実施(詳細はsugoi-shortsのSESSION_LOG)。次は sugoi-shorts-i18n-01
+
+## harvest-engine-review-01(2026-10-16)
+- 作業環境：家PC
+- やったこと：会社全体の整理。テーマUに集中し、P・Q・Rの毎日の実行停止と、停止中の第1層70件の正式終了を決定(オーナー承認)
+- 完了した状態：factoryScheduler.tsの定期実行を峠だけに変更しpush済み(3fb6bcb)。DECISIONS・CLAUDE.md・会社説明資料・HANDOFFを更新。**VMへの反映は未実施**(自動承認モードで止まった。手順はHANDOFF冒頭)
+- 残課題・次にやること：VM反映(オーナー許可後)。その後はsugoi-shorts側(ABF公開・i18n-01)。10-23の自動運転判断
+- 触ったファイル：src/factoryScheduler.ts、DECISIONS.md、CLAUDE.md、会社説明資料.html、HANDOFF.md、SESSION_LOG.md

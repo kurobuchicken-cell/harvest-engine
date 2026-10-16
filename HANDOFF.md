@@ -1,9 +1,25 @@
 # HANDOFF
 
-最終更新: 2026-10-16(sugoi-shorts-abf-note-01: ABFを1本目として作り直しnote詳細版を完成、多言語展開を検証。同日先行: テーマUにnoteの詳細版を追加・YouTube横型NG。同日先行: sugoi-shorts-autorun-02: テーマUの自動運転をタスクスケジューラに登録、今夜20時に初回。同日先行: sugoi-shorts-autorun-01: 家PCでVOICEVOX導入・対話モードで使用率が記録されることを確認。同日先行: テーマTの開発を一時停止、VMの見張りは継続。以下2026-10-16: sugoi-shorts-neta-system-01: テーマUのネタ集めを候補台帳+コマンド+GM手順書で回る仕組みにし、4回目10本で動作確認。合格39件。API自動化はしないとオーナー判断。以下同日先行: sugoi-shorts-neta-01: テーマUのジャイアントキリング候補62件を集めGMが13件をチェック、合格6件。台本AIを会社以外の題材に対応。非営利限定の情報源の扱いと作る順番がオーナー判断待ち。同日先行: テーマUの制作ラインC:\dev\sugoi-shortsを作成し試作1本を書き出し、味の素サイトの営利目的禁止条項が判断待ち。以下前回分: テーマU=会社・技術のすごい裏話のTikTok1分動画を試験として採択、YouTubeショート広告収入案はNG。テーマTは峠の位置229/328区間まで完了)
+最終更新: 2026-10-16(harvest-engine-review-01: テーマUに集中。P・Q・Rの毎日の実行を止め、停止中の第1層70件を正式にやめた。以下同日先行: sugoi-shorts-abf-note-01: ABFを1本目として作り直しnote詳細版を完成、多言語展開を検証。同日先行: テーマUにnoteの詳細版を追加・YouTube横型NG。同日先行: sugoi-shorts-autorun-02: テーマUの自動運転をタスクスケジューラに登録、今夜20時に初回。同日先行: sugoi-shorts-autorun-01: 家PCでVOICEVOX導入・対話モードで使用率が記録されることを確認。同日先行: テーマTの開発を一時停止、VMの見張りは継続。以下2026-10-16: sugoi-shorts-neta-system-01: テーマUのネタ集めを候補台帳+コマンド+GM手順書で回る仕組みにし、4回目10本で動作確認。合格39件。API自動化はしないとオーナー判断。以下同日先行: sugoi-shorts-neta-01: テーマUのジャイアントキリング候補62件を集めGMが13件をチェック、合格6件。台本AIを会社以外の題材に対応。非営利限定の情報源の扱いと作る順番がオーナー判断待ち。同日先行: テーマUの制作ラインC:\dev\sugoi-shortsを作成し試作1本を書き出し、味の素サイトの営利目的禁止条項が判断待ち。以下前回分: テーマU=会社・技術のすごい裏話のTikTok1分動画を試験として採択、YouTubeショート広告収入案はNG。テーマTは峠の位置229/328区間まで完了)
 前回: 2026-10-08(model-review-03: メダカ(S)NG→峠の開通通知(T)採択)/2026-10-08(model-review-02: 道具の利用料・インバウンドNG、勝てない理由を5つの壁に集約、個人開発の勝ちパターン3型を発見)/2026-10-07夜(model-review-01: 検索流入型の解説コンテンツ5テーマNG)/2026-10-07(第1層のうちC・H以外のactive 70件を規約見直しまで一時停止/バンダイ・J-Net21の収集済みデータを削除、VMの消し忘れスクリプトcheckThemes.mjsを削除/2026-10-06: オーナー決定でバンダイ・J-Net21の収集・掲載を停止(コード・データは保持)/公開判断材料を作成=`公開判断材料.html`。調査中にバンダイの自動取得・AI二次利用禁止条項、J-Net21の商業目的利用禁止、値上げR数社の営利利用制限を発見/同日先行: research:sources実装・滞留9件再評価・04:00初回定期実行の確認)
 
 ## 今回変更したこと(何を・なぜ)
+### 【2026-10-16・harvest-engine-review-01】会社全体の整理: テーマUに集中(オーナー承認)
+支出なし。詳細はDECISIONS.md同日。
+- **P・Q・Rの毎日の実行を止めた**: `src/factoryScheduler.ts`の毎日04:00の定期実行を峠(toge)だけにした(3fb6bcb、push済み)。
+  P・Q・Rのコード・データ・手動実行(`src/factory/run.ts <genre>`)は残す。季節の3時間ごとの峠の見張りは元からtogeだけ
+- **VMへの反映は未実施**: VMは acafe8d のままで、P・Q・Rは毎日04:00に動き続けている。自動承認モードがVMへの書き込みを止めたため、
+  オーナーの許可を得てから行う。手順: VMの`~/apps/harvest-engine`で`data/ledger.json`(VM側の未コミットの記録)を
+  `~/ledger.vm.bak-20261016.json`に控えて退避→`git checkout -- data/ledger.json`→`git pull --ff-only`→控えを元に戻して前後で同一を確認→
+  `pm2 restart harvest-engine-factory-scheduler`のみ。ssh鍵は`tokens/harvest_engine_vm_key`、Git付属のssh.exeを使う
+- **停止中の第1層70件を正式にやめた**: 規約の見直しはしない。VMのDBはactive=falseのまま、データと`data/paused-sources-2026-10-07.json`は残す
+- 稼働状況: sources 144件(active 33件 = C 8件・H 25件)、残り111件はinactive(うち70件は今回正式に終了)。
+  Tの見張りはVMで継続(39ページ)。P・Q・RはVM反映後に停止。週次評議会は停止のまま
+- 更新: DECISIONS.md・CLAUDE.md(層の割り当て)・会社説明資料.html(テーマの表示を「終了」「凍結」「開発お休み中」に、10-16のマイルストーン追加)
+- **次アクション**: VMへの反映(上の手順)/テーマUはsugoi-shortsの次アクション(オーナーがABFをnote・TikTokに公開→投稿の分数を測る、
+  sugoi-shorts-i18n-01)/10-23朝に自動運転1週間の結果と「要素を増やす仕組み」の判断/11-02までに情報源調査の自動化をオーナーに聞く
+  (ただし出口工場NGで調査自体が止まっているため、聞いて終わりにしてよい)
+
 ### 【2026-10-16・sugoi-shorts-abf-note-01】ABFを1本目として公開準備、note詳細版、多言語展開の検証
 AI費5円(台本、テーマU累計43/1,200円)。詳細は`C:\dev\sugoi-shorts\仕様書_sugoi-shorts.html` 3-9・3-10章、DECISIONS.md同日。
 - **ABF(オーナー選択で1本目)**: 味の素サイトをC段階(GMが読んで確かめる資料)に切替、抜き出しは`work/abf/notes/s1.txt`。台本の言い足し2か所(「土台」「ドロッとした」)を修正し72.6秒で書き出し(家PCの`output/abf/abf.mp4`、git対象外)。episode.jsonはpostable=true

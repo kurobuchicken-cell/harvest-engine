@@ -384,6 +384,7 @@
   .pill.live { background: var(--green-tint); color: var(--green); }
   .pill.collect { background: var(--blue-tint); color: var(--blue); }
     .pill.build { background: var(--green-tint); color: var(--green); }
+  .pill.stop { background: var(--surface-soft); color: var(--ink-faint); }
 
   /* ---------- 段階(4層)図 ---------- */
   .stages { display: flex; flex-direction: column; gap: 10px; margin: 24px 0; }
@@ -496,7 +497,7 @@
       <dl>
         <div>
           <dt>何をする会社?</dt>
-          <dd>色々な業界の「小さいけど毎日動きがある情報」(値上げ・障害・規制の変化など)をAIが自動で集め続け、そのうち儲かりそうなものだけを少しずつホームページ公開・課金にまで育てていく会社。今は16の種(テーマ)を育てていて、うち1つ(SaaS障害モニタ<a href="https://saas-status.com" target="_blank" rel="noopener noreferrer">saas-status.com</a>)は公開済み(まだ無料)。</dd>
+          <dd>色々な業界の「小さいけど毎日動きがある情報」(値上げ・障害・規制の変化など)をAIが自動で集め続け、そのうち儲かりそうなものだけを少しずつホームページ公開・課金にまで育てていく会社。2026年10月16日からは、弱い者が強い者に勝った実話の1分動画(テーマU)に力を集めていて、ほかに動いているのは峠の見張りと、公開済みの1つ(SaaS障害モニタ<a href="https://saas-status.com" target="_blank" rel="noopener noreferrer">saas-status.com</a>)は公開済み(まだ無料)。</dd>
         </div>
         <div>
           <dt>毎週何をしてる?</dt>
@@ -659,6 +660,11 @@
           <p class="ttl">動画の「詳細版」を記事サイトのnoteでも売ることにした。横長のYouTube動画はやめた</p>
           <p class="desc">オーナーの提案。1分の動画で「すごい」と思った人が、続きを読みたくなったときのために、くわしい文章版をnoteに出し、後半を数百円で読めるようにする。動画を作るために調べた材料をそのまま使えるので、お金はかからない。似た記事を売っている人はいたが、有名な会社の話が中心で、資料で確かめた出典は見当たらなかった。お金も手間もほとんどかからないので「やめる線」は決めず、動画と一緒に続ける。横長のYouTube動画も考えたが、YouTubeは読み上げの声とスライドで量産した動画にはお金を払わない決まりにしており、先に大きなチャンネルもあるのでやめた。</p>
         </li>
+        <li>
+          <span class="date">2026年10月16日</span>
+          <p class="ttl">力を「ジャイアントキリングの話」の動画1本に集中させ、使っていない仕組みを片付けた</p>
+          <p class="desc">「出口工場」をやめると決めた後も、補助金・ガチャ・値上げの3つは、公開する予定がないのに毎朝ページを作り続けていた。また、利用ルールを読み直すまで止めていた70の情報源も、読み直す理由そのものが無くなっていた。そこで、3つのページ作りは止め(作った仕組みとデータは残す)、70の情報源は正式にやめた。峠の見張りは、データをためるために続ける。これからは、弱い者が強い者に勝った実話を1分の動画とnoteの記事にするテーマUに力を集める。</p>
+        </li>
       </ul>
     </section>
 
@@ -667,10 +673,10 @@
       <p class="lead">人間が毎週何かをしなくても、裏側では次のことが自動で回っています。</p>
 
       <h3>毎日: 情報収集</h3>
-      <p>(2026年10月7日から、利用ルールの読み直しが終わるまで多くの情報源を止めていて、今動いているのは33件。)情報源(サイト・RSS・公式API)を、それぞれ決められた間隔(1日に何度も、〜数時間に1回など)で自動巡回し、新しい変化(値上げ・障害・規制の動きなど)があれば記録する。ここは常時稼働のプログラムが担当していて、人間もAIも毎回判断する必要はない。</p>
+      <p>(2026年10月7日に多くの情報源を止め、10月16日に正式にやめた。今動いているのは、公開中のSaaS障害モニタ用の8件と、話題を集めるテーマHの25件、あわせて33件。)情報源(サイト・RSS・公式API)を、それぞれ決められた間隔(1日に何度も、〜数時間に1回など)で自動巡回し、新しい変化(値上げ・障害・規制の動きなど)があれば記録する。ここは常時稼働のプログラムが担当していて、人間もAIも毎回判断する必要はない。</p>
 
-      <h3>毎日 朝4時: 出口工場のページを自動で作り直す</h3>
-      <p>値上げカレンダー・ガチャ新作カレンダー・補助金さがしの3つについて、メーカーや役所の公式情報を集め直し、新しく見つかった分だけAIに整理させて、ページを作り直す(2026年10月6日から)。作り終わるたびに、集まった件数が急に減っていないか、リンク切れや中身が空のページがないか、AIの利用料が上限(1回100円・1か月1,500円)を超えていないかを自動でチェックし、異常があったときだけオーナーにSlackで知らせる。ページはまだ一般には公開していない。</p>
+      <h3>毎日 朝4時: 峠の発表を見張る(以前は出口工場のページを自動で作り直していた)</h3>
+      <p>2026年10月16日からは、峠の閉鎖・開通の発表を見張ることだけを続けている(春と秋の発表が多い時期は昼間も3時間ごと)。以下は止めた仕組みの説明。値上げカレンダー・ガチャ新作カレンダー・補助金さがしの3つについて、メーカーや役所の公式情報を集め直し、新しく見つかった分だけAIに整理させて、ページを作り直す(2026年10月6日から)。作り終わるたびに、集まった件数が急に減っていないか、リンク切れや中身が空のページがないか、AIの利用料が上限(1回100円・1か月1,500円)を超えていないかを自動でチェックし、異常があったときだけオーナーにSlackで知らせる。ページはまだ一般には公開していない。</p>
 
       <h3>毎週月曜 朝9時: AI自身の情報探索(探索フェーズ)→新しいタネ探しの会議(評議会)</h3>
       <p>2026年10月5日から、この会議で探すものは「出口工場で扱える新しいジャンル」に変わった。具体的には、メーカーなどが定期的に新しい情報を出していて、日本や海外にそれを追いかけたい人がいて、競争相手がまだ少なく、紹介料や広告で稼げるジャンルを探す。切り替え前の基準(「企業に売れるデータか」)で8月末から10月初めに「採用」とされた9件は、2026年10月6日に新しい基準で見直した。その結果、新しく取り組むものは0件になった(9件のうち5件はAIエージェント関連の似た話題で、ページを大量に作って稼ぐやり方には向かなかった。食品などのリコール情報は、すでに集めているテーマOにまとめた)。</p>
@@ -803,7 +809,7 @@
           <div class="proj-head">
             <span class="letter">T</span>
             <span class="ttl">峠の開通お知らせ+走った峠の記録アプリ(収穫機の1台目の候補)</span>
-            <span class="pill build">準備中</span>
+            <span class="pill stop">開発お休み中</span>
           </div>
           <div class="row"><span class="k">何をするか</span><p class="v">冬のあいだ通れなくなる全国の峠道について、県や国が発表する「いつ閉まる・いつ開く・予定が変わった」を毎日見張り、お気に入りの峠が開いたらスマホに知らせる。走った峠を記録して、図鑑のように集めることもできる</p></div>
           <div class="row"><span class="k">なぜこれを選んだか</span><p class="v">予定は県ごとにばらばらに発表されていて、全国をまとめて知らせてくれるものが無かった。バイクに乗る人が「1か月前から見張っていた」「知らずに行って引き返した」と書いている。126cc以上のバイクは全国に約400万台ある</p></div>
@@ -836,7 +842,7 @@
           <div class="proj-head">
             <span class="letter">A</span>
             <span class="ttl">国内SaaS 料金・プラン改定履歴</span>
-            <span class="pill collect">情報収集中</span>
+            <span class="pill stop">終了</span>
           </div>
           <div class="row"><span class="k">集めている情報</span><p class="v">国内の主なSaaS(業務用ソフト)が、値段やプラン内容をいつ・どう変えたかのお知らせを集めている</p></div>
           <div class="row"><span class="k">目指す形</span><p class="v">将来的には「このソフト、去年の今頃はいくらだった」という値上げ・値下げの履歴を一覧で見られるようにする計画。今はまだ整理する仕組み(パーサー)ができておらず、生のデータを集めている段階</p></div>
@@ -847,7 +853,7 @@
           <div class="proj-head">
             <span class="letter">E</span>
             <span class="ttl">生保・損保 商品改定履歴</span>
-            <span class="pill collect">情報収集中</span>
+            <span class="pill stop">終了</span>
           </div>
           <div class="row"><span class="k">集めている情報</span><p class="v">生命保険会社10社・損害保険会社10社、合計20社の「商品(保険のプラン)をいつ変更したか」というニュースを集めている</p></div>
           <div class="row"><span class="k">目指す形</span><p class="v">各社の保険商品がいつどう変わったかを、時系列で並べて見られるようにする計画</p></div>
@@ -858,7 +864,7 @@
           <div class="proj-head">
             <span class="letter">F</span>
             <span class="ttl">海外SaaS 値上げ・機能変更履歴</span>
-            <span class="pill collect">情報収集中</span>
+            <span class="pill stop">終了</span>
           </div>
           <div class="row"><span class="k">集めている情報</span><p class="v">Slack・Notion・Figma・Canva・Stripe・Salesforceなど、海外の有名SaaS15社の「お知らせ(changelog)」や料金ページを集めている</p></div>
           <div class="row"><span class="k">目指す形</span><p class="v">海外のソフトの値段や機能がどう変わってきたかを一覧で見られるようにする計画</p></div>
@@ -869,7 +875,7 @@
           <div class="proj-head">
             <span class="letter">G</span>
             <span class="ttl">国の規制・パブリックコメント動向</span>
-            <span class="pill collect">情報収集中</span>
+            <span class="pill stop">終了</span>
           </div>
           <div class="row"><span class="k">集めている情報</span><p class="v">金融庁・経済産業省・総務省など8つの省庁が「意見を募集しています」と発表しているページ(パブリックコメント)や、審議会の資料を集めている</p></div>
           <div class="row"><span class="k">目指す形</span><p class="v">法律やルールがどう変わろうとしているかを、早めにまとめて見られるようにする計画</p></div>
@@ -891,7 +897,7 @@
           <div class="proj-head">
             <span class="letter">I</span>
             <span class="ttl">AIエージェント運用ガバナンス・事故制御</span>
-            <span class="pill collect">情報収集中</span>
+            <span class="pill stop">終了</span>
           </div>
           <div class="row"><span class="k">集めている情報</span><p class="v">AIエージェント(自動で色々な作業をしてくれるAIツール)が実際に事故やトラブルを起こした事例を集めている、世界的なデータベース(AI Incident Database)を追いかけている</p></div>
           <div class="row"><span class="k">これまでの経緯</span><p class="v">テーマHが集めた「今話題になっているもの」の中からAIの会議(評議会)が選んだ、一番新しいテーマ</p></div>
@@ -902,7 +908,7 @@
           <div class="proj-head">
             <span class="letter">J</span>
             <span class="ttl">AIエージェント運用のガードレール(秘密情報の漏洩防止)</span>
-            <span class="pill collect">情報収集中</span>
+            <span class="pill stop">終了</span>
           </div>
           <div class="row"><span class="k">集めている情報</span><p class="v">AIコーディングツール(Claude Code・Cursorなど)が誤ってパスワードやAPIキーなどの秘密情報を外部に漏らしてしまう事故を防ぐための、個人開発者向けの小さなツールや、日本語・海外の専門ブログを追いかけている</p></div>
           <div class="row"><span class="k">これまでの経緯</span><p class="v">テーマHが集めた「今話題になっているもの」の中からAIの会議(評議会)が選んだテーマ。AIコーディングが広まるほど「秘密情報の漏洩」への不安も強まっている、という調査結果を受けて調査を開始した</p></div>
@@ -912,7 +918,7 @@
           <div class="proj-head">
             <span class="letter">K</span>
             <span class="ttl">建設業DXの停滞ドリブン需要</span>
-            <span class="pill collect">情報収集中</span>
+            <span class="pill stop">終了</span>
           </div>
           <div class="row"><span class="k">集めている情報</span><p class="v">米国の建設テック業界メディア(Construction Dive)、建設ソフト大手Procoreの公式ブログ、日本の建設業界紙(日刊建設工業新聞)を追いかけ、「建設業のIT投資の遅れ・手戻りコスト」に関する動きを集めている</p></div>
           <div class="row"><span class="k">これまでの経緯</span><p class="v">テーマHが集めた「今話題になっているもの」の中からAIの会議(評議会)が選んだテーマ。建設業は他業界よりIT投資が大きく遅れており、手戻りコストが年間数十億ドル規模という指摘を受けて調査を開始した</p></div>
@@ -923,7 +929,7 @@
           <div class="proj-head">
             <span class="letter">L</span>
             <span class="ttl">宅配便の運賃改定の変更監視</span>
-            <span class="pill collect">情報収集中</span>
+            <span class="pill stop">終了</span>
           </div>
           <div class="row"><span class="k">集めている情報</span><p class="v">日本郵便・ヤマト運輸など、宅配便を扱う会社の公式お知らせページから「運賃改定・値上げ」のお知らせを集めている</p></div>
           <div class="row"><span class="k">これまでの経緯</span><p class="v">テーマHから見つかったテーマ。荷物をたくさん送る会社(荷主)が、運賃改定を早く正確に把握して交渉材料にできないかという着眼で調査を開始した</p></div>
@@ -934,7 +940,7 @@
           <div class="proj-head">
             <span class="letter">M</span>
             <span class="ttl">トラック運賃・物流値上げ交渉の動向</span>
-            <span class="pill collect">情報収集中</span>
+            <span class="pill stop">終了</span>
           </div>
           <div class="row"><span class="k">集めている情報</span><p class="v">国土交通省が定める「標準的運賃」の改定告知や、全日本トラック協会が発表する軽油価格・景況感などの調査資料を集めている</p></div>
           <div class="row"><span class="k">これまでの経緯</span><p class="v">2024年問題(トラック運転手の残業規制)をきっかけに運賃の適正化が国の政策課題になっていることを受けて調査を開始した。日本特有の制度のため海外展開はできないテーマ</p></div>
@@ -945,7 +951,7 @@
           <div class="proj-head">
             <span class="letter">N</span>
             <span class="ttl">米国の医療機器リコール監視</span>
-            <span class="pill collect">情報収集中</span>
+            <span class="pill stop">終了</span>
           </div>
           <div class="row"><span class="k">集めている情報</span><p class="v">米国FDA(食品医薬品局)が公式に無料公開している医療機器のリコール(回収)情報を、公式APIから直接取得している</p></div>
           <div class="row"><span class="k">これまでの経緯</span><p class="v">テーマHから見つかったテーマ。公式APIが無料・無認証で使え、著作権上の心配もほぼ無いことを確認した上で調査を開始した</p></div>
@@ -956,7 +962,7 @@
           <div class="proj-head">
             <span class="letter">O</span>
             <span class="ttl">国内外の製品リコール横断監視</span>
-            <span class="pill collect">情報収集中</span>
+            <span class="pill stop">終了</span>
           </div>
           <div class="row"><span class="k">集めている情報</span><p class="v">PMDA(医療機器)・消費者庁(生活製品全般)など、日本の複数の省庁がバラバラに発表しているリコール・回収情報をまとめて追いかけている</p></div>
           <div class="row"><span class="k">これまでの経緯</span><p class="v">テーマHから見つかったテーマ。EU側の同種の仕組み(Safety Gate)も調べたが、専用ソフトが必要なページ構成だったため今回は日本側のみで開始した</p></div>
@@ -967,7 +973,7 @@
           <div class="proj-head">
             <span class="letter">P</span>
             <span class="ttl">補助金さがし(出口工場の国内お試し1本目)</span>
-            <span class="pill build">試作中</span>
+            <span class="pill stop">凍結</span>
           </div>
           <div class="row"><span class="k">集めている情報</span><p class="v">国(デジタル庁のJグランツ)と中小機構のJ-Net21が出している、受付中の補助金・助成金・融資の情報。毎回400件ほど</p></div>
           <div class="row"><span class="k">今できていること</span><p class="v">集めた情報をAIが「どの地域・どの業種・何に使えるか」に仕分けし、「東京都の製造業が設備を入れるときに使える補助金」のような細かい条件ごとの一覧ページを自動で約800ページ作れるところまで完成(まだ自分のパソコンの中だけで、公開はしていない)</p></div>
@@ -979,7 +985,7 @@
           <div class="proj-head">
             <span class="letter">Q</span>
             <span class="ttl">ガチャ新作カレンダー(出口工場の海外向けお試し1本目)</span>
-            <span class="pill build">試作中</span>
+            <span class="pill stop">凍結</span>
           </div>
           <div class="row"><span class="k">集めている情報</span><p class="v">バンダイ(ガシャポン)とタカラトミーアーツが公式サイトで発表している、ガチャ(カプセルトイ)の新作の発売予定。毎回400件ほど</p></div>
           <div class="row"><span class="k">今できていること</span><p class="v">商品名をAIが英語とフランス語に訳し、「ポケモン」「サンリオ」のような作品ごとに仕分けして、日本語・英語・フランス語の3つの言葉で約600ページを自動で作れるところまで完成(まだ自分のパソコンの中だけで、公開はしていない)。言葉の種類は、設定を1つ足すだけで増やせる</p></div>
@@ -991,7 +997,7 @@
           <div class="proj-head">
             <span class="letter">R</span>
             <span class="ttl">値上げカレンダー(出口工場の国内お試し2本目)</span>
-            <span class="pill build">試作中</span>
+            <span class="pill stop">凍結</span>
           </div>
           <div class="row"><span class="k">集めている情報</span><p class="v">明治・キユーピー・カゴメなど食品・飲料・日用品メーカー21社が公式サイトで出している「価格改定のお知らせ」。今は約100件</p></div>
           <div class="row"><span class="k">今できていること</span><p class="v">お知らせの中身をAIが読んで、「いつから・何が・何%くらい上がるか」を整理し、「これから値上げされるもの」「11月に値上げされるもの」「マヨネーズなど調味料の値上げ」のような一覧ページを約80ページ自動で作れるところまで完成(まだ自分のパソコンの中だけで、公開はしていない)。会社ごとに専用の仕組みを作らず、どの会社にも同じやり方が使えるので、会社を増やすのが簡単</p></div>
