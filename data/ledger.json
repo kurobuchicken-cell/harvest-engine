@@ -1482,5 +1482,19 @@
     "fxRateSource": "https://open.er-api.com/v6/latest/USD",
     "fxRateStatus": "resolved",
     "recordedAt": "2026-10-16T01:21:29.315Z"
+  },
+  {
+    "id": "b53bf215-8954-4a00-b49f-d862072eff3e",
+    "category": "api",
+    "service": "sugoi-shorts",
+    "amountUsd": 0.056268,
+    "amountJpy": 9,
+    "description": "テーマU 台本 wright(claude-sonnet-5-5 in=14539 out=2719)",
+    "occurredAt": "2026-10-16T02:01:36.836Z",
+    "fxRate": 158.086954,
+    "fxRateFetchedAt": "2026-10-16T02:01:36.773Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-16T02:01:36.836Z"
   }
 ]
