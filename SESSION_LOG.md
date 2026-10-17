@@ -733,3 +733,4 @@
 - 完了した状態：@masaka.true(Instagram)をクリエイターにしてABF・wrightをリールで公開。noteのプロフィールに自己紹介とTikTokリンク。accounts.json に instagram 欄・registry、npm run account -- ig、朝のSlackの作成案内、スキルB1・仕様書3-12に手順
 - 残課題・次にやること：英語のInstagram(@masakaenglish)は作成済み、英語版が投稿待ちになったらTikTokと同時に上げる/リール5本で判定/TikTok・note・Stripeのログインメールを台帳に/10-18朝もTikTok0ならフィードバック報告
 - 触ったファイル：DECISIONS.md、HANDOFF.md、sugoi-shorts の accounts.json・reminders.json・src/accounts.ts・.claude/skills/episode/SKILL.md・仕様書_sugoi-shorts.html
+- 続き(同日)：ネタの探し方を見直し(質の基準⑤〜⑨・よその言語から持ってくる・探し方の台帳 strategies.json・夜間作業は探し方を探す中心)。夜の --no-chrome の許可設定は未確認で残課題
