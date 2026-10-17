@@ -726,3 +726,10 @@
 - 完了した状態：sugoi-shorts側は bb335b8 まで push。今夜の自動運転はwrightを判断待ち(画面の改修が要る)にしてネタ集め中。DECISIONS・HANDOFF・会社説明資料を更新
 - 残課題・次にやること：画面(player.js)の改修でwrightの判断待ちを解く/オーナーが言語別TikTokアカウントを作る→夜に作る外国語に足す/Kokoroにない言語の有料読み上げの提案/10-17朝のSlackとstopタスクの確認
 - 触ったファイル：DECISIONS.md、HANDOFF.md、会社説明資料.html、SESSION_LOG.md(本体は C:\dev\sugoi-shorts、同リポジトリのSESSION_LOG参照)
+
+## sugoi-shorts-instagram-01（2026-10-17）
+- 作業環境：家PC
+- やったこと：TikTok視聴0の確認→Instagramリールの追加(言語ごと、Xは作らない)、日本語アカウント作成と2本公開、アカウント台帳の作成
+- 完了した状態：@masaka.true(Instagram)をクリエイターにしてABF・wrightをリールで公開。noteのプロフィールに自己紹介とTikTokリンク。accounts.json に instagram 欄・registry、npm run account -- ig、朝のSlackの作成案内、スキルB1・仕様書3-12に手順
+- 残課題・次にやること：英語のInstagram(@masakaenglish)は作成済み、英語版が投稿待ちになったらTikTokと同時に上げる/リール5本で判定/TikTok・note・Stripeのログインメールを台帳に/10-18朝もTikTok0ならフィードバック報告
+- 触ったファイル：DECISIONS.md、HANDOFF.md、sugoi-shorts の accounts.json・reminders.json・src/accounts.ts・.claude/skills/episode/SKILL.md・仕様書_sugoi-shorts.html
