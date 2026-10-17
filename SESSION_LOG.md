@@ -737,3 +737,4 @@
 - 続き(同日)：Perplexity・YouTubeの規約原文で、GMのPerplexity利用と夜のブラウザ自動操作を取りやめ(--no-chrome に戻す)。メモリ・RULES.md・sugoi-shorts CLAUDE.md を書き換え
 - 続き(同日)：Google Cloud(harvest-sugoi-shorts)で YouTube Data API を設定し npm run yt を追加、人気順の探し方を再開(30日・新しい指標を作らないの条件つき)
 - 続き(同日)：探し方の探し方を仕組みに(sugoi-shorts)
+- 続き(同日)：テーマUの記録の書き先を仕様書に一本化(CLAUDE.md・wrap)。次は投稿の手作業と毎朝の数字の取り方を10-20までに
