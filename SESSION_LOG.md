@@ -735,3 +735,4 @@
 - 触ったファイル：DECISIONS.md、HANDOFF.md、sugoi-shorts の accounts.json・reminders.json・src/accounts.ts・.claude/skills/episode/SKILL.md・仕様書_sugoi-shorts.html
 - 続き(同日)：ネタの探し方を見直し(質の基準⑤〜⑨・よその言語から持ってくる・探し方の台帳 strategies.json・夜間作業は探し方を探す中心)。夜の --no-chrome の許可設定は未確認で残課題
 - 続き(同日)：Perplexity・YouTubeの規約原文で、GMのPerplexity利用と夜のブラウザ自動操作を取りやめ(--no-chrome に戻す)。メモリ・RULES.md・sugoi-shorts CLAUDE.md を書き換え
+- 続き(同日)：Google Cloud(harvest-sugoi-shorts)で YouTube Data API を設定し npm run yt を追加、人気順の探し方を再開(30日・新しい指標を作らないの条件つき)

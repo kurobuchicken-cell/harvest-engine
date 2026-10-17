@@ -660,3 +660,4 @@
 - YouTubeの利用規約は「自動化された手段(ロボット、ボットネット、スクレーパなど)を使用して本サービスにアクセスすること」を禁止
 - よって夜間作業は --no-chrome に戻し、「YouTubeの人気順」の探し方は保留(YouTube Data APIで再開する)。GMの調べものは Claude Code のウェブ検索+公式の原文で行う
 - PerplexityのAPI(API利用規約は営利・プログラムからの利用を認める。Sonar Proで1問約0.04〜0.05ドルとGMの試算、月最低額なし)は契約しない。使い道が固まったら上限つきで予算と一緒に相談する
+- (同日追記) オーナー判断で前倒し: kurobuchicken@gmail.com の Google Cloud にプロジェクト harvest-sugoi-shorts(課金なし)、YouTube Data API v3 を有効化、キーは YouTube Data API v3 だけに制限して harvest-engine/.env の GOOGLE_API_KEY に。開発者ポリシー原文(III.E.4.d 30日を超えて保存しない・III.E.4.h 新しい指標を作らない・III.E.6 スクレイピング禁止)に沿い、再生数は証拠として見るだけ・30日で消すか取り直す。「人気順」の探し方を試しに戻した。読み上げ用の課金の有効化は10-25のお願いのまま
