@@ -738,3 +738,10 @@
 - 続き(同日)：Google Cloud(harvest-sugoi-shorts)で YouTube Data API を設定し npm run yt を追加、人気順の探し方を再開(30日・新しい指標を作らないの条件つき)
 - 続き(同日)：探し方の探し方を仕組みに(sugoi-shorts)
 - 続き(同日)：テーマUの記録の書き先を仕様書に一本化(CLAUDE.md・wrap)。次は投稿の手作業と毎朝の数字の取り方を10-20までに
+
+## sugoi-shorts-sleepfix-01（2026-10-18）
+- 作業環境：家PC
+- やったこと：Slack通知の説明、テーマUの夜間作業のスリープ不具合の修正・係の周の上限撤廃(中身は sugoi-shorts 仕様書3-5・3-7)、ユーザー用CLAUDE.mdに「手段を目的化しない」を追加
+- 完了した状態：DECISIONS 2026-10-18に1行。HANDOFFに1行
+- 残課題・次にやること：昼のネタ探しの結果確認
+- 触ったファイル：DECISIONS.md、HANDOFF.md、data/ledger.json(夜の台本AI 11円)、dev-config/CLAUDE.md

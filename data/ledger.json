@@ -1524,5 +1524,19 @@
     "fxRateSource": "https://open.er-api.com/v6/latest/USD",
     "fxRateStatus": "resolved",
     "recordedAt": "2026-10-16T11:14:20.053Z"
+  },
+  {
+    "id": "f338f61b-73ed-4bfb-9d8d-c5197e36bf40",
+    "category": "api",
+    "service": "sugoi-shorts",
+    "amountUsd": 0.069238,
+    "amountJpy": 11,
+    "description": "テーマU 台本 gideon(claude-sonnet-5-5 in=18169 out=3290)",
+    "occurredAt": "2026-10-17T13:03:44.394Z",
+    "fxRate": 157.994345,
+    "fxRateFetchedAt": "2026-10-17T13:03:44.307Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-17T13:03:44.394Z"
   }
 ]
