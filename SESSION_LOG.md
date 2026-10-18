@@ -749,3 +749,10 @@
 - 続き(同日午後)：テーマUの上げ直し・表紙・英語版。HANDOFFに1行
 - 続き(同日夕方)：gideonの5言語版と課題の洗い出し(昼の回)。オーナー判断で課題は全部直す。HANDOFFに1行
 - 続き(2026-10-18 sugoi-shorts-langfix-01、家PC): テーマUの外国語版の課題を全部直した。中身は C:\dev\sugoi-shorts の SESSION_LOG・仕様書3-1・3-10・3-13。こちらは HANDOFF の1行だけ
+
+## sugoi-shorts-substack-growth-01（2026-10-18〜19）
+- 作業環境：家PC
+- やったこと：テーマUのSubstack 10言語の打ち手を決め(中身は sugoi-shorts の仕様書3-16・SESSION_LOG)、Perplexity APIを契約して使えるようにした
+- 完了した状態：DECISIONS.mdに「Perplexity APIを有効に使う(10-17の不使用を変更)」と記帳ルール。台帳 service=perplexity-api 累計112円。HANDOFF最終更新を1行
+- 残課題・次にやること：11-14にSubstackの言語ごとの判定とes/idのNotesを分けるか/Stripe本人確認(11-14からリマインダー)
+- 触ったファイル：HANDOFF.md・DECISIONS.md・data/ledger.json
