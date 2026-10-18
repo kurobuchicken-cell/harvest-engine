@@ -1538,5 +1538,47 @@
     "fxRateSource": "https://open.er-api.com/v6/latest/USD",
     "fxRateStatus": "resolved",
     "recordedAt": "2026-10-17T13:03:44.394Z"
+  },
+  {
+    "id": "64df579f-be30-4ccf-a23b-1433934b0ccf",
+    "category": "api",
+    "service": "sugoi-shorts",
+    "amountUsd": 0.04273,
+    "amountJpy": 7,
+    "description": "テーマU 台本 nissan-com(claude-sonnet-5-5 in=6325 out=3008)",
+    "occurredAt": "2026-10-18T14:17:54.244Z",
+    "fxRate": 158.001167,
+    "fxRateFetchedAt": "2026-10-18T14:17:54.197Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-18T14:17:54.244Z"
+  },
+  {
+    "id": "1853a38b-a921-4624-a27a-1dd031e6b1b0",
+    "category": "api",
+    "service": "sugoi-shorts",
+    "amountUsd": 0.049172,
+    "amountJpy": 8,
+    "description": "テーマU 台本 tilley-image(claude-sonnet-5-5 in=9641 out=2989)",
+    "occurredAt": "2026-10-18T14:47:09.527Z",
+    "fxRate": 158.001167,
+    "fxRateFetchedAt": "2026-10-18T14:47:09.439Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-18T14:47:09.527Z"
+  },
+  {
+    "id": "c10bdd8a-51a8-4ca5-ab5d-c901afd42b88",
+    "category": "api",
+    "service": "perplexity-api",
+    "amountUsd": 0.03699,
+    "amountJpy": 6,
+    "description": "Perplexity high: Substack announced in 2026 that posts and Notes can be trans",
+    "occurredAt": "2026-10-18T14:57:21.069Z",
+    "fxRate": 158.001167,
+    "fxRateFetchedAt": "2026-10-18T14:57:21.024Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-18T14:57:21.069Z"
   }
 ]
