@@ -748,3 +748,4 @@
 - 続き(同日)：gideonの作り直しと差し替え、チェック体制の見直し、ユーザー用CLAUDE.md「手段を目的化しない」の一般化。DECISIONS・HANDOFFに1行ずつ
 - 続き(同日午後)：テーマUの上げ直し・表紙・英語版。HANDOFFに1行
 - 続き(同日夕方)：gideonの5言語版と課題の洗い出し(昼の回)。オーナー判断で課題は全部直す。HANDOFFに1行
+- 続き(2026-10-18 sugoi-shorts-langfix-01、家PC): テーマUの外国語版の課題を全部直した。中身は C:\dev\sugoi-shorts の SESSION_LOG・仕様書3-1・3-10・3-13。こちらは HANDOFF の1行だけ
