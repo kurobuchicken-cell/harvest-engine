@@ -1734,5 +1734,33 @@
     "fxRateSource": "https://open.er-api.com/v6/latest/USD",
     "fxRateStatus": "resolved",
     "recordedAt": "2026-10-18T18:36:07.676Z"
+  },
+  {
+    "id": "b4a802aa-2121-496a-ac99-aa14436686b4",
+    "category": "api",
+    "service": "perplexity-api",
+    "amountUsd": 0.08691,
+    "amountJpy": 14,
+    "description": "Perplexity medium: List 8 true underdog stories (a small person, company, town ",
+    "occurredAt": "2026-10-19T03:54:12.069Z",
+    "fxRate": 157.911394,
+    "fxRateFetchedAt": "2026-10-19T03:54:11.738Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-19T03:54:12.069Z"
+  },
+  {
+    "id": "6bde571d-67a9-480e-be6b-4a1c72c1262b",
+    "category": "api",
+    "service": "perplexity-api",
+    "amountUsd": 0.06884,
+    "amountJpy": 11,
+    "description": "Perplexity medium: Give 8 true 'David vs Goliath' stories from Brazil, Mexico, ",
+    "occurredAt": "2026-10-19T03:56:49.424Z",
+    "fxRate": 157.911394,
+    "fxRateFetchedAt": "2026-10-19T03:56:49.396Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-19T03:56:49.424Z"
   }
 ]
