@@ -757,3 +757,10 @@
 - 残課題・次にやること：11-14にSubstackの言語ごとの判定とes/idのNotesを分けるか/Stripe本人確認(11-14からリマインダー)
 - 触ったファイル：HANDOFF.md・DECISIONS.md・data/ledger.json
 - 続き(10-19 午後): テーマUのジャイキリの関門・記事の型・ネタ集めを止めない決まりを入れ、Substackのジャイキリでない30本を非公開に。Perplexity API 累計約112円。HANDOFF最終更新を1行
+
+## sugoi-shorts-publish-01（2026-10-19 夜）
+- 作業環境：家PC
+- やったこと：テーマUの公開作業4件(note 3本・tilley画面の直し・公開済みnoteの直し・英語のNotes初投稿)。中身は sugoi-shorts の SESSION_LOG
+- 完了した状態：HANDOFF最終更新を1行
+- 残課題・次にやること：tilleyの動画をTikTokへ(スマホ手動)
+- 触ったファイル：HANDOFF.md
