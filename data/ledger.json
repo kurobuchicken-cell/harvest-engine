@@ -1720,5 +1720,19 @@
     "fxRateSource": "https://open.er-api.com/v6/latest/USD",
     "fxRateStatus": "resolved",
     "recordedAt": "2026-10-18T15:20:52.175Z"
+  },
+  {
+    "id": "8e4d6fd6-78ca-408a-b01d-653b3ecba8a9",
+    "category": "api",
+    "service": "perplexity-api",
+    "amountUsd": 0.10382,
+    "amountJpy": 16,
+    "description": "Perplexity medium: George Washington Carver: find official/primary sources (nps",
+    "occurredAt": "2026-10-18T18:36:07.676Z",
+    "fxRate": 158.001167,
+    "fxRateFetchedAt": "2026-10-18T18:36:07.638Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-18T18:36:07.676Z"
   }
 ]

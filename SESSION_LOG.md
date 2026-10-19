@@ -756,3 +756,4 @@
 - 完了した状態：DECISIONS.mdに「Perplexity APIを有効に使う(10-17の不使用を変更)」と記帳ルール。台帳 service=perplexity-api 累計112円。HANDOFF最終更新を1行
 - 残課題・次にやること：11-14にSubstackの言語ごとの判定とes/idのNotesを分けるか/Stripe本人確認(11-14からリマインダー)
 - 触ったファイル：HANDOFF.md・DECISIONS.md・data/ledger.json
+- 続き(10-19 午後): テーマUのジャイキリの関門・記事の型・ネタ集めを止めない決まりを入れ、Substackのジャイキリでない30本を非公開に。Perplexity API 累計約112円。HANDOFF最終更新を1行
