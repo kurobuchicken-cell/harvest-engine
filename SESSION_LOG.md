@@ -764,3 +764,10 @@
 - 完了した状態：HANDOFF最終更新を1行
 - 残課題・次にやること：tilleyの動画をTikTokへ(スマホ手動)
 - 触ったファイル：HANDOFF.md
+
+## sugoi-shorts-nightfix-01（2026-10-20 朝）
+- 作業環境：家PC
+- やったこと：テーマUの夜間作業が23:15〜06:37止まった件の調査と仕組みの直し(中身は sugoi-shorts 仕様書3-7、コミット 71b8c24)
+- 完了した状態：再開係が実際にPCを起こし、起きた後4分眠らないことを実地で確認。済んだら・上限で止まったらスリープ。HANDOFF最終更新を1行
+- 残課題・次にやること：10-21朝に autorun-resume.log とイベントログで夜の動きを確認。昨夜の不足分(kirtsaeng 外国語動画 pt/fr/it/zh/id・ネタ3件・記事20本のSubstack入れ・note下書き2本)は今夜以降(昼の回はオーナーNG=仕事で使う)
+- 触ったファイル：HANDOFF.md(sugoi-shorts 側は src/autorun-*・仕様書)
