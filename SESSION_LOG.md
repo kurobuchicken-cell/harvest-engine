@@ -793,3 +793,5 @@
 - 完了した状態：家PCにOpenSSHサーバー(自動起動・22番はTailscaleの100.64.0.0/10からだけ・鍵だけでログイン、パスワード不可)、ノートPCの公開鍵 kin-laptop-to-homepc を administrators_authorized_keys に登録。Tailscale導入・kurobuchicken-cellでログイン(家PC 100.109.105.100 / ノートPC 100.74.66.14)。PowerShell 7のAdd-WindowsCapabilityは「クラスが登録されていません」で落ちるのでdismで入れた。タスク「homepc keepawake 10-19」(sugoi-shorts src/keepawake-until.ps1、仕様書3-7の後の節)。壁直結でルーターが無くWake-on-LAN不可のため時間で決めた(オーナー)
 - 残課題・次にやること：ノートPCからRemote-SSHで家PCの harvest-engine を開けた(20:06確認、ノートの ~/.ssh/config の Host homepc。Slack経由で貼ると行頭の空白が化けるので字下げなしで書いた)。Googleドライブ for デスクトップ導入。TikTok導線の方針はオーナー判断待ち
 - 触ったファイル：SESSION_LOG.md、sugoi-shorts src/keepawake-until.ps1・仕様書
+- 追記(同夜)：テーマUの夜の続き(中身は sugoi-shorts の SESSION_LOG)。kirtsaeng 日英西をTikTok・Instagramに、note 2本、スペイン語アカウント(es@saas-status.com、Cloudflare Email Routing)、ドライブを MASAKA動画/<言語>/<日付>_<id> に。22時に夜間作業が見張りの「リセット済みで分からない」待ちで止まった→直して22:27に再起動、さらにオーナー指示「起きる前につぶせ」で止まり方を一覧にし、見張りが止めたら次の見回りで再起動・模擬実行 src/autorun-sim.ps1(12通り)。全体の CLAUDE.md に再発防止の決まり
+- 次にやること：10-21朝、夜のレポートと autorun-resume.log で夜が止まらず回ったか確認/投稿6本の再生数をPC投稿と比較/TikTok導線の方針はオーナー判断待ち

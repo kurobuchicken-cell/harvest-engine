@@ -1776,5 +1776,33 @@
     "fxRateSource": "https://open.er-api.com/v6/latest/USD",
     "fxRateStatus": "resolved",
     "recordedAt": "2026-10-19T13:59:33.269Z"
+  },
+  {
+    "id": "ffb6aba9-cdd0-496d-ad3f-c71c7bcbf65a",
+    "category": "api",
+    "service": "sugoi-shorts",
+    "amountUsd": 0.052992,
+    "amountJpy": 8,
+    "description": "テーマU 台本 cowpens-1781(claude-sonnet-5-5 in=7061 out=3887)",
+    "occurredAt": "2026-10-20T13:01:38.243Z",
+    "fxRate": 158.441511,
+    "fxRateFetchedAt": "2026-10-20T13:01:38.194Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-20T13:01:38.243Z"
+  },
+  {
+    "id": "8ade0828-3284-4baf-8f6f-641c71d56da3",
+    "category": "api",
+    "service": "perplexity-api",
+    "amountUsd": 0.02438,
+    "amountJpy": 4,
+    "description": "Perplexity medium: Find 8 true underdog stories in sports, medicine, or food bu",
+    "occurredAt": "2026-10-20T13:11:10.946Z",
+    "fxRate": 158.441511,
+    "fxRateFetchedAt": "2026-10-20T13:11:10.847Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-20T13:11:10.946Z"
   }
 ]
