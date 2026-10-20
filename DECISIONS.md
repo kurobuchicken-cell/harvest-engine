@@ -687,3 +687,6 @@
 
 ## 2026-10-20 テーマUの外国語アカウントのメールは <lang>@saas-status.com(オーナー決定)
 新しいGmailが電話番号の上限で作れず、+別名はTikTokが同じと見なすため。saas-status.com の Cloudflare Email Routing で1つのGmailへ転送(0円)。中身は sugoi-shorts accounts.json の naming.email。
+
+## 2026-10-21 テーマUの夜間作業の7日枠の止める線を夜の曜日で変える(オーナー決定)
+7日枠は金曜リセットのため、水曜の夜90%・木曜の夜98%・ほか80%。sugoi-shorts 仕様書3-7(止まり方の一覧の前)。
