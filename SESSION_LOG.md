@@ -786,3 +786,10 @@
 - 完了した状態：sugoi-shorts 975afa6。DECISIONS.md・HANDOFF.md に1行ずつ
 - 残課題・次にやること：帰宅後 家PCの Remote-SSH 設定(家PC用プロンプト)と Googleドライブ for デスクトップ導入/TikTok導線の方針がオーナー判断待ち
 - 触ったファイル：DECISIONS.md、HANDOFF.md、SESSION_LOG.md
+
+## harvest-engine-env-remotessh-02（2026-10-20 夜）
+- 作業環境：家PC
+- やったこと：家PC側のRemote-SSH準備と、10〜19時はスリープさせない設定
+- 完了した状態：家PCにOpenSSHサーバー(自動起動・22番はTailscaleの100.64.0.0/10からだけ・鍵だけでログイン、パスワード不可)、ノートPCの公開鍵 kin-laptop-to-homepc を administrators_authorized_keys に登録。Tailscale導入・kurobuchicken-cellでログイン(家PC 100.109.105.100 / ノートPC 100.74.66.14)。PowerShell 7のAdd-WindowsCapabilityは「クラスが登録されていません」で落ちるのでdismで入れた。タスク「homepc keepawake 10-19」(sugoi-shorts src/keepawake-until.ps1、仕様書3-7の後の節)。壁直結でルーターが無くWake-on-LAN不可のため時間で決めた(オーナー)
+- 残課題・次にやること：ノートPCからRemote-SSHで家PCの harvest-engine を開けた(20:06確認、ノートの ~/.ssh/config の Host homepc。Slack経由で貼ると行頭の空白が化けるので字下げなしで書いた)。Googleドライブ for デスクトップ導入。TikTok導線の方針はオーナー判断待ち
+- 触ったファイル：SESSION_LOG.md、sugoi-shorts src/keepawake-until.ps1・仕様書
