@@ -772,3 +772,10 @@
 - 残課題・次にやること：10-21朝に autorun-resume.log とイベントログで夜の動きを確認。昨夜の不足分(kirtsaeng 外国語動画 pt/fr/it/zh/id・ネタ3件・記事20本のSubstack入れ・note下書き2本)は今夜以降(昼の回はオーナーNG=仕事で使う)
 - 触ったファイル：HANDOFF.md(sugoi-shorts 側は src/autorun-*・仕様書)
 - 続き(同朝): Substackに新しい2記事×10言語を公開、kirtsaeng 5言語を差し替え。オーナーの指示待ちで止められた貼り付けは、ページを開いてすぐJSを流したことか公開の指示が曖昧だったことのどちらか(判定の理由が出ず未確定)。記録は sugoi-shorts スキルのSubstackの節
+
+## harvest-engine-env-remotessh-01（2026-10-20）
+- 作業環境：ノートPC
+- やったこと：家PCへRemote-SSH+Tailscaleで入るためのノートPC側の準備（ハーヴェスト本体とは無関係の環境整備）
+- 完了した状態：ノートPCにSSH鍵 C:\Users\kin\.ssh\id_ed25519_homepc を生成、Tailscale 1.104.1 を導入しGitHub(kurobuchicken-cell)でtailnetにログイン済み（ノートPCのTailscale IP 100.74.66.14）。家PC側（sshd・Tailscale・電源・ファイアウォール）は未着手（外出中・家PCスリープ中のため）。リポジトリのコードは変更なし
+- 残課題・次にやること：帰宅後、家PCの管理者権限VS Code＋新セッションで家PC用プロンプトを実行。ノートPCのVS CodeにRemote-SSH拡張を入れる。元に戻す場合は鍵2ファイル削除と winget uninstall Tailscale.Tailscale
+- 触ったファイル：リポジトリ内はSESSION_LOG.mdのみ（鍵・Tailscaleはリポジトリ外）
