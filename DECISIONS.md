@@ -684,3 +684,6 @@
 
 ## 2026-10-20 テーマUの投稿待ちの動画はGoogleドライブに置く(オーナー決定)
 - 動画が家PCにしか無く外出先から投稿できなかったため。家PCに Googleドライブ for デスクトップを入れて夜間作業がコピー、入るまでは朝にGMがブラウザでアップ。sugoi-shorts 仕様書3-12
+
+## 2026-10-20 テーマUの外国語アカウントのメールは <lang>@saas-status.com(オーナー決定)
+新しいGmailが電話番号の上限で作れず、+別名はTikTokが同じと見なすため。saas-status.com の Cloudflare Email Routing で1つのGmailへ転送(0円)。中身は sugoi-shorts accounts.json の naming.email。
