@@ -796,3 +796,10 @@
 - 追記(同夜)：テーマUの夜の続き(中身は sugoi-shorts の SESSION_LOG)。kirtsaeng 日英西をTikTok・Instagramに、note 2本、スペイン語アカウント(es@saas-status.com、Cloudflare Email Routing)、ドライブを MASAKA動画/<言語>/<日付>_<id> に。22時に夜間作業が見張りの「リセット済みで分からない」待ちで止まった→直して22:27に再起動、さらにオーナー指示「起きる前につぶせ」で止まり方を一覧にし、見張りが止めたら次の見回りで再起動・模擬実行 src/autorun-sim.ps1(12通り)。全体の CLAUDE.md に再発防止の決まり
 - 次にやること：10-21朝、夜のレポートと autorun-resume.log で夜が止まらず回ったか確認/投稿6本の再生数をPC投稿と比較/TikTok導線の方針はオーナー判断待ち
 - 追記(同夜 終了前)：TikTokの電話番号は1アカウントのみ(公式、オーナーがPerplexityで確認)。作るたびに番号を外して使い回す作戦を sugoi-shorts accounts.json(naming.tiktokPhoneOpen)と朝の案内に。10-21のポルトガル語の前に @masakaspanish から番号を外して確かめる
+
+## harvest-engine-themeu-morning-01（2026-10-21 朝）
+- 作業環境：家PC
+- やったこと：昨夜の夜間作業の確認(22:27〜02:28、7日枠81%で決まりどおり停止)とトークン集計、skillsplit(sugoi-shorts)、7日枠の止める線を夜の曜日で変える(水曜90%・木曜98%、オーナー決定)、夜間作業のコード3つと成果をコミット
+- 完了した状態：HANDOFF.md 冒頭に「やることリスト」(オーナー判断2・オーナー作業4・GM 5)。リモートで「やるべきリスト」と聞かれたらそこを出す
+- 残課題・次にやること：HANDOFF のやることリストのとおり
+- 触ったファイル：HANDOFF.md、DECISIONS.md、SESSION_LOG.md(sugoi-shorts 側はスキル・夜の指示・見張り・再開係・仕様書)
