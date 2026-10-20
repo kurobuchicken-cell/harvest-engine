@@ -779,3 +779,10 @@
 - 完了した状態：ノートPCにSSH鍵 C:\Users\kin\.ssh\id_ed25519_homepc を生成、Tailscale 1.104.1 を導入しGitHub(kurobuchicken-cell)でtailnetにログイン済み（ノートPCのTailscale IP 100.74.66.14）。家PC側（sshd・Tailscale・電源・ファイアウォール）は未着手（外出中・家PCスリープ中のため）。リポジトリのコードは変更なし
 - 残課題・次にやること：帰宅後、家PCの管理者権限VS Code＋新セッションで家PC用プロンプトを実行。ノートPCのVS CodeにRemote-SSH拡張を入れる。元に戻す場合は鍵2ファイル削除と winget uninstall Tailscale.Tailscale
 - 触ったファイル：リポジトリ内はSESSION_LOG.mdのみ（鍵・Tailscaleはリポジトリ外）
+
+## harvest-engine-env-remotessh-01 続き（2026-10-20 昼）
+- 作業環境：ノートPC
+- やったこと：ノートPCからGMがブラウザ操作できるようにした(VS Codeのセッションには Claude in Chrome のツールが出ないため、`claude --chrome -p` の別プロセスで操作)。テーマUの全アカウント集計・Instagramのリンク・投稿待ち動画をドライブに置く決定(中身は sugoi-shorts の SESSION_LOG・仕様書3-12)
+- 完了した状態：sugoi-shorts 975afa6。DECISIONS.md・HANDOFF.md に1行ずつ
+- 残課題・次にやること：帰宅後 家PCの Remote-SSH 設定(家PC用プロンプト)と Googleドライブ for デスクトップ導入/TikTok導線の方針がオーナー判断待ち
+- 触ったファイル：DECISIONS.md、HANDOFF.md、SESSION_LOG.md
