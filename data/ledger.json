@@ -1762,5 +1762,19 @@
     "fxRateSource": "https://open.er-api.com/v6/latest/USD",
     "fxRateStatus": "resolved",
     "recordedAt": "2026-10-19T03:56:49.424Z"
+  },
+  {
+    "id": "e738cf5d-0685-4e07-bac0-c2ef3d60f389",
+    "category": "api",
+    "service": "sugoi-shorts",
+    "amountUsd": 0.050224,
+    "amountJpy": 8,
+    "description": "テーマU 台本 kirtsaeng(claude-sonnet-5-5 in=7387 out=3545)",
+    "occurredAt": "2026-10-19T13:59:33.269Z",
+    "fxRate": 157.911394,
+    "fxRateFetchedAt": "2026-10-19T13:59:33.172Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-19T13:59:33.269Z"
   }
 ]
