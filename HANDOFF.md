@@ -10,8 +10,8 @@
 2. cowpens(モーガンの軍)の動画: GMのおすすめは「動画は作らず記事のまま」。資料の範囲で「なぜ勝てたか」が言えず行き詰まった
 **オーナーの作業(ボタン・スマホ)**
 3. 熱殺蜂球 japanese-honeybee の動画をスマホから投稿: 日本語 @masaka.true・英語 @masakaenglish・スペイン語 @masakaspanish(ドライブ MASAKA動画/JA・EN・ES)。説明欄は空でよい(GMが後からPCで入れる)。AIラベルはオン。Instagramは GM がPCで入れてシェアだけオーナー
-4. note の「投稿する」: ピロリ菌 marshall-pylori(200円)・月軌道ランデブー houbolt-lor(300円)。GMが下書き〜公開設定まで入れる。同じ日の中で時刻をずらす
-5. 公開済み note cowpens の言い過ぎの修正(「〜だけ」等): GMが直す画面まで作り、更新ボタンだけオーナー
+4. note の「投稿する」: ピロリ菌 marshall-pylori(200円)・月軌道ランデブー houbolt-lor(300円)。**※10-21夕: この2本は翻訳調の決まりの前に書かれたので、投稿前に下の「翻訳調の続き」の1で直す**。GMが下書き〜公開設定まで入れる。同じ日の中で時刻をずらす
+5. 公開済み note cowpens の言い過ぎの修正(「〜だけ」等。**※10-21夕: cowpens は全文を書き直したので、部分修正ではなく新しい版 episodes/cowpens-1781/note.md に差し替える**): GMが直す画面まで作り、更新ボタンだけオーナー
 6. ポルトガル語のアカウント(予定日10-21): pt@saas-status.com。先にGMが @masakaspanish から電話番号を外す→TikTokはスマホのアプリで登録(番号は同じものを試す)→Instagram・プロフィールはPC(sugoi-shorts accounts.json の naming)
 **GMが自分で進めること(報告だけ)**
 7. 10時に家PCが自分で起きたか(タスク homepc keepawake 10-19 の初回)をイベントログで確認
@@ -19,6 +19,13 @@
 9. 投稿した6本(kirtsaeng 日英西)と熱殺蜂球の再生数を、PC投稿の4本と比べる(metrics/reach)
 10. 省エネの残り(sugoi-shorts reminders の skillsplit): 訳の前のチェック表とコード照合・外国語動画の①まとめ(影で確認)・区切りを工程ごと(影で確認)・朝のレポートに工程別トークン・B1をさらに分ける
 11. 昨夜の判断待ち(sugoi-shorts work/autorun-report-2026-10-21 相当): 表紙の重なり判定・出典の札の切れ・層の図の出る順の直し提案
+**翻訳調の続き(10-21夕 ノートPCで決定。7日枠のリセット後に家PCで、上から順に。中身は sugoi-shorts 仕様書3-9・手順書 /episode のA4「翻訳調をなくす」)**
+1. 新しい日本語2本 marshall-pylori・houbolt-lor を書き直す(note投稿の前に): 事実の一覧+話の設計図から書き起こし→一般読者係 dokusha で止まった所1以下・④が下がらない・③の突き合わせ。1本約30〜40万トークン
+2. 外国語の訳し直し(残り13記事×10言語): 直した日本語から言語ごとに書き手→dokusha 1以下→③の突き合わせ。**1記事10言語で約450万トークン=7日枠約2%(10-21 wright の実績)**。Substackで読まれている記事から。係は同時5言語まで(中で係を立てるため、同時20人の上限)
+3. 公開済みの記事の差し替え: 直し終えた記事から。Substackは手順書 /episode-article の「公開済みの記事の差し替え」(PUT→publish send:false、メールは再送されない)。noteは編集画面まで GM、「更新する」はオーナー
+4. 値段の行の字数をコードで数え直す: wright・bretz・gideon が値段の境目
+5. 中身の弱い記事(書き直しても④が上がらない): opportunity・takahe・carver は相手のいない題材(10-19判定)、charbucks は題で結末が分かる → 非公開にするか題を変えるかをオーナーに聞く
+6. オーナー判断待ち: セッション開始時に、PCが同じでも毎回 git pull する決まりをグローバルの CLAUDE.md に足すか(10-21、SESSION_LOGが古いまま「同じPC」と判断して pull せず、終了処理で家PCの変更と衝突した)
 
 ## オーナーの宿題(残り)
 **正本は `C:/dev/sugoi-shorts/reminders.json`**(2026-10-17〜。期限が来たものは済むまで毎朝9時のSlackに「今日のお願い」として出る。投稿待ちの本数も毎朝出る)。外国語アカウントとSubstackの作成日は `accounts.json` が知らせる。オーナーが「やった」と言ったら `npm run remind -- done <id>` で消し込み、残りは毎回の報告の最後に `npm run remind` の一覧で出す。
