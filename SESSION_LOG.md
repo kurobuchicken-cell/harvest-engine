@@ -786,3 +786,8 @@
 - 完了した状態：sugoi-shorts 975afa6。DECISIONS.md・HANDOFF.md に1行ずつ
 - 残課題・次にやること：帰宅後 家PCの Remote-SSH 設定(家PC用プロンプト)と Googleドライブ for デスクトップ導入/TikTok導線の方針がオーナー判断待ち
 - 触ったファイル：DECISIONS.md、HANDOFF.md、SESSION_LOG.md
+
+## harvest-engine-themeU-wabun-01（2026-10-21）
+- 作業環境：ノートPC
+- やったこと：テーマUの記事の翻訳調をなくした（中身は sugoi-shorts の SESSION_LOG・仕様書3-9）
+- 触ったファイル：DECISIONS.md、HANDOFF.md、SESSION_LOG.md
