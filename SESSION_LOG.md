@@ -835,3 +835,4 @@
 - 完了した状態：npm run episodes の出し先待ちは abf-en/es/pt・gideon-es と gideon 外国語のドライブ。carver・opportunity・takahe の外国語30本は出さない(dropped)。TikTok 4言語はパスワード設定済み・各プロフィールでログイン済み
 - 残課題・次にやること：10-26ごろ次の動画(abf-en/es/pt・gideon-es)、ポルトガル語 Instagram の作成、10-31に pt の名前を Masaka に、日本語 note 3本(carver・opportunity・takahe)と charbucks の扱いはオーナー判断
 - 触ったファイル：HANDOFF.md・DECISIONS.md、sugoi-shorts の src/outlets.ts(新規)・run.ts・episode.ts・reminders.ts・autorun-notify.ts・accounts.ts・autorun-guard.ts・autorun-prompt.md・skills・accounts.json・reminders.json・仕様書・HISTORY.md・episodes/*
+- 追記(同日 15時台)：動画の締めを「一番驚く事実の言い直し+この話には、興味深い点が他にもあるんです。詳しくはプロフィールから。」に変えた(問いで終えるのをやめた。台本AI・視聴者係・手順書・仕様書)。Instagram のリンクは日本語・英語は入っていて、スペイン語だけ未設定(アプリで英語に入ってしまい翌日へ)。ポルトガル語 Instagram は登録したが SMS が届かず翌日へ。アカウントの記録を registry に一本化し npm run account -- table で一覧に

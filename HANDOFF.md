@@ -19,7 +19,7 @@
 3. charbucks(題で結末が分かる): 題を変えるか(opportunity・takahe・carver の外国語版30本は10-24に非公開のままと決定。日本語のnote3本は公開中で、どうするかは未回答)
 4. セッション開始時に、PCが同じでも毎回 git pull する決まりをグローバルの CLAUDE.md に足すか(10-21。メモリには「比べる前に fetch/pull」あり、CLAUDE.md への追記は済みか未確認)
 **オーナーの作業(ボタン・スマホ)**
-5. 動画の投稿(何が待ちかは `cd C:devsugoi-shorts; npm run -s episodes` の「出し先待ち」が正): 熱殺蜂球は10-24に日英西葡の TikTok(説明欄・AIラベルまで)と日英西の Instagram が済み。2日に1本で、次(10-26ごろ)は abf-en・abf-es・abf-pt、gideon-es。gideon の fr・it・pt・zh はドライブ未配置(動画は 10-18 版)。TikTok は言語ごとの Chrome プロフィール(Masaka-EN/JA/ES/PT、ログイン済み)で操作し、ログアウトしない(sugoi-shorts accounts.json の naming.chromeProfiles)
+5. 動画の投稿(何が待ちかは `cd C:devsugoi-shorts; npm run -s episodes` の「出し先待ち」が正): 熱殺蜂球は10-24に日英西葡の TikTok(説明欄・AIラベルまで)と日英西の Instagram が済み。2日に1本で、次(10-26ごろ)は abf-en・abf-es・abf-pt、gideon-es。gideon の fr・it・pt・zh はドライブ未配置(動画は 10-18 版)。TikTok は言語ごとの Chrome プロフィール(Masaka-EN/JA/ES/PT、ログイン済み)で操作し、ログアウトしない(sugoi-shorts accounts.json の naming.chromeProfiles)。アカウントのログイン方法・パスワードの有無・電話番号・使う Chrome は `npm run -s account -- table` が正(registry。10-24に一本化)。オーナーの明日の作業(Instagram pt の SMS 確認・es のリンク・アカウント表の unknown)は sugoi-shorts の reminders.json に入れてあり、朝の通知に出る
 6. ~~note の「投稿する」~~ **済み(10-24)**: ピロリ菌 marshall-pylori(200円)・月軌道ランデブー houbolt-lor(300円)。日本語版は10-23〜24に書き直し済み。GMが下書き〜公開設定まで入れる。同じ日の中で時刻をずらす(済みか未確認)
 7. ポルトガル語: TikTok @masakaportuguese は10-24に作成済み(名前は10-31以降に GM が PC で「Masaka」に直す。お願い一覧 ptname1031)。Instagram masakaportuguese は10-24に登録済みだが、電話番号のSMS確認が届かず保留(10-25にオーナーが Masaka-PT の窓で再試行。お願い一覧 ptigsms)。確認後に GM が自己紹介・アイコン・クリエイター切り替え・熱殺蜂球のリール
 **GMが自分で進めること(報告だけ)**
