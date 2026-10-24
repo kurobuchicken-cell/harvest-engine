@@ -828,3 +828,10 @@
 - 完了した状態：note 11本・Substack 110本に新しい題とサムネ、熱殺蜂球は全言語で無料。HANDOFF 19〜21 に残り
 - 残課題・次にやること：11-07ごろ無料記事の効き目確認(次の候補 tilley)、Radar の返事待ち、Substack fr の重複下書き削除(オーナー)、夜間作業のトークン比較を朝に報告
 - 触ったファイル：HANDOFF.md、sugoi-shorts の src/cover.ts・bundle.ts・episodes/*・skills・HISTORY.md
+
+## harvest-engine-owner-tasks-01（2026-10-24 午後）
+- 作業環境：家PC
+- やったこと：オーナーのやることリストを進めた。Substack fr の重複下書きを削除、判断の日の3件(表示名は変えない・ネタの種類を増やす仕組みは今は入れない・振り返りは止まって未記載)、ポルトガル語 TikTok の作成、熱殺蜂球を4言語の TikTok と日英西の Instagram に出した。「投稿待ち30本」の誤りから、素材ごと・出し先ごとの状態管理(sugoi-shorts の outlets)を作り、全件を付け直した。TikTok は言語ごとの Chrome プロフィールに分けた。昼のスリープ止めは無効にした
+- 完了した状態：npm run episodes の出し先待ちは abf-en/es/pt・gideon-es と gideon 外国語のドライブ。carver・opportunity・takahe の外国語30本は出さない(dropped)。TikTok 4言語はパスワード設定済み・各プロフィールでログイン済み
+- 残課題・次にやること：10-26ごろ次の動画(abf-en/es/pt・gideon-es)、ポルトガル語 Instagram の作成、10-31に pt の名前を Masaka に、日本語 note 3本(carver・opportunity・takahe)と charbucks の扱いはオーナー判断
+- 触ったファイル：HANDOFF.md・DECISIONS.md、sugoi-shorts の src/outlets.ts(新規)・run.ts・episode.ts・reminders.ts・autorun-notify.ts・accounts.ts・autorun-guard.ts・autorun-prompt.md・skills・accounts.json・reminders.json・仕様書・HISTORY.md・episodes/*

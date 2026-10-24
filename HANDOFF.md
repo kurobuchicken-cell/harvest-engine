@@ -1,6 +1,6 @@
 # HANDOFF
 
-最終更新: 2026-10-24(テーマUの投稿状態を出し先ごとの記録に変えた。動画の待ちは sugoi-shorts の `npm run -s episodes` を見る)
+最終更新: 2026-10-24(テーマUの投稿状態を出し先ごとの記録に変え、TikTok を言語ごとの Chrome プロフィールに分けた。動画の待ちは sugoi-shorts の npm run episodes を見る)
 
 ## ★次のセッションで最初にやること(2026-10-24 オーナー「新セッションでも忘れないように」)
 1. ~~**夜間作業の自動実行を戻す**~~ **済み(10-24 9:03)**: `Enable-ScheduledTask -TaskName 'sugoi-shorts autorun start'`。10-23夜にオーナー指示で無効にした。StartWhenAvailable=True なので9時前に戻すと止めた回がすぐ走る。戻し忘れると今夜以降の夜間作業が全部止まる
@@ -16,13 +16,12 @@
 **オーナーの判断**
 1. TikTokの導線: 個人アカウントのまま Instagram 経由で note・Substack へ流すか(10-20から判断待ち)
 2. cowpens(モーガンの軍)の動画: GMのおすすめは「動画は作らず記事のまま」。資料の範囲で「なぜ勝てたか」が言えず行き詰まった
-3. 中身の弱い記事 opportunity・takahe・carver(相手のいない題材)・charbucks(題で結末が分かる): 非公開にするか題を変えるか(10-24に「訳し直し不要」は決定済み。非公開/題の変更は未回答)
+3. charbucks(題で結末が分かる): 題を変えるか(opportunity・takahe・carver の外国語版30本は10-24に非公開のままと決定。日本語のnote3本は公開中で、どうするかは未回答)
 4. セッション開始時に、PCが同じでも毎回 git pull する決まりをグローバルの CLAUDE.md に足すか(10-21。メモリには「比べる前に fetch/pull」あり、CLAUDE.md への追記は済みか未確認)
 **オーナーの作業(ボタン・スマホ)**
-5. 動画の投稿(何が待ちかは `cd C:\dev\sugoi-shorts; npm run -s episodes` の「出し先待ち」が正。10-24 に出し先ごとの記録に変えた): 熱殺蜂球を日英西の TikTok にスマホから(10-24 に画面で未投稿を確認。オーナーに依頼済み)→Instagram リールは GM が PC で準備しオーナーがシェア。2日に1本で、次は abf-en・abf-es、gideon-es。gideon の fr・it・pt・zh はドライブ未配置(動画は 10-18 版)
-5b. ポルトガル語の TikTok: アプリで @masakaspanish の電話番号を外してから登録(PC の Web 版に電話番号の項目は無い。10-24 確認)。確認コードは GM が Gmail で探す。作ったら Instagram・プロフィールは PC で GM が入れる
+5. 動画の投稿(何が待ちかは `cd C:devsugoi-shorts; npm run -s episodes` の「出し先待ち」が正): 熱殺蜂球は10-24に日英西葡の TikTok(説明欄・AIラベルまで)と日英西の Instagram が済み。2日に1本で、次(10-26ごろ)は abf-en・abf-es・abf-pt、gideon-es。gideon の fr・it・pt・zh はドライブ未配置(動画は 10-18 版)。TikTok は言語ごとの Chrome プロフィール(Masaka-EN/JA/ES/PT、ログイン済み)で操作し、ログアウトしない(sugoi-shorts accounts.json の naming.chromeProfiles)
 6. ~~note の「投稿する」~~ **済み(10-24)**: ピロリ菌 marshall-pylori(200円)・月軌道ランデブー houbolt-lor(300円)。日本語版は10-23〜24に書き直し済み。GMが下書き〜公開設定まで入れる。同じ日の中で時刻をずらす(済みか未確認)
-7. ポルトガル語のアカウント: pt@saas-status.com。先にGMが @masakaspanish から電話番号を外す→TikTokはスマホのアプリで登録(番号は同じものを試す)→Instagram・プロフィールはPC(sugoi-shorts accounts.json の naming。10-24時点で pt は未作成)
+7. ポルトガル語: TikTok @masakaportuguese は10-24に作成済み(名前は10-31以降に GM が PC で「Masaka」に直す。お願い一覧 ptname1031)。残りは Instagram のアカウント作成(作成ボタンはオーナー)
 **GMが自分で進めること(報告だけ)**
 8. 値段の行の字数をコードで数え直す(★3の差し替えの前に): wright・gideon が値段の境目、kirtsaeng は10-24に結末を足して字数が変わったので値段を決め直す(bretz・abf は200円に決定済み)
 9. 投稿済みの動画(kirtsaeng 日英西・tilley ほか)と熱殺蜂球の再生数を、PC投稿の4本と比べる(metrics/reach。最新は reach-2026-10-20)
