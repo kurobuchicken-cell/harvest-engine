@@ -836,3 +836,4 @@
 - 残課題・次にやること：10-26ごろ次の動画(abf-en/es/pt・gideon-es)、ポルトガル語 Instagram の作成、10-31に pt の名前を Masaka に、日本語 note 3本(carver・opportunity・takahe)と charbucks の扱いはオーナー判断
 - 触ったファイル：HANDOFF.md・DECISIONS.md、sugoi-shorts の src/outlets.ts(新規)・run.ts・episode.ts・reminders.ts・autorun-notify.ts・accounts.ts・autorun-guard.ts・autorun-prompt.md・skills・accounts.json・reminders.json・仕様書・HISTORY.md・episodes/*
 - 追記(同日 15時台)：動画の締めを「一番驚く事実の言い直し+この話には、興味深い点が他にもあるんです。詳しくはプロフィールから。」に変えた(問いで終えるのをやめた。台本AI・視聴者係・手順書・仕様書)。Instagram のリンクは日本語・英語は入っていて、スペイン語だけ未設定(アプリで英語に入ってしまい翌日へ)。ポルトガル語 Instagram は登録したが SMS が届かず翌日へ。アカウントの記録を registry に一本化し npm run account -- table で一覧に
+- 追記(同日 夕方)：PDCA をハーヴェスト全体の決まりに(CLAUDE.md「PDCA を回し続ける」)。夜間作業に毎晩の「改善:」2行と毎週木曜の振り返りを入れ、振り返りも朝の Slack に載るように(autorun-notify.ts)。GMの提案3つ(数字の記録を Chrome プロフィールで自動に/TikTok の出し先も自動で突き合わせ/訳す係に過去の誤り一覧を最初から渡す)はオーナーの選択待ち
