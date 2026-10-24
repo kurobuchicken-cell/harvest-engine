@@ -821,3 +821,10 @@
 - 完了した状態：HANDOFF.md は約1万字に(過去分は HANDOFF_過去分_〜2026-10-24.md)。abf-en/es/pt/zh は stage ready でドライブに配置。⑦の束と listen の不具合を直した。グローバル CLAUDE.md に「ルールのファイルの書き方」
 - 残課題・次にやること：HANDOFF のやることリスト 15〜18(abf 日本語版の同じ穴・es の声・インクの絵・重なり判定)/Substack fr の重複下書きをオーナーが消す/今夜から新しい量で夜間作業
 - 触ったファイル：HANDOFF.md・CLAUDE.md・HISTORY.md(新規)・dev-config/CLAUDE.md、sugoi-shorts の src/autorun-*.md・.claude/skills/*・CLAUDE.md・HISTORY.md・仕様書・src/bundle.ts・src/listen.py・src/voice.ts・episodes/abf-*・episodes/houbolt-lor-*
+
+## harvest-engine-reach-01（2026-10-24 後半）
+- 作業環境：家PC
+- やったこと：テーマUの読まれる工夫(横長サムネ・短い題・副題を全記事に、熱殺蜂球を無料に)、Radar(ポルトガル語)へ紹介文送信
+- 完了した状態：note 11本・Substack 110本に新しい題とサムネ、熱殺蜂球は全言語で無料。HANDOFF 19〜21 に残り
+- 残課題・次にやること：11-07ごろ無料記事の効き目確認(次の候補 tilley)、Radar の返事待ち、Substack fr の重複下書き削除(オーナー)、夜間作業のトークン比較を朝に報告
+- 触ったファイル：HANDOFF.md、sugoi-shorts の src/cover.ts・bundle.ts・episodes/*・skills・HISTORY.md
