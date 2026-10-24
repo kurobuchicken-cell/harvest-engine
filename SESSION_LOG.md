@@ -814,3 +814,10 @@
 - 触ったファイル：SESSION_LOG.md
 - 終了時(10-24 朝): 翻訳調をなくす作業は10記事×10言語すべて完了(sugoi-shorts 61de9fe)。オーナー決定で夜間作業の量・順番・出し方を書き直した(fc605f6、DECISIONS 2026-10-24)。このセッションで7日枠44%を使った(日本語版を固めずに訳し入れ直しをくり返したのが主因)。オーナーの指摘: 報告に③などの内部の呼び名を使わない/質を落としてトークンを減らす案を出さない(メモリに記録)
 - 残り: 夜間作業のタスクを9時以降に戻す/note・Substack の公開済み記事の差し替え/abf の外国語の動画の字幕で「主要な」抜け
+
+## harvest-engine-rules-01(2026-10-24)
+- 作業環境：家PC
+- やったこと：夜間作業の自動実行を戻した/ルールのファイルの整理(今の決まりだけ・経緯は HISTORY.md、別の係の突き合わせで落ち0件)/公開済み記事の差し替え(Substack 103本・note 9本)と houbolt 外国語7言語・note 2本の公開/abf の外国語動画 en・es・pt・zh の直し
+- 完了した状態：HANDOFF.md は約1万字に(過去分は HANDOFF_過去分_〜2026-10-24.md)。abf-en/es/pt/zh は stage ready でドライブに配置。⑦の束と listen の不具合を直した。グローバル CLAUDE.md に「ルールのファイルの書き方」
+- 残課題・次にやること：HANDOFF のやることリスト 15〜18(abf 日本語版の同じ穴・es の声・インクの絵・重なり判定)/Substack fr の重複下書きをオーナーが消す/今夜から新しい量で夜間作業
+- 触ったファイル：HANDOFF.md・CLAUDE.md・HISTORY.md(新規)・dev-config/CLAUDE.md、sugoi-shorts の src/autorun-*.md・.claude/skills/*・CLAUDE.md・HISTORY.md・仕様書・src/bundle.ts・src/listen.py・src/voice.ts・episodes/abf-*・episodes/houbolt-lor-*
