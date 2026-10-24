@@ -1944,5 +1944,47 @@
     "fxRateSource": "https://open.er-api.com/v6/latest/USD",
     "fxRateStatus": "resolved",
     "recordedAt": "2026-10-24T02:38:57.798Z"
+  },
+  {
+    "id": "caaf29e7-54d6-4fc9-ad69-3dec5a150481",
+    "category": "api",
+    "service": "perplexity-api",
+    "amountUsd": 0.06643,
+    "amountJpy": 10,
+    "description": "Perplexity medium: Find 8 true underdog stories in FOOD or DRINK (small produce",
+    "occurredAt": "2026-10-24T13:31:20.519Z",
+    "fxRate": 156.839696,
+    "fxRateFetchedAt": "2026-10-24T13:31:20.473Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-24T13:31:20.519Z"
+  },
+  {
+    "id": "f4eccaa5-583b-40b9-9aeb-eb8609a4176b",
+    "category": "api",
+    "service": "perplexity-api",
+    "amountUsd": 0.03559,
+    "amountJpy": 6,
+    "description": "Perplexity medium: Find 8 true SPORTS underdog stories (an unknown athlete, a t",
+    "occurredAt": "2026-10-24T13:41:13.178Z",
+    "fxRate": 156.839696,
+    "fxRateFetchedAt": "2026-10-24T13:41:13.116Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-24T13:41:13.178Z"
+  },
+  {
+    "id": "64367199-f56b-42a4-90c4-e0aa6d52c6cd",
+    "category": "api",
+    "service": "sugoi-shorts",
+    "amountUsd": 0.057162,
+    "amountJpy": 9,
+    "description": "テーマU 台本 wiley-poison-squad(claude-sonnet-5-5 in=13096 out=3097)",
+    "occurredAt": "2026-10-24T14:14:58.069Z",
+    "fxRate": 156.839696,
+    "fxRateFetchedAt": "2026-10-24T14:14:58.008Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-24T14:14:58.069Z"
   }
 ]
