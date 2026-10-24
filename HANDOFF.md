@@ -21,7 +21,7 @@
 **オーナーの作業(ボタン・スマホ)**
 5. 動画の投稿(何が待ちかは `cd C:devsugoi-shorts; npm run -s episodes` の「出し先待ち」が正): 熱殺蜂球は10-24に日英西葡の TikTok(説明欄・AIラベルまで)と日英西の Instagram が済み。2日に1本で、次(10-26ごろ)は abf-en・abf-es・abf-pt、gideon-es。gideon の fr・it・pt・zh はドライブ未配置(動画は 10-18 版)。TikTok は言語ごとの Chrome プロフィール(Masaka-EN/JA/ES/PT、ログイン済み)で操作し、ログアウトしない(sugoi-shorts accounts.json の naming.chromeProfiles)
 6. ~~note の「投稿する」~~ **済み(10-24)**: ピロリ菌 marshall-pylori(200円)・月軌道ランデブー houbolt-lor(300円)。日本語版は10-23〜24に書き直し済み。GMが下書き〜公開設定まで入れる。同じ日の中で時刻をずらす(済みか未確認)
-7. ポルトガル語: TikTok @masakaportuguese は10-24に作成済み(名前は10-31以降に GM が PC で「Masaka」に直す。お願い一覧 ptname1031)。残りは Instagram のアカウント作成(作成ボタンはオーナー)
+7. ポルトガル語: TikTok @masakaportuguese は10-24に作成済み(名前は10-31以降に GM が PC で「Masaka」に直す。お願い一覧 ptname1031)。Instagram masakaportuguese は10-24に登録済みだが、電話番号のSMS確認が届かず保留(10-25にオーナーが Masaka-PT の窓で再試行。お願い一覧 ptigsms)。確認後に GM が自己紹介・アイコン・クリエイター切り替え・熱殺蜂球のリール
 **GMが自分で進めること(報告だけ)**
 8. 値段の行の字数をコードで数え直す(★3の差し替えの前に): wright・gideon が値段の境目、kirtsaeng は10-24に結末を足して字数が変わったので値段を決め直す(bretz・abf は200円に決定済み)
 9. 投稿済みの動画(kirtsaeng 日英西・tilley ほか)と熱殺蜂球の再生数を、PC投稿の4本と比べる(metrics/reach。最新は reach-2026-10-20)
