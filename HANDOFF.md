@@ -22,7 +22,7 @@
 **オーナーの作業(ボタン・スマホ)**
 5. 動画の投稿(何が待ちかは `cd C:devsugoi-shorts; npm run -s episodes` の「出し先待ち」が正): 熱殺蜂球は10-24に日英西葡の TikTok(説明欄・AIラベルまで)と日英西の Instagram が済み。2日に1本で、abf-en・abf-es は10-25に Instagram(各言語のリール)まで済み、次(10-26ごろ)は abf-pt、gideon-es、wiley-en/es など。TikTok は10-25から「GM が PC から投稿ボタンまで押す」(スマホ手投稿はやめた。判定の指標は Instagram)。投稿の操作は Sonnet の係。Instagram は英語=Masaka-EN の窓、スペイン語=いつもの Chrome(10-25 パスワード再設定済み)で入れてある。gideon の fr・it・pt・zh はドライブ未配置(動画は 10-18 版)。TikTok は言語ごとの Chrome プロフィール(Masaka-EN/JA/ES/PT、ログイン済み)で操作し、ログアウトしない(sugoi-shorts accounts.json の naming.chromeProfiles)。アカウントのログイン方法・パスワードの有無・電話番号・使う Chrome は `npm run -s account -- table` が正(registry。10-24に一本化)。オーナーの明日の作業(Instagram pt の SMS 確認・es のリンク・アカウント表の unknown)は sugoi-shorts の reminders.json に入れてあり、朝の通知に出る
 6. ~~note の「投稿する」~~ **済み(10-24)**: ピロリ菌 marshall-pylori(200円)・月軌道ランデブー houbolt-lor(300円)。日本語版は10-23〜24に書き直し済み。GMが下書き〜公開設定まで入れる。同じ日の中で時刻をずらす(済みか未確認)
-7. ポルトガル語: TikTok @masakaportuguese は10-24に作成済み(名前は10-31以降に GM が PC で「Masaka」に直す。お願い一覧 ptname1031)。Instagram masakaportuguese は10-24に登録済みだが、電話番号のSMS確認が届かず保留(10-25にオーナーが Masaka-PT の窓で再試行。お願い一覧 ptigsms)。確認後に GM が自己紹介・アイコン・クリエイター切り替え・熱殺蜂球のリール
+7. ポルトガル語: TikTok @masakaportuguese の名前を10-31以降に GM が PC で「Masaka」に直す(お願い一覧 ptname1031)。Instagram masakaportuguese は10-25にSMS確認が通り、自己紹介・アイコン・クリエイター切り替え・abf-ptのリールまで済み。押せるリンクはオーナーがスマホで設定済み。TikTok の2段階認証(日本語・英語)はやめた(ポルトガル語のみオン)
 **GMの提案(10-24、オーナーの選択待ち。おすすめは 1→2)**
 - 提案1: 毎朝の数字の記録を、言語ごとの Chrome プロフィールで TikTok Studio を順に開いて自動で取る
 - 提案2: TikTok の出し先も outlets で自動で突き合わせる(今は Substack・note だけ)
