@@ -851,3 +851,10 @@
 - 追記(10-25 夕)：日本語 note の下書きを作り、公開設定(300円・有料の線・タグ)まで入れた。「投稿する」はオーナー
 - 追記(10-25 夕・終了)：日本語 note はオーナーが15:02に公開(300円)。中村修二は日本語+Substack 10言語がそろった。残り：スペイン語の動画 wiley-poison-squad-es の書き出しとドライブ(全係合格は記録済み)、夜も npm run pass を打てる許可をオーナーが settings.json に足す件
 - 追記(10-25 夕)：TikTok を GM の PC 投稿に切り替え、判定の指標を Instagram に(オーナー決定)。Masaka-JA/EN/ES/PT の Chrome に Claude 拡張を入れ、TikTok 9本を予約(残り5本は Sonnet の係)
+
+## harvest-engine-instagram-post-01（2026-10-25 夜）
+- 作業環境：家PC
+- やったこと：許可の設定(npm run pass)をオーナーが反映／TikTok は GM が PC から投稿・判定の指標を Instagram に切り替え／英語(Masaka-EN)とスペイン語(いつもの Chrome、パスワード再設定)の Instagram にログインし、abf-en・abf-es のリールを Sonnet の係が投稿(元の比率・表紙・説明欄・AIラベル)
+- 完了した状態：abf-en https://www.instagram.com/masakaenglish/reel/De6Yap6u-da/ と abf-es https://www.instagram.com/masakaspanish/reel/De6YzsgBkyr/ を公開し、npm run post で記録済み。公開後のリールのページで説明欄・AIラベルをあらためて見る確認は未実施
+- 残課題・次にやること：abf-pt・gideon-es・wiley-en/es の Instagram(各言語1本ずつ・2日に1本)。ポルトガル語 Instagram の SMS 確認、TikTok 2段階認証(JA/EN)はオーナーの宿題。Masaka-PT の窓は TikTok の「離れますか？」で閉じられず最小化中。次の記事で4段の手順の周・トークンを10-24夜と比べる
+- 触ったファイル：sugoi-shorts/accounts.json・episodes/abf-en,abf-es/episode.json、HANDOFF.md
