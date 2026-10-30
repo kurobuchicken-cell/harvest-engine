@@ -793,3 +793,9 @@ TikTok Studio では日本語6本中5本が0〜1回(スマホ投稿の3本は91�
 - docs:check に「話題ごとの正本」の点検を足した(同じ文でなくても、正本以外のファイルがその話題を書いていれば出す)。当日これで6件の写しを見つけた
 - 「成果物の質は落とさない」をオーナーが再指示したので CLAUDE.md「PDCA」の先頭に大前提として書いた
 
+## 2026-10-30 【決定】PDCA を仕組みにする・PCの質問と SESSION_LOG をやめる・テーマUの記録は sugoi-shorts に
+
+- オーナー指示「売上に直結する施策と夜間作業の質・効率は常に PDCA を回す仕組みに」。`npm run pdca`(hq/pdca.mts)が metrics/laps(夜ごとのトークン・本数・周・7日枠・一番重い係)・metrics/reach(Instagram・TikTok・note・Substack)・episodes の outlets(出した本数)から前回比を出す。改善の案は hq/tasks.json の kind=kaizen に measure(動かす数字)・baseline(今の値)つきで登録し、docs:check が無記入を止める。毎晩の「改善:」・木曜の振り返り(autorun-prompt)・status の要点は pdca の出力から書く。初回の pdca で「売上側の数字の記録が10日止まっている」と出た(警告は自動)
+- オーナー「2・3・4は Fable の推奨で OK」: (2)PCの質問と SESSION_LOG.md をやめた(フックが git fetch 後の behind を出すので別PCの作業は分かる。過去分は archive/) (3)安全の決まりを「合意した範囲内の編集は確認なし、範囲外と取り返しのつかない操作は事前確認」「~/ は ~/.claude 以外触らない」に書き直す。ただしグローバル CLAUDE.md のこの2か所の編集は Claude Code の自動判定(自己改変)に止められたため、オーナーが貼る (4)テーマUの決定・経緯は sugoi-shorts の HISTORY.md にだけ書き、harvest-engine の HISTORY.md は会社レベルだけ。10-17 の「DECISIONS に1〜2行」をやめた
+- GOVERNANCE.md(Opus の記述・止まっている評議会など)はオーナー判断で今のまま
+

@@ -1,5 +1,5 @@
 {
-  "note": "ハーヴェスト全体のやることの正本(2026-10-30)。オーナーのやること・判断と GM のやることを1か所に置く。who=owner|gm、kind=do|decide、project=U|C|H|T|本社。from の日から done が入るまで出る(daily は毎日、weekly は曜日 0=日)。オーナー分は毎朝9時のSlackにも出る。投稿待ちと外国語アカウントを作る日はデータ(npm run episodes・accounts.json)から出すのでここに書かない。一覧は npm run status、消し込みは npm run tasks -- done <id> [メモ]",
+  "note": "ハーヴェスト全体のやることの正本(2026-10-30)。オーナーのやること・判断と GM のやることを1か所に置く。who=owner|gm、kind=do|decide|kaizen(改善の案。measure=動かす数字、baseline=始めた時の値を必ず書く。npm run pdca が前後を並べる)、project=U|C|H|T|本社。from の日から done が入るまで出る(daily は毎日、weekly は曜日 0=日)。オーナー分は毎朝9時のSlackにも出る。投稿待ちと外国語アカウントを作る日はデータ(npm run episodes・accounts.json)から出すのでここに書かない。一覧は npm run status、消し込みは npm run tasks -- done <id> [メモ]",
   "items": [
     {
       "id": "slim",
@@ -294,11 +294,13 @@
     {
       "id": "compare-article",
       "who": "gm",
-      "kind": "do",
+      "kind": "kaizen",
       "project": "U",
       "from": "2026-10-30",
       "text": "次の記事で、合格までの周・トークン・公開後の穴を10-24夜(記事の係の合計約862万・後からの穴約27)と比べる。消費は1晩の7日枠の増え方(10-24夜は+16%、見積もり8〜11%)も記録する",
-      "done": null
+      "done": null,
+      "measure": "記事1本(日本語+10言語)の係の合計トークンと、公開後に見つかる穴の数(npm run pdca の夜間作業・work/<id>/checks.md)",
+      "baseline": "10-24夜 nakamura: 係の合計約862万トークン・後からの穴約27か所・7日枠+16%"
     },
     {
       "id": "price-lines",
@@ -312,20 +314,24 @@
     {
       "id": "compare-views",
       "who": "gm",
-      "kind": "do",
+      "kind": "kaizen",
       "project": "U",
       "from": "2026-10-24",
       "text": "投稿済みの動画(kirtsaeng 日英西・tilley ほか)と熱殺蜂球の再生数を、PC投稿の4本と比べる(metrics/reach)",
-      "done": null
+      "done": null,
+      "measure": "投稿後7日の再生数(metrics/reach の Instagram plays・TikTok views)",
+      "baseline": "スマホ投稿 tilley 335回・PC投稿4本 0〜1回(10-20)"
     },
     {
       "id": "compare-tokens",
       "who": "gm",
-      "kind": "do",
+      "kind": "kaizen",
       "project": "U",
       "from": "2026-10-30",
       "text": "分けたスキルで動く最初の夜のトークンを10-20夜と比べる(夜間作業を戻した後の最初の夜で)",
-      "done": null
+      "done": null,
+      "measure": "1晩の合計トークン(npm run pdca の夜間作業)",
+      "baseline": "10-20夜 10,133,491トークン(分ける前)"
     },
     {
       "id": "screen-fixes",
@@ -357,11 +363,13 @@
     {
       "id": "reach-1107",
       "who": "gm",
-      "kind": "do",
+      "kind": "kaizen",
       "project": "U",
       "from": "2026-11-07",
       "text": "読まれる工夫(10-24、記事の横長サムネ・短い題・副題、熱殺蜂球を全言語で無料)の効果を閲覧・フォロワーで見る。効いていれば2本目の無料記事(候補 tilley)を出す",
-      "done": null
+      "done": null,
+      "measure": "note PV・Substack 購読者・Instagram フォロワー(npm run pdca の売上側)",
+      "baseline": "10-20: note PV 34・Substack 購読者 0・Instagram フォロワー 1"
     },
     {
       "id": "radar-pt",

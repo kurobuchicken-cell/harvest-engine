@@ -8,13 +8,16 @@ const FILE = path.join(HQ_DIR, "tasks.json");
 export interface Task {
   id: string;
   who: "owner" | "gm";
-  kind: "do" | "decide";
+  kind: "do" | "decide" | "kaizen";
   project: string;
   from: string;
   text: string;
   done: string | null;
   daily?: boolean;
   weekly?: number;
+  // kaizen(改善の案)だけ: 動かす数字と、始めた時の値。npm run pdca が前後を並べる
+  measure?: string;
+  baseline?: string;
 }
 interface Tasks { note: string; items: Task[] }
 
@@ -31,7 +34,7 @@ export async function openTasks(date = todayJst()) {
   return { due: all.filter((x) => isDue(x, date)), later: all.filter((x) => x.from > date).sort((a, b) => a.from.localeCompare(b.from)) };
 }
 
-const tag = (x: Task) => `[${x.project}${x.kind === "decide" ? "・判断" : ""}]`;
+const tag = (x: Task) => `[${x.project}${x.kind === "decide" ? "・判断" : x.kind === "kaizen" ? "・改善" : ""}]`;
 export const taskLine = (x: Task) => `・${tag(x)} ${x.text}${x.daily || x.weekly !== undefined ? "" : `(${x.from}から)`} {${x.id}}`;
 
 export async function markDone(id: string, memo?: string) {

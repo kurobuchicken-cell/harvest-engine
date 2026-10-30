@@ -57,6 +57,10 @@ for (const [who, label] of [["owner", "オーナーのやること・判断"], [
   // オーナー分は全文(そのまま報告に使う)。GM分は頭だけにして開始時の読む量を抑える
   for (const x of xs) console.log(who === "owner" ? taskLine(x) : `・[${x.project}] ${x.text.slice(0, 60)}${x.text.length > 60 ? "…" : ""} {${x.id}}`);
 }
+// PDCA の数字は要点だけ(全部は npm run pdca)
+const { pdcaLines } = await import("./pdca.mts");
+console.log("\n■ PDCA の要点(全部は npm run pdca)");
+for (const l of (await pdcaLines(true)).filter((l) => /^・(直近|⚠|Instagram フォロワー|note 売上|出した本数)/.test(l))) console.log(l);
 const soon = later.filter((x) => x.from <= todayJst(new Date(Date.now() + 14 * 864e5)));
 if (soon.length) {
   console.log(`\n■ 2週間以内に始まるもの(${soon.length}件)`);

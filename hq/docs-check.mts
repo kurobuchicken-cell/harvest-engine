@@ -56,7 +56,8 @@ const ids = new Set<string>();
 for (const x of tasks.items) {
   if (ids.has(x.id)) problems.push(`tasks.json の id が重複: ${x.id}`);
   ids.add(x.id);
-  if (!["owner", "gm"].includes(x.who) || !["do", "decide"].includes(x.kind) || !/^\d{4}-\d\d-\d\d$/.test(x.from)) problems.push(`tasks.json の形が違う: ${x.id}`);
+  if (!["owner", "gm"].includes(x.who) || !["do", "decide", "kaizen"].includes(x.kind) || !/^\d{4}-\d\d-\d\d$/.test(x.from)) problems.push(`tasks.json の形が違う: ${x.id}`);
+  if (x.kind === "kaizen" && !x.done && (!x.measure || !x.baseline)) problems.push(`改善の案に動かす数字か今の値が無い: ${x.id}`);
 }
 
 // 言い回しが違う写しを拾う: 話題ごとに正本のファイルを決め、ほかの決まりのファイルがその話題を(正本を指す行以外で)書いていたら出す
