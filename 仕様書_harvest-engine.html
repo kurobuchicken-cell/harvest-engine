@@ -18,7 +18,7 @@ th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font
 <body>
 <main>
 <h1>仕様書 harvest-engine</h1>
-<p class="note">最終更新: 2026-10-06。本書は出口工場パイロット(1章: 補助金、2章: ガチャ、3章: 値上げ情報)と、3本に共通の土台・定期実行・自動点検(4章)、一次情報源調査の自動化(5章)の仕様を記載する(既存の収集基盤・評議会の経緯は HANDOFF.md / DECISIONS.md / GOVERNANCE.md を参照)。</p>
+<p class="note">最終更新: 2026-10-06。本書は出口工場パイロット(1章: 補助金、2章: ガチャ、3章: 値上げ情報)と、3本に共通の土台・定期実行・自動点検(4章)、一次情報源調査の自動化(5章)の仕様を記載する(既存の収集基盤・評議会の経緯は HANDOFF.md / HISTORY.md / GOVERNANCE.md を参照)。</p>
 
 <h2>1. 補助金パイロット(テーマP)</h2>
 <p>出口工場(一次情報の自動収集→AI構造化→ページ自動生成→アフィリエイト・広告)の国内向けパイロット1本目。現段階のゴールは「実データからローカルで静的ページを生成できること」。公開・アフィリエイトは対象外。</p>
@@ -142,7 +142,7 @@ th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font
 <ul>
 <li>モデルは <code>claude-sonnet-5-5</code>(effort low)。構造化出力で、各言語の商品名・商品名中の固有名詞・作品名(英語の正式表記、無ければnull)・商品種別(figure / mascot_keychain / plush / miniature / accessory / stationery_goods / other)を返させる。25件ずつ処理する。</li>
 <li>作品名は、商品名から導けるものに限る(親会社・上位ブランドを推測しない)。表記揺れを防ぐため、既出の作品名一覧をバッチごとにプロンプトへ渡す。</li>
-<li>Haiku 4.5では実在しない作品名を当てる誤りがあったため、Sonnet 5.5を採用した(DECISIONS.md 2026-10-05)。</li>
+<li>Haiku 4.5では実在しない作品名を当てる誤りがあったため、Sonnet 5.5を採用した(HISTORY.md 2026-10-05)。</li>
 <li>処理済みの商品は再処理しない。言語を追加した場合は、翻訳が欠けた商品だけを再処理する。refusal・max_tokensで止まったバッチは未処理のまま残し、次回の実行で再処理する。</li>
 <li>費用は1回の実行につき1行としてledgerに記帳する(service <code>pilot-gacha-sonnet</code>)。402件の全件処理で約$0.53。</li>
 </ul>
@@ -231,7 +231,7 @@ th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font
 </ul>
 
 <h2>4. 共通の土台・定期実行・自動点検(出口工場)</h2>
-<p>3本のパイロットで重複していた処理(保存・AI呼び出しと費用記帳・取得・ページ書き出し)を <code>src/factory/</code> にまとめ、新ジャンルを「ジャンル定義+型ごとの小さなコード」で足せるようにした。あわせて、VMでの毎日の定期実行と、異常の自動点検・Slack通知を加えた(2026-10-05、DECISIONS.md参照)。</p>
+<p>3本のパイロットで重複していた処理(保存・AI呼び出しと費用記帳・取得・ページ書き出し)を <code>src/factory/</code> にまとめ、新ジャンルを「ジャンル定義+型ごとの小さなコード」で足せるようにした。あわせて、VMでの毎日の定期実行と、異常の自動点検・Slack通知を加えた(2026-10-05、HISTORY.md参照)。</p>
 
 <h3>4.1 実行方法</h3>
 <table>
@@ -291,7 +291,7 @@ th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font
 <p>統合の前後で、同じ保存データに対する <code>--generate-only</code> の出力を比較し、3本の全ページ(補助金819・ガチャ619・値上げ76)がバイト単位で一致することを確認した。保存データも一致。リンク切れ・出典欠落・掲載0件ページはいずれも0。</p>
 
 <h2>5. 一次情報源調査(research:sources)</h2>
-<p>評議会が採択したジャンルについて、GMが手作業で行っていた「一次情報源の特定・robots.txt/規約の確認」の下調べを自動化する。ジャンルを数十〜数百に増やすときのボトルネックを外すため(2026-10-06、DECISIONS.md参照)。出力は一次判定で、第1層登録の可否はGMが原文を確認して決める。<strong>当面は手動起動</strong>。週次評議会への自動連結は、手動実行3回または2026-11-02の早い方でオーナーに諮る(HANDOFF.md次アクション5)。</p>
+<p>評議会が採択したジャンルについて、GMが手作業で行っていた「一次情報源の特定・robots.txt/規約の確認」の下調べを自動化する。ジャンルを数十〜数百に増やすときのボトルネックを外すため(2026-10-06、HISTORY.md参照)。出力は一次判定で、第1層登録の可否はGMが原文を確認して決める。<strong>当面は手動起動</strong>。週次評議会への自動連結は、手動実行3回または2026-11-02の早い方でオーナーに諮る(HANDOFF.md次アクション5)。</p>
 
 <h3>5.1 実行方法</h3>
 <table>

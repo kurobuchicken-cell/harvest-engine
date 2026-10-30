@@ -27,7 +27,10 @@
     "pilot:toge": "tsx src/factory/run.ts toge",
     "factory:run": "tsx src/factory/run.ts",
     "factory:schedule": "tsx src/factoryScheduler.ts",
-    "research:sources": "tsx src/research/run.ts"
+    "research:sources": "tsx src/research/run.ts",
+    "status": "node hq/status.mts",
+    "tasks": "node hq/tasks.mts",
+    "docs:check": "node hq/docs-check.mts"
   },
   "keywords": [],
   "author": "",
