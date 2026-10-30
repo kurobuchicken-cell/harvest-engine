@@ -17,7 +17,7 @@
       "project": "U",
       "from": "2026-10-18",
       "daily": true,
-      "text": "PCを開いたら、最初のセッションでGMが数字(TikTok Studio・note・Substack・Instagramの分析画面)を記録する。Chromeはログインしたままにしておく",
+      "text": "PCを開いた日の最初のセッションで、note の数字を GM が記録する(Substack は夜間作業が毎晩。TikTok・Instagram は規約で自動取得が禁止のため、公式 API が通るまで取らない)",
       "done": null
     },
     {
@@ -136,7 +136,7 @@
       "project": "U",
       "from": "2026-10-26",
       "text": "判断の日: ショートを続けるか。10-19のスマホからの手での投稿の試しから1週間で、再生がほぼ付かなければショートの手間を減らして記事(note・Substack)に回す。付けば「1本で完結・続きの問いを1つ残す」形で続ける(仕様書3-2)。GMがTikTok Studioの数字を出す",
-      "done": null
+      "done": "2026-10-30(オーナー決定: 12月頭までは続ける)"
     },
     {
       "id": "ig-links",
@@ -450,6 +450,33 @@
       "project": "U",
       "from": "2026-11-29",
       "text": "フランス語の TikTok のユーザー名を @masaka3961 から masakafrench に変える(PC の Masaka-FR。30日に1回の決まりで11-29から)。accounts.json の registry も直す",
+      "done": null
+    },
+    {
+      "id": "short-role-dec",
+      "who": "owner",
+      "kind": "decide",
+      "project": "U",
+      "from": "2026-12-01",
+      "text": "ショート(動画)を続けるか、12月頭に判断する(10-30 オーナー「12月頭までは続ける」)。GM が Instagram の数字(判定基準: 30日でフォロワー1,000・平均1,000回、60日でフォロワー1万)と、動画から note・Substack への流れを出す",
+      "done": null
+    },
+    {
+      "id": "night-note-host",
+      "who": "owner",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-10-30",
+      "text": "夜間作業で note の数字も取れるよう、C:/dev/sugoi-shorts/src/autorun-guard.ts の BROWSER_HOSTS を [\"substack.com\", \"note.com\"] にする(夜に行ける先を広げる安全の設定なので、GM からは変えられない。note の規約に自動取得の禁止は無いことを 10-30 に確認)",
+      "done": null
+    },
+    {
+      "id": "tiktok-terms",
+      "who": "owner",
+      "kind": "decide",
+      "project": "U",
+      "from": "2026-10-30",
+      "text": "TikTok の規約(日本語版)の禁止事項に「本サービスから情報を収集するために自動化されたスクリプトを使用することまたは本サービスと何らかの交信を行うこと」がある。数字を自動で読むのは明確に禁止。GM が PC から自動で投稿している今のやり方(10-25 決定)も「交信」に当たりうる。GMの案: TikTok の投稿は公式の Content Posting API に切り替えるまで、オーナーの手(PC の TikTok Studio)にするか、TikTok をやめる(判定の指標ではない)",
       "done": null
     }
   ]
