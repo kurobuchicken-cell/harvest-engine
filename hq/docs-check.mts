@@ -21,7 +21,11 @@ const skillDir = p("sugoi-shorts", ".claude", "skills");
 for (const d of await readdir(skillDir)) RULE_FILES.push([path.join(skillDir, d, "SKILL.md"), 12000]);
 
 const read = (f: string) => readFile(f, "utf-8").catch(() => null);
-const plain = (s: string, f: string) => (f.endsWith(".html") ? s.replace(/<style[\s\S]*?<\/style>|<script[\s\S]*?<\/script>/g, "").replace(/<[^>]+>/g, "\n") : s);
+// HTML は、行の途中の強調(b・code など)で文が切れないよう、まず行の中のタグを外してから、残りのタグを改行にする
+const plain = (s: string, f: string) =>
+  f.endsWith(".html")
+    ? s.replace(/<style[\s\S]*?<\/style>|<script[\s\S]*?<\/script>/g, "").replace(/<\/?(b|strong|code|em|i|a|span)(\s[^>]*)?>/g, "").replace(/<[^>]+>/g, "\n")
+    : s;
 const rel = (f: string) => path.relative(DEV, f);
 
 const problems: string[] = [];
@@ -53,6 +57,25 @@ for (const x of tasks.items) {
   if (ids.has(x.id)) problems.push(`tasks.json の id が重複: ${x.id}`);
   ids.add(x.id);
   if (!["owner", "gm"].includes(x.who) || !["do", "decide"].includes(x.kind) || !/^\d{4}-\d\d-\d\d$/.test(x.from)) problems.push(`tasks.json の形が違う: ${x.id}`);
+}
+
+// 言い回しが違う写しを拾う: 話題ごとに正本のファイルを決め、ほかの決まりのファイルがその話題を(正本を指す行以外で)書いていたら出す
+// [話題, 正本のファイル(複数可), 正本以外でも許す行(正本を指す行・別の話題の行)]
+const TOPICS: [RegExp, string[], RegExp][] = [
+  [/Perplexity.{0,24}(ブラウザ|Pro|個人向け|使わない|使ってよい|preset)/, ["sugoi-shorts/CLAUDE.md", "harvest-engine/RULES.md"], /CLAUDE\.md「調べもの」|RULES\.md/],
+  [/推測で(答え|言わ|書か)/, ["dev-config/CLAUDE.md"], /「確かめてから言う」/],
+  [/スマホ|ブラウザで出来る|ブラウザでできる/, ["dev-config/CLAUDE.md"], /「ブラウザとスマホ」|スマホ・ドライブ経由の手投稿はしない|スマホからの手での投稿|スマホのアプリでしか|パソコン→スマホ|パソコンやスマホ/],
+  [/「投稿する」|公開ボタン|公開のボタン|シェア」?(も|は) ?GM|シェア.{0,6}押す/, ["sugoi-shorts/.claude/skills/episode-post/SKILL.md"], /episode-post|⏸ ?公開|最後の送信／公開ボタン/],
+  [/HANDOFF\.md ?(には|は)/, ["dev-config/CLAUDE.md"], /「情報の置き場所」|記録から出せない今の状態だけ/],
+];
+for (const [re, owners, allow] of TOPICS) {
+  for (const [f] of RULE_FILES) {
+    if (owners.includes(rel(f).replace(/\\/g, "/"))) continue;
+    const raw = await read(f);
+    if (!raw) continue;
+    const hits = plain(raw, f).split(/\r?\n/).filter((l) => re.test(l) && !allow.test(l));
+    if (hits.length) problems.push(`話題「${re.source.slice(0, 20)}」が正本(${owners.join("・")})以外に: ${rel(f)} ${hits.length}行 「${hits[0].trim().slice(0, 50)}…」`);
+  }
 }
 
 const dups = [...sentences].filter(([, fs]) => fs.size > 1);

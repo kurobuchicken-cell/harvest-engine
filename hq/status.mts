@@ -53,8 +53,9 @@ if (acc) console.log(acc.split("\n")[0]);
 const { due, later } = await openTasks();
 for (const [who, label] of [["owner", "オーナーのやること・判断"], ["gm", "GMのやること"]] as const) {
   const xs = due.filter((x) => x.who === who);
-  console.log(`\n■ ${label}(${xs.length}件、hq/tasks.json)`);
-  for (const x of xs) console.log(taskLine(x));
+  console.log(`\n■ ${label}(${xs.length}件、hq/tasks.json${who === "gm" ? "。全文は npm run tasks" : ""})`);
+  // オーナー分は全文(そのまま報告に使う)。GM分は頭だけにして開始時の読む量を抑える
+  for (const x of xs) console.log(who === "owner" ? taskLine(x) : `・[${x.project}] ${x.text.slice(0, 60)}${x.text.length > 60 ? "…" : ""} {${x.id}}`);
 }
 const soon = later.filter((x) => x.from <= todayJst(new Date(Date.now() + 14 * 864e5)));
 if (soon.length) {
