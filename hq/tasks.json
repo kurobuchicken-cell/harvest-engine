@@ -441,6 +441,15 @@
       "project": "U",
       "from": "2026-10-31",
       "text": "フランス語の TikTok(fr@saas-status.com、今は @masaka3961・名前 user7999379128777、10-30作成。メール・電話あり)の名前 Masaka・ユーザー名 masakafrench・自己紹介を、まず GM が PC の Masaka-FR で直せるか試す。だめならオーナーの Instagram SMS(fr-ig-sms)と同じ時に、アプリでの入力を1回だけ頼む。通ったらアイコン・動画3本(gideon-fr・japanese-honeybee-fr・wiley-poison-squad-fr)の予約と npm run account -- done fr",
+      "done": "2026-10-30(10-30 名前・自己紹介・アイコンは GM が PC で入れた。ユーザー名は11-29まで @masaka3961、3本予約済み)"
+    },
+    {
+      "id": "fr-username-1129",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-29",
+      "text": "フランス語の TikTok のユーザー名を @masaka3961 から masakafrench に変える(PC の Masaka-FR。30日に1回の決まりで11-29から)。accounts.json の registry も直す",
       "done": null
     }
   ]
