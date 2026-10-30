@@ -424,6 +424,15 @@
       "from": "2026-10-31",
       "text": "Instagram のプロアカウント向け公式の投稿 API(Meta の Content Publishing)で、リールを認められた形で自動投稿できるかを、Meta の原文(プラットフォーム規約・開発者ポリシー・API の条件)で調べ、要る準備と費用をオーナーに出す",
       "done": null
+    },
+    {
+      "id": "fr-ig-sms",
+      "who": "owner",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-10-31",
+      "text": "フランス語の Instagram(masakafrench)の SMS 確認: PCで Masaka-FR の窓を開き(GM が開く)、instagram.com の「人間であることを確認」から SMS のコードを入れる(10-30は届かず。「新しいコードをリクエスト」は1回だけ)。通ったら GM が自己紹介・アイコン・クリエイター切り替え・リール3本(gideon-fr・japanese-honeybee-fr・wiley-poison-squad-fr)",
+      "done": null
     }
   ]
 }
