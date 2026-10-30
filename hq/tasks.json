@@ -12,7 +12,7 @@
     },
     {
       "id": "reach",
-      "who": "owner",
+      "who": "gm",
       "kind": "do",
       "project": "U",
       "from": "2026-10-18",
@@ -185,11 +185,11 @@
     },
     {
       "id": "ptname1031",
-      "who": "gm",
+      "who": "owner",
       "kind": "do",
       "project": "U",
       "from": "2026-10-31",
-      "text": "TikTok @masakaportuguese の名前を「Masaka」に直す(10-24にユーザー名と同じ名前になり、7日に1回しか変えられないため10-31以降。PCのプロフィール編集)",
+      "text": "TikTok @masakaportuguese の名前を「Masaka」に直す(10-31以降。PCの Masaka-PT の窓で TikTok を開き、プロフィールを編集→名前。TikTok は規約上 Claude が操作しないため、オーナーが手で)",
       "done": null
     },
     {
@@ -445,11 +445,11 @@
     },
     {
       "id": "fr-username-1129",
-      "who": "gm",
+      "who": "owner",
       "kind": "do",
       "project": "U",
       "from": "2026-11-29",
-      "text": "フランス語の TikTok のユーザー名を @masaka3961 から masakafrench に変える(PC の Masaka-FR。30日に1回の決まりで11-29から)。accounts.json の registry も直す",
+      "text": "フランス語の TikTok のユーザー名を @masaka3961 から masakafrench に変える(11-29以降。PCの Masaka-FR の窓で、プロフィールを編集→ユーザー名。TikTok は規約上 Claude が操作しないためオーナーが手で)。変えたら GM に伝える(registry を直す)",
       "done": null
     },
     {
