@@ -17,7 +17,7 @@
       "project": "U",
       "from": "2026-10-18",
       "daily": true,
-      "text": "PCを開いた日の最初のセッションで、note の数字を GM が記録する(Substack は夜間作業が毎晩。TikTok・Instagram は規約で自動取得が禁止のため、公式 API が通るまで取らない)",
+      "text": "夜間作業が止まった日だけ、昼の最初のセッションで note・Substack の数字を GM が記録する(ふだんは夜間作業が毎晩。TikTok・Instagram は規約で自動取得が禁止のため、公式 API が通るまで取らない)",
       "done": null
     },
     {
@@ -468,7 +468,7 @@
       "project": "U",
       "from": "2026-10-30",
       "text": "夜間作業で note の数字も取れるよう、C:/dev/sugoi-shorts/src/autorun-guard.ts の BROWSER_HOSTS を [\"substack.com\", \"note.com\"] にする(夜に行ける先を広げる安全の設定なので、GM からは変えられない。note の規約に自動取得の禁止は無いことを 10-30 に確認)",
-      "done": null
+      "done": "2026-10-30(オーナーが書き換え、GM が7通り確かめた)"
     },
     {
       "id": "tiktok-terms",
