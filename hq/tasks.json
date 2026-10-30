@@ -433,6 +433,15 @@
       "from": "2026-10-31",
       "text": "フランス語の Instagram(masakafrench)の SMS 確認: PCで Masaka-FR の窓を開き(GM が開く)、instagram.com の「人間であることを確認」から SMS のコードを入れる(10-30は届かず。「新しいコードをリクエスト」は1回だけ)。通ったら GM が自己紹介・アイコン・クリエイター切り替え・リール3本(gideon-fr・japanese-honeybee-fr・wiley-poison-squad-fr)",
       "done": null
+    },
+    {
+      "id": "fr-tiktok-profile",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-10-31",
+      "text": "フランス語の TikTok(fr@saas-status.com、今は @masaka3961・名前 user7999379128777、10-30作成。メール・電話あり)の名前 Masaka・ユーザー名 masakafrench・自己紹介を、まず GM が PC の Masaka-FR で直せるか試す。だめならオーナーの Instagram SMS(fr-ig-sms)と同じ時に、アプリでの入力を1回だけ頼む。通ったらアイコン・動画3本(gideon-fr・japanese-honeybee-fr・wiley-poison-squad-fr)の予約と npm run account -- done fr",
+      "done": null
     }
   ]
 }
