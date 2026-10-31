@@ -190,7 +190,7 @@
       "project": "U",
       "from": "2026-10-31",
       "text": "TikTok @masakaportuguese の名前を「Masaka」に直す(10-31以降。PCの Masaka-PT の窓で TikTok を開き、プロフィールを編集→名前。TikTok は規約上 Claude が操作しないため、オーナーが手で)",
-      "done": null
+      "done": "2026-10-31(10-31 オーナーが Masaka-PT の窓で名前を Masaka に)"
     },
     {
       "id": "ptigsms",
@@ -430,8 +430,8 @@
       "who": "owner",
       "kind": "do",
       "project": "U",
-      "from": "2026-10-31",
-      "text": "フランス語の Instagram(masakafrench)の SMS 確認: PCで Masaka-FR の窓を開き(GM が開く)、instagram.com の「人間であることを確認」から SMS のコードを入れる(10-30は届かず。「新しいコードをリクエスト」は1回だけ)。通ったら GM が自己紹介・アイコン・クリエイター切り替え・リール3本(gideon-fr・japanese-honeybee-fr・wiley-poison-squad-fr)",
+      "from": "2026-11-01",
+      "text": "フランス語(masakafrench・Masaka-FR)とイタリア語(masakaitalian・Masaka-IT)の Instagram の「人間であることを確認」: GM が窓を開き、オーナーが携帯番号を入れて「SMSでコードを送信」を押す(コードは既定で WhatsApp に送られる)。数字をチャットで受け取り GM が入れる。10-30・10-31 は届かず、10-31 にポルトガル語の Instagram から番号を外した(ほかのアカウントに付いた番号には送られない、という推測を試す)。通ったら GM が自己紹介・アイコン・クリエイター切り替え・リール(fr: gideon・japanese-honeybee・wiley-poison-squad / it: アカウント待ちの3本)",
       "done": null
     },
     {
