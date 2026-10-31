@@ -1986,5 +1986,61 @@
     "fxRateSource": "https://open.er-api.com/v6/latest/USD",
     "fxRateStatus": "resolved",
     "recordedAt": "2026-10-24T14:14:58.069Z"
+  },
+  {
+    "id": "7c410a1f-05e7-465f-b35f-5a9936e272e2",
+    "category": "api",
+    "service": "perplexity-api",
+    "amountUsd": 0.22377,
+    "amountJpy": 35,
+    "description": "Perplexity medium: Joseph Goldberger pellagra: give URLs of freely readable ful",
+    "occurredAt": "2026-10-30T08:57:55.914Z",
+    "fxRate": 157.881601,
+    "fxRateFetchedAt": "2026-10-30T08:57:55.877Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-30T08:57:55.914Z"
+  },
+  {
+    "id": "c28e2cbb-a954-4f92-ad00-871b3e7ef18b",
+    "category": "api",
+    "service": "perplexity-api",
+    "amountUsd": 0.03779,
+    "amountJpy": 6,
+    "description": "Perplexity medium: Fors Cola Life (Brasil) e a ação da Coca-Cola contra a empre",
+    "occurredAt": "2026-10-30T09:05:13.150Z",
+    "fxRate": 157.881601,
+    "fxRateFetchedAt": "2026-10-30T09:05:12.786Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-30T09:05:13.150Z"
+  },
+  {
+    "id": "b1ff3680-71ae-4b08-8a5b-f6977de8bf83",
+    "category": "api",
+    "service": "perplexity-api",
+    "amountUsd": 0.05807,
+    "amountJpy": 9,
+    "description": "Perplexity medium: Lista 8 casos reales (México, Argentina, Chile, Colombia, Pe",
+    "occurredAt": "2026-10-30T09:09:49.100Z",
+    "fxRate": 157.881601,
+    "fxRateFetchedAt": "2026-10-30T09:09:49.071Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-30T09:09:49.100Z"
+  },
+  {
+    "id": "d012343d-b3a4-4d82-bff9-bd0f23b44990",
+    "category": "api",
+    "service": "sugoi-shorts",
+    "amountUsd": 0.062598,
+    "amountJpy": 10,
+    "description": "テーマU 台本 houbolt-lor(claude-sonnet-5-5 in=11499 out=3960)",
+    "occurredAt": "2026-10-30T09:30:07.127Z",
+    "fxRate": 157.881601,
+    "fxRateFetchedAt": "2026-10-30T09:30:07.087Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-10-30T09:30:07.127Z"
   }
 ]

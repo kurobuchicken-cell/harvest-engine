@@ -498,6 +498,44 @@
       "from": "2026-10-31",
       "text": "TikTok の公式の投稿 API(Content Posting API)が無料で使えるか、登録・審査の手順、審査前は非公開でしか出せないなどの制限を、TikTok for Developers の原文で確かめ、要る準備をオーナーに出す(10-30 オーナー: 無料でできるなら API に切り替える)",
       "done": null
+    },
+    {
+      "id": "article-scene-gate",
+      "who": "gm",
+      "kind": "kaizen",
+      "project": "U",
+      "from": "2026-10-31",
+      "text": "記事の題材選び(src/autorun-prompt.md「記事1本の題材は厳選する」の(b))に「冒頭に置ける一次資料の場面(日付・人・行動)と確定した勝ちが、資料の一文つきで言えるか」を足す。10-30夜は campbell(判決1本・差し戻し)と honda-cvcc(社史中心・冒頭の対比が時期違い)の2本とも④の入り・ジャイキリで行き詰まり dropped(10-30 夜の提案)",
+      "measure": "記事1本が合格するまでの周と、dropped の本数、記事1本あたりの係のトークン(npm run pdca)",
+      "baseline": "10-30夜 2本とも4周で dropped・lap の合計 campbell 1,080,994/honda-cvcc 1,071,016 トークン(係の通算の重複を含む)",
+      "done": null
+    },
+    {
+      "project": "U",
+      "from": "2026-10-31",
+      "done": null,
+      "id": "mills-cover",
+      "who": "gm",
+      "kind": "do",
+      "text": "mills-1964(ビリー・ミルズ)の外国語10言語の Substack に表紙を入れる(10-30 夜は表紙なしで公開した)"
+    },
+    {
+      "project": "U",
+      "from": "2026-10-31",
+      "done": null,
+      "id": "lap-delta",
+      "who": "gm",
+      "kind": "do",
+      "text": "lap のトークンの数え方を決めて src/autorun-prompt.md に書く: 同じ係に SendMessage で続きを頼むと結果が係の通算で返るため、差分で書くか(10-30 夜の判断待ち)"
+    },
+    {
+      "project": "U",
+      "from": "2026-10-31",
+      "done": null,
+      "id": "id-words",
+      "who": "gm",
+      "kind": "do",
+      "text": "インドネシア語の動画の語数: 上限127語と下限150語が両立しない(10-30 夜の判断待ち)。どちらの決まりが正しいかを仕様書で確かめて直す"
     }
   ]
 }
