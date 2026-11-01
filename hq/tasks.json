@@ -421,8 +421,8 @@
       "who": "gm",
       "kind": "do",
       "project": "U",
-      "from": "2026-10-31",
-      "text": "Instagram のプロアカウント向け公式の投稿 API(Meta の Content Publishing)で、リールを認められた形で自動投稿できるかを、Meta の原文(プラットフォーム規約・開発者ポリシー・API の条件)で調べ、要る準備と費用をオーナーに出す",
+      "from": "2026-11-01",
+      "text": "Instagram の公式 API(Instagram API with Instagram Login)で数字を取り、リールも出す。調べ済み(11-01、Meta の原文): 自分のプロアカウントだけなら Standard Access で App Review 不要・Facebook ページ不要・無料。数字は followers_count と、リールごとの views・reach・likes・saved・shares・ig_reels_avg_watch_time(権限 instagram_business_basic・instagram_business_manage_insights)。投稿は media_type=REELS、動画は公開された URL に置く必要がある(置き場所は未決)。①Meta の開発者登録とアプリ作成 ②4アカウント(ja・en・es・pt)の連携 ③npm run pdca が読む metrics/reach に毎日自動で書く ④投稿の自動化は動画の置き場所を決めてから",
       "done": null
     },
     {
@@ -430,8 +430,8 @@
       "who": "owner",
       "kind": "do",
       "project": "U",
-      "from": "2026-11-01",
-      "text": "フランス語(masakafrench・Masaka-FR)とイタリア語(masakaitalian・Masaka-IT)の Instagram の「人間であることを確認」: GM が窓を開き、オーナーが携帯番号を入れて「SMSでコードを送信」を押す(コードは既定で WhatsApp に送られる)。数字をチャットで受け取り GM が入れる。10-30・10-31 は届かず、10-31 にポルトガル語の Instagram から番号を外した(ほかのアカウントに付いた番号には送られない、という推測を試す)。通ったら GM が自己紹介・アイコン・クリエイター切り替え・リール(fr: gideon・japanese-honeybee・wiley-poison-squad / it: アカウント待ちの3本)",
+      "from": "2026-11-08",
+      "text": "フランス語(masakafrench・Masaka-FR)とイタリア語(masakaitalian・Masaka-IT)の Instagram の「人間であることを確認」: 11-08 まではコードを頼まない(10-30〜11-01 の3日とも SMS が届かず、番号・povo の迷惑SMSブロックは原因でないと確かめた。Instagram 側が送っていない見込み。sugoi-shorts HISTORY.md の 2026-11-01)。11-08 に GM が窓を開き、オーナーが「SMSでコードを送信」を1回だけ押す。届かなければ WhatsApp で受け取るかやめるかをオーナーが決める。通ったら GM が自己紹介・アイコン・クリエイター切り替え・リール(fr: gideon・japanese-honeybee・wiley-poison-squad・houbolt-lor / it: 同じ4本)。中国語の Instagram 作成も同じ番号が要るので、これが通ってから",
       "done": null
     },
     {
@@ -536,6 +536,37 @@
       "who": "gm",
       "kind": "do",
       "text": "インドネシア語の動画の語数: 上限127語と下限150語が両立しない(10-30 夜の判断待ち)。どちらの決まりが正しいかを仕様書で確かめて直す"
+    },
+    {
+      "id": "pass-each-round",
+      "who": "gm",
+      "kind": "kaizen",
+      "project": "U",
+      "from": "2026-11-01",
+      "text": "動画の外国語版で、合格(4以上)した係はその周のうちに npm run pass を打ち、最後の直しで指紋が外れた係だけを呼び直す。houbolt-lor-es は6周目で全員合格の線だったが pass を打たず、場面4の札1つの直しの後に②③⑤①⑦を呼び直した(11-01夜の提案)",
+      "measure": "外国語の動画1本が合格してから書き出すまでの係の呼び出し数とトークン(metrics/laps の check-* 行)",
+      "baseline": "houbolt-lor-es: 6周目の後の確かめで係を延べ6人・約18.8万トークン(check-7・check-8 の係の行)",
+      "done": null
+    },
+    {
+      "id": "data-needs",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-01",
+      "text": "PDCA に要る数字の一覧を決めて仕様書に置く: 売上(note 売上・Substack 有料購読と金額)/その手前(note の記事ごとの閲覧、Substack の閲覧・無料購読・流入元)/動画(Instagram のフォロワー・リールごとの再生・リーチ・保存・シェア・平均視聴時間)/作る側(1本あたりのトークン)。それぞれ、どの判断に使うか・どこから取るか・今取れているかを書き、取れていないものは取る手段のタスクにする",
+      "done": null
+    },
+    {
+      "id": "ad-test-1",
+      "who": "gm",
+      "kind": "kaizen",
+      "project": "U",
+      "from": "2026-11-01",
+      "text": "届けば売れるかの試し: @masaka.true のフーボルトのリール(10-31)を instagram.com から宣伝し、note の記事(300円 https://note.com/masaka_true/n/n5dde4a48bbaf)へ飛ばす。1日500円×7日・上限3,500円(11-01 オーナー承認、需要テスト費)。11-01 に出稿(1日3ドル×7日=21ドル・日本・歴史/科学/NASA に興味・ボタン「詳しくはこちら」、支払いは米ドル)。同日、配信前に削除(費用0。オーナーが記事を直接宣伝する形を考えたため)。同日、記事の表紙(縦長 4:5)と結末を伏せた説明文の広告(プロフィールに出ない広告)で出し直し、審査中。相手・予算・飛び先・ボタンは削除したリールの宣伝と同じ(違いは見せるものだけ)。Meta の広告マネージャ・X・スマートニュースは準備が要るか条件を確かめられず見送り。判定日 11-09: 1本でも売れたら届け方を広げる、売れなければ中身か値段を直す。実際の請求額は data/ledger.json に記帳する",
+      "measure": "宣伝のリンクのクリック数・houbolt の note の閲覧数と売上(note のダッシュボード)",
+      "baseline": "houbolt の note 過去28日 閲覧4・売上0(10-31)",
+      "done": null
     }
   ]
 }
