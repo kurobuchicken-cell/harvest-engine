@@ -705,6 +705,60 @@
       "from": "2026-11-04",
       "text": "11-02夜・11-03夜の記録(metrics/laps の uses・ms と metrics/bundles の字数)で、③と直しの1回の消費が束の大きさと道具の回数のどちらと一緒に動くかを数える。記録が付いていなければ src/autorun-prompt.md の「ラップを記録する」を直す。打ち手はこの数字が出てから1つに絞る(11-02 count_tokens の計測: 束+指示は1回の消費の25〜77%)",
       "done": null
+    },
+    {
+      "id": "mills-cover-small",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-02",
+      "text": "mills-1964 の外国語の動画の表紙で文字が80px未満に縮む(id 約48px・fr 約54px・en 約68px・pt 約72px。読める)。表紙の言葉を短くすると③⑦のやり直しが要るので、次に作る動画からは表紙の言葉の長さを先に確かめるかを決める(11-02 夜のレポート)",
+      "done": null
+    },
+    {
+      "id": "pass-fail-hole",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-02",
+      "text": "npm run pass が落ちた周の係でも合格として書けてしまう(mills-1964-id で①⑦の落ちた周が合格に入っていた。11-01夜に消して呼び直し済み)。落ちた点数では書けないようにする",
+      "done": null
+    },
+    {
+      "id": "mills-pt-article-fix",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-02",
+      "text": "公開済みの mills-1964-pt の記事に⑦③の指摘が残っている(見出しが主語の代わり・本文途中の出典・sino の重なり・Nos 5.000 m・melhor marca と recorde pessoal の不統一・見出しのかぎかっこが原文どおりでない)。直して Substack を API で差し替える(11-02 夜のレポート)",
+      "done": null
+    },
+    {
+      "id": "closing-line-enfr",
+      "who": "gm",
+      "kind": "decide",
+      "project": "U",
+      "from": "2026-11-02",
+      "text": "動画の締めの決まった一文(仕様書3-2)の英語「There's more to this story worth knowing.」と仏語「Cette histoire a d'autres aspects intéressants.」を⑦がぎこちない・訳文っぽいとした。変えるかを決める(変えると全動画の締めが変わる)",
+      "done": null
+    },
+    {
+      "id": "mills-jp-1man-m",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-02",
+      "text": "mills-1964 の日本語の動画の場面2の札で「1万m」が「1万/m」と改行されている(①は4で合格)。札を「ミルズさん／5戦0勝」に直して②①を通すかを決める",
+      "done": null
+    },
+    {
+      "id": "ig-es-switch-check",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-02",
+      "text": "11-02 朝、いつもの Chrome の Instagram 切り替えの一覧から masakaspanish が消えていたと夜の GM が報告。11-02 昼には一覧にあり切り替えられた(GM 確認)。夜に GM がスペイン語のリールを出せるかを次の投稿で確かめ、出せなければオーナーにログインを頼む",
+      "done": null
     }
   ]
 }
