@@ -47,9 +47,31 @@ export async function markDone(id: string, memo?: string) {
   return x;
 }
 
+// 見つけた課題をその場で足す(夜のレポートの「判断待ち」に書くと、誰も拾わない写しになったため。2026-11-02 オーナー「新たに見つかった課題も備忘録して作業に役立てて」)
+// 使い方: npm run tasks -- add <id> <gm|owner> <do|decide|kaizen> <project> "<内容>" [--from YYYY-MM-DD] [--measure "..."] [--baseline "..."]
+export async function addTask(t: Omit<Task, "done">) {
+  const r = await load();
+  if (r.items.some((x) => x.id === t.id)) throw new Error(`同じ id が既にある: ${t.id}`);
+  r.items.push({ ...t, done: null } as Task);
+  await writeFile(FILE, JSON.stringify(r, null, 2) + "\n", "utf-8");
+}
+
 if (import.meta.main) {
   const [cmd, id, ...rest] = process.argv.slice(2);
-  if (cmd === "done" && id) {
+  const opt = (name: string) => { const i = process.argv.indexOf(name); return i > 0 ? process.argv[i + 1] : undefined; };
+  if (cmd === "add") {
+    const [who, kind, project, text] = rest;
+    if (!id || !["gm", "owner"].includes(who) || !["do", "decide", "kaizen"].includes(kind) || !project || !text) {
+      console.error('使い方: npm run tasks -- add <id> <gm|owner> <do|decide|kaizen> <project> "<内容>" [--from YYYY-MM-DD] [--measure "..."] [--baseline "..."]');
+      process.exitCode = 1;
+    } else if (kind === "kaizen" && (!opt("--measure") || !opt("--baseline"))) {
+      console.error("kaizen は --measure(動かす数字)と --baseline(今の値)が要る");
+      process.exitCode = 1;
+    } else {
+      await addTask({ id, who, kind, project, from: opt("--from") ?? todayJst(), text, ...(opt("--measure") ? { measure: opt("--measure"), baseline: opt("--baseline") } : {}) } as Omit<Task, "done">);
+      console.log(`足した: {${id}} ${who} ${kind} ${text.slice(0, 50)}`);
+    }
+  } else if (cmd === "done" && id) {
     const x = await markDone(id, rest.join(" ") || undefined);
     console.log(`${x.id}: 済 ${x.done}`);
   } else {
