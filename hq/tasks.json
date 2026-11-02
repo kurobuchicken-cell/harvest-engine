@@ -618,6 +618,53 @@
       "from": "2026-11-03",
       "text": "見出し画像・表紙が無い公開記事を埋める(npm run outlets の「見出し画像・表紙が無い公開記事」): 夜間作業が charbucks・carver-peanut・takahe-orbell・opportunity-rover の articleCover の言葉を作り③⑦を通して画像にし、charbucks の Substack 10言語には夜に入れる。note の4本は昼に GM が入れ、オーナーが「更新する」を押す。john-snow・mills-1964 は 11-02 に済み",
       "done": null
+    },
+    {
+      "id": "lap-part-check",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-03",
+      "text": "11-02夜の記録(metrics/laps-2026-11-02.jsonl)で、本の start に --part が付いたか・0 数字の記録/5 投稿/6 記録と報告の行が出たかを npm run pdca の「行ごと」で確かめる。抜けていたら src/autorun-prompt.md の「ラップを記録する」を直す",
+      "done": null
+    },
+    {
+      "id": "lang-cost-review",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-12",
+      "text": "11-14 の Substack 言語ごとの判定(仕様書3-16: 自分たち以外の購読10人・Googleから1人・有料1人のどれも出ない言語は新しい記事を止める)の材料に、pdca の「言語ごと」の1本あたりのトークンと届いた数字を並べ、止める言語で浮くトークンを何に回すかの案とあわせてオーナーに kind=decide で出す(11-01夜の訳1言語: ko 120万・zh 115万が重く、ar 57万が軽い)",
+      "done": null
+    },
+    {
+      "id": "ad-test-1-settle",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-08",
+      "text": "Instagram の宣伝(ad-test-1)が終わったら、Meta の請求の確定額を見て、台帳に記帳した予定額21ドルとの差を npm run ledger:add で足し引きする",
+      "done": null
+    },
+    {
+      "id": "ginza-join",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-02",
+      "text": "有料note銀座商店街(有料記事だけの共同運営マガジン、シゲク運営)に参加する: 条件のシゲクサークル成果紹介会員(月100円、11-02 オーナー承認)に申し込み(支払いの最後のボタンはオーナー)、ledger:add で記帳、募集記事のコメントで参加を頼む(文はオーナーに見せる)。効果は note-inside-reach と同じ数字で見る",
+      "done": null
+    },
+    {
+      "id": "id-ad-test",
+      "who": "gm",
+      "kind": "kaizen",
+      "project": "U",
+      "from": "2026-11-03",
+      "text": "インドネシア語の Substack 記事を Meta の広告で届け、届けば購読されるかを試す(3,000円、11-02 オーナー承認、需要テスト費)。クリックが一番安い言語に1つ集めて差が見える数にする。出稿の最後のボタンはオーナー、出稿時に ledger:add。判定 11-12: 150クリック以上で購読1人の獲得費500円以下なら広告を足す候補、購読0なら記事か入口(題・冒頭)を直す側へ",
+      "done": null,
+      "measure": "広告のリンクのクリック数と、その間の id の Substack 購読者数(metrics/reach の substack.publications.id)",
+      "baseline": "11-01: id 購読 無料0/有料0"
     }
   ]
 }
