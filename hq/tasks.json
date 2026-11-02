@@ -567,6 +567,17 @@
       "measure": "宣伝のリンクのクリック数・houbolt の note の閲覧数と売上(note のダッシュボード)",
       "baseline": "houbolt の note 過去28日 閲覧4・売上0(10-31)",
       "done": null
+    },
+    {
+      "id": "native-prev-suggestions",
+      "who": "gm",
+      "kind": "kaizen",
+      "project": "U",
+      "from": "2026-11-02",
+      "text": "外国語版の仕上げで⑦(native)を2周目以降に呼ぶとき、前の周までに⑦が出した案と、それを次の周で落とした例(その言語の checks.md)を読ませ、自然さの指摘は段落ごとに案を1つにさせる。11-01夜 apis-cerana-dung で pt・zh が⑦の自然さ3のまま4周止まり、この頼み方を足した書き直しで pt 1周・zh 2周で合格した(ほかの言語は --diff の束だけで ko 8周・id 5周)。次の記事の仕上げの指示書(work/<id>/lang-finish-prompt.md)に最初から入れて比べる",
+      "measure": "外国語版の記事の仕上げの平均の周と⑦のトークン(work/<id>-<lang>/checks.md の周の見出し・npm run lap -- report の ⑦)",
+      "baseline": "11-01夜 apis-cerana-dung: 仕上げの周 en3・es4・pt4+1・fr3・it4・de3・id5・ko8・ar2・zh4+2(平均4.3)、⑦ 1,603,080トークン",
+      "done": null
     }
   ]
 }

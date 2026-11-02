@@ -2126,5 +2126,47 @@
     "fxRateSource": "https://open.er-api.com/v6/latest/USD",
     "fxRateStatus": "resolved",
     "recordedAt": "2026-11-01T05:50:47.945Z"
+  },
+  {
+    "id": "5ad6d464-6895-412e-87e4-658019d4b097",
+    "category": "api",
+    "service": "perplexity-api",
+    "amountUsd": 0.05749,
+    "amountJpy": 9,
+    "description": "Perplexity medium: Apis cerana dung fecal spotting Vespa soror Mattila 2020: li",
+    "occurredAt": "2026-11-01T13:11:23.674Z",
+    "fxRate": 157.49531,
+    "fxRateFetchedAt": "2026-11-01T13:11:23.622Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-11-01T13:11:23.674Z"
+  },
+  {
+    "id": "531fa616-5a35-423e-b84e-7d8a625dcc90",
+    "category": "api",
+    "service": "sugoi-shorts",
+    "amountUsd": 0.05357,
+    "amountJpy": 8,
+    "description": "テーマU 台本 nakamura-blue-led(claude-sonnet-5-5 in=11395 out=3078)",
+    "occurredAt": "2026-11-01T14:43:50.781Z",
+    "fxRate": 157.49531,
+    "fxRateFetchedAt": "2026-11-01T14:43:50.736Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-11-01T14:43:50.781Z"
+  },
+  {
+    "id": "22006688-04da-4618-bd7a-93083d3234fc",
+    "category": "api",
+    "service": "sugoi-shorts",
+    "amountUsd": 0.072006,
+    "amountJpy": 11,
+    "description": "テーマU 台本 mills-1964(claude-sonnet-5-5 in=16773 out=3846)",
+    "occurredAt": "2026-11-01T15:08:54.886Z",
+    "fxRate": 157.49531,
+    "fxRateFetchedAt": "2026-11-01T15:08:54.838Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-11-01T15:08:54.886Z"
   }
 ]
