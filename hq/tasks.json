@@ -606,7 +606,7 @@
       "kind": "do",
       "project": "U",
       "from": "2026-11-03",
-      "text": "見出し画像・表紙が無い公開記事を埋める(npm run outlets の「見出し画像・表紙が無い公開記事」): 夜間作業が charbucks・carver-peanut・takahe-orbell・opportunity-rover の articleCover の言葉を作り③⑦を通して画像にし、charbucks の Substack 10言語には夜に入れる。note の4本は昼に GM が入れ、オーナーが「更新する」を押す。john-snow・mills-1964 は 11-02 に済み",
+      "text": "見出し画像・表紙が無い公開記事を埋める(npm run outlets の「見出し画像・表紙が無い公開記事」): 残りは note の4本(charbucks・carver-peanut・takahe-orbell・opportunity-rover)。画像は 11-02 夜に③⑦を通して作成済み(sugoi-shorts output/<id>/article-cover-note.jpg)。昼に GM が note の見出し画像に入れ、オーナーが「更新する」を押す。charbucks の Substack 10言語は 11-02 夜に入れ済み、john-snow・mills-1964 は 11-02 に済み",
       "done": null
     },
     {
@@ -748,6 +748,37 @@
       "project": "U",
       "from": "2026-11-02",
       "text": "11-02 朝、いつもの Chrome の Instagram 切り替えの一覧から masakaspanish が消えていたと夜の GM が報告。11-02 昼には一覧にあり切り替えられた(GM 確認)。夜に GM がスペイン語のリールを出せるかを次の投稿で確かめ、出せなければオーナーにログインを頼む",
+      "done": null
+    },
+    {
+      "id": "finish-current-jp",
+      "who": "gm",
+      "kind": "kaizen",
+      "project": "U",
+      "from": "2026-11-02",
+      "text": "外国語の記事の仕上げの指示書(work/<id>/lang-finish-prompt.md)で、日本語版との突き合わせを差分のファイルではなく今の episodes/<id>/note.md で行わせる。11-02夜 shechtman-de は差分のファイル作成後に日本語版が5か所変わっていて、⑦の正しい指摘を退け③で1周余計にかかった",
+      "measure": "記事の外国語の仕上げの平均の周(work/<id>-<lang>/checks.md の仕上げの周の見出し)",
+      "baseline": "11-02夜 shechtman 10言語: en4・es3・pt5・fr3・it3・de5・zh3・id3・ko2・ar3、平均3.4周",
+      "done": null
+    },
+    {
+      "id": "video-nolang-stop",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-02",
+      "text": "アカウントのない言語(it・zh・id)の動画: 夜の指示の『lapで2夜分測れたら作るのをやめる』に、11-01(houbolt)・11-02(mills)の --part video の記録で当たると判断し、11-02夜の apis-cerana-dung では en・es・pt・fr だけ作った。昼にGMが記録(metrics/laps-2026-11-01・02)で2夜分そろっているか確かめ、夜の指示の『夜に作る外国語』と『外国語版(en・es・pt・fr・it・zh・id)まで』を合わせて直す",
+      "done": "2026-11-03(11-03 オーナー決定で it・zh・id の動画も作り続ける。夜の指示から『2夜分測れたらやめる』を消した)"
+    },
+    {
+      "id": "video-bounds-map",
+      "who": "gm",
+      "kind": "kaizen",
+      "project": "U",
+      "from": "2026-11-03",
+      "text": "日本語の動画の台本の下書き(/episode-video A1)で、記事で③が通した範囲の言葉(work/<id>/bounds.md)を場面ごとに当てた控えを書き手に渡し、③の範囲の手戻りを減らす。11-02夜 apis-cerana-dung の動画は日本語7周で、③の指摘の多くが記事で既に決まった範囲(襲われたとき・トウヨウミツバチ・主語)だった",
+      "measure": "動画の日本語の合格までの平均の周(npm run pdca の質)と動画日本語1本のトークン",
+      "baseline": "11-02夜 apis-cerana-dung: 7.0周・96.0万トークン",
       "done": null
     }
   ]
