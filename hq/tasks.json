@@ -696,6 +696,15 @@
       "from": "2026-11-03",
       "text": "Substack の登録済みおすすめ先の確かめ(プロモーション担当の報告から): pt の「A Grande Guerra」が Café História の配信か(別人の政治の配信と取り違えの恐れ)と更新が続いているか、fr の「Le Substack de Histoire」が実在するか(綴り)。違えば外して仕様書3-16の一覧を直す",
       "done": null
+    },
+    {
+      "id": "agent-cost-data",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-04",
+      "text": "11-02夜・11-03夜の記録(metrics/laps の uses・ms と metrics/bundles の字数)で、③と直しの1回の消費が束の大きさと道具の回数のどちらと一緒に動くかを数える。記録が付いていなければ src/autorun-prompt.md の「ラップを記録する」を直す。打ち手はこの数字が出てから1つに絞る(11-02 count_tokens の計測: 束+指示は1回の消費の25〜77%)",
+      "done": null
     }
   ]
 }
