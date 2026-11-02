@@ -84,16 +84,6 @@
       "done": "2026-10-17"
     },
     {
-      "id": "note-schedule",
-      "who": "owner",
-      "kind": "do",
-      "project": "U",
-      "from": "2026-10-19",
-      "daily": true,
-      "text": "noteの下書き(GMが入れた記事)の「投稿する」を押す(合格した分は時刻をずらさずそのまま出してよい)。11-01の判定まで",
-      "done": null
-    },
-    {
       "id": "substack-stripe",
       "who": "owner",
       "kind": "do",
