@@ -513,7 +513,7 @@
     {
       "project": "U",
       "from": "2026-10-31",
-      "done": null,
+      "done": "2026-11-02(10言語に表紙を入れた。メールは再送なし)",
       "id": "mills-cover",
       "who": "gm",
       "kind": "do",
@@ -609,6 +609,15 @@
       "done": "2026-11-02(画像も入れた。公開ページで表示を確認)",
       "measure": "note の売上件数・メンバー数(note のダッシュボード、metrics/reach の note.ja)",
       "baseline": "11-01: 28日 PV 73・売上 0・メンバー 0"
+    },
+    {
+      "id": "covers-missing",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-03",
+      "text": "見出し画像・表紙が無い公開記事を埋める(npm run outlets の「見出し画像・表紙が無い公開記事」): 夜間作業が charbucks・carver-peanut・takahe-orbell・opportunity-rover の articleCover の言葉を作り③⑦を通して画像にし、charbucks の Substack 10言語には夜に入れる。note の4本は昼に GM が入れ、オーナーが「更新する」を押す。john-snow・mills-1964 は 11-02 に済み",
+      "done": null
     }
   ]
 }
