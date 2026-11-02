@@ -25,11 +25,12 @@ const LANG_SUFFIX = /-(en|es|pt|fr|it|zh|ko|de|id|ar)$/;
 const LANGS = ["ja", "en", "es", "pt", "fr", "it", "zh", "ko", "de", "id", "ar"];
 const langOf = (ep: string) => LANG_SUFFIX.exec(ep)?.[1] ?? "ja";
 const baseOf = (ep: string) => ep.replace(LANG_SUFFIX, "");
-const ROWS: [string, string][] = [["reach", "0 数字の記録"], ["article-ja", "1 記事(日本語)"], ["article-tr", "2 記事の翻訳"], ["neta", "3 ネタ集め"], ["video-ja", "4 動画(日本語)"], ["video-tr", "4 動画(外国語)"], ["post", "5 朝の投稿"], ["wrapup", "6 記録と報告"], ["?", "分けられない"]];
+const ROWS: [string, string][] = [["reach", "0 数字の記録"], ["article-ja", "1 記事(日本語)"], ["article-tr", "2 記事の翻訳"], ["neta", "3 ネタ集め"], ["video-ja", "4 動画(日本語)"], ["video-tr", "4 動画(外国語)"], ["post", "5 朝の投稿"], ["wrapup", "6 記録と報告"], ["promo", "7 プロモーション(金曜)"], ["?", "分けられない"]];
 // part の無い記録(2026-11-02 より前と付け忘れ)は、同じ夜にその本の声・画面の工程があれば動画、なければ記事とみなす
 function partOf(r: Lap, rows: Lap[]): string {
   if (r.part) return r.part;
   if (["reach", "post", "wrapup"].includes(r.episode)) return r.episode;
+  if (/^promo/.test(r.episode)) return "promo";
   if (/^neta/.test(r.episode) || /^neta/.test(r.step)) return "neta";
   if (r.episode === "-") return "?";
   const b = baseOf(r.episode);
@@ -43,7 +44,7 @@ const minutesOf = (spans: [number, number][]) => {
 };
 function nightSummary(rows: Lap[]) {
   const tokens = rows.reduce((a, r) => a + (r.tokens ?? 0), 0);
-  const eps = new Set(rows.filter((r) => r.episode && !/^(session|start|end|-|neta|reach|post|wrapup)(-|$)/.test(r.episode)).map((r) => r.episode));
+  const eps = new Set(rows.filter((r) => r.episode && !/^(session|start|end|-|neta|reach|post|wrapup|promo)(-|$)/.test(r.episode)).map((r) => r.episode));
   const rounds = new Map<string, number>();
   for (const r of rows) {
     const m = /^check-(\d+)$/.exec(r.step);
@@ -61,7 +62,7 @@ function nightSummary(rows: Lap[]) {
     const k = rowOf(r, rows);
     const v = byRow.get(k) ?? { tokens: 0, eps: new Set<string>(), spans: [], fiveH: 0, rounds: [] };
     v.tokens += r.tokens ?? 0;
-    if (k !== "?" && k !== "neta" && k !== "reach" && k !== "post" && k !== "wrapup") v.eps.add(r.episode);
+    if (k !== "?" && k !== "neta" && k !== "reach" && k !== "post" && k !== "wrapup" && k !== "promo") v.eps.add(r.episode);
     byRow.set(k, v);
     const sk = `${k}\t${r.episode}`;
     spanOf.set(sk, [...(spanOf.get(sk) ?? []), r]);

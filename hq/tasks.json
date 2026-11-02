@@ -665,6 +665,37 @@
       "done": null,
       "measure": "広告のリンクのクリック数と、その間の id の Substack 購読者数(metrics/reach の substack.publications.id)",
       "baseline": "11-01: id 購読 無料0/有料0"
+    },
+    {
+      "id": "guest-offers-1",
+      "who": "gm",
+      "kind": "kaizen",
+      "project": "U",
+      "from": "2026-11-03",
+      "text": "Substack のゲスト記事の申し出(言語ごとのプロモーション担当の1回目、sugoi-shorts work/promo/*-2026-11-02.md): es=Revista de Historia(カウペンス)・Orígenes(ブレッツ)、it=Un drago nel mio garage(マーシャルとピロリ菌)、fr=Science Étonnante の4通。在庫の記事を贈る。相手の紹介ページに連絡先が無いので、送り方(Substack のメッセージ機能など)を原文で確かめてから、オーナーの承認を得て送る。pt は題材が新規制作で資料が未確認、fr の Morale de l’Histoire は合いが弱い、id は候補なしで今回は見送り",
+      "done": null,
+      "measure": "申し出への返事の件数と、掲載後14日のその言語の自分たち以外の購読者数(metrics/reach の substack.publications.<lang>)",
+      "baseline": "11-01: es・it・fr とも自分たち以外の購読0、返事0"
+    },
+    {
+      "id": "id-subscribe-para",
+      "who": "gm",
+      "kind": "kaizen",
+      "project": "U",
+      "from": "2026-11-03",
+      "text": "インドネシア語の広告(id-ad-test)の飛び先 apis-cerana-dung-id の無料部分の終わり(出典の前)に、購読すると毎週何が届くか・無料で読める範囲・登録はメールだけ、の段落を1つ足す(プロモーション担当 id の案A)。③⑦を通してから API で差し替え、11-04 までに。題は変えない(原因が分からなくなるため)",
+      "done": null,
+      "measure": "広告のクリック数に対する id の購読者の増え(id-ad-test と同じ判定 11-12)",
+      "baseline": "11-01: id 購読 無料0/有料0"
+    },
+    {
+      "id": "promo-reg-check",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-03",
+      "text": "Substack の登録済みおすすめ先の確かめ(プロモーション担当の報告から): pt の「A Grande Guerra」が Café História の配信か(別人の政治の配信と取り違えの恐れ)と更新が続いているか、fr の「Le Substack de Histoire」が実在するか(綴り)。違えば外して仕様書3-16の一覧を直す",
+      "done": null
     }
   ]
 }
