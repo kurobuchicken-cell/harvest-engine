@@ -672,7 +672,7 @@
       "kind": "kaizen",
       "project": "U",
       "from": "2026-11-03",
-      "text": "Substack のゲスト記事の申し出(言語ごとのプロモーション担当の1回目、sugoi-shorts work/promo/*-2026-11-02.md): es=Revista de Historia(カウペンス)・Orígenes(ブレッツ)、it=Un drago nel mio garage(マーシャルとピロリ菌)、fr=Science Étonnante の4通。在庫の記事を贈る。相手の紹介ページに連絡先が無いので、送り方(Substack のメッセージ機能など)を原文で確かめてから、オーナーの承認を得て送る。pt は題材が新規制作で資料が未確認、fr の Morale de l’Histoire は合いが弱い、id は候補なしで今回は見送り",
+      "text": "Substack のゲスト記事の申し出(言語ごとのプロモーション担当の1回目、sugoi-shorts work/promo/*-2026-11-02.md): es=Revista de Historia(カウペンス)・Orígenes(ブレッツ)、it=Un drago nel mio garage(マーシャルとピロリ菌)、fr=Science Étonnante の4通。在庫の記事を贈る。相手の紹介ページに連絡先が無いので、送り方(Substack のメッセージ機能など)を原文で確かめてから、送る(4通の送信は 11-02 オーナー承認済み。送り方が無い相手は見送り)。pt は題材が新規制作で資料が未確認、fr の Morale de l’Histoire は合いが弱い、id は候補なしで今回は見送り",
       "done": null,
       "measure": "申し出への返事の件数と、掲載後14日のその言語の自分たち以外の購読者数(metrics/reach の substack.publications.<lang>)",
       "baseline": "11-01: es・it・fr とも自分たち以外の購読0、返事0"
