@@ -2252,5 +2252,33 @@
     "fxRateSource": "https://open.er-api.com/v6/latest/USD",
     "fxRateStatus": "resolved",
     "recordedAt": "2026-11-02T06:09:53.049Z"
+  },
+  {
+    "category": "ads",
+    "service": "note-membership",
+    "amountUsd": null,
+    "amountJpy": 100,
+    "description": "テーマU 有料note銀座商店街に参加する条件のシゲクサークル成果紹介会員 月100円(11-02 オーナー承認、PayPay で支払い済み。毎月続く)",
+    "occurredAt": "2026-11-02",
+    "id": "9d6d9b8f-0c34-402b-a205-5bd3c8efd478",
+    "fxRate": null,
+    "fxRateFetchedAt": null,
+    "fxRateSource": null,
+    "fxRateStatus": "not_applicable",
+    "recordedAt": "2026-11-02T06:14:18.916Z"
+  },
+  {
+    "category": "ads",
+    "service": "instagram-ads",
+    "amountUsd": 18,
+    "amountJpy": 2836,
+    "description": "テーマU id-ad-test: インドネシア語 Substack 記事 apis-cerana-dung-id の宣伝 1日3ドル×6日の上限(予定額。確定額との差は終了後に記帳)",
+    "occurredAt": "2026-11-02",
+    "id": "fa76ed2a-aa75-4c8b-8b22-8c368cbaa13b",
+    "fxRate": 157.532149,
+    "fxRateFetchedAt": "2026-11-02T06:26:27.575Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-11-02T06:26:27.651Z"
   }
 ]
