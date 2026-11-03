@@ -643,7 +643,7 @@
       "project": "U",
       "from": "2026-11-02",
       "text": "有料note銀座商店街(有料記事だけの共同運営マガジン、シゲク運営)に参加する: 条件のシゲクサークル成果紹介会員(月100円、11-02 オーナー承認)に申し込み(支払いの最後のボタンはオーナー)、ledger:add で記帳、募集記事のコメントで参加を頼む(文はオーナーに見せる)。効果は note-inside-reach と同じ数字で見る",
-      "done": null
+      "done": "2026-11-03(11-03 参加済み(シゲクさんの招待を受けた)。有料記事5本(houbolt-lor・opportunity-rover・abf・carver-peanut・takahe-orbell)を有料note銀座商店街に追加)"
     },
     {
       "id": "id-ad-test",
@@ -748,7 +748,7 @@
       "project": "U",
       "from": "2026-11-02",
       "text": "11-02 朝、いつもの Chrome の Instagram 切り替えの一覧から masakaspanish が消えていたと夜の GM が報告。11-02 昼には一覧にあり切り替えられた(GM 確認)。夜に GM がスペイン語のリールを出せるかを次の投稿で確かめ、出せなければオーナーにログインを頼む",
-      "done": null
+      "done": "2026-11-03(11-03 いつもの Chrome の切り替えの一覧に masakaspanish・masaka.true・masakaenglish が出ているのを確かめた(オーナーがアカウントセンターから masakaspanish を移動した後))"
     },
     {
       "id": "finish-current-jp",
@@ -779,6 +779,37 @@
       "text": "日本語の動画の台本の下書き(/episode-video A1)で、記事で③が通した範囲の言葉(work/<id>/bounds.md)を場面ごとに当てた控えを書き手に渡し、③の範囲の手戻りを減らす。11-02夜 apis-cerana-dung の動画は日本語7周で、③の指摘の多くが記事で既に決まった範囲(襲われたとき・トウヨウミツバチ・主語)だった",
       "measure": "動画の日本語の合格までの平均の周(npm run pdca の質)と動画日本語1本のトークン",
       "baseline": "11-02夜 apis-cerana-dung: 7.0周・96.0万トークン",
+      "done": null
+    },
+    {
+      "id": "video-add-via-jp",
+      "who": "gm",
+      "kind": "kaizen",
+      "project": "U",
+      "from": "2026-11-03",
+      "text": "動画の外国語版の仕上げ(4段の4.)で、日本語版に無い文を足すときは、他の言語に写す前に日本語版の穴として jp-holes-pending.md に書き、資料の全文で③に確かめてから各言語に写す。11-02夜 apis-cerana-dung で、pt の③が通した場面2の1文(乗っ取りの1件)を it・zh に写した後、it の③が範囲外(研究チームが入り口を広げた巣)と落とし、合格済みの pt も直して全係を呼び直した",
+      "measure": "動画の外国語の合格までの平均の周と動画1言語のトークン(npm run pdca の質・1本あたり)",
+      "baseline": "11-02夜 apis-cerana-dung 7言語: 平均4.0周・動画1言語66.3万トークン",
+      "done": null
+    },
+    {
+      "id": "ginza-add",
+      "who": "gm",
+      "kind": "kaizen",
+      "project": "U",
+      "from": "2026-11-04",
+      "text": "有料note銀座商店街に残りの有料記事を1日5本までPVの多い順に入れる(11-03に5本済み。残り: tilley-image・charbucks・nakamura-blue-led・gideon・mills-1964・bretz-floods・wright・cowpens-1781・kirtsaeng・john-snow・wiley-poison-squad・marshall-pylori・apis-cerana-dung・shechtman-quasicrystal。有料か確かめてから)。新しく公開した有料記事もその日に入れる。11-17に、入れた記事の note の PV・売上を入れる前の28日と比べ、流入元に note.com のマガジンが出たかを見る",
+      "measure": "note の PV(過去28日)と売上の件数",
+      "baseline": "11-02時点 PV117・売上0件(19本)",
+      "done": null
+    },
+    {
+      "id": "meta-ad-pay",
+      "who": "owner",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-03",
+      "text": "Meta の広告(note の月軌道ランデブー・インドネシア語の Substack)の支払いが 11-02 20:40 にカード会社に止められ、広告アカウントが停止中。11-03 10:34 にカード会社へ本人の利用と回答済み。Instagram の masaka.true の広告ツールで「今すぐ支払う」を押す(済んだら GM が配信の再開と判定日 11-09・11-12 をずらすかを見る)",
       "done": null
     }
   ]
