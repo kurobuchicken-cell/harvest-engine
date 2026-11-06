@@ -811,6 +811,55 @@
       "from": "2026-11-03",
       "text": "Meta の広告(note の月軌道ランデブー・インドネシア語の Substack)の支払いが 11-02 20:40 にカード会社に止められ、広告アカウントが停止中。11-03 10:34 にカード会社へ本人の利用と回答済み。Instagram の masaka.true の広告ツールで「今すぐ支払う」を押す(済んだら GM が配信の再開と判定日 11-09・11-12 をずらすかを見る)",
       "done": "2026-11-03(11-03 オーナーが 2.75ドルを支払い、広告2本とも配信再開(6日後に終了の表示))"
+    },
+    {
+      "id": "ikeda-ccby-version",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-03",
+      "text": "ikeda-umami 日本語版の出典の栗原2015を「CC BY 4.0」と書いたが、版の番号は手元の資料の全文で確かめられない(英語版は CC BY だけにした)。昼に PMC か出版社のページで版を確かめ、違えば note.md の出典を直す",
+      "done": null
+    },
+    {
+      "id": "video-script-length",
+      "who": "gm",
+      "kind": "kaizen",
+      "project": "U",
+      "from": "2026-11-04",
+      "text": "日本語の動画で、台本AIの初稿が435字を超えたら、②③⑤を呼ぶ前にGMが435字以内に詰め切る(11-04夜の marshall-pylori は447〜500字で係を呼び、声の後に85→78→76→75秒と3回詰め直して②③⑤を5周通し直した)。台本の長さ以外の手順は変えない",
+      "measure": "pdca の 動画日本語の合格までの平均の周・動画1言語あたりのトークン",
+      "baseline": "11-03夜(11-04朝): 平均10.5周・128万トークン",
+      "done": null
+    },
+    {
+      "id": "pylori-video-lang-gap",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-04",
+      "text": "marshall-pylori の外国語の動画: en は②分かるが3で行き詰まり(11-04夜、出さない)。指摘は『冒頭は潰瘍、場面6の結果は胃炎でつながらない』(資料は胃炎との関わりまで)。残りの es(1周目済み)・pt・fr・it・zh・id は同じ型で止まる見込みが高いので、仕上げを回す前に、冒頭の問いを資料で言える範囲(菌と胃の病気/胃炎)にそろえる直し方を各言語の下書き共通で決めてから回す(work/marshall-pylori-en/checks.md 8〜10周目)",
+      "done": null
+    },
+    {
+      "id": "lang-verb-strength",
+      "who": "gm",
+      "kind": "kaizen",
+      "project": "U",
+      "from": "2026-11-04",
+      "text": "外国語の記事の下書きの指示(lang-writer-prompt の「訳だけに出た誤りの型」)に、勝ち・判決・決着の動詞を強める型(won→ended/決着した)を10番目として足す",
+      "measure": "穴集めで③が挙げた訳だけの実質の指摘の数(work/<id>-<lang>/checks.md)",
+      "baseline": "farnsworth-tv: 『争いが終わった』が10言語中5言語",
+      "done": null
+    },
+    {
+      "id": "wake-timer",
+      "who": "gm",
+      "kind": "do",
+      "project": "sugoi-shorts",
+      "from": "2026-11-07",
+      "text": "タスクのタイマーで家PCが起きない(11-04朝から。sugoi-shorts HISTORY.md の 2026-11-06): ①11-07朝に、11-06夜の22時の開始が走ったか・拾い直し(sugoi-shorts autorun start catchup)が今夜始めた夜に余計に始めていないかを autorun-resume.log と予定タスクの前回実行で確かめる ②オーナーに本当の管理者のターミナルで powercfg /waketimers を流してもらい、タイマーが積まれているかと原因を確かめる(タスクスケジューラのログの有効化も同時に) ③直るまでは毎日 keepawake-until.ps1 -Until 22:30 でPCを起こしたままにする",
+      "done": null
     }
   ]
 }
