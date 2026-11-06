@@ -858,7 +858,16 @@
       "kind": "do",
       "project": "sugoi-shorts",
       "from": "2026-11-07",
-      "text": "タスクのタイマーで家PCが起きない(11-04朝から。sugoi-shorts HISTORY.md の 2026-11-06): ①11-07朝に、11-06夜の22時の開始が走ったか・拾い直し(sugoi-shorts autorun start catchup)が今夜始めた夜に余計に始めていないかを autorun-resume.log と予定タスクの前回実行で確かめる ②オーナーに本当の管理者のターミナルで powercfg /waketimers を流してもらい、タイマーが積まれているかと原因を確かめる(タスクスケジューラのログの有効化も同時に) ③直るまでは毎日 keepawake-until.ps1 -Until 22:30 でPCを起こしたままにする",
+      "text": "タスクのタイマーで家PCが起きない(11-04朝から。タイマーは積まれている。sugoi-shorts HISTORY.md の 2026-11-06): ①11-07朝に、11-06夜の22時の開始が走ったか・拾い直し(sugoi-shorts autorun start catchup)が今夜始めた夜に余計に始めていないかを autorun-resume.log・タスクスケジューラのログ(11-06に有効化)で確かめる ②11-07朝9時の停止がタイマーで起きたか(イベントログの起こした元が Timer か)を見て、起きていなければ原因を調べる ③直るまでは毎日 keepawake-until.ps1 -Until 22:30 でPCを起こしたままにする",
+      "done": null
+    },
+    {
+      "id": "meta-ad-pay-2",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-04",
+      "text": "Meta の広告の支払いが 11-04 に再びカード会社に止められ、11-04 にオーナーが本人の利用と回答済み。Instagram masaka.true の広告ツールで配信が再開したか・未払いの「今すぐ支払う」が出ていないかを見る(出ていればオーナーに押してもらう)。止まった時間に応じて判定日 11-10・11-12 をずらすかを決める",
       "done": null
     }
   ]
