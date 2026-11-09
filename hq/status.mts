@@ -57,6 +57,12 @@ for (const [who, label] of [["owner", "オーナーのやること・判断"], [
   // オーナー分は全文(そのまま報告に使う)。GM分は頭だけにして開始時の読む量を抑える
   for (const x of xs) console.log(who === "owner" ? taskLine(x) : `・[${x.project}] ${x.text.slice(0, 60)}${x.text.length > 60 ? "…" : ""} {${x.id}}`);
 }
+// 新しい儲け口: 掘り切って残ったものだけを並べる(2026-11-08 オーナー)
+const ideas = JSON.parse(await readFile(path.join(import.meta.dirname, "ideas.json"), "utf-8")) as { items: { id: string; night: string; hypothesis: string; verdict: string }[] };
+const kept = ideas.items.filter((x) => x.verdict === "keep");
+const digging = ideas.items.filter((x) => x.verdict === "dig");
+console.log(`\n■ 新しい儲け口(hq/ideas.json。確かめた ${ideas.items.length}件・掘り途中 ${digging.length}件・捨てた ${ideas.items.filter((x) => x.verdict === "drop").length}件)`);
+console.log(kept.length ? kept.map((x) => `・残った: ${x.hypothesis} {${x.id}}`).join("\n") : "・残ったものはまだ無い");
 // PDCA の数字は要点だけ(全部は npm run pdca)
 const { pdcaLines } = await import("./pdca.mts");
 console.log("\n■ PDCA の要点(全部は npm run pdca)");

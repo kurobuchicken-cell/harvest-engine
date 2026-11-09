@@ -25,7 +25,7 @@ const LANG_SUFFIX = /-(en|es|pt|fr|it|zh|ko|de|id|ar)$/;
 const LANGS = ["ja", "en", "es", "pt", "fr", "it", "zh", "ko", "de", "id", "ar"];
 const langOf = (ep: string) => LANG_SUFFIX.exec(ep)?.[1] ?? "ja";
 const baseOf = (ep: string) => ep.replace(LANG_SUFFIX, "");
-const ROWS: [string, string][] = [["reach", "0 数字の記録"], ["article-ja", "1 記事(日本語)"], ["article-tr", "2 記事の翻訳"], ["neta", "3 ネタ集め"], ["video-ja", "4 動画(日本語)"], ["video-tr", "4 動画(外国語)"], ["post", "5 朝の投稿"], ["wrapup", "6 記録と報告"], ["promo", "7 プロモーション(金曜)"], ["?", "分けられない"]];
+const ROWS: [string, string][] = [["reach", "0 数字の記録"], ["article-ja", "1 記事(日本語)"], ["article-tr", "2 記事の翻訳"], ["neta", "3 ネタ集め"], ["video-ja", "4 動画(日本語)"], ["video-tr", "4 動画(外国語)"], ["post", "5 朝の投稿"], ["wrapup", "6 記録と報告"], ["promo", "7 プロモーション(金曜)"], ["ideas", "8 新しい儲け口の仮説と検証"], ["?", "分けられない"]];
 // part の無い記録(2026-11-02 より前と付け忘れ)は、同じ夜にその本の声・画面の工程があれば動画、なければ記事とみなす
 function partOf(r: Lap, rows: Lap[]): string {
   if (r.part) return r.part;

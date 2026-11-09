@@ -1037,6 +1037,44 @@
       "from": "2026-11-08",
       "text": "Instagram の john-snow 日本語のリール(https://www.instagram.com/masaka.true/reel/DfdHB_chkzh/)の説明欄の最後のハッシュタグが #雑学好き になっている(元は #雑学。AIラベルのスイッチを押したときにハッシュタグ候補が選ばれた)。投稿の「…」→編集で #雑学 に直す。あわせて /episode-post の Instagram の手順に「説明文を貼ったら見出しを押して候補の一覧を閉じてから AIラベルを押す」を足す(2026-11-08 夜)",
       "done": null
+    },
+    {
+      "id": "note-charbucks-holes",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-08",
+      "text": "charbucks の公開済み note(日本語)の事実の言い方2件: 「1997年に売り出し」は判決では developed(作った)、「名前の頭にミスター、うしろにブレンド」は判決では 'Mister' prefix or 'Blend' suffix で別の名前(チャーバックス・ブレンド/ミスター・チャーバックス)。昼に note を直して③で確かめる。外国語10言語の Substack も同じ文があれば直す(11-08夜、動画の③が見つけた)",
+      "done": null
+    },
+    {
+      "id": "layout-inner-overlap",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-08",
+      "text": "sugoi-shorts の preview の位置判定(layout.json)が、図の中の文字どうしの重なり(countCompare の項目の2行目と下の注 note など)を拾わない。11-08夜 charbucks の場面5で①が目で見つけた。player の各図で文字の箱どうしの重なりを判定に足し、charbucks の v5 で出ることを確かめる",
+      "done": null
+    },
+    {
+      "id": "guard-tab-unrecorded",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-08",
+      "text": "sugoi-shorts src/autorun-guard.ts: 夜のブラウザで navigate を tabId なしで呼ぶと(自動で作られたタブ)、work/autorun-browser-tabs.json にタブのホストが残らず、instagram.com でも file_upload・javascript_tool が止められる(11-08夜 charbucks の Instagram で1回止まり、tabId つきで開き直して通った)。navigate の結果のタブ番号も記録するか、/episode-post に『最初の navigate に tabId を付ける』を書き、模擬で確かめる",
+      "done": null
+    },
+    {
+      "id": "video-bounds-first",
+      "who": "gm",
+      "kind": "kaizen",
+      "project": "U",
+      "from": "2026-11-08",
+      "text": "記事から作る日本語の動画で、台本AIの下書きの前に、記事の checks.md と控えから bounds.md(言ってはいけない・言ってよい)を作り、書き手(Opus)に bounds から台本を書かせる案を次の動画で試す。11-08 charbucks は台本AIの下書きから②が3周 3/3/3 で動かず、bounds.md から白紙で書き直した版で1周で②4/5/4 に届いた",
+      "measure": "動画日本語の台本の合格までの周(②③)と1本あたりのトークン",
+      "baseline": "charbucks: 台本の周5・画面の周4・動画1本138万トークン",
+      "done": null
     }
   ]
 }
