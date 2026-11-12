@@ -1075,6 +1075,104 @@
       "measure": "動画日本語の台本の合格までの周(②③)と1本あたりのトークン",
       "baseline": "charbucks: 台本の周5・画面の周4・動画1本138万トークン",
       "done": null
+    },
+    {
+      "id": "guard-stale-subagent",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-09",
+      "text": "夜間作業の見張り(src/autorun-guard.ts)は work/usage.json(親の窓の応答でだけ更新)が15分より古いと係の道具を断り、3回で係を止める。11-09夜、GMが係2人の完了を16分黙って待つ間に記録が古くなり、記事と動画の係が両方途中で止まった(22:22、使用率は5時間枠15%で余裕あり)。夜は9分ごとに起きる仕掛けで回避した。昼に、親が待つ間も記録が古くならない仕組み(例: 係の呼び出し中は心拍で親の待ちを見分ける・夜の指示に待ち方を書く)を決め、autorun-sim で確かめる",
+      "done": null
+    },
+    {
+      "id": "video-topic-substack",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-09",
+      "text": "動画の題材の決まり(/episode-video A0)は「日本語の記事が note で公開済み」だが、note の下書き待ちが5本(うま味・スクラブル・テレビ・準結晶・背面跳び)たまり、11-09夜は note 公開済みで選べる題材が0だった。その夜は Substack 10言語で公開済み・日本語も合格済みのスクラブルを選んだ。昼に、note の下書きを入れて公開を進めるか、A0 を「日本語が合格済みで、どこかの言語で公開済み」に直すかを決める",
+      "done": null
+    },
+    {
+      "id": "video-trim-order",
+      "who": "gm",
+      "kind": "kaizen",
+      "project": "U",
+      "from": "2026-11-10",
+      "text": "日本語の動画の台本を435字以内に詰めるとき、言い換え(例: おなかを下にするベリーロール)と競技名・場面の名前を残し、図に出ている数字と重なる文から削る(11-10夜 fosbury-flop: 2周目の字数削りで②分かるが4→3、②③⑤を1周回し直し)",
+      "measure": "動画日本語の合格までの平均の周(npm run pdca の質)と動画1言語のトークン",
+      "baseline": "11-10夜 fosbury-flop: 8.0周・139万トークン",
+      "done": null
+    },
+    {
+      "id": "article-sides-numbers",
+      "who": "gm",
+      "kind": "kaizen",
+      "project": "U",
+      "from": "2026-11-12",
+      "text": "記事の題材選び(src/autorun-prompt.md「記事1本の題材は厳選する」の(b))で、小さい側と格上の側の人数・規模を資料の一文で両方言えるかを先に確かめ、言えない題材は資料を足してから書き始める。11-11夜の alesia は④の1周目でジャイキリ3(ローマ軍の人数が無く差が見えない)になり、あとから資料を探して周が増えた",
+      "measure": "記事の日本語の合格までの平均の周(npm run pdca の質)と記事日本語1本のトークン",
+      "baseline": "11-11夜 alesia: 4周・54.1万トークン",
+      "done": null
+    },
+    {
+      "id": "autorun-stop-logon",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-12",
+      "text": "11-12 朝9時の停止タスク(sugoi-shorts autorun stop)が動かず、朝の Slack 報告が送られなかった。原因はイベントログで確認: 2:47 に Windows Update(UpdateOrchestrator の Schedule Wake To Work)が再起動し、9:02 の起動時にログオンしていなかった(TaskScheduler 332)。タスクはログオンしているときだけ動く設定。①Windows Update の再起動を夜間に起こさない設定(アクティブ時間・再起動の通知)②ログオンしていなくても送れる道(Slack 送信だけ別タスクにするなど)を昼に決めて直し、開始・再開タスクにも同じ穴がないか確かめる。11-11夜のレポートは work/autorun-report-2026-11-12.md に移した",
+      "done": null
+    },
+    {
+      "id": "note-ig-per-article",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-12",
+      "text": "note の28日PV 505 のうち405が月軌道ランデブー(houbolt、Instagram の宣伝 ad-test-1 の飛び先)で、売上0件(11-12 夜の記録)。ad-test-1 の判定の決まり「売れなければ中身か値段を直す」に当たる。houbolt の無料部分の終わり(有料の線の直前)が有料部分の中身を具体的に言えているかを見直し、直す案を③④に通してオーナーに出す。根拠に使う note 公式の約30万件の分析(https://note.jp/n/n8522197d1ced、無料部分で有料部分の価値を具体的に伝える傾向)の原文を先に確かめる(Perplexity の答えのため)(11-12 夜の1週間の振り返り)",
+      "done": null
+    },
+    {
+      "id": "ig-ja-suspended",
+      "who": "owner",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-12",
+      "text": "Instagram の日本語アカウント masaka.true が、開くと『アカウントを使用するには人間であることを確認してください』の画面(instagram.com/accounts/suspended)になり止まっている(11-12 夜23:40 に GM が見つけた。前夜 11-11 23:06 は ikeda-umami のリールを出せていた)。確認はボット判定のため Claude は押さない。いつもの Chrome で instagram.com を開き、オーナーが確認を済ませる。通ったら GM が alesia(アレシアの戦い)のリールを出す(動画はドライブ JA/20261112_alesia.mp4)",
+      "done": null
+    },
+    {
+      "id": "ideas-angle-shift",
+      "who": "gm",
+      "kind": "kaizen",
+      "project": "U",
+      "from": "2026-11-13",
+      "text": "新しい儲け口の仮説の出し方を見直す(sugoi-shorts src/autorun-ideas.md の「角度を決める」): 11-08〜11-12夜の51件はすべて捨てるで、捨てた理由の31件が「先行者が既にいる」、27件が「AIの安い代わり・道具が既にある」。『AIで人の仕事を安く代行する』型の仮説は、買い手が自分でAIを使えるか同じ値段の道具が既にあるため通らない。昼のセッションで、角度の例に『AIの安さが売りにならない壁(オーナーの日本での人のつながり・独占の使用許諾・既に持っている読者)』を足すかを決める",
+      "measure": "儲け口の『残る』の件数・捨てた理由のうち『AIの代わりが既にある』の割合",
+      "baseline": "51件で残る0件・AIの代わりが既にある27件(53%)(2026-11-12夜)",
+      "done": null
+    },
+    {
+      "id": "claim-scope-memo",
+      "who": "gm",
+      "kind": "kaizen",
+      "project": "U",
+      "from": "2026-11-13",
+      "text": "記事の一番の主張(「初めて」「最初の」など)は、台本の前に資料の一文と範囲(誰が・どこで・何の初めて)を work/<id>/ の控えに書き、③にはその控えを渡してから書く(11-12夜 forssmann-catheter の③が「初めて」の範囲の行き来で6周したため)",
+      "measure": "記事の日本語1本の③の周(npm run pdca の記事の合格までの平均の周)",
+      "baseline": "記事6.0周(2026-11-12夜 forssmann-catheter)",
+      "done": null
+    },
+    {
+      "id": "morning-stop-wake",
+      "who": "owner",
+      "kind": "decide",
+      "project": "sugoi-shorts",
+      "from": "2026-11-13",
+      "text": "朝9時の停止(Slack の朝の報告も送る)が11-09〜11の3朝とも走らなかった。PCがタスクのタイマー以外の理由で4〜5分遅れて起きると、乗り遅れたタスクは起きてから約6分後に走るが、人が触っていないPCは起きて2分で眠り直すため。直し方の案: 人が触っていないPCが起きたあと眠るまでの時間(Windows の隠れた電源設定)を2分→10分にする。管理者の許可が要るので、Y なら GM が許可の画面を出し、オーナーが「はい」を押す。夜の作業は22:20の拾い直しで3晩とも動いている(sugoi-shorts HISTORY.md の 2026-11-11)",
+      "done": null
     }
   ]
 }
