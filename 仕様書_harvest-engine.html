@@ -274,6 +274,7 @@ th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font
 <li>毎日04:00 JST(19:00 UTC)。評議会(月曜09:00 JST)・監査(月曜10:00 JST)とは重ならない。</li>
 <li>VMの空きメモリが約380MBのため、ジャンルごとに別プロセスで順に実行し、終わるたびにメモリを返す。1ジャンル60分を超えたら打ち切る。前回が終わっていなければその回は飛ばす。</li>
 <li>異常終了・打ち切りもSlackへ通知する。</li>
+<li>VMへの接続：<code>ssh -i tokens/harvest_engine_vm_key ubuntu@161.33.148.155</code>。初めてつなぐPCで出る指紋は <code>SHA256:j2BX3pX1ADoAgQBahv3edRTpl6cni/gqSI1n6XqBO4A</code>(ED25519)。違えば yes を押さずに止める。鍵の権限は dev-config の sync-pull.ps1 が揃える。</li>
 </ul>
 
 <h3>4.5 自動点検(毎回、ページ生成の後)</h3>
