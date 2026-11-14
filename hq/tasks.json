@@ -1172,6 +1172,35 @@
       "project": "sugoi-shorts",
       "from": "2026-11-13",
       "text": "朝9時の停止(Slack の朝の報告も送る)が11-09〜11の3朝とも走らなかった。PCがタスクのタイマー以外の理由で4〜5分遅れて起きると、乗り遅れたタスクは起きてから約6分後に走るが、人が触っていないPCは起きて2分で眠り直すため。直し方の案: 人が触っていないPCが起きたあと眠るまでの時間(Windows の隠れた電源設定)を2分→10分にする。管理者の許可が要るので、Y なら GM が許可の画面を出し、オーナーが「はい」を押す。夜の作業は22:20の拾い直しで3晩とも動いている(sugoi-shorts HISTORY.md の 2026-11-11)",
+      "done": "2026-11-14(11-14 オーナーY。家PCの無人スリープを120秒→600秒にした(管理者の許可なしで変えられた))"
+    },
+    {
+      "id": "esports-web-slack",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-13",
+      "text": "11-13夜の自治体eスポーツ公募の探索(0件・未確認3件)を Slack に送れなかった。send.js が auto_x-app の .env に SLACK_WEBHOOK_URL が無いと止まる。昼に .env へ送信先を入れ(オーナーに値を聞く)、node C:\\dev\\auto_x-app\\tools\\esports-web\\send.js result C:\\dev\\auto_x-app\\tools\\esports-web\\work\\result-2026-11-13.json を流す。土曜9時の未完了の知らせも同じ理由で送れない",
+      "done": null
+    },
+    {
+      "id": "video-label-short",
+      "who": "gm",
+      "kind": "kaizen",
+      "project": "U",
+      "from": "2026-11-13",
+      "text": "日本語の動画を始めるとき(A1)に、episode.json の資料の名札(label)と出版元(publisher)を画面向けに短くしてから台本に入る。記事用の長い名前のままだと出典の札が枠からはみ出し、下見のやり直しになる(11-13 forssmann で3回)",
+      "measure": "動画1本あたりの下見(preview)の回数と作業係のトークン",
+      "baseline": "forssmann-catheter: 下見6回・作業係23.0万トークン(うち出典の札の直しで約7万)",
+      "done": null
+    },
+    {
+      "id": "morning-stop-wake-check",
+      "who": "gm",
+      "kind": "do",
+      "project": "sugoi-shorts",
+      "from": "2026-11-15",
+      "text": "11-15以降の朝: 無人スリープ10分(11-14変更)の後、朝9時の停止と22時の開始が拾い直しを待たずに走ったかを、タスクの履歴と Windows のイベントログ(起床・スリープの時刻)で3朝分確かめる。走っていれば sugoi-shorts 仕様書と HISTORY.md に書く。だめなら朝9:20の拾い直しのタスクを足す",
       "done": null
     }
   ]
