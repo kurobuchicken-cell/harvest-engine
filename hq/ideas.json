@@ -1318,6 +1318,3159 @@
         "q1・q3・法律: 北欧の図書館の貸し出しごとの払い・小さな出版社の載せ方・AIの本の扱い(work/pplx-2026-11-13-9.txt)",
         "q1・q3: eReolen と Biblio の選び方・小さな出版社の本の貸し出しの数(work/pplx-2026-11-13-10.txt)"
       ]
+    },
+    {
+      "id": "idea-063",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "",
+      "pivot": "",
+      "dropType": "既存の安い手段あり",
+      "test": "",
+      "angle": "Apple の席数課金開始に合わせた StoreKit 2 移行の代行",
+      "frame": "外の新しい変化",
+      "where": [
+        "ppc.land",
+        "Apple Developer",
+        "RevenueCat",
+        "Fiverr/Freelancer"
+      ],
+      "keywords": [
+        "Apple multiseat subscriptions October 2026",
+        "StoreKit 2 migration freelance"
+      ],
+      "hypothesis": "席数課金を売りたい個人開発者が StoreKit 2 移行を AI に速く代行してもらう",
+      "verdict": "drop",
+      "reason": "払う額が小さく、安い出品と無料の解説がある",
+      "sources": [
+        "https://ppc.land/apple-puts-developers-subscriptions-on-sale-to-schools-and-firms-by-default/"
+      ],
+      "note": "昼の4人の試し(11-14)"
+    },
+    {
+      "id": "idea-064",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "",
+      "pivot": "",
+      "dropType": "既存の安い手段あり・免許",
+      "test": "",
+      "angle": "米国の郵便少額輸入の新手続きに対する HTS 分類とワークシート",
+      "frame": "外の新しい変化",
+      "where": [
+        "freightfigures.com",
+        "shopappy.com",
+        "Zonos"
+      ],
+      "keywords": [
+        "Entry Type 13 postal informal entry",
+        "HTS classification AI pricing"
+      ],
+      "hypothesis": "郵便で米国へ売る小口の売り手に AI で HTS 分類を安く出す",
+      "verdict": "drop",
+      "reason": "安い AI 分類と無料の手段があり、提出は免許が要る",
+      "sources": [
+        "https://www.freightfigures.com/articles/postal-informal-entry-october-22-2026-compliance-date"
+      ],
+      "note": "昼の4人の試し(11-14)"
+    },
+    {
+      "id": "idea-065",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "",
+      "pivot": "",
+      "dropType": "来る理由が無い・規約の収益化リスク",
+      "test": "",
+      "angle": "各国のゴールデンタイムを3時間ごとに追う多言語の24時間 AI 配信(オーナー案)",
+      "frame": "人の限界×AIの性質",
+      "where": [
+        "YouTube Live",
+        "Twitch",
+        "tubefilter"
+      ],
+      "keywords": [
+        "AI VTuber",
+        "24/7 live stream",
+        "multilingual stream"
+      ],
+      "hypothesis": "言語を時差で回す AI 配信で投げ銭・会員が積み上がる",
+      "verdict": "drop",
+      "reason": "お金の証拠は独自の人格の1例(Neuro-sama)だけで、24時間・多言語は来る理由にならない。YouTube は汎用・テンプレートの AI 内容を収益化の対象外にしている(原文確認)",
+      "sources": [
+        "https://support.google.com/youtube/answer/1311392"
+      ],
+      "note": "昼の4人の試し(11-14)"
+    },
+    {
+      "id": "idea-066",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "",
+      "pivot": "レストランは Table Alert(月5〜19ドル)がいるので非レストランに変えた",
+      "dropType": "先行者あり・単価小",
+      "test": "2週間・0円。規約で止まらない5〜10か所に絞り、英語の1枚ページで事前登録を集める。合格: 登録30件以上かつ月5ドル払う意思5人以上",
+      "angle": "日本の山小屋・キャンプ場・宿の限定枠のキャンセルを見張り、訪日客の言語で知らせる",
+      "frame": "人の限界×AIの性質",
+      "where": [
+        "tablealert.app",
+        "訪日客向けブログ"
+      ],
+      "keywords": [
+        "Mt Fuji hut cancellation",
+        "Japan campsite cancellation alert"
+      ],
+      "hypothesis": "日本語だけの予約画面の空きを見張り、訪日客に母語で知らせれば月数ドル払う",
+      "verdict": "drop",
+      "reason": "はっきりした No は無いが、需要は未確認・単価が低い・季節限定・AI の強みが弱い。確度は低い / 2組目の組み直しの係が、旅館・山小屋の空きを見張る AkiWatch(1人6.99〜13.99ドルの買い切り)を見つけた。非レストランも先行者がいた",
+      "sources": [
+        "https://tablealert.app/japan"
+      ],
+      "note": "昼の4人の試し(11-14)"
+    },
+    {
+      "id": "idea-067",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "",
+      "pivot": "",
+      "dropType": "",
+      "test": "2週間・0円。施設30件に1人300〜500ユーロの手配の提案を送る(外への連絡なのでオーナー承認)。合格: 返信5件以上・有料の試しか払う意思1件",
+      "angle": "ドイツの施設が外国から採る看護師・介護士の、到着前の住まい手配を請け負う",
+      "frame": "くじ(ドイツ×病院・介護×賃貸)×TRIZ",
+      "where": [
+        "evangelisch.de",
+        "wg-gesucht.de",
+        "haufe.de"
+      ],
+      "keywords": [
+        "Wohnungsmangel Pflegekräfte",
+        "Mitarbeiterwohnen Pflege"
+      ],
+      "hypothesis": "住まいが無いと採用した看護師が来られないので、施設が1人数百ユーロの手配料を払う",
+      "verdict": "keep",
+      "reason": "困りごとは複数の記事で確認。誰がいくら払うかは未確認。結局は手配の代行で、先行業者との差は仮説",
+      "sources": [
+        "https://www.evangelisch.de/inhalte/235328/23-10-2024/arbeitgeberverband-pflege-wohnungsmangel-verschaerft-pflegenot"
+      ],
+      "note": "昼の4人の試し(11-14) / 親の確かめ(11-14): evangelisch.de の記事は「手頃な住まいの不足が介護職員の確保を難しくしている」で、「住まいが無い」「悪化」は言い過ぎ。2024-10-23 の記事"
+    },
+    {
+      "id": "idea-068",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "",
+      "pivot": "",
+      "dropType": "無料の代替(公的機関)・来た人が動かない",
+      "test": "",
+      "angle": "オーストラリアの若者の給与明細から未払いを見つけて回収まで進める",
+      "frame": "くじ(オーストラリア×10代×行政手続き)×狩野モデル",
+      "where": [
+        "sbs.com.au"
+      ],
+      "keywords": [
+        "wage theft teenagers Australia"
+      ],
+      "hypothesis": "AI が明細を読んで差額を出し、回収額の一部を取る",
+      "verdict": "drop",
+      "reason": "公的機関の無料の支援があり、若者が動かない理由は計算でなく恐れ",
+      "sources": [
+        "https://www.sbs.com.au/news/article/one-third-of-australias-young-workers-report-wage-theft/a1hwxfdak"
+      ],
+      "note": "昼の4人の試し(11-14)"
+    },
+    {
+      "id": "idea-069",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "実質還元の禁止・書類5年保管・予告なしの立入調査・導入後の支援の義務・不登録なら同年度は原則再申請不可",
+      "pivot": "",
+      "dropType": "入口の条件が重い(法人・1期の決算・一般に売っている完成品と販売実績)",
+      "test": "0円・2〜3日。登録要領と公募要領の原文で、単独登録の条件・審査・導入後の支援の義務・ツールの値段の立て方を確かめる。12-09 に間に合い、1本の想定売上が50万円以上なら次へ",
+      "angle": "デジタル化・AI導入補助金の対象ツールとして AI 業務ツールを登録し、補助金の売り場で売る",
+      "frame": "前提を逆にする(高単価・制度の売り場・検索に頼らない)",
+      "where": [
+        "it-shien.smrj.go.jp",
+        "mirasapo-plus.go.jp"
+      ],
+      "keywords": [
+        "デジタル化・AI導入補助金",
+        "IT導入支援事業者",
+        "ITツール登録"
+      ],
+      "hypothesis": "補助金で費用の1/2〜4/5が出るので、中小企業は数十万〜数百万円の登録ツールを買いやすい。AI で業務別の小ツールを速く作って登録する",
+      "verdict": "drop",
+      "reason": "客が検索でなく制度の売り場から来る点が過去の失敗と違う。登録の条件(法人か)・ベンダーの手取り・売上の実績は未確認。新規登録の締切は 2026-12-09 17時 / 要領の原文(it2026_touroku_it_jigyosha.pdf の登録要件⑨と添付書類)で、単独登録は法人で1期の決算済み・販売実績が必須、コンソーシアムも構成員の誰かに販売実績が要る、ツールは一般に販売中の完成品のみと確認。2026年度は不可。補助金の売り場は、すでに売れている物を伸ばす道で、始める道ではない。売れる物ができたら見直す",
+      "sources": [
+        "https://it-shien.smrj.go.jp/news/40312",
+        "https://it-shien.smrj.go.jp/itvendor/about/",
+        "https://mirasapo-plus.go.jp/subsidy/ithojo/"
+      ],
+      "note": "昼の4人の試し(11-14) / 11-14 オーナー: ハーヴェストに法人格は無い。単独登録は不可、構成員・法人設立・来年度の3つの道"
+    },
+    {
+      "id": "idea-070",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "",
+      "pivot": "",
+      "dropType": "既存の安売り市場で値段勝負",
+      "test": "",
+      "angle": "ココナラ・Upwork で業務自動化の受託を AI の速さで数こなす",
+      "frame": "前提を逆にする(混んだ市場に速く入る・コードを作って売る)",
+      "where": [
+        "coconala.com",
+        "lancers.jp",
+        "uphunt.io"
+      ],
+      "keywords": [
+        "GAS 自動化",
+        "n8n 自動化",
+        "AI業務自動化 受託"
+      ],
+      "hypothesis": "AI で数時間で納品し、数をこなせば儲かる",
+      "verdict": "drop",
+      "reason": "払いは3,000〜3万円の小口で、20件出品して全部0販売の例もある。選ばれる理由が無く、1件ごとに人の手間が要る",
+      "sources": [
+        "https://coconala.com/users/933609"
+      ],
+      "note": "昼の4人の試し(11-14) / 親の確かめ(11-14): coconala の出品者は自動化の出品20件が各実績0件だが、プロフィール全体は販売実績1件(別ジャンル)。「全部0販売」は出品単位では合う"
+    },
+    {
+      "id": "idea-071",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "",
+      "pivot": "",
+      "dropType": "払う人がいない・公的無料支援",
+      "test": "",
+      "sources": [],
+      "angle": "中東に出稼ぎに行くフィリピンの家政婦が自分で働いた時間・給料を記録する道具",
+      "frame": "別の立場(くじ)",
+      "where": [
+        "amnesty.org",
+        "abs-cbn.com"
+      ],
+      "keywords": [
+        "OFW salary record",
+        "unpaid wages Saudi"
+      ],
+      "hypothesis": "本人が未払い・過重労働の証拠を整えるために払う",
+      "verdict": "drop",
+      "reason": "払う人がいない(本人は払えず、雇い主は不利な記録に払わない)。政府の無料アプリがある",
+      "note": "昼の2組目(11-14) / 係はページを開かずに判定。サウジの給料の電子払いの義務化は親の確かめでも403で未確認。払う人がいない、は筋の上の判断"
+    },
+    {
+      "id": "idea-072",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "",
+      "pivot": "",
+      "dropType": "無料AIがもうある・先行者が多い",
+      "test": "",
+      "sources": [
+        "https://blog.google/intl/en-africa/products/explore-get-answers/bringing-googles-best-ai-tools-to-university-students-across-africa-at-no-cost/"
+      ],
+      "angle": "海外に住むナイジェリア人が国内の学生に AI の家庭教師を贈る",
+      "frame": "別の立場(くじ)",
+      "where": [
+        "blog.google",
+        "tuteria.com"
+      ],
+      "keywords": [
+        "diaspora tutor gift Nigeria"
+      ],
+      "hypothesis": "海外の親族が国内の学生の AI 家庭教師に月数千円払う",
+      "verdict": "drop",
+      "reason": "Google がナイジェリアを含む6か国の大学生に有料の AI を1年無料で提供(親の確かめで原文確認)。海外の親が払う家庭教師の先行者も多い",
+      "note": "昼の2組目(11-14)"
+    },
+    {
+      "id": "idea-073",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "",
+      "pivot": "",
+      "dropType": "売り場の飽和と規約の強化",
+      "test": "",
+      "sources": [],
+      "angle": "Etsy で名前入り・多言語のデジタル品を AI で作って売る",
+      "frame": "届け方・売り場",
+      "where": [
+        "Etsy"
+      ],
+      "keywords": [
+        "Etsy digital download",
+        "AI slop"
+      ],
+      "hypothesis": "名前入り・多言語のデジタル品を1点数ドルで売る",
+      "verdict": "drop",
+      "reason": "売り場が AI の量産品であふれ、規約も締まっている(二次情報。Etsy の原文は403で未確認)",
+      "note": "昼の2組目(11-14) / 決め手は二次情報のみ"
+    },
+    {
+      "id": "idea-074",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "",
+      "pivot": "",
+      "dropType": "需要の根拠が無い・天井が低い",
+      "test": "最小の形: 1サイト・1作業の拡張を1週間で作り、無料+有料機能1つで出す。場所: Chrome ウェブストア。測る: 30日のインストール・有料への転換・解約。合格: 60日でインストール300以上かつ有料5人以上。費用: 開発者登録5ドル。先に、対象サイトの規約と同じ作業の既存拡張の数・不満を確かめる",
+      "sources": [
+        "https://developer.chrome.com/docs/webstore/program-policies/policies",
+        "https://extensionpay.com/articles/browser-extensions-make-money"
+      ],
+      "angle": "1つのサイト・1つの作業を短くする単機能の Chrome 拡張を AI で作り、有料で売る",
+      "frame": "届け方・売り場(個人が出せるストア)",
+      "where": [
+        "Chrome ウェブストア",
+        "extensionpay.com"
+      ],
+      "keywords": [
+        "Chrome extension paid",
+        "ExtensionPay",
+        "Chrome拡張 有料"
+      ],
+      "hypothesis": "特定のサイトで毎日同じ作業をする個人・小さな店が、作業を短くする拡張に月数百〜数千円払う",
+      "verdict": "drop",
+      "reason": "代行ではなく製品を置く形。ストアの方針の原文で、単一目的・重複の拡張の禁止・有料の明示を確認。需要の根拠は売上の自己申告だけで弱い / 3組目で具体的な要望17件を集め3候補(フリマの売上CSV・スペインの在留予約の通知・法律データベースの補助)を確かめたが、どれも無料の競合か規約・倫理で止まり、払う根拠は Bestlaw の月5ドルだけ。単機能の拡張という形は、需要を先に見つけられないと成り立たない",
+      "note": "昼の2組目(11-14)"
+    },
+    {
+      "id": "idea-075",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "",
+      "pivot": "",
+      "dropType": "需要が小さい(市場が小さい)",
+      "test": "",
+      "sources": [
+        "https://www.spark.money/research/x402-protocol-ai-agent-payments"
+      ],
+      "angle": "AI エージェントに1回ごとに払ってもらう小さな API(x402)を売る",
+      "frame": "ビジネスモデルの型(使った分だけ払う)",
+      "where": [
+        "spark.money",
+        "dev.to"
+      ],
+      "keywords": [
+        "x402",
+        "pay per call API"
+      ],
+      "hypothesis": "AI エージェントが1回0.01〜0.3ドルで小さな API を呼ぶ",
+      "verdict": "drop",
+      "reason": "市場全体で1日約2.8万ドル・13.1万件(2026年第1四半期の推計、親の確かめで原文確認)。売り手1,062の受取は最大でも数ドル",
+      "note": "昼の2組目(11-14)"
+    },
+    {
+      "id": "idea-076",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "",
+      "pivot": "",
+      "dropType": "",
+      "test": "最小の形: 1言語のタロット Bot(3枚・読み解き)。先に先行 Bot を5件数えて薄い言語を選ぶ。測る: 無料から有料へ行く割合と Stars 売上。合格: 100人が試して有料5人以上。費用: 0円。期間: 作る1週間+3〜4週間(払い出しは21日保留)",
+      "sources": [
+        "https://telegram.org/tos/bot-developers",
+        "https://upstox.com/news/upstox-originals/investing/stars-on-demand-how-digital-astrology-is-booming-in-india/article-167792"
+      ],
+      "angle": "1回引くごとに払う AI のタロット(全部の結果が読み解きつきで当たり外れなし)を Telegram で売る",
+      "frame": "ビジネスモデルの型(使った分だけ払う×くじ)",
+      "where": [
+        "telegram.org",
+        "upstox.com"
+      ],
+      "keywords": [
+        "AI tarot Telegram Stars",
+        "tarot bot",
+        "таро бот"
+      ],
+      "hypothesis": "先行者が薄い言語圏の若者が1回50〜150 Stars を払って占いを引く",
+      "verdict": "keep",
+      "reason": "インドで1回150〜700ルピーの占いに月約450万回の支払い(upstox、係が原文確認)。Telegram の規約でデジタル商品は Stars 払い(親の確かめで原文確認)。なぜウチかは未解決で弱い",
+      "note": "昼の2組目(11-14) / 3組目: 6言語で数えた。アラビア語は UAE で占いが犯罪のため外す。ブラジルのポルトガル語が1位(旧法の占いの条文は1997年に廃止)。Telegram の Bot 一覧は道具で引けず「先行者が薄い」は未確認。ロシア語の AI タロット Bot は月2.5万〜16万人で需要の形はある。最大の壁は Bot に人を連れてくる道で、Instagram が止まった今は道が無い"
+    },
+    {
+      "id": "idea-077",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "",
+      "pivot": "",
+      "dropType": "",
+      "test": "東京23区+政令市の約43自治体の一覧を毎日更新し、通知の登録と見積もりボタンを置く。8週間で通知登録30人か見積もり1件の成約。費用5,000円前後。先に ASP の報酬額を確かめる(登録はオーナー)",
+      "sources": [
+        "https://switchtogether.jp/resource-hub/blog/tokyo-solar-battery-subsidy",
+        "https://funas.co.jp/posts-3/hojokin-yosan-totatsu-touhoku-2026"
+      ],
+      "angle": "自治体の太陽光・蓄電池の補助金の受付状況(残り枠・開閉・再開)を毎日読み、一覧と通知で出す",
+      "frame": "捨てた案の組み直し(空き通知に払う人がいる×補助金は先着で閉まる)",
+      "where": [
+        "switchtogether.jp",
+        "funas.co.jp",
+        "media-analytics.jp"
+      ],
+      "keywords": [
+        "蓄電池 補助金 受付状況",
+        "補助金 受付終了 再開"
+      ],
+      "hypothesis": "先着で閉まる補助金の受付状況を、持ち家の人が知りたがる。収入は一括見積もりへの送客",
+      "verdict": "keep",
+      "reason": "既存の一覧は鮮度が低く残額・通知が無い。ただし収入(紹介料の額)が未確認で、検索から人が来る形は出口工場(NG)と同じ弱点。弱い keep",
+      "note": "昼の2組目(11-14)"
+    },
+    {
+      "id": "idea-078",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "",
+      "pivot": "",
+      "dropType": "法律・先行者",
+      "test": "",
+      "sources": [],
+      "angle": "外国人のビザ相談を AI が多言語で受け付け、行政書士に紹介する",
+      "frame": "捨てた案の組み直し(責任を負う人が要る、を役割分担に)",
+      "where": [
+        "biz.ne.jp"
+      ],
+      "keywords": [
+        "行政書士 英語 ビザ 紹介"
+      ],
+      "hypothesis": "行政書士が紹介の対価を払う",
+      "verdict": "drop",
+      "reason": "行政書士の職務基本規則が紹介の対価の要求を禁じる(解説記事の要約、原文未確認)。比較・一覧サイトがある",
+      "note": "昼の2組目(11-14) / 根拠は未開封の要約のみ"
+    },
+    {
+      "id": "idea-079",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "",
+      "pivot": "",
+      "dropType": "安い代替が既にある",
+      "test": "",
+      "sources": [
+        "https://voix.jp/?p=110586"
+      ],
+      "angle": "小さな会社向けに入札・公募の新着を知らせる",
+      "frame": "会社が月額で払う見張り(B2B)",
+      "where": [
+        "voix.jp"
+      ],
+      "keywords": [
+        "入札 通知",
+        "公募 新着"
+      ],
+      "hypothesis": "零細の事業者が入札の新着通知に月1,000円前後払う",
+      "verdict": "drop",
+      "reason": "月980円(無料プランもある)の入札みはりがもうある",
+      "note": "昼の3組目(11-14)。係は選ぶ2案をなじみのある形にし、一番違う形の約束を守れなかった(自己申告)。官報・行政処分から兆しを作る案は未確認"
+    },
+    {
+      "id": "idea-080",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "",
+      "pivot": "",
+      "dropType": "根拠不足+安い代替",
+      "test": "",
+      "sources": [
+        "https://toolradar.com/tools/prisync/pricing"
+      ],
+      "angle": "小さな EC 出品者向けに競合の値段を毎日追う(日本語)",
+      "frame": "会社が月額で払う見張り(B2B)",
+      "where": [
+        "toolradar.com",
+        "shopsavvy.com"
+      ],
+      "keywords": [
+        "競合価格 追跡",
+        "価格監視"
+      ],
+      "hypothesis": "日本の個人 EC 出品者が日本語の競合価格の通知に月数千円払う",
+      "verdict": "drop",
+      "reason": "Price2Spy が月39.95ドルである。日本語で払う需要の根拠が無い(実地の No ではなく根拠不足)",
+      "note": "昼の3組目(11-14)。係は選ぶ2案をなじみのある形にし、一番違う形の約束を守れなかった(自己申告)。官報・行政処分から兆しを作る案は未確認"
+    },
+    {
+      "id": "idea-081",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "",
+      "pivot": "",
+      "dropType": "払う証拠なし・先行品あり",
+      "test": "3業種で無料版+4,980円の本編を各1本 BOOTH に出す。30日で有料3本以上か転換5%以上。費用0円。先に BOOTH の規約の原文を確かめる",
+      "sources": [
+        "https://booth.pm/ja/items/9083719",
+        "https://www.agensi.io"
+      ],
+      "angle": "業種別の Claude Code のスキルの詰め合わせを BOOTH で売り切りで売る(非エンジニアの現場向け)",
+      "frame": "AIを使う人に売る×5フォース",
+      "where": [
+        "booth.pm",
+        "agensi.io",
+        "mcpmarket.com"
+      ],
+      "keywords": [
+        "Claude Code スキル 工事",
+        "工事業務キット",
+        "BOOTH Claude Code"
+      ],
+      "hypothesis": "Claude Code を使う小さな現場の人が、見積書・日報を省くために4,980〜9,800円払う。AI で業種別を並行して作れる",
+      "verdict": "drop",
+      "reason": "BOOTH で「Claude Code」846件、工事向けは3件で棚が薄い。9,800円の出品がある。売れた数は見えず、買える人(Claude Code の有料の利用者)が少ない / 4組目で深く確かめた: BOOTH の Claude Code の運用・設定キットはスキ0〜2、同じ無人運用の型の2,480円の先行品は説明に「販売実績ゼロ」と書いている。Zenn の Claude Code の有料本36冊は約30冊がいいね0。払う人が見えたのは「Claude Code で稼ぐ」成果を売る11,800円の note 1件だけ",
+      "note": "昼の3組目(11-14)"
+    },
+    {
+      "id": "idea-082",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "",
+      "pivot": "",
+      "dropType": "無料の代わりがもうある",
+      "test": "",
+      "sources": [
+        "https://code.claude.com/docs/en/cli-reference"
+      ],
+      "angle": "Claude Code の費用の上限を強制するフックを売る",
+      "frame": "AIを使う人に売る×5フォース",
+      "where": [
+        "github.com",
+        "code.claude.com"
+      ],
+      "keywords": [
+        "Claude Code budget limit hook",
+        "ccusage"
+      ],
+      "hypothesis": "API 従量課金の開発者が費用の暴走を止めるために数ドル払う",
+      "verdict": "drop",
+      "reason": "無料の ccusage(MIT)と、Claude Code 本体の --max-budget-usd がある",
+      "note": "昼の3組目(11-14)"
+    },
+    {
+      "id": "idea-083",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "",
+      "pivot": "",
+      "dropType": "無料で足りている・市場が小さい",
+      "test": "",
+      "sources": [
+        "https://extscope.org/extension/peopdcjikckcplhdipjgfiefcggolbji"
+      ],
+      "angle": "メルカリなどの売上を会計ソフト用の CSV にする拡張",
+      "frame": "拡張の具体的な需要(3組目)",
+      "where": [
+        "extscope.org",
+        "library.libecity.com"
+      ],
+      "keywords": [
+        "メルカリ 売上 CSV"
+      ],
+      "hypothesis": "個人の出品者が確定申告の手入力を省くために少額払う",
+      "verdict": "drop",
+      "reason": "無料の拡張が複数あり、年1回しか使わず、事業者は 2025-10 の規約でメルカリを使えなくなった",
+      "note": "昼の3組目(11-14)"
+    },
+    {
+      "id": "idea-084",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "",
+      "pivot": "",
+      "dropType": "規約・倫理",
+      "test": "",
+      "sources": [
+        "https://www.interior.gob.es/opencms/es/detalle/articulo/La-Policia-Nacional-desmantela-un-entramado-que-bloqueaba-el-sistema-de-citas-online-de-extranjeria-mediante-un-bot-informatico/"
+      ],
+      "angle": "スペインの在留カードの予約の空きを知らせる拡張",
+      "frame": "拡張の具体的な需要(3組目)",
+      "where": [
+        "extscope.org",
+        "interior.gob.es"
+      ],
+      "keywords": [
+        "cita previa extranjería"
+      ],
+      "hypothesis": "予約が取れない移民が通知に払う",
+      "verdict": "drop",
+      "reason": "予約枠をボットで押さえる闇市場を警察が摘発しており、法的・評判の危険が大きい",
+      "note": "昼の3組目(11-14)"
+    },
+    {
+      "id": "idea-085",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "",
+      "pivot": "",
+      "dropType": "市場が小さい・規約",
+      "test": "",
+      "sources": [
+        "https://www.bestlaw.io/"
+      ],
+      "angle": "法律データベース(Westlaw・Lexis)の補助拡張(放置された Bestlaw の後を継ぐ)",
+      "frame": "拡張の具体的な需要(3組目)",
+      "where": [
+        "bestlaw.io",
+        "extpose.com"
+      ],
+      "keywords": [
+        "Westlaw extension",
+        "Bestlaw"
+      ],
+      "hypothesis": "法学生・弁護士が月5ドル払う",
+      "verdict": "drop",
+      "reason": "利用者867人で天井が低く、データベース側の規約が自動のアクセスを禁じる見込み",
+      "note": "昼の3組目(11-14)"
+    },
+    {
+      "id": "idea-086",
+      "night": "2026-11-14",
+      "angle": "Claude Code を無人で回す運用キット・CLAUDE.md の作り方の手順書を売る(ウチの実運用の経験を売り物にする)",
+      "frame": "ウチの持ち物から逆算(4組目)",
+      "where": [
+        "booth.pm",
+        "zenn.dev",
+        "note.com"
+      ],
+      "keywords": [
+        "Claude Code 無人運用",
+        "CLAUDE.md テンプレート",
+        "エージェント運用キット"
+      ],
+      "hypothesis": "Claude Code を仕事で回したい個人が、実運用の経験から作ったキットに1,000〜3,000円払う",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "BOOTH のガイドラインに専用の禁止なし。Anthropic の商用規約に設定・手順書の販売を止める条項は見当たらない(読み)",
+      "pivot": "",
+      "verdict": "drop",
+      "reason": "同じ型の先行品が多く、反応がほぼ0。払う証拠が無い",
+      "dropType": "払う証拠なし・先行品あり",
+      "test": "",
+      "sources": [
+        "https://booth.pm/ja/items/8656964",
+        "https://zenn.dev/api/books?topicname=claudecode&order=liked",
+        "https://booth.pm/guidelines"
+      ],
+      "note": "昼の4組目(11-14)"
+    },
+    {
+      "id": "idea-087",
+      "night": "2026-11-14",
+      "angle": "外国人の介護職員が、事業所の架空の利用者カード(呼び方・方言・好み・声かけの癖)を相手に AI と会話の練習をする。事業所が払う",
+      "frame": "PEST(日本と韓国の介護の人手不足・外国人職員の増加)から選んだ生の案(5組目)",
+      "where": [
+        "hokkaido-np.co.jp",
+        "value-press.com",
+        "pref.osaka.lg.jp"
+      ],
+      "keywords": [
+        "介護の日本語",
+        "特定技能 介護",
+        "AIロールプレイ"
+      ],
+      "hypothesis": "外国人職員を受け入れる介護事業所が、定着と声かけの上達のために月3,000円ほど払う",
+      "q1": "事業所の言い回し・方言・利用者像に合わせた練習は、確かめた先行者(HandsOn AI・プロシーズ)のページに記載が無い(中身は未確認)",
+      "q2": "",
+      "q3": "大阪府にコミュニケーション促進の取組みへの補助(2/3・上限20万円)。日本語学習が対象かは未確認。1人あたりの月額の相場は見つからない",
+      "legal": "実在の利用者の情報(要配慮個人情報)は入れず、架空のカードにする",
+      "pivot": "利用者1人ごと、を架空の利用者カードに変えた",
+      "verdict": "drop",
+      "reason": "はっきりした No は無い。先行者あり・払う証拠が弱い。売り先が登録支援機関・監理団体という届け方は過去と違う / 7組目: HandsOn AI が登録支援機関・監理団体向けと明記し、1 ID 月10ドルで AI ロールプレイ、会社のマニュアルを取り込む AI OJT も持つ(原文確認)。事業所ごとに合わせる差は無かった",
+      "dropType": "先行者が同じ形で売っている",
+      "test": "スマホのページ1枚(場面5・方言3・母語の解説)、無料2週間のあと月3,000円。登録支援機関・監理団体経由で20か所に試しを持ちかける(外への連絡なのでオーナー承認)。合格: 試す3か所以上・有料1以上、または支援機関1社がメニューに入れる。費用1万円以内",
+      "sources": [
+        "https://www.hokkaido-np.co.jp/article/1359684/",
+        "https://www.pref.osaka.lg.jp/houjin/jinzai/kannkyousebi.html"
+      ],
+      "note": "昼の5組目(11-14)"
+    },
+    {
+      "id": "idea-088",
+      "night": "2026-11-14",
+      "angle": "資格の勉強をする人が、その資格に特有の勘違いをわざとする AI の生徒に教えて学ぶ道具",
+      "frame": "常識を逆にする(人が教わる→人が教える)×研究で確かめた効果(5組目)",
+      "where": [
+        "pmc.ncbi.nlm.nih.gov",
+        "arxiv.org",
+        "apps.apple.com",
+        "onsuku.jp"
+      ],
+      "keywords": [
+        "protégé effect",
+        "teachable agent",
+        "ファインマン学習法 AI"
+      ],
+      "hypothesis": "資格を勉強する個人が月980円ほどで、勘違いをする AI の生徒に教える練習に払う",
+      "q1": "教えるための準備の効果はメタ分析で小さいが有意(g=0.17)。追試は見つからない",
+      "q2": "先行者は FeynmanStudy(月40ドル)・ReExplain(無料)。日本語の資格向けは見つからない。無料の ChatGPT でも似たことができる",
+      "q3": "資格学習の受け放題は月980〜1,480円で払われている。教える道具に払う証拠は無い",
+      "legal": "未確認",
+      "pivot": "汎用ではなく1資格に絞り、過去問から作った間違い方をさせる",
+      "verdict": "keep",
+      "reason": "効果は本物だが小さく、真似されやすく、払う証拠が弱い。弱い keep",
+      "dropType": "",
+      "test": "宅建か簿記3級の1資格のページ。無料1日3回、有料月980円はクリックだけ測る。4週間で無料の利用100人・有料のクリック5人以上。費用1万円以内",
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9979973/",
+        "https://apps.apple.com/us/app/feynmanstudy/id6753349250",
+        "https://onsuku.jp/plan_guidance"
+      ],
+      "note": "昼の5組目(11-14)"
+    },
+    {
+      "id": "idea-089",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "",
+      "pivot": "",
+      "dropType": "先行者が同じ形・同じ値段帯で売っている",
+      "test": "",
+      "sources": [
+        "https://kotoryapp.com",
+        "https://ascii.jp/elem/000/004/371/4371722/"
+      ],
+      "angle": "AI が聞き手になって親・祖父母の人生を聞き、物語本にする(子や孫が贈る)",
+      "frame": "アンバンドル(自分史の制作の聞き取りの部分)×体験を売る(5組目)",
+      "where": [
+        "kotoryapp.com",
+        "ascii.jp",
+        "resemom.jp",
+        "thenextweb.com"
+      ],
+      "keywords": [
+        "自分史 AI",
+        "親 人生 本 贈り物"
+      ],
+      "hypothesis": "子や孫が数万円で AI が聞き手の本を贈る",
+      "verdict": "drop",
+      "reason": "日本の kotory が、AI のチャットで作る本(47,300円)・電話や対面の聞き取り(248,000円)・贈り物版(39,800円)・敬老の日の案内までそろえている。ウチだけの差(多言語・音声 AI の自動電話)は需要の証拠が無い",
+      "note": "昼の5組目(11-14)"
+    },
+    {
+      "id": "idea-090",
+      "night": "2026-11-14",
+      "q1": "人が作る名前入りの謎解きは2.4万〜6.2万円、ココナラの5万円の出品は6件販売。専門店は1人2,750〜3,700円",
+      "q2": "英語では Jenova(月20ドル)などがある。日本語で実名を入れて作るサービスは見つからない。最大の競合は ChatGPT での自作",
+      "q3": "幹事は参加者全員の満足を左右するので払う(仮説)。ココナラの2,000〜3,500円の制作の出品は評価2件以下で、需要の証拠は弱い",
+      "legal": "個人事業主も個人情報取扱事業者になりうる。利用目的を示し、納品後に消す",
+      "pivot": "筋の矛盾をコードで検査してから納品する(ChatGPT の自作との差)",
+      "dropType": "",
+      "test": "ココナラに2本(2,980円の4〜6人90分/1,480円の30分)+架空5人の見本 PDF+聞き取りフォーム。30日で注文3件以上、または問い合わせ10件以上かつ注文1件。手数料22%。出品の登録はオーナー",
+      "sources": [
+        "https://coconala.com/services/3174218",
+        "https://www.jenova.ai/en/resources/ai-murder-mystery-party"
+      ],
+      "angle": "参加者の実名と実話が登場人物になる、1回限りの推理ゲーム(マーダーミステリー型)を AI が作る。幹事が払う",
+      "frame": "体験・遊びを売る(5組目)",
+      "where": [
+        "coconala.com",
+        "booth.pm",
+        "jenova.ai"
+      ],
+      "keywords": [
+        "名前入りマダミス",
+        "誕生会 謎解き",
+        "二次会 マーダーミステリー"
+      ],
+      "hypothesis": "幹事が、人に頼むと2.4万円以上かかる名前入りの推理ゲームを約3,000円で AI に作ってもらう",
+      "verdict": "keep",
+      "reason": "はっきりした No は無い。人の制作の約10分の1の値段にできる。日本語の先行者は見つからない。需要の証拠は弱い",
+      "note": "昼の5組目(11-14) / 親の確かめ: ココナラの5万円・6件販売の出品は「謎解き・脱出ゲーム」の制作で、マーダーミステリーではない(係のずれ)。kotory・Jenova の値段は原文どおり / 8組目で需要を深めた: ココナラの個人向けオリジナル謎解き(1問5,000円〜)が販売13件・評価12。子どもの誕生会用3,000円は1件。4〜6人・90分の実名入りを個人が買った記録は0件。BOOTH のマーダーミステリーは無料〜2,000円が中心で、上位はスキ3,000件超。試しは2本立て(2,980円の90分版・1,480円の30分版)、ココナラだけ、架空5人の見本つき、最初の1週間は人が筋を確かめる。試作は sugoi-shorts/work/ideas-build/idea-090/(矛盾の検査は見本で全項目通過・わざと壊した8通りを全部検出)"
+    },
+    {
+      "id": "idea-091",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "",
+      "pivot": "",
+      "dropType": "届け方が無い・単価の差が小さい",
+      "test": "",
+      "sources": [
+        "https://event21.co.jp/event_realnazotoki.htm",
+        "https://www.tsr-net.co.jp/data/detail/1201949_1527.html"
+      ],
+      "angle": "会社の忘年会・歓迎会で、社員が登場人物になる謎解きを AI で作って納品(1社3万〜10万円)",
+      "frame": "7組目(推理ゲームの会社向け)",
+      "where": [
+        "event21.co.jp",
+        "tsr-net.co.jp",
+        "coconala.com"
+      ],
+      "keywords": [
+        "忘年会 謎解き オリジナル",
+        "社内イベント 謎解き オーダーメイド"
+      ],
+      "hypothesis": "総務・幹事が社員の実名入りの謎解きに3万〜10万円払う",
+      "verdict": "drop",
+      "reason": "人が作るオリジナルの謎解きが5〜7万円・最短2週間で、安さの差が小さい。法人が個人に頼む道が無く、12月に間に合わない。忘年会をする企業は57.8%で初めて減った",
+      "note": "昼の7組目(11-14)"
+    },
+    {
+      "id": "idea-092",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "",
+      "pivot": "",
+      "dropType": "先行者が同じ形で売っている",
+      "test": "",
+      "sources": [
+        "https://landing-page-6kb.pages.dev/en/pricing",
+        "https://www.moj.go.jp/isa/policies/ssw/supportssw.html"
+      ],
+      "angle": "外国人従業員が会社ごとの報告・連絡・欠勤連絡の言い方を AI と練習し、監理団体・登録支援機関が卸す",
+      "frame": "7組目(会社ごとの練習相手の横展開)",
+      "where": [
+        "landing-page-6kb.pages.dev",
+        "oricon.co.jp",
+        "moj.go.jp"
+      ],
+      "keywords": [
+        "登録支援機関 日本語学習 AI",
+        "外国人 報連相 練習 アプリ"
+      ],
+      "hypothesis": "支援機関が1人月数百〜千円台で日本語学習支援の道具として買う",
+      "verdict": "drop",
+      "reason": "HandsOn AI が同じ対象・同じ機能・1 ID 月10ドルで売っている。Meshclass(登録10万人超・17言語)もある。義務的支援の日本語学習は教材の情報提供で足りる",
+      "note": "昼の7組目(11-14)"
+    },
+    {
+      "id": "idea-093",
+      "night": "2026-11-14",
+      "q1": "自社データから客役を作れるのは大手向け(初期30万円〜・月18万円〜・年契約)だけで、小さな店向けの安い形は見つからない",
+      "q2": "",
+      "q3": "義務は2026-10-01施行・1人でも雇えば対象。ただし研修は措置の例で必須ではなく罰金も無い。無料セミナーと11,000円の動画がある",
+      "legal": "客の名前・連絡先を伏せて入れ、保存しない",
+      "pivot": "",
+      "dropType": "",
+      "test": "案内ページと、事例を貼ると客役が話すチャット(3業種)。無料で1回試せて、月2,980円の申込みボタンの数を測る。2週間で200人が見て申込み5件以上、または社労士・団体から使いたいが2件以上。費用1万円以内",
+      "sources": [
+        "https://www.businesslawyers.jp/articles/1457",
+        "https://www.u-can.co.jp/houjin/e-learning/line_up/1937/",
+        "https://it-trend.jp/training_for_management/20753/price"
+      ],
+      "angle": "店・会社が自分のところのカスハラの事例を入れると、AI がその客役になって従業員が練習できる(1店月2,980円)",
+      "frame": "外の変化(2026-10 カスハラ対策の義務化)×会社ごとの練習相手(7組目)",
+      "where": [
+        "businesslawyers.jp",
+        "u-can.co.jp",
+        "it-trend.jp",
+        "crystal-method.com"
+      ],
+      "keywords": [
+        "カスハラ 研修 AI ロールプレイ",
+        "カスハラ 義務化 中小企業"
+      ],
+      "hypothesis": "従業員30人以下の店が、自分の店の事例で練習できる道具に月2,980円払う",
+      "verdict": "keep",
+      "reason": "はっきりした No は無い。小さな店が月額を払う証拠は無く、無料の競合が強い。弱い keep",
+      "note": "昼の7組目(11-14)"
+    },
+    {
+      "id": "idea-094",
+      "night": "2026-11-14",
+      "q1": "",
+      "q2": "",
+      "q3": "",
+      "legal": "Etsy は AI 使用の明示と人の関与つきなら AI の商品を認める(2026-10 の方針、報道で確認)。完全自動の大量出品は禁止",
+      "pivot": "",
+      "dropType": "",
+      "test": "旧正月(中国語)とイード(アラビア語・マレー語)の名前入り物語 PDF を各1〜2本、Etsy に出す(登録はオーナー)。4週間で購入3件以上、または閲覧500・お気に入り20以上。旧正月は2027年2月初旬なので出品は1月上旬まで",
+      "sources": [
+        "https://www.digitalcommerce360.com/2026/10/26/etsy-ai-policy/amp/",
+        "https://www.valueaddedresource.net/etsy-bans-ai-patterns/"
+      ],
+      "angle": "イード・旧正月・キンセアニェーラなどを、その言語で子どもの名前入りの物語・遊びの PDF にして Etsy で売る",
+      "frame": "世界の行事×1人ずつ×多言語(7組目)",
+      "where": [
+        "digitalcommerce360.com",
+        "valueaddedresource.net"
+      ],
+      "keywords": [
+        "personalized Eid story printable",
+        "personalised Lunar New Year activity book"
+      ],
+      "hypothesis": "親が英語以外の言語の名前入りの行事の PDF に5〜15ドル払う",
+      "verdict": "keep",
+      "reason": "検索では英語以外の名前入りのデジタル品が見つからなかったが、Etsy の出品数・販売数は道具でもブラウザでも開けず数えられていない。需要の証拠は無い。弱い keep",
+      "note": "昼の7組目(11-14)"
+    },
+    {
+      "id": "idea-095",
+      "night": "2026-11-14",
+      "angle": "同人ボードゲームの作者向けに、ルールから対戦の模擬をコードで書き、数千回自動で対戦させてバランスの報告書を作る",
+      "frame": "熱心な趣味×TRIZ(先にやっておく)(9組目)",
+      "where": [
+        "bennycheung.github.io",
+        "advertimes.com"
+      ],
+      "keywords": [
+        "ボードゲーム テストプレイ バランス調整",
+        "AI playtesting board game balance"
+      ],
+      "hypothesis": "作者が1作数千〜2万円でバランスの報告を買う",
+      "q1": "",
+      "q2": "GameGrammar が無料枠でルール文から同じ分析を自動で出している(公開ベータ)",
+      "q3": "日本の作者がバランス検証に払う額の証拠は見つからない",
+      "legal": "",
+      "pivot": "GameGrammar が対応しない仕組み(競り・非対称能力など)に絞る案は、払う証拠が無く通らない",
+      "verdict": "drop",
+      "reason": "無料の先行者が同じ分析をしていて、払う証拠も無い",
+      "dropType": "無料の先行者あり・払う証拠なし",
+      "test": "",
+      "sources": [
+        "https://bennycheung.github.io/ai-playtesting-when-your-game-tests-itself"
+      ],
+      "note": "昼の9組目(11-14)"
+    },
+    {
+      "id": "idea-096",
+      "night": "2026-11-14",
+      "angle": "推しの誕生日の駅広告などを出す幹事に、媒体の条件の整理・見積もりの比較・多言語の集金ページの下書きを売る",
+      "frame": "熱心な趣味(推し活)×TRIZ(仲介を入れる)(9組目)",
+      "where": [
+        "mobinc.jp",
+        "ascii.jp"
+      ],
+      "keywords": [
+        "応援広告",
+        "センイル広告",
+        "推し広告"
+      ],
+      "hypothesis": "幹事が数千〜1万円払う",
+      "q2": "センイルJAPAN(累計3,000件超・許諾の申請から掲出まで代行・集金も持つ)、#推しアド(1口500円・掲載無料・掲出まで代行)がある",
+      "legal": "個人の幹事が他人のお金を集めるのは資金決済法の論点が重い",
+      "verdict": "drop",
+      "reason": "集金・許諾・掲出までの代行が無料〜1万円前後でそろっている",
+      "dropType": "先行者あり・無料の代わりあり",
+      "sources": [
+        "https://ascii.jp/elem/000/004/374/4374729/",
+        "https://ascii.jp/elem/000/004/226/4226723/"
+      ],
+      "q1": "",
+      "q3": "",
+      "pivot": "",
+      "test": "",
+      "note": "昼の9組目(11-14)"
+    },
+    {
+      "id": "idea-097",
+      "night": "2026-11-14",
+      "angle": "TRPG のゲームマスターが卓のログを渡すと、前回の要約・登場人物・伏線・見せ場の偏りを返す記録係(月500〜1,000円)",
+      "frame": "熱心な趣味×TRIZ(先にやっておく)(9組目)",
+      "where": [
+        "myarchivist.ai",
+        "enworld.org"
+      ],
+      "keywords": [
+        "TRPG セッション 要約",
+        "TTRPG session recap AI"
+      ],
+      "hypothesis": "GM が月500〜1,000円払う",
+      "q2": "Archivist が日本語を含む35言語で同じ機能を月10〜60ドルで売り、累計31,500セッション以上を処理",
+      "q3": "ENWorld の投票で、D&D 関連の月額に0円が60.9%",
+      "verdict": "drop",
+      "reason": "先行者が同じ形で日本語も対応済み。払う気持ちも低い",
+      "dropType": "先行者が同じ形で売っている・払う気持ちが低い",
+      "sources": [
+        "https://myarchivist.ai/pricing",
+        "https://myarchivist.ai/faq"
+      ],
+      "q1": "",
+      "legal": "",
+      "pivot": "",
+      "test": "",
+      "note": "昼の9組目(11-14)"
+    },
+    {
+      "id": "idea-098",
+      "night": "2026-11-14",
+      "angle": "訪日客のレンタカー・バイク向けに、峠の冬期閉鎖・開通を英語・繁体字・韓国語で届ける(ウチの峠の記録を使う)",
+      "frame": "まねされにくい理由(毎日たまる記録)から逆算(9組目)",
+      "where": [
+        "mlit.go.jp",
+        "e-stat.go.jp",
+        "jartic.or.jp"
+      ],
+      "keywords": [
+        "winter road closure Japan",
+        "冬期閉鎖 峠"
+      ],
+      "hypothesis": "訪日客・レンタカー会社が峠の閉鎖情報に月額を払う",
+      "q1": "国交省の防災ポータルの英語版に道路情報提供システムと JARTIC が載る(8言語はそのページの言語の切り替えで、両サービスが8言語で出しているとは書かれていない。親の確かめで係の言い過ぎを直した)",
+      "q3": "レンタカー会社・宿・客が道路の閉鎖情報に払っている例は見つからない",
+      "legal": "政府標準利用規約2.0は商用・翻訳・加工が可(出典と加工の表示が条件)。県ごとの規約は未確認",
+      "pivot": "過去の開通日から次の開通日を予測する形も、払う相手が無く外れたときの責任を負う",
+      "verdict": "drop",
+      "reason": "払う相手(レンタカー会社・宿・客)が道路の閉鎖情報に払っている例が見つからない。国交省・JARTIC が無料で通行規制を出している",
+      "dropType": "先行者が無料・払う証拠なし",
+      "sources": [
+        "https://www.mlit.go.jp/river/bousai/bousai-portal/en/helpful04/index.html",
+        "https://www.e-stat.go.jp/terms-of-use"
+      ],
+      "q2": "",
+      "test": "",
+      "note": "昼の9組目(11-14)。県が管理する個別の峠を公式が外国語で出していない所があるかは未確認"
+    },
+    {
+      "id": "idea-099",
+      "night": "2026-11-14",
+      "angle": "自治体の eスポーツ関連の公募(名前に eスポーツが付かない案件も)の速報と、過去の落札の台帳を、eスポーツ事業者に月額で売る",
+      "frame": "ほかの人が持っていない材料(オーナーの eスポーツの営業の経験・毎週の公募探し)(11組目)",
+      "where": [
+        "pref.kyoto.jp",
+        "pref.saitama.lg.jp",
+        "city.osaka.lg.jp",
+        "itreview.jp"
+      ],
+      "keywords": [
+        "eスポーツ 公募型プロポーザル 令和8年度",
+        "高齢者 eスポーツ 委託"
+      ],
+      "hypothesis": "eスポーツ事業者・イベント会社・専門学校が、見逃していた公募と落札の相場に月数千円払う",
+      "q1": "2026年度に京都府(上限2,970万円)・埼玉県(7者参加)・大阪市などで公募が実在。全国の総数は数えていない",
+      "q2": "eスポーツ専用の公募速報は見つからない。汎用の入札情報サービスは月8,000円〜24,800円などがある",
+      "q3": "1件150万〜3,000万円なので見逃しは高くつく。ただし買い手の数と、大手(NTTe-Sports・松竹)が落札の中心かは未確認",
+      "legal": "政府標準利用規約の自治体は商用・加工が可(出典と加工の表示)。サイトごとに確かめる。オーナーの勤め先と同じ情報を売る利益相反はオーナーが決める",
+      "pivot": "速報より、落札の台帳と名前に付かない案件の拾い込みに絞る",
+      "verdict": "keep",
+      "reason": "はっきりした No は無い。買い手の数と払う額は未確認",
+      "test": "無料の週刊の公募リスト(直近1年の落札台帳つき)を案内ページで募り、月2,980円の先行申込の数を測る。4週間で無料登録30件以上・先行申込3件以上。費用0〜2,000円",
+      "sources": [
+        "https://www.pref.kyoto.jp/kyoto_sports/news/esports.html",
+        "https://www.pref.saitama.lg.jp/b0617/nenrin-ibento/jissigyoumu.html",
+        "https://www.itreview.jp/products/njss/price"
+      ],
+      "dropType": "",
+      "note": "昼の11組目(11-14)。オーナーに出すときの偏りの1行: オーナーの eスポーツの営業の経験と勤め先の仕事に寄った案"
+    },
+    {
+      "id": "idea-100",
+      "night": "2026-11-14",
+      "angle": "SaaS の障害の独自の記録(saas-status.com)をもとに、SLA の返金の申請書と期限を作って渡す(成功報酬)",
+      "frame": "ほかの人が持っていない材料(ウチの障害の記録)×AI が生んだ困りごと(11組目)",
+      "where": [
+        "aws.amazon.com",
+        "learn.microsoft.com",
+        "atlassian.com",
+        "slawitness-landing.pages.dev",
+        "opsiocloud.com"
+      ],
+      "keywords": [
+        "SLA credit claim",
+        "サービスクレジット 申請"
+      ],
+      "hypothesis": "SaaS を多く使う会社が返金の取りこぼしを取り戻すために払う",
+      "q1": "独立した記録は SLA の証拠にならない(AWS は自社のログ、Microsoft は自社の管理画面の障害番号、Atlassian は自社の監視だけが判定の元)",
+      "q2": "SLA Witness(成功報酬25%)・SLA Credit Watch・Opsio・StatusGator の SLA Monitor がある",
+      "q3": "返金は月額の数%〜50%で、次回以降の割引にしかならない",
+      "legal": "他社に代わって請求して報酬を取る形は弁護士法72条の論点(未確認)",
+      "pivot": "下書きと期限の通知だけにすると、先行者と同じ形でウチの記録も効かない",
+      "verdict": "drop",
+      "reason": "ウチの記録が証拠として使えず、返金額も小さく、同じ形の先行者がいる",
+      "dropType": "証拠が使えない・単価が小さい・先行者あり",
+      "test": "",
+      "sources": [
+        "https://aws.amazon.com/compute/sla/",
+        "https://www.atlassian.com/legal/archives/sla/sla04092025",
+        "https://slawitness-landing.pages.dev"
+      ],
+      "note": "昼の11組目(11-14)"
+    },
+    {
+      "id": "idea-101",
+      "night": "2026-11-14",
+      "angle": "保険の募集人が AI で作った文面・チャットボットの言い回しが、募集の規制に触れないかを指摘する道具(乗合・専業の小さな代理店向け)",
+      "frame": "ほかの人が持っていない材料(オーナーの生命保険の営業の経験)×外の変化(保険業法の改正)(11組目)",
+      "where": [
+        "behavior.co.jp",
+        "renue.co.jp",
+        "issoh.co.jp",
+        "zaikei.co.jp"
+      ],
+      "keywords": [
+        "保険代理店 AI 文面 チェック",
+        "募集文書 チェック"
+      ],
+      "hypothesis": "小さな代理店の経営者が、AI で作った SNS・案内文の危ない言い回しの点検に月2,980円払う",
+      "q1": "保険会社向けの先行者(LibelliS・保険会社の自社の道具)は代理店が対象外。小さな代理店向けの安い道具は見つからない。汎用 AI に指示文を入れる自前の方法が最大の代わり",
+      "q2": "",
+      "q3": "代理店が法令順守に払っている額の証拠は無い。損保の代理店は約15.6万店(うち乗合約3.6万店。日本損害保険協会の資料)",
+      "legal": "弁護士法72条は法務省の2026-08の新ガイドラインを読んで、判定でなく注意の指摘にとどめる。比較推奨の新規定は2028-03施行(2026-06改正の主題は別。係が直した)",
+      "pivot": "乗合代理店向けに、比較推奨の説明文の下書き・点検に絞る",
+      "verdict": "keep",
+      "reason": "はっきりした No は無い。払う証拠は0で、無料の AI で代わりができる型に近い。弱い keep",
+      "test": "文面を貼ると危ない表現に印・理由・言い換え案を出す1ページ。代理店経営者の集まりで無料3回、月2,980円の申込みを測る。3週間で20人が試し・申込み3人以上。費用約5,000円",
+      "sources": [
+        "https://www.behavior.co.jp/blog/insurance-business-act-2026",
+        "https://renue.co.jp/posts/insurance-solicitation-review-ai"
+      ],
+      "dropType": "",
+      "note": "昼の11組目(11-14)。オーナーに出すときの偏りの1行: オーナーの生命保険の営業の経験に寄った案"
+    },
+    {
+      "id": "idea-102",
+      "night": "2026-11-14",
+      "angle": "AI で下書きした書面の判例・条文の引用が実在するかを、提出前に確かめる道具(日本法。条文は e-Gov で全件照合、判例は裁判所サイトで見つかったかを報告)",
+      "frame": "AI が新しく生んだ困りごと(11組目)",
+      "where": [
+        "damiencharlotin.com",
+        "abajournal.com",
+        "courts.go.jp",
+        "tkc.jp"
+      ],
+      "keywords": [
+        "架空判例 確認",
+        "判例 引用 チェック",
+        "条文 引用 照合"
+      ],
+      "hypothesis": "判例データベースを持たない司法書士・小さな法務部・本人訴訟の人が、1書類500〜1,500円払う",
+      "q1": "日本語・日本法の専用の道具は見つからない。英語圏では無料〜20ドル程度",
+      "q2": "",
+      "q3": "世界の AI の架空判例は2,292件(データベース)だが、日本の実例は確認できていない。需要の証拠は無い",
+      "legal": "事実の照合に限り、当否は言わない設計なら弁護士法72条に当たりにくい見込み(法務省のガイドラインの原文は未確認)。裁判所のサイトは全部の判決を載せていないので「見つからない=偽物」とは言えない",
+      "pivot": "偽物の判定をやめ、確認済み・未確認の報告にした。買い手をデータベースを持たない人に寄せた",
+      "verdict": "keep",
+      "reason": "はっきりした No は無い。日本の実例が未確認で、払う気持ちが無い可能性が高い。確度は低い",
+      "test": "条文を e-Gov で照合し、判例は書誌の形式と裁判所の検索へのリンクを出す道具。初回3書類無料、以後1書類800円。30日で訪問300以上・有料5件以上",
+      "sources": [
+        "https://www.damiencharlotin.com/hallucinations/",
+        "https://www.abajournal.com/columns/article/fighting-hallucinations-choosing-the-right-ai-citation-checkers",
+        "https://www.courts.go.jp/hanrei/search1/index.html"
+      ],
+      "dropType": "",
+      "note": "昼の11組目(11-14)"
+    },
+    {
+      "id": "idea-103",
+      "night": "2026-11-14",
+      "angle": "中小企業の採用で、応募者が本人か(AI の偽の顔・声や替え玉でないか)を確かめる手順と点検を代わりにやる",
+      "frame": "AI が新しく生んだ困りごと(12組目)",
+      "where": [
+        "businessinsider.jp",
+        "meetsmore.com",
+        "jsite.mhlw.go.jp"
+      ],
+      "keywords": [
+        "採用 なりすまし",
+        "ディープフェイク 面接",
+        "リファレンスチェック"
+      ],
+      "hypothesis": "リモート採用をする中小企業が1人数千〜2万円払う",
+      "q1": "日本で確かめられた例は2026-03の1件だけ(Business Insider Japan)",
+      "q2": "HERP Hire Trust(月16,500円〜・職歴調査1人33,000円)や eKYC(1回約0.2ドル)が先にある",
+      "q3": "被害が出る前に払う動機が薄く、日本の採用は対面の面接を挟むことが多い",
+      "legal": "職業安定法の指針で、本籍地などは原則集めてはいけない。本人確認書類の扱いの設計が重い",
+      "pivot": "検知だけ・手順書だけに絞る案も、自動の道具と無料の解説記事に負ける",
+      "verdict": "drop",
+      "reason": "日本での需要の裏付けが無く、安い代わりがあり、個人情報の扱いが重い",
+      "dropType": "需要の裏付けなし・安い代わりあり",
+      "test": "",
+      "sources": [
+        "https://www.businessinsider.jp/article/2603-deepfake-job-interview-risk-japan/",
+        "https://meetsmore.com/products/herp-hire-trust"
+      ],
+      "note": "昼の12組目(11-14) / 親の確かめ: 製品名は HERP Trust(16,500円は定額プランの Starter・年10件まで)。係の名前の取り違えを直した"
+    },
+    {
+      "id": "idea-104",
+      "night": "2026-11-14",
+      "angle": "AI の買い物代行の客が、日本の中小のネット店で買えるか(ボット対策で弾いていないか)を診断して直し方を渡す",
+      "frame": "AI が新しく生んだ困りごと(12組目)",
+      "where": [
+        "blendcommerce.com",
+        "shopifreaks.com",
+        "stellagent.ai",
+        "digiday.com"
+      ],
+      "keywords": [
+        "エージェンティックコマース",
+        "AIエージェント対応",
+        "ボット対策"
+      ],
+      "hypothesis": "中小のネット店が診断と直しに1〜5万円払う",
+      "q1": "Shopify が無料の診断の道具(31項目)を出している",
+      "q2": "日本の Shopify の店は Shopify が自動で対応済み。BASE・STORES は店主が設定を直せない",
+      "q3": "EC の担当者の61%が2026年は AI の代行向けの予算が無いと回答(Blend の調査)。ChatGPT の買い物は米国中心で、即時の決済は縮小された",
+      "legal": "",
+      "pivot": "自社カートの店の直しの受託は、無料の診断+受託の形で払う証拠も無い",
+      "verdict": "drop",
+      "reason": "診断は無料で出回り、対応はカートの側が決める。払う証拠が無い",
+      "dropType": "無料の標準機能あり・払う証拠なし",
+      "test": "",
+      "sources": [
+        "https://www.shopifreaks.com/shopify-launches-ai-agent-readiness-tool-that-scores-any-store-url-on-compliance-with-agentic-commerce-protocols/",
+        "https://stellagent.ai/ja/insights/agentic-commerce-japan-cases"
+      ],
+      "note": "昼の12組目(11-14)"
+    },
+    {
+      "id": "idea-105",
+      "night": "2026-11-14",
+      "angle": "店・教室の LINE 公式アカウントの会話(名前と ID を除いた CSV)を AI が読み、よくある質問・答えられていない質問・離れる兆し・Q&A の回答案を返す診断",
+      "frame": "よその国で当たった形(WhatsApp の会話分析)を日本の LINE へ(12組目)",
+      "where": [
+        "watch.impress.co.jp",
+        "lycbiz.com",
+        "linestep.jp",
+        "terms2.line.me"
+      ],
+      "keywords": [
+        "LINE公式アカウント 問い合わせ 分析",
+        "LINE チャット履歴 CSV"
+      ],
+      "hypothesis": "LINE 公式アカウントを運用する店・教室が、会話の診断と Q&A の回答案に3,000円払う",
+      "q1": "LINE 公式の AI チャットボットは Q&A の登録が前提で、答えられなかった質問の一覧は出さない。Lステップは AI を内蔵していない",
+      "q2": "",
+      "q3": "LINE 公式アカウントは49.3万件。運用代行は月10〜50万円(分析込み)。会話の分析だけの値段は見つからない。小さな店は問い合わせが少ない恐れ",
+      "legal": "規約第8条第2項は友だちの名前・ID などの第三者への提供を禁じる。名前と ID を除いた CSV だけ受け取れば避けられる見込み(会話の本文の扱いは未確認)",
+      "pivot": "月額でなく1回の診断レポートにし、Q&A の回答案の下書きまで返す",
+      "verdict": "keep",
+      "reason": "はっきりした No は無い。払う証拠と、小さな店の会話の量が未確認。弱い keep",
+      "test": "CSV から A4 2枚の診断を作る。初回3,000円。20店に声をかけ、CSV を送る3店・有料1店・月額に進む1店",
+      "sources": [
+        "https://www.watch.impress.co.jp/docs/news/2107294.html",
+        "https://www.lycbiz.com/jp/news/line-official-account/20251113/",
+        "https://terms2.line.me/official_account_terms_jp"
+      ],
+      "dropType": "",
+      "note": "昼の12組目(11-14)"
+    },
+    {
+      "id": "idea-106",
+      "night": "2026-11-14",
+      "angle": "日本の書き手・絵の描き手の作る過程の記録を確かめて、「人の手で作った」証明書と印を出す",
+      "frame": "AI が新しく生んだ困りごと(人の手の価値の上昇)(12組目)",
+      "where": [
+        "authorsguild.org",
+        "grammarly.com",
+        "koubo.jp",
+        "news.denfaminicogamer.jp"
+      ],
+      "keywords": [
+        "人の手で作った 証明",
+        "AI不使用 認証",
+        "Human Authored"
+      ],
+      "hypothesis": "絵師・書き手が AI の疑いへの備えに数千円払う",
+      "q1": "絵は TEGAKI(日本語・過程を見て印を出す・無料)、文章は Grammarly Authorship(無料)がある",
+      "q2": "Authors Guild は自己申告+本人確認で1冊10ドル",
+      "q3": "日本で証明に払っている例は見つからない",
+      "legal": "",
+      "pivot": "新人賞・出版社が払う形も、賞は申告制で足りている",
+      "verdict": "drop",
+      "reason": "無料の先行者があり、払う証拠が無く、確かめる側の信用をウチが持てない",
+      "dropType": "無料の代わりあり・払う証拠なし・信用が作れない",
+      "test": "",
+      "sources": [
+        "https://authorsguild.org/human-authored/faq/",
+        "https://www.grammarly.com/authorship",
+        "https://news.denfaminicogamer.jp/news/2601132d"
+      ],
+      "note": "昼の12組目(11-14)。係の気づき: 認証・証明を売る案は、無料の先行者と確かめる側の信用の2点を先に確かめないと同じ理由で落ちる"
+    },
+    {
+      "id": "idea-107",
+      "night": "2026-11-14",
+      "angle": "フィリピンの看護師が海外で働くための国家試験・資格の登録・ビザ・書類の手順を、その人の状況に合わせて案内する",
+      "frame": "新興国の中間層(出稼ぎ・海外就労)(14組目)",
+      "where": [
+        "abba.ph",
+        "nclex-state-guide.vercel.app",
+        "supertutor.ph",
+        "newswav.com"
+      ],
+      "keywords": [
+        "NCLEX Philippines",
+        "OFW nurse",
+        "DMW"
+      ],
+      "hypothesis": "海外就労を準備する看護師が、手順の案内と期限の通知に払う",
+      "q1": "NCLEX の受験者はフィリピンが2024年に約2.8万人で世界1位(二次資料)",
+      "q2": "無料の手順の記事・道具(SuperTutor・NurseRoute。NurseRoute は手順と書類の一覧を読むだけで見られる案内サイトで、「無料」とは書いていない)と、紹介会社の手数料なしの手続き支援(ABBA は手数料を取らないと自社で明記)がある",
+      "q3": "案内に払っている額は見つからない",
+      "legal": "DMW は無許可の海外就労の勧誘を禁じ、「手続き」「支援」名目の手数料も斡旋の手数料と見なされるおそれ",
+      "pivot": "案内だけ・期限通知だけに絞っても無料の代わりに勝てない",
+      "verdict": "drop",
+      "reason": "無料の代わりがあり、規制で無許可の斡旋と見られるおそれ",
+      "dropType": "無料の代わりあり・規制",
+      "test": "",
+      "sources": [
+        "https://www.abba.ph/post/your-pathway-to-u-s-healthcare-direct-hire-simplified-benefits-amplified",
+        "https://nclex-state-guide.vercel.app/filipino-nurses"
+      ],
+      "note": "昼の14組目(11-14) / 親の確かめ: NurseRoute を「無料の道具」とした係の書き方は言い過ぎ(ページは非公式の案内で無料とは書いていない)。判定の決め手は紹介会社の無料の支援と規制なので drop は変わらない"
+    },
+    {
+      "id": "idea-108",
+      "night": "2026-11-14",
+      "angle": "改正区分所有法(2026-04施行)に合わせて、小さな・古いマンションの管理組合の規約の差分と総会の議案の下書きを作る",
+      "frame": "日本の制度の変化(13組目の生の案)(14組目)",
+      "where": [
+        "mlit.go.jp",
+        "prtimes.jp",
+        "city.fukuoka.lg.jp"
+      ],
+      "keywords": [
+        "管理規約 改正 区分所有法",
+        "標準管理規約 新旧対照表"
+      ],
+      "hypothesis": "管理組合の理事長が1回3〜10万円払う",
+      "q1": "国交省が新旧対照表・見え消しの Word・手続きの注意点を無料で出している",
+      "q2": "管理規約スタジオ AI サポートが同じ形を1件45,000円から出している。福岡市は規約の診断を無料で行う",
+      "q3": "管理組合が払う額の証拠は取れない。施行から7か月で需要の山は過ぎつつある",
+      "legal": "弁護士法72条との関係は未確認",
+      "pivot": "管理組合への直売・紙の古い規約の読み取りに変えても、払う証拠が無く無料の公的支援に当たる",
+      "verdict": "drop",
+      "reason": "無料の公的資料と同じ形の有料の先行者がある",
+      "dropType": "無料の公的支援と先行者あり",
+      "test": "",
+      "sources": [
+        "https://www.mlit.go.jp/jutakukentiku/house/mansionkiyaku.html",
+        "https://prtimes.jp/main/html/rd/p/000000002.000184075.html"
+      ],
+      "note": "昼の14組目(11-14)"
+    },
+    {
+      "id": "idea-109",
+      "night": "2026-11-14",
+      "angle": "先着で閉まる自治体の補助金(太陽光・蓄電池・断熱窓など)の受付状況を、施工業者・販売店に担当エリアごとに毎朝届ける(idea-077 の払う人を業者に変えた形)",
+      "frame": "SCAMPER(払う人を置き換える)(14組目)",
+      "where": [
+        "pref.saitama.lg.jp",
+        "hojomiru.jp",
+        "hojyokin-portal.jp",
+        "digital.go.jp"
+      ],
+      "keywords": [
+        "補助金 受付終了 予算到達",
+        "蓄電池 補助金 受付状況"
+      ],
+      "hypothesis": "施工業者が、受付中の補助金を見積もりの決め手にするために月3,000〜9,800円払う",
+      "q1": "業者向けに受付状況だけを毎朝届けるサービスは見つからない。ホジョミルが営業組織向けを始めた(中身は未確認)",
+      "q2": "",
+      "q3": "先着の補助金は閉まるのが速い(埼玉県の太陽光は約9日で予算到達、原文で確認)。業者が月額を払う証拠は無い",
+      "legal": "公共データ利用規約1.0は商用可・出典の記載が条件で、自動の取得を禁じる条項は無い。申請の代行はしない(行政書士法)",
+      "pivot": "一括見積もりの加盟店でなく、自分で集客している地域の工務店・電気工事店に売る",
+      "verdict": "keep",
+      "reason": "止まる理由は無い。業者が払う証拠は無い。弱い keep",
+      "test": "1県の受付状況の表を毎朝作り、その県の業者100社に見本を3回無料で送る(外への連絡なのでオーナー承認)。30日で有料2社以上",
+      "sources": [
+        "https://www.pref.saitama.lg.jp/a0503/hojyokin2.html",
+        "https://hojomiru.jp/pricing",
+        "https://www.digital.go.jp/resources/open_data/public_data_license_v1.0"
+      ],
+      "dropType": "",
+      "note": "昼の14組目(11-14)"
+    },
+    {
+      "id": "idea-110",
+      "night": "2026-11-14",
+      "angle": "森林組合・市町村の、持ち主が分からない林地の所有者探しを、AI で書類を読んで整理する補助として請け負う",
+      "frame": "地方・一次産業の現場(14組目)",
+      "where": [
+        "rinya.maff.go.jp",
+        "pref.nagano.lg.jp",
+        "pref.shimane.lg.jp"
+      ],
+      "keywords": [
+        "所有者探索",
+        "森林経営管理制度",
+        "相続関係説明図"
+      ],
+      "hypothesis": "市町村が森林環境譲与税などで、所有者探しの書類の整理に払う",
+      "q1": "市町村の探索は、協定・委託で受託会社と司法書士が受けている",
+      "q2": "",
+      "q3": "岩手県山田町の例は3筆で戸籍162通・約20万円・延べ65〜80時間。大半は戸籍の請求と返送待ちで、AI が効くのは関係図づくりの約10時間",
+      "legal": "戸籍の公用請求は国・地方公共団体の機関だけ(戸籍法10条の2)。委託先が自分で請求すると第三者扱い(長野県の手引き)。ウチは戸籍を取れない",
+      "pivot": "戸籍の画像を相続関係説明図にする道具を司法書士に売る形は、林業でなく相続の分野になり、戸籍の読み取り AI の先行者がいる",
+      "verdict": "drop",
+      "reason": "戸籍をウチが取れず、AI が効く部分は作業の一部。買い手は市町村で入札・協定の壁があり、小さく試せない",
+      "dropType": "取得の資格の壁・買い手が自治体で小さく試せない",
+      "test": "",
+      "sources": [
+        "https://www.rinya.maff.go.jp/j/sin_riyou/koufukin/index.html",
+        "https://www.pref.nagano.lg.jp/rinsei/siensennta/documents/manual52-64.pdf"
+      ],
+      "note": "昼の14組目(11-14)"
+    },
+    {
+      "id": "idea-111",
+      "night": "2026-11-14",
+      "angle": "初めて・少量で輸出する小さな酒蔵に、輸入業者へのメール・商品説明書・ラベルの要件の確認を多言語でまとめて作る",
+      "frame": "地方・一次産業の現場(15組目)",
+      "where": [
+        "jetro.go.jp",
+        "commercepick.com",
+        "export.sakestreet.com"
+      ],
+      "keywords": [
+        "酒蔵 輸出 英語 資料",
+        "日本酒 輸出 商品説明 英訳"
+      ],
+      "hypothesis": "小さな酒蔵が多言語の商品説明と輸入業者向けのメールに1回数万円払う",
+      "q1": "日本酒の輸出は2025年に約459億円。JETRO の事例で、言語・輸入業者の探し方・貿易書類に困る蔵がいることは確か",
+      "q2": "JETRO の無料の相談窓口・輸出プロモーターの英文資料の磨き上げ・標準的裏ラベルの制作システムがある(翻訳そのものは JETRO が扱わない)",
+      "q3": "蔵が外注に払う証拠は無い",
+      "legal": "ラベルの要件の確認を請け負うと誤りの責任が重い",
+      "pivot": "商品説明だけに絞ると、無料の公的な道具と無料の AI で足りる",
+      "verdict": "drop",
+      "reason": "公的な無料支援があり、払う証拠が取れない(弱い drop)",
+      "dropType": "公的な無料支援あり・需要の証拠なし",
+      "test": "",
+      "sources": [
+        "https://www.jetro.go.jp/case_study/2018/uijin.html",
+        "https://www.jetro.go.jp/services/advice/agri_foods.html"
+      ],
+      "note": "昼の15組目(11-14)"
+    },
+    {
+      "id": "idea-112",
+      "night": "2026-11-14",
+      "pivot": "売り先を導入済みの自治体に絞り、アプリに載る機能として出す。多言語は単独で売らない(区の無料の翻訳支援がある)",
+      "dropType": "",
+      "test": "メモを貼ると回覧文などを出すページを作り、導入済みの自治体など20か所に提案(外への連絡なのでオーナー承認)。返事5・面談2・年10万円以上の意向1",
+      "angle": "自治会・町内会の役員の書類(回覧文・総会資料・議事録・会計報告・引き継ぎ・多言語のお知らせ)を AI で下書きする道具を、電子回覧板を導入済みの市区町村に一括で売る",
+      "frame": "地方の現場×払う人を自治体に(15組目)",
+      "where": [
+        "city.itabashi.tokyo.jp",
+        "metro.tokyo.lg.jp",
+        "knb.ne.jp",
+        "city.yokohama.lg.jp"
+      ],
+      "keywords": [
+        "自治会 電子回覧板 市 導入",
+        "結ネット 自治体 補助",
+        "町会 デジタル化 助成"
+      ],
+      "hypothesis": "市区町村の協働推進課が、導入済みのアプリに載る AI の下書き機能に年10万〜30万円払う",
+      "q1": "電子回覧板(結ネット)は書類を送るだけで作る機能は無い(公式で確認)。AI の下書きに自治体が払った例は見つからない",
+      "q2": "",
+      "q3": "板橋区は電子回覧板の初期費用と月額を区で負担(原文で確認)。東京都は町会のデジタル化に10分の10の助成。1団体あたりの額は小さい",
+      "legal": "名簿・住所を入れない運用。随意契約の基準額は未確認",
+      "verdict": "keep",
+      "reason": "自治体が自治会の負担を減らすのに払う構造は本物。AI の下書きへの支払いの例は無く、個人事業主が自治体に受け入れられるかも分からない。弱い keep",
+      "sources": [
+        "https://www.city.itabashi.tokyo.jp/tetsuduki/community/chokai/1060767/index.html",
+        "https://www.knb.ne.jp/yuinet/"
+      ],
+      "note": "昼の15組目(11-14)"
+    },
+    {
+      "id": "idea-113",
+      "night": "2026-11-14",
+      "pivot": "元請に、受け取った見積りの低すぎる所に印を付ける形も、国交省の無料の事例集と労務費の基準がある",
+      "dropType": "努力義務で動機が弱い・無料の公的ひな形あり",
+      "test": "",
+      "angle": "改正建設業法(2025-12施行)に合わせて、小さな工務店・一人親方の一式の見積りを材料費・労務費・経費に分けた見積書に作り直す",
+      "frame": "日本の制度の変化(15組目)",
+      "where": [
+        "mlit.go.jp",
+        "pref.fukushima.lg.jp",
+        "atsoho.com"
+      ],
+      "keywords": [
+        "建設業法改正 見積書 労務費 内訳",
+        "労務費に関する基準"
+      ],
+      "hypothesis": "小さな工務店が月1,000〜3,000円払う",
+      "q1": "内訳の明示は努力義務で、公共工事の入札だけが義務(福島県のページで確認)。許可の要らない零細は対象外の可能性(審議会の案、未確認)",
+      "q2": "国交省の見積書様式例のガイドと業界団体の無料のひな形、AI-OCR の見積りの道具がある",
+      "q3": "努力義務なので払う動機が弱い",
+      "legal": "一式から労務費を割り振ると元に無い数字を作ることになり、低すぎると「著しく低い労務費」の禁止に触れる疑いを招く",
+      "verdict": "drop",
+      "reason": "努力義務で動機が弱く、無料のひな形と既存の道具があり、AI が数字を作る責任が重い",
+      "sources": [
+        "https://www.mlit.go.jp/tochi_fudousan_kensetsugyo/const/tochi_fudousan_kensetsugyo_const_tk1_000001_00033.html",
+        "https://www.pref.fukushima.lg.jp/sec/01115c/mitumori-roumuhidannpinngutyousa.html"
+      ],
+      "note": "昼の15組目(11-14)"
+    },
+    {
+      "id": "idea-114",
+      "night": "2026-11-14",
+      "angle": "高齢の飼い主の入院・死亡に備え、ペットの預け先・費用・かかりつけ・食事と薬・性格の引き継ぎ書を聞き取りから1冊にまとめる",
+      "frame": "家族が払う場面(16組目)",
+      "where": [
+        "city.itabashi.tokyo.jp",
+        "city.ota.tokyo.jp",
+        "pref.yamanashi.jp"
+      ],
+      "keywords": [
+        "ペット エンディングノート",
+        "ペット 引き継ぎ"
+      ],
+      "hypothesis": "高齢の飼い主か遠方の子が1回3,000円払う",
+      "q1": "",
+      "q2": "板橋区などが同じ欄の記入シートを無料で配り、大田区は無料の専門家の相談を設けている",
+      "q3": "払われているのはペットの後見の互助会・信託・老犬ホームなど重いもので、3,000円の紙に払う例は見つからない",
+      "legal": "信託・遺言の中身は書かない",
+      "pivot": "地域包括支援センター向けの預け先の一覧も、実地の根拠が無い",
+      "verdict": "drop",
+      "reason": "無料の自治体のシートと相談があり、払う例が無い",
+      "dropType": "公的な無料支援あり",
+      "test": "",
+      "sources": [
+        "https://www.city.itabashi.tokyo.jp/tetsuduki/pet/pet/1023003/1059538.html",
+        "https://www.city.ota.tokyo.jp/seikatsu/hoken/pet_dog_cat/aigo/pet_hitorigurashi.html"
+      ],
+      "note": "昼の16組目(11-14)"
+    },
+    {
+      "id": "idea-115",
+      "night": "2026-11-14",
+      "dropType": "",
+      "angle": "離れて暮らす子が払い、高齢の親宛ての郵便物の写真を AI が「すぐ対応・詐欺の疑い・捨ててよい」に分け、期限と次にやることを親と子に知らせる",
+      "frame": "家族が払う場面(16組目)",
+      "where": [
+        "post.japanpost.jp",
+        "isvd.or.jp",
+        "kokusen.go.jp",
+        "apps.apple.com"
+      ],
+      "keywords": [
+        "親 郵便物 怪しい",
+        "実家 郵便物 たまる",
+        "遠距離介護 書類"
+      ],
+      "hypothesis": "40〜60代の子が月1,480円払う",
+      "q1": "日本郵便のみまもり訪問は月2,500円で、離れた家族が払う形は実在する(郵便物の中身は見ない)。個人向けに親の郵便物を要約して知らせる日本のサービスは見つからない(MailMate は法人向け)",
+      "q2": "",
+      "q3": "特殊詐欺は令和7年に27,832件・1,423億円で、65歳以上が被害額の59.2%(二次引用)。紙の郵便が主な入口かは数字が無い",
+      "legal": "親本人の同意を取る。税・年金は一般的な意味と期限まで(税理士法52条)",
+      "pivot": "親に毎回撮らせず、怪しいと思ったときと帰省時にまとめて撮る形",
+      "verdict": "keep",
+      "reason": "はっきりした No は無い。親が撮って送るか、子が無料の AI で済ませないかは未確認。弱い keep",
+      "test": "LINE 公式アカウントで写真を仕分けして親と子に返す。最初の1通無料・月1,480円。3週間で登録15人・写真10人・2週目も使う5人・事前申込3人。広告1.5万円(お金・公開なのでオーナー承認)",
+      "sources": [
+        "https://www.post.japanpost.jp/life/mimamori/",
+        "https://isvd.or.jp/columns/fraud-damage-doubled-arrests-flat"
+      ],
+      "note": "昼の16組目(11-14)"
+    },
+    {
+      "id": "idea-116",
+      "night": "2026-11-14",
+      "dropType": "",
+      "angle": "高齢の親に免許の返納をすすめたい子が払い、親の住所と行き先ごとに、返納後の移動の手段と月の費用を1枚にまとめた資料を作る",
+      "frame": "家族が払う場面(16組目)",
+      "where": [
+        "ben54.jp",
+        "serai.jp",
+        "police.pref.osaka.lg.jp",
+        "coconala.com"
+      ],
+      "keywords": [
+        "免許返納 親 説得",
+        "免許返納後 移動手段"
+      ],
+      "hypothesis": "離れて暮らす子が親の説得用の1枚に2,500円払う",
+      "q1": "大阪府警などが返納後の移動の手段を地域別に無料で出している。月の費用を行き先ごとに1枚にした資料は見つからない",
+      "q2": "",
+      "q3": "親と返納を話したことがある40〜50代は39.2%。ココナラの返納の相談の出品は販売0件。子が払う証拠は無い",
+      "legal": "交通の情報の古さと誤りが責任の元。確認日と問い合わせ先を載せる",
+      "pivot": "無料の見本で集め、行き先ごとの月の費用の比較を有料にする",
+      "verdict": "keep",
+      "reason": "はっきりした No は無い。払う証拠は無く、無料の地域の資料と相談窓口が強い。確信は低い",
+      "test": "5地域の見本を作り、ココナラに2,500円で出す(登録はオーナー)。30日で注文3件か問い合わせ15件",
+      "sources": [
+        "https://www.police.pref.osaka.lg.jp/kotsu/shien/22378.html",
+        "https://serai.jp/living/1083934",
+        "https://coconala.com/services/3357074"
+      ],
+      "note": "昼の16組目(11-14)"
+    },
+    {
+      "id": "idea-117",
+      "night": "2026-11-14",
+      "angle": "EU の炭素国境調整(CBAM)に向け、トルコ・インド・ベトナムの小さな輸出工場の排出量の書類を整える",
+      "frame": "世界の仕組み(制度の差)+今週変わったこと",
+      "where": [
+        "EU 税関総局の CBAM ページ",
+        "cbamguide.com の国別コンサル・ソフト一覧",
+        "インドの CBAM コンサルのサービスページ"
+      ],
+      "keywords": [
+        "CBAM definitive regime 50 tonnes",
+        "CBAM consultants Turkey",
+        "CBAM software supplier free"
+      ],
+      "hypothesis": "輸出工場か EU の小さな輸入者が、書類の整理に1回300〜800ユーロ払う",
+      "q1": "来る理由の材料なし。工場側は現地語のコンサルと検証会社が先に押さえている",
+      "q2": "勝てる理由なし。トルコだけで7社、インドにもあり、AI での抜き出しはまねできる",
+      "q3": "薄い。認定検証人の確認(推定5,000〜50,000ユーロ)が無いと実測値にならず、2026年は既定値との差も小さい",
+      "legal": "整理だけなら資格不要。排出量の確認は認定検証人の仕事",
+      "pivot": "EU の小さな輸入者向けに変えた→50トン以下は義務の外、超える輸入者は年1,990ユーロ〜のソフトが押さえている",
+      "verdict": "drop",
+      "reason": "先行者が同じ形で売っていて、輸入者が有料契約なら供給者は無料で使えるソフトがある",
+      "dropType": "先行者が同じ形で売っている+無料の代わりがある",
+      "test": "",
+      "sources": [
+        "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en",
+        "https://cbamguide.com/software/dubrink/",
+        "https://cbamguide.com/countries/turkey/consultants/",
+        "https://greensutra.in/services/cbam-steel/"
+      ]
+    },
+    {
+      "id": "idea-118",
+      "night": "2026-11-14",
+      "angle": "国ごとの祝日・試験期間・宗教行事・時差から、国際オンライン大会・イベントの一番人が集まる日時を出す",
+      "frame": "世界の仕組み(祝日・時差)を成果物にする",
+      "where": [
+        "eスポーツのニュース",
+        "オンラインイベントの運営ブログ",
+        "祝日 API の料金ページ",
+        "ウェビナーの日時提案ツール"
+      ],
+      "keywords": [
+        "tournament scheduling forfeit time zone",
+        "best time global virtual event",
+        "holiday API pricing",
+        "webinar best time tool"
+      ],
+      "hypothesis": "主催者が日時の提案に1回50ドル払う",
+      "q1": "根拠なし。探す人がウチに来る経路が確かめられない",
+      "q2": "勝てる理由なし。無料の時差ツール・祝日 API と一般の AI チャットで組める",
+      "q3": "払う証拠なし。近い相場は大会運営ツールの1回20ユーロ",
+      "legal": "特になし",
+      "pivot": "参加登録の時間帯データから決める形・運営会社向けの年間日程表に変えた→どちらも払う証拠が無く、無料で代わりが組める",
+      "verdict": "drop",
+      "reason": "困りごとはあるが弱く、日時の提案だけに払う例が無い。無料の道具で組める",
+      "dropType": "払う証拠が無い+無料の代わりがある",
+      "test": "",
+      "sources": [
+        "https://www.dust2.us/news/58852/na-teams-lament-pgl-bucharest-qualifier-scheduling",
+        "https://calendarific.com/pricing",
+        "https://univid.io/tools/schedule-best-time-to-host-webinar/"
+      ]
+    },
+    {
+      "id": "idea-119",
+      "night": "2026-11-14",
+      "angle": "湾岸の国で働くフィリピン・インドの人に、本国の手続き(旅券の更新・大使館の予約など)の期限を母語で知らせる",
+      "frame": "55の型: 会員制+人の限界(1つの言語)",
+      "where": [
+        "UAE の新聞",
+        "インド大使館の注意",
+        "App Store",
+        "フィリピン旅券の制度の記事"
+      ],
+      "keywords": [
+        "UAE Indian expats passport appointment",
+        "Indian embassy unauthorized agents",
+        "UAE renewal reminder app",
+        "Philippines 10 year passport expiry 2028"
+      ],
+      "hypothesis": "出稼ぎの人が母語の期限の知らせに月5ドル払う",
+      "q1": "弱い。困った人が買いたいのは予約で、知らせではない",
+      "q2": "勝てる理由なし。有料の期限通知アプリ(年12.99ドル)と UAE の公式アプリがすでにある",
+      "q3": "弱い。フィリピンの旅券は10年有効で、最初の期限切れは2028年。年1回も無い更新に月額で払う理由が無い",
+      "legal": "代行・書類の作成に踏み込むと国ごとの資格が問題になりうる(原文は未確認)",
+      "pivot": "払う人を送金会社・人材会社に変えた→先行者と無料の代わりは変わらず、B2B の営業になる",
+      "verdict": "drop",
+      "reason": "困りごとは予約が取れないことで、AI の強みの外。期限通知は先行者が売っている",
+      "dropType": "先行者が同じ形で売っている+無料の代わりがある+払う証拠が無い",
+      "test": "",
+      "sources": [
+        "https://www.khaleejtimes.com/uae/indian-embassy-residents-warns-unauthorized-agents-service-provider",
+        "https://apps.apple.com/us/app/-/id6756177345",
+        "https://www.khaleejtimes.com/uae/uae-indian-expats-passport-expiry-consular-services-application-appointment-stress"
+      ]
+    },
+    {
+      "id": "idea-120",
+      "night": "2026-11-14",
+      "angle": "米国の水害復旧・屋根の業者に、嵐・洪水の警報が出た地域の地名入りの投稿・広告文をすぐ出す",
+      "frame": "お金が払われている依頼から始める(Upwork)+世界の仕組み(季節・天気)",
+      "where": [
+        "Upwork の依頼",
+        "屋根業者向けの広告代理店のブログ",
+        "気象で動く広告の道具の一覧",
+        "NWS の API の説明",
+        "Google 広告の方針"
+      ],
+      "keywords": [
+        "storm chaser roofing PPC",
+        "weather triggered ads pricing",
+        "storm alerts roofing marketing",
+        "NWS API alerts",
+        "Google Ads sensitive events"
+      ],
+      "hypothesis": "多拠点の復旧業者が月100〜300ドル払う",
+      "q1": "筋は通るが、証拠は代理店の自己申告だけ",
+      "q2": "勝てる理由なし。WeatherAds・Storm Alerts などが同じ機能を売り、無料の NWS の API と Zapier・n8n で自作もできる",
+      "q3": "屋根・復旧は1件の単価が高く、払う理由はある",
+      "legal": "Google 広告の方針は、災害に関わる語で客を呼ぶことを禁じている。事業者プロフィールの API は承認制",
+      "pivot": "広告の自動化をやめ、人が確かめて貼る文の補助に絞った→無料の自作との差がなくなる",
+      "verdict": "drop",
+      "reason": "同じ機能を複数の会社が売っていて、材料の警報も無料",
+      "dropType": "先行者が同じ形で売っている+無料の代わりがある",
+      "test": "",
+      "sources": [
+        "https://www.predictivesalesai.com/weather/storm-alerts",
+        "https://www.weather.gov/documentation/services-web-api",
+        "https://support.google.com/adspolicy/answer/16489952"
+      ]
+    },
+    {
+      "id": "idea-121",
+      "night": "2026-11-14",
+      "angle": "欧州・中南米の小さなメーカーに、製品マニュアルの改訂ぶんだけを全言語で直す月額サービス",
+      "frame": "お金が払われている依頼から始める(Workana・ProZ)",
+      "where": [
+        "Workana・ProZ の依頼",
+        "欧州技術文書協会の解説",
+        "差分翻訳の道具の料金ページ",
+        "DeepL の料金"
+      ],
+      "keywords": [
+        "product manual translation job",
+        "machinery regulation instructions language",
+        "translate only changed sentences InDesign",
+        "DeepL document translation pricing"
+      ],
+      "hypothesis": "小さなメーカーが月49〜199ドル払う",
+      "q1": "来る根拠なし。入口は翻訳会社・Upwork・既存の道具",
+      "q2": "勝てる理由なし。Redokun が、変わった文だけを書式のまま訳す形で月300ユーロから売っている",
+      "q3": "弱い。改訂は年に数回で、月額より改訂ごとの単発が自然",
+      "legal": "EU の製造物責任では、説明書の不備が欠陥の主張に使われうる",
+      "pivot": "Redokun より安い月額に→DeepL の法人版(月49.99ユーロ)などに挟まれ、差が無い",
+      "verdict": "drop",
+      "reason": "同じ形の道具がすでに売られている。翻訳メモリの道具も標準で同じことをする",
+      "dropType": "先行者が同じ形で売っている+無料・安価な代わりがある",
+      "test": "",
+      "sources": [
+        "https://redokun.com/lp/translate-indesign",
+        "https://www.deepl.com/en/pricing",
+        "https://help.smartcat.com/tm-matching/"
+      ]
+    },
+    {
+      "id": "idea-122",
+      "night": "2026-11-14",
+      "angle": "欧州の中小企業に、GDPR の処理活動の記録簿を作り、使っているサービスの規約・委託先の変更を知らせる",
+      "frame": "お金が払われている依頼から始める(Malt)+制度で義務の継続作業",
+      "where": [
+        "Malt の依頼",
+        "GDPR 第30条",
+        "CNIL の記録簿の案内",
+        "外部の個人情報保護責任者の相場",
+        "ページの変更を見張る道具"
+      ],
+      "keywords": [
+        "registre des traitements Malt",
+        "GDPR article 30 fewer than 250",
+        "externer Datenschutzbeauftragter Kosten",
+        "sub-processor list monitoring"
+      ],
+      "hypothesis": "中小企業が月20〜60ユーロ払う",
+      "q1": "来る理由が見つからない。自分で道具を探すか、既存の外部の責任者に任せる",
+      "q2": "候補は「規約の差分から記録簿の直す所を示す」だけで、検索が浅く確かめきれない",
+      "q3": "払う証拠が弱い。記録簿の保守込みの外部の責任者が月33〜150ユーロにあり、単機能への月額の証拠なし",
+      "legal": "個別に直し方を助言する形は、国ごとに弁護士法の境が違う(未確認)",
+      "pivot": "作成1回きりの販売・中堅企業向けに変えた→無料のひな形・199.90ユーロの道具があり、中堅は簡素化で例外に入る",
+      "verdict": "drop",
+      "reason": "CNIL の無料のひな形と、月8ドルの汎用の見張りの道具がある",
+      "dropType": "無料の代わりがある+払う証拠が無い",
+      "test": "",
+      "sources": [
+        "https://www.cnil.fr/fr/le-registre-des-activites-de-traitement",
+        "https://pagecrawl.io/blog/gdpr-records-of-processing-monitoring",
+        "https://www.kertos.io/en/compliance-hub/costs-external-dpo-gdpr"
+      ]
+    },
+    {
+      "id": "idea-123",
+      "night": "2026-11-14",
+      "angle": "中小企業が代理店をやめるとき、Google の事業者プロフィール・ドメイン・アナリティクスの管理権限を取り戻す手順と申請の文を出す",
+      "frame": "先行者への客の怒りから始める(利益が相反して先行者が直せない)",
+      "where": [
+        "Local Search Forum の相談",
+        "Google の事業者プロフィールのヘルプ",
+        "ICANN の移管の規則",
+        "Fiverr・Capterra・ココナラの出品",
+        "制作会社の解説記事"
+      ],
+      "keywords": [
+        "agency holding GBP hostage",
+        "request ownership business profile",
+        "ICANN transfer policy registered name holder",
+        "ドメイン 制作会社 名義 取り戻す"
+      ],
+      "hypothesis": "代理店をやめる中小企業が、取り戻しの手順と申請の文に1回19〜39ドル払う(最初の想定の49〜199ドルは高い)",
+      "q1": "困った人は「agency holding ... hostage」「ドメイン 渡してくれない」で探す。上位は業者記事とフォーラムで、根拠は薄い",
+      "q2": "無料の案内は一般論。名義の確認・申請の順番・申し立ての文の個別化が勝てる理由の1つ",
+      "q3": "期限と損(レビュー・順位・ドメインの失効)はあるが、公式の無料の道が短い。既存の雛形のキットは19〜40ドル",
+      "legal": "日本では、代理店への返還請求の文や内容証明を有償で作ると弁護士法72条に当たるおそれ。Google などへの申請の文・手順・チェック表に絞る",
+      "pivot": "買い手を、客を受け入れる新しい代理店・フリーランスにする/19〜39ドルに下げ3点に絞る(どちらも実地は未確認)",
+      "verdict": "drop",
+      "reason": "深掘り(11-14)で相談を数えると、見えた範囲で12年に18件(英語の専門の掲示板8件・知恵袋10件)と少なく、お金を払った・業者に頼んだ例は0件。解決は Google の公式の無料の手順で説明されている。Reddit と Google 公式のコミュニティは開けず未確認",
+      "dropType": "払う証拠が無い+無料の代わりがある",
+      "test": "",
+      "sources": [
+        "https://support.google.com/business/answer/4566671",
+        "https://www.icann.org/resources/pages/transfer-policy-2016-06-01-en",
+        "https://localsearchforum.com/threads/client-has-old-marketing-company-holding-gbp-hostage.59941",
+        "https://coconala.com/services/949273",
+        "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q12304548737",
+        "https://localsearchforum.com/threads/have-manager-access-but-need-owner-access.58577"
+      ]
+    },
+    {
+      "id": "idea-124",
+      "night": "2026-11-14",
+      "angle": "従業員10〜100人の会社に、SaaS の更新日・解約の期限・値上げの条項を前もって知らせ、値下げ交渉の文案も出す",
+      "frame": "先行者への客の怒りから始める(大企業向けの購買代行は小さな客を相手にしない)",
+      "where": [
+        "SaaS 管理の会社の調査",
+        "契約の更新の見張りの道具の一覧",
+        "購買代行の G2 の掲載"
+      ],
+      "keywords": [
+        "SaaS price increase at renewal survey",
+        "contract renewal reminder software small business",
+        "Vendr minimum price",
+        "Cledara renewal alerts"
+      ],
+      "hypothesis": "小さな会社が月20〜50ドル払う",
+      "q1": "選ばれる根拠が見つからない",
+      "q2": "勝てる理由なし。月15〜99ドルの同じ形が5つ以上あり、無料枠もある",
+      "q3": "損の実例はあるが、払う数字は未確認。無料枠で足りる",
+      "legal": "交渉の文案は個別の契約の助言と取られる余地がある(未確認)",
+      "pivot": "日本の会社向け・成功報酬・個人のサブスクに変えた→日本は競合も払う証拠も出ず、成功報酬は人手の交渉になる",
+      "verdict": "drop",
+      "reason": "同じ機能の安い・無料の代わりが5つ以上ある",
+      "dropType": "先行者が同じ形で売っている+無料の代わりがある",
+      "test": "",
+      "sources": [
+        "https://www.zylo.com/blog/saas-pricing-trends",
+        "https://www.cledara.com/blog/best-saas-management-tools"
+      ]
+    },
+    {
+      "id": "idea-125",
+      "night": "2026-11-14",
+      "angle": "ドイツで届いた税額通知書を申告書と突き合わせ、異議を出す価値を示す1回払いの点検(移民には母語で説明)",
+      "frame": "先行者への客の怒りから始める(年額で稼ぐ申告ソフトは1回の商品を持てない、という見立て)",
+      "where": [
+        "ドイツの法令(AO・StBerG)",
+        "納税者団体の記事",
+        "連邦議会の改正案",
+        "申告ソフトの機能のページ",
+        "AI の税の道具の訴訟の記事"
+      ],
+      "keywords": [
+        "Einspruch Steuerbescheid Frist",
+        "Einspruch Erfolgsquote BdSt",
+        "StBerG Hilfe in Steuersachen KI",
+        "Taxfix Finanzamt-Hilfe",
+        "Bescheiddaten Abweichungen"
+      ],
+      "hypothesis": "通知書の点検に1回9〜29ユーロ払う",
+      "q1": "根拠なし。母語での説明は需要がありえるが、流入の数字は取っていない",
+      "q2": "勝てる理由なし。Taxfix が1回79.99ユーロで点検と異議の下書きを売り、申告ソフトには照合が無料で付き、母語の要約の道具もある",
+      "q3": "弱い。取り戻せる額が小さいと払う動機が弱い(推測)",
+      "legal": "資格の無い者が営業として他人の通知書を法的に検討すると、税理士法(StBerG)の禁止に当たる可能性が高い。AI の道具をめぐる訴訟は判決前",
+      "pivot": "母語での説明だけにする/判断は資格者に回して紹介料→説明は先行者があり、紹介型は Taxfix と税務援助団体がすでにやっている",
+      "verdict": "drop",
+      "reason": "見立てと違い、1回払いの点検はすでに売られていて、申告ソフトの照合も付いている",
+      "dropType": "先行者が同じ形で売っている+無料の代わりがある",
+      "test": "",
+      "sources": [
+        "https://taxfix.de/finanzamt-hilfe/",
+        "https://www.steuertipps.de/support/tipps-tricks/abholung-der-bescheiddaten",
+        "https://www.gesetze-im-internet.de/stberg/__5.html",
+        "https://www.gesetze-im-internet.de/ao_1977/__355.html"
+      ]
+    },
+    {
+      "id": "idea-126",
+      "night": "2026-11-14",
+      "angle": "AI のゲームマスターが、何年も続く自分・友達グループだけの長編のテーブルトーク RPG を毎週進め、前の選択と登場人物を覚え続ける",
+      "frame": "人の限界(人のゲームマスターは数年続かない・予定が合わない)+時間でたまる物",
+      "where": [
+        "Anthropic の料金ページ",
+        "StartPlaying のヘルプ",
+        "AI ゲームマスターの先行サービスの運営ブログ・比較ページ",
+        "D&D Beyond の SRD",
+        "日本語の AI TRPG"
+      ],
+      "keywords": [
+        "StartPlaying average price session",
+        "AI game master campaign memory",
+        "Friends and Fables pricing",
+        "SRD 5.2 Creative Commons",
+        "AI TRPG 日本語"
+      ],
+      "hypothesis": "TRPG 好きが月5〜10ドル払う",
+      "q1": "根拠なし。検索の入口は AI Dungeon・Friends & Fables が占める",
+      "q2": "候補は「何年分でも本当に覚えている」の1つだけで、未証明。先行者の運営自身が記憶を一番の不満と書いている。先行者も直しにかかっている",
+      "q3": "払う人はいる。人のゲームマスターに1回15〜20ドル、先行の AI に月10〜40ドル",
+      "legal": "規則の本体(SRD 5.2)は CC-BY-4.0 で商用可。固有名・公式の世界設定は使わない",
+      "pivot": "日本語に変えた→無料の ai-trpg.com があり有料の競合は見つからない(検索1回のみ)。Discord のボットは未確認",
+      "verdict": "drop",
+      "reason": "深掘り(11-14)で、勝てる理由の候補「何年分も覚えている」を先行者が埋めつつあると分かった。Friends & Fables(2025-10-08 に NPC が忘れる問題を修正)・Old Greg's Tavern(2025-10・2026-04・2026-05 に記憶を改善)・Latitude(2026-08 に世界の状態と語りを分ける Voyage)。「記憶が良ければ払う・乗り換える」という声は見えた範囲で0件。Reddit と公式の掲示板は開けず、不満の頻度は数えられていない",
+      "dropType": "先行者が同じ方向で直している+払う証拠が無い",
+      "test": "",
+      "sources": [
+        "https://intercom.help/startplaying/en/articles/8959627-how-much-does-it-cost-to-play-on-startplaying",
+        "https://oldgregstavern.beehiiv.com/p/improved-memory-speed-narrative-quality",
+        "https://fables.gg/blog/ai-realm-vs-friends--fables-plan--feature-comparison",
+        "https://www.dndbeyond.com/srd",
+        "https://ai-trpg.com",
+        "https://www.enworld.org/threads/ai-gms.717132/post-9937134",
+        "https://apps.apple.com/us/app/ai-dungeon-rpg-story-maker/id1491268416"
+      ]
+    },
+    {
+      "id": "idea-127",
+      "night": "2026-11-14",
+      "angle": "配信者が眠っている間、配信者の口調を覚えた AI の共演者が配信をつなぎ、見ている人の国に合わせて言語と話題を3時間ごとに変える",
+      "frame": "人の限界(眠る・1つの言語)。オーナーの24時間配信の案の変形",
+      "where": [
+        "YouTube の収益化の方針",
+        "TikTok のコミュニティガイドライン",
+        "Streamlabs の AI の共演者",
+        "AI VTuber の記事"
+      ],
+      "keywords": [
+        "YouTube inauthentic content AI",
+        "TikTok label AI-generated content",
+        "Streamlabs Sidekick",
+        "Neuro-sama subscribers"
+      ],
+      "hypothesis": "小さな配信者が月10〜30ドル払う",
+      "q1": "根拠なし。無料〜月12ドルの道具が先にある",
+      "q2": "勝てる理由を立てられない。多言語の切り替えの需要も未確認",
+      "q3": "留守の配信が視聴者や収益を増やす証拠が無い",
+      "legal": "YouTube は量産・単調な内容を収益化しない。TikTok は本物らしい AI の内容に表示を求める",
+      "pivot": "ウチ自身が AI の配信者を持つ/切り抜きの多言語化→小さな AI のチャンネルは平均・収益の数字が無く、量産の判定のおそれ",
+      "verdict": "drop",
+      "reason": "配信者向けの AI の共演者の道具がすでにあり、留守の配信が効く証拠が無い",
+      "dropType": "先行者が同じ形で売っている+払う証拠が無い",
+      "test": "",
+      "sources": [
+        "https://streamlabs.com/intelligent-streaming-agent",
+        "https://www.tiktok.com/community-guidelines/en/integrity-authenticity",
+        "https://support.google.com/youtube/answer/1311392"
+      ]
+    },
+    {
+      "id": "idea-128",
+      "night": "2026-11-14",
+      "angle": "インドネシアのサッカーファンに、ひいきのチームだけの試合直後の振り返りを、地元のことばと友達の口調で AI が出す",
+      "frame": "くじ(インドネシア×40代×サッカー)+人の限界(全試合・全言語はできない)",
+      "where": [
+        "サッカーのデータ API の規約と料金",
+        "Football DataCo",
+        "インドネシアの配信の料金の記事",
+        "インドネシアのファンの文化の記事",
+        "プレミアリーグの公式 AI"
+      ],
+      "keywords": [
+        "Sportmonks terms commercial",
+        "football-data.org pricing",
+        "Vidio Premier League harga",
+        "budaya gratisan fans sepakbola",
+        "PL Companion Copilot"
+      ],
+      "hypothesis": "ファンが月2〜3ドル払う",
+      "q1": "ことば・口調・チームの絞り込みは無料の記事・公式の AI と違うが、欲しい人の数は取れていない",
+      "q2": "勝てる理由は1つ見えるが、相手が無料なので払う理由にならない",
+      "q3": "払う証拠が無い。映像には払うが、解説・AI の文に払う例が見つからない。公式の中継どころか本物のユニフォームも買わないという記事がある",
+      "legal": "Sportmonks のデータは、作った物で稼ぐのは認められ、禁止はデータの転売だけ。プレミアリーグのデータ権は Football DataCo が管理し、有料の解説に免許が要るかは未確認",
+      "pivot": "WhatsApp のチャンネルで無料+広告に変えた→安く試せるが収益の道はまだ無い",
+      "verdict": "drop",
+      "reason": "解説に払う証拠が無く、無料の記事が多い",
+      "dropType": "払う証拠が無い+無料の代わりがある",
+      "test": "",
+      "sources": [
+        "https://www.sportmonks.com/terms-of-service/",
+        "https://mojok.co/terminal/kontroversi-mola-tv-dan-budaya-gratisan-fans-di-indonesia/amp/",
+        "https://www.premierleague.com/en/terms-and-conditions/pl-companion",
+        "https://www.football-data.org/pricing"
+      ]
+    },
+    {
+      "id": "idea-129",
+      "night": "2026-11-14",
+      "angle": "米国・欧州の輸入業者に、日本の小さな酒蔵の取引条件(輸出の可否・最小ロット・卸値・ラベルの要件)を英語でまとめた一覧を月額で売る",
+      "frame": "捨てた案を部品にする(買い手を蔵から輸入側に逆転)+時間でたまる記録",
+      "where": [
+        "米国の日本酒の輸入会社のサイト",
+        "JETRO の Japan Street の手引き",
+        "日本酒の輸出の仲介サイト",
+        "酒類業界の有料データベース"
+      ],
+      "keywords": [
+        "sake breweries reached America",
+        "Japan Street バイヤー 英語",
+        "SAKE Street Export quotation",
+        "beverage industry database importers"
+      ],
+      "hypothesis": "輸入業者が月49〜99ドル払う",
+      "q1": "来る根拠なし。輸入側の困りごとは情報より蔵との関係づくり",
+      "q2": "勝てる理由なし。JETRO が蔵ごとの英語の紹介を無料で出し、蔵に AI での英語化を勧めている。仲介は SAKE Street・Kakehashi・Sake Lovers が手数料の形でやっている",
+      "q3": "払う証拠なし。業界のデータベースは2,115ドルで売られているが、日本の蔵の一覧に払う証拠は無い",
+      "legal": "米国の三層制で、有料の客になれるのは輸入業者だけ(一覧の販売自体は当たらない見込み、未確認)",
+      "pivot": "蔵から掲載料・成約の紹介料・国を絞る→どれも無料の代わりか、同じ形の先行者がいる",
+      "verdict": "drop",
+      "reason": "無料の代わりと手数料型の仲介が先にあり、AI での英語化は蔵の側でもできる",
+      "dropType": "無料の代わりがある+先行者が同じ形で売っている+払う証拠が無い",
+      "test": "",
+      "sources": [
+        "https://palateproject.co/",
+        "https://export.sakestreet.com/",
+        "https://www.jetro.go.jp/ext_images/_Events/afg/2026sakebuyerinvitation/js_guide.pdf",
+        "https://www.beveragemarketing.com/shop/the-beverage-marketing-wine-spirits-cider-industry-database.aspx"
+      ]
+    },
+    {
+      "id": "idea-130",
+      "night": "2026-11-14",
+      "angle": "小さな教会・同郷会の手書きの古い記録(洗礼・結婚・埋葬・名簿)を、AI で読み取って検索できる台帳にする",
+      "frame": "捨てた案を部品にする+まねされにくい理由(時間でたまる記録・集まりとの信頼)",
+      "where": [
+        "教区の記録の保存の記事",
+        "教区の文書館の案内",
+        "FamilySearch の文書館向けのページ",
+        "Transkribus の教会向けのページと料金",
+        "欧州の個人情報と洗礼台帳の記事"
+      ],
+      "keywords": [
+        "parish records volunteers Latin German",
+        "diocese archives genealogy requests per hour",
+        "FamilySearch free digital archiving",
+        "Transkribus for churches",
+        "baptismal record GDPR erase"
+      ],
+      "hypothesis": "教会・団体が年200〜600ドル払う",
+      "q1": "来ない。無料の撮影と教会向けの読み取りの道具で足りる",
+      "q2": "勝てる理由なし。Transkribus が教会向けに専用のモデルで先行、FamilySearch が無料で蓄積している",
+      "q3": "払う証拠なし。教会は寄付とボランティアで回り、家系の依頼者から時給(1時間25ドル)を取って自分で対応している",
+      "legal": "生きている人の記録は GDPR の対象。洗礼台帳の消去をめぐる EU 司法裁判所の事件が進行中",
+      "pivot": "家族の古い手紙・日記を持つ個人に1件ごとに売る→読み取りの無料枠と AI 全般で単価が下がり続け、集客費がかかる",
+      "verdict": "drop",
+      "reason": "FamilySearch の無料のデジタル化と Transkribus の教会向け商品があり、教会が払う証拠が無い",
+      "dropType": "無料の代わりがある+払う証拠が無い",
+      "test": "",
+      "sources": [
+        "https://www.familysearch.org/en/records/archives/web/",
+        "https://www.transkribus.org/for-churches",
+        "https://www.transkribus.org/plans",
+        "https://www.diohuron.org/resources/huron-archives/pages/researching-the-archives"
+      ]
+    },
+    {
+      "id": "idea-131",
+      "night": "2026-11-14",
+      "angle": "英国の宗派・教区の本部に、傘下の小さな教会の Gift Aid・小口の寄付の制度(GASDS)の請求漏れを探す道具をまとめて売る",
+      "frame": "捨てた案を部品にする(成功報酬の型を団体単位に束ねる)+集まりとの信頼",
+      "where": [
+        "HMRC の Gift Aid の案内",
+        "国教会の Gift Aid のページ",
+        "Gift Aid の代行の料金ページ",
+        "教区の寄付の仕組みのページ"
+      ],
+      "keywords": [
+        "claim Gift Aid within 4 years",
+        "Small Donations Scheme £30",
+        "Gift Aid unclaimed £560 million",
+        "Swiftaid Gift Aid Finder fee",
+        "Parish Giving Scheme no charge"
+      ],
+      "hypothesis": "教区の本部が年500ポンドか成功報酬を払う",
+      "q1": "来ない。教区は無料の寄付の仕組み・中央での請求・HMRC の無料の請求を使える",
+      "q2": "勝てる理由なし。無料の Parish Giving Scheme と、5%・10%の Swiftaid が先にいる",
+      "q3": "市場が小さい。小口の制度の戻りは1教会あたり年2,000ポンドが上限で、漏れは数百ポンドの規模",
+      "legal": "HMRC の代理人の登録、寄付者の個人情報の処理者契約が要る",
+      "pivot": "小さな慈善団体・スポーツクラブ・PTA、小口の制度だけ→Swiftaid の無料枠と無料の年次キャンペーンがある",
+      "verdict": "drop",
+      "reason": "無料の仕組みと成功報酬の先行者があり、1教会あたりの額が小さい",
+      "dropType": "無料の代わりがある+先行者が同じ形で売っている+市場が小さい",
+      "test": "",
+      "sources": [
+        "https://www.gov.uk/claim-gift-aid/how-to-claim",
+        "https://www.churchofengland.org/resources/parishes/giving-and-generosity/enabling-giving/gift-aid",
+        "https://www.swiftaid.co.uk/guide/charity/questions-about-the-gift-aid-finder/how-much-does-it-cost/",
+        "https://www.canterburydiocese.org/giftaid"
+      ]
+    },
+    {
+      "id": "idea-132",
+      "night": "2026-11-14",
+      "angle": "掲示板の「こういう道具が欲しい」を毎日拾い、1日で小さな単機能の道具を作って買い切り5〜20ドルで売る",
+      "frame": "人の「こういうのは無いか」の声から始める+売り方の形(要望から作る工場)",
+      "where": [
+        "Hacker News の Ask HN",
+        "GPT の小さな道具の売上の記事",
+        "Gumroad・Lemon Squeezy の料金",
+        "Chrome Web Store の方針",
+        "AI アプリ作成の調査"
+      ],
+      "keywords": [
+        "Ask HN what do you still do manually",
+        "GPT wrapper Gumroad 527",
+        "Gumroad pricing discover 30%",
+        "Chrome Web Store spam policy",
+        "indie hackers waitlist reddit"
+      ],
+      "hypothesis": "声を出した人が買い切りで払う",
+      "q1": "声を出した人に直接知らせる以外の道が無く、その道はサブレディットごとの自己宣伝の規則で細い",
+      "q2": "勝てる理由なし。速い・安い・多言語は、無料の AI で自分で作れる人も持てる",
+      "q3": "払う証拠が弱い。「欲しい」が買う割合は見つからない。安い商品ほど手数料の固定の0.5ドルが重い",
+      "legal": "Chrome Web Store は同じ体験の拡張を複数出すことを禁止。有料の拡張の決済は廃止済み",
+      "pivot": "小さな会社の業務の困りごとを依頼ごとに受ける(1件200〜500ドル)→公開の売上の数字が無い。作る前の前払いを10件頼む試し(合格は2件以上)は書けるが、勝てる理由が無いので残さない",
+      "verdict": "drop",
+      "reason": "払う証拠が弱く、売り込む道が狭く、無料の自作という代わりがある",
+      "dropType": "払う証拠が無い+無料の代わりがある+売り場が狭い",
+      "test": "",
+      "sources": [
+        "https://gumroad.com/pricing",
+        "https://startupfortune.com/a-tiny-gpt-wrapper-just-made-527-and-exposed-ais-new-startup-path/",
+        "https://developer.chrome.com/docs/webstore/program-policies/spam-faq",
+        "https://www.lemonsqueezy.com/pricing"
+      ]
+    },
+    {
+      "id": "idea-133",
+      "night": "2026-11-14",
+      "angle": "小さな店・会社が、メール・WhatsApp・音声で「ここを直して」と送ると、AI がサイトを直して確認用のリンクを返す月額サービス",
+      "frame": "人の「こういうのは無いか」の声から始める(Hacker News の要望の集計)",
+      "where": [
+        "小さな直しの料金の記事",
+        "GoDaddy の保守の相場",
+        "月額の保守の制作会社",
+        "AI でサイトを直す先行サービス",
+        "WordPress.com の AI エディタ",
+        "Hostinger の AI エージェント"
+      ],
+      "keywords": [
+        "charge $100 to change text",
+        "SMB website maintenance cost per month",
+        "unlimited website edits monthly WhatsApp",
+        "website care plan AI preview approve",
+        "WordPress.com AI editor"
+      ],
+      "hypothesis": "小さな店が1サイト月29〜79ドル払う",
+      "q1": "根拠なし。検索で先行者がすぐ出る",
+      "q2": "勝てる理由なし。Surmado が月99〜150ドルで人の確認つきで売り、Swift Media も月100ドル。WordPress.com はチャットで直す AI エディタを持つ",
+      "q3": "小さな店は年に数回しか直さない人が多く、月額で払う人が少ない恐れ",
+      "legal": "人が承認してから公開する形なら事故の責任を客に置きやすい(弁護士の確認が要る)",
+      "pivot": "制作会社に白ラベルで卸す・欧州の店×WhatsApp・音声に絞る→需要の証拠が無い",
+      "verdict": "drop",
+      "reason": "同じ形の先行者が同じ価格帯にいて、プラットフォーム自身の AI 編集もある",
+      "dropType": "先行者が同じ形で売っている+無料の代わりがある",
+      "test": "",
+      "sources": [
+        "https://www.surmado.com/website-care-plans",
+        "https://wordpress.com/support/editors/ai-editor/",
+        "https://swiftmedia.ca/services/website-agent",
+        "https://www.godaddy.com/resources/skills/website-maintenance-cost"
+      ]
+    },
+    {
+      "id": "idea-134",
+      "night": "2026-11-14",
+      "angle": "Zapier・Make・n8n の自動化の流れを定期的に見張り、壊れたら AI が原因を読んで直し方を出す。代理店には客の名前で卸す",
+      "frame": "人の「こういうのは無いか」の声から始める(静かに裏で動くならすぐ払う、という声)",
+      "where": [
+        "Zapier・n8n・Make のコミュニティ",
+        "Zapier の AI のエラーの説明",
+        "自動化の見張りの専門サービス",
+        "Cronitor の料金",
+        "各社の API の文書"
+      ],
+      "keywords": [
+        "zap silent failures client",
+        "n8n workflow silently failed client",
+        "Zapier AI troubleshooting errors",
+        "n8n monitoring agencies",
+        "Cronitor pricing per monitor"
+      ],
+      "hypothesis": "小さな会社・代理店が1本あたり月15〜30ドル払う",
+      "q1": "根拠なし",
+      "q2": "勝てる理由なし。外の見張りの専門サービスが8つ以上(月19〜29ドル)あり、エラーの AI の説明は Zapier 自身が出している。多い壊れ方の認証切れは本人の再ログインが要り AI で直せない",
+      "q3": "代理店は客に保守を月150ドル以上で売っており、見張りを入れる動機はある。本人は無料の通知で足りる恐れ",
+      "legal": "Zapier の API は承認制。Make の API の多くは有料プラン向け",
+      "pivot": "n8n に絞る・代理店向けの白ラベルに絞る→どちらも先行者がいる",
+      "verdict": "drop",
+      "reason": "見張りの専門サービスが同じ価格帯で埋まっていて、AI の説明は Zapier 自身が持つ",
+      "dropType": "先行者が同じ形で売っている+無料の代わりがある",
+      "test": "",
+      "sources": [
+        "https://community.zapier.com/how-do-i-3/best-practice-for-monitoring-client-zaps-for-silent-failures-not-errors-missing-runs-53606",
+        "https://cronitor.io/pricing",
+        "https://help.zapier.com/hc/en-us/articles/17022246704525-Get-more-clarity-on-Zap-run-errors-with-AI-powered-troubleshooting-Beta",
+        "https://docs.n8n.io/connect/n8n-api/executions"
+      ]
+    },
+    {
+      "id": "idea-135",
+      "night": "2026-11-14",
+      "angle": "イタリアの小さな事業者に、電子請求書が国の仕組み(SdI)にはねられたときの原因と直し方、直した XML の案を出す",
+      "frame": "よその国で当たった形を持ち込む(英語圏の AI サポートの型)+世界の仕組み(国ごとの制度)",
+      "where": [
+        "Agenzia delle Entrate の回答・仕様書",
+        "イタリアの税の掲示板",
+        "会計ソフトのガイド",
+        "無料の検査の道具の記事"
+      ],
+      "keywords": [
+        "fattura scartata cinque giorni",
+        "codici errore SDI",
+        "fiscoetasse scarto 00404",
+        "verifica XML fattura elettronica gratuito"
+      ],
+      "hypothesis": "小さな事業者が1回2〜5ユーロか月5〜10ユーロ払う",
+      "q1": "根拠なし。検索の入口は無料の解説記事とソフトの画面の案内",
+      "q2": "勝てる理由なし。公式の仕様書にエラーの番号ごとの説明があり、会計ソフトは拒否の通知ごとに直し方を案内し、国のポータルで送る前の検査が無料",
+      "q3": "根拠なし。困るのは年に数回で、請求書ソフト(年30〜96ユーロ)より高くは取りにくい",
+      "legal": "再送の5日は Agenzia の解釈(回答 n.103/2024)",
+      "pivot": "ソフト会社に卸す・会計士に売る・スペインの Verifactu やポーランドの KSeF に向ける→ソフトは自前で持ち、会計士は自分で解け、他国は義務化が延期・割れている",
+      "verdict": "drop",
+      "reason": "公式の説明・無料の検査・ソフトの案内が同じ困りごとを無料か数ユーロで解いている",
+      "dropType": "無料の代わりがある+払う証拠が無い",
+      "test": "",
+      "sources": [
+        "https://www.agenziaentrate.gov.it/portale/documents/20143/6101204/Risposta+n.+103_2024.pdf/0ba65758-2c84-667e-f90e-c22b8508898d",
+        "https://informazionefiscale.it/IMG/pdf/allegato_a_-_specifiche_tecniche_vers_1.9.pdf",
+        "https://www.fattureincloud.it/guida-fatturazione-elettronica/fattura-elettronica-scartata/",
+        "https://centrofiscale.com/verifica-xml-fattura-elettronica-2026-strumenti-gratuiti/"
+      ]
+    },
+    {
+      "id": "idea-136",
+      "night": "2026-11-14",
+      "angle": "ブラジルの小さな店・自営業者に、WhatsApp の長い音声を文字にし、要点・やること・日付・金額の表と返事の案を出す",
+      "frame": "よその国で当たった形を持ち込む(英語圏の声メモの道具 AudioPen)",
+      "where": [
+        "WhatsApp の公式ブログ",
+        "ブラジルのテック記事",
+        "ブラジルの AI ボットの記事",
+        "App Store",
+        "WhatsApp Business の規約",
+        "ブラジルの競争当局の記事"
+      ],
+      "keywords": [
+        "transcrições mensagens de voz WhatsApp",
+        "ViraTexto resumir áudios",
+        "Zapia transcrições automáticas",
+        "WhatsApp Business AI providers prohibited",
+        "CADE Meta multa"
+      ],
+      "hypothesis": "小さな店・自営業者が月10〜30レアル払う",
+      "q1": "見つからない。探す人は無料の ViraTexto・Zapia・WhatsApp 自身を先に知っている",
+      "q2": "勝てる理由なし。残る差は表と返事の案だけで、有料で買う証拠は無い",
+      "q3": "月10〜30レアルの実例0件。レアルの有料例は月69.90レアルのアプリと、弁護士向けの束だけ",
+      "legal": "WhatsApp Business の規約は AI が主な機能の事業者の API 利用を禁じる。ブラジルでは競争当局がこの規則を止めているが争い中。健康情報は LGPD の機微情報",
+      "pivot": "弁護士・医師に絞る/スペイン語圏へ→先行者と守秘義務の壁、スペイン語圏は Zapia・Luzia の本拠地",
+      "verdict": "drop",
+      "reason": "WhatsApp 自身の文字起こしと、無料で要約までする ViraTexto がある",
+      "dropType": "無料の代わりがある+払う証拠が無い+規約",
+      "test": "",
+      "sources": [
+        "https://blog.whatsapp.com/introducing-voice-message-transcripts?lang=pt_BR",
+        "https://tecnoblog.net/noticias/ia-popular-no-whatsapp-ganha-funcao-de-resumir-audios/",
+        "https://www.facebook.com/legal/Meta-Terms-for-WhatsApp-Business-Platform",
+        "https://tecnoblog.net/noticias/cade-mantem-multa-diaria-de-r-250-mil-contra-meta/"
+      ]
+    },
+    {
+      "id": "idea-137",
+      "night": "2026-11-14",
+      "angle": "湾岸の会社員・自営業者に、方言で話した音声メモを正則アラビア語の書き言葉(メール・報告・投稿)にする道具",
+      "frame": "よその国で当たった形を持ち込む(AudioPen)+言語の壁",
+      "where": [
+        "音声入力アプリのブログ",
+        "音声認識の会社のページ",
+        "UAE の新聞",
+        "ArabNews の記事"
+      ],
+      "keywords": [
+        "AI voice dictation Arabic Gulf",
+        "Soniox Arabic dictate correspondence",
+        "Jais Speech dialects 19 countries",
+        "Arabic dialect speech recognition gap"
+      ],
+      "hypothesis": "月5〜15ドル払う",
+      "q1": "来る理由なし。アラビア語の売り場で見つけてもらう手段が無い",
+      "q2": "勝てる理由なし。精度は音声認識の会社の領分で、書き言葉への直しは一般の AI で無料でできる",
+      "q3": "月12ドルの先行者があり価格帯はありえるが、払う人の数は未確認",
+      "legal": "特になし",
+      "pivot": "モロッコのダリジャ・会社の会議の記録・行政の窓口→Jais Speech がダリジャに対応、会議は企業向けの先行者、行政は届く手段が無い",
+      "verdict": "drop",
+      "reason": "Willow が湾岸の方言からビジネスメールの形を月12ドルで売り、Soniox は無料で始められる",
+      "dropType": "先行者が同じ形で売っている+無料の代わりがある",
+      "test": "",
+      "sources": [
+        "https://willowvoice.com/blog/ai-voice-dictation-arabic",
+        "https://soniox.com/soniox-app/for/executive-assistants-dictate-correspondence-in-arabic",
+        "https://www.thenationalnews.com/news/uae/2026/10/24/talking-your-language-uae-unveils-ai-tool-designed-to-master-arabic-dialects/"
+      ]
+    },
+    {
+      "id": "idea-138",
+      "night": "2026-11-14",
+      "angle": "世界の「サービス終了のお知らせ」を毎日見張り、終了のたびにその客向けの移し替え・設定の作り直し・移り先の比較・案内の文を1回30〜100ドルで売る引っ越しの窓口",
+      "frame": "倒産・撤退の記事から始める(先行者がいなくなった所)",
+      "where": [
+        "終了の告知(InkFrog・Spring・Rally.Fan)",
+        "移り先の会社の移行のページ",
+        "EC の移行の道具の掲載",
+        "Killed by Google",
+        "閉鎖の報告"
+      ],
+      "keywords": [
+        "InkFrog shutdown migration",
+        "Rally.Fan shutdown FAQ",
+        "Cart2Cart pricing",
+        "killed by google 2026",
+        "state of shutdowns 2026"
+      ],
+      "hypothesis": "終了したサービスの客が1回30〜100ドル払う",
+      "q1": "根拠なし。客の検索の入口は移り先の会社の比較記事・移行ページが押さえている",
+      "q2": "勝てる理由なし。移り先の会社が客寄せとして移行を無料にしている(InkFrog では4社とも)",
+      "q3": "払う証拠が見つからない(移行の代行に払った例0件)",
+      "legal": "元のサービスの書き出しはテンプレートや設定を含まないことが多く、規約はサービスごとに違う",
+      "pivot": "移り先から紹介料・終了の情報そのものを売る→客は自分で移り先に行けば足り、終了の情報は無料のまとめがある",
+      "verdict": "drop",
+      "reason": "移行は移り先の会社が無料で配る客寄せで、売り物の値段の底が0円",
+      "dropType": "無料の代わりがある+払う証拠が無い",
+      "test": "",
+      "sources": [
+        "https://litcommerce.com/blog/inkfrog-alternatives/",
+        "https://www.listingmirror.com/inkfrog-shutdown-migrate-to-listing-mirror/",
+        "https://intercom.help/rallyforcreators/en/articles/13015869-rally-fan-shutdown-faq",
+        "https://killedbygoogle.com"
+      ]
+    },
+    {
+      "id": "idea-139",
+      "night": "2026-11-14",
+      "angle": "ドイツの De-Mail が2026年12月31日に終わるので、受信の記録から相手先を洗い出し、相手ごとの次の手段と連絡の文をドイツ語で作る",
+      "frame": "倒産・撤退の記事から始める+世界の仕組み(国の制度)",
+      "where": [
+        "ドイツのテックの記事",
+        "連邦会計検査院の報告の記事",
+        "ドイツの掲示板",
+        "代わりの暗号化メールの会社のブログ",
+        "RDG の条文"
+      ],
+      "keywords": [
+        "De-Mail Ende 31. Dezember 2026",
+        "De-Mail Bundesverwaltung 6000",
+        "De-Mail Alternative",
+        "Bund-ID Postfach"
+      ],
+      "hypothesis": "De-Mail の利用者が1回9〜19ユーロ払う",
+      "q1": "根拠なし。対象の人が少なく、見つけてもらう道も無い",
+      "q2": "勝てる理由なし。国の無料の受信箱(Bund-ID など)と士業の義務の電子の私書箱がある",
+      "q3": "言えない。移行は1回きりで、De-Mail 自体の料金も小さい",
+      "legal": "相手ごとにどの手段が法的に有効かを当てはめて示すと RDG のグレー寄り",
+      "pivot": "士業の事務所に絞る→士業は義務の電子の私書箱がすでにあり需要が薄い",
+      "verdict": "drop",
+      "reason": "そもそも使われていなかった(連邦行政が2016〜2019年に送ったのは約6,000通)。困っている声も見つからない",
+      "dropType": "払う証拠が無い+無料の代わりがある+需要が無い",
+      "test": "",
+      "sources": [
+        "https://www.techbook.de/mobile-lifestyle/de-mail-ende",
+        "https://winfuture.de/news,126793.html",
+        "https://winfuture.de/news,155205.html"
+      ]
+    },
+    {
+      "id": "idea-140",
+      "night": "2026-11-14",
+      "angle": "英国の個人事業のトラック運転手・小さな運送会社に、荷主での待ち時間の証拠をそろえて請求書を作り、回収額の10〜20%を受け取る",
+      "frame": "別の立場になる(くじ: 英国×30代×トラック運転手)+先に1回だけ検索して絞る",
+      "where": [
+        "RHA の運送条件",
+        "英国の運送業の記事",
+        "待ち時間の請求の道具の掲載",
+        "英国の債権回収の料金のページ",
+        "RHA の支払い遅れの記事"
+      ],
+      "keywords": [
+        "RHA conditions of carriage demurrage",
+        "retail customers wasting hauliers time",
+        "detention billing geofence",
+        "Rekuver UK haulage",
+        "debt collection success fee UK"
+      ],
+      "hypothesis": "運転手・小さな運送会社が回収額の10〜20%払う",
+      "q1": "根拠なし。荷主・元請けとの関係を壊したくない",
+      "q2": "勝てる理由なし。Geotab の FleetOptos・CO3・Ontruck、英国向けの Rekuver(実在は未確認)が先にいる",
+      "q3": "1件の額が小さく、10〜20%では手間に見合わない",
+      "legal": "RHA の条件は会員だけが使える。企業間の請求の代行は FCA の認可が要らないことが多い(原文未確認)",
+      "pivot": "請求のひな形を無料で配る入口→儲けにつながる根拠が無い",
+      "verdict": "drop",
+      "reason": "待ち時間の記録と請求の道具がすでにあり、1件の回収額が小さい",
+      "dropType": "先行者が同じ形で売っている+市場が小さい",
+      "test": "",
+      "sources": [
+        "https://www.europa-worldwide.com/wp-content/uploads/2023/06/RHA-TCs.pdf",
+        "https://motortransport.co.uk/operators-call-for-retail-customers-to-be-punished-for-wasting-their-time-and-resources/12281.article",
+        "https://shergroup.com/blog/debt-collection-services-uk",
+        "https://www.birketts.co.uk/legal-update/royal-haulage-association-conditions-of-carriage-2024-key-provisions/"
+      ]
+    },
+    {
+      "id": "idea-141",
+      "night": "2026-11-14",
+      "angle": "アルゼンチンの美容室に、仕入れ値と物価から値段の改定案・新しい価格表・客への WhatsApp の告知の文を毎週作る",
+      "frame": "別の立場になる(くじ: アルゼンチン×30代×美容師)+先に1回だけ検索して絞る",
+      "where": [
+        "INDEC の物価の報告",
+        "アルゼンチンの新聞",
+        "中南米の予約ソフトのページと料金",
+        "トルコ・エジプト・ナイジェリアの物価"
+      ],
+      "keywords": [
+        "INDEC IPC octubre 2026",
+        "peluquerías aumentos insumos",
+        "AgendaPro peluquería WhatsApp",
+        "TÜFE ekim 2026"
+      ],
+      "hypothesis": "美容室が月5〜10ドル払う",
+      "q1": "来る理由が見つからない",
+      "q2": "勝てる理由なし。AgendaPro が客のグループへの WhatsApp の一斉送信を持ち、一般の AI で告知の文は作れる",
+      "q3": "払う額の目安は全部入りの予約ソフトで月1〜9ドルと低い",
+      "legal": "特になし",
+      "pivot": "トルコ・エジプト・ナイジェリア、飲食店のメニュー→構造は同じで通らない",
+      "verdict": "drop",
+      "reason": "物価は月2.2%(2026年10月)で、毎月1回直せば足り、困りごとが小さい。先行者が機能を持つ",
+      "dropType": "困りごとが小さい+先行者が機能を持つ+無料の代わりがある",
+      "test": "",
+      "sources": [
+        "https://www.indec.gob.ar/uploads/informesdeprensa/ipc_11_269335F5BA6B.pdf",
+        "https://agendapro.com/ar/peluqueria/software-para-peluquerias",
+        "https://agendapro.com/ar/planes-int"
+      ]
+    },
+    {
+      "id": "idea-142",
+      "night": "2026-11-14",
+      "angle": "小さなチェスの大会の主催者に、対局中の盤面を AI が複数の言語の音声で同時に実況する仕組みを1大会50〜200ユーロで売る",
+      "frame": "別の立場になる(くじ: フランス×50代×プロの棋士)+人の限界(多言語・同時にたくさん)",
+      "where": [
+        "Lichess の中継のヘルプと規約",
+        "chess.com のヘルプ",
+        "Chessify のニュース",
+        "欧州囲碁連盟の配信の料金",
+        "地域のチェス連合の記事"
+      ],
+      "keywords": [
+        "lichess broadcast help",
+        "chess.com broadcast event",
+        "AI chess commentator",
+        "European Go Federation streaming commentator fee",
+        "arbiter volunteer shortage chess"
+      ],
+      "hypothesis": "主催者が1大会50〜200ユーロ払う",
+      "q1": "来る理由の証拠なし。主催者が探している形跡が無い",
+      "q2": "勝てる理由は「多言語の音声で同時に何局でも」だけで弱い。Chessify が AI の実況を先に出し、Lichess・chess.com の中継は無料",
+      "q3": "払い手は参加費の小さな大会で額が小さい。人の解説は囲碁で1回50〜90ユーロ",
+      "legal": "Lichess の規約は商用の利用を認めるが、妥当な上限がある",
+      "pivot": "囲碁・将棋・配信者に売る→将棋は大手が AI の解説を試す予定、配信者は払う証拠が無い",
+      "verdict": "drop",
+      "reason": "困りごとの証拠が無く、無料の中継と評価値がある",
+      "dropType": "払う証拠が無い+無料の代わりがある+先行者がいる",
+      "test": "",
+      "sources": [
+        "https://lichess.org/broadcast/help",
+        "https://www.eurogofed.org/grandprix/streaming.html",
+        "https://chessify.me/news/ai-commentator-global-chess-league-2024",
+        "https://lichess.org/terms-of-service"
+      ]
+    },
+    {
+      "id": "idea-143",
+      "night": "2026-11-14",
+      "angle": "米国の投資移民ビザ EB-5 の「資金の出どころ」の書類で、多言語の銀行明細・贈与・売却の記録を AI が読み、資金の流れの表と図・足りない証拠の一覧を作り、EB-5 専門の移民弁護士・地域センターに1件1,000〜3,000ドルで売る",
+      "frame": "1件の単価が高く客の少ない専門の市場から探す",
+      "where": [
+        "業界団体 IIUSA の申請の統計",
+        "法律事務所の EB-5 の記事",
+        "資金の出どころの書類の料金表",
+        "移民の法律事務所向けの AI の機能のページ",
+        "EB-5 の投資家向けのサービス"
+      ],
+      "keywords": [
+        "FY2025 I-526E filings record",
+        "EB-5 source of funds denials",
+        "EB-5 source of funds documentation package price",
+        "Docketwise AI USCIS forms",
+        "Tukki EB-5 source of funds"
+      ],
+      "hypothesis": "EB-5 専門の弁護士が、資金の出どころの整理の時間を減らす道具に1件1,000〜3,000ドル払う",
+      "q1": "根拠は弱い。売り先は EB-5 専門の弁護士事務所に限られ、営業が要る",
+      "q2": "理由は1つある。移民の書類の AI(Docketwise)はパスポート等の読み取りで銀行明細に触れておらず、Tukki は投資家に直接売るサービス。ただし網羅の検索ではない",
+      "q3": "筋は通る。資金の出どころの書類のパッケージに合計10,098ドル払われている例がある(Consultant LM の料金表)。払う意思は未確認",
+      "legal": "書類の判断と提出は弁護士が行い、ウチは道具を売る形にする(無資格の法律業務に当たらないかは、売る前に専門家に1回聞く)。国外の財務の記録の扱いは未調査",
+      "pivot": "広げる先: ポルトガル・ギリシャの投資移民(ゴールデンビザ)も、弁護士の費用が1件6,000〜25,000ユーロで、資金の出どころの書類が同じ形(27組目の生の案。資金の出どころだけの値段は未確認)",
+      "verdict": "drop",
+      "reason": "2025年度の申請は6,660件(業界団体の集計)、一番多い却下の理由が資金の出どころだと法律事務所が書く(統計ではない)。はっきりした No は出なかった。地域センターの授権は2027年9月30日までで、保護つきの申請の期限は過ぎたので件数が減る恐れ。深掘り(11-14): 承認済みの地域センターは572(USCIS、2026-10-26時点)、業界の名簿の移民弁護士は653人で、声をかける先として40か所は足りる。資金の出どころの書類は WINHELLER(弁護士と税務チームが作る)・Tukki・Marcum などが投資家に向けて売っているが、値段は公開されず、弁護士向けの道具として売る例は見つからない。業界の会議(IIUSA の Forum)は次が2027年春の見込みで日付未確認。【11-14 Perplexity との比較で捨てた】Claude の検索は弁護士向けの道具を見落としていた。ParaLeagle(移民弁護士と弁護士監督下の事務所にだけ売る。資金の出どころの経路の再構成と不足の洗い出し、インドの LRS・中国の SAFE の書類に対応、値段は事務所ごとの見積もり)と US Immigration AI(免許のある法律事務所向け、投資家ごとの資金の出どころの証拠を1つにまとめ不足を検出、1申請97ドルか月997ドル)。両社のページを開いて確かめた",
+      "dropType": "先行者が同じ形で売っている",
+      "test": "",
+      "sources": [
+        "https://iiusa.org/fy2025-i-526e-data-report-record-filings-surging-adjudications-high-approval-rates-and-evolving-investor-market-trends/",
+        "https://www.buchalter.com/insights/eb-5-at-a-crossroads-the-grandfathering-deadline-the-proposed-rule-and-the-rising-bar-on-source-of-funds-scrutiny/",
+        "https://consultantlm.com/service/eb-5-source-of-funds-documentation-package",
+        "https://www.docketwise.com/features/ai-for-law-firms/",
+        "https://tukki.ai/blog/eb5-source-of-funds",
+        "https://uscis.gov/node/45510",
+        "https://eb5projects.com/professionals",
+        "https://www.visum-usa.com/en/source-of-funds-visa.html",
+        "https://iiusa.org/agenda-announced-2026-iiusa-eb-5-industry-forum/",
+        "https://paraleagle.ai/investor",
+        "https://paraleagle.ai/pricing",
+        "https://usimmigration.ai/green-card/eb-5",
+        "https://usimmigration.ai/"
+      ]
+    },
+    {
+      "id": "idea-144",
+      "night": "2026-11-14",
+      "angle": "国際的な臨床試験の同意書を、AI が全言語を同時に訳し、逆翻訳との食い違いを表にして、CRO・大学の試験の事務局に1試験数千ドルで売る",
+      "frame": "1件の単価が高く客の少ない専門の市場から探す",
+      "where": [
+        "Healio の記事",
+        "NCI の同意書の作成の道具",
+        "IRB の翻訳の要件の記事",
+        "大手の翻訳会社の臨床のページ"
+      ],
+      "keywords": [
+        "AI clinical trial consent form translation cost",
+        "NIH research optimizer translator AI",
+        "IRB certified translation informed consent",
+        "TransPerfect informed consent AI"
+      ],
+      "hypothesis": "CRO・大学が1試験数千ドル払う",
+      "q1": "根拠なし。大手と国の機関がすでに同じ流れを持つ",
+      "q2": "勝てる理由なし。NCI が AI で訳し翻訳者が確かめて認証する流れを無料で試し(スペイン語)、TransPerfect・Lara・DeepL・Lionbridge も出している",
+      "q3": "翻訳費は予算に入る正当な費用だが、AI で値段が崩れる側で、数千ドルを払う根拠は取れない",
+      "legal": "AI の使用は禁止されていないが、人の確認がほぼ必須で、研究者の責任は免除されない",
+      "pivot": "大学の小さな試験・翻訳会社に部品で卸す・少数言語→予算が小さい、大手は内製、少数言語は人の費用が主",
+      "verdict": "drop",
+      "reason": "国の機関と大手が同じ形を持ち、責任は人の側に残る",
+      "dropType": "先行者が同じ形で売っている+無料の代わりがある",
+      "test": "",
+      "sources": [
+        "https://www.healio.com/news/hematology-oncology/20260924/eyeopening-ai-could-be-lowcost-solution-to-clinical-trial-consent-form-translation",
+        "https://irbo.nih.gov/protocol-development/consent-development/developing-documents-using-the-research-optimizer/",
+        "https://www.advarra.com/blog/why-irbs-ask-for-certified-translations-of-informed-consent-forms-regulation-guidance-and-practical-reality/",
+        "https://lifesciences.transperfect.com/blog/rewriting-rules-informed-consent-development-ai"
+      ]
+    },
+    {
+      "id": "idea-145",
+      "night": "2026-11-14",
+      "angle": "国際養子縁組の約20通の書類の氏名・日付・綴りのずれを AI が一括で調べ、斡旋団体に1家庭200〜500ドルで売る",
+      "frame": "1件の単価が高く客の少ない専門の市場から探す",
+      "where": [
+        "業界団体 NCFA の発表",
+        "斡旋団体 CCAI の料金表",
+        "翻訳・認証の業者のブログ",
+        "斡旋団体の管理ソフト",
+        "配偶者ビザの統計の記事"
+      ],
+      "keywords": [
+        "intercountry adoption FY2025 973",
+        "CCAI Colombia fee chronology",
+        "apostille date discrepancy",
+        "adoption agency case management software",
+        "marriage green card statistics"
+      ],
+      "hypothesis": "斡旋団体が1家庭200〜500ドル払う",
+      "q1": "来る理由なし。買い手は少数の団体で営業が要る",
+      "q2": "勝てる理由なし。斡旋団体の管理ソフトに書類の追跡がある",
+      "q3": "書類の作り直しの痛みは料金表に出ていない。出し直しの費用(800〜2,500ドル)の原因は待ち時間で、書類のずれではなかった",
+      "legal": "特になし",
+      "pivot": "国際結婚の配偶者ビザの書類(年約9.8万件、法律事務所のブログの数字)→困りごとの原文と、検索に頼らない売り先が空欄で、今は残さない",
+      "verdict": "drop",
+      "reason": "市場が小さく縮み続けている(2025年度973件、前年から17%減)。案の数字は料金表の読み違いだった",
+      "dropType": "市場が小さい+払う証拠が無い",
+      "test": "",
+      "sources": [
+        "https://adoptioncouncil.org/press-release/ncfa-responds-to-fy2025-state-department-report-on-intercountry-adoption/",
+        "https://ccaifamily.org/wp-content/uploads/2024/02/OS-Fee-Chronology_COLOMBIA_1.2024.pdf",
+        "https://ccaifamily.org/wp-content/uploads/2023/10/All-Other-States-Fees-by-Chronology_8.2023.pdf"
+      ]
+    },
+    {
+      "id": "idea-146",
+      "night": "2026-11-14",
+      "angle": "ドイツの相続人探しの業者に、外国(ポーランド・米国)の手書き・多言語の記録の読み取り・転記・家系図の候補づくりを AI でする道具を売る",
+      "frame": "1件の単価が高く客の少ない専門の市場から探す(国を変える)",
+      "where": [
+        "ドイツの消費者団体の記事",
+        "相続人探しの判決の解説",
+        "ドイツの法律の専門誌",
+        "Transkribus の料金",
+        "FamilySearch の規約"
+      ],
+      "keywords": [
+        "Erbenermittler Honorar Prozent",
+        "Verband Deutscher Erbenermittler Zahl",
+        "Erbenermittlung Polen recherchieren",
+        "Transkribus pricing",
+        "FamilySearch terms professional genealogists"
+      ],
+      "hypothesis": "相続人探しの事務所が月額か1件ごとに払う",
+      "q1": "来る理由の証拠なし。買い手は専業の10〜20社ほどで営業先が少なすぎる",
+      "q2": "勝てる理由なし。手書きの読み取りは Transkribus が年99ユーロから、汎用の AI もある",
+      "q3": "業者は払える体力がある(1件の報酬が数百万ユーロの例も)が、道具の値段は Transkribus に引っ張られる",
+      "legal": "FamilySearch の規約は専門の系図家の勧誘と一括の取得を禁じる。生きている相続人の個人情報は GDPR の対象",
+      "pivot": "米国・英国の heir hunters、ポーランドの記録に絞る→英米は英語の記録が中心で仮説から外れ、ポーランドは業者が現地の法律家に任せる",
+      "verdict": "drop",
+      "reason": "買い手が少なく、無料・安価な代わりがある",
+      "dropType": "市場が小さい+無料の代わりがある",
+      "test": "",
+      "sources": [
+        "https://www.test.de/Erbenermittler-Wie-private-Unternehmen-nach-unbekannten-Erben-suchen-5178506-0/",
+        "https://rechtsanwalt-krau.de/honoraranspruch-bei-erbenermittlung/",
+        "https://www.transkribus.org/pricing",
+        "https://www.familysearch.org/terms"
+      ]
+    },
+    {
+      "id": "idea-147",
+      "night": "2026-11-14",
+      "angle": "EU の CBAM の認定検証人に、インド・トルコ・中国の工場の現地語の請求書・計量票を読み取り、検証人が見る束にそろえる道具を1設備500〜1,500ユーロで売る",
+      "frame": "1件の単価が高く客の少ない専門の市場から探す(前に捨てた CBAM の案の買い手を検証人に変えた)",
+      "where": [
+        "CBAM の業者の案内",
+        "欧州委員会の CBAM の検証のページ",
+        "欧州の鉄鋼の業界紙",
+        "CBAM のソフトの検証機関向けのページ"
+      ],
+      "keywords": [
+        "CBAM verifier cost per installation",
+        "CBAM accredited verifiers first verification reports",
+        "zero foreign exporters pass CBAM verification",
+        "Isometric Ready for CBAM"
+      ],
+      "hypothesis": "検証の事務所が1設備500〜1,500ユーロ払う",
+      "q1": "根拠なし。検証は認定を受けた大手が中心",
+      "q2": "検証人の側に立つ読み取りの道具は見つからないが、空いている理由が「検証人が買わない」か「まだ誰も試していない」か区別できない。Dubrink・Isometric が検証に渡す前の準備を担う",
+      "q3": "数字で言えない。買い手は数十社と見込まれ、初めての検証の報告は2027年1月から",
+      "legal": "検証人は独立性の規則があり、外部の道具に任せた部分の責任の整理が要る(原文未確認)。初年度は現地への訪問が義務",
+      "pivot": "EU の排出量取引の検証・英国の CBAM・自主的なクレジット→買い手の少なさと先行者が変わらない",
+      "verdict": "drop",
+      "reason": "買い手が少なく、市場が立ち上がる前で、手間がどれだけ減るかの裏付けが無い",
+      "dropType": "市場が小さい+払う証拠が無い",
+      "test": "",
+      "sources": [
+        "https://cbamguide.com/importers/verification/",
+        "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-verification_en",
+        "https://eurometal.net/eu-steel-imports-ex-asia-risk-failed-cbam-verifications/",
+        "https://onestopesg.com/esg-news/isometric-cbam-emissions-verification"
+      ]
+    },
+    {
+      "id": "idea-148",
+      "night": "2026-11-14",
+      "angle": "国際離婚で、司法会計士・家族法の弁護士に、外国の口座明細を AI が読み、資金の流れと不自然な移動の一覧を作る道具を1件300〜1,000ドルで売る",
+      "frame": "1件の単価が高く客の少ない専門の市場から探す",
+      "where": [
+        "カナダの弁護士の紹介サイト",
+        "英国の離婚の統計",
+        "ロンドンの法律事務所の記事",
+        "家族法向けの明細の分析の道具",
+        "銀行明細の読み取りの道具"
+      ],
+      "keywords": [
+        "forensic accountant divorce cost Ontario",
+        "divorces England Wales 2023",
+        "overseas assets divorce forensic accountants",
+        "DocuClipper family law flow of funds",
+        "Affinda bank statement languages"
+      ],
+      "hypothesis": "司法会計士が1件300〜1,000ドル払う",
+      "q1": "根拠なし",
+      "q2": "勝てる理由なし。DocuClipper が家族法向けに資金の流れと不正の検出を月159ドルから、Affinda が50以上の言語の明細の読み取りを出している",
+      "q3": "専門家の費用は確かだが、明細を読む部分の割合は未確認。英国は単独の共同専門家が基本で費用に上限がかかる",
+      "legal": "AI の出力を証拠に使うなら、元の明細に戻れる形が要る",
+      "pivot": "非英語の明細を元の行と1対1でひもづける部分に絞る→需要の事実が無い",
+      "verdict": "drop",
+      "reason": "先行者が安い月額で同じ機能を出し、多言語も差にならない",
+      "dropType": "先行者が同じ形で売っている",
+      "test": "",
+      "sources": [
+        "https://www.docuclipper.com/industries/family-law/",
+        "https://affinda.com/documents/bank-statement",
+        "https://www.otssolicitors.co.uk/news/overseas-assets-offshore-accounts-and-divorce/"
+      ]
+    },
+    {
+      "id": "idea-149",
+      "night": "2026-11-14",
+      "angle": "日本の在留資格「経営・管理」の申請で、本国の書類を AI が読み、資金の流れの表・不許可になりやすい穴・事業計画の下書きを作る道具を行政書士に売る",
+      "frame": "1件の単価が高く客の少ない専門の市場から探す(日本・アジア)",
+      "where": [
+        "出入国在留管理庁の改正の案内",
+        "共同通信の在留外国人の記事",
+        "行政書士の報酬の記事と料金表",
+        "在留資格の申請の SaaS の発表"
+      ],
+      "keywords": [
+        "経営・管理 3000万円 2025年10月16日",
+        "経営・管理 新規入国者 80.9%減",
+        "経営管理ビザ 行政書士 報酬",
+        "RakuVisa AI 不備チェック"
+      ],
+      "hypothesis": "行政書士が1件3,000〜10,000円か月額で払う",
+      "q1": "根拠なし",
+      "q2": "核の「本国書類を読んで資金の流れの表にする」は汎用の AI で代わりができる。RakuVisa が特定技能の書類の AI の点検を出している",
+      "q3": "売上の上限が小さい。新規は年換算で約1,300人(2026年上半期635人の2倍、私の計算)",
+      "legal": "行政書士にだけ売り、判断と申請は行政書士が行う形なら低リスクと見るが、事業計画の下書きは確認が要る(2026年1月の行政書士法の改正)",
+      "pivot": "帰化・永住に替える→報酬の相場が取れず、根拠が無い",
+      "verdict": "drop",
+      "reason": "2025年10月16日の厳格化(資本金3,000万円以上など)で新規の入国者が2026年上半期に80.9%減った",
+      "dropType": "市場が縮んだ+市場が小さい+無料の代わりがある",
+      "test": "",
+      "sources": [
+        "https://www.moj.go.jp/isa/applications/resources/10_00237.html",
+        "https://kumanichi.com/articles/2047152",
+        "https://biz.moneyforward.com/establish/basic/84149/",
+        "https://solution-supporter.jp/visa/fee",
+        "https://prtimes.jp/main/html/rd/p/000000020.000047817.html"
+      ]
+    },
+    {
+      "id": "idea-150",
+      "night": "2026-11-14",
+      "angle": "外国籍・海外在住の人が関わる日本の相続で、外国の戸籍を AI が読み訳し、相続関係図の下書きと足りない書類の一覧を作る道具を司法書士・行政書士に1件5,000〜20,000円で売る",
+      "frame": "1件の単価が高く客の少ない専門の市場から探す(日本・アジア)",
+      "where": [
+        "出入国在留管理庁の在留外国人数",
+        "行政書士法人・司法書士の渉外相続の料金表",
+        "戸籍の読み取りの AI の比較記事"
+      ],
+      "keywords": [
+        "在留外国人数 令和6年6月末",
+        "韓国戸籍 翻訳 料金",
+        "国際相続 海外在住 加算",
+        "戸籍 読み取り AI 相続"
+      ],
+      "hypothesis": "司法書士・行政書士が1件5,000〜20,000円払う",
+      "q1": "根拠なし。外国の戸籍の専門の事務所がすでにあり、士業からの下請けも受けている",
+      "q2": "勝てる理由なし。韓国の戸籍の翻訳は専門の事務所が A4 1枚1,500円(税抜)で請け、道具の値段は翻訳3〜13枚分に当たる",
+      "q3": "事務所は渉外の案件で10万〜30万円以上を取るが、大半は書類の取り寄せ・認証・本国の法律の判断で、AI で減る部分は一部",
+      "legal": "司法書士法73条・弁護士法72条に道具を売る形が当たるかは未確認。売る前に専門家の確認が要る",
+      "pivot": "韓国の側の事務所に売る・海外在住の日本人の相続・中国と台湾に絞る→どれも売れる根拠が無い",
+      "verdict": "drop",
+      "reason": "人の翻訳が安く、困りごとの中心(本籍地が分からず書類が取れない・認証)が AI で減らない",
+      "dropType": "無料・安価な代わりがある+困りごとの中心が AI で減らない",
+      "test": "",
+      "sources": [
+        "https://www.moj.go.jp/isa/publications/press/13_00047.html",
+        "https://samurai-law.com/souzoku/",
+        "https://s-legalestate.com/kaigai/price/international-inheritance-services-for-foreigners/",
+        "https://saitama-houmu.jp/business/overseas1/",
+        "https://apostille-office.com/price/"
+      ]
+    },
+    {
+      "id": "idea-151",
+      "night": "2026-11-14",
+      "angle": "シンガポールのシングル・ファミリーオフィスの設立で、多言語の資産の書類を AI が読み、資金の流れの表と MAS の申請の要件ごとの確認表を作る道具を法律事務所に1設立ごとに売る",
+      "frame": "1件の単価が高く客の少ない専門の市場から探す(日本・アジア)",
+      "where": [
+        "MAS の国会への書面回答",
+        "家族資産会社の設立費用の紹介サイト",
+        "シンガポールの金融の記事",
+        "法律事務所の改正の解説"
+      ],
+      "keywords": [
+        "MAS written reply SFOs 2025",
+        "Singapore family office setup cost",
+        "SFO application duration",
+        "Bank of Singapore source of wealth AI"
+      ],
+      "hypothesis": "法律事務所・助言会社が1設立ごとに払う",
+      "q1": "根拠なし。資産家の機密の書類を預かる信頼を得る道が見えない",
+      "q2": "勝てる理由なし。銀行が自前の AI で資産の出どころの報告を作り(Bank of Singapore は10日から1時間になる見込みと発表)、Harvey・Legora が法律事務所に先に入っている",
+      "q3": "新しい設立の数が少なく公式の数字が無い(優遇を受ける SFO は2025年末で2,000超、2024年末もほぼ同じ)",
+      "legal": "道具の提供者が無資格の法律業務に当たるかは未決。PDPA の海外移送の条件がある",
+      "pivot": "香港の家族投資持株ビークル・UAE→買い手の数も先行者の不在も裏付けが無い",
+      "verdict": "drop",
+      "reason": "銀行と大手の法務 AI が先にいて、新しい設立の数が少ない",
+      "dropType": "先行者が同じ形で売っている+市場が小さい",
+      "test": "",
+      "sources": [
+        "https://www.mas.gov.sg/news/parliamentary-replies/2026/written-reply-on-sfos",
+        "https://wealthmanagement.sg/singapore-family-office-setup-cost-timeline",
+        "https://www.finews.asia/finance/44144-bank-of-singapore-private-banking-agentic-ai-kyc-source-of-wealth-assistant-sowa",
+        "https://www.finews.asia/finance/40429-singapore-sfo-application-duration-lengthens"
+      ]
+    },
+    {
+      "id": "idea-152",
+      "night": "2026-11-14",
+      "angle": "EU の森林破壊防止の規則(EUDR)で、小さな輸入者向けに、産地の多言語の書類を AI が読み申告の項目に落とし、取引先への催促と回収をする道具を月150〜400ユーロで売る",
+      "frame": "外の新しい材料から始める(2026〜2027年に始まる規則)",
+      "where": [
+        "欧州委員会の貿易のページ",
+        "EUDR の SaaS の料金・宣伝のページ",
+        "コーヒーの業界誌",
+        "EUDR の延期の解説"
+      ],
+      "keywords": [
+        "EUDR delay micro small enterprises 30 June 2027",
+        "TradeAware pricing",
+        "TraceX AI email parser compliance",
+        "EUDR smaller coffee roasters"
+      ],
+      "hypothesis": "小さな輸入者が月150〜400ユーロ払う",
+      "q1": "根拠なし。需要の声も払う証拠も無い",
+      "q2": "勝てる理由なし。TraceX が取引先のメールと添付を多言語の OCR で読み、足りない項目を催促すると宣伝し、TradeAware が小さい事業者向けを年3,990ユーロ(2回の請求額の合計)で出している",
+      "q3": "対象は直接輸入する零細・小規模だけで、適用は2027年6月30日(木材以外)。川下の焙煎所は申告が免除される方向の提案がある",
+      "legal": "特になし",
+      "pivot": "産地の協同組合・輸出業者に売る→Fairtrade が加盟の協同組合に位置データの道具を無料で出し、TraceX も産地向けのページを持つ",
+      "verdict": "drop",
+      "reason": "同じ機能の先行者が同じ価格帯にいて、需要の時期も遠い",
+      "dropType": "先行者が同じ形で売っている+払う証拠が無い",
+      "test": "",
+      "sources": [
+        "https://trade.ec.europa.eu/access-to-markets/en/news/delay-until-december-2026-and-other-developments-implementation-eudr-regulation",
+        "https://www.live-eo.com/tradeaware-pricing",
+        "https://tracextech.com/ai-email-parser-for-compliance/",
+        "https://perfectdailygrind.com/2025/10/more-changes-to-eudr-smaller-coffee-roasters/"
+      ]
+    },
+    {
+      "id": "idea-153",
+      "night": "2026-11-14",
+      "angle": "日本の取引適正化法(2026年1月施行)で、取引先の情報から法の対象かを判定し、価格の協議の記録をメール・議事録から整理する道具を中小に月3,000〜9,800円で売る",
+      "frame": "外の新しい材料から始める(2026年に始まる規則)",
+      "where": [
+        "公正取引委員会の運用基準と発表",
+        "公取委の講習の資料",
+        "契約の道具の会社の発表",
+        "東京商工リサーチの調査"
+      ],
+      "keywords": [
+        "取適法 運用基準 従業員基準",
+        "取適法 勧告 令和7年度",
+        "取適法 簡易診断ツール",
+        "クラウドサイン 取適法",
+        "価格転嫁 協議 東京商工リサーチ"
+      ],
+      "hypothesis": "取引先の多い中小が月3,000〜9,800円払う",
+      "q1": "根拠なし",
+      "q2": "勝てる理由なし。公取委に対象を確かめる簡易診断ツールがあり、クラウドサイン・Hubble・OLGA・LegalOn・Sansan が取適法の機能を出している(機能の詳細は未確認)",
+      "q3": "守る動機が弱い。令和7年度の勧告39件の内訳は不当な利益の提供の要請・減額・返品が中心で、協議の拒否は内訳に出てこない",
+      "legal": "特になし",
+      "pivot": "受注する側の値上げの協議の申し入れ文と記録→中小企業庁の無料の手引きと無料の相談窓口があり、転嫁できず協議もできなかった層は約7%",
+      "verdict": "drop",
+      "reason": "無料の公的な道具と契約の道具の機能があり、払う証拠が無い",
+      "dropType": "無料の代わりがある+先行者が同じ形で売っている+払う証拠が無い",
+      "test": "",
+      "sources": [
+        "https://www.jftc.go.jp/toriteki/legislation/unyou.html",
+        "https://www.jftc.go.jp/houdou/pressrelease/2026/jun/260610.html",
+        "https://www.jftc.go.jp/toriteki/toriteki_tetsuduki",
+        "https://www.pref.aichi.jp/uploaded/attachment/596968.pdf"
+      ]
+    },
+    {
+      "id": "idea-154",
+      "night": "2026-11-14",
+      "angle": "EU に輸出する日本・アジアの中小メーカーに、EU の客から来る規則ごとの質問票を AI が読み、自社の書類と取引先への多言語の問い合わせでデータを集め、規則ごとの形で返す道具を月1〜3万円で売る",
+      "frame": "外の新しい材料から始める(EU の複数の規則に共通する部分)",
+      "where": [
+        "osapiens のブログ",
+        "Sedex の取引先の料金",
+        "取引先の声の調査の記事",
+        "日本の AI の回答の下書きの発表",
+        "経産省の chemSHERPA"
+      ],
+      "keywords": [
+        "supplier portal free access 29 languages",
+        "Sedex supplier membership price",
+        "what 180 suppliers say buyers should change",
+        "サプライヤー AI 回答 アシスト",
+        "chemSHERPA 無償"
+      ],
+      "hypothesis": "質問を受ける側の中小が月1〜3万円払う",
+      "q1": "来る根拠なし。EU の客は自社の道具に取引先を誘導する",
+      "q2": "勝てる理由なし。osapiens は取引先にポータルを無料・29言語で出し、日本ではシェルパとアスエネが質問票への回答の AI の下書きを出している",
+      "q3": "受ける側が払う証拠が無い。規則の側も小さい取引先への質問を絞る方向(1,000人未満は簡易な形まで、要約のみ)",
+      "legal": "特になし",
+      "pivot": "日本の中小に絞り JETRO・商工会の経由・電池の規則に絞る→国内の2社が先にいて、電池は中小が免除で2027年8月まで延期",
+      "verdict": "drop",
+      "reason": "買い手が払う道具が受ける側に無料で配られ、日本語の AI の下書きも先にある",
+      "dropType": "無料の代わりがある+先行者が同じ形で売っている+払う証拠が無い",
+      "test": "",
+      "sources": [
+        "https://osapiens.com/en/resources/blogs/2026/supplier-engagement-as-the-key-to-scalable-eudr-compliance",
+        "https://sedex.com/join-sedex/supplier",
+        "https://ditchcarbon.com/blog/what-180-suppliers-say-buyers-should-change",
+        "https://www.logi-today.com/913729"
+      ]
+    },
+    {
+      "id": "idea-155",
+      "night": "2026-11-14",
+      "angle": "米国のメキシコ系の家族に、死者の日の祭壇の故人ごとの calavera の詩・好物の絵の切り紙・名前の札を AI が作り、受注の印刷で届けるセットを25〜60ドルで売る",
+      "frame": "手で触れる物を AI が1個ずつ作る(各国の贈り物・供養の機会)",
+      "where": [
+        "メキシコの新聞の記事",
+        "Amazon メキシコの紹介記事",
+        "米国のテレビ局の記事",
+        "特注の切り紙の業者の案内",
+        "死者の日の消費の記事"
+      ],
+      "keywords": [
+        "papel picado personalizado nombre",
+        "ofrenda personalizada",
+        "calaveritas literarias ChatGPT",
+        "custom papel picado banners minimum",
+        "Day of the Dead consumer spending Mexico"
+      ],
+      "hypothesis": "家族が1セット25〜60ドル払う",
+      "q1": "根拠なし。大手通販・Etsy・Fiverr・Facebook の店がすでにある",
+      "q2": "勝てる理由なし。名前入りの切り紙は店が15から(通貨の明記なし)売り、詩は ChatGPT で無料で作れる",
+      "q3": "25〜60ドルを払う証拠が無い。年1回で9〜11月だけ",
+      "legal": "文化の商品化への反発がある(メキシコ系の人の発言)",
+      "pivot": "メキシコ国内・ほかの国の供養の行事→国内は値段が低く、ほかは未確認",
+      "verdict": "drop",
+      "reason": "AI が価値を出す詩の部分に客が払わず、名前入りの品は安く売られている",
+      "dropType": "無料の代わりがある+先行者が同じ形で売っている+払う額が小さい",
+      "test": "",
+      "sources": [
+        "https://www.posta.com.mx/mexico/las-nenis-lo-hacen-de-nuevo-mira-estos-productos-para-el-altar-de-muertos/vl1625983",
+        "https://www.news4jax.com/news/2025/11/01/mexican-americans-balance-tradition-and-modernity-in-day-of-the-dead-celebrations/",
+        "https://mexicansugarskull.com/pages/custom-papel-picado-banners",
+        "https://mexiconewsdaily.com/business/day-of-the-dead-2024-consumer-spending"
+      ]
+    },
+    {
+      "id": "idea-156",
+      "night": "2026-11-14",
+      "angle": "ユダヤの13歳の成人式(バル・ミツワー)で、子の話と担当の章の解説・家族の歴史を織り込んだ冊子を AI が書き、ヘブライ語と英語で組版して製本する",
+      "frame": "手で触れる物を AI が1個ずつ作る(各国の贈り物の機会)",
+      "where": [
+        "プログラムの冊子の業者の商品ページ",
+        "ユダヤの教育者のコラム",
+        "個別のお祈りの本の販売",
+        "件数の推計の記事"
+      ],
+      "keywords": [
+        "bar mitzvah program booklet custom",
+        "personalized bar mitzvah book",
+        "AI d'var torah",
+        "bar mitzvah per year United States"
+      ],
+      "hypothesis": "両親が1件数百ドル払う",
+      "q1": "答えられない。親が探す入口は先行者と会衆の紹介が押さえている",
+      "q2": "冊子の印刷では勝てない(Let's Bench が500部以上で1冊6.50ドルから、文面づくりも手伝う)。残る差の子ごとの話を書く部分は、ラビが「AI を使わない領域にすべき」と書く部分と重なる",
+      "q3": "個別の本は100〜360ドルの例がある。年約3万件(2007年ごろの予測)の1%でも小さい",
+      "legal": "宗教の上の反発(子の D'var Torah を AI が書くこと)",
+      "pivot": "会衆・シナゴーグに売る→書く手伝いは会衆が自前のコーチを持つ",
+      "verdict": "drop",
+      "reason": "先行者が冊子を安く押さえ、差になる部分は反発がある",
+      "dropType": "先行者が同じ形で売っている+文化の反発",
+      "test": "",
+      "sources": [
+        "https://letsbench.com/product/bar-bat-mitzvah-programs/",
+        "https://letsbench.com/product/custom-parasha-booklet/",
+        "https://jewishlink.news/do-we-outsource-our-voice/",
+        "https://www.myjewishlearning.com/?p=72425"
+      ]
+    },
+    {
+      "id": "idea-157",
+      "night": "2026-11-14",
+      "angle": "英国・米国に住むナイジェリア人の遺族に、写真と思い出と弔辞の素材から、AI が追悼の冊子の中身を書き整え組版し、印刷して届ける形を1件100〜400ドルで売る",
+      "frame": "手で触れる物を AI が1個ずつ作る(各国の葬儀の決まった形の品)",
+      "where": [
+        "英国の葬儀の印刷店",
+        "ナイジェリア向けの葬儀の冊子のサイト",
+        "ガーナ向けの AI の冊子の道具",
+        "ナイジェリアの葬儀の費用の記事",
+        "米国の葬儀の冊子のサイト"
+      ],
+      "keywords": [
+        "funeral stationery cost UK free design",
+        "Nigerian funeral programme template",
+        "Ghana funeral brochure AI tribute writer",
+        "cost of cremation Nigeria programmes",
+        "AI funeral program"
+      ],
+      "hypothesis": "遺族が1件100〜400ドル払う",
+      "q1": "証拠なし。英国の遺族は葬儀社や印刷店の無料のデザインで済む",
+      "q2": "勝てる理由なし。英国の印刷店はデザインを無料にして印刷だけ取り(100部70〜500ポンドの見積もり)、QuickFuneral はナイジェリア向けに無料の手直し、FuneralPress はガーナ向けに AI の追悼文の書き手を出している",
+      "q3": "一度きりの買い物で、デザインは無料か50ドル以下が相場",
+      "legal": "AI の弔辞への反発は、本人らしくない・誤りへの反発が中心",
+      "pivot": "葬儀社に卸す・ガーナ・弔辞の多言語の整理だけ→葬儀社はデザインを価格に含め、ガーナは先行者がいて、整理だけは無料の AI で代わる",
+      "verdict": "drop",
+      "reason": "先行者がデザインを無料にしていて、払う額の根拠が無い",
+      "dropType": "無料の代わりがある+先行者が同じ形で売っている+払う証拠が無い",
+      "test": "",
+      "sources": [
+        "https://orderofserviceforfuneral.co.uk/funeral-stationery-cost/",
+        "https://funeral-brochure-app.pages.dev/blog/how-to-design-funeral-brochure-ghana",
+        "https://www.quickfuneral.com/?p=45728",
+        "https://www.zikoko.com/money/cost-of-cremation-in-nigeria/"
+      ]
+    },
+    {
+      "id": "idea-158",
+      "night": "2026-11-14",
+      "angle": "英国の小さな自治体の書類の翻訳・文字起こしを AI と人の確認で行い、入札に出るか言語サービス会社に下請けで卸す",
+      "frame": "役所の入札の落札の額から始める(お金が払われている証拠が先にある)",
+      "where": [
+        "Contracts Finder・Find a Tender の落札の通知",
+        "英国の調達法の手引き",
+        "自治体の決定の記録",
+        "AWS の公共部門のブログ",
+        "言語サービス会社の翻訳者の募集"
+      ],
+      "keywords": [
+        "North Northamptonshire translation interpretation contract",
+        "Procurement Act 2023 treaty state suppliers",
+        "Swindon translation costs open-sourced",
+        "AA Global freelance translators"
+      ],
+      "hypothesis": "自治体・言語サービス会社が払う",
+      "q1": "根拠なし。契約は枠組みの直接の発注か、英国の業者に限れる小さな見積もりで決まる",
+      "q2": "勝てる理由なし。Swindon 市は年約6.4万ポンドの翻訳費を自前の機械翻訳で27ポンドにし(市の職員の自己申告)、その仕組みを公開した。Beam・LanguageLine も AI と人の確認を売っている",
+      "q3": "小さな自治体の需要は小さい(ある自治体は契約の全期間の見込みが1,000ポンド)",
+      "legal": "閾値未満の契約は英国の業者だけに限れる。下請けの入口は英国の DBS を持つ有資格の翻訳者の登録",
+      "pivot": "言語サービス会社への下請け→入口はフリーランスの翻訳者の登録で、AI で大量に卸す道が見えない",
+      "verdict": "drop",
+      "reason": "参加の条件(英国の拠点)の壁と、自治体が自前で安く作れること",
+      "dropType": "参加の壁(法人・拠点が無い)+無料の代わりがある+市場が小さい",
+      "test": "",
+      "sources": [
+        "https://aws.amazon.com/blogs/publicsector/use-machine-learning-to-cut-translation-costs-by-99-percent",
+        "https://www.gov.uk/government/publications/procurement-act-2023-guidance-documents-define-phase/guidance-treaty-state-suppliers-html",
+        "https://aaglobal.co.uk/career/freelance-translators",
+        "https://www.ciol.org.uk/ai-translation-uk-public-services"
+      ]
+    },
+    {
+      "id": "idea-159",
+      "night": "2026-11-14",
+      "angle": "カナダの連邦の省庁のイベント・委員会の英語とフランス語の文字起こしを、AI と人の校正で安く速く出す",
+      "frame": "役所の入札の落札の額から始める",
+      "where": [
+        "CanadaBuys の落札の通知",
+        "カナダの連邦の生成 AI の指針",
+        "カナダの調達の方針の解説"
+      ],
+      "keywords": [
+        "CanadaBuys transcription of live events Justice Canada",
+        "Procurement Business Number foreign supplier",
+        "guide use generative AI Canada",
+        "buy Canadian procurement policy 2025"
+      ],
+      "hypothesis": "省庁が年数万カナダドル払う",
+      "q1": "根拠なし。日本の法人の無い個人が受注の名簿に入れる証拠が無い",
+      "q2": "勝てる理由なし。仕事は受注者の名簿からの呼び出しで、名簿の保有者(MEDIA Q、オタワ)がいて、公募は数年に1回",
+      "q3": "1件は小さく(CAD 50,000 は当初額と修正の合計、19か月)、名簿に入れなければ0",
+      "legal": "連邦の指針は、政府が管理しない道具に機密・個人情報を入れないよう求める。連邦は文字起こしを内製に向かっている(報道の要約)",
+      "pivot": "州・市の議会・大学→落札の例が出ず、州・市は外国の業者への制限がもっときつい方向",
+      "verdict": "drop",
+      "reason": "受注者の名簿の形で、外国の個人が参加できるか確かめられず、政府は内製に向かっている",
+      "dropType": "参加の壁(法人・拠点が無い)+先行者がいる",
+      "test": "",
+      "sources": [
+        "https://canadabuys.canada.ca/en/tender-opportunities/award-notice/cw2355141",
+        "https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/guide-use-generative-ai.html"
+      ]
+    },
+    {
+      "id": "idea-160",
+      "night": "2026-11-14",
+      "angle": "米国の連邦の省庁が規則案に受けるパブリックコメントの整理・分類・回答の表の下書きを AI で行い、受注した業者に下請けで卸すか、コメントを出す側に売る",
+      "frame": "役所の入札の落札の額から始める",
+      "where": [
+        "HigherGov の契約のページ",
+        "米国の小規模事業者の規則",
+        "ICF の契約と事例のページ",
+        "連邦の調達の募集の集計サイト",
+        "Nextgov の記事"
+      ],
+      "keywords": [
+        "Managing the Response To Comments on Proposed Rules HHS",
+        "13 CFR 121.105 place of business United States",
+        "ICF public comment processing BPA",
+        "FinCEN public comment analysis subcontract",
+        "agencies AI analyze public comments"
+      ],
+      "hypothesis": "受注した業者かコメントを出す側が払う",
+      "q1": "来ない。発注は GSA のスケジュールの保有者・SAM の登録済みの業者へで、法人も米国の拠点も無い個人は届かない",
+      "q2": "勝てる理由なし。ICF・Cadmus が実績と既存の契約を持ち、CDC などの機関は自前で AI を使い始めている",
+      "q3": "経路が無い。HHS の契約は5年の上限額 $4.07M のうち契約済み約 $2.83M(集計サイトの数字)",
+      "legal": "小規模事業者の枠は米国に事業所があることが条件。米国製の AI を優先する方針(OMB の覚書の解説)",
+      "pivot": "受注した業者への下請け・コメントを出す側に売る→下請けを日本の個人に出す根拠も、出す側が払う証拠も見つからない",
+      "verdict": "drop",
+      "reason": "参加の資格の壁と、発注する機関の内製化",
+      "dropType": "参加の壁(法人・拠点が無い)+先行者がいる+内製化",
+      "test": "",
+      "sources": [
+        "https://www.highergov.com/idv/GS35F0149Y-75P00123A00012",
+        "https://www.law.cornell.edu/cfr/text/13/121.105",
+        "https://www.icf.com/contracts/agency-contracts/public-comment-processing-and-analysis-and-decision-file-preparation-support-services-bpa",
+        "https://www.cleat.ai/government/contracts/public-comment-analysis-and-response-toaw"
+      ]
     }
   ],
   "hints": [

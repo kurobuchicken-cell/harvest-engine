@@ -27,7 +27,7 @@ for (const r of REPOS) {
   console.log(`・${r}: ${st[0].replace(/^## /, "")}${st.length > 1 ? ` / 未コミット ${st.length - 1}件` : ""}`);
 }
 
-console.log("\n■ 夜間作業(テーマU)");
+console.log("\n■ 夜間作業(新しい儲け口の検証)");
 if (process.platform === "win32") {
   const ps = `Get-ScheduledTask -TaskName 'sugoi-shorts autorun *' | ForEach-Object { $i = $_ | Get-ScheduledTaskInfo; '{0}|{1}|{2:MM-dd HH:mm}|{3}|{4:MM-dd HH:mm}' -f $_.TaskName,$_.State,$i.LastRunTime,$i.LastTaskResult,$i.NextRunTime }`;
   for (const l of run("powershell.exe", ["-NoProfile", "-Command", ps]).split("\n").filter(Boolean)) {
@@ -43,13 +43,6 @@ if (usage.updatedAt) {
   console.log(`・使用率(${jst(usage.updatedAt)} 時点): 5時間枠 ${usage.fiveHourPct}% / 7日枠 ${usage.sevenDayPct}%、7日枠のリセット ${jst(usage.sevenDayResetsAt)}${reset}`);
 }
 
-const { pendingLines } = await import("../../sugoi-shorts/src/reminders.ts");
-const { accountMessage } = await import("../../sugoi-shorts/src/accounts.ts");
-console.log("\n■ 投稿(テーマU、記録から)");
-for (const l of await pendingLines()) console.log(l);
-const acc = await accountMessage();
-if (acc) console.log(acc.split("\n")[0]);
-
 const { due, later } = await openTasks();
 for (const [who, label] of [["owner", "オーナーのやること・判断"], ["gm", "GMのやること"]] as const) {
   const xs = due.filter((x) => x.who === who);
@@ -63,10 +56,7 @@ const kept = ideas.items.filter((x) => x.verdict === "keep");
 const digging = ideas.items.filter((x) => x.verdict === "dig");
 console.log(`\n■ 新しい儲け口(hq/ideas.json。確かめた ${ideas.items.length}件・掘り途中 ${digging.length}件・捨てた ${ideas.items.filter((x) => x.verdict === "drop").length}件)`);
 console.log(kept.length ? kept.map((x) => `・残った: ${x.hypothesis} {${x.id}}`).join("\n") : "・残ったものはまだ無い");
-// PDCA の数字は要点だけ(全部は npm run pdca)
-const { pdcaLines } = await import("./pdca.mts");
-console.log("\n■ PDCA の要点(全部は npm run pdca)");
-for (const l of (await pdcaLines(true)).filter((l) => /^・(直近|1本あたり|質|⚠|Instagram フォロワー|note 売上|出した本数)/.test(l))) console.log(l);
+// テーマUの投稿待ち・アカウントを作る日・制作の PDCA は、制作を止めた2026-11-14に外した(出続けると、要らない催促になるため)
 const soon = later.filter((x) => x.from <= todayJst(new Date(Date.now() + 14 * 864e5)));
 if (soon.length) {
   console.log(`\n■ 2週間以内に始まるもの(${soon.length}件)`);

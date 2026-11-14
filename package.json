@@ -32,7 +32,8 @@
     "status": "node hq/status.mts",
     "tasks": "node hq/tasks.mts",
     "docs:check": "node hq/docs-check.mts",
-    "pdca": "node hq/pdca.mts"
+    "pdca": "node hq/pdca.mts",
+    "ideas:used": "node hq/ideas-used.mjs"
   },
   "keywords": [],
   "author": "",

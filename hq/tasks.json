@@ -45,7 +45,7 @@
       "project": "本社",
       "from": "2026-11-14",
       "text": "Claudeのプランの判断(Max 5xは11-17に自動更新): GMが metrics/ の数字(1本・1言語あたりの5時間枠と7日枠の使用率/毎晩回せた本数・言語数/開発作業の消費/下のプランで回るか)を見せるので、続けるか下げるか決める。下げるなら11-17より前にプランを変更",
-      "done": null
+      "done": "2026-11-14(11-14 オーナー決定: Max 5x は続ける。次の更新の前に使った枠を見て決め直す)"
     },
     {
       "id": "gcloud",
@@ -117,7 +117,7 @@
       "project": "U",
       "from": "2026-11-14",
       "text": "(急ぎでない)Stripeの本人確認書類: 言語ごとの10アカウントそれぞれで「代表者の本人確認書類」のタスクが出ている(10-19にメールが10通)。メールのボタンではなく https://dashboard.stripe.com を自分で開き、右上でアカウントを切り替えて各アカウントのタスクから運転免許証などを出す。出さないと売上の合計が158万円に達した時点で入金が止まる(今は売上0円なので影響なし)",
-      "done": null
+      "done": "2026-11-14(11-14 Substack 10出版物から Stripe を外したので、本人確認書類は要らなくなった)"
     },
     {
       "id": "short-role",
@@ -153,7 +153,7 @@
       "project": "U",
       "from": "2026-10-20",
       "text": "夜間作業の省エネの残り(2026-10-21にスキルと夜の指示を工程ごとに分けるのは済み。読む量4〜6割減): ①訳の前のチェック表+訳した直後のコード照合 ②外国語の動画の①視聴者を数言語まとめる(影で質を確かめてから) ③区切りを工程ごとに(影で比べてから) ④朝のレポートに工程別・係別のトークンを1行 ⑤B1をさらに分ける。GMがオーナーと一緒のセッションで進める",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "cf-email",
@@ -288,7 +288,7 @@
       "project": "U",
       "from": "2026-10-30",
       "text": "次の記事で、合格までの周・トークン・公開後の穴を10-24夜(記事の係の合計約862万・後からの穴約27)と比べる。消費は1晩の7日枠の増え方(10-24夜は+16%、見積もり8〜11%)も記録する",
-      "done": null,
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))",
       "measure": "記事1本(日本語+10言語)の係の合計トークンと、公開後に見つかる穴の数(npm run pdca の夜間作業・work/<id>/checks.md)",
       "baseline": "10-24夜 nakamura: 係の合計約862万トークン・後からの穴約27か所・7日枠+16%"
     },
@@ -299,7 +299,7 @@
       "project": "U",
       "from": "2026-10-24",
       "text": "値段の行の字数をコードで数え直す: wright・gideon が値段の境目、kirtsaeng は10-24に結末を足して字数が変わったので値段を決め直す(bretz・abf は200円に決定済み)",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "compare-views",
@@ -308,7 +308,7 @@
       "project": "U",
       "from": "2026-10-24",
       "text": "投稿済みの動画(kirtsaeng 日英西・tilley ほか)と熱殺蜂球の再生数を、PC投稿の4本と比べる(metrics/reach)",
-      "done": null,
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))",
       "measure": "投稿後7日の再生数(metrics/reach の Instagram plays・TikTok views)",
       "baseline": "スマホ投稿 tilley 335回・PC投稿4本 0〜1回(10-20)"
     },
@@ -319,7 +319,7 @@
       "project": "U",
       "from": "2026-10-30",
       "text": "分けたスキルで動く最初の夜のトークンを10-20夜と比べる(夜間作業を戻した後の最初の夜で)",
-      "done": null,
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))",
       "measure": "1晩の合計トークン(npm run pdca の夜間作業)",
       "baseline": "10-20夜 10,133,491トークン(分ける前)"
     },
@@ -330,7 +330,7 @@
       "project": "U",
       "from": "2026-10-21",
       "text": "画面の直し(sugoi-shorts work/autorun-report-2026-10-21.md): 層の図の積む位置と出る順を分ける・出典の札が右のボタンにかかって切れる・表紙の重なり判定(済みか未確認)",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "ink-shape",
@@ -339,7 +339,7 @@
       "project": "U",
       "from": "2026-10-24",
       "text": "図の「インクの形」に液体のしずくの絵が出る(全言語・日本語版も)。共通の部品が変わるので、ほかの本の合格が外れないか確かめてから直す",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "layout-check",
@@ -348,7 +348,7 @@
       "project": "U",
       "from": "2026-10-24",
       "text": "画面の重なりの機械判定(preview の layout)が、図のラベルが2行になって大見出しに重なったのを見逃した。判定を足す",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "reach-1107",
@@ -357,7 +357,7 @@
       "project": "U",
       "from": "2026-11-07",
       "text": "読まれる工夫(10-24、記事の横長サムネ・短い題・副題、熱殺蜂球を全言語で無料)の効果を閲覧・フォロワーで見る。効いていれば2本目の無料記事(候補 tilley)を出す",
-      "done": null,
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))",
       "measure": "note PV・Substack 購読者・Instagram フォロワー(npm run pdca の売上側)",
       "baseline": "10-20: note PV 34・Substack 購読者 0・Instagram フォロワー 1"
     },
@@ -368,7 +368,7 @@
       "project": "U",
       "from": "2026-10-24",
       "text": "ポルトガル語の Substack 紹介枠(Radar)の担当 Gaía に紹介文を送った(10-24)。返事・紹介されたかを見る",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "houbolt-pt",
@@ -377,7 +377,7 @@
       "project": "U",
       "from": "2026-10-24",
       "text": "houbolt-pt の note.md の文法の誤り「levantou-se」と、日本語の「当時」が抜けた軽い指摘数件を直す",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "ig-share",
@@ -404,7 +404,7 @@
       "project": "U",
       "from": "2026-10-30",
       "text": "ABF の note の裏取りで直した中身が、公開ページに反映済みか確かめる(仕様書3-10の「noteの公開ページへの反映は次にChromeがつながったとき」。済んだ記録が見当たらない)",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "ig-api",
@@ -413,7 +413,7 @@
       "project": "U",
       "from": "2026-11-01",
       "text": "Instagram の公式 API(Instagram API with Instagram Login)で数字を取り、リールも出す。調べ済み(11-01、Meta の原文): 自分のプロアカウントだけなら Standard Access で App Review 不要・Facebook ページ不要・無料。数字は followers_count と、リールごとの views・reach・likes・saved・shares・ig_reels_avg_watch_time(権限 instagram_business_basic・instagram_business_manage_insights)。投稿は media_type=REELS、動画は公開された URL に置く必要がある(置き場所は未決)。①Meta の開発者登録とアプリ作成 ②4アカウント(ja・en・es・pt)の連携 ③npm run pdca が読む metrics/reach に毎日自動で書く ④投稿の自動化は動画の置き場所を決めてから",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "fr-ig-sms",
@@ -422,7 +422,7 @@
       "project": "U",
       "from": "2026-11-08",
       "text": "フランス語(masakafrench・Masaka-FR)とイタリア語(masakaitalian・Masaka-IT)の Instagram の「人間であることを確認」: 11-08 まではコードを頼まない(10-30〜11-01 の3日とも SMS が届かず、番号・povo の迷惑SMSブロックは原因でないと確かめた。Instagram 側が送っていない見込み。sugoi-shorts HISTORY.md の 2026-11-01)。11-08 に GM が窓を開き、オーナーが「SMSでコードを送信」を1回だけ押す。届かなければ WhatsApp で受け取るかやめるかをオーナーが決める。通ったら GM が自己紹介・アイコン・クリエイター切り替え・リール(fr: gideon・japanese-honeybee・wiley-poison-squad・houbolt-lor / it: 同じ4本)。中国語の Instagram 作成も同じ番号が要るので、これが通ってから",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止め、Instagram は削除する方針(teardown-ig))"
     },
     {
       "id": "fr-tiktok-profile",
@@ -478,7 +478,7 @@
       "text": "訳す係(外国語版の下書き)に、過去の訳の誤り(work/*/checks.md の⑦・③の指摘)を言語ごとにまとめた一覧を最初から渡し、1周目で通る割合を上げる(10-24 提案3、10-30 採用)",
       "measure": "外国語版の平均の周(npm run pdca の夜間作業「平均◯周」)と、記事1本あたりの係のトークン",
       "baseline": "10-24夜 平均5.9周・14,127,371トークン/18本",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "tiktok-api",
@@ -487,7 +487,7 @@
       "project": "U",
       "from": "2026-10-31",
       "text": "TikTok の公式の投稿 API(Content Posting API)が無料で使えるか、登録・審査の手順、審査前は非公開でしか出せないなどの制限を、TikTok for Developers の原文で確かめ、要る準備をオーナーに出す(10-30 オーナー: 無料でできるなら API に切り替える)",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "article-scene-gate",
@@ -498,7 +498,7 @@
       "text": "記事の題材選び(src/autorun-prompt.md「記事1本の題材は厳選する」の(b))に「冒頭に置ける一次資料の場面(日付・人・行動)と確定した勝ちが、資料の一文つきで言えるか」を足す。10-30夜は campbell(判決1本・差し戻し)と honda-cvcc(社史中心・冒頭の対比が時期違い)の2本とも④の入り・ジャイキリで行き詰まり dropped(10-30 夜の提案)",
       "measure": "記事1本が合格するまでの周と、dropped の本数、記事1本あたりの係のトークン(npm run pdca)",
       "baseline": "10-30夜 2本とも4周で dropped・lap の合計 campbell 1,080,994/honda-cvcc 1,071,016 トークン(係の通算の重複を含む)",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "project": "U",
@@ -512,7 +512,7 @@
     {
       "project": "U",
       "from": "2026-10-31",
-      "done": null,
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))",
       "id": "lap-delta",
       "who": "gm",
       "kind": "do",
@@ -521,7 +521,7 @@
     {
       "project": "U",
       "from": "2026-10-31",
-      "done": null,
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))",
       "id": "id-words",
       "who": "gm",
       "kind": "do",
@@ -536,7 +536,7 @@
       "text": "動画の外国語版で、合格(4以上)した係はその周のうちに npm run pass を打ち、最後の直しで指紋が外れた係だけを呼び直す。houbolt-lor-es は6周目で全員合格の線だったが pass を打たず、場面4の札1つの直しの後に②③⑤①⑦を呼び直した(11-01夜の提案)",
       "measure": "外国語の動画1本が合格してから書き出すまでの係の呼び出し数とトークン(metrics/laps の check-* 行)",
       "baseline": "houbolt-lor-es: 6周目の後の確かめで係を延べ6人・約18.8万トークン(check-7・check-8 の係の行)",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "data-needs",
@@ -545,7 +545,7 @@
       "project": "U",
       "from": "2026-11-01",
       "text": "PDCA に要る数字の一覧を決めて仕様書に置く: 売上(note 売上・Substack 有料購読と金額)/その手前(note の記事ごとの閲覧、Substack の閲覧・無料購読・流入元)/動画(Instagram のフォロワー・リールごとの再生・リーチ・保存・シェア・平均視聴時間)/作る側(1本あたりのトークン)。それぞれ、どの判断に使うか・どこから取るか・今取れているかを書き、取れていないものは取る手段のタスクにする",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "ad-test-1",
@@ -556,7 +556,7 @@
       "text": "届けば売れるかの試し: @masaka.true のフーボルトのリール(10-31)を instagram.com から宣伝し、note の記事(300円 https://note.com/masaka_true/n/n5dde4a48bbaf)へ飛ばす。1日500円×7日・上限3,500円(11-01 オーナー承認、需要テスト費)。11-01 に出稿(1日3ドル×7日=21ドル・日本・歴史/科学/NASA に興味・ボタン「詳しくはこちら」、支払いは米ドル)。同日、配信前に削除(費用0。オーナーが記事を直接宣伝する形を考えたため)。同日、記事の表紙(縦長 4:5)と結末を伏せた説明文の広告(プロフィールに出ない広告)で出し直し、審査中。相手・予算・飛び先・ボタンは削除したリールの宣伝と同じ(違いは見せるものだけ)。Meta の広告マネージャ・X・スマートニュースは準備が要るか条件を確かめられず見送り。11-02 20:40〜11-03 昼は支払いが止まり配信停止(11-03 再開、終わりは11-09ごろ)。判定日 11-10(終わった翌日に動かした): 1本でも売れたら届け方を広げる、売れなければ中身か値段を直す。実際の請求額は data/ledger.json に記帳する",
       "measure": "宣伝のリンクのクリック数・houbolt の note の閲覧数と売上(note のダッシュボード)",
       "baseline": "houbolt の note 過去28日 閲覧4・売上0(10-31)",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "native-prev-suggestions",
@@ -567,7 +567,7 @@
       "text": "外国語版の仕上げで⑦(native)を2周目以降に呼ぶとき、前の周までに⑦が出した案と、それを次の周で落とした例(その言語の checks.md)を読ませ、自然さの指摘は段落ごとに案を1つにさせる。11-01夜 apis-cerana-dung で pt・zh が⑦の自然さ3のまま4周止まり、この頼み方を足した書き直しで pt 1周・zh 2周で合格した(ほかの言語は --diff の束だけで ko 8周・id 5周)。次の記事の仕上げの指示書(work/<id>/lang-finish-prompt.md)に最初から入れて比べる",
       "measure": "外国語版の記事の仕上げの平均の周と⑦のトークン(work/<id>-<lang>/checks.md の周の見出し・npm run lap -- report の ⑦)",
       "baseline": "11-01夜 apis-cerana-dung: 仕上げの周 en3・es4・pt4+1・fr3・it4・de3・id5・ko8・ar2・zh4+2(平均4.3)、⑦ 1,603,080トークン",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "mills-before-race",
@@ -585,7 +585,7 @@
       "project": "U",
       "from": "2026-11-02",
       "text": "note の中で目に入る場所を増やす: 公開済みの有料記事に、テーマに合う note 公式のお題・コンテストのハッシュタグを付ける(応募ページで募集中のものから。条件に無料公開がある企画は使わない)。共同運営マガジンは紹介記事のコメントで参加を頼むのがオーナーの名前での発言になるため、頼む前にオーナーに見せる。判定は 12-01: 28日の note PV が 146(今の2倍)以上なら続けて新しい記事にも毎回付ける、届かなければやめて理由を HISTORY.md に書く",
-      "done": null,
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))",
       "measure": "note の過去28日 PV と note 内からの流入(metrics/reach の note.ja)",
       "baseline": "11-01: 28日 PV 73・うち note 内 57・表示 1,019・売上 0"
     },
@@ -607,7 +607,7 @@
       "project": "U",
       "from": "2026-11-03",
       "text": "見出し画像・表紙が無い公開記事を埋める(npm run outlets の「見出し画像・表紙が無い公開記事」): 残りは note の4本(charbucks・carver-peanut・takahe-orbell・opportunity-rover)。画像は 11-02 夜に③⑦を通して作成済み(sugoi-shorts output/<id>/article-cover-note.jpg)。昼に GM が note の見出し画像に入れ、オーナーが「更新する」を押す。charbucks の Substack 10言語は 11-02 夜に入れ済み、john-snow・mills-1964 は 11-02 に済み",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "lap-part-check",
@@ -616,7 +616,7 @@
       "project": "U",
       "from": "2026-11-03",
       "text": "11-02夜の記録(metrics/laps-2026-11-02.jsonl)で、本の start に --part が付いたか・0 数字の記録/5 投稿/6 記録と報告の行が出たかを npm run pdca の「行ごと」で確かめる。抜けていたら src/autorun-prompt.md の「ラップを記録する」を直す",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "lang-cost-review",
@@ -625,7 +625,7 @@
       "project": "U",
       "from": "2026-11-12",
       "text": "11-14 の Substack 言語ごとの判定(仕様書3-16: 自分たち以外の購読10人・Googleから1人・有料1人のどれも出ない言語は新しい記事を止める)の材料に、pdca の「言語ごと」の1本あたりのトークンと届いた数字を並べ、止める言語で浮くトークンを何に回すかの案とあわせてオーナーに kind=decide で出す(11-01夜の訳1言語: ko 120万・zh 115万が重く、ar 57万が軽い)",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "ad-test-1-settle",
@@ -652,7 +652,7 @@
       "project": "U",
       "from": "2026-11-03",
       "text": "インドネシア語の Substack 記事を Meta の広告で届け、届けば購読されるかを試す(11-02 オーナー承認、需要テスト費)。11-02 出稿(審査中): @masaka.true のプロフィールに出ない広告、記事 apis-cerana-dung-id(utm_campaign=id-ad-test)、インドネシア18歳以上・興味 歴史または科学、1日3ドル×6日=18ドル(台帳に予定額を記帳済み)。終わったら確定額との差を ledger:add。判定 11-12: 150クリック以上で購読1人の獲得費500円以下なら広告を足す候補、購読0なら記事か入口(題・冒頭)を直す側へ 【11-06 夜】記事の閲覧 376(11-04)→756(11-06)、購読は0のまま。判定にはクリック数が要るので、昼に GM が Meta の広告マネージャで読み metrics/reach の substack.publications.id に書く",
-      "done": null,
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))",
       "measure": "広告のリンクのクリック数と、その間の id の Substack 購読者数(metrics/reach の substack.publications.id)",
       "baseline": "11-01: id 購読 無料0/有料0"
     },
@@ -663,7 +663,7 @@
       "project": "U",
       "from": "2026-11-03",
       "text": "Substack のゲスト記事の申し出(言語ごとのプロモーション担当の1回目、sugoi-shorts work/promo/*-2026-11-02.md): es=Revista de Historia(カウペンス)・Orígenes(ブレッツ)、it=Un drago nel mio garage(マーシャルとピロリ菌)、fr=Science Étonnante の4通。在庫の記事を贈る。相手の紹介ページに連絡先が無いので、送り方(Substack のメッセージ機能など)を原文で確かめてから、送る(4通の送信は 11-02 オーナー承認済み。送り方が無い相手は見送り)。pt は題材が新規制作で資料が未確認、fr の Morale de l’Histoire は合いが弱い、id は候補なしで今回は見送り 【11-06 夜のプロモーション担当】送り方は Substack のメッセージ(DM)と公式で確認(https://on.substack.com/p/direct-messaging-on-substack: 誰にでも1対1で送れ、つながりの無い相手には「Requests」に入り、相手が承認すると届く。相手が有料購読者限定にしていると送れない)。昼に GM が相手のプロフィールから @masaka2 で1通ずつ送る。下書き: es=work/promo/es-2026-11-02.md の A・B、it=work/promo/it-2026-11-06.md(GM が年と出典を記事に合わせて直した)、fr=work/promo/fr-2026-11-06.md(題材 shechtman-quasicrystal-fr)。送る前に各言語の⑦と③を通す。送った日を書き、返事は送ってから7日後に見る",
-      "done": null,
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))",
       "measure": "申し出への返事の件数と、掲載後14日のその言語の自分たち以外の購読者数(metrics/reach の substack.publications.<lang>)",
       "baseline": "11-01: es・it・fr とも自分たち以外の購読0、返事0"
     },
@@ -674,7 +674,7 @@
       "project": "U",
       "from": "2026-11-03",
       "text": "インドネシア語の広告(id-ad-test)の飛び先 apis-cerana-dung-id の無料部分の終わり(出典の前)に、購読すると毎週何が届くか・無料で読める範囲・登録はメールだけ、の段落を1つ足す(プロモーション担当 id の案A)。③⑦を通してから API で差し替え、11-04 までに。題は変えない(原因が分からなくなるため) 【11-06 夜】未実施だった(note.md は11-01のまま)。段落を③⑦に通した(work/apis-cerana-dung-id/subscribe-para.md)。置く所は52行目の有料の線の上に区切り線を挟んで(無料部分の終わり=広告の人が読み終える所)。金曜の夜は公開しないので、昼に GM が note.md に入れて API で差し替える。広告は11-08ごろ終わるので早めに",
-      "done": null,
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))",
       "measure": "広告のクリック数に対する id の購読者の増え(id-ad-test と同じ判定 11-12)",
       "baseline": "11-01: id 購読 無料0/有料0"
     },
@@ -685,7 +685,7 @@
       "project": "U",
       "from": "2026-11-03",
       "text": "Substack の登録済みおすすめ先の確かめ(プロモーション担当の報告から): pt の「A Grande Guerra」が Café História の配信か(別人の政治の配信と取り違えの恐れ)と更新が続いているか、fr の「Le Substack de Histoire」が実在するか(綴り)。違えば外して仕様書3-16の一覧を直す 【11-06 夜のプロモーション担当】pt: A Grande Guerra は reletter.com に Café História の別配信と載るが、配信のページは見つからず cafehistoria.substack.com の最新5本にも無い(最終号は約3か月前とある)。fr: Le Substack de Histoire は検索で見つからず、histoire.substack.com は別人の個人配信らしい(推測)。昼に GM が各出版物の設定のおすすめの一覧で登録の名前を確かめ、見つからなければ外して仕様書3-16を直す",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "agent-cost-data",
@@ -694,7 +694,7 @@
       "project": "U",
       "from": "2026-11-04",
       "text": "11-02夜・11-03夜の記録(metrics/laps の uses・ms と metrics/bundles の字数)で、③と直しの1回の消費が束の大きさと道具の回数のどちらと一緒に動くかを数える。記録が付いていなければ src/autorun-prompt.md の「ラップを記録する」を直す。打ち手はこの数字が出てから1つに絞る(11-02 count_tokens の計測: 束+指示は1回の消費の25〜77%)",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "mills-cover-small",
@@ -703,7 +703,7 @@
       "project": "U",
       "from": "2026-11-02",
       "text": "mills-1964 の外国語の動画の表紙で文字が80px未満に縮む(id 約48px・fr 約54px・en 約68px・pt 約72px。読める)。表紙の言葉を短くすると③⑦のやり直しが要るので、次に作る動画からは表紙の言葉の長さを先に確かめるかを決める(11-02 夜のレポート)",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "pass-fail-hole",
@@ -712,7 +712,7 @@
       "project": "U",
       "from": "2026-11-02",
       "text": "npm run pass が落ちた周の係でも合格として書けてしまう(mills-1964-id で①⑦の落ちた周が合格に入っていた。11-01夜に消して呼び直し済み)。落ちた点数では書けないようにする",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "mills-pt-article-fix",
@@ -721,7 +721,7 @@
       "project": "U",
       "from": "2026-11-02",
       "text": "公開済みの mills-1964-pt の記事に⑦③の指摘が残っている(見出しが主語の代わり・本文途中の出典・sino の重なり・Nos 5.000 m・melhor marca と recorde pessoal の不統一・見出しのかぎかっこが原文どおりでない)。直して Substack を API で差し替える(11-02 夜のレポート)",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "closing-line-enfr",
@@ -730,7 +730,7 @@
       "project": "U",
       "from": "2026-11-02",
       "text": "動画の締めの決まった一文(仕様書3-2)の英語「There's more to this story worth knowing.」と仏語「Cette histoire a d'autres aspects intéressants.」を⑦がぎこちない・訳文っぽいとした。変えるかを決める(変えると全動画の締めが変わる)",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "mills-jp-1man-m",
@@ -739,7 +739,7 @@
       "project": "U",
       "from": "2026-11-02",
       "text": "mills-1964 の日本語の動画の場面2の札で「1万m」が「1万/m」と改行されている(①は4で合格)。札を「ミルズさん／5戦0勝」に直して②①を通すかを決める",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "ig-es-switch-check",
@@ -759,7 +759,7 @@
       "text": "外国語の記事の仕上げの指示書(work/<id>/lang-finish-prompt.md)で、日本語版との突き合わせを差分のファイルではなく今の episodes/<id>/note.md で行わせる。11-02夜 shechtman-de は差分のファイル作成後に日本語版が5か所変わっていて、⑦の正しい指摘を退け③で1周余計にかかった",
       "measure": "記事の外国語の仕上げの平均の周(work/<id>-<lang>/checks.md の仕上げの周の見出し)",
       "baseline": "11-02夜 shechtman 10言語: en4・es3・pt5・fr3・it3・de5・zh3・id3・ko2・ar3、平均3.4周",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "video-nolang-stop",
@@ -779,7 +779,7 @@
       "text": "日本語の動画の台本の下書き(/episode-video A1)で、記事で③が通した範囲の言葉(work/<id>/bounds.md)を場面ごとに当てた控えを書き手に渡し、③の範囲の手戻りを減らす。11-02夜 apis-cerana-dung の動画は日本語7周で、③の指摘の多くが記事で既に決まった範囲(襲われたとき・トウヨウミツバチ・主語)だった",
       "measure": "動画の日本語の合格までの平均の周(npm run pdca の質)と動画日本語1本のトークン",
       "baseline": "11-02夜 apis-cerana-dung: 7.0周・96.0万トークン",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "video-add-via-jp",
@@ -790,7 +790,7 @@
       "text": "動画の外国語版の仕上げ(4段の4.)で、日本語版に無い文を足すときは、他の言語に写す前に日本語版の穴として jp-holes-pending.md に書き、資料の全文で③に確かめてから各言語に写す。11-02夜 apis-cerana-dung で、pt の③が通した場面2の1文(乗っ取りの1件)を it・zh に写した後、it の③が範囲外(研究チームが入り口を広げた巣)と落とし、合格済みの pt も直して全係を呼び直した",
       "measure": "動画の外国語の合格までの平均の周と動画1言語のトークン(npm run pdca の質・1本あたり)",
       "baseline": "11-02夜 apis-cerana-dung 7言語: 平均4.0周・動画1言語66.3万トークン",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "ginza-add",
@@ -801,7 +801,7 @@
       "text": "有料note銀座商店街に残りの有料記事を1日5本までPVの多い順に入れる(11-03に5本済み。残り: tilley-image・charbucks・nakamura-blue-led・gideon・mills-1964・bretz-floods・wright・cowpens-1781・kirtsaeng・john-snow・wiley-poison-squad・marshall-pylori・apis-cerana-dung・shechtman-quasicrystal。有料か確かめてから)。新しく公開した有料記事もその日に入れる。「明日香の エンためになる 共同運営マガジン」(桜井明日香さん、5.4万本、11-03 参加)にも自分の記事を1日3本まで同じ順に入れる(11-03に houbolt-lor・opportunity-rover・abf 済み。決まり: 自分の記事だけ・1日3本まで)。11-17に、入れた記事の note の PV・売上を入れる前の28日と比べ、流入元に note.com のマガジンが出たかを見る",
       "measure": "note の PV(過去28日)と売上の件数",
       "baseline": "11-02時点 PV117・売上0件(19本)",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "meta-ad-pay",
@@ -819,7 +819,7 @@
       "project": "U",
       "from": "2026-11-03",
       "text": "ikeda-umami 日本語版の出典の栗原2015を「CC BY 4.0」と書いたが、版の番号は手元の資料の全文で確かめられない(英語版は CC BY だけにした)。昼に PMC か出版社のページで版を確かめ、違えば note.md の出典を直す",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "video-script-length",
@@ -830,7 +830,7 @@
       "text": "日本語の動画で、台本AIの初稿が435字を超えたら、②③⑤を呼ぶ前にGMが435字以内に詰め切る(11-04夜の marshall-pylori は447〜500字で係を呼び、声の後に85→78→76→75秒と3回詰め直して②③⑤を5周通し直した)。台本の長さ以外の手順は変えない",
       "measure": "pdca の 動画日本語の合格までの平均の周・動画1言語あたりのトークン",
       "baseline": "11-03夜(11-04朝): 平均10.5周・128万トークン",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "pylori-video-lang-gap",
@@ -839,7 +839,7 @@
       "project": "U",
       "from": "2026-11-04",
       "text": "marshall-pylori の外国語の動画: en は②分かるが3で行き詰まり(11-04夜、出さない)。指摘は『冒頭は潰瘍、場面6の結果は胃炎でつながらない』(資料は胃炎との関わりまで)。残りの es(1周目済み)・pt・fr・it・zh・id は同じ型で止まる見込みが高いので、仕上げを回す前に、冒頭の問いを資料で言える範囲(菌と胃の病気/胃炎)にそろえる直し方を各言語の下書き共通で決めてから回す(work/marshall-pylori-en/checks.md 8〜10周目)",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "lang-verb-strength",
@@ -850,7 +850,7 @@
       "text": "外国語の記事の下書きの指示(lang-writer-prompt の「訳だけに出た誤りの型」)に、勝ち・判決・決着の動詞を強める型(won→ended/決着した)を10番目として足す",
       "measure": "穴集めで③が挙げた訳だけの実質の指摘の数(work/<id>-<lang>/checks.md)",
       "baseline": "farnsworth-tv: 『争いが終わった』が10言語中5言語",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "wake-timer",
@@ -868,7 +868,7 @@
       "project": "U",
       "from": "2026-11-04",
       "text": "Meta の広告の支払いが 11-04 に再びカード会社に止められ、11-04 にオーナーが本人の利用と回答済み。Instagram masaka.true の広告ツールで配信が再開したか・未払いの「今すぐ支払う」が出ていないかを見る(出ていればオーナーに押してもらう)。止まった時間に応じて判定日 11-10・11-12 をずらすかを決める",
-      "done": null
+      "done": "2026-11-14(11-14 teardown-meta に合わせた(masaka.true が止められていて広告ツールに入れない))"
     },
     {
       "id": "pt-conta-outra",
@@ -877,7 +877,7 @@
       "project": "U",
       "from": "2026-11-06",
       "text": "ポルトガル語の Substack: Conta Outra(felipevandeursen.substack.com、毎週更新の意外な歴史の配信)にゲスト記事の申し出を1通送るか(11-02 の承認は es・it・fr の4通だけで pt は入っていない)。贈る題材はグアララペスの戦い(1648)で、記事は未制作・資料も未確認。送るなら GM が記事を作って③⑦を通してから Substack のメッセージで送る(sugoi-shorts work/promo/pt-2026-11-06.md)",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので送らない)"
     },
     {
       "id": "weekly-review-1105",
@@ -886,7 +886,7 @@
       "project": "U",
       "from": "2026-11-06",
       "text": "11-05(木)の夜は夜間作業が動かず、木曜の夜の「1週間の振り返り」(sugoi-shorts src/autorun-prompt.md)と docs:check が書かれていない。昼に GM が npm run pdca と npm run docs:check を流して work/autorun-report.md の上に書く(7日枠は11-06にリセット済み)",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "promo-brief",
@@ -895,7 +895,7 @@
       "project": "U",
       "from": "2026-11-06",
       "text": "金曜の夜のプロモーション担当(sugoi-shorts src/autorun-promo.md)に、前の週の打ち手の状態(送ったか・入れたか・送り方など確かめ済みの事実)を GM が順位表と一緒に先に書いて渡す。11-06 夜は5人中4人が「申し出の送り方」を別々に調べ、3人が同じ Substack 公式ページを読んだ(重なりの手戻り)",
-      "done": null,
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))",
       "measure": "プロモーション担当1人あたりのトークンと、同じ事実を別の担当が調べ直した数(work/promo/*-<日付>.md の出どころの重なり)",
       "baseline": "11-06 夜: 5人で353,207トークン(1人約7.1万)、送り方の公式ページを3人が重ねて確認"
     },
@@ -906,7 +906,7 @@
       "project": "U",
       "from": "2026-11-07",
       "text": "sugoi-shorts src/bundle.ts の noteForBundle: --diff の比べる元(work/<id>/last-note-<係>.md)が束を作った時点で上書きされるため、束を作って係を呼ばずに止まった後に再び --diff を作ると、その間の直しが係に渡らない(11-07夜 farnsworth-tv-it 3周目で「変わった段落0」)。比べる元を係の結果を記録した時点で進める形(例: 束では .pending に書き、npm run lap の check 記録で確定)に直し、止めて再開する模擬で確かめる",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "farnsworth-holes-reflect",
@@ -915,7 +915,7 @@
       "project": "U",
       "from": "2026-11-07",
       "text": "sugoi-shorts farnsworth-tv の公開済み Substack 9言語(en・pt・fr・it・zh・de・id・ko・ar)に、11-07夜に日本語版へ入れた穴の直し(屋根裏の『家の』・『磁石』→コイル・記念行事の時制。work/farnsworth-tv/jp-holes-pending.md の末尾)が要るかを各言語の note.md で確かめ、要る所だけ反映の係1人で直して③に並べ、PUT で差し替える(/episode-article の『公開済みの記事の差し替え』)",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "neta-terms-403",
@@ -924,7 +924,7 @@
       "project": "U",
       "from": "2026-11-07",
       "text": "sugoi-shorts ネタの規約の確かめ: 夜の取得で403になり規約の項目を通せなかった候補を、昼に GM がブラウザで規約を読んで戻す(emily-rosa-tt=JAMA ama-assn.org の規約。ほか usitc.gov・tandfonline.com・womenshistory.si.edu)。11-07夜のネタ集めの報告",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "review-id-wordcount",
@@ -933,7 +933,7 @@
       "project": "U",
       "from": "2026-11-07",
       "text": "sugoi-shorts の review: インドネシア語の台本で『127語超は長すぎ』(src/run.ts の1.8語/秒)と『150語未満は短すぎ』(src/script.ts)が両立せず、どの語数でもどちらかが出る(11-07夜 bretz-floods-id)。直近の id 版の実測(146〜156語で72.8〜74.9秒=約2.0〜2.1語/秒)を metrics から数え直して、id の語/秒か下限を直す",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "kaizen-holes-early",
@@ -944,7 +944,7 @@
       "text": "外国語の穴集めの③に、日本語版の『資料の言い換え(会報の問い・誰への喝采か・部門の範囲)』を名指しで見させる。11-07夜 nigel で穴集めの③10人のあと、仕上げの書き手が日本語版の穴を5件見つけ、仕上げ中の言語ごとに直し直しが出たため",
       "measure": "仕上げの段で見つかる日本語版の新しい穴の数(work/<id>/jp-holes-pending.md の仕上げの行)",
       "baseline": "nigel-richards-french 5件(11-07)",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "pass-before-result",
@@ -953,7 +953,7 @@
       "project": "U",
       "from": "2026-11-08",
       "text": "書き手(係を呼ぶ側)が係の結果が届く前に想像で点を書き pass を打つ誤りが 11-08 夜の bretz-floods-pt で出た(本物の結果で取り消し済み)。指示文に禁止は書いてあるのに起きたので、npm run pass が work/<id>/ の係の結果ファイル(review-rN-<係>.md 等)の更新時刻が checks.md の合格の記録より前なら止める、など仕組みで防ぐ案を昼に決める",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "layout-cjk-break",
@@ -962,7 +962,7 @@
       "project": "U",
       "from": "2026-11-08",
       "text": "preview の layout.json(画面の自動判定)が、中国語の図の文字が語の途中で折れた(一／口氣)のを拾わない。図の中の \\n は改行として効かず空白になる。11-08 bretz-floods-zh で①が見つけた。layout-check と合わせて、CJK の語の途中の折り返しを判定に足す",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "bretz-article-holes",
@@ -980,7 +980,7 @@
       "project": "U",
       "from": "2026-11-08",
       "text": "npm run review が大見出しの問いかけ(「?」、仕様書4-1で禁止)を拾わない。11-08 bretz-floods-it で①が人の目で見つけた。review に大見出しの ? ・ ¿ ・ ？ の判定を足す",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "player-small-count",
@@ -989,7 +989,7 @@
       "project": "U",
       "from": "2026-11-08",
       "text": "player/player.js の countCompare が12以下の整数も数え上げて出す(john-snow で6が文の始まりに4と見えた。bigNumber と同じく小さい数は一度で出す)。compare(vs)の右側が1文目の始まりに出ない(工場の絵が1文遅れる)。①が2026-11-08に指摘、点は合格の線。直したら wright か john-snow で preview を流して確かめる",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "split-tug-sentence",
@@ -1000,7 +1000,7 @@
       "text": "日本語の動画のチェック(A5)で、同じ1文に②(分かりやすさ)と③(範囲)の指摘が2周続けて逆向きに出たら、その周で1文を2文に分ける(前提の文+結果の文)。john-snow では場面2の1文で4〜9周目に②③が引っぱり合い、2文に分けた10周目で両方通った",
       "measure": "動画日本語の合格までの平均の周(npm run pdca の質)",
       "baseline": "11-07夜 動画日本語11.0周(john-snow 台本13周・①3周)",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "note-bretz-holes",
@@ -1009,7 +1009,7 @@
       "project": "U",
       "from": "2026-11-08",
       "text": "bretz-floods の日本語 note(公開済み)に、11-08夜に直した2か所を入れる: 無料部分の予告「同じ会合の客席に」→「のちのある会合の客席に」、箇条書きの最後の2行→「ブレッツが受けた賞と、最後まで反対した人が考えを変えたかどうか」(episodes/bretz-floods/note.md の54〜60行。③5点満点で5)。GM が note の編集画面で入れ、オーナーが「更新する」を押す。Substack 10言語は11-08夜に差し替え済み",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "snow-it-family",
@@ -1018,7 +1018,7 @@
       "project": "U",
       "from": "2026-11-08",
       "text": "john-snow-it の公開済み Substack 記事(episodes/john-snow-it/note.md)に「andò a parlare con le famiglie dei morti」(亡くなった人の家族と話した)とある。work/john-snow/bounds.md は誰から聞いたかを I was informed(家族とは限らない)とする。ほかの言語の note.md にも同じ言い方が無いか見て、③⑦を通して直し、Substack を差し替える(2026-11-08 夜の動画の訳で気づいた) あわせて、en の note.md に「a London doctor named John Snow」・副題「a London doctor suspected」・本文「was a London physician」があり、bounds.md の「スノウを『ロンドンの医師』と言う(資料に無い)」に当たる(11-08 夜の⑦)。10言語とも同じ言い方が無いか見る",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "lang-wordcap",
@@ -1027,7 +1027,7 @@
       "project": "U",
       "from": "2026-11-08",
       "text": "外国語の動画の語数の決まりを声の長さに合わせる: スキル episode-lang の「英語は175語以内」と review の機械の注意(src/run.ts の RATE×71秒、en 173語)を、書き手が止める上限と受け取り、範囲の言葉(organic・ポンプの地区の・届け出の)を削って③⑦に3周続けて落とされた(2026-11-08 john-snow-en。実際は174語で66.7秒=約2.6語/秒)。上限は voice の合計(75秒)で見る、と skill の書き方を直し、RATE を metrics の実測で直す",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "ig-snow-hashtag",
@@ -1036,7 +1036,7 @@
       "project": "U",
       "from": "2026-11-08",
       "text": "Instagram の john-snow 日本語のリール(https://www.instagram.com/masaka.true/reel/DfdHB_chkzh/)の説明欄の最後のハッシュタグが #雑学好き になっている(元は #雑学。AIラベルのスイッチを押したときにハッシュタグ候補が選ばれた)。投稿の「…」→編集で #雑学 に直す。あわせて /episode-post の Instagram の手順に「説明文を貼ったら見出しを押して候補の一覧を閉じてから AIラベルを押す」を足す(2026-11-08 夜)",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "note-charbucks-holes",
@@ -1045,7 +1045,7 @@
       "project": "U",
       "from": "2026-11-08",
       "text": "charbucks の公開済み note(日本語)の事実の言い方2件: 「1997年に売り出し」は判決では developed(作った)、「名前の頭にミスター、うしろにブレンド」は判決では 'Mister' prefix or 'Blend' suffix で別の名前(チャーバックス・ブレンド/ミスター・チャーバックス)。昼に note を直して③で確かめる。外国語10言語の Substack も同じ文があれば直す(11-08夜、動画の③が見つけた)",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "layout-inner-overlap",
@@ -1054,7 +1054,7 @@
       "project": "U",
       "from": "2026-11-08",
       "text": "sugoi-shorts の preview の位置判定(layout.json)が、図の中の文字どうしの重なり(countCompare の項目の2行目と下の注 note など)を拾わない。11-08夜 charbucks の場面5で①が目で見つけた。player の各図で文字の箱どうしの重なりを判定に足し、charbucks の v5 で出ることを確かめる",
-      "done": null
+      "done": "2026-11-14(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "guard-tab-unrecorded",
@@ -1141,7 +1141,7 @@
       "project": "U",
       "from": "2026-11-12",
       "text": "Instagram の日本語アカウント masaka.true が、開くと『アカウントを使用するには人間であることを確認してください』の画面(instagram.com/accounts/suspended)になり止まっている(11-12 夜23:40 に GM が見つけた。前夜 11-11 23:06 は ikeda-umami のリールを出せていた)。確認はボット判定のため Claude は押さない。いつもの Chrome で instagram.com を開き、オーナーが確認を済ませる。通ったら GM が alesia(アレシアの戦い)のリールを出す(動画はドライブ JA/20261112_alesia.mp4)",
-      "done": null
+      "done": "2026-11-14(11-14 認証コードの画面までは出たが SMS が届かず。fr・it と同じ型。Instagram は立て直しの判断(course-fix)に回す)"
     },
     {
       "id": "ideas-angle-shift",
@@ -1152,7 +1152,7 @@
       "text": "新しい儲け口の仮説の出し方を見直す(sugoi-shorts src/autorun-ideas.md の「角度を決める」): 11-08〜11-12夜の51件はすべて捨てるで、捨てた理由の31件が「先行者が既にいる」、27件が「AIの安い代わり・道具が既にある」。『AIで人の仕事を安く代行する』型の仮説は、買い手が自分でAIを使えるか同じ値段の道具が既にあるため通らない。昼のセッションで、角度の例に『AIの安さが売りにならない壁(オーナーの日本での人のつながり・独占の使用許諾・既に持っている読者)』を足すかを決める",
       "measure": "儲け口の『残る』の件数・捨てた理由のうち『AIの代わりが既にある』の割合",
       "baseline": "51件で残る0件・AIの代わりが既にある27件(53%)(2026-11-12夜)",
-      "done": null
+      "done": "2026-11-14(11-14 出し方ごと変えた(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "claim-scope-memo",
@@ -1201,6 +1201,222 @@
       "project": "sugoi-shorts",
       "from": "2026-11-15",
       "text": "11-15以降の朝: 無人スリープ10分(11-14変更)の後、朝9時の停止と22時の開始が拾い直しを待たずに走ったかを、タスクの履歴と Windows のイベントログ(起床・スリープの時刻)で3朝分確かめる。走っていれば sugoi-shorts 仕様書と HISTORY.md に書く。だめなら朝9:20の拾い直しのタスクを足す",
+      "done": null
+    },
+    {
+      "id": "course-fix",
+      "who": "owner",
+      "kind": "decide",
+      "project": "U",
+      "from": "2026-11-14",
+      "text": "テーマUの立て直し: Instagram が全言語で止まり(ja は 11-14 に SMS が届かず)、1か月で売上0円・Substack 購読0。①今夜から外国語の制作を止めるか ②出し先ごとの1か月の数字(本数・届いた数・トークン・費用)と候補2〜3案の資料を GM が作るので方向を決める ③プランの判断(11-17)と合わせる",
+      "done": "2026-11-14(11-14 オーナー決定: 制作を全部止め、夜は儲け口の検証だけ(sugoi-shorts HISTORY.md の 2026-11-14))"
+    },
+    {
+      "id": "teardown-note-member",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-14",
+      "text": "後片付け: note の「シゲクサークル成果紹介会員」(月100円、有料note銀座商店街の参加条件)を解約し、台帳とともに記録",
+      "done": "2026-11-14(11-14 解約(12-02で終わる)。PayPay払い)"
+    },
+    {
+      "id": "teardown-gcp",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-14",
+      "text": "後片付け: Google Cloud のプロジェクト harvest-sugoi-shorts から請求先を外し、APIキー sugoi-shorts-youtube を削除し、harvest-engine/.env の GOOGLE_API_KEY を消す(sugoi-shorts の yt.ts・voice.ts は使わなくなる)",
+      "done": "2026-11-14(11-14 APIキー削除・.env の行を削除。請求先は無料トライアルのアカウント(アップグレードしない限り請求なし、残り¥47,159・2027-01-18まで)なので外さなかった)"
+    },
+    {
+      "id": "teardown-meta",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-14",
+      "text": "後片付け: Meta の広告で動いている広告が無いかを確かめ、支払い方法(カード)を外す。ad-test-1-settle の確定額の記帳も済ませる",
+      "done": null
+    },
+    {
+      "id": "teardown-api-balance",
+      "who": "gm",
+      "kind": "do",
+      "project": "本社",
+      "from": "2026-11-14",
+      "text": "後片付け: Anthropic API と X API の自動チャージの有無を管理画面で確かめ、オンなら切る(Perplexity API は自動チャージなし)",
+      "done": "2026-11-14(11-14 Anthropic: 自動チャージはオフ(画面で確認)。残高37.07ドル+Maxのプロモーション85.79ドル(2026-11-20まで)。カードは登録のままだが自動では請求されない。X API は teardown-x-api に分けた)"
+    },
+    {
+      "id": "teardown-substack",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-14",
+      "text": "後片付け: Substack 10出版物の有料を切る前に、有料部分のある記事の見え方を Substack 公式ヘルプで確かめる。そのあと有料を切り、Stripe を外し、Stripe の10アカウントを閉じる(stripe-id は不要になる)",
+      "done": null
+    },
+    {
+      "id": "teardown-ig",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-14",
+      "text": "後片付け: Instagram 6つ(masaka.true・masakaenglish・masakaspanish・masakaportuguese・masakafrench・masakaitalian)を削除。止められてログインできないものは削除できない旨を記録",
+      "done": null
+    },
+    {
+      "id": "teardown-tiktok",
+      "who": "owner",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-14",
+      "text": "後片付け: TikTok 5つ(@masaka.true・@masakaenglish・@masakaspanish・@masakaportuguese・@masaka3961)を削除。削除はアプリでしかできない。@masaka3961 にはオーナーの電話番号が付いている。GM が1つずつ手順を出す",
+      "done": null
+    },
+    {
+      "id": "teardown-mail",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-14",
+      "text": "後片付け: アカウントを消した後、saas-status.com の Email Routing のキャッチオール(<lang>@saas-status.com→masaka.true.en@gmail.com)を切り、Gmail masaka.true.en の扱いを決める",
+      "done": null
+    },
+    {
+      "id": "teardown-chrome",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-14",
+      "text": "後片付け: Chrome のプロフィール Masaka-EN・ES・PT・FR・IT を削除(保存したパスワードごと)",
+      "done": null
+    },
+    {
+      "id": "teardown-pc-tasks",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-14",
+      "text": "後片付け: 家PCの予定タスクの残り『sugoi-shorts reenable start 1031』『homepc keepawake 10-19(無効)』を消す。夜間作業のタスクは儲け口とeスポーツの探索で使うので残す",
+      "done": "2026-11-14(2つ消した。夜間作業の4つ(start・catchup・stop・resume)は残す)"
+    },
+    {
+      "id": "teardown-vm",
+      "who": "gm",
+      "kind": "do",
+      "project": "本社",
+      "from": "2026-11-14",
+      "text": "後片付け: VM の H(25か所)の収集が使われているかを確かめて続けるか決める/峠の見張りが同じ取得失敗を毎回通知しないようにする/評議会を止めたことによる監査役の『評議会未実行』の通知を止める/C(saas-status.com)の見られた数を取る",
+      "done": null
+    },
+    {
+      "id": "teardown-nags",
+      "who": "gm",
+      "kind": "do",
+      "project": "本社",
+      "from": "2026-11-14",
+      "text": "後片付け: npm run status・pdca・docs:check・reminders.json からテーマUの前提(数字の記録の警告・アカウントを作る日・投稿待ち・kaizen の検査)を外す",
+      "done": null
+    },
+    {
+      "id": "teardown-docs",
+      "who": "gm",
+      "kind": "do",
+      "project": "本社",
+      "from": "2026-11-14",
+      "text": "後片付け: hq/tasks.json のテーマUの項目(GM・kaizen・オーナーの stripe-id・fr-ig-sms・pt-conta-outra)の消し込み、sugoi-shorts 仕様書・CLAUDE.md・スキル、harvest-engine CLAUDE.md の PDCA 節・HANDOFF の層・会社説明資料.html を止めた状態に直す",
+      "done": null
+    },
+    {
+      "id": "teardown-guest",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-14",
+      "text": "後片付け: ゲスト記事の申し出(es・it・fr の4通)に返事が来たら、お断りの返事の文案をオーナーに出す",
+      "done": null
+    },
+    {
+      "id": "teardown-note-own-membership",
+      "who": "owner",
+      "kind": "decide",
+      "project": "U",
+      "from": "2026-11-14",
+      "text": "note の自分のメンバーシップ「まさか。全記事読み放題」(月額。メンバー0人、11-14確認)を止めるか残すか。残すと、新しい記事が来ないのに月額を受け付ける形になる",
+      "done": "2026-11-14(11-14 オーナーY。全記事読み放題プラン(月500円・1か月無料、メンバー0人)を非公開にした。メンバーシップ自体は消していない)"
+    },
+    {
+      "id": "teardown-x-api",
+      "who": "gm",
+      "kind": "do",
+      "project": "本社",
+      "from": "2026-11-14",
+      "text": "後片付け: X API(テーマHのキーワード監視、7/17にクレジット購入)の自動チャージの有無を管理画面で確かめる",
+      "done": null
+    },
+    {
+      "id": "teardown-substack-free",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-14",
+      "text": "後片付け: Stripe を外して20分以上たってから、Substack 10出版物の記事が『有料の人だけ』(only_paid)のままかを /api/v1/archive で見る(11-14 直後はアラビア語で12本とも only_paid)。そのままなら、メールを送らずに『全員』に変える方法を確かめてから変える(11-14 オーナーY)",
+      "done": null
+    },
+    {
+      "id": "ideas-method-check",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-15",
+      "text": "11-15 朝: 新しい出し方の最初の夜を見る。出し方を変えた3行が書かれたか・ideas.json に where/keywords/dropType が入ったか・前と違う場所と検索語を使ったか・Perplexity を使っていないか(使ったなら research-rule の範囲か)・7日枠の線で終えたかを、レポートと ideas.json で確かめる あわせて、11-14 に research-rule へ足した「無いと書く前に芋づるで広げる」が効いたかを見る: 夜の確かめで1件あたりに挙がった先行者の数と「〇〇まで探した」の書き方を、11-14 昼の ideas.json(idea-117〜160)と比べる",
+      "done": null
+    },
+    {
+      "id": "company-doc-1114",
+      "who": "gm",
+      "kind": "do",
+      "project": "本社",
+      "from": "2026-11-14",
+      "text": "会社説明資料.html に 11-14 の変更を平易な言葉で入れる: テーマU(まさか)の制作を止めたこと、儲け口の判定の線を『60日で1時間1円』から案ごとに決める形に変えたこと、前提は『儲ける』『AIの強み』の2つだけにしたこと",
+      "done": null
+    },
+    {
+      "id": "gov-budget-1114",
+      "who": "owner",
+      "kind": "decide",
+      "project": "本社",
+      "from": "2026-11-14",
+      "text": "GOVERNANCE.md と BUDGET.md の直し(どちらもオーナーの専決): ①GOVERNANCE の GM の専決事項にある「テーマの採択・却下」を、2段の決まり(選んで作るのはオーナーが決める)に合わせて「テーマの却下」だけにし、「採択」はオーナーの専決事項へ移す ②BUDGET の「新しい儲け口の仮説と検証で使う Perplexity は1晩100円まで」を、夜は Perplexity を使わないので消す ③BUDGET の Max 5x の目的(テーマUの1本・1言語あたりの消費の測定)を、制作を止めたので「夜間作業のアイデア探しと開発」に直す",
+      "done": "2026-11-14(11-14 オーナー決定どおり GOVERNANCE と BUDGET を直した)"
+    },
+    {
+      "id": "ideas-pick-1114",
+      "who": "owner",
+      "kind": "decide",
+      "project": "本社",
+      "from": "2026-11-14",
+      "text": "新しい儲け口の残った案(npm run status の『残った』の15件。idea-067・076・077・088・090・093・094・099・101・102・105・109・112・115・116)から、選んで試すものがあるかを決める。各案の試し方(費用・期間・合格の線)は hq/ideas.json の test。偏り: オーナーの経験に寄った案は2件(099 eスポーツの公募・101 保険代理店の言い回しの点検)。買い手は日本の個人・家族・小さな店に寄っている",
+      "done": null
+    },
+    {
+      "id": "ideas-test-stage",
+      "who": "owner",
+      "kind": "decide",
+      "project": "本社",
+      "from": "2026-11-14",
+      "text": "新しい儲け口の確かめ方に、安い試しの段を足すか。今は、払う人も先行者もいる案(例: 湾岸の方言から書き言葉のメールにするアプリ Willow 月12ドル、サイトを直すサービス Surmado 月99ドル)を、勝てる理由を調べ物で示せないとして捨てている。11-14 の昼は確かめた33件のうち残ったのは2件で、落ちた理由はほぼ全部これ。案: こうした案は捨てずに、ページ1枚で申し込みを数える・専門家10〜40か所に声をかける等の安い試し(費用0〜100ドル・2〜4週間)に回す。外への公開・連絡になるのでオーナーが決める(くわしくは sugoi-shorts HISTORY.md の 2026-11-14)",
+      "done": null
+    },
+    {
+      "id": "ideas-entity-1114",
+      "who": "owner",
+      "kind": "decide",
+      "project": "本社",
+      "from": "2026-11-14",
+      "text": "新しい儲け口の探し方の材料: 法人が無い(日本の個人・その国に拠点が無い)ことが、役所の入札と専門家の事務所向けの案の参加の壁になっている。11-14 の昼に役所の入札を3件確かめ、3件とも参加の壁で落ちた(英国は閾値未満の契約を英国の業者に限れる、米国の小規模事業者の枠は米国の事業所が要る、カナダは受注者の名簿の形)。法人を作る(費用がかかる)か、法人が無くても届く売り先(個人・小さな店・アプリの売り場)に探す場所を絞るかを決める。決めるまでは、夜間作業は両方を探し、参加の条件を最初に確かめる(くわしくは sugoi-shorts HISTORY.md の 2026-11-14)",
       "done": null
     }
   ]
