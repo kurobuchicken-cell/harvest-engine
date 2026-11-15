@@ -5352,7 +5352,22 @@
         "https://circ-ien-obernai.site.ac-strasbourg.fr/wp-content/uploads/2023/10/Lenseignement-du-code-par-entree-graphemique.pdf",
         "https://outilstice.com/?p=13941",
         "https://justrightreader.zendesk.com/hc/en-us/articles/35235588584595-Spanish-Decodables"
-      ]
+      ],
+      "scrutiny": {
+        "date": "2026-11-15",
+        "verdict": "検証へ(捨てる寄り)",
+        "types": "売場・海外・他言語・AI製・子",
+        "facts": "TPT は AI 製の教材を禁止する予定(Chalkbeat 2026-10-15、施行日なし)。TPT に french decodable readers の出品が330件以上、1冊約0.5ドルの束や「100 % déchiffrables」を掲げる出品が先にある。Basic 会員なら5ドルの束の手取りは2.45ドル。Boom Learning は AI の文を開示と事実確認つきで許す(GM 確認)",
+        "open": "日本の口座に TPT(Hyperwallet)・Boom(PayPal のみ)から届くか。AI 禁止の施行日と範囲",
+        "nightRecordWrong": "「先行者が無い」「1束4〜12ドル」は違った(実勢3〜8ドル、機械点検100%を掲げる先行者あり)",
+        "file": "hq/scrutiny/idea-188.md",
+        "recheck": {
+          "date": "2026-11-15",
+          "verdict": "検証へ(捨てる寄り)",
+          "facts": "TPT は米国外の売り手を受け付け、出金方法は国による(GM が原文で確かめた)。売り手の指針に AI の文はまだ無いが、AI 製の禁止を公表済み。AI で作る案と正面から当たる",
+          "file": "hq/scrutiny/recheck-1115/"
+        }
+      }
     },
     {
       "id": "idea-189",
@@ -5459,7 +5474,22 @@
         "https://slpelliance.thinkcreative.com/?p=2281",
         "https://www.iledefrance.paps.sante.fr/index.php/media/142094/download",
         "https://github.com/chrplr/openlexicon/blob/master/README.md"
-      ]
+      ],
+      "scrutiny": {
+        "date": "2026-11-15",
+        "verdict": "検証へ(ふつう)",
+        "types": "自店・専門・子・海外・他言語・AI製・素材",
+        "facts": "Lexique 公式の無料の画面で、音の欄を正規表現で絞って TSV・EXCEL に出せる(GM 確認)。Lexique 383 は CC BY-SA 4.0 で、客が束を無料で配っても止められない。Payhip は日本の Stripe で受け取れ、AI 製を許す(運営の返信1文)",
+        "open": "払う人の一覧・広告なしで届く道・売れた跡・AI の出来と誤りの率",
+        "nightRecordWrong": "「狙いの音で絞る道具が無い」は違った(無料の Lexique の画面)",
+        "file": "hq/scrutiny/idea-191.md",
+        "recheck": {
+          "date": "2026-11-15",
+          "verdict": "検証へ(ふつう)",
+          "facts": "教材は2.90〜26ユーロで売られている(係の調べ)。音×位置の束が売れた数は公開ページに出ない",
+          "file": "hq/scrutiny/recheck-1115/"
+        }
+      }
     },
     {
       "id": "idea-192",
@@ -5558,7 +5588,22 @@
         "https://blog.ravelry.com/2022-community-stats",
         "https://www.sycamorestudio.co.uk/services-7",
         "https://knittingrobin.blogspot.com/2014/08/how-many-hand-knit-pattern-designers.html"
-      ]
+      ],
+      "scrutiny": {
+        "date": "2026-11-15",
+        "verdict": "検証へ(有望)",
+        "types": "自店・海外・他言語・AI製・注文・損",
+        "facts": "Stitch Fiddle に図の行ごとの目の数の自動検査がある(編み物の図だけ、GM 確認)。文章の型紙の全サイズの検算は見つからない。人の校正に時給20〜30ドルが払われているが、自動の下見に払った跡は無い。Payhip は日本の Stripe で受け取れる",
+        "open": "書き方がばらばらの型紙を正しく読めるか(試し: 正誤表つきの無料の型紙10件)。自動の下見に払う意思",
+        "nightRecordWrong": "「自動の検算の道具が無い」は不正確(Stitch Fiddle)",
+        "file": "hq/scrutiny/idea-194.md",
+        "recheck": {
+          "date": "2026-11-15",
+          "verdict": "検証へ(有望)",
+          "facts": "人の校正係は時給30〜50ドル(係の調べ)。自動の下見に払った跡は0件。正誤表つきの無料型紙15件を集めた(手元の試しの材料)",
+          "file": "hq/scrutiny/recheck-1115/"
+        }
+      }
     },
     {
       "id": "idea-195",
@@ -6109,7 +6154,22 @@
         "https://eduki.com/de/material/1404404/leseblatter-fur-die-1-klasse-fibel-buntspecht-teil-a",
         "https://eduki.com/de/material/767662/lesen-spielen-1-klasse-frohes-lernen-materialpaket",
         "https://www.friedrich-verlag.de/friedrich-plus/sekundarstufe/inklusion-sonderpaedagogik/deutsch/adaptive-leseforderung-21888"
-      ]
+      ],
+      "scrutiny": {
+        "date": "2026-11-15",
+        "verdict": "検証へ(有望)",
+        "types": "売場・海外・他言語・AI製・子",
+        "facts": "eduki の規約に居住国・法人の要件は見当たらず(16歳以上のみ、規約の一部は要約で確認)。外の AI 製の禁止は書かれていない(6.2 は eduki の AI 道具で作った物の決まり、GM 確認)。Karibu 向けだけで別々の売り手の出品が7件以上、評価は1〜2件と薄い",
+        "open": "eduki から日本の口座へ出せるか・税の書類(help.eduki.com が403)。無料の代わり(Lerntruhe など)",
+        "nightRecordWrong": "「全教科書をそろえた売り手は無い」は弱い(Karibu 向けだけで7出品以上)。Karibu 2024 版は文字の順が変わった",
+        "file": "hq/scrutiny/idea-212.md",
+        "recheck": {
+          "date": "2026-11-15",
+          "verdict": "検証へ(有望)",
+          "facts": "eduki のヘルプで、ドイツの外の売り手の税の扱いがあり、日本は条約国で年1万ユーロまで源泉なし、出金は月10ユーロから届け出の口座へ(GM が原文で確かめた)。Karibu 向けは有料の先行者(Dodo 32ユーロ)、他の Fibel は空きの見込み。残り: 日本の口座(SWIFT)で受けられるか・売れる量・母語話者の検収",
+          "file": "hq/scrutiny/recheck-1115/"
+        }
+      }
     },
     {
       "id": "idea-213",
@@ -7796,7 +7856,22 @@
         "https://www.taniaksiazka.pl/gloski-szumiace-utrwalanie-artykulacji-zeszyt-1-gloska-sz-p-2261907.html",
         "https://www.taniaksiazka.pl/karty-logopedyczne-gloski-szumiace-komplet-p-2017785.html",
         "https://logopeda.org.pl/resources/pliki/996_20230127_zalacznik_nr_1___szacunkowe_dane_dot_struktury_zatrudnienia_logopedow.pdf"
-      ]
+      ],
+      "scrutiny": {
+        "date": "2026-11-15",
+        "verdict": "捨てる",
+        "types": "自店・専門・子・海外・他言語・AI製・注文",
+        "facts": "療法士向けのポータル Strefa Logopedy に作成器(Kreator kart)があるが、中身はログインの奥で不明(GM 確認)。払われた跡は紙の本(36.99zł・評価0)だけ。Payhip は日本の Stripe で受け取れる",
+        "open": "作成器が音・位置・除く音を選べるか。療法士が PDF に払う跡",
+        "nightRecordWrong": "「除く音を選べる道具は無い」は弱い(作成器あり)。「幼稚園だけで1,351人分」は出典に見つからない",
+        "file": "hq/scrutiny/idea-269.md",
+        "recheck": {
+          "date": "2026-11-15",
+          "verdict": "捨てる",
+          "facts": "Mova.cards が音×位置の札1342枚と AI での組み立てを月額で出している(GM が原文で確かめた)。勝てる理由が見当たらず、先行者の札の組もダウンロード0で払う跡も薄い",
+          "file": "hq/scrutiny/recheck-1115/"
+        }
+      }
     },
     {
       "id": "idea-270",
@@ -7885,7 +7960,22 @@
         "https://hotmart.com/pt-br/marketplace/produtos/kit-fala-amp-fonemas-recursos-terapeuticos-para-fonoaudiologos/D103029514V",
         "https://hotmart.com/pt-br/marketplace/produtos/e-book-fonema-r-em-silaba-simples/F103835796E",
         "https://www.pucsp.br/laborvox/dicas_pesquisa/downloads/ebooks/Ebook-CADERNO-para-TREINO-ARTICULATORIO-Fono-PUC-SP.pdf"
-      ]
+      ],
+      "scrutiny": {
+        "date": "2026-11-15",
+        "verdict": "検証へ(ふつう)",
+        "types": "売場・専門・子・海外・他言語・AI製",
+        "facts": "PUC-SP の無料の練習帳(252ページ)が /r/ などを位置別に持ち、患者ごとの教材づくりを想定。改変しての複製は不可(GM 確認)。Hotmart の療法士の教材は資格を名乗る本人が売る形",
+        "open": "日本の個人が Hotmart の売り手になれるか(ヘルプがログインの奥)。値段・販売数",
+        "nightRecordWrong": "無料の練習帳は「固定の一覧」ではなく選んで印刷できる。Canva で子どもの写真に差し替える個人化の商品はある",
+        "file": "hq/scrutiny/idea-272.md",
+        "recheck": {
+          "date": "2026-11-15",
+          "verdict": "検証へ(ふつう)",
+          "facts": "Hotmart の規約は日本の個人を禁じていないが、出金は EUR/USD・Wise 不可・口座は最初の売上の後(係の調べ)",
+          "file": "hq/scrutiny/recheck-1115/"
+        }
+      }
     },
     {
       "id": "idea-273",
@@ -7975,7 +8065,22 @@
         "https://www.mext.go.jp/a_menu/nihongo_kyoiku/1246441_00011.htm",
         "https://www.mext.go.jp/content/20260305-mxt_nihongo01-000039408_01.pdf",
         "https://www.moj.go.jp/isa/applications/resources/nyuukokukanri07_00218.html"
-      ]
+      ],
+      "scrutiny": {
+        "date": "2026-11-15",
+        "verdict": "検証へ(有望)",
+        "types": "請求・AI製・素材・注文・損",
+        "facts": "文科省が教育課程の不認定相当事例を、学校が自分で検討するために無料で公開(GM 確認)。令和8年度1回目は申請230・取り下げ125だが、取り下げた学校の名前は出ない(GM 確認)。点検を売る事業者・料金は見つからない",
+        "open": "行政書士法(書類の作成に当たらないか)。客の名簿・届く道・払う証拠・個人への信用",
+        "nightRecordWrong": "取り下げの理由は教育課程のほか債務超過・校舎などもあり、点検だけでは直らない。「数万〜十数万円」の裏付けは無い",
+        "file": "hq/scrutiny/idea-275.md",
+        "recheck": {
+          "date": "2026-11-15",
+          "verdict": "検証へ(有望)",
+          "facts": "行政書士法: 総務省のグレーゾーン回答(令和7年10月10日)の原文で、書類の作成の基礎・参考となる個別の資料の提供と、客が自分で書く書類の論理構成・審査項目との整合の助言は「作成」に当たらないとされた。条件は、申請書の作成・提出は客自身が行い、作成できるのは客か行政書士だけと客に案内すること(GM が原文で確かめた https://www.soumu.go.jp/main_content/001035689.pdf )。先行者: JSテラスのライト(チェックのみ)10万円税別・行政書士事務所と提携(GM が原文で確かめた)。認定は約174機関、告示校は報道で873校、期限は令和11年3月31日。残り: 先行者に勝てる理由・個人への信用・客に届く道",
+          "file": "hq/scrutiny/recheck-1115/"
+        }
+      }
     },
     {
       "id": "idea-276",
@@ -8249,7 +8354,22 @@
       "sources": [
         "https://souqfann.com/en/sellers/Kalimat",
         "https://apps.apple.com/sc/app/6745430763"
-      ]
+      ],
+      "scrutiny": {
+        "date": "2026-11-15",
+        "verdict": "検証へ(捨てる寄り)",
+        "types": "売場・自店・専門・子・海外・他言語・AI製",
+        "facts": "TPT に音ごと・位置ごとのアラビア語のカードが1音4ドル・13音の束26ドルである(Mommy SLP、店の評価4.95・1.3k件。この品の評価は0、GM がブラウザで確認)。Kalimat の10ドルの束は売り場ごと消えた(410)。Payhip は資格の無い人の医療の助言を禁止",
+        "open": "方言ごとの束に払う人がいるか。払う人の集まる場所・母語話者の確かめの費用",
+        "nightRecordWrong": "「1束10ドル」は違った(4ドル/音)。同じ中身の既製品がある",
+        "file": "hq/scrutiny/idea-284.md",
+        "recheck": {
+          "date": "2026-11-15",
+          "verdict": "検証へ(捨てる寄り)",
+          "facts": "方言ごとの教材に払った跡0件、無料の位置カードが多い(係の調べ。GM は原文未確認)",
+          "file": "hq/scrutiny/recheck-1115/"
+        }
+      }
     },
     {
       "id": "idea-285",
@@ -9269,7 +9389,22 @@
         "https://www.yodobashi.com/maker/0000012195/",
         "https://apps.apple.com/app/id1008585580",
         "https://mhlw-grants.niph.go.jp/system/files/report_pdf/202421056A-buntan3.pdf"
-      ]
+      ],
+      "scrutiny": {
+        "date": "2026-11-15",
+        "verdict": "捨てる",
+        "types": "売場・国内・専門・子・AI製",
+        "facts": "BOOTH に構音の単語の束の売り物は無い(「発音 サ行 プリント」0件)。BOOTH は差別化されていない同じ型の作品を出す店の全出品を検索から外す(GM 確認)。言語聴覚士の協会の正会員21,972名",
+        "open": "県の無料資料・一般の AI で足りるか。BOOTH から日本の口座へ届く今の経路",
+        "nightRecordWrong": "記録に無い有料の言語聴覚の教材が BOOTH に複数ある(780〜1,980円)",
+        "file": "hq/scrutiny/idea-318.md",
+        "recheck": {
+          "date": "2026-11-15",
+          "verdict": "捨てる",
+          "facts": "無料・登録不要の st-toolbox.com が、音×語頭/語中/語尾×難易度で単語プリントを作り、構音文の教材もある(GM が原文で確かめた)。差が残らない",
+          "file": "hq/scrutiny/recheck-1115/"
+        }
+      }
     },
     {
       "id": "idea-319",
@@ -9511,7 +9646,22 @@
         "https://musiceffectdesign.com/semi-custom-shows-are-they-the-answer-for-your-band-and-budget/",
         "https://digital.wpi.edu/downloads/2z10wq74q?locale=en",
         "https://pyware.com/"
-      ]
+      ],
+      "scrutiny": {
+        "date": "2026-11-15",
+        "verdict": "検証へ(ふつう)",
+        "types": "請求・調達・海外・AI製・注文",
+        "facts": "無料のドリル設計ソフト OpenMarch で高校が1本まるごと作った(GM 確認)。既製のドリルは249ドル・編集できるファイルは299ドル(GM 確認)。学校は外国の個人に W-8 を求める。AI でドリルを書く先行者は見つからない",
+        "open": "AI の図の質(機械では確かめられない一番の山)。顧問の一覧・学校の支払いの手続き・日本の口座への道",
+        "nightRecordWrong": "「数百ドル」は既製品と同じ価格帯で差を出しにくい。Pepper の1,500ドルは45セットまでで「60人以下向け」とは書かれていない",
+        "file": "hq/scrutiny/idea-326.md",
+        "recheck": {
+          "date": "2026-11-15",
+          "verdict": "検証へ(ふつう)",
+          "facts": "既製の隊形の図が249〜1,000ドル、学区は発注書と W-8BEN が要り顧問の独断では払えない(係の調べ)",
+          "file": "hq/scrutiny/recheck-1115/"
+        }
+      }
     },
     {
       "id": "idea-327",
@@ -10495,7 +10645,22 @@
         "https://support.electricquilt.com/?p=121",
         "https://apps.apple.com/us/app/quiltsandwich/id906118786",
         "https://apps.apple.com/us/app/id6776541705"
-      ]
+      ],
+      "scrutiny": {
+        "date": "2026-11-15",
+        "verdict": "検証へ(ふつう)",
+        "types": "自店・海外・他言語・AI製・注文・損",
+        "facts": "キルトの型紙の校正係は商売にしているが料金は非公開。AI に量の計算を覚えさせる無料の手順を配る店がある(GM 確認)。誤りは実際に出ている(正誤表6件中5件が量・裁断・寸法)",
+        "open": "機械で検算できる範囲と誤りの率(試し: 正誤表の出た型紙5件)。キルト専門の値段",
+        "nightRecordWrong": "Electric Quilt の量が「公式に見積もりで多め」は確かめられない。時給15〜40ドルはキルト専門の値段ではない",
+        "file": "hq/scrutiny/idea-359.md",
+        "recheck": {
+          "date": "2026-11-15",
+          "verdict": "検証へ(ふつう)",
+          "facts": "キルトの校正は時給25〜45ドル、1型紙約60〜180ドル(係の調べ)。不満の跡は無い。正誤表つきの型紙5件",
+          "file": "hq/scrutiny/recheck-1115/"
+        }
+      }
     },
     {
       "id": "idea-360",
@@ -11388,7 +11553,16 @@
         "https://apps.apple.com/us/app/id1482891487",
         "https://kmong.com/gig/838704",
         "https://e-csd.org/upload/7(3)_8.pdf"
-      ]
+      ],
+      "scrutiny": {
+        "date": "2026-11-15",
+        "verdict": "捨てる",
+        "types": "売場・自店・専門・子・海外・他言語・AI製",
+        "facts": "韓国の売り場 크몽は売り手に本人認証と本人の口座を求め(係が確認)、韓国で開通した携帯での認証が必須・外国人は事業者登録が無いと売れない(抜粋のみ、GM がブラウザで開こうとしたがエラー)。位置別の単語束で払われた跡は無い",
+        "open": "自店の経路で払う人の集まる場所(네이버 カフェなど)の人数",
+        "nightRecordWrong": "36件の取引は療法士向けではなくハングルの基礎学習用",
+        "file": "hq/scrutiny/idea-389.md"
+      }
     },
     {
       "id": "idea-390",
@@ -11419,7 +11593,22 @@
         "https://meet.ribblr.com/t/tech-editing/210921",
         "https://www.sycamorestudio.co.uk/services-7",
         "https://abcrafty.com/ai-crochet-patterns/"
-      ]
+      ],
+      "scrutiny": {
+        "date": "2026-11-15",
+        "verdict": "検証へ(捨てる寄り)",
+        "types": "自店・海外・他言語・AI製・注文・損",
+        "facts": "無料の公開品 StitchProof(MIT、かぎ針の段の目の数を検算。Python・約3GB が要る、GM 確認)ほか、目の数を数える道具が複数ある。自動の下見に払った跡は無い。Ribblr の集まりは外部リンク禁止",
+        "open": "実物の型紙での精度・払う人の一覧",
+        "nightRecordWrong": "「検算専用の道具が無い」は違った。「月99ポンド4時間の会員」は無く、£30/時",
+        "file": "hq/scrutiny/idea-390.md",
+        "recheck": {
+          "date": "2026-11-15",
+          "verdict": "検証へ(捨てる寄り)",
+          "facts": "校正は時給20〜50ドル。無料の StitchProof が同じ設計。試しの材料も2件だけ",
+          "file": "hq/scrutiny/recheck-1115/"
+        }
+      }
     },
     {
       "id": "idea-391",
@@ -11834,7 +12023,22 @@
         "https://www.maff.go.jp/j/budget/pdf/r8yokyu_pr30.pdf",
         "https://www.nippon.com/ja/in-depth/d01250/",
         "https://kumanichi.com/articles/2014659"
-      ]
+      ],
+      "scrutiny": {
+        "date": "2026-11-15",
+        "verdict": "検証へ(捨てる寄り)",
+        "types": "請求・補助・調達・海外・AI製・損",
+        "facts": "補助は育成者権者の申請で2/3以内、令和8年度の公募は終了(2026-06-23〜07-16、GM 確認)。2026-07-17 に育成者権管理機関が認定され「監視・訴訟等」を担う(GM 確認)。名前の一致だけでは本物か区別できない(国の委託調査の注)",
+        "open": "民間に払った跡(見張りの業者・料金は4言語で0件)。県の調達で個人が受けられるか",
+        "nightRecordWrong": "1.育成者権の保護は113百万円(199百万円は事業全体)。国と管理機関がすでに同じ領域にいる",
+        "file": "hq/scrutiny/idea-404.md",
+        "recheck": {
+          "date": "2026-11-15",
+          "verdict": "検証へ(捨てる寄り)",
+          "facts": "令和8年度の補助で委託費は対象経費、県の入札資格は個人も可(係の調べ)。民間に払った跡は0件、国の模倣品対策事業が無料の代わりを厚くしている",
+          "file": "hq/scrutiny/recheck-1115/"
+        }
+      }
     },
     {
       "id": "idea-405",

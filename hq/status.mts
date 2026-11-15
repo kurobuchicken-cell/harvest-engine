@@ -27,7 +27,7 @@ for (const r of REPOS) {
   console.log(`・${r}: ${st[0].replace(/^## /, "")}${st.length > 1 ? ` / 未コミット ${st.length - 1}件` : ""}`);
 }
 
-console.log("\n■ 夜間作業(新しい儲け口の検証)");
+console.log("\n■ 夜間作業(ビジネスアイデアリサーチ)");
 if (process.platform === "win32") {
   const ps = `Get-ScheduledTask -TaskName 'sugoi-shorts autorun *' | ForEach-Object { $i = $_ | Get-ScheduledTaskInfo; '{0}|{1}|{2:MM-dd HH:mm}|{3}|{4:MM-dd HH:mm}' -f $_.TaskName,$_.State,$i.LastRunTime,$i.LastTaskResult,$i.NextRunTime }`;
   for (const l of run("powershell.exe", ["-NoProfile", "-Command", ps]).split("\n").filter(Boolean)) {
