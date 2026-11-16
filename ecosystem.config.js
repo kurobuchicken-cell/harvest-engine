@@ -89,5 +89,23 @@ module.exports = {
       error_file: "logs/factory-scheduler-error.log",
       time: true,
     },
+    {
+      name: "harvest-engine-fiverr-watch",
+      // 30分ごとに Fiverr のメール(kurobuchicken@gmail.com)の件名を読み、注文らしいものは即 Slack、毎朝9時に前日の件数を送る。
+      // 止めるときは pm2 delete harvest-engine-fiverr-watch && pm2 save
+      script: "node_modules/tsx/dist/cli.mjs",
+      args: "src/fiverrScheduler.ts",
+      cwd: __dirname,
+      autorestart: true,
+      max_restarts: 10,
+      min_uptime: "30s",
+      restart_delay: 5000,
+      env: {
+        NODE_ENV: "production",
+      },
+      out_file: "logs/fiverr-watch-out.log",
+      error_file: "logs/fiverr-watch-error.log",
+      time: true,
+    },
   ],
 };

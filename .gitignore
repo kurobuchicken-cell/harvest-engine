@@ -26,3 +26,6 @@ node_modules
 
 # 出口工場の実行記録(急減検知の基準に使う。環境ごとに持つ)
 /data/factory
+
+# Fiverr の知らせの記録(見たメールの id・最後に読めた時刻。環境ごとに持つ)
+/data/fiverr-watch.json

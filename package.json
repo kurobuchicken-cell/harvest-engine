@@ -33,7 +33,10 @@
     "tasks": "node hq/tasks.mts",
     "docs:check": "node hq/docs-check.mts",
     "pdca": "node hq/pdca.mts",
-    "ideas:used": "node hq/ideas-used.mjs"
+    "ideas:used": "node hq/ideas-used.mjs",
+    "fiverr:login": "tsx src/fiverr/login.ts",
+    "fiverr:watch": "tsx src/fiverr/cli.ts",
+    "fiverr:schedule": "tsx src/fiverrScheduler.ts"
   },
   "keywords": [],
   "author": "",
