@@ -13,7 +13,7 @@ HANDOFF.md には記録から出せない今の状態だけを書く(終わっ�
 ## 状態とやること(2026-10-30)
 
 - セッションの始めと報告では `npm run status` を流し、その出力から状態とオーナーのやること・判断を漏れなく出す(git・夜間作業・hq/tasks.json・新しい儲け口)
-- やることは `hq/tasks.json` だけに置く(オーナー・GM・全テーマ、who・kind・project・from つき。ハーヴェストの件だけ。NORTHEPTION(auto_x-app を含む)の件は C:\dev\northeption\tasks.md へ)。新しく出たらその場で足し、済んだら `npm run tasks -- done <id> [メモ]`、ほかの決定で要らなくなったら同じく消し込む
+- やることは `hq/tasks.json` だけに置く(オーナー・GM・全テーマ、who・kind・project・from つき。ハーヴェストの件だけ。NORTHEPTION(X の Bot を含む)の件は C:\dev\northeption\tasks.md へ)。新しく出たらその場で足し、済んだら `npm run tasks -- done <id> [メモ]`、ほかの決定で要らなくなったら同じく消し込む
 - 出す前に、1件ずつ今の記録(`npm run -s episodes`・HISTORY.md・仕様書)と食い違っていないかを見る(くわしくは HISTORY.md の 2026-10-30)
 
 ## GM の考え方(2026-10-05〜24オーナー)
