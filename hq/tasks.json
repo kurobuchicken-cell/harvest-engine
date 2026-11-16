@@ -1733,6 +1733,15 @@
       "from": "2026-11-16",
       "text": "Google の同意画面(harvest-fiverr-watch)のプライバシーポリシー欄に入れた https://saas-status.com/privacy はまだ無いページ。短いプライバシーポリシーの文案を作り、saas-status.com に載せてよいかをオーナーに伺う(外への公開なのでオーナーが決める)。載せないなら欄の URL を見直す",
       "done": null
+    },
+    {
+      "id": "homepc-ping-check",
+      "who": "gm",
+      "kind": "do",
+      "project": "本社",
+      "from": "2026-11-16",
+      "text": "11-17 朝: 9時の停止が VM に印を書けたか(sugoi-shorts work/autorun-vm-ping.log が空で、VM の data/homepc-watch.json が checkedFor=11-17・alerted=false)を確かめる。書けていなければ、家PCは起きていたのに VM が『起きていなかった』と送ってしまうので直す",
+      "done": null
     }
   ]
 }
