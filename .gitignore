@@ -29,3 +29,5 @@ node_modules
 
 # Fiverr の知らせの記録(見たメールの id・最後に読めた時刻。環境ごとに持つ)
 /data/fiverr-watch.json
+/data/homepc-morning.txt
+/data/homepc-watch.json

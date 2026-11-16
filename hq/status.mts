@@ -34,6 +34,10 @@ if (process.platform === "win32") {
     const [name, state, last, result, next] = l.trim().split("|");
     console.log(`・${name?.replace("sugoi-shorts autorun ", "")}: ${state} / 前回 ${last}(結果 ${result}) / 次 ${next}`);
   }
+  // スリープから戻れず起動し直すと、その夜の作業が抜ける。直したかの判定にも使う(くわしくは HISTORY.md の 2026-11-16)
+  const crashPs = `Get-WinEvent -FilterHashtable @{LogName='System'; Id=41; StartTime=(Get-Date).AddDays(-7)} -ErrorAction SilentlyContinue | ForEach-Object { $_.TimeCreated.ToString('MM-dd HH:mm') }`;
+  const crashes = run("powershell.exe", ["-NoProfile", "-Command", crashPs]).split("\n").map((s) => s.trim()).filter((s) => /^\d\d-\d\d \d\d:\d\d$/.test(s));
+  console.log(`・この7日の予期しない停止(スリープから戻れず起動し直した等): ${crashes.length}回${crashes.length ? `(${crashes.join("・")})` : ""}`);
 }
 const reports = (await readdir(path.join(SUGOI, "work"))).filter((f) => /^autorun-report-\d{4}-\d\d-\d\d\.md$/.test(f)).sort();
 console.log(`・最後のレポート: ${reports.at(-1) ?? "なし"}`);
