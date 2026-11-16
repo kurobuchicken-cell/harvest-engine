@@ -31,3 +31,5 @@ node_modules
 /data/fiverr-watch.json
 /data/homepc-morning.txt
 /data/homepc-watch.json
+# Windows の電源の報告(PCの機器・アプリの記録を含むので載せない)
+/data/power-report.html
