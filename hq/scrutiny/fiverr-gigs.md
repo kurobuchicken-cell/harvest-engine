@@ -46,3 +46,8 @@
 1. オーナー: Fiverr のアカウントをペンネームで作る(メール・パスワードはオーナー)。売り手に切り替え、確認で「本業の外で使う」を選び、電話の番号を確かめる
 2. GM: 出品3件をブラウザで入力し、画像を載せる
 3. オーナー: 公開のボタンを押す
+
+## 注文と詐欺の見分け(2026-11-16)
+- 公開から数時間で、4人から「作業が終わったので確認を」「注文したのでリンク先を見て」という連絡が来た。注文の画面(manage_orders)は0件で、1人は Fiverr がすでに消していた(「is no longer available」「This client has no orders with you」)。新しい売り手を狙った詐欺
+- 決まり: 連絡やメールのリンク・ファイルは開かない。本物の注文かは、Fiverr の注文の画面(https://www.fiverr.com/users/pj_harvest/manage_orders)の数でだけ判断する。Fiverr の外での支払い・連絡の誘いには応じない
+- Fiverr の通知メールは kurobuchicken@gmail.com(Gmail の2つ目のアカウント)に届く。Claude の Gmail の接続は別のアカウントなので読めない。ブラウザで読む

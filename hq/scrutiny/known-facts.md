@@ -44,3 +44,8 @@
 - Ravelry: 規約が頼まれていない宣伝・勧誘を禁じる("any other form of solicitation"。https://www.ravelry.com/about/terms)。Ravelry での募集はしない
 - Reddit: WebFetch もブラウザも開けない(安全の制限)。規則は未確認で、使わない
 - Fiverr(仕事の仲介): 型紙の校正(tech edit)の出品が多数あり、1件50〜100ドル(検索 2026-11-16)。売り手は全員 確認が要る。「本業の外で使う」を選ぶと電話と秘密の質問だけ。「本業として」を選ぶと身分証の確認があり、EU の客に氏名・住所・メール・電話が見えうる(https://help.fiverr.com/hc/en-us/articles/22582440968849)。AI の使用は全分野で許される。生の出力のままは不可、客が AI 不使用を求めたら従う(https://help.fiverr.com/hc/en-us/articles/34998793899665)。新しい売り手の出品は4件まで。出金の方法・日本の個人が売れるかは未確認。ヘルプは自動の取得に403でブラウザで読む
+
+## EU の売り場と売り手の名前・住所(2026-11-16)
+- EU デジタルサービス法 第30条: EU の消費者が事業者と契約できる売り場は、事業者の氏名・住所・電話・メールを集め(30(1)(a))、商品の画面で利用者に見せる(30(7) "shall make the information referred to in paragraph 1, points (a), (d) and (e) available")。事業者(trader)は個人も含み、住む国の条件は無い(第3条(f))。零細・小規模の売り場には適用されない(第29条(1))。原文 https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32022R2065
+- 会社の前提 0-1(公に出さない)のもとでは、EU の消費者に売る売り場(eduki など)は、売り場が零細・小規模でない限り使えない。Fiverr は「本業の外で使う」の申告で事業者として扱われず、相手も作り手(事業者)なので当たらない
+- eduki の売り手の決まりの原文は、自動の取得で404。ドイツの一般の決まり(DDG §5)でも、商いとして売る人は Impressum が要る(IHK などの解説。eduki の原文は未確認)
