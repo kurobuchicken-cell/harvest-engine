@@ -326,6 +326,45 @@ th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font
 
 <h3>5.4 費用(2026-10-06実測)</h3>
 <p>リコール追跡(食品・消費生活用製品)で、通しの実行が1回75〜86円(候補8〜10件、検索20〜23回)、<code>--recheck</code>が1回4〜10円。費用の大半はweb_searchと候補列挙のトークン。開発中のテストを含めた合計は182円。</p>
+
+<h2>6. Fiverr の知らせ(fiverr-watch、2026-11-16〜)</h2>
+<p>型紙の検算の出品(売り手 pj_harvest)の注文を2日以内に届けるため、VM が kurobuchicken@gmail.com に届く Fiverr のメールを読んで Slack に知らせる。費用0円(Gmail API・Claude API は使わない)。</p>
+
+<h3>6.1 動き</h3>
+<ul>
+<li>PM2 の <code>harvest-engine-fiverr-watch</code>(<code>src/fiverrScheduler.ts</code>)が30分ごと(日本時間の毎時0分・30分)と起動時に <code>runOnce</code>(<code>src/fiverr/watch.ts</code>)を流す</li>
+<li><code>from:fiverr.com newer_than:3d</code> のメールの<strong>件名・差出人・日時だけ</strong>を読む(読み取りだけの権限 gmail.readonly)。本文とリンクは読まない(公開直後から詐欺の連絡が多い。hq/scrutiny/fiverr-gigs.md)</li>
+<li>件名で分ける: 注文(order・new order など。review・rate your・tip を含むものは除く)/連絡(message・inquiry など)/ほか。2026-11-16 に読んだ本物の件名は「You’ve got new messages from 〜」(連絡)・「Your Fiverr confirmation code」など。注文の件名はまだ来ていないので、最初の注文で合っているかを確かめる</li>
+<li>注文らしいメールが新しく来たら、すぐ Slack に件名と注文の画面(manage_orders)の URL を送る。本物かは注文の画面の数で確かめる</li>
+<li>日本時間9時を過ぎた最初の回に、前日の件数(注文・連絡・ほか)と最後に読めた時刻を、<strong>0件の日も</strong>送る(届くこと自体が、動いている印)。止まっていた後も、動き出した最初の回で送る</li>
+<li>トークンが使えない(invalid_grant など)ときは1回目で、ほかの失敗は2回続けて(1時間)で Slack に送る。直ったら「また読めるようになった」を送る</li>
+<li>最初の1回は今あるメールを覚えるだけで、知らせない。見たメールの記録は30日で消す</li>
+</ul>
+
+<h3>6.2 ファイルと命令</h3>
+<table>
+<tr><th>もの</th><th>中身</th></tr>
+<tr><td><code>tokens/fiverr_gmail_client.json</code></td><td>Google Cloud のプロジェクト harvest-fiverr-watch(kurobuchicken@gmail.com、同意画面は本番)の OAuth クライアント(デスクトップ)。git に載せず dev-config で配る</td></tr>
+<tr><td><code>tokens/fiverr_gmail_token.json</code></td><td>同意で得たトークン。VM にも同じものを置く</td></tr>
+<tr><td><code>data/fiverr-watch.json</code></td><td>見たメール・最後に読めた時刻・最後の失敗・朝の件数を送った日。環境ごとに持つ(git に載せない)</td></tr>
+<tr><td><code>npm run fiverr:login</code></td><td>家PCで1回だけ。出た URL を kurobuchicken@gmail.com で開き同意する(「確認されていません」は「詳細」から進む)</td></tr>
+<tr><td><code>npm run fiverr:watch -- list</code></td><td>直近7日の Fiverr のメールの件名と分け方を出す(Slack に送らない)</td></tr>
+<tr><td><code>npm run fiverr:watch -- once --dry</code></td><td>手元で1回まわし、Slack に送る文を画面に出すだけにする</td></tr>
+<tr><td><code>npm run fiverr:watch -- status</code></td><td>VM の記録を ssh で読み「Fiverr(前日): 注文N・連絡N・VM の知らせ 動いている/止まっている」を出す。夜間作業の朝の報告に使う</td></tr>
+</table>
+
+<h3>6.3 止め方・直し方</h3>
+<ul>
+<li>止める: VM で <code>pm2 delete harvest-engine-fiverr-watch &amp;&amp; pm2 save</code>。Google 側の許可も消すなら、kurobuchicken@gmail.com の Google アカウントの「サードパーティ製のアプリとサービス」から harvest-fiverr-watch を外す</li>
+<li>トークン切れの知らせが来たら: 家PCで <code>npm run fiverr:login</code> → <code>scp -i tokens/harvest_engine_vm_key tokens/fiverr_gmail_token.json ubuntu@161.33.148.155:apps/harvest-engine/tokens/</code></li>
+<li>同意画面を本番にするには、ブランディングのホームページとプライバシーポリシーの欄が要る(空だと「アプリを公開」が押せない)。今は saas-status.com を入れている</li>
+</ul>
+
+<h3>6.4 確かめたこと(2026-11-16)</h3>
+<ul>
+<li>家PCで本物の Gmail を読み、8件の件名と分け方を確かめた。読めないとき(トークンを壊した写し)の知らせ1回・2回目は送らない・直ったときの知らせ・朝の件数を、送る文を画面に出す形で確かめた。注文の知らせは、写しの見分けを変えて送る文を確かめた</li>
+<li>VM に入れ、PM2 で起動した1回目に8件を読み、前日の件数を Slack に送った(送れたときだけ書く「送った日」が記録に入ったことで確かめた)。家PCの status で「動いている」を確かめた</li>
+</ul>
 </main>
 </body>
 </html>

@@ -30,7 +30,7 @@
 - 監査役の週次バッチ(`auditScheduler.ts`)はPM2ログに発火の都度のログが無い。発火の確認はSlack通知の受信で行う。再発したらポーリング方式への切替を検討
 - Oracle VM(161.33.148.155)で PM2 常駐。VMへの反映は自動承認モードだと書き込めないため、オーナーが手元の PowerShell から実行することがある(長い ssh は LF のファイルにして `Get-Content -Raw ファイル | ssh.exe ... bash -s` で渡す)
 - 支出: `data/ledger.json`(追記専用)。VM分は `npm run ledger:sync` で取得してから `npm run ledger:report`(手動。8日超で警告)。予算は BUDGET.md
-- Fiverr(売り手 pj_harvest、kurobuchicken@gmail.com): 型紙の検算の出品3件を 2026-11-16 に公開(安い試し。判定 12-16)。注文の知らせの仕組みはまだ無く、オーナーが Fiverr のメールに気づいて伝えるまで GM は注文を見られない。本物の注文かは注文の画面の数で見る(詐欺の連絡が多い)。くわしくは hq/scrutiny/fiverr-gigs.md
+- Fiverr(売り手 pj_harvest、kurobuchicken@gmail.com): 型紙の検算の出品3件を 2026-11-16 に公開(安い試し。判定 12-16)。注文の知らせは VM の PM2 `harvest-engine-fiverr-watch` が30分ごとに Gmail の件名を読み、注文らしいものはすぐ Slack、毎朝9時に前日の件数を送る(2026-11-16〜。止め方・直し方は仕様書_harvest-engine.html の6節)。本物の注文かは注文の画面の数で見る(詐欺の連絡が多い)。くわしくは hq/scrutiny/fiverr-gigs.md
 - 第1層・H関連の技術backlog(Reddit・JS SPA・Puppeteer未対応の候補、パーサー未実装など)は、収集を再開するときに archive/HANDOFF_過去分_〜2026-10-24.md の「技術的backlog」を見る
 
 過去の記録は archive/HANDOFF_過去分_〜2026-10-24.md、判断の経緯と決定は HISTORY.md
