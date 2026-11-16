@@ -1742,6 +1742,15 @@
       "from": "2026-11-16",
       "text": "11-17 朝: 9時の停止が VM に印を書けたか(sugoi-shorts work/autorun-vm-ping.log が空で、VM の data/homepc-watch.json が checkedFor=11-17・alerted=false)を確かめる。書けていなければ、家PCは起きていたのに VM が『起きていなかった』と送ってしまうので直す",
       "done": null
+    },
+    {
+      "id": "homepc-crash-judge",
+      "who": "gm",
+      "kind": "do",
+      "project": "本社",
+      "from": "2026-11-16",
+      "text": "12-16: 画面のドライバを 621.24 に替えた(11-16)あとのスリープの復帰の失敗を、npm run status の『この7日の予期しない停止』と電源の報告で数える。替える前は1週間35回中1回。0回なら効いたとみて閉じる。また起きたら BIOS(MSI MS-7D98、B.A0、2024-02)の更新の手順をオーナーに出す",
+      "done": null
     }
   ]
 }
