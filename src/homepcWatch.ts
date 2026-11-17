@@ -7,7 +7,8 @@ import { jstDate, slackSend } from "./fiverr/watch";
 const DATA = path.resolve(__dirname, "..", "data");
 export const PING_PATH = path.join(DATA, "homepc-morning.txt");
 const STATE_PATH = path.join(DATA, "homepc-watch.json");
-const CHECK_AFTER_MIN = 9 * 60 + 40;
+// 9時の停止と、失敗した朝の拾い直し(9時20分・9時40分)が済んだあとに見る
+const CHECK_AFTER_MIN = 10 * 60;
 
 export async function checkHomePc(send: (t: string) => Promise<void> = slackSend, now = Date.now()): Promise<void> {
   const jst = new Date(now + 9 * 3600_000);
@@ -19,7 +20,7 @@ export async function checkHomePc(send: (t: string) => Promise<void> = slackSend
   const ping = existsSync(PING_PATH) ? readFileSync(PING_PATH, "utf8").trim() : "";
   const pingDay = ping ? jstDate(Date.parse(ping)) : null;
   if (pingDay !== today) {
-    await send(`⚠️ 家PCが今朝9時に起きていなかった(最後に起きていた印: ${ping || "なし"})。スリープから戻れず止まっている可能性がある。PC の電源を確かめ、止まっていたら入れる。昨夜の夜間作業は抜けている`);
+    await send(`⚠️ 家PCの朝の処理(9時・拾い直しの9時20分・9時40分)が今朝は動かなかった(最後に動いた印: ${ping || "なし"})。PC が止まっている(スリープから戻れない等)か、朝の処理が失敗している。朝の報告も届いていない。PC の電源と、GM に昼のセッションで確かめさせる`);
   }
   writeFileSync(STATE_PATH, JSON.stringify({ checkedFor: today, ping, alerted: pingDay !== today }));
 }

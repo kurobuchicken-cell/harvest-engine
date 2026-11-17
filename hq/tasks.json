@@ -1741,7 +1741,7 @@
       "project": "本社",
       "from": "2026-11-16",
       "text": "11-17 朝: 9時の停止が VM に印を書けたか(sugoi-shorts work/autorun-vm-ping.log が空で、VM の data/homepc-watch.json が checkedFor=11-17・alerted=false)を確かめる。書けていなければ、家PCは起きていたのに VM が『起きていなかった』と送ってしまうので直す",
-      "done": null
+      "done": "2026-11-17(11-17 9時の停止そのものが失敗し印は書かれず、VM は送った(PCは起きていたので文言を直した)。拾い直しのタスクを足した。HISTORY 2026-11-17)"
     },
     {
       "id": "homepc-crash-judge",
@@ -1761,6 +1761,15 @@
       "text": "11-17 に夜のリサーチ(sugoi-shorts src/autorun-ideas.md)へ足した「知識の差を移す」発想と「外から新しい観点を拾う」(毎晩1回・hints に残す)が効いたかを見る。11-18〜11-23 の夜の記録で、この2つから出た案の数と、足切りを通って残った割合を、ほかの発想の仕方と比べる。効かなければ理由を sugoi-shorts HISTORY.md に書き、拾い方を変える",
       "measure": "「知識の差を移す」「外から拾った観点」の frame で出た案の数と、残った(keep)割合。hints の件数",
       "baseline": "11-17 時点: 744件中この型の角度は1件。hints 5件(11-08・11-10 の2晩分)。全体の残った割合 31/744",
+      "done": null
+    },
+    {
+      "id": "stop-catchup-check",
+      "who": "gm",
+      "kind": "do",
+      "project": "本社",
+      "from": "2026-11-17",
+      "text": "11-18 朝: 9時の停止が rc=0 で済み、VM の data/homepc-watch.json が checkedFor=11-18・alerted=false か、9時が失敗した朝なら拾い直し(9:20/9:40)で済んだかを、タスクの履歴(TaskScheduler 201)で確かめる",
       "done": null
     }
   ]

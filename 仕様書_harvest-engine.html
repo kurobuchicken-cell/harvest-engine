@@ -363,7 +363,8 @@ th{background:var(--code)}code,pre{background:var(--code);border-radius:4px;font
 <h3>6.4 家PCが朝に起きていたかの見張り(同じ PM2 の回に相乗り)</h3>
 <ul>
 <li>家PCは毎朝9時の停止(sugoi-shorts <code>src/autorun-stop.ps1</code>)で、ssh で VM の <code>data/homepc-morning.txt</code> に時刻を書く(結果は家PCの <code>work/autorun-vm-ping.log</code>)</li>
-<li>VM の <code>src/homepcWatch.ts</code> が日本時間9時40分を過ぎた最初の回に、今日の印が無ければ Slack に「家PCが今朝9時に起きていなかった」を送る(1日1回。記録は <code>data/homepc-watch.json</code>)</li>
+<li>家PCの朝の処理が失敗した朝のために、タスク「sugoi-shorts autorun stop catchup」が9時20分・9時40分に同じ停止の手順を流す(<code>work/autorun.json</code> が残っているときだけ動き、済んでいれば何もしない)</li>
+<li>VM の <code>src/homepcWatch.ts</code> が日本時間10時を過ぎた最初の回に、今日の印が無ければ Slack に「家PCの朝の処理が今朝は動かなかった(PC が止まっているか、朝の処理の失敗)」を送る(1日1回。記録は <code>data/homepc-watch.json</code>)</li>
 <li>なぜ: 家PCがスリープから戻れず止まると(2026-11-16 に1回)、家PCからは知らせられず、その夜の夜間作業が抜けるため</li>
 <li>確かめたこと: 家PCの pwsh から本物の鍵で印を書けた。9時30分(何もしない)・今日の印あり(送らない)・昨日の印だけ(送る)・同じ日の2回目(送らない)・印のファイル無し(送る)を、時刻を変えて確かめた。VM で起動した回に今日の印を読み、送らなかった</li>
 </ul>
