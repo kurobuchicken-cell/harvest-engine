@@ -39,7 +39,8 @@ if (process.platform === "win32") {
   const crashes = run("powershell.exe", ["-NoProfile", "-Command", crashPs]).split("\n").map((s) => s.trim()).filter((s) => /^\d\d-\d\d \d\d:\d\d$/.test(s));
   console.log(`・この7日の予期しない停止(スリープから戻れず起動し直した等): ${crashes.length}回${crashes.length ? `(${crashes.join("・")})` : ""}`);
 }
-const reports = (await readdir(path.join(SUGOI, "work"))).filter((f) => /^autorun-report-\d{4}-\d\d-\d\d\.md$/.test(f)).sort();
+// work は Git で配らないので、夜間作業を回していないPCには無い
+const reports = (await readdir(path.join(SUGOI, "work")).catch(() => [] as string[])).filter((f) => /^autorun-report-\d{4}-\d\d-\d\d\.md$/.test(f)).sort();
 console.log(`・最後のレポート: ${reports.at(-1) ?? "なし"}`);
 const usage = JSON.parse(await readFile(path.join(SUGOI, "work", "usage.json"), "utf-8").catch(() => "{}"));
 if (usage.updatedAt) {

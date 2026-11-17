@@ -440,7 +440,7 @@
       "project": "U",
       "from": "2026-11-29",
       "text": "フランス語の TikTok のユーザー名を @masaka3961 から masakafrench に変える(11-29以降。PCの Masaka-FR の窓で、プロフィールを編集→ユーザー名。TikTok は規約上 Claude が操作しないためオーナーが手で)。変えたら GM に伝える(registry を直す)",
-      "done": null
+      "done": "2026-11-17(11-14 テーマUの制作を止め、TikTok は削除する方針(teardown-tiktok)なので不要)"
     },
     {
       "id": "short-role-dec",
@@ -449,7 +449,7 @@
       "project": "U",
       "from": "2026-12-01",
       "text": "ショート(動画)を続けるか、12月頭に判断する(10-30 オーナー「12月頭までは続ける」)。GM が Instagram の数字(判定基準: 30日でフォロワー1,000・平均1,000回、60日でフォロワー1万)と、動画から note・Substack への流れを出す",
-      "done": null
+      "done": "2026-11-17(11-14 テーマUの制作を止めたので不要(sugoi-shorts HISTORY.md の 2026-11-14))"
     },
     {
       "id": "night-note-host",
