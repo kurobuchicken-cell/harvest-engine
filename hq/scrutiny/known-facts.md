@@ -49,3 +49,21 @@
 - EU デジタルサービス法 第30条: EU の消費者が事業者と契約できる売り場は、事業者の氏名・住所・電話・メールを集め(30(1)(a))、商品の画面で利用者に見せる(30(7) "shall make the information referred to in paragraph 1, points (a), (d) and (e) available")。事業者(trader)は個人も含み、住む国の条件は無い(第3条(f))。零細・小規模の売り場には適用されない(第29条(1))。原文 https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32022R2065
 - 会社の前提 0-1(公に出さない)のもとでは、EU の消費者に売る売り場(eduki など)は、売り場が零細・小規模でない限り使えない。Fiverr は「本業の外で使う」の申告で事業者として扱われず、相手も作り手(事業者)なので当たらない
 - eduki の売り手の決まりの原文は、自動の取得で404。ドイツの一般の決まり(DDG §5)でも、商いとして売る人は Impressum が要る(IHK などの解説。eduki の原文は未確認)
+
+## 2026-11-20 夜の精査で足したもの
+- 特定商取引法 第26条第1項第1号: 申し込んだ者が「営業のために若しくは営業として締結するもの」には、通信販売の決まり(第11条の表示を含む)を適用しない。買い手を会社に限る売り方なら、氏名・住所・電話の表示は要らない(0-1 と両立)。個人の消費者が申し込める形だと外れない。https://laws.e-gov.go.jp/api/1/lawdata/351AC0000000057 (係2人が原文で確かめた。WebFetch は e-Gov の法令を先頭10万字ずつ要約するので、条文は offset を進めて読む)
+- 特定電子メール法(総務省のパンフ): 公表されたアドレスへの営業メールは同意が要らない(拒否の表示があれば不可)。送信者の氏名または名称・住所(リンク先でも可)・受信拒否の方法の表示が要る。ペンネーム・私書箱で足りるかは未確認。https://www.soumu.go.jp/main_sosiki/joho_tsusin/d_syohi/pdf/m_mail_pamphlet.pdf
+- 日本の自治体の資料の横断の有料の道具: GoSTEP(うるる)が議会議事録の横断検索・保存した条件の新着を毎週メール(2026-07-31 発表、対象数・料金は非公開。GM が原文で確かめた)。G-Finder が全国1,788自治体の計画書・議事録の横断検索(2週間の無料の試し)。入札情報サービス: nSearch 月24,800円・bJAMP 年59,400円・NJSS と入札王は見積もり。入札王に「ＰＦＩ（指定管理者）」の分類
+- 会議録の robots.txt はシステムで違う: ssp.kaigiroku.net は /tenant/ を許す、大和速記系(gijiroku.com)は検索の処理を禁じる、千葉市は Disallow: /、DiscussNet は robots.txt が無い(係が確かめた)
+- 総務省 公の施設の指定管理(令和6年4月1日): 79,332施設・指定期間5年が77.1%・公募53.4%。集計だけで施設ごとの指定期間は載らない。https://www.soumu.go.jp/main_content/000804895.pdf
+- 障害福祉の総量規制: 令和8年3月31日に公布、令和9年4月1日から共同生活援助も対象。ガイドラインは新規開設の検討者への周知を「自治体HP等での公表により周知を図る」(GM が原文で確かめた)。https://www.mhlw.go.jp/content/12200000/001716171.pdf
+- BFSG(ドイツ): 消費者向けのサービスだけが対象、零細の会社(10人未満かつ年商または総資産200万ユーロ以下)は外れる(§1・§2 Nr.17・§3)。請求書・約款・PDF の定めは法の原文に無い。https://www.gesetze-im-internet.de/bfsg/__3.html
+- 無料の PDF の読み上げ対応の道具: pdf-a11y(Apache-2.0、veraPDF で PDF/UA-1 を検証)。https://pypi.org/project/pdf-a11y/
+- Trove(豪州): 自動の取得をボット防御で拒む。NLA は API で本文を取ることを規約違反と見る(研究者の投稿・ACS 2025)。商用は NLA に申し込む(2012年の開発者向けの資料)。1955年より前の新聞は著作権が切れていることが多い(SLV の手引き)。NSW LRS は商用の複製に正式な許可が要る
+- Etsy: 2026-10-22 から型紙・レシピなどの手順書を AI で作ることを禁止(報道3件が一致。Etsy の原文は403で未確認)
+- Fiverr: 新しい売り手の出品は4件まで(Level 1・2 は10件)。出金は PayPal(手数料0・最低$1)・Payoneer。国の制限は「Each withdrawal method may have different location restrictions」で日本の記載なし。売り手の手数料20%。ヘルプは help.fiverr.com/api/v2/help_center/en-us/articles/<ID>.json なら自動で取れる。検索の順位は「Relevancy」「Historical appeal」で、新しい出品を優遇する決まりは書かれていない
+- Gumroad: 禁止品目に AI で作った物の禁止は無い。手数料は自分のリンク経由 10%+$0.50、Discover 経由 30%。規約 6.1 merchant of record、11.2(c) 売り手に公の連絡先を求める。ヘルプは自動の取得で本文が出ず、払い出しの最低額は未確認。https://gumroad.com/terms
+- Anthropic の API: 入力と出力を30日以内に消す、客の中身で学習しない(商用の規約 2025-06-17 版)。OpenAI の API も学習に使わない
+- 型紙の訳: Knitlingo が9言語を1語 $0.01 から人の確認つき。Ribblr は作り手に英↔西の訳を無料。サイズ展開の人の料金: £20〜$50/時
+- nuts-about-needlepoint.com は賭博のスパムに乗っ取られている(出典に使えない)
+- CLIP STUDIO ASSETS: AI の画像生成で作った素材(ブラシ・トーン含む)の投稿を全部禁止(運用方針 2024-03-14 版「we now prohibit the posting of all materials created using AI image generation technology」。web-fetch 係が原文を読んだ)。https://assets.clip-studio.com/en-us/information/policy
