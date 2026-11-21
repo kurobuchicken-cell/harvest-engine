@@ -3974,5 +3974,19 @@
     "fxRateSource": "https://open.er-api.com/v6/latest/USD",
     "fxRateStatus": "resolved",
     "recordedAt": "2026-11-14T10:36:07.624Z"
+  },
+  {
+    "category": "ads",
+    "service": "instagram-ads",
+    "amountUsd": -0.23,
+    "amountJpy": -37,
+    "description": "テーマU 宣伝2本(ad-test-1 21ドル・id-ad-test 18ドル、予定計39ドル)の確定額との差。Instagram 広告アカウント 1302077538711198 の領収書9通で確定額 38.77ドル(11-01〜07 の33.37ドル+11-21 に残りを払った5.40ドル)",
+    "occurredAt": "2026-11-21",
+    "id": "aa6c1c2c-7ee7-4827-a343-f4315b687154",
+    "fxRate": 159.74951,
+    "fxRateFetchedAt": "2026-11-21T05:40:55.327Z",
+    "fxRateSource": "https://open.er-api.com/v6/latest/USD",
+    "fxRateStatus": "resolved",
+    "recordedAt": "2026-11-21T05:40:55.394Z"
   }
 ]
