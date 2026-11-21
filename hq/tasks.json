@@ -633,7 +633,7 @@
       "kind": "do",
       "project": "U",
       "from": "2026-11-08",
-      "text": "Instagram の宣伝(ad-test-1)が終わったら、Meta の請求の確定額を見て、台帳に記帳した予定額21ドルとの差を npm run ledger:add で足し引きする",
+      "text": "Instagram の宣伝2本(ad-test-1 21ドル・id-ad-test 18ドル、予定計39ドル)の確定額を記帳する。11-21 に kurobuchicken@gmail.com の「Instagram広告領収書(アカウントID: 1302077538711198)」8通で 11-01〜11-07 の計 33.37ドルを確かめた。8ドル未満の残りが月の請求日に来うるので、12-08 以降に同じ領収書を Gmail で探し、合計と39ドルの差を npm run ledger:add で記帳する(広告アカウントは masaka.true が止められていて開けない)",
       "done": null
     },
     {
@@ -1237,7 +1237,7 @@
       "project": "U",
       "from": "2026-11-14",
       "text": "後片付け: Meta の広告で動いている広告が無いかを確かめ、支払い方法(カード)を外す。ad-test-1-settle の確定額の記帳も済ませる",
-      "done": null
+      "done": "2026-11-21(2026-11-21 動いている広告は無い(Instagram の広告アカウント 1302077538711198 の領収書は 11-07 が最後)。カード(Visa 末尾2469)は masaka.true が止められていて外せない。Facebook 側の広告アカウント 652059949764653 は取引0・支払い方法なし。確定額の記帳は ad-test-1-settle)"
     },
     {
       "id": "teardown-api-balance",
@@ -1264,7 +1264,7 @@
       "project": "U",
       "from": "2026-11-14",
       "text": "後片付け: Instagram 6つ(masaka.true・masakaenglish・masakaspanish・masakaportuguese・masakafrench・masakaitalian)を削除。止められてログインできないものは削除できない旨を記録",
-      "done": null
+      "done": "2026-11-21(2026-11-21 masakaenglish・masakaportuguese はアカウントセンターから削除を受け付け(12-21 に消えきる。それまでログインすると取り消し)。masaka.true・masakaspanish はログインすると顔の動画の確認、masakafrench・masakaitalian は SMS の確認で止められていて、中に入れず消せない。公式ヘルプ(help.instagram.com/139886812848894)で削除は本人のログインが要ると確かめた。オーナーは顔の確認はしないと決めた)"
     },
     {
       "id": "teardown-tiktok",
@@ -1273,7 +1273,7 @@
       "project": "U",
       "from": "2026-11-14",
       "text": "後片付け: TikTok 5つ(@masaka.true・@masakaenglish・@masakaspanish・@masakaportuguese・@masaka3961)を削除。削除はアプリでしかできない。@masaka3961 にはオーナーの電話番号が付いている。GM が1つずつ手順を出す",
-      "done": null
+      "done": "2026-11-21(2026-11-21 オーナーがアプリで5つとも削除。GM が tiktok.com/@ID の5つとも『このアカウントは見つかりませんでした』を確かめた(存在しない ID と同じ表示)。消えきるまでの日数は公式ヘルプ・プライバシーポリシーに記載なし。アプリのアカウント切り替えの一覧に残るのは端末に保存したログイン情報。消したアカウントにはログインしない(利用停止はログインで復元できると公式にあり、削除も同じ恐れ))"
     },
     {
       "id": "teardown-mail",
@@ -1770,6 +1770,15 @@
       "project": "本社",
       "from": "2026-11-17",
       "text": "11-18 朝: 9時の停止が rc=0 で済み、VM の data/homepc-watch.json が checkedFor=11-18・alerted=false か、9時が失敗した朝なら拾い直し(9:20/9:40)で済んだかを、タスクの履歴(TaskScheduler 201)で確かめる",
+      "done": null
+    },
+    {
+      "id": "teardown-ig-appeal",
+      "who": "gm",
+      "kind": "do",
+      "project": "U",
+      "from": "2026-11-21",
+      "text": "Instagram masakaspanish(Chrome の Masaka-ES)と masaka.true(いつもの Chrome)は、オーナーが 11-21 に顔写真で異議申し立てを出した(確認は通常1時間)。それぞれの Chrome で instagram.com を開き、戻っていれば masaka.true はカード(Visa 末尾2469)を外してから、どちらもアカウントセンターから削除をオーナーの最後のボタンの手前まで進める(手順は teardown-ig の記録と同じ)。永久停止になっていれば消せないと記録して消し込む",
       "done": null
     }
   ]
